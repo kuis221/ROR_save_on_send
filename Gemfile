@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
@@ -31,6 +32,11 @@ gem "twitter-bootstrap-rails"
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+# Heroku integration
+gem 'rails_serve_static_assets'
+gem 'rails_12factor'
+gem 'rails_stdout_logging'
+
 # Test
 group :development, :test do
   gem 'rspec-rails'
@@ -41,7 +47,7 @@ end
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

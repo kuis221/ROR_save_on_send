@@ -26,5 +26,9 @@ module Src
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    
+    # enables your Rails server to deliver your assets on Heroku
+    # config for rails_serve_static_assets gem
+    config.serve_static_assets = true
   end
 end
