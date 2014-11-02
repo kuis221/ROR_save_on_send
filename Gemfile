@@ -40,6 +40,9 @@ gem 'rails_stdout_logging'
 # User authentication
 gem 'devise'
 
+# admin part
+gem 'rails_admin'
+
 # Test
 group :development, :test do
   gem 'rspec-rails'
@@ -47,6 +50,7 @@ group :development, :test do
   gem 'faker'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'pry-rails'
 end
 
 # Use ActiveModel has_secure_password
