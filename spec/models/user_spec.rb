@@ -22,4 +22,16 @@ describe User do
       expect(FactoryGirl.build(:user, money_transfer_destination_id: Country.last.id + 1)).to be_invalid
     end
   end
+
+  describe '#prefered_currency' do
+    let(:user){FactoryGirl.create(:user, money_transfer_destination: FactoryGirl.create(:india))}
+    
+    it 'should return USD as first currency' do
+      expect(user.prefered_currency.first).to eq('USD')
+    end
+
+    it 'should return INR as second transaction' do
+      expect(user.prefered_currency.last).to eq('INR')
+    end
+  end
 end

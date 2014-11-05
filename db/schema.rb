@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102203908) do
+ActiveRecord::Schema.define(version: 20141105162444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,38 @@ ActiveRecord::Schema.define(version: 20141102203908) do
 
   create_table "countries", force: true do |t|
     t.string "name"
+    t.string "currency_code", limit: 3
+  end
+
+  create_table "payment_methods", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "service_providers", force: true do |t|
+    t.string "name"
+  end
+
+  add_index "service_providers", ["name"], name: "index_service_providers_on_name", using: :btree
+
+  create_table "user_recent_transactions", force: true do |t|
+    t.integer  "user_id"
+    t.date     "date"
+    t.integer  "amount_sent_cents",                   default: 0,     null: false
+    t.string   "amount_sent_currency",                default: "USD", null: false
+    t.integer  "amount_received_cents",               default: 0,     null: false
+    t.string   "amount_received_currency",            default: "USD", null: false
+    t.integer  "originating_source_of_funds_id"
+    t.integer  "service_provider_id"
+    t.integer  "destination_preference_for_funds_id"
+    t.string   "fees_for_sending"
+    t.string   "fees_for_receiving"
+    t.integer  "send_to_receive_duration"
+    t.string   "documentation_requirements"
+    t.string   "promotion"
+    t.integer  "service_quality"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

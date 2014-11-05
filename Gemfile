@@ -43,6 +43,12 @@ gem 'devise'
 # admin part
 gem 'rails_admin'
 
+# monetize
+gem 'money-rails'
+
+# open letter in browser
+gem 'letter_opener', group: :development
+
 # Test
 group :development, :test do
   gem 'rspec-rails'

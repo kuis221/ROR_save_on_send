@@ -7,8 +7,14 @@ class User < ActiveRecord::Base
 
   belongs_to :money_transfer_destination, class_name: Country
 
+  has_one :recent_transaction, class: User::RecentTransaction
+
   # validations
   validates_presence_of :first_name
   validates_presence_of :zipcode
   validates_presence_of :money_transfer_destination
+
+  def prefered_currency
+    [Money.default_currency.iso_code, money_transfer_destination.try(:currency_code)]
+  end
 end
