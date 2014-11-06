@@ -9,10 +9,13 @@ class User::RecentTransaction < ActiveRecord::Base
 
   belongs_to :service_provider
   
-  monetize :amount_sent_cents
-  monetize :amount_received_cents
+  monetize :amount_sent_cents, with_model_currency: :currency
+  monetize :amount_received_cents, with_model_currency: :currency
 
-  attr_accessor :currency, :send_to_receive_duration_interval
+  # Use model level currency
+  register_currency :usd
+
+  attr_accessor :send_to_receive_duration_interval
 
   def send_to_receive_duration=(duration)
     if DURATION_INTERVALS.include?(send_to_receive_duration_interval)
