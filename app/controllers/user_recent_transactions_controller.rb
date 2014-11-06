@@ -3,6 +3,8 @@ class UserRecentTransactionsController < ApplicationController
   before_filter :not_allow_fill_form_twice
 
   def create
+    params[:user_recent_transaction][:documentation_requirements] = params[:user_recent_transaction][:documentation_requirements].join(',')
+
     recent_transaction_attrs = params.require(:user_recent_transaction)
       .permit(:date, :currency, :amount_sent, :amount_received, :originating_source_of_funds_id,
               :service_provider_id, :destination_preference_for_funds_id, :fees_for_sending, 
