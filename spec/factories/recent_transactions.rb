@@ -9,7 +9,7 @@ FactoryGirl.define do
     service_provider {FactoryGirl.create(:service_provider, :xoom)}
     destination_preference_for_funds {FactoryGirl.create(:payment_method, :cash)}
     fees_for_sending '$4'
-    fees_for_receiving '1%'
+    #fees_for_receiving '1%'
     send_to_receive_duration 86400
     documentation_requirements 'Photo ID'
     promotion 'n/a'

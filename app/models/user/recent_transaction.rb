@@ -2,7 +2,7 @@ class User::RecentTransaction < ActiveRecord::Base
   DURATION_INTERVALS = %w{minutes hours days}
 
   REQUIRED_FIELDS = %i{date currency amount_sent_cents amount_received_cents originating_source_of_funds service_provider
-    destination_preference_for_funds fees_for_sending fees_for_receiving send_to_receive_duration
+    destination_preference_for_funds fees_for_sending send_to_receive_duration
     documentation_requirements promotion service_quality comments}
 
   validates_presence_of REQUIRED_FIELDS

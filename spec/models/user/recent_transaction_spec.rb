@@ -7,7 +7,7 @@ describe User::RecentTransaction do
     let(:recent_transaction){FactoryGirl.build(:recent_transaction)}
    
     %i{date currency amount_sent_cents amount_received_cents originating_source_of_funds service_provider
-    destination_preference_for_funds fees_for_sending fees_for_receiving send_to_receive_duration
+    destination_preference_for_funds fees_for_sending send_to_receive_duration
     documentation_requirements promotion service_quality comments}.each do |property|
       it "should be invalid if #{property} is not set" do
         recent_transaction.send("#{property}=", nil)
