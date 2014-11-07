@@ -1,6 +1,13 @@
 class User::RecentTransaction < ActiveRecord::Base
   DURATION_INTERVALS = %w{minutes hours days}
 
+  REQUIRED_FIELDS = %i{date currency amount_sent_cents amount_received_cents originating_source_of_funds service_provider
+    destination_preference_for_funds fees_for_sending fees_for_receiving send_to_receive_duration
+    documentation_requirements promotion service_quality comments}
+
+  validates_presence_of REQUIRED_FIELDS
+  validates_numericality_of :amount_sent, :amount_received, greater_than: 0
+
   belongs_to :user
   belongs_to :service_provider
 
@@ -26,8 +33,9 @@ class User::RecentTransaction < ActiveRecord::Base
   end
 
   def send_to_receive_duration
-    if send_to_receive_duration_interval.blank?
-      duration_in_seconds = super
+    duration_in_seconds = super
+    
+    if send_to_receive_duration_interval.blank? && duration_in_seconds.present?
       duration = duration_in_seconds
 
       if duration_in_seconds > 0
@@ -51,7 +59,7 @@ class User::RecentTransaction < ActiveRecord::Base
 
       duration
     else
-      super
+      duration_in_seconds
     end
   end
 end

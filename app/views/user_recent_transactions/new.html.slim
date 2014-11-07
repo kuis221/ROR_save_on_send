@@ -1,6 +1,10 @@
 h2
   | User recent transaction
-= form_for(User::RecentTransaction.new, url: user_recent_transaction_path, html: {class: 'form-horizontal', role: 'form'}) do |f|
+= form_for(@user_recent_transaction, url: user_recent_transaction_path, html: {class: 'form-horizontal', role: 'form'}) do |f|
+  // errors
+  - @user_recent_transaction.errors.full_messages.each do |err_msg|
+    .bg-warning= err_msg
+
   // date
   .form-group
     = f.label :date, class: 'col-sm-4 control-label'
