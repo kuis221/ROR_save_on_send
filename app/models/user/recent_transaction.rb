@@ -9,7 +9,7 @@ class User::RecentTransaction < ActiveRecord::Base
 
   belongs_to :service_provider
   
-  monetize :amount_sent_cents, with_model_currency: :currency
+  monetize :amount_sent_cents
   monetize :amount_received_cents, with_model_currency: :currency
 
   # Use model level currency

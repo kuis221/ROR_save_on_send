@@ -26,7 +26,7 @@ describe User::RecentTransaction do
     it 'should set currency for amount sent' do
       recent_transaction = User::RecentTransaction.new(currency: 'INR', amount_sent: 100)
 
-      expect(recent_transaction.amount_sent.currency.iso_code).to eq('INR')
+      expect(recent_transaction.amount_sent.currency.iso_code).to eq('USD')
       expect(recent_transaction.amount_sent.to_i).to eq(100)
     end
 
