@@ -30,7 +30,8 @@ html lang="en"
           a.navbar-brand href="#"Save On Send
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              //li= link_to "Link 1", "/path1"
+              - if current_user && current_user.recent_transactions.present?
+                li= link_to "Add recent transaction", new_user_recent_transaction_path
               //li= link_to "Link 2", "/path2"
               //li= link_to "Link 3", "/path3"
 

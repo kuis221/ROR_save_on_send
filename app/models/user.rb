@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   belongs_to :money_transfer_destination, class_name: Country
 
-  has_one :recent_transaction, class: User::RecentTransaction
+  has_many :recent_transactions, class: User::RecentTransaction
 
   # validations
   validates_presence_of :first_name

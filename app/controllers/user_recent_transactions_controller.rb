@@ -1,6 +1,5 @@
 class UserRecentTransactionsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :not_allow_fill_form_twice
 
   def create
     params[:user_recent_transaction][:documentation_requirements] = params[:user_recent_transaction][:documentation_requirements].join(',')
@@ -11,16 +10,12 @@ class UserRecentTransactionsController < ApplicationController
               :fees_for_receiving, :send_to_receive_duration, :send_to_receive_duration_interval,
               :documentation_requirements, :promotion, :service_quality, :comments)
 
-    if current_user.create_recent_transaction(recent_transaction_attrs)
-      redirect_to(root_path)
+    if current_user.recent_transactions.create(recent_transaction_attrs)
+      redirect_to(welcome_path, notice: 'Thank you! Your input is stored.')
     else
       render :new
     end
   end
 
   private
-
-  def not_allow_fill_form_twice
-    redirect_to(welcome_path) if current_user.recent_transaction.present?
-  end
 end
