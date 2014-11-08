@@ -24,4 +24,5 @@ en:
     attributes:
       user/recent_transaction:
           currency: To which currency?
+          originating_source_of_funds_id: Sending type     
 
