@@ -19,12 +19,16 @@ h2
   .form-group
     = f.label :amount_sent, class: 'col-sm-4 control-label'
     .col-sm-8
-      = f.text_field :amount_sent, class: 'form-control' 
+      .input-group
+        .input-group-addon USD
+        = f.text_field :amount_sent, class: 'form-control' 
   // amount received
   .form-group
     = f.label :amount_received, class: 'col-sm-4 control-label'
     .col-sm-8
-      = f.text_field :amount_received, class: 'form-control' 
+      .input-group
+        .input-group-addon#amount_received_currency= current_user.prefered_currency.first
+        = f.text_field :amount_received, class: 'form-control' 
   // originating source of funds
   .form-group
     = f.label :originating_source_of_funds_id, class: 'col-sm-4 control-label'
