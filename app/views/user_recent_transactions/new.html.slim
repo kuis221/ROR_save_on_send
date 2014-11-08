@@ -48,7 +48,9 @@ h2
   .form-group
     = f.label :fees_for_sending, class: 'col-sm-4 control-label'
     .col-sm-8
-      = f.text_field :fees_for_sending, class: 'form-control'
+      .input-group
+        .input-group-addon USD
+        = f.text_field :fees_for_sending, class: 'form-control'
   // fees for receiving
   // .form-group
   //  = f.label :fees_for_receiving, class: 'col-sm-4 control-label'
