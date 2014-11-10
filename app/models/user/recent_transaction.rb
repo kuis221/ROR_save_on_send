@@ -18,6 +18,7 @@ class User::RecentTransaction < ActiveRecord::Base
   
   monetize :amount_sent_cents
   monetize :amount_received_cents, with_model_currency: :currency
+  monetize :fees_for_sending_cents
 
   # Use model level currency
   register_currency :usd
@@ -60,6 +61,16 @@ class User::RecentTransaction < ActiveRecord::Base
       duration
     else
       duration_in_seconds
+    end
+  end
+
+  def total_cost
+    return if invalid?
+
+    if currency == 'USD'
+      fees_for_sending
+    else
+      fees_for_sending.exchange_to(currency) + amount_sent.exchange_to(currency) - amount_received
     end
   end
 end

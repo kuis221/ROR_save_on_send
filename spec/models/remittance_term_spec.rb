@@ -1,29 +1,63 @@
 require 'spec_helper'
 
 describe RemittanceTerm do
-  describe '.import_from_csv' do
-    before do
-      # stub csv data
-      data =
-        %Q{Send country,Receive country,Remit name,Send method,Receive method,Send currency,Receive currency,Send amount range ($USD) From,Send amount range ($USD) To,Fees for sending USD,Fees for sending %,FX markup (%),Receiving fee (in Column D currency),Receiving fee (%),Duration (hours),Documentation,Promotions,Service quality\n} +
-        %Q{USA,Mexico,Western Union,bank,cash,USD,MXN,0,"2,999",4,,2.49,,,120,,,\n} +
-        %Q{USA,Mexico,Western Union,cash,bank,USD,MXN,0,99,4,,2.49,,,72,,,\n} +
-        %Q{USA,Mexico,Western Union,cash,cash,USD,MXN,0,99,5,,2.49,,,1,,,\n} +
-        %Q{USA,Mexico,Xoom,bank,"cash, bank",USD,MXN,25,"2,999",4.99,,2.88,,,0,,,}
-      
-      csv_file = Rails.root.join('db/seeds', 'remittance_terms.csv')
-      allow(File).to receive(:open).and_call_original
-      allow(File).to receive(:open).with(csv_file, universal_newline: false, headers: :first_row) {StringIO.new(data)}
+  let!(:mexico){FactoryGirl.create(:mexico)}
 
-      FactoryGirl.create(:mexico)
-      
-      FactoryGirl.create(:service_provider, :western_union)
-      FactoryGirl.create(:service_provider, :xoom)
+  before do
+    # stub csv data
+    data =
+      %Q{Send country,Receive country,Remit name,Send method,Receive method,Send currency,Receive currency,Send amount range ($USD) From,Send amount range ($USD) To,Fees for sending USD,Fees for sending %,FX markup (%),Receiving fee (in Column D currency),Receiving fee (%),Duration (hours),Documentation,Promotions,Service quality\n} +
+      %Q{USA,Mexico,Western Union,bank,cash,USD,MXN,100,"2,999",4,,2.49,,,120,,,\n} +
+      %Q{USA,Mexico,Western Union,cash,bank,USD,MXN,0,99,4,,2.49,,,72,,,\n} +
+      %Q{USA,Mexico,Western Union,cash,cash,USD,MXN,0,99,5,,2.49,,,1,,,\n} +
+      %Q{USA,Mexico,Xoom,bank,"cash, bank",USD,MXN,25,"2,999",4.99,,2.88,,,0,,,}
     
-      FactoryGirl.create(:payment_method, :bank)
-      FactoryGirl.create(:payment_method, :cash)
+    csv_file = Rails.root.join('db/seeds', 'remittance_terms.csv')
+    allow(File).to receive(:open).and_call_original
+    allow(File).to receive(:open).with(csv_file, universal_newline: false, headers: :first_row) {StringIO.new(data)}
+ 
+    FactoryGirl.create(:service_provider, :western_union)
+    FactoryGirl.create(:service_provider, :xoom)
+  
+    FactoryGirl.create(:payment_method, :bank)
+    FactoryGirl.create(:payment_method, :cash)
+  end
+
+  describe '.least_expensive' do
+    before do
+      RemittanceTerm.import_from_csv
     end
 
+    it 'should retun least experience remmittance' do
+      least_expensive = RemittanceTerm.least_expensive(amount_send: Money.new(5000, 'USD'), 
+                                                       receive_country: mexico, 
+                                                       receive_currency: 'MXN').first
+
+      expect(least_expensive.send_method.slug).to eq('cash')
+      expect(least_expensive.receive_method.slug).to eq('bank')
+      expect(least_expensive.service_provider.name).to eq('Western Union')
+      expect(least_expensive.expense).to eq(2.57)
+    end
+  end
+
+  describe '.amount_save_on_transaction' do
+    before do
+      RemittanceTerm.import_from_csv
+    end
+
+    it 'return amount which user can save on transaction' do
+      amount_save = RemittanceTerm.amount_save_on_transaction(
+                amount_send: Money.new(5000, 'USD'),
+                receive_country: mexico,
+                receive_currency: 'MXN',
+                transaction_cost: Money.new(2900, 'MXN')
+      )
+
+      expect(amount_save).to eq(Money.new(1158, 'MXN'))
+    end
+  end
+
+  describe '.import_from_csv' do 
     it 'should import 5 records from csv to db' do
       expect{
         RemittanceTerm.import_from_csv
@@ -40,10 +74,10 @@ describe RemittanceTerm do
       expect(remittance_term.send_method.name).to eq('bank account')
       expect(remittance_term.receive_method.name).to eq('cash')
       expect(remittance_term.receive_currency).to eq('MXN')
-      expect(remittance_term.send_amount_range_from).to eq(0)
+      expect(remittance_term.send_amount_range_from).to eq(100)
       expect(remittance_term.send_amount_range_to).to eq(2999)
       expect(remittance_term.fees_for_sending.to_i).to eq(4)
-      expect(remittance_term.fees_for_sending_percent).to be_nil
+      expect(remittance_term.fees_for_sending_percent).to eq(0)
       expect(remittance_term.fx_markup).to eq(2.49)
       expect(remittance_term.duration).to eq(120)
       expect(remittance_term.documentation).to be_nil

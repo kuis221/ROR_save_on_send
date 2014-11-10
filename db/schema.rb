@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110115919) do
+ActiveRecord::Schema.define(version: 20141110204028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 20141110115919) do
     t.string  "receive_currency",         limit: 3
     t.integer "send_amount_range_from"
     t.integer "send_amount_range_to"
-    t.integer "fees_for_sending_cents",             default: 0, null: false
-    t.float   "fees_for_sending_percent"
+    t.integer "fees_for_sending_cents",             default: 0,   null: false
+    t.float   "fees_for_sending_percent",           default: 0.0
     t.float   "fx_markup"
     t.integer "duration"
     t.text    "documentation"
@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(version: 20141110115919) do
     t.integer  "originating_source_of_funds_id"
     t.integer  "service_provider_id"
     t.integer  "destination_preference_for_funds_id"
-    t.string   "fees_for_sending"
     t.string   "fees_for_receiving"
     t.integer  "send_to_receive_duration"
     t.string   "documentation_requirements"
@@ -82,6 +81,7 @@ ActiveRecord::Schema.define(version: 20141110115919) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "currency",                            limit: 3
+    t.integer  "fees_for_sending_cents",                        default: 0, null: false
   end
 
   create_table "users", force: true do |t|

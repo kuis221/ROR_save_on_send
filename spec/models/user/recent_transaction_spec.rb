@@ -7,7 +7,7 @@ describe User::RecentTransaction do
     let(:recent_transaction){FactoryGirl.build(:recent_transaction)}
    
     %i{date currency amount_sent_cents amount_received_cents originating_source_of_funds service_provider
-    destination_preference_for_funds fees_for_sending send_to_receive_duration
+    destination_preference_for_funds fees_for_sending_cents send_to_receive_duration
     documentation_requirements promotion service_quality comments}.each do |property|
       it "should be invalid if #{property} is not set" do
         recent_transaction.send("#{property}=", nil)
@@ -49,6 +49,20 @@ describe User::RecentTransaction do
 
       expect(recent_transaction.amount_received.currency.iso_code).to eq('MXN')
       expect(recent_transaction.amount_received.to_i).to eq(98)
+    end
+  end
+
+  describe '#total_cost' do
+    it 'should calculate total cost for usd to usd transaction' do
+      recent_transaction = FactoryGirl.build(:recent_transaction, currency: 'USD', amount_sent: 100, amount_received: 95, fees_for_sending: 5)
+
+      expect(recent_transaction.total_cost).to eq(Money.new(500, 'USD'))
+    end
+
+    it 'should calculate total cost for usd to destination currency transaction' do
+      recent_transaction = FactoryGirl.build(:recent_transaction, currency: 'INR', amount_sent: 100, amount_received: 5650, fees_for_sending: 5)
+    
+      expect(recent_transaction.total_cost).to eq(Money.new(79700, 'INR'))
     end
   end
 end

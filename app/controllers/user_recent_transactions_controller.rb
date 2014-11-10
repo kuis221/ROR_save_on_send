@@ -17,7 +17,25 @@ class UserRecentTransactionsController < ApplicationController
     @user_recent_transaction = current_user.recent_transactions.create(recent_transaction_attrs)
     
     if @user_recent_transaction.persisted?
-      redirect_to(welcome_path, notice: 'Thank you! Your input is stored.')
+      notice = "Congratulation! You've chosen provider with the best rate."
+
+      destination_country = current_user.money_transfer_destination
+      transaction_cost = @user_recent_transaction.total_cost
+      
+      more_money = RemittanceTerm.amount_save_on_transaction(
+        amount_send: @user_recent_transaction.amount_sent, 
+        receive_country: destination_country,
+        receive_currency: @user_recent_transaction.currency,
+        transaction_cost: transaction_cost)
+      
+       
+      if more_money > 0
+        notice = "On your last transaction, your recipient in " +
+          "#{destination_country.name} could have received " +
+          "#{more_money} more #{more_money.currency.iso_code}"
+      end
+      
+      redirect_to(welcome_path, notice: notice)
     else
       render :new
     end

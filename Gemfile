@@ -46,8 +46,14 @@ gem 'rails_admin'
 # monetize
 gem 'money-rails'
 
-# open letter in browser
-gem 'letter_opener', group: :development
+group :development do
+  # open letter in browser
+  gem 'letter_opener'
+
+  # better error in browser
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
 # Test
 group :development, :test do
