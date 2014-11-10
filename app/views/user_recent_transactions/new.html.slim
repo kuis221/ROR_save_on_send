@@ -27,7 +27,7 @@ h2
     = f.label :amount_received, class: 'col-sm-4 control-label'
     .col-sm-8
       .input-group
-        .input-group-addon#amount_received_currency= current_user.prefered_currency.first
+        .input-group-addon#amount_received_currency= @user_recent_transaction.currency || current_user.prefered_currency.first
         = f.text_field :amount_received, class: 'form-control' 
   // originating source of funds
   .form-group
