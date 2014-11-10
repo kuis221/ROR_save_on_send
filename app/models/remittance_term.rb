@@ -28,27 +28,30 @@ class RemittanceTerm < ActiveRecord::Base
       next if send_method.nil?
 
       # Receive method
-      receive_method = PaymentMethod.find_by(slug: data['Receive method'])
-      next if receive_method.nil?
+      receive_methods = data['Receive method'].split(',')
+      receive_methods.map!{|receive_method_slug| PaymentMethod.find_by(slug: receive_method_slug.strip)}.delete_if(&:nil?)
+      next if receive_methods.empty?
 
-      remittance_term_attrs = {
-        receive_country: receive_country, 
-        service_provider: service_provider,
-        send_method: send_method,
-        receive_method: receive_method,
-        receive_currency: data['Receive currency'],
-        send_amount_range_from: data['Send amount range ($USD) From'].gsub(',', '_'),
-        send_amount_range_to: data['Send amount range ($USD) To'].gsub(',', '_'),
-        fees_for_sending: data['Fees for sending USD'],
-        fees_for_sending_percent: data['Fees for sending %'],
-        fx_markup: data['FX markup (%)'],
-        duration: data['Duration (hours)'],
-        documentation: data['Documentation'],
-        promotions: data['Promotions'],
-        service_quality: data['Service quality']
-      }
+      receive_methods.each do |receive_method|
+        remittance_term_attrs = {
+          receive_country: receive_country, 
+          service_provider: service_provider,
+          send_method: send_method,
+          receive_method: receive_method,
+          receive_currency: data['Receive currency'],
+          send_amount_range_from: data['Send amount range ($USD) From'].gsub(',', '_'),
+          send_amount_range_to: data['Send amount range ($USD) To'].gsub(',', '_'),
+          fees_for_sending: data['Fees for sending USD'],
+          fees_for_sending_percent: data['Fees for sending %'],
+          fx_markup: data['FX markup (%)'],
+          duration: data['Duration (hours)'],
+          documentation: data['Documentation'],
+          promotions: data['Promotions'],
+          service_quality: data['Service quality']
+        }
 
-      RemittanceTerm.create(remittance_term_attrs)
+        RemittanceTerm.create(remittance_term_attrs)
+      end
     end
   end
 end

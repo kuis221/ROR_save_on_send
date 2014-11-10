@@ -8,23 +8,26 @@ describe RemittanceTerm do
         %Q{Send country,Receive country,Remit name,Send method,Receive method,Send currency,Receive currency,Send amount range ($USD) From,Send amount range ($USD) To,Fees for sending USD,Fees for sending %,FX markup (%),Receiving fee (in Column D currency),Receiving fee (%),Duration (hours),Documentation,Promotions,Service quality\n} +
         %Q{USA,Mexico,Western Union,bank,cash,USD,MXN,0,"2,999",4,,2.49,,,120,,,\n} +
         %Q{USA,Mexico,Western Union,cash,bank,USD,MXN,0,99,4,,2.49,,,72,,,\n} +
-        %Q{USA,Mexico,Western Union,cash,cash,USD,MXN,0,99,5,,2.49,,,1,,,\n}
+        %Q{USA,Mexico,Western Union,cash,cash,USD,MXN,0,99,5,,2.49,,,1,,,\n} +
+        %Q{USA,Mexico,Xoom,bank,"cash, bank",USD,MXN,25,"2,999",4.99,,2.88,,,0,,,}
       
       csv_file = Rails.root.join('db/seeds', 'remittance_terms.csv')
       allow(File).to receive(:open).and_call_original
       allow(File).to receive(:open).with(csv_file, universal_newline: false, headers: :first_row) {StringIO.new(data)}
 
       FactoryGirl.create(:mexico)
+      
       FactoryGirl.create(:service_provider, :western_union)
+      FactoryGirl.create(:service_provider, :xoom)
     
       FactoryGirl.create(:payment_method, :bank)
       FactoryGirl.create(:payment_method, :cash)
     end
 
-    it 'should import 3 records from csv to db' do
+    it 'should import 5 records from csv to db' do
       expect{
         RemittanceTerm.import_from_csv
-      }.to change(RemittanceTerm, :count).by(3)
+      }.to change(RemittanceTerm, :count).by(5)
     end
 
     it 'should import all the fields from csv' do
