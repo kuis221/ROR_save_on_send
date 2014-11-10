@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
   def prefered_currency
     [Money.default_currency.iso_code, money_transfer_destination.try(:currency_code)]
   end
+
+  def full_name
+    [first_name, last_name].join(' ').strip
+  end
 end

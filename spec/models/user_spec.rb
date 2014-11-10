@@ -34,4 +34,18 @@ describe User do
       expect(user.prefered_currency.last).to eq('INR')
     end
   end
+
+  describe '#full_name' do
+    it 'should return full name for user which specified first and last name' do
+      user = FactoryGirl.build(:user, first_name: 'Foo', last_name: 'Bar')
+    
+      expect(user.full_name).to eq('Foo Bar')
+    end
+
+    it 'should return full name for user which specified only first name' do
+      user = FactoryGirl.build(:user, first_name: 'Foo', last_name: nil)
+      
+      expect(user.full_name).to eq('Foo')
+    end
+  end
 end
