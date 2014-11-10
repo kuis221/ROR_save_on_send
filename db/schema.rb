@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106142613) do
+ActiveRecord::Schema.define(version: 20141110115919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,24 @@ ActiveRecord::Schema.define(version: 20141106142613) do
 
   create_table "payment_methods", force: true do |t|
     t.string "name"
+    t.string "slug", null: false
+  end
+
+  create_table "remittance_terms", force: true do |t|
+    t.integer "receive_country_id"
+    t.integer "service_provider_id"
+    t.integer "send_method_id"
+    t.integer "receive_method_id"
+    t.string  "receive_currency",         limit: 3
+    t.integer "send_amount_range_from"
+    t.integer "send_amount_range_to"
+    t.integer "fees_for_sending_cents",             default: 0, null: false
+    t.float   "fees_for_sending_percent"
+    t.float   "fx_markup"
+    t.integer "duration"
+    t.text    "documentation"
+    t.string  "promotions"
+    t.integer "service_quality"
   end
 
   create_table "service_providers", force: true do |t|

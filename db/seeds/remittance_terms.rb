@@ -1,0 +1,2 @@
+RemittanceTerm.delete_all
+RemittanceTerm.import_from_csv
