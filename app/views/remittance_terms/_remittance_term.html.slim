@@ -10,7 +10,7 @@ tr *{class: tr_class}
     | #{remittance_term.send_method.slug} 
       - #{remittance_term.receive_method.slug}
   td= remittance_term.send_amount_with_fee(@user_next_transfer.amount_send)
-  td= remittance_term.all_fees(@user_next_transfer.amount_send)
+  td= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_send), precision: 2)
   td
     | #{@user_next_transfer.receive_currency}&nbsp;
       #{humanized_money(remittance_term.estimated_receive_amount(@user_next_transfer.amount_send, @user_next_transfer.receive_currency))}

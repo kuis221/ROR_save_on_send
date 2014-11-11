@@ -7,7 +7,7 @@ describe RemittanceTerm do
   before do
     # stub csv data
     data =
-      %Q{Send country,Receive country,Remit name,Send method,Receive method,Send currency,Receive currency,Send amount range ($USD) From,Send amount range ($USD) To,Fees for sending USD,Fees for sending %,FX markup (%),Receiving fee (in Column D currency),Receiving fee (%),Duration (hours),Documentation,Promotions,Service quality\n} +
+      %Q{Send country,Receive country,Remit name,Sending type,Receiving type,Send currency,To which currency?,Send amount range ($USD) - From,Send amount range ($USD) - To,Fees for sending - USD,Fees for sending - %,FX markup,Receiving fee (in Column D currency),Receiving fee (%),Send-to-receive - Duration (hours),Documentation requirements,Promotions,Service quality,Comments\n} +
       %Q{USA,Mexico,Western Union,bank,cash,USD,MXN,100,"2,999",4,,2.49,,,120,,,\n} +
       %Q{USA,Mexico,Western Union,cash,bank,USD,MXN,0,99,4,,2.49,,,72,,,\n} +
       %Q{USA,Mexico,Western Union,cash,cash,USD,MXN,0,99,5,,2.49,,,1,,,\n} +
@@ -88,7 +88,7 @@ describe RemittanceTerm do
     end
   end
 
-  describe '.import_from_csv' do 
+  describe '.import_from_csv', :focus do 
     it 'should import 5 records from csv to db' do
       expect{
         RemittanceTerm.import_from_csv

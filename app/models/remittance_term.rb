@@ -74,11 +74,11 @@ class RemittanceTerm < ActiveRecord::Base
       next if service_provider.nil?
 
       # Send method
-      send_method = PaymentMethod.find_by(slug: data['Send method'])
+      send_method = PaymentMethod.find_by(slug: data['Sending type'])
       next if send_method.nil?
 
       # Receive method
-      receive_methods = data['Receive method'].split(',')
+      receive_methods = data['Receiving type'].split(',')
       receive_methods.map!{|receive_method_slug| PaymentMethod.find_by(slug: receive_method_slug.strip)}.delete_if(&:nil?)
       next if receive_methods.empty?
 
@@ -88,14 +88,14 @@ class RemittanceTerm < ActiveRecord::Base
           service_provider: service_provider,
           send_method: send_method,
           receive_method: receive_method,
-          receive_currency: data['Receive currency'],
-          send_amount_range_from: data['Send amount range ($USD) From'].gsub(',', '_'),
-          send_amount_range_to: data['Send amount range ($USD) To'].gsub(',', '_'),
-          fees_for_sending: data['Fees for sending USD'] || 0,
-          fees_for_sending_percent: data['Fees for sending %'] || 0,
-          fx_markup: data['FX markup (%)'] || 0,
-          duration: data['Duration (hours)'],
-          documentation: data['Documentation'],
+          receive_currency: data['To which currency?'],
+          send_amount_range_from: data['Send amount range ($USD) - From'].gsub(',', '_'),
+          send_amount_range_to: data['Send amount range ($USD) - To'].gsub(',', '_'),
+          fees_for_sending: data['Fees for sending - USD'] || 0,
+          fees_for_sending_percent: data['Fees for sending - %'] || 0,
+          fx_markup: data['FX markup'] || 0,
+          duration: data['Send-to-receive - Duration (hours)'],
+          documentation: data['Documentation requirements'],
           promotions: data['Promotions'],
           service_quality: data['Service quality']
         }
