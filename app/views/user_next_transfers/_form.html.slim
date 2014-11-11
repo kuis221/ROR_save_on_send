@@ -10,6 +10,11 @@
       .input-group
         .input-group-addon USD
         = f.text_field :amount_send, class: 'form-control'
+  // receive currency
+  .form-group
+    = f.label :receive_currency, class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.select :receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] },{}, {class: 'form-control'}
   // amount receive
   .form-group
     = f.label :amount_receive, class: 'col-sm-4 control-label'
@@ -17,12 +22,7 @@
       .input-group
         .input-group-addon#amount_receive_currency= @user_next_transfer.receive_currency || current_user.prefered_currency.first
         = f.text_field :amount_receive, class: 'form-control' 
-  // receive currency
-  .form-group
-    = f.label :receive_currency, class: 'col-sm-4 control-label'
-    .col-sm-8
-      = f.select :receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] },{}, {class: 'form-control'}
-    // originating source of funds
+  // originating source of funds
   .form-group
     = f.label :originating_source_of_funds_id, class: 'col-sm-4 control-label'
     .col-sm-8
