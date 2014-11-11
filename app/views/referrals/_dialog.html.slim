@@ -1,0 +1,11 @@
+.modal.fade#referral_dialog role="dialog" aria-labelledby="referral_dialog_label" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close type="button" data-dismiss="modal"
+          span aria-hidden="true" &times;
+          span class="sr-only" Close
+        h4.modal-title#referall_dialog_label 
+          | Please help us to improve the site and let others know how to save money
+        .modal-body
+          = render 'referrals/form'

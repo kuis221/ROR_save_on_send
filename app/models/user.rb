@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :recent_transactions, class: User::RecentTransaction
   has_many :next_transfers, class: User::NextTransfer
 
+  has_many :referrals
+
   # validations
   validates_presence_of :first_name
   validates_presence_of :zipcode

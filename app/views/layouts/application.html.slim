@@ -33,7 +33,7 @@ html lang="en"
               - if current_user && current_user.recent_transactions.present?
                 li= link_to "Add recent transaction", new_user_recent_transaction_path
                 li= link_to "Next transfer", new_user_next_transfer_path
-              //li= link_to "Link 3", "/path3"
+                li= link_to "Help us!", "#", "data-toggle"=>"modal", "data-target"=>"#referral_dialog"
             ul.nav.navbar-nav.navbar-right
               - if user_signed_in?
                 li.navbar-text= current_user.full_name
@@ -55,3 +55,6 @@ html lang="en"
 
       footer
         p &copy; Company 2014
+
+
+= render 'referrals/dialog'

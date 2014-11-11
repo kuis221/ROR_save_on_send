@@ -35,4 +35,8 @@
   // actions
   .form-group
     .col-sm-offset-2.col-sm-10
-      = f.submit "Submit", class: 'btn btn-primary btn-lg'
+      - if params[:action] == 'show' && current_user.referrals.empty?
+        button.btn.btn-primary.brn-lg type="button" data-toggle="modal" data-target="#referral_dialog" Submit
+      - else
+        = f.submit "Submit", class: 'btn btn-primary btn-lg'
+      
