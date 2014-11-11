@@ -1,5 +1,5 @@
 tr *{class: remittance_term_counter == 0 ? [:success] : []}
-  td= remittance_term.service_provider.name
+  td= link_to(remittance_term.service_provider.name, remittance_term.service_provider.landing_page, target: '_new')
   td
     | #{remittance_term.send_method.slug} 
       - #{remittance_term.receive_method.slug}
