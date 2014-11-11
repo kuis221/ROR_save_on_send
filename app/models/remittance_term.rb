@@ -9,10 +9,24 @@ class RemittanceTerm < ActiveRecord::Base
   # Use model level currency
   register_currency :usd
 
+  def send_amount_with_fee(amount)
+    amount_with_fee = amount + fees_for_sending
+    amount_with_fee += (amount*fees_for_sending_percent)/100 if fees_for_sending_percent > 0
+    amount_with_fee
+  end
+
+  def all_fees(amount)
+    amount.to_i/100.0*fees_for_sending.to_i + fees_for_sending_percent + fx_markup
+  end
+
+  def estimated_receive_amount(amount, currency)
+    (amount - amount*fx_markup/100).exchange_to(currency)
+  end
+
   def self.least_expensive(amount_send: nil, receive_country: nil, receive_currency: nil)
     return if amount_send.nil? || receive_country.nil? || receive_currency.nil?
   
-    select_query = %Q{*, (fees_for_sending_cents::FLOAT/#{amount_send.cents} + 
+    select_query = %Q{*, (#{amount_send.to_i}*fees_for_sending_cents::FLOAT/10000 + 
                           fees_for_sending_percent + fx_markup) as expense}
 
     RemittanceTerm.where(receive_country: receive_country, 

@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe RemittanceTerm do
   let!(:mexico){FactoryGirl.create(:mexico)}
+  let(:remittance_term){FactoryGirl.create(:remittance_term, :western_union_mexico)}
 
   before do
     # stub csv data
@@ -23,6 +24,36 @@ describe RemittanceTerm do
     FactoryGirl.create(:payment_method, :cash)
   end
 
+  describe '#send_amount_with_fee' do 
+    it 'should return send amount with sending fee' do
+      expect(
+        remittance_term.send_amount_with_fee(Money.new(10000, 'USD'))
+      ).to eq(104)
+    end
+  end
+
+  describe '#all_fees' do
+    it 'should return all the fees' do
+      expect(
+        remittance_term.all_fees(Money.new(1000, 'USD'))
+      ).to eq(2.83)
+    end
+  end
+
+  describe '#estimated_receive_amount' do
+    it 'should return amount that user will receive in indian rupee' do
+      expect(
+        remittance_term.estimated_receive_amount(Money.new(10000, 'USD'), 'INR')
+      ).to eq(Money.new(599079, 'INR'))
+    end
+
+    it 'should return amount that user will receive in usd' do
+      expect(
+        remittance_term.estimated_receive_amount(Money.new(10000, 'USD'), 'USD')
+      ).to eq(Money.new(9757, 'USD'))
+    end
+  end
+
   describe '.least_expensive' do
     before do
       RemittanceTerm.import_from_csv
@@ -36,7 +67,7 @@ describe RemittanceTerm do
       expect(least_expensive.send_method.slug).to eq('cash')
       expect(least_expensive.receive_method.slug).to eq('bank')
       expect(least_expensive.service_provider.name).to eq('Western Union')
-      expect(least_expensive.expense).to eq(2.57)
+      expect(least_expensive.expense).to eq(4.49)
     end
   end
 
@@ -50,10 +81,10 @@ describe RemittanceTerm do
                 amount_send: Money.new(5000, 'USD'),
                 receive_country: mexico,
                 receive_currency: 'MXN',
-                transaction_cost: Money.new(2900, 'MXN')
+                transaction_cost: Money.new(3300, 'MXN')
       )
 
-      expect(amount_save).to eq(Money.new(1158, 'MXN'))
+      expect(amount_save).to eq(Money.new(252, 'MXN'))
     end
   end
 

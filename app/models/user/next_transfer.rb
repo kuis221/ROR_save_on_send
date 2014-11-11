@@ -17,6 +17,11 @@ class User::NextTransfer < ActiveRecord::Base
   validates_numericality_of :amount_send, greater_than: 0, unless: :amount_receive_present?
   validates_numericality_of :amount_receive, greater_than: 0, unless: :amount_send_present?
 
+  def payment_methods_same_as(remittance_term)
+    originating_source_of_funds == remittance_term.send_method &&
+      destination_preference_for_funds == remittance_term.receive_method
+  end
+
   private
   def amount_send_present?
     amount_send_cents > 0

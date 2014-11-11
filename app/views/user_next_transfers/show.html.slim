@@ -1,0 +1,20 @@
+h2
+  | Let’s find the best provider for your next transfer
+= render 'form'
+
+- @highlight_column = false
+
+table.table
+  thead
+    tr
+      th Provider name
+      th To-From transfer medium
+      th Send amount
+      th Fees
+      th Net received amount
+      th Duration
+      th Documentation requirements
+      th Promotions
+      th Service quality
+  tbody
+    = render @least_expensive_remittance_terms

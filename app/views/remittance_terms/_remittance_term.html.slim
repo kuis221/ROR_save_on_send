@@ -1,0 +1,20 @@
+- tr_class = []
+
+- if !@highlight_column && @user_next_transfer.payment_methods_same_as(remittance_term)
+  - @highlight_column = true
+  - tr_class = [:success]
+
+tr *{class: tr_class}
+  td= remittance_term.service_provider.name
+  td
+    | #{remittance_term.send_method.slug} 
+      - #{remittance_term.receive_method.slug}
+  td= remittance_term.send_amount_with_fee(@user_next_transfer.amount_send)
+  td= remittance_term.all_fees(@user_next_transfer.amount_send)
+  td
+    | #{@user_next_transfer.receive_currency}&nbsp;
+      #{humanized_money(remittance_term.estimated_receive_amount(@user_next_transfer.amount_send, @user_next_transfer.receive_currency))}
+  td= remittance_term.duration
+  td= remittance_term.documentation
+  td= remittance_term.promotions
+  td= remittance_term.service_quality
