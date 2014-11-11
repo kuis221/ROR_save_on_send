@@ -13,7 +13,10 @@ class UserNextTransfersController < ApplicationController
     @least_expensive_remittance_terms = RemittanceTerm.least_expensive(
         amount_send: @user_next_transfer.amount_send, 
         receive_country: destination_country,
-        receive_currency: @user_next_transfer.receive_currency)
+        receive_currency: @user_next_transfer.receive_currency,
+        send_method: @user_next_transfer.originating_source_of_funds,
+        receive_method: @user_next_transfer.destination_preference_for_funds
+    )
   end
 
   def create

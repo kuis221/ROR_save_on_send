@@ -23,18 +23,23 @@ class RemittanceTerm < ActiveRecord::Base
     (amount - amount*fx_markup/100).exchange_to(currency)
   end
 
-  def self.least_expensive(amount_send: nil, receive_country: nil, receive_currency: nil)
+  def self.least_expensive(amount_send: nil, receive_country: nil, receive_currency: nil, send_method: nil, receive_method: nil)
     return if amount_send.nil? || receive_country.nil? || receive_currency.nil?
   
     select_query = %Q{*, (#{amount_send.to_i}*fees_for_sending_cents::FLOAT/10000 + 
                           fees_for_sending_percent + fx_markup) as expense}
 
-    RemittanceTerm.where(receive_country: receive_country, 
+    least_expensive_services = RemittanceTerm.where(receive_country: receive_country, 
                          receive_currency: receive_currency)
                   .where("#{amount_send.to_i} >= send_amount_range_from AND " +
                          "#{amount_send.to_i} <= send_amount_range_to")
                   .select(select_query)
                   .order('expense')
+
+    least_expensive_services = least_expensive_services.where(send_method: send_method) if send_method.present?
+    least_expensive_services = least_expensive_services.where(receive_method: receive_method) if receive_method.present?
+  
+    least_expensive_services
   end
 
   def self.amount_save_on_transaction(amount_send: nil, receive_country: nil, receive_currency: nil, transaction_cost: nil)

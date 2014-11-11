@@ -1,10 +1,4 @@
-- tr_class = []
-
-- if !@highlight_column && @user_next_transfer.payment_methods_same_as(remittance_term)
-  - @highlight_column = true
-  - tr_class = [:success]
-
-tr *{class: tr_class}
+tr *{class: remittance_term_counter == 0 ? [:success] : []}
   td= remittance_term.service_provider.name
   td
     | #{remittance_term.send_method.slug} 

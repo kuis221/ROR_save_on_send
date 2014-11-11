@@ -88,7 +88,7 @@ describe RemittanceTerm do
     end
   end
 
-  describe '.import_from_csv', :focus do 
+  describe '.import_from_csv' do 
     it 'should import 5 records from csv to db' do
       expect{
         RemittanceTerm.import_from_csv
