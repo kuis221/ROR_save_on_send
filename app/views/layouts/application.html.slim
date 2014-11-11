@@ -32,7 +32,7 @@ html lang="en"
             ul.nav.navbar-nav
               - if current_user && current_user.recent_transactions.present?
                 li= link_to "Add recent transaction", new_user_recent_transaction_path
-              //li= link_to "Link 2", "/path2"
+                li= link_to "Next transfer", new_user_next_transfer_path
               //li= link_to "Link 3", "/path3"
             ul.nav.navbar-nav.navbar-right
               - if user_signed_in?

@@ -35,7 +35,7 @@ class UserRecentTransactionsController < ApplicationController
           "#{more_money} more #{more_money.currency.iso_code}"
       end
       
-      redirect_to(welcome_path, notice: notice)
+      redirect_to(new_user_next_transfer_path, notice: notice)
     else
       render :new
     end

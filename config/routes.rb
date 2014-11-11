@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'welcome' => 'welcome#index'
 
   resource :user_recent_transaction, only: [:new, :create]
+  resource :user_next_transfer, only: [:new, :create]
 end
