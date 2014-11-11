@@ -24,7 +24,7 @@ class RemittanceTerm < ActiveRecord::Base
   end
 
   def self.amount_save_on_transaction(amount_send: nil, receive_country: nil, receive_currency: nil, transaction_cost: nil)
-    result = nil
+    result = 0
 
     least_expensive_service = least_expensive(amount_send: amount_send, 
                                       receive_country: receive_country, 
