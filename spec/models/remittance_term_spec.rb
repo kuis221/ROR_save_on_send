@@ -36,7 +36,7 @@ describe RemittanceTerm do
     it 'should return all the fees' do
       expect(
         remittance_term.all_fees(Money.new(1000, 'USD'))
-      ).to eq(2.83)
+      ).to eq(2.43)
     end
   end
 
@@ -44,7 +44,7 @@ describe RemittanceTerm do
     it 'should return amount that user will receive in indian rupee' do
       expect(
         remittance_term.estimated_receive_amount(Money.new(10000, 'USD'), 'INR')
-      ).to eq(Money.new(599079, 'INR'))
+      ).to eq(Money.new(599080, 'INR'))
     end
 
     it 'should return amount that user will receive in usd' do
@@ -67,7 +67,7 @@ describe RemittanceTerm do
       expect(least_expensive.send_method.slug).to eq('cash')
       expect(least_expensive.receive_method.slug).to eq('bank')
       expect(least_expensive.service_provider.name).to eq('Western Union')
-      expect(least_expensive.expense).to eq(4.49)
+      expect(least_expensive.expense).to eq(2.49)
     end
   end
 
@@ -84,7 +84,7 @@ describe RemittanceTerm do
                 transaction_cost: Money.new(3300, 'MXN')
       )
 
-      expect(amount_save).to eq(Money.new(252, 'MXN'))
+      expect(amount_save).to eq(Money.new(1613, 'MXN'))
     end
   end
 

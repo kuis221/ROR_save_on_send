@@ -3,11 +3,22 @@ tr *{class: remittance_term_counter == 0 ? [:success] : []}
   td
     | #{remittance_term.send_method.slug} 
       - #{remittance_term.receive_method.slug}
-  td= remittance_term.send_amount_with_fee(@user_next_transfer.amount_send)
-  td= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_send), precision: 2)
-  td
-    | #{@user_next_transfer.receive_currency}&nbsp;
-      #{humanized_money(remittance_term.estimated_receive_amount(@user_next_transfer.amount_send, @user_next_transfer.receive_currency))}
+  - if @user_next_transfer.amount_send > 0
+    td= humanized_money_with_symbol(remittance_term.send_amount_with_fee(@user_next_transfer.amount_send))
+  - else
+    td= humanized_money_with_symbol(remittance_term.estimated_send_amount(@user_next_transfer.amount_receive, @user_next_transfer.receive_currency))
+  - if @user_next_transfer.amount_send > 0
+    td= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_send), precision: 2)
+  - else
+    td= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_receive), precision: 2)
+  - if @user_next_transfer.amount_send > 0
+    td
+      | #{@user_next_transfer.receive_currency}&nbsp;
+        #{humanized_money(remittance_term.estimated_receive_amount(@user_next_transfer.amount_send, @user_next_transfer.receive_currency))}
+  - else
+    td
+      | #{@user_next_transfer.receive_currency}&nbsp;
+        #{humanized_money(@user_next_transfer.amount_receive)}
   td= remittance_term.duration
   td= remittance_term.documentation
   td= remittance_term.promotions

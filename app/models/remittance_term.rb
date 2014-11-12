@@ -16,24 +16,36 @@ class RemittanceTerm < ActiveRecord::Base
   end
 
   def all_fees(amount)
-    amount.to_i*fees_for_sending_cents/10000.0 + fees_for_sending_percent + fx_markup
+    fees_for_sending_cents/amount.cents*100 + fees_for_sending_percent + fx_markup
   end
 
   def estimated_receive_amount(amount, currency)
-    (amount - amount*fx_markup/100).exchange_to(currency)
+    amount = amount.exchange_to(currency)
+    amount - amount*fx_markup/100.0
   end
 
-  def self.least_expensive(amount_send: nil, receive_country: nil, receive_currency: nil, send_method: nil, receive_method: nil)
-    return if amount_send.nil? || receive_country.nil? || receive_currency.nil?
- 
+  def estimated_send_amount(amount, currency)
+    amount = (amount + amount*fx_markup/100.0).exchange_to('USD')
+    Money.new(amount + fees_for_sending + amount*fees_for_sending_percent/100.0)
+  end
+
+  def self.least_expensive(amount_send: nil, amount_receive: nil, receive_country: nil, receive_currency: nil, send_method: nil, receive_method: nil)
+    return if (amount_send == 0 && amount_receive == 0) || receive_country.nil? || receive_currency.nil?
+
+    amount =  if amount_send > 0 
+                amount_send 
+              else
+                amount_receive.exchange_to('USD')
+              end
+
     # same as all_fees
-    select_query = %Q{*, (#{amount_send.to_i}*fees_for_sending_cents::FLOAT/10000 + 
+    select_query = %Q{*, (fees_for_sending_cents/#{amount.cents}*100 + 
                           fees_for_sending_percent + fx_markup) as expense}
 
     least_expensive_services = RemittanceTerm.where(receive_country: receive_country, 
                          receive_currency: receive_currency)
-                  .where("#{amount_send.to_i} >= send_amount_range_from AND " +
-                         "#{amount_send.to_i} <= send_amount_range_to")
+                  .where("#{amount.to_i} >= send_amount_range_from AND " +
+                         "#{amount.to_i} <= send_amount_range_to")
                   .select(select_query)
                   .order('expense')
 
