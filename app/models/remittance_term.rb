@@ -36,10 +36,14 @@ class RemittanceTerm < ActiveRecord::Base
                   .select(select_query)
                   .order('expense')
 
-    least_expensive_services = least_expensive_services.where(send_method: send_method) if send_method.present?
-    least_expensive_services = least_expensive_services.where(receive_method: receive_method) if receive_method.present?
-  
-    least_expensive_services
+    if send_method && receive_method
+      least_expensive_services.to_a.keep_if do |item| 
+        (item == least_expensive_services.first) ||
+        (item.send_method == send_method && item.receive_method == receive_method)
+      end
+    else
+      least_expensive_services
+    end
   end
 
   def self.amount_save_on_transaction(amount_send: nil, receive_country: nil, receive_currency: nil, transaction_cost: nil)
