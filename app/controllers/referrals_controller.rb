@@ -2,7 +2,7 @@ class ReferralsController < ApplicationController
   before_filter :authenticate_user!
 
   def create
-    referral_attrs = params.require(:referral).permit(:email)
+    referral_attrs = params.require(:referral).permit(:comments, :email)
   
     current_user.referrals.create(referral_attrs)
 

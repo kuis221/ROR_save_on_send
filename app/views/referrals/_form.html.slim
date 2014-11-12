@@ -1,4 +1,10 @@
 = form_for(Referral.new, url: referrals_path, method: :post, html: {class: 'form-horizontal', role: 'form'}) do |f|
+  // comments
+  .form-group
+    = f.label :comments, class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_area :comments, class: 'form-control'
+
   // email
   .form-group
     = f.label :email, class: 'col-sm-4 control-label'
