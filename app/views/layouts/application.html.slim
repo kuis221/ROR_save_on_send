@@ -56,5 +56,5 @@ html lang="en"
       footer
         p &copy; Company 2014
 
-
-= render 'referrals/dialog'
+- if user_signed_in?
+  = render 'referrals/dialog'

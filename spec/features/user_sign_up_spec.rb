@@ -4,7 +4,7 @@ feature 'Sign up' do
   scenario 'visitor can sign up when provide all the information' do
     visit root_url
 
-    fill_in 'Email', with: Faker::Internet.email
+    fill_in 'user_email', with: Faker::Internet.email
     fill_in 'Password', with: 'password123'
     fill_in 'Password confirmation', with: 'password123'
     fill_in 'First name', with: Faker::Name.first_name
