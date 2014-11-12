@@ -70,7 +70,7 @@ class User::RecentTransaction < ActiveRecord::Base
     if currency == 'USD'
       fees_for_sending
     else
-      fees_for_sending.exchange_to(currency) + amount_sent.exchange_to(currency) - amount_received
+      (fees_for_sending + amount_sent).exchange_to(currency) - amount_received
     end
   end
 end
