@@ -35,8 +35,8 @@ describe RemittanceTerm do
   describe '#all_fees' do
     it 'should return all the fees' do
       expect(
-        remittance_term.all_fees(Money.new(1000, 'USD'))
-      ).to eq(2.43)
+        remittance_term.all_fees(Money.new(100000, 'USD'))
+      ).to eq(2.83)
     end
   end
 
@@ -67,7 +67,7 @@ describe RemittanceTerm do
       expect(least_expensive.send_method.slug).to eq('cash')
       expect(least_expensive.receive_method.slug).to eq('bank')
       expect(least_expensive.service_provider.name).to eq('Western Union')
-      expect(least_expensive.expense).to eq(2.49)
+      expect(least_expensive.expense).to eq(10.49)
     end
   end
 
@@ -81,10 +81,10 @@ describe RemittanceTerm do
                 amount_send: Money.new(5000, 'USD'),
                 receive_country: mexico,
                 receive_currency: 'MXN',
-                transaction_cost: Money.new(3300, 'MXN')
+                transaction_cost: Money.new(7300, 'MXN')
       )
 
-      expect(amount_save).to eq(Money.new(1613, 'MXN'))
+      expect(amount_save).to eq(Money.new(169, 'MXN'))
     end
   end
 

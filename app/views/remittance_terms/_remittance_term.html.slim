@@ -10,7 +10,7 @@ tr *{class: remittance_term_counter == 0 ? [:success] : []}
   - if @user_next_transfer.amount_send > 0
     td= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_send), precision: 2)
   - else
-    td= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_receive), precision: 2)
+    td= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_receive.exchange_to('USD')), precision: 2)
   - if @user_next_transfer.amount_send > 0
     td
       | #{@user_next_transfer.receive_currency}&nbsp;
