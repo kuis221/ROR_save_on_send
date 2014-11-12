@@ -16,7 +16,7 @@ class RemittanceTerm < ActiveRecord::Base
   end
 
   def all_fees(amount)
-    amount.to_i/100.0*fees_for_sending.to_i + fees_for_sending_percent + fx_markup
+    amount.to_i*fees_for_sending_cents/10000.0 + fees_for_sending_percent + fx_markup
   end
 
   def estimated_receive_amount(amount, currency)
@@ -25,7 +25,8 @@ class RemittanceTerm < ActiveRecord::Base
 
   def self.least_expensive(amount_send: nil, receive_country: nil, receive_currency: nil, send_method: nil, receive_method: nil)
     return if amount_send.nil? || receive_country.nil? || receive_currency.nil?
-  
+ 
+    # same as all_fees
     select_query = %Q{*, (#{amount_send.to_i}*fees_for_sending_cents::FLOAT/10000 + 
                           fees_for_sending_percent + fx_markup) as expense}
 
