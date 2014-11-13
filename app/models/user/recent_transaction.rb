@@ -68,7 +68,7 @@ class User::RecentTransaction < ActiveRecord::Base
     return if invalid?
 
     if currency == 'USD'
-      fees_for_sending
+      fees_for_sending + amount_sent - amount_received
     else
       (fees_for_sending + amount_sent).exchange_to(currency) - amount_received
     end

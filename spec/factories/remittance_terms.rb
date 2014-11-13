@@ -16,5 +16,22 @@ FactoryGirl.define do
       promotions                ''
       service_quality           ''
     end
+
+    trait :ria_china do
+      receive_country {FactoryGirl.create(:china)}
+      service_provider {FactoryGirl.create(:service_provider, :ria)}
+      send_method {FactoryGirl.create(:payment_method, :bank)}
+      receive_method {FactoryGirl.create(:payment_method, :bank)}
+      receive_currency 'USD'
+      send_amount_range_from    0
+      send_amount_range_to      200
+      fees_for_sending_cents    300
+      fees_for_sending_percent  0
+      fx_markup                 0
+      duration                  120
+      documentation             ''
+      promotions                ''
+      service_quality           ''
+    end
   end
 end

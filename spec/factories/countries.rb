@@ -8,5 +8,10 @@ FactoryGirl.define do
     name 'Mexico'
     currency_code 'MXN'
   end
+
+  factory :china, class: Country do
+    name 'China'
+    currency_code 'CNY'
+  end
 end
  

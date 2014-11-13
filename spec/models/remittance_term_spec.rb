@@ -76,7 +76,7 @@ describe RemittanceTerm do
       RemittanceTerm.import_from_csv
     end
 
-    it 'return amount which user can save on transaction' do
+    it 'should return amount which user can save on transaction' do
       amount_save = RemittanceTerm.amount_save_on_transaction(
                 amount_send: Money.new(5000, 'USD'),
                 receive_country: mexico,
@@ -85,6 +85,28 @@ describe RemittanceTerm do
       )
 
       expect(amount_save).to eq(Money.new(169, 'MXN'))
+    end
+
+    it 'should return $1 for USD - USD transaction to China' do
+      china = FactoryGirl.create(:china)
+      FactoryGirl.create(:remittance_term, :ria_china, receive_country: china)
+
+      recent_transaction = FactoryGirl.create(
+        :recent_transaction, 
+        amount_sent: 84, 
+        amount_received: 83, 
+        fees_for_sending: 3,
+        currency: 'USD'
+      )
+
+      amount_save = RemittanceTerm.amount_save_on_transaction(
+        amount_send: Money.new(8400, 'USD'),
+        receive_country: china,
+        receive_currency: 'USD',
+        transaction_cost: recent_transaction.total_cost
+      )
+
+      expect(amount_save).to eq(1)
     end
   end
 

@@ -56,7 +56,7 @@ describe User::RecentTransaction do
     it 'should calculate total cost for usd to usd transaction' do
       recent_transaction = FactoryGirl.build(:recent_transaction, currency: 'USD', amount_sent: 100, amount_received: 95, fees_for_sending: 5)
 
-      expect(recent_transaction.total_cost).to eq(Money.new(500, 'USD'))
+      expect(recent_transaction.total_cost).to eq(Money.new(1000, 'USD'))
     end
 
     it 'should calculate total cost for usd to destination currency transaction' do

@@ -7,5 +7,9 @@ FactoryGirl.define do
     trait :xoom do
       name 'Xoom'
     end
+
+    trait :ria do
+      name 'Ria'
+    end
   end
 end
