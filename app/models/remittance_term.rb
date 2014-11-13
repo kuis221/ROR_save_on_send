@@ -9,6 +9,8 @@ class RemittanceTerm < ActiveRecord::Base
   # Use model level currency
   register_currency :usd
 
+  attr_accessor :highlight
+
   def send_amount_with_fee(amount)
     amount_with_fee = amount + fees_for_sending
     amount_with_fee += (amount*fees_for_sending_percent)/100 if fees_for_sending_percent > 0
@@ -29,6 +31,10 @@ class RemittanceTerm < ActiveRecord::Base
     Money.new(amount + fees_for_sending + amount*fees_for_sending_percent/100.0)
   end
 
+  def highlight?
+    !!highlight
+  end
+
   def self.least_expensive(amount_send: nil, amount_receive: nil, receive_country: nil, receive_currency: nil, send_method: nil, receive_method: nil)
     return if (amount_send == 0 && amount_receive == 0) || receive_country.nil? || receive_currency.nil?
 
@@ -38,19 +44,38 @@ class RemittanceTerm < ActiveRecord::Base
                 amount_receive.exchange_to('USD')
               end
 
+    order_by = ['expense']
+
     # same as all_fees
     select_query = %Q{*, (fees_for_sending_cents::FLOAT/#{amount.cents}*100 + 
                           fees_for_sending_percent + fx_markup) as expense}
+
+    if send_method && receive_method
+      select_query += %Q{
+        , (send_method_id = #{send_method.id} AND receive_method_id = #{receive_method.id}) 
+        as same_methods 
+      }
+
+      order_by += ['same_methods DESC']
+    end
 
     least_expensive_services = RemittanceTerm.where(receive_country: receive_country, 
                          receive_currency: receive_currency)
                   .where("#{amount.to_i} >= send_amount_range_from AND " +
                          "#{amount.to_i} <= send_amount_range_to")
                   .select(select_query)
-                  .order('expense')
+                  .order(order_by)
 
     if send_method && receive_method
-      least_expensive_services.to_a.keep_if do |item| 
+      filtered_least_expensive_services = least_expensive_services.to_a 
+      
+      if filtered_least_expensive_services.first.send_method != send_method ||
+          filtered_least_expensive_services.first.receive_method != receive_method
+
+        filtered_least_expensive_services.first.highlight = true
+      end
+
+      filtered_least_expensive_services.to_a.keep_if do |item| 
         (item == least_expensive_services.first) ||
         (item.send_method == send_method && item.receive_method == receive_method)
       end
