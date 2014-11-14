@@ -19,19 +19,13 @@ class UserRecentTransactionsController < ApplicationController
     if @user_recent_transaction.persisted?
       notice = "Congratulation! You've chosen provider with the best rate."
 
-      destination_country = current_user.money_transfer_destination
-      transaction_cost = @user_recent_transaction.total_cost
-      
-      more_money = RemittanceTerm.amount_save_on_transaction(
-        amount_send: @user_recent_transaction.amount_sent, 
-        receive_country: destination_country,
-        receive_currency: @user_recent_transaction.currency,
-        transaction_cost: transaction_cost)
-      
+      more_money = RemittanceTerm.save_on_transaction(@user_recent_transaction)
        
       if more_money > 0
+        destination_country = current_user.money_transfer_destination.name
+
         notice = "On your last transaction, your recipient in " +
-          "#{destination_country.name} could have received " +
+          "#{destination_country} could have received " +
           "#{more_money} more #{more_money.currency.iso_code}"
       end
       

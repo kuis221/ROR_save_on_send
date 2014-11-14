@@ -31,6 +31,17 @@ class RemittanceTerm < ActiveRecord::Base
     Money.new(amount + fees_for_sending + amount*fees_for_sending_percent/100.0)
   end
 
+  def transaction_cost(amount, currency)
+    cost = 0
+
+    if expense > 0
+      cost = Money.new(amount*expense/100, 'USD')
+      cost = cost.exchange_to(receive_currency) if currency != 'USD'
+    end
+
+    cost
+  end
+
   def highlight?
     !!highlight
   end
@@ -84,26 +95,24 @@ class RemittanceTerm < ActiveRecord::Base
     end
   end
 
-  def self.amount_save_on_transaction(amount_send: nil, receive_country: nil, receive_currency: nil, transaction_cost: nil)
-    result = 0
+  def self.save_on_transaction(transaction)
+    saving = 0
+
+    amount_send = transaction.amount_sent
+    receive_currency = transaction.currency
+    receive_country = transaction.user.money_transfer_destination 
 
     least_expensive_service = least_expensive(amount_send: amount_send, 
                                       receive_country: receive_country, 
                                       receive_currency: receive_currency).first
-    
+   
     if least_expensive_service
-      least_expensive_transaction_cost = 
-        Money.new(amount_send*least_expensive_service.expense/100, 'USD')
-      
-      if receive_currency != 'USD'
-        least_expensive_transaction_cost = 
-          least_expensive_transaction_cost.exchange_to(receive_currency)
-      end
-      
-      result =  transaction_cost - least_expensive_transaction_cost
+      fx_markup = least_expensive_service.fx_markup
+      saving = transaction.total_cost(fx_markup) -
+        least_expensive_service.transaction_cost(amount_send, receive_currency)
     end
 
-    result
+    saving > 0 ? saving : 0
   end
   
   def self.import_from_csv(csv_path = nil)

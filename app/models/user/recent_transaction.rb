@@ -64,13 +64,14 @@ class User::RecentTransaction < ActiveRecord::Base
     end
   end
 
-  def total_cost
+  def total_cost(fx_markup = 0)
     return if invalid?
 
     if currency == 'USD'
       fees_for_sending + amount_sent - amount_received
     else
-      (fees_for_sending + amount_sent).exchange_to(currency) - amount_received
+      fx_markup_rate = fx_markup != 0 ? 1 - fx_markup.fdiv(100) : 1
+      (fees_for_sending + amount_sent).exchange_to(currency)*fx_markup_rate - amount_received
     end
   end
 end
