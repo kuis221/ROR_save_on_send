@@ -3,6 +3,8 @@ tr *{class: remittance_term.highlight? ? [:success] : []}
   td
     | #{remittance_term.send_method.slug} 
       - #{remittance_term.receive_method.slug}
+    .hidden.send_method_id= remittance_term.send_method.id
+    .hidden.receive_method_id= remittance_term.receive_method.id
   - if @user_next_transfer.amount_send > 0
     td= humanized_money_with_symbol(remittance_term.send_amount_with_fee(@user_next_transfer.amount_send))
   - else

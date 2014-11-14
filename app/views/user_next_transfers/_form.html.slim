@@ -1,4 +1,4 @@
-= form_for(@user_next_transfer, url: user_next_transfers_path, method: :post, html: {class: 'form-horizontal', role: 'form'}) do |f|
+= form_for(@user_next_transfer, url: user_next_transfers_path, method: :post, html: {class: 'form-horizontal user_next_transfer', role: 'form'}) do |f|
   // errors
   - @user_next_transfer.errors.full_messages.each do |err_msg|
     .bg-warning= err_msg
