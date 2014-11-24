@@ -4,7 +4,7 @@ html lang="en"
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    title= content_for?(:title) ? yield(:title) : "Save on Send"
+    title= content_for?(:title) ? yield(:title) : t('.title')
     = csrf_meta_tags
 
     /! Le HTML5 shim, for IE6-8 support of HTML elements
@@ -27,17 +27,17 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          = link_to "Save On Send", root_path, class: 'navbar-brand'
+          = link_to t('.title'), root_path, class: 'navbar-brand'
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
               - if current_user && current_user.recent_transactions.present?
-                li= link_to "Add recent transaction", new_user_recent_transaction_path
-                li= link_to "Next transfer", new_user_next_transfer_path
-                li= link_to "Help others", "#", "data-toggle"=>"modal", "data-target"=>"#referral_dialog"
+                li= link_to t('.add_recent_transaction'), new_user_recent_transaction_path
+                li= link_to t('.next_transfer'), new_user_next_transfer_path
+                li= link_to t('.help_others'), "#", "data-toggle"=>"modal", "data-target"=>"#referral_dialog"
             ul.nav.navbar-nav.navbar-right
               - if user_signed_in?
                 li.navbar-text= current_user.full_name
-                li= link_to "Sign out", destroy_user_session_path, method: :delete
+                li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
 
     .container
       .row

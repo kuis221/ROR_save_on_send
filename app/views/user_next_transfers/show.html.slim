@@ -1,5 +1,4 @@
-h2
-  | Let’s find the best provider for your next transfer
+h2= t('.title')
 = render 'form'
 
 - @highlight_column = false
@@ -7,14 +6,14 @@ h2
 table.table
   thead
     tr
-      th Provider name
-      th To-From transfer medium
-      th Gross paid amount
-      th Real cost
-      th Net received amount
-      th Duration (hours)
-      th Documentation requirements
-      th Promotions
-      th Service quality
+      th= t('.provider_name')
+      th= t('.to_from_transfer_media')
+      th= t('.gross_paid_amount')
+      th= t('.real_cost')
+      th= t('.net_received_amount')
+      th= t('.duration')
+      th= t('.documentation_requirements')
+      th= t('.promotions')
+      th= t('.service_quality')
   tbody
     = render @least_expensive_remittance_terms

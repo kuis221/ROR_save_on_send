@@ -5,7 +5,6 @@
         button.close type="button" data-dismiss="modal"
           span aria-hidden="true" &times;
           span class="sr-only" Close
-        h4.modal-title#referall_dialog_label 
-          | Please help us to improve the site and let others know how to save money
+        h4.modal-title#referall_dialog_label= t('.title')
         .modal-body
           = render 'referrals/form'

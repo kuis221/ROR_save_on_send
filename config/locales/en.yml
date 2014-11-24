@@ -1,29 +1,76 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
+  layouts:
+    application:
+      title: Save on Send
+      add_recent_transaction: Add recent transaction
+      next_transfer: Next transfer
+      help_others: Help others
+      sign_out: Sign out
+  user_recent_transactions:
+    new:
+      title: User recent transaction
+      photo_id: Photo ID
+      tax_returns: Tax returns
+      job_verification: Job verification
+      submit: Submit
+  user_next_transfers:
+    new:
+      title: Let’s find the best provider for your next transfer
+    show:
+      title: Let’s find the best provider for your next transfer
+      provider_name: Provider name
+      to_from_transfer_media: To-From transfer medium
+      gross_paid_amount: Gross paid amount
+      real_cost: Real cost
+      net_received_amount: Net received amount
+      duration: Duration (hours)
+      documentation_requirements: Documentation requirements
+      promotions: Promotions
+      service_quality: Service quality
+    form:
+      submit: Submit
+  referrals:
+    dialog:
+      title: Please help us to improve the site and let others know how to save money
+  devise:
+    registrations:
+      new:
+        password_length: "(%{minimum_password_length} characters minimum)"
+        sign_up: Sign up
+    sessions:
+      new:
+        remember_me: Remember me
+        log_in: Log in
   activerecord:
     attributes:
+      user:
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        first_name: First name
+        last_name: Last name
+        Zipcode: Zipcode
+        money_transfer_destination: Money transfer destination
       user/recent_transaction:
-          currency: To which currency?
-          originating_source_of_funds_id: Sending type
-          destination_preference_for_funds_id: Receiving type
-
+        date: Date
+        currency: To which currency?
+        amount_sent: Amount sent
+        amount_received: Amount received
+        originating_source_of_funds_id: Sending type
+        service_provider_id: Service provider
+        destination_preference_for_funds_id: Receiving type
+        fees_for_sending: Fee for sending
+        send_to_receive_duration: Send to receive duration
+        documentation_requirements: Documentation requirements
+        promotion: Promotion
+        service_quality: Service quality
+        comments: Comments
+      user/next_transfer:
+        amount_send: Amount send
+        receive_currency: Receive currency
+        amount_receive: Amount receive
+        originating_source_of_funds_id: Originating source of funds
+        destination_preference_for_funds_id: Destination preference for funds
+      referral:
+        comments: Comments
+        email: Email

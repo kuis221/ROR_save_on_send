@@ -1,5 +1,4 @@
-h2
-  | Log in
+h2= t('.log_in')
 = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
   .form-group
     = f.label :email, class: 'col-sm-2 control-label'
@@ -15,7 +14,7 @@ h2
         .checkbox
           label
             = f.check_box :remember_me
-            | Remember me
+            = t('.remember_me')
   .form-group
     .col-sm-10.col-sm-offset-2
-      = f.submit "Log in", class: 'btn btn-primary btn-lg'
+      = f.submit t('.log_in'), class: 'btn btn-primary btn-lg'

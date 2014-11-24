@@ -1,5 +1,4 @@
-h2
-  | User recent transaction
+h2= t('.title')
 = form_for(@user_recent_transaction, url: user_recent_transaction_path, html: {class: 'form-horizontal', role: 'form'}) do |f|
   // errors
   - @user_recent_transaction.errors.full_messages.each do |err_msg|
@@ -70,15 +69,15 @@ h2
       .checkbox
         label
           = f.check_box :documentation_requirements, {multiple: true}, 'Photo ID', ''
-          | Photo ID
+          = t('.photo_id')
       .checkbox
         label.checkbox-inline
           = f.check_box :documentation_requirements, {multiple: true}, 'Tax returns', ''
-          | Tax returns
+          = t('.tax_returns') 
       .checkbox
         label.checkbox-inline
           = f.check_box :documentation_requirements, {multiple: true}, 'Job verification', ''
-          | Job verification
+          = t('.job_verification') 
   // fees for sending
   .form-group
     = f.label :promotion, class: 'col-sm-4 control-label'
@@ -97,7 +96,7 @@ h2
   // actions
   .form-group
     .col-sm-offset-2.col-sm-10
-      = f.submit "Submit", class: 'btn btn-primary btn-lg'
+      = f.submit t('.submit'), class: 'btn btn-primary btn-lg'
 
 
 

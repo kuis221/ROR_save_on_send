@@ -1,0 +1,76 @@
+es:
+  layouts:
+    application:
+      title: Save on Send
+      add_recent_transaction: Añadir reciente transacción
+      next_transfer: Transferencia siguiente
+      help_others: Ayudar a los demás
+      sign_out: Desconectar
+  user_recent_transactions:
+    new:
+      title: Usuario reciente transacción
+      photo_id: Identificación con foto
+      tax_returns: Las declaraciones de impuestos
+      job_verification: Verificación de empleo
+      submit: Someter
+  user_next_transfers:
+    new:
+      title: Vamos a encontrar el mejor proveedor para su próxima transferencia
+    show:
+      title: Vamos a encontrar el mejor proveedor para su próxima transferencia
+      provider_name: Nombre del proveedor
+      to_from_transfer_media: To-De medio de transferencia
+      gross_paid_amount: Importe bruto pagado
+      real_cost: Coste real
+      net_received_amount: Importe recibido neto
+      duration: Duración (horas)
+      documentation_requirements: Los requisitos de documentación
+      promotions: Promociones
+      service_quality: La calidad del servicio
+    form:
+      submit: Someter
+  referrals:
+    dialog:
+      title: Por favor, ayúdenos a mejorar el sitio y dejar que los demás sepan cómo ahorrar dinero
+  devise:
+    registrations:
+      new:
+        password_length: "(%{minimum_password_length} caracteres como mínimo)"
+        sign_up: Contratar
+    sessions:
+      new:
+        remember_me: Acuérdate de mí
+        log_in: Iniciar sesión
+  activerecord:
+    attributes:
+      user:
+        email: Email
+        password: Contraseña
+        password_confirmation: Confirmación de la contraseña
+        first_name: Nombre de pila
+        last_name: Nombre de familia
+        Zipcode: Código postal
+        money_transfer_destination: Destino Transferencia de dinero
+      user/recent_transaction:
+        date: Fecha
+        currency: A lo que la moneda?
+        amount_sent: Monto enviado
+        amount_received: Importe recibido
+        originating_source_of_funds_id: Tipo envío
+        service_provider_id: Proveedor de servicios
+        destination_preference_for_funds_id: Tipo de recepción
+        fees_for_sending: Cuota para el envío
+        send_to_receive_duration: Enviar a recibir duración
+        documentation_requirements: Los requisitos de documentación 
+        promotion: Promoción
+        service_quality: La calidad del servicio
+        comments: Comentarios
+      user/next_transfer:
+        amount_send: Monto de envío
+        receive_currency: Recibe moneda
+        amount_receive: Monto recibir
+        originating_source_of_funds_id: Fuente de origen de fondos
+        destination_preference_for_funds_id: Preferencia de destino para los fondos
+      referral:
+        comments: Comentarios
+        email: Email

@@ -4,6 +4,7 @@ ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
+gem 'rails-i18n', '~> 4.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use slim for templates
@@ -39,6 +40,10 @@ gem 'rails_stdout_logging'
 
 # User authentication
 gem 'devise'
+gem 'devise-i18n'
+
+# Localization
+gem 'http_accept_language' 
 
 # admin part
 gem 'rails_admin'
