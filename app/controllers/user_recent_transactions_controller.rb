@@ -17,7 +17,7 @@ class UserRecentTransactionsController < ApplicationController
     @user_recent_transaction = current_user.recent_transactions.create(recent_transaction_attrs)
 
     if @user_recent_transaction.persisted?
-      notice = "Congratulations! Your recent transfer used the best approach!"
+      notice = I18n.t('notice.best_rate') 
 
       more_money = RemittanceTerm.save_on_transaction(@user_recent_transaction)
 
