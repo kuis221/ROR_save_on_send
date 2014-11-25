@@ -58,8 +58,8 @@ en:
         password_confirmation: Password confirmation
         first_name: First name
         last_name: Last name
-        Zipcode: Zipcode
-        money_transfer_destination: Money transfer destination
+        zipcode: Zipcode
+        money_transfer_destination_id: Money transfer destination
       user/recent_transaction:
         date: Date
         currency: To which currency?

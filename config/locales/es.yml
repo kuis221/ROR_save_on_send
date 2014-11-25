@@ -58,8 +58,8 @@ es:
         password_confirmation: Confirmación de la contraseña
         first_name: Nombre de pila
         last_name: Nombre de familia
-        Zipcode: Código postal
-        money_transfer_destination: Destino Transferencia de dinero
+        zipcode: Código postal
+        money_transfer_destination_id: Destino Transferencia de dinero
       user/recent_transaction:
         date: Fecha
         currency: A lo que la moneda?
