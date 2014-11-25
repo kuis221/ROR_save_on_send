@@ -17,16 +17,17 @@ class UserRecentTransactionsController < ApplicationController
     @user_recent_transaction = current_user.recent_transactions.create(recent_transaction_attrs)
     
     if @user_recent_transaction.persisted?
-      notice = "Congratulation! You've chosen provider with the best rate."
+      notice = I18n.t('notice.best_rate') 
 
       more_money = RemittanceTerm.save_on_transaction(@user_recent_transaction)
        
       if more_money > 0
         destination_country = current_user.money_transfer_destination.name
 
-        notice = "On your last transaction, your recipient in " +
-          "#{destination_country} could have received " +
-          "#{more_money} more #{more_money.currency.iso_code}"
+        notice = I18n.t('notice.save_on_transaction', 
+                        destination_country: destination_country, 
+                        saving: more_money, 
+                        currency: more_money.currency.iso_code)
       end
       
       redirect_to(new_user_next_transfer_path, notice: notice)

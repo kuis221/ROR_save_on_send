@@ -1,4 +1,8 @@
 es:
+  notice:
+    verification_email_was_sent: Verificación de correo electrónico fue enviado a su dirección de correo electrónico - por favor haga clic en enlace de ese correo electrónico para confirmar
+    best_rate: ¡Enhorabuena! Has elegido proveedor con la mejor tarifa.
+    save_on_transaction: "En su última transacción, su destinatario en %{destination_country} podría haber recibido más de %{saving} %{currency}"
   layouts:
     application:
       title: Save on Send
@@ -41,6 +45,11 @@ es:
       new:
         remember_me: Acuérdate de mí
         log_in: Iniciar sesión
+    mailer:
+      confirmation_instructions:
+        title: "¡Bienvenido %{email}!"
+        body: "Puede confirmar su cuenta de correo electrónico a través del siguiente enlace:"
+        confirm_my_account: Confirmar mi cuenta
   activerecord:
     attributes:
       user:
