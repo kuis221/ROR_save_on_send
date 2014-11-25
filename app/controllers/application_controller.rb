@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = http_accept_language.compatible_language_from([:en, :es])
+    if http_accept_language.header.present?
+      I18n.locale = http_accept_language.compatible_language_from([:en, :es])
+    else
+      I18n.locale = :en
+    end
   end
 end
