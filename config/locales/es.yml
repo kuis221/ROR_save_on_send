@@ -27,6 +27,7 @@ es:
       documentation_requirements: Los requisitos de documentación
       promotions: Promociones
       service_quality: La calidad del servicio
+      title_table: Las mejores opciones para su próximo traslado
     form:
       submit: Someter
   referrals:
@@ -61,7 +62,7 @@ es:
         destination_preference_for_funds_id: Tipo de recepción
         fees_for_sending: Cuota para el envío
         send_to_receive_duration: Enviar a recibir duración
-        documentation_requirements: Los requisitos de documentación 
+        documentation_requirements: Los requisitos de documentación
         promotion: Promoción
         service_quality: La calidad del servicio
         comments: Comentarios

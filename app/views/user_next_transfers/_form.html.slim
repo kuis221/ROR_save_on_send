@@ -2,26 +2,28 @@
   // errors
   - @user_next_transfer.errors.full_messages.each do |err_msg|
     .bg-warning= err_msg
-      
+
   // amount send
   .form-group
-    = f.label :amount_send, class: 'col-sm-4 control-label'
-    .col-sm-8
+    = f.label :amount_send, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
       .input-group
-        .input-group-addon USD
+        .input-group-addon
+          i.fa.fa-usd.fa-fw
         = f.text_field :amount_send, class: 'form-control'
   // receive currency
   .form-group
-    = f.label :receive_currency, class: 'col-sm-4 control-label'
-    .col-sm-8
+    = f.label :receive_currency, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
       = f.select :receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] },{}, {class: 'form-control'}
   // amount receive
   .form-group
-    = f.label :amount_receive, class: 'col-sm-4 control-label'
-    .col-sm-8
+    = f.label :amount_receive, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
       .input-group
-        .input-group-addon#amount_receive_currency= @user_next_transfer.receive_currency || current_user.prefered_currency.first
-        = f.text_field :amount_receive, class: 'form-control' 
+        .input-group-addon#amount_receive_currency
+          i.fa.fa-fw *{:class => ["fa-"+(@user_next_transfer.receive_currency || current_user.prefered_currency.first).downcase]}
+        = f.text_field :amount_receive, class: 'form-control'
   // originating source of funds
   .form-group
     = f.label :originating_source_of_funds_id, class: 'col-sm-4 control-label'
@@ -39,4 +41,4 @@
         button.btn.btn-primary.btn-lg type="button" data-toggle="modal" data-target="#referral_dialog" Submit
       - else
         = f.submit t('.submit'), class: 'btn btn-primary btn-lg'
-      
+
