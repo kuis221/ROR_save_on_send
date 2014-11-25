@@ -74,4 +74,18 @@ class User::RecentTransaction < ActiveRecord::Base
       (fees_for_sending + amount_sent).exchange_to(currency)*fx_markup_rate - amount_received
     end
   end
+
+  def self.duration_intervals_for_select
+    User::RecentTransaction::DURATION_INTERVALS.collect do |interval| 
+      interval_id = interval
+      
+      interval_text = if I18n == :en
+                        interval
+                      else
+                        I18n.t("datetime.prompts.#{interval.singularize}").pluralize.downcase
+                      end
+
+      [interval_text, interval_id]
+    end
+  end
 end

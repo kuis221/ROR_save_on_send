@@ -61,7 +61,7 @@ h2= t('.title')
     .col-sm-5
       = f.text_field :send_to_receive_duration, class: 'form-control'
     .col-sm-3
-      = f.select :send_to_receive_duration_interval, User::RecentTransaction::DURATION_INTERVALS.collect{|interval| [interval, interval]}, {}, {class: 'form-control'} 
+      = f.select :send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, {}, {class: 'form-control'} 
   // documentation requirements
   .form-group
     = f.label :documentation_requirements, class: 'col-sm-4 control-label'
