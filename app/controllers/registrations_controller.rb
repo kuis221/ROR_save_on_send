@@ -16,7 +16,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_inactive_sign_up_path_for(resource)
-    flash[:notice] = 'Verification email was sent to your email address - please click link in that email to confirm'
+    flash[:notice] = I18n.t('notice.verification_email_was_sent')
     welcome_path
   end
 end

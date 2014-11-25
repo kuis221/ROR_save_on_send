@@ -79,9 +79,10 @@ class RemittanceTerm < ActiveRecord::Base
 
     if send_method && receive_method
       filtered_least_expensive_services = least_expensive_services.to_a 
-      
-      if filtered_least_expensive_services.first.send_method != send_method ||
-          filtered_least_expensive_services.first.receive_method != receive_method
+     
+      if filtered_least_expensive_services.first.present? &&
+          (filtered_least_expensive_services.first.send_method != send_method ||
+          filtered_least_expensive_services.first.receive_method != receive_method)
 
         filtered_least_expensive_services.first.highlight = true
       end

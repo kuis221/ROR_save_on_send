@@ -65,4 +65,26 @@ describe User::RecentTransaction do
       expect(recent_transaction.total_cost).to eq(Money.new(79700, 'INR'))
     end
   end
+
+  describe '.duration_intervals_for_select' do
+    after do
+      I18n.locale = :en
+    end
+
+    it 'should return duration intervals in English' do
+      I18n.locale = :en
+
+      expect(User::RecentTransaction.duration_intervals_for_select).to eq(
+        [['minutes', 'minutes'], ['hours', 'hours'], ['days', 'days']]
+      )
+    end
+
+    it 'should return duration intervals in Spain' do
+      I18n.locale = :es
+
+      expect(User::RecentTransaction.duration_intervals_for_select).to eq(
+        [['minutos', 'minutes'], ['horas', 'hours'], ['días', 'days']]
+      )
+    end
+  end
 end
