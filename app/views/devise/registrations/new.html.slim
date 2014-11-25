@@ -3,42 +3,42 @@ h2= t('.sign_up')
   = devise_error_messages!
   // email
   .form-group
-    = f.label :email, class: 'col-sm-2 control-label'
-    .col-sm-10
+    = f.label :email, class: 'col-sm-4 control-label'
+    .col-sm-8
       = f.email_field :email, autofocus: true, class: 'form-control'
   // password
   .form-group
-    = f.label :password, class: 'col-sm-2 control-label'
-    .col-sm-10
+    = f.label :password, class: 'col-sm-4 control-label'
+    .col-sm-8
       = f.password_field :password, autocomplete: "off", class: 'form-control'
       - if @validatable
         em= t('.password_length', minimum_password_length: @minimum_password_length)
   // password confirmation
   .form-group
-    = f.label :password_confirmation, class: 'col-sm-2 control-label'
-    .col-sm-10
+    = f.label :password_confirmation, class: 'col-sm-4 control-label'
+    .col-sm-8
       = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
   // first name
   .form-group
-    = f.label :first_name, class: 'col-sm-2 control-label'
-    .col-sm-10
+    = f.label :first_name, class: 'col-sm-4 control-label'
+    .col-sm-8
       = f.text_field :first_name, class: 'form-control'
   // last name
   .form-group
-    = f.label :last_name, class: 'col-sm-2 control-label'
-    .col-sm-10
+    = f.label :last_name, class: 'col-sm-4 control-label'
+    .col-sm-8
       = f.text_field :last_name, class: 'form-control'
   // zipcode
   .form-group
-    = f.label :zipcode, class: 'col-sm-2 control-label'
-    .col-sm-10
+    = f.label :zipcode, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
       = f.text_field :zipcode, class: 'form-control'
   // money_transfer_destination
   .form-group
-    = f.label :money_transfer_destination_id, class: 'col-sm-2 control-label'
-    .col-sm-10
+    = f.label :money_transfer_destination_id, class: 'col-sm-4 control-label'
+    .col-sm-8
       = f.select :money_transfer_destination_id, Country.all.collect {|country| [ country.name, country.id ] }, {prompt: true}, {class: 'form-control'}
   // actions
   .form-group
-    .col-sm-offset-2.col-sm-10
+    .col-sm-offset-4.col-sm-8
       = f.submit t('.sign_up'), class: 'btn btn-primary btn-lg'

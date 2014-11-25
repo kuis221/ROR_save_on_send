@@ -6,28 +6,30 @@ h2= t('.title')
 
   // date
   .form-group
-    = f.label :date, class: 'col-sm-4 control-label'
-    .col-sm-8
+    = f.label :date, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
       = f.date_field :date, class: 'form-control'
   // currency
   .form-group
-    = f.label :currency, class: 'col-sm-4 control-label'
-    .col-sm-8
+    = f.label :currency, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
       = f.select :currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] },{}, {class: 'form-control'}
   // amount sent
   .form-group
-    = f.label :amount_sent, class: 'col-sm-4 control-label'
-    .col-sm-8
+    = f.label :amount_sent, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
       .input-group
-        .input-group-addon USD
-        = f.text_field :amount_sent, class: 'form-control' 
+        .input-group-addon
+          i.fa.fa-usd.fa-fw
+        = f.text_field :amount_sent, class: 'form-control', placeholder: '0'
   // amount received
   .form-group
-    = f.label :amount_received, class: 'col-sm-4 control-label'
-    .col-sm-8
+    = f.label :amount_received, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
       .input-group
-        .input-group-addon#amount_received_currency= @user_recent_transaction.currency || current_user.prefered_currency.first
-        = f.text_field :amount_received, class: 'form-control' 
+        .input-group-addon#amount_received_currency
+          i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || current_user.prefered_currency.first).downcase]}
+        = f.text_field :amount_received, class: 'form-control', placeholder: '0'
   // originating source of funds
   .form-group
     = f.label :originating_source_of_funds_id, class: 'col-sm-4 control-label'
@@ -45,23 +47,24 @@ h2= t('.title')
       = f.collection_select :destination_preference_for_funds_id, PaymentMethod.all, :id, :name, {prompt: true}, {class: 'form-control'}
   // fees for sending
   .form-group
-    = f.label :fees_for_sending, class: 'col-sm-4 control-label'
-    .col-sm-8
+    = f.label :fees_for_sending, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
       .input-group
-        .input-group-addon USD
-        = f.text_field :fees_for_sending, class: 'form-control'
+        .input-group-addon
+          i.fa.fa-usd.fa-fw
+        = f.text_field :fees_for_sending, class: 'form-control', placeholder: '0'
   // fees for receiving
   // .form-group
   //  = f.label :fees_for_receiving, class: 'col-sm-4 control-label'
   //  .col-sm-8
-  //    = f.text_field :fees_for_receiving, class: 'form-control' 
+  //    = f.text_field :fees_for_receiving, class: 'form-control'
   // send to receive duration
   .form-group
-    = f.label :send_to_receive_duration, class: 'col-sm-4 control-label'
-    .col-sm-5
-      = f.text_field :send_to_receive_duration, class: 'form-control'
-    .col-sm-3
-      = f.select :send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, {}, {class: 'form-control'} 
+    = f.label :send_to_receive_duration, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-4.col-lg-3
+      = f.text_field :send_to_receive_duration, class: 'form-control', placeholder: '0'
+    .col-xs-6.col-sm-4.col-lg-3
+      = f.select :send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, {}, {class: 'form-control'}      
   // documentation requirements
   .form-group
     = f.label :documentation_requirements, class: 'col-sm-4 control-label'
@@ -73,16 +76,16 @@ h2= t('.title')
       .checkbox
         label.checkbox-inline
           = f.check_box :documentation_requirements, {multiple: true}, 'Tax returns', ''
-          = t('.tax_returns') 
+          = t('.tax_returns')
       .checkbox
         label.checkbox-inline
           = f.check_box :documentation_requirements, {multiple: true}, 'Job verification', ''
-          = t('.job_verification') 
+          = t('.job_verification')
   // fees for sending
   .form-group
     = f.label :promotion, class: 'col-sm-4 control-label'
     .col-sm-8
-      = f.text_field :promotion, class: 'form-control' 
+      = f.text_field :promotion, class: 'form-control'
   // service quality
   .form-group
     = f.label :service_quality, class: 'col-sm-4 control-label'

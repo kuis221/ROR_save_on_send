@@ -1,5 +1,5 @@
 $(document).on 'change', 'select#user_next_transfer_receive_currency', (event) ->
-    $('#amount_receive_currency').text($(this).val())
+    $('#amount_receive_currency').html($('<i class="fa fa-fw fa-'+$(this).val().toLowerCase()+'">'))
 
 $(document).on 'click', 'tr.success', (event) ->
   $('#user_next_transfer_originating_source_of_funds_id')
