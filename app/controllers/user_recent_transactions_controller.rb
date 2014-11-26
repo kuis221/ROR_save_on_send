@@ -30,7 +30,7 @@ class UserRecentTransactionsController < ApplicationController
 
         notice = I18n.t('notice.save_on_transaction', 
                         destination_country: destination_country, 
-                        saving: more_money, 
+                        saving: more_money.to_i, 
                         currency: more_money.currency.iso_code)
       end
 
