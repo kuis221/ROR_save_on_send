@@ -24,14 +24,24 @@ describe User do
   end
 
   describe '#prefered_currency' do
-    let(:user){FactoryGirl.create(:user, money_transfer_destination: FactoryGirl.create(:india))}
+    let(:user){FactoryGirl.create(:user, money_transfer_destination: FactoryGirl.create(:china))}
     
     it 'should return USD as first currency' do
       expect(user.prefered_currency.first).to eq('USD')
     end
 
-    it 'should return INR as second transaction' do
-      expect(user.prefered_currency.last).to eq('INR')
+    it 'should return CNY as second transaction' do
+      expect(user.prefered_currency.last).to eq('CNY')
+    end
+
+    it 'should return only INR for user who specify India as money distination' do
+      user = FactoryGirl.create(:user, money_transfer_destination: FactoryGirl.create(:india))
+      expect(user.prefered_currency).to eq(['INR'])
+    end
+
+    it 'should return only MXN for user who specify Mexico as money distination' do
+      user = FactoryGirl.create(:user, money_transfer_destination: FactoryGirl.create(:mexico))
+      expect(user.prefered_currency).to eq(['MXN'])
     end
   end
 

@@ -11,11 +11,17 @@
         .input-group-addon
           i.fa.fa-usd.fa-fw
         = f.text_field :amount_send, class: 'form-control'
-  // receive currency
-  .form-group
-    = f.label :receive_currency, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.select :receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] },{}, {class: 'form-control'}
+  
+  - prefered_currency = current_user.prefered_currency
+  - if prefered_currency.size > 1
+    // receive currency
+    .form-group
+      = f.label :receive_currency, class: 'col-xs-12 col-sm-4 control-label'
+      .col-xs-6.col-sm-5.col-md-4.col-lg-3
+        = f.select :receive_currency, prefered_currency.collect {|currency| [ currency, currency ] },{}, {class: 'form-control'}
+  - else
+    = f.hidden_field :receive_currency, value: prefered_currency.first
+
   // amount receive
   .form-group
     = f.label :amount_receive, class: 'col-xs-12 col-sm-4 control-label'
