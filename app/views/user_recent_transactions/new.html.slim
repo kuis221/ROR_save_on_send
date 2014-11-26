@@ -57,10 +57,10 @@ h2= t('.title')
           i.fa.fa-usd.fa-fw
         = f.text_field :fees_for_sending, class: 'form-control', placeholder: '0'
   // fees for receiving
-  // .form-group
-  //  = f.label :fees_for_receiving, class: 'col-sm-4 control-label'
-  //  .col-sm-8
-  //    = f.text_field :fees_for_receiving, class: 'form-control'
+     .form-group
+      = f.label :fees_for_receiving, class: 'col-sm-4 control-label'
+      .col-sm-8
+        = f.text_field :fees_for_receiving, class: 'form-control'
   // send to receive duration
   .form-group
     = f.label :send_to_receive_duration, class: 'col-xs-12 col-sm-4 control-label'
@@ -84,11 +84,11 @@ h2= t('.title')
         label.checkbox-inline
           = f.check_box :documentation_requirements, {multiple: true}, 'Job verification', ''
           = t('.job_verification')
-  // fees for sending
-  .form-group
-    = f.label :promotion, class: 'col-sm-4 control-label'
-    .col-sm-8
-      = f.text_field :promotion, class: 'form-control'
+  // promotion
+    .form-group
+      = f.label :promotion, class: 'col-sm-4 control-label'
+      .col-sm-8
+        = f.text_field :promotion, class: 'form-control'
   // service quality
   .form-group
     = f.label :service_quality, class: 'col-sm-4 control-label'
