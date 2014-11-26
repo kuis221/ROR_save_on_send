@@ -1,4 +1,4 @@
-$(document).on 'change', 'select#user_next_transfer_receive_currency', (event) ->
+$(document).on 'click', '[name="user_next_transfer[receive_currency]"]', (event) ->
     $('#amount_receive_currency').html($('<i class="fa fa-fw fa-'+$(this).val().toLowerCase()+'">'))
 
 $(document).on 'click', 'tr.success', (event) ->
