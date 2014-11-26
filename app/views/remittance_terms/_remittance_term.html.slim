@@ -17,11 +17,11 @@ tr *{class: remittance_term.highlight? ? [:success] : []}
   - if @user_next_transfer.amount_send > 0
     td
       | #{@user_next_transfer.receive_currency}&nbsp;
-        #{humanized_money(remittance_term.estimated_receive_amount(@user_next_transfer.amount_send, @user_next_transfer.receive_currency))}
+        #{money_without_cents(remittance_term.estimated_receive_amount(@user_next_transfer.amount_send, @user_next_transfer.receive_currency))}
   - else
     td
       | #{@user_next_transfer.receive_currency}&nbsp;
-        #{humanized_money(@user_next_transfer.amount_receive)}
+        #{money_without_cents(@user_next_transfer.amount_receive)}
   td= remittance_term.duration
   //td= remittance_term.documentation
   //td= remittance_term.promotions

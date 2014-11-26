@@ -28,7 +28,7 @@ h2= t('.title')
       .input-group
         .input-group-addon
           i.fa.fa-usd.fa-fw
-        = f.text_field :amount_sent, class: 'form-control', placeholder: '0'
+        = money_field f, @user_recent_transaction, :amount_sent
   // amount received
   .form-group
     = f.label :amount_received, class: 'col-xs-12 col-sm-4 control-label'
@@ -36,7 +36,7 @@ h2= t('.title')
       .input-group
         .input-group-addon#amount_received_currency
           i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || current_user.prefered_currency.first).downcase]}
-        = f.text_field :amount_received, class: 'form-control', placeholder: '0'
+        = money_field f, @user_recent_transaction, :amount_received
   // originating source of funds
   .form-group
     = f.label :originating_source_of_funds_id, class: 'col-sm-4 control-label'
@@ -59,7 +59,7 @@ h2= t('.title')
       .input-group
         .input-group-addon
           i.fa.fa-usd.fa-fw
-        = f.text_field :fees_for_sending, class: 'form-control', placeholder: '0'
+        = money_field f, @user_recent_transaction, :fees_for_sending
   // fees for receiving
      .form-group
       = f.label :fees_for_receiving, class: 'col-sm-4 control-label'

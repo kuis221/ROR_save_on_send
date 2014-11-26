@@ -10,7 +10,7 @@
       .input-group
         .input-group-addon
           i.fa.fa-usd.fa-fw
-        = f.text_field :amount_send, class: 'form-control'
+        = money_field f, @user_next_transfer, :amount_send
   
   - prefered_currency = current_user.prefered_currency
   - if prefered_currency.size > 1
@@ -29,7 +29,7 @@
       .input-group
         .input-group-addon#amount_receive_currency
           i.fa.fa-fw *{:class => ["fa-"+(@user_next_transfer.receive_currency || current_user.prefered_currency.first).downcase]}
-        = f.text_field :amount_receive, class: 'form-control'
+        = money_field f, @user_next_transfer, :amount_receive
   // originating source of funds
   .form-group
     = f.label :originating_source_of_funds_id, class: 'col-sm-4 control-label'
