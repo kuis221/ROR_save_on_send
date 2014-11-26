@@ -16,8 +16,8 @@ h2= t('.title')
   - prefered_currency = current_user.prefered_currency
   - if prefered_currency.size > 1
     .form-group
-      = f.label :currency, class: 'col-xs-12 col-sm-4 control-label'
-      .col-xs-6.col-sm-5.col-md-4.col-lg-3
+      = f.label :currency, class: 'col-sm-4 control-label'
+      .col-sm-8
         = f.collection_radio_buttons(:currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: current_user.prefered_currency.collect.first}) do |b|
           = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
             = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
@@ -27,7 +27,7 @@ h2= t('.title')
   // amount sent
   .form-group
     = f.label :amount_sent, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
+    .col-xs-4.col-sm-4.col-md-3.col-lg-2
       .input-group
         .input-group-addon
           i.fa.fa-usd.fa-fw
@@ -35,7 +35,7 @@ h2= t('.title')
   // amount received
   .form-group
     = f.label :amount_received, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
+    .col-xs-4.col-sm-4.col-md-3.col-lg-2
       .input-group
         .input-group-addon#amount_received_currency
           i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || current_user.prefered_currency.first).downcase]}
@@ -69,22 +69,22 @@ h2= t('.title')
   // fees for sending
   .form-group
     = f.label :fees_for_sending, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
+    .col-xs-4.col-sm-4.col-md-3.col-lg-2
       .input-group
         .input-group-addon
           i.fa.fa-usd.fa-fw
         = money_field f, @user_recent_transaction, :fees_for_sending
   // fees for receiving
-     .form-group
-      = f.label :fees_for_receiving, class: 'col-sm-4 control-label'
-      .col-sm-8
-        = f.text_field :fees_for_receiving, class: 'form-control'
+  .form-group
+    = f.label :fees_for_receiving, class: 'col-sm-4 control-label'
+    .col-sm-8
+      = f.text_field :fees_for_receiving, class: 'form-control'
   // send to receive duration
   .form-group
     = f.label :send_to_receive_duration, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-4.col-lg-3
+    .col-xs-4.col-sm-3.col-md-2
       = f.text_field :send_to_receive_duration, class: 'form-control', placeholder: '0'
-    .col-xs-6.col-sm-4.col-lg-3
+    .col-xs-4.col-sm-4.col-md-3
       = f.select :send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, {}, {class: 'form-control'}
   // documentation requirements
   .form-group
