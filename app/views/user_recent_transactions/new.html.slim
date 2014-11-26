@@ -8,7 +8,10 @@ h2= t('.title')
   .form-group
     = f.label :date, class: 'col-xs-12 col-sm-4 control-label'
     .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.date_field :date, class: 'form-control'
+      .input-group.date
+        = f.text_field :date, class: 'form-control', placeholder: 'mm/dd/yyyy'
+        .input-group-addon
+          i.fa.fa-calendar
   // currency
   .form-group
     = f.label :currency, class: 'col-xs-12 col-sm-4 control-label'
@@ -64,7 +67,7 @@ h2= t('.title')
     .col-xs-6.col-sm-4.col-lg-3
       = f.text_field :send_to_receive_duration, class: 'form-control', placeholder: '0'
     .col-xs-6.col-sm-4.col-lg-3
-      = f.select :send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, {}, {class: 'form-control'}      
+      = f.select :send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, {}, {class: 'form-control'}
   // documentation requirements
   .form-group
     = f.label :documentation_requirements, class: 'col-sm-4 control-label'

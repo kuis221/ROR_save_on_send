@@ -30,6 +30,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Twitter bootstrap
 gem "twitter-bootstrap-rails"
 
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'font-awesome-sass' # The iconic font designed for Bootstrap
+gem 'bootstrap-datepicker-rails'
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
@@ -43,7 +47,7 @@ gem 'devise'
 gem 'devise-i18n'
 
 # Localization
-gem 'http_accept_language' 
+gem 'http_accept_language'
 
 # admin part
 gem 'rails_admin'
