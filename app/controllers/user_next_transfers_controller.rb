@@ -29,6 +29,10 @@ class UserNextTransfersController < ApplicationController
   end
 
   def create
+    # remove decimal part from amount send and receive
+    params[:user_next_transfer][:amount_send] = params[:user_next_transfer][:amount_send].to_i
+    params[:user_next_transfer][:amount_receive] = params[:user_next_transfer][:amount_receive].to_i
+
     next_transfer_attrs = params.require(:user_next_transfer)
       .permit(:amount_send, :amount_receive, :receive_currency,
               :originating_source_of_funds_id, :destination_preference_for_funds_id)

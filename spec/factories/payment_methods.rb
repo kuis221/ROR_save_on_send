@@ -11,5 +11,11 @@ FactoryGirl.define do
       name_es 'cuenta bancaria'
       slug 'bank'
     end
+
+    trait :card do
+      name 'plastic card'
+      name_es 'tarjeta de plástico'
+      slug 'card'
+    end
   end
 end

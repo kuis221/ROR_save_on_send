@@ -8,6 +8,10 @@ class UserRecentTransactionsController < ApplicationController
   def create
     params[:user_recent_transaction][:documentation_requirements] = params[:user_recent_transaction][:documentation_requirements].join(',')
 
+    # remove decimal part from amount send and receive
+    params[:user_recent_transaction][:amount_sent] = params[:user_recent_transaction][:amount_sent].to_i
+    params[:user_recent_transaction][:amount_received] = params[:user_recent_transaction][:amount_received].to_i
+
     recent_transaction_attrs = params.require(:user_recent_transaction)
       .permit(:date, :currency, :amount_sent, :amount_received, :originating_source_of_funds_id,
               :service_provider_id, :destination_preference_for_funds_id, :fees_for_sending,
@@ -26,7 +30,7 @@ class UserRecentTransactionsController < ApplicationController
 
         notice = I18n.t('notice.save_on_transaction', 
                         destination_country: destination_country, 
-                        saving: more_money, 
+                        saving: more_money.to_i, 
                         currency: more_money.currency.iso_code)
       end
 

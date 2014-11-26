@@ -3,7 +3,7 @@ class User::RecentTransaction < ActiveRecord::Base
 
   REQUIRED_FIELDS = %i{date currency amount_sent_cents amount_received_cents originating_source_of_funds service_provider
     destination_preference_for_funds fees_for_sending send_to_receive_duration
-    documentation_requirements promotion service_quality comments}
+    documentation_requirements service_quality comments}
 
   validates_presence_of REQUIRED_FIELDS
   validates_numericality_of :amount_sent, :amount_received, greater_than: 0
