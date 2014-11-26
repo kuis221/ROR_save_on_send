@@ -11,17 +11,19 @@
         .input-group-addon
           i.fa.fa-usd.fa-fw
         = money_field f, @user_next_transfer, :amount_send
-  
+
   - prefered_currency = current_user.prefered_currency
   - if prefered_currency.size > 1
     // receive currency
     .form-group
       = f.label :receive_currency, class: 'col-xs-12 col-sm-4 control-label'
       .col-xs-6.col-sm-5.col-md-4.col-lg-3
-        = f.select :receive_currency, prefered_currency.collect {|currency| [ currency, currency ] },{}, {class: 'form-control'}
+        = f.collection_radio_buttons(:receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: current_user.prefered_currency.collect.first}) do |b|
+          = b.label( for: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
+            = b.radio_button( id: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase )
+            i *{:class => ['fa', 'fa-fw', 'fa-'+b.text.parameterize.downcase]}
   - else
     = f.hidden_field :receive_currency, value: prefered_currency.first
-
   // amount receive
   .form-group
     = f.label :amount_receive, class: 'col-xs-12 col-sm-4 control-label'
@@ -34,15 +36,21 @@
   .form-group
     = f.label :originating_source_of_funds_id, class: 'col-sm-4 control-label'
     .col-sm-8
-      = f.collection_select :originating_source_of_funds_id, PaymentMethod.all, :id, :name, {prompt: true}, {class: 'form-control'}
+      = f.collection_radio_buttons(:originating_source_of_funds_id, PaymentMethod.all, :id, :name, {prompt: true, checked: PaymentMethod.first.id}) do |b|
+        = b.label( class: "radio-inline", title: b.text )
+          = b.radio_button
+          i *{:class => ['fa', 'fa-fw', 'fa-'+b.text.parameterize.downcase]}
   // destination preference for funds
   .form-group
     = f.label :destination_preference_for_funds_id, class: 'col-sm-4 control-label'
     .col-sm-8
-      = f.collection_select :destination_preference_for_funds_id, PaymentMethod.for_receiving.all, :id, :name, {prompt: true}, {class: 'form-control'}
+      = f.collection_radio_buttons(:destination_preference_for_funds_id, PaymentMethod.for_receiving.all, :id, :name, {prompt: true, checked: PaymentMethod.for_receiving.first.id}) do |b|
+        = b.label( class: "radio-inline", title: b.text )
+          = b.radio_button
+          i *{:class => ['fa', 'fa-fw', 'fa-'+b.text.parameterize.downcase]}
   // actions
   .form-group
-    .col-sm-offset-2.col-sm-10
+    .col-sm-offset-4.col-sm-8
       - if params[:action] == 'show' && current_user.referrals.empty?
         button.btn.btn-primary.btn-lg type="button" data-toggle="modal" data-target="#referral_dialog" Submit
       - else

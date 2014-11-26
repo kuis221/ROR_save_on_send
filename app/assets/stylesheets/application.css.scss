@@ -30,10 +30,33 @@
    Typography
    ========================================================================== */
 /* ==========================================================================
+   Sprites
+   ========================================================================== */
+/* ==========================================================================
    Icons
    ========================================================================== */
-    .fa-php:before { content: '₱'; }
-    .fa-mxn:before { content: 'M\f155'; }
+.fa-php:before { content: '₱'; }
+.fa-mxn:before { content: 'M\f155'; }
+.fa-cash:before { content: "\f0d6" }
+.fa-bank-account:before { content: "\f19c" }
+.fa-plastic-card:before { content: "\f09d" }
+
+[class^="icon-"], [class*=" icon-"] { @include inline-block; }
+
+.icon-western-union { height: 44px; width: 64px; background: {image: image-url("provider-icons/western-union.png"); position: center center; repeat: no-repeat;} }
+.icon-xoom { height: 44px; width: 72px; background: {image: image-url("provider-icons/xoom.png"); position: center center; repeat: no-repeat;} }
+.icon-moneygram { height: 44px; width: 80px; background: {image: image-url("provider-icons/moneygram.png"); position: center center; repeat: no-repeat;} }
+.icon-transfast { height: 44px; width: 44px; background: {image: image-url("provider-icons/transfast.png"); position: center center; repeat: no-repeat;} }
+.icon-ria { height: 44px; width: 83px; background: {image: image-url("provider-icons/ria.png"); position: center center; repeat: no-repeat;} }
+.icon-transferwise { height: 44px; width: 92px; background: {image: image-url("provider-icons/transferwise.png"); position: center center; repeat: no-repeat;} }
+.icon-remitly { height: 44px; width: 107px; background: {image: image-url("provider-icons/remitly.png"); position: center center; repeat: no-repeat;} }
+.icon-wellsfargo { height: 44px; width: 85px; background: {image: image-url("provider-icons/wells-fargo.png"); position: center center; repeat: no-repeat;} }
+.icon-viamericas { height: 44px; width: 135px; background: {image: image-url("provider-icons/viamericas.png"); position: center center; repeat: no-repeat;} }
+.icon-pnb { height: 44px; width: 104px; background: {image: image-url("provider-icons/pnb.png"); position: center center; repeat: no-repeat;} }
+.icon-bofa { height: 44px; width: 65px; background: {image: image-url("provider-icons/bofa.png"); position: center center; repeat: no-repeat;} }
+.icon-paypal { height: 44px; width: 64px; background: {image: image-url("provider-icons/paypal.png"); position: center center; repeat: no-repeat;} }
+.icon-walmart { height: 44px; width: 150px; background: {image: image-url("provider-icons/walmart.png"); position: center center; repeat: no-repeat;} }
+
 
 /* ==========================================================================
    Header
