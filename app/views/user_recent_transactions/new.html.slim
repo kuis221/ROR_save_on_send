@@ -51,7 +51,7 @@ h2= t('.title')
   .form-group
     = f.label :destination_preference_for_funds_id, class: 'col-sm-4 control-label'
     .col-sm-8
-      = f.collection_select :destination_preference_for_funds_id, PaymentMethod.all, :id, :name, {prompt: true}, {class: 'form-control'}
+      = f.collection_select :destination_preference_for_funds_id, PaymentMethod.for_receiving.all, :id, :name, {prompt: true}, {class: 'form-control'}
   // fees for sending
   .form-group
     = f.label :fees_for_sending, class: 'col-xs-12 col-sm-4 control-label'

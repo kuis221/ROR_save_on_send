@@ -20,4 +20,14 @@ describe PaymentMethod do
       expect(cash.name).to eq('efectivo')
     end
   end
+
+  describe '.for_receiving' do
+    it 'should return all the payment method without plastic card' do
+      card = FactoryGirl.create(:payment_method, :card)
+      FactoryGirl.create(:payment_method, :cash)
+      FactoryGirl.create(:payment_method, :bank)
+
+      expect(PaymentMethod.for_receiving.all).to_not be_include(card)
+    end
+  end
 end
