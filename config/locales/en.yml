@@ -2,7 +2,7 @@ en:
   notice:
     verification_email_was_sent: Verification email was sent to your email address - please click link in that email to confirm
     best_rate: Congratulations! Your recent transfer used the best approach!
-    save_on_transaction: "<h4>Others sent <em>%{saving}%{currency}</em> more using SaveOnSend knowledge</h4>"
+    save_on_transaction: "<h4 class='no-marg-btm'>Others sent <strong>%{saving} %{currency}</strong> more using SaveOnSend knowledge</h4>"
   layouts:
     application:
       title: Save on Send
