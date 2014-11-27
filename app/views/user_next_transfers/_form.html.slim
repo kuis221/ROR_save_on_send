@@ -18,7 +18,7 @@
     .form-group
       = f.label :receive_currency, class: 'col-sm-4 control-label'
       .col-sm-8
-        = f.collection_radio_buttons(:receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: current_user.prefered_currency.collect.first}) do |b|
+        = f.collection_radio_buttons(:receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
           = b.label( for: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
             = b.radio_button( id: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase )
             i *{:class => ['fa', 'fa-fw', 'fa-'+b.text.parameterize.downcase]}
@@ -36,7 +36,7 @@
   .form-group
     = f.label :originating_source_of_funds_id, class: 'col-sm-4 control-label'
     .col-sm-8
-      = f.collection_radio_buttons(:originating_source_of_funds_id, PaymentMethod.all, :id, :name, {prompt: true, checked: PaymentMethod.first.id}) do |b|
+      = f.collection_radio_buttons(:originating_source_of_funds_id, PaymentMethod.all, :id, :name, {prompt: true}) do |b|
         = b.label( class: "radio-inline", title: b.text )
           = b.radio_button
           i *{:class => ['fa', 'fa-fw', 'fa-'+b.text.parameterize.downcase]}
@@ -44,7 +44,7 @@
   .form-group
     = f.label :destination_preference_for_funds_id, class: 'col-sm-4 control-label'
     .col-sm-8
-      = f.collection_radio_buttons(:destination_preference_for_funds_id, PaymentMethod.for_receiving.all, :id, :name, {prompt: true, checked: PaymentMethod.for_receiving.first.id}) do |b|
+      = f.collection_radio_buttons(:destination_preference_for_funds_id, PaymentMethod.for_receiving.all, :id, :name, {prompt: true}) do |b|
         = b.label( class: "radio-inline", title: b.text )
           = b.radio_button
           i *{:class => ['fa', 'fa-fw', 'fa-'+b.text.parameterize.downcase]}
