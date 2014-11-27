@@ -87,21 +87,21 @@ h2= t('.title')
     .col-xs-6.col-sm-4.col-lg-3
       = f.select :send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, {}, {class: 'form-control'}
   // documentation requirements
-  .form-group
-    = f.label :documentation_requirements, class: 'col-sm-4 control-label'
-    .col-sm-4
-      .checkbox
-        label
-          = f.check_box :documentation_requirements, {multiple: true}, 'Photo ID', ''
-          = t('.photo_id')
-      .checkbox
-        label.checkbox-inline
-          = f.check_box :documentation_requirements, {multiple: true}, 'Tax returns', ''
-          = t('.tax_returns')
-      .checkbox
-        label.checkbox-inline
-          = f.check_box :documentation_requirements, {multiple: true}, 'Job verification', ''
-          = t('.job_verification')
+    .form-group
+      = f.label :documentation_requirements, class: 'col-sm-4 control-label'
+      .col-sm-4
+        .checkbox
+          label
+            = f.check_box :documentation_requirements, {multiple: true}, 'Photo ID', ''
+            = t('.photo_id')
+        .checkbox
+          label.checkbox-inline
+            = f.check_box :documentation_requirements, {multiple: true}, 'Tax returns', ''
+            = t('.tax_returns')
+        .checkbox
+          label.checkbox-inline
+            = f.check_box :documentation_requirements, {multiple: true}, 'Job verification', ''
+            = t('.job_verification')
   // promotion
     .form-group
       = f.label :promotion, class: 'col-sm-4 control-label'

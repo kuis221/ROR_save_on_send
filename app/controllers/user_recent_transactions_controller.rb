@@ -6,7 +6,7 @@ class UserRecentTransactionsController < ApplicationController
   end
 
   def create
-    params[:user_recent_transaction][:documentation_requirements] = params[:user_recent_transaction][:documentation_requirements].join(',')
+    #params[:user_recent_transaction][:documentation_requirements] = params[:user_recent_transaction][:documentation_requirements].join(',')
 
     # remove decimal part from amount send and receive
     params[:user_recent_transaction][:amount_sent] = params[:user_recent_transaction][:amount_sent].to_i
