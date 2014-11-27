@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap-datepicker3
+ *= require jquery-star-rating
  *= require_tree .
  *= require_self
  */
@@ -43,21 +44,61 @@
 
 [class^="icon-"], [class*=" icon-"] { @include inline-block; }
 
-.icon-western-union { height: 44px; width: 64px; background: {image: image-url("provider-icons/western-union.png"); position: center center; repeat: no-repeat;} }
-.icon-xoom { height: 44px; width: 72px; background: {image: image-url("provider-icons/xoom.png"); position: center center; repeat: no-repeat;} }
-.icon-moneygram { height: 44px; width: 80px; background: {image: image-url("provider-icons/moneygram.png"); position: center center; repeat: no-repeat;} }
-.icon-transfast { height: 44px; width: 44px; background: {image: image-url("provider-icons/transfast.png"); position: center center; repeat: no-repeat;} }
-.icon-ria { height: 44px; width: 83px; background: {image: image-url("provider-icons/ria.png"); position: center center; repeat: no-repeat;} }
-.icon-transferwise { height: 44px; width: 92px; background: {image: image-url("provider-icons/transferwise.png"); position: center center; repeat: no-repeat;} }
-.icon-remitly { height: 44px; width: 107px; background: {image: image-url("provider-icons/remitly.png"); position: center center; repeat: no-repeat;} }
-.icon-wellsfargo { height: 44px; width: 85px; background: {image: image-url("provider-icons/wells-fargo.png"); position: center center; repeat: no-repeat;} }
-.icon-viamericas { height: 44px; width: 135px; background: {image: image-url("provider-icons/viamericas.png"); position: center center; repeat: no-repeat;} }
-.icon-pnb { height: 44px; width: 104px; background: {image: image-url("provider-icons/pnb.png"); position: center center; repeat: no-repeat;} }
-.icon-bofa { height: 44px; width: 65px; background: {image: image-url("provider-icons/bofa.png"); position: center center; repeat: no-repeat;} }
-.icon-paypal { height: 44px; width: 64px; background: {image: image-url("provider-icons/paypal.png"); position: center center; repeat: no-repeat;} }
-.icon-walmart { height: 44px; width: 150px; background: {image: image-url("provider-icons/walmart.png"); position: center center; repeat: no-repeat;} }
+.icon-provider { background: { position: center center; repeat: no-repeat; } }
+.icon-western-union { height: 44px; width: 64px; background: {image: image-url("provider-icons/western-union.png"); } }
+.icon-xoom { height: 44px; width: 72px; background: {image: image-url("provider-icons/xoom.png"); } }
+.icon-moneygram { height: 44px; width: 80px; background: {image: image-url("provider-icons/moneygram.png"); } }
+.icon-transfast { height: 44px; width: 44px; background: {image: image-url("provider-icons/transfast.png"); } }
+.icon-ria { height: 44px; width: 83px; background: {image: image-url("provider-icons/ria.png"); } }
+.icon-transferwise { height: 44px; width: 92px; background: {image: image-url("provider-icons/transferwise.png"); } }
+.icon-remitly { height: 44px; width: 107px; background: {image: image-url("provider-icons/remitly.png"); } }
+.icon-wellsfargo { height: 44px; width: 85px; background: {image: image-url("provider-icons/wells-fargo.png"); } }
+.icon-viamericas { height: 44px; width: 135px; background: {image: image-url("provider-icons/viamericas.png"); } }
+.icon-pnb { height: 44px; width: 104px; background: {image: image-url("provider-icons/pnb.png"); } }
+.icon-bofa { height: 44px; width: 65px; background: {image: image-url("provider-icons/bofa.png"); } }
+.icon-paypal { height: 44px; width: 64px; background: {image: image-url("provider-icons/paypal.png"); } }
+.icon-walmart { height: 44px; width: 150px; background: {image: image-url("provider-icons/walmart.png"); } }
 
+.icon-xs { height: #{$icon-size-xs}px; width: #{$icon-size-xs}px; }
+.icon-sm { height: #{$icon-size-sm}px; width: #{$icon-size-sm}px; }
+.icon-md { height: #{$icon-size-md}px; width: #{$icon-size-md}px; }
+.icon-lg { height: #{$icon-size-lg}px; width: #{$icon-size-lg}px; }
 
+.icon-china {
+   &.icon-xs { @include flag-icon('China.png', $icon-size-xs); }
+   &.icon-sm { @include flag-icon('China.png', $icon-size-sm); }
+   &.icon-md { @include flag-icon('China.png', $icon-size-md); }
+   &.icon-lg { @include flag-icon('China.png', $icon-size-lg); }
+}
+.icon-india {
+   &.icon-xs { @include flag-icon('India.png', $icon-size-xs); }
+   &.icon-sm { @include flag-icon('India.png', $icon-size-sm); }
+   &.icon-md { @include flag-icon('India.png', $icon-size-md); }
+   &.icon-lg { @include flag-icon('India.png', $icon-size-lg); }
+}
+.icon-mexico {
+   &.icon-xs { @include flag-icon('Mexico.png', $icon-size-xs); }
+   &.icon-sm { @include flag-icon('Mexico.png', $icon-size-sm); }
+   &.icon-md { @include flag-icon('Mexico.png', $icon-size-md); }
+   &.icon-lg { @include flag-icon('Mexico.png', $icon-size-lg); }
+}
+.icon-philippines {
+   &.icon-xs { @include flag-icon('Philippines.png', $icon-size-xs); }
+   &.icon-sm { @include flag-icon('Philippines.png', $icon-size-sm); }
+   &.icon-md { @include flag-icon('Philippines.png', $icon-size-md); }
+   &.icon-lg { @include flag-icon('Philippines.png', $icon-size-lg); }
+}
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+.input-group {
+   &.date { max-width: 145px; }
+   &.input-money { max-width: 104px; }
+}
+.duration-goup {
+   > input { float: left; margin-right: #{$grid-gutter-width/2}; width: 61px; }
+   select { width: auto; }
+}
 /* ==========================================================================
    Header
    ========================================================================== */

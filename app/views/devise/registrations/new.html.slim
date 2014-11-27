@@ -37,7 +37,10 @@ h2= t('.sign_up')
   .form-group
     = f.label :money_transfer_destination_id, class: 'col-sm-4 control-label'
     .col-sm-8
-      = f.select :money_transfer_destination_id, Country.all.collect {|country| [ country.name, country.id ] }, {prompt: true}, {class: 'form-control'}
+      = f.collection_radio_buttons(:money_transfer_destination_id, Country.all.collect {|country| [ country.id, country.name ] }, :first, :last, {prompt: true, checked: Country.all.collect.first}) do |b|
+        = b.label( class: "radio-inline", title: b.text )
+          = b.radio_button
+          i *{:class => ['icon-sm', 'icon-'+b.text.parameterize.downcase]}
   // actions
   .form-group
     .col-sm-offset-4.col-sm-8

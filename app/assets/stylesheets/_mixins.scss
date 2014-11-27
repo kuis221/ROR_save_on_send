@@ -54,3 +54,7 @@
     -moz-osx-font-smoothing: auto;
   }
 }
+
+@mixin flag-icon($name, $size: 16, $path: 'flags/') {
+  background: {image: image-url( $path+$size+'/'+$name); position: center center; repeat: no-repeat;}
+}
