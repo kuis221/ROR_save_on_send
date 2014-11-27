@@ -10,7 +10,8 @@ feature 'Sign up' do
     fill_in 'First name', with: Faker::Name.first_name
     fill_in 'Last name', with: Faker::Name.last_name
     fill_in 'Zipcode', with: Faker::Address.zip_code
-    select 'India', from: 'Money transfer destination'
+    
+    choose "user_money_transfer_destination_id_#{Country.find_by(name: 'India').id}"
       
     click_button 'Sign up'
 
