@@ -2,7 +2,7 @@ en:
   notice:
     verification_email_was_sent: Verification email was sent to your email address - please click link in that email to confirm
     best_rate: Congratulation! You've chosen provider with the best rate.
-    save_on_transaction: "On your last transaction, your recipient in %{destination_country} could have received %{saving} more %{currency}"
+    save_on_transaction: "<h4>On your last transaction, your recipient in %{destination_country} could have received <em>%{saving}</em> more %{currency}</h4>"
   layouts:
     application:
       title: Save on Send
