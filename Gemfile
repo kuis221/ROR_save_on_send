@@ -35,6 +35,8 @@ gem 'font-awesome-sass' # The iconic font designed for Bootstrap
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-star-rating-rails'
 
+gem 'bootstrap_flash_messages', '~> 1.0.0'
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 

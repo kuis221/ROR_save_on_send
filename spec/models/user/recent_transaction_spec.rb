@@ -8,7 +8,7 @@ describe User::RecentTransaction do
    
     %i{date currency amount_sent_cents amount_received_cents originating_source_of_funds service_provider
     destination_preference_for_funds fees_for_sending_cents send_to_receive_duration
-    documentation_requirements service_quality comments}.each do |property|
+    service_quality comments}.each do |property|
       it "should be invalid if #{property} is not set" do
         recent_transaction.send("#{property}=", nil)
         expect(recent_transaction).to be_invalid

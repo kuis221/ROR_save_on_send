@@ -42,7 +42,7 @@ html lang="en"
     .container
       .row
         .col-sm-8.col-sm-offset-2
-          = bootstrap_flash
+          = flash_messages(:html, :close)
           = yield
         //.col-sm-3
         //  .well.sidebar-nav
