@@ -21,16 +21,16 @@ class UserRecentTransactionsController < ApplicationController
     @user_recent_transaction = current_user.recent_transactions.create(recent_transaction_attrs)
 
     if @user_recent_transaction.persisted?
-      notice = I18n.t('notice.best_rate') 
+      notice = I18n.t('notice.best_rate')
 
       more_money = RemittanceTerm.save_on_transaction(@user_recent_transaction)
 
       if more_money > 0
         destination_country = current_user.money_transfer_destination.name
 
-        notice = I18n.t('notice.save_on_transaction', 
-                        destination_country: destination_country, 
-                        saving: more_money.to_i, 
+        notice = I18n.t('notice.save_on_transaction',
+                        destination_country: destination_country,
+                        saving: more_money.to_i,
                         currency: more_money.currency.iso_code)
       end
 

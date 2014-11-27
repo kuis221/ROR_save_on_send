@@ -1,8 +1,8 @@
 en:
   notice:
     verification_email_was_sent: Verification email was sent to your email address - please click link in that email to confirm
-    best_rate: Congratulation! You've chosen provider with the best rate.
-    save_on_transaction: "<h4>On your last transaction, your recipient in %{destination_country} could have received <em>%{saving}</em> more %{currency}</h4>"
+    best_rate: Congratulations! Your recent transfer used the best approach!
+    save_on_transaction: "<h4 class='no-marg-btm'>Others sent <strong>%{saving} %{currency}</strong> more using SaveOnSend knowledge</h4>"
   layouts:
     application:
       title: Save on Send

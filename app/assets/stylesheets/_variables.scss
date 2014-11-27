@@ -862,3 +862,13 @@ $page-header-border-color:    $gray-lighter !default;
 $dl-horizontal-offset:        $component-offset-horizontal !default;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter !default;
+
+$xsmall:  "(max-width: #{$screen-xs-max})";
+$small:   "(min-width: #{$screen-sm-min})";
+$medium:  "(min-width: #{$screen-md-min})";
+$large:   "(min-width: #{$screen-lg-min})";
+
+$icon-size-xs: 16;
+$icon-size-sm: 24;
+$icon-size-md: 32;
+$icon-size-lg: 48;
