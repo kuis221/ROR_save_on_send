@@ -1,0 +1,9 @@
+.raw
+  .col-sm-4
+    em
+      = feedback.user.full_name
+  .col-sm-4
+    // FIXME add start instead of digit
+    = "Rate: #{feedback.service_quality}"
+  .col-sm-4
+    = feedback.comments

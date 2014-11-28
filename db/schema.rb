@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125105919) do
+ActiveRecord::Schema.define(version: 20141127173950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(version: 20141125105919) do
     t.string "name"
     t.string "currency_code", limit: 3
     t.string "name_es"
+  end
+
+  create_table "feedbacks", force: true do |t|
+    t.string   "comments",         limit: 512
+    t.integer  "service_quality"
+    t.integer  "user_id"
+    t.integer  "commendable_id"
+    t.string   "commendable_type"
+    t.boolean  "approved",                     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "payment_methods", force: true do |t|
@@ -71,6 +82,7 @@ ActiveRecord::Schema.define(version: 20141125105919) do
   create_table "service_providers", force: true do |t|
     t.string "name"
     t.string "landing_page", limit: 512
+    t.string "slug"
   end
 
   add_index "service_providers", ["name"], name: "index_service_providers_on_name", using: :btree

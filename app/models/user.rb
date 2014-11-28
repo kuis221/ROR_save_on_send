@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :recent_transactions, class: User::RecentTransaction
   has_many :next_transfers, class: User::NextTransfer
 
+  has_many :feedbacks
+
   has_many :referrals
 
   # validations

@@ -58,6 +58,8 @@ gem 'rails_admin'
 # monetize
 gem 'money-rails'
 
+gem 'friendly_id', '~> 5.0.0'
+
 group :development do
   # open letter in browser
   gem 'letter_opener'
