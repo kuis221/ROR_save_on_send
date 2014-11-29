@@ -80,6 +80,8 @@ GEM
       railties (>= 3.2, < 5.0)
     font-awesome-sass (4.2.2)
       sass (~> 3.2)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     haml (4.0.5)
       tilt
     hike (1.2.3)
@@ -269,6 +271,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   font-awesome-sass
+  friendly_id (~> 5.0.0)
   http_accept_language
   jbuilder (~> 2.0)
   jquery-inputmask-rails

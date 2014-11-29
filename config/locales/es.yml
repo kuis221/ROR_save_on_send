@@ -3,6 +3,7 @@ es:
     verification_email_was_sent: Verificación de correo electrónico fue enviado a su dirección de correo electrónico - por favor haga clic en enlace de ese correo electrónico para confirmar
     best_rate_html: ¡Enhorabuena! Su transferencia reciente utilizó el mejor enfoque!
     save_on_transaction_html: "<h4 class='no-marg-btm'>Otros envían <strong>%{saving} %{currency}</strong> más el uso del conocimiento SaveOnSend</h4>"
+    thanks_for_feedback: Gracias por su colaboración
   layouts:
     application:
       title: Save on Send
@@ -10,6 +11,13 @@ es:
       next_transfer: Transferencia siguiente
       help_others: Ayudar a los demás
       sign_out: Desconectar
+  service_providers:
+    show:
+      go_to_provider: Listo para enviar dinero
+      provider_feedbacks_title: Lo que otros dicen
+    provider_feedback_form:
+      title: Valore el proveedor
+      submit: Someter  
   user_recent_transactions:
     new:
       title: Usuario reciente transacción

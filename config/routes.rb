@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   resource :user_recent_transaction, only: [:new, :create]
   resources :user_next_transfers, only: [:new, :show, :create]
 
+  resources :service_providers, only: [:show], path: 'providers'
+
+  resources :feedbacks, only: [:create]
   resources :referrals, only: [:create]
 end
