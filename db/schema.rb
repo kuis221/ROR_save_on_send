@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20141127173950) do
   end
 
   add_index "service_providers", ["name"], name: "index_service_providers_on_name", using: :btree
+  add_index "service_providers", ["slug"], name: "index_service_providers_on_slug", using: :btree
 
   create_table "user_next_transfers", force: true do |t|
     t.integer  "user_id"
