@@ -34,6 +34,7 @@ gem 'bootstrap-sass', '~> 3.3.1'
 gem 'font-awesome-sass' # The iconic font designed for Bootstrap
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-star-rating-rails'
+gem 'jquery-inputmask-rails'
 
 gem 'bootstrap_flash_messages', '~> 1.0.0'
 
