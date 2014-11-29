@@ -1,5 +1,5 @@
 tr *{class: remittance_term.highlight? ? [:success] : []}
-  td= link_to(remittance_term.service_provider.name, service_provider_path(remittance_term.service_provider), target: '_new')
+  td= link_to(remittance_term.service_provider.name, service_provider_path(remittance_term.service_provider))
   - if @from_to_show
     td
       | #{remittance_term.send_method.slug}
