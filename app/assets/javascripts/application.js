@@ -12,8 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-star-rating
 //= require twitter/bootstrap
+//= require jquery-star-rating
+//= require jquery.inputmask
+//= require jquery.inputmask.extensions
+//= require jquery.inputmask.numeric.extensions
+//= require jquery.inputmask.date.extensions
+//= require jquery.inputmask.regex.extensions
 //= require bootstrap-datepicker
 //= require turbolinks
 //= require_tree .
