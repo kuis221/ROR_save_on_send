@@ -12,6 +12,12 @@ class UserRecentTransactionsController < ApplicationController
     params[:user_recent_transaction][:amount_sent] = params[:user_recent_transaction][:amount_sent].to_i
     params[:user_recent_transaction][:amount_received] = params[:user_recent_transaction][:amount_received].to_i
 
+    # convert date from string
+    begin
+      params[:user_recent_transaction][:date] = Date.strptime(params[:user_recent_transaction][:date], '%m/%d/%Y') if params[:user_recent_transaction][:date]
+    rescue
+    end
+
     recent_transaction_attrs = params.require(:user_recent_transaction)
       .permit(:date, :currency, :amount_sent, :amount_received, :originating_source_of_funds_id,
               :service_provider_id, :destination_preference_for_funds_id, :fees_for_sending,
