@@ -9,7 +9,7 @@ h2= t('.title')
     = f.label :date, class: 'col-sm-4 control-label'
     .col-sm-8
       .input-group.date *{:data => { provide: 'datepicker' }}
-        = f.text_field :date, class: 'form-control mask-date'
+        = f.text_field :date, value: @user_recent_transaction.date.present? ? @user_recent_transaction.date.strftime('%m/%d/%Y'): '', class: 'form-control mask-date'
         .input-group-addon
           i.fa.fa-calendar
   // currency
@@ -18,7 +18,7 @@ h2= t('.title')
     .form-group
       = f.label :currency, class: 'col-sm-4 control-label'
       .col-sm-8
-        = f.collection_radio_buttons(:currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: current_user.prefered_currency.collect.first}) do |b|
+        = f.collection_radio_buttons(:currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: @user_recent_transaction.currency || current_user.prefered_currency.collect.first}) do |b|
           = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
             = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
             i *{:class => ['fa', 'fa-fw', 'fa-'+b.text.parameterize.downcase]}
@@ -53,7 +53,7 @@ h2= t('.title')
     = f.label :service_provider_id, class: 'col-sm-4 control-label'
     .col-sm-8
       .row
-        = f.collection_radio_buttons(:service_provider_id, ServiceProvider.all, :id, :name, {prompt: true, checked: ServiceProvider.first.id}) do |b|
+        = f.collection_radio_buttons(:service_provider_id, ServiceProvider.all, :id, :name, {prompt: true, checked: @user_recent_transaction.service_provider.try(:id) || ServiceProvider.first.id}) do |b|
           .col-xs-6.col-md-4
             = b.label( class: "radio-inline", title: b.text )
               = b.radio_button

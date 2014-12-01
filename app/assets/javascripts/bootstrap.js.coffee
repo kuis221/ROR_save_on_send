@@ -9,7 +9,8 @@ ready = ->
   $('.mask-money-received').inputmask "9999",
     'showMaskOnHover': false,
     'showMaskOnFocus': false
-  $('.mask-money-fees').inputmask "99.99"
+  $('.mask-money-fees').inputmask "Regex", 
+    regex: "[0-9]{1,2}[.]?[0-9]{0,2}"
   $('.mask-minutes').inputmask "Regex",
     regex: "^[1-9]|[1-5][0-9]|60$"
   $('.mask-hours').inputmask "Regex",
