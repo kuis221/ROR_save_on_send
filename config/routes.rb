@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'welcome' => 'welcome#index'
 
-  resource :user_recent_transaction, only: [:new, :create]
+  resource :user_recent_transaction, only: [:new, :show, :create]
   resources :user_next_transfers, only: [:new, :show, :create]
 
   resources :service_providers, only: [:show], path: 'providers'
