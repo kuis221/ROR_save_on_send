@@ -53,11 +53,21 @@ h2= t('.title')
     = f.label :service_provider_id, class: 'col-sm-4 control-label'
     .col-sm-8
       .row
-        = f.collection_radio_buttons(:service_provider_id, ServiceProvider.all, :id, :name, {prompt: true, checked: @user_recent_transaction.service_provider.try(:id) || ServiceProvider.first.id}) do |b|
+        = f.collection_radio_buttons(:service_provider_id, ServiceProvider.created_by_admin, :id, :name, {prompt: true, checked: @user_recent_transaction.service_provider.try(:id) || ServiceProvider.first.id}) do |b|
           .col-xs-6.col-md-4
             = b.label( class: "radio-inline", title: b.text )
               = b.radio_button
               i *{:class => ['icon-provider', 'icon-'+b.text.parameterize.downcase]}
+      // other provider
+      .row
+        .col-xs-6.col-md-4
+          = radio_button_tag 'user_recent_transaction[service_provider_id]', '', false
+          | #{t('.other_provider')}
+          = f.fields_for :service_provider_attributes do |sp|
+            .form-group
+              = sp.label :name, class: 'col-sm-4 control-label'
+              .col-sm-8
+                = sp.text_field :name, class: 'form-control' 
   // destination preference for funds
   .form-group
     = f.label :destination_preference_for_funds_id, class: 'col-sm-4 control-label'

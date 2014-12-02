@@ -25,6 +25,7 @@ en:
       tax_returns: Tax returns
       job_verification: Job verification
       submit: Submit
+      other_provider: Other
   user_next_transfers:
     new:
       title: Let’s find the best provider for your next transfer

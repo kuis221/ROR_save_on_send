@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127173950) do
+ActiveRecord::Schema.define(version: 20141202150258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,9 +80,11 @@ ActiveRecord::Schema.define(version: 20141127173950) do
   end
 
   create_table "service_providers", force: true do |t|
-    t.string "name"
-    t.string "landing_page", limit: 512
-    t.string "slug"
+    t.string  "name"
+    t.string  "landing_page",    limit: 512
+    t.string  "slug"
+    t.integer "created_by_id"
+    t.string  "created_by_type"
   end
 
   add_index "service_providers", ["name"], name: "index_service_providers_on_name", using: :btree

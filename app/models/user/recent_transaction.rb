@@ -14,7 +14,7 @@ class User::RecentTransaction < ActiveRecord::Base
   belongs_to :originating_source_of_funds, class_name: PaymentMethod
   belongs_to :destination_preference_for_funds, class_name: PaymentMethod
 
-  belongs_to :service_provider
+  belongs_to :service_provider, inverse_of: :recent_transactions
   
   monetize :amount_sent_cents
   monetize :amount_received_cents, with_model_currency: :currency
@@ -22,6 +22,8 @@ class User::RecentTransaction < ActiveRecord::Base
 
   # Use model level currency
   register_currency :usd
+
+  accepts_nested_attributes_for :service_provider, reject_if: proc { |attrs| attrs[:name].blank? }
 
   attr_accessor :send_to_receive_duration_interval
 

@@ -25,6 +25,7 @@ es:
       tax_returns: Las declaraciones de impuestos
       job_verification: Verificación de empleo
       submit: Someter
+      other_provider: Otro
   user_next_transfers:
     new:
       title: Vamos a encontrar el mejor proveedor para su próxima transferencia

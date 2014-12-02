@@ -14,5 +14,5 @@
   ['WalMart', 'walmart', 'https://walmart.moneygram.com/MGOWap/flows/home?execution=e1s1#costEstimator']
 ].each do |provider_attrs|
   service_provider = ServiceProvider.find_or_create_by(name: provider_attrs[0])
-  service_provider.update_attributes(slug: provider_attrs[1], landing_page: provider_attrs[2])
+  service_provider.update_attributes(slug: provider_attrs[1], landing_page: provider_attrs[2], created_by: Admin.first)
 end
