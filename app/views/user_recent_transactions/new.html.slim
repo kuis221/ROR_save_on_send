@@ -61,13 +61,36 @@ h2= t('.title')
       // other provider
       .row
         .col-xs-6.col-md-4
-          = radio_button_tag 'user_recent_transaction[service_provider_id]', '', false
+          = radio_button_tag 'user_recent_transaction[service_provider_id]', '', false, "data-toggle" => "modal", "data-target" => "#other_provider_modal"
           | #{t('.other_provider')}
-          = f.fields_for :service_provider_attributes do |sp|
-            .form-group
-              = sp.label :name, class: 'col-sm-4 control-label'
-              .col-sm-8
-                = sp.text_field :name, class: 'form-control' 
+          
+          div.modal.fade#other_provider_modal tabindex="-1" role="dialog" aria-labelledby="other_provider_modal_label" aria-hidden="true"
+            div.modal-dialog
+              div.modal-content
+                div.modal-header
+                  button.close type="button" data-dismiss="modal"
+                    span aria-hidden="true"
+                      | &times;
+                    span.sr-only
+                      | #{t('.close')}
+                  h4.modal-title#other_provider_modal_label
+                    | #{t('.other_provider_modal_label')}
+                div.modal-body
+                  = f.fields_for :service_provider_attributes, ServiceProvider.new do |sp|
+                    .form-group
+                      = sp.label :name, class: 'col-sm-4 control-label'
+                      .col-sm-8
+                        = sp.text_field :name, class: 'form-control'
+                    .form-group
+                      = sp.label :landing_page, class: 'col-sm-4 control-label'
+                      .col-sm-8
+                        = sp.text_field :landing_page, class: 'form-control'
+                div.modal-footer
+                  button.btn.btn-default type="button" data-dismiss= "modal"
+                    | #{t('.close')}
+                  a.btn.btn-primary href="javascript:$('#other_provider_modal').modal('hide')"
+                    | #{t('.ok')}
+          
   // destination preference for funds
   .form-group
     = f.label :destination_preference_for_funds_id, class: 'col-sm-4 control-label'

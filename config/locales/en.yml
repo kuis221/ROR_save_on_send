@@ -25,7 +25,10 @@ en:
       tax_returns: Tax returns
       job_verification: Job verification
       submit: Submit
-      other_provider: Other
+      other_provider: Other Provider
+      other_provider_modal_label: Please provide us with as much as information as possible about your favorite provider
+      close: Close
+      ok: OK
   user_next_transfers:
     new:
       title: Let’s find the best provider for your next transfer
@@ -93,3 +96,6 @@ en:
       referral:
         comments: Comments
         email: Email
+      service_provider:
+        name: Provider name
+        landing_page: Provider website

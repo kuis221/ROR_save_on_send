@@ -27,7 +27,7 @@ class UserRecentTransactionsController < ApplicationController
               :service_provider_id, :destination_preference_for_funds_id, :fees_for_sending,
               :fees_for_receiving, :send_to_receive_duration, :send_to_receive_duration_interval,
               :documentation_requirements, :promotion, :service_quality, :comments,
-              service_provider_attributes: [:name]
+              service_provider_attributes: [:name, :landing_page]
              )
 
     if recent_transaction_attrs[:service_provider_id].present? && recent_transaction_attrs[:service_provider_attributes].present?

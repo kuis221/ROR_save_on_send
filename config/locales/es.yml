@@ -25,7 +25,10 @@ es:
       tax_returns: Las declaraciones de impuestos
       job_verification: Verificación de empleo
       submit: Someter
-      other_provider: Otro
+      other_provider: Otro proveedor
+      other_provider_modal_label: Por favor proporcione tanto como la información posible acerca de su proveedor preferido
+      close: Cerca
+      ok: Okay
   user_next_transfers:
     new:
       title: Vamos a encontrar el mejor proveedor para su próxima transferencia
@@ -93,3 +96,6 @@ es:
       referral:
         comments: Comentarios
         email: Email
+      service_provider:
+        name: Nombre del proveedor
+        landing_page: Sitio web del proveedor
