@@ -3,7 +3,7 @@ class ServiceProvider < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   has_many :feedbacks, ->{where(approved: true)}, as: :commendable
-  has_many :recent_transactions, inverse_of: :service_provider
+  has_many :recent_transactions, inverse_of: :service_provider, class_name: User::RecentTransaction
 
   belongs_to :created_by, polymorphic: true
 
