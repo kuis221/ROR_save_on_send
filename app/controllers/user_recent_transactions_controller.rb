@@ -5,10 +5,6 @@ class UserRecentTransactionsController < ApplicationController
     @user_recent_transaction = User::RecentTransaction.new(params[:user_recent_transaction])
   end
 
-  def show
-    redirect_to(action: :new)
-  end
-
   def create
     #params[:user_recent_transaction][:documentation_requirements] = params[:user_recent_transaction][:documentation_requirements].join(',')
 
