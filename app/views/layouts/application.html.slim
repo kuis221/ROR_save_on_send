@@ -18,43 +18,81 @@ html lang="en"
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
     = javascript_include_tag "application"
 
-
-
   body
-    .navbar.navbar-default.navbar-static-top
+    header.header.visible-xs
+      .container
+        = link_to "#toggle-menu", class: 'toggle-menu pull-right' do
+          i.fa.fa-bars
+        = link_to t('.log_in'), '/users/sign_in', class: 'btn btn-primary pull-right visible-xs'
+        = link_to root_path, class: 'navbar-brand pull-left' do
+          = image_tag "logotype.jpg", { alt: t('.title'), title: t('.title'), class: 'img-responsive' }
+    .root
+      #menu.menu.navbar.navbar-default.navbar-static-top role="navigation"
         .container
-          button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          = link_to t('.title'), root_path, class: 'navbar-brand'
-          .navbar-collapse.collapse.navbar-responsive-collapse
-            ul.nav.navbar-nav
-              - if current_user && current_user.recent_transactions.present?
-                li= link_to t('.add_recent_transaction'), new_user_recent_transaction_path
-                li= link_to t('.next_transfer'), new_user_next_transfer_path
-                li= link_to t('.help_others'), "#", "data-toggle"=>"modal", "data-target"=>"#referral_dialog"
-            ul.nav.navbar-nav.navbar-right
-              - if user_signed_in?
-                li.navbar-text= current_user.full_name
-                li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
+          .menu-header.visible-xs
+            = link_to "#close-menu", class: 'close close-circle pull-right' do
+              | &times;
+            span
+              i.fa.fa-fw.fa-ellipsis-v
+              | menu
+          .clearfix
+            .navbar-header.hidden-xs
+              a.navbar-brand href=root_path
+                = image_tag "logotype.jpg", { alt: t('.title'), title: t('.title') }
+            .wrapper-navigation.clearfix
+                ul.nav.navbar-nav.pull-right-sm
+                  - if current_user && current_user.recent_transactions.present?
+                    li= link_to t('.add_recent_transaction'), new_user_recent_transaction_path
+                    li= link_to t('.next_transfer'), new_user_next_transfer_path
+                    li= link_to t('.help_others'), "#", "data-toggle"=>"modal", "data-target"=>"#referral_dialog"
+                  - if user_signed_in?
+                    li.navbar-text= current_user.full_name
+                    li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
+                  - else
+                    li= link_to t('.log_in'), '/users/sign_in', class: 'btn btn-primary hidden-xs'
 
-    .container
-      .row
-        .col-sm-8.col-sm-offset-2
+      .wrapper-content role="main"
+        .top-content.text-center
+          .container
+            .outer-top-content
+              .inner-top-content
+                p.wrapper-flags
+                  i.icon-india.icon-lg
+                  i.icon-mexico.icon-lg
+                  i.icon-philippines.icon-lg
+                  i.icon-china.icon-lg
+                p.h1
+                  | Immigrants of
+                  br.visible-xs
+                  | The World Unite!
+                ul.list-inline.lead
+                  li= link_to "Share Information", "/"
+                  li -
+                  li= link_to "Learn", "/"
+                  li -
+                  li= link_to "Help Others", "/"
+                p.lead.hidden-xs Send money with Transparency, help yourself and others to learn Total Cost!
+                .row
+                  .col-sm-6
+                    p.right-sm
+                      = link_to '/users/sign_in', class: 'btn btn-primary btn-lg-long' do
+                        i.fa.fa-fw.fa-share.fa-lg
+                        | Share transfer
+                  .col-sm-6
+                    p.left-sm
+                      = link_to '/users/sign_in', class: 'btn btn-info' do
+                        i.fa.fa-fw.fa-question-circle.fa-lg
+                        | How it works?
+        .container.pad-top
+          p.text-center.lead.visible-xs Send money with Transparency, help yourself and others to learn Total Cost!
           = flash_messages(:html, :close)
-          = yield
-        //.col-sm-3
-        //  .well.sidebar-nav
-        //    h3 Sidebar
-        //    ul.nav.nav-list
-        //      li.nav-header Sidebar
-        //      li= link_to "Link 1", "/path1"
-        //      li= link_to "Link 2", "/path2"
-        //      li= link_to "Link 3", "/path3"
+        = yield
 
-      footer
-        p &copy; Company 2014
+      .root-footer
+
+    footer.footer
+      .container
+        p Saveonsend &copy; 2014 All rights reserved. Saveonsend is a trademark and/or registered trademark and trade dress of XYZ Corporation in the United States and elsewhere
 
 - if user_signed_in?
   = render 'referrals/dialog'

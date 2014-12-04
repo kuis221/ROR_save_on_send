@@ -1,15 +1,21 @@
-ready = ->
-  $("a[rel~=popover], .has-popover").popover()
-  $("a[rel~=tooltip], .has-tooltip").tooltip()
+sos = sos or {}
+sos.e = $.support.touch ? "tap" : "click";
 
-  #Masks start
+# Render rating
+sos.renderRating = ->
+  $(".star").rating()
+  $(".user-rating").addClass "show"
+  return
+
+# Render masks
+sos.renderMasks = ->
   $('.mask-date').inputmask "m/d/y"
   $('.mask-money-sent').inputmask "Regex",
     regex: "^[1-9][0-9]{0,2}|[12][0-9]{3}$"
   $('.mask-money-received').inputmask "9999",
     'showMaskOnHover': false,
     'showMaskOnFocus': false
-  $('.mask-money-fees').inputmask "Regex", 
+  $('.mask-money-fees').inputmask "Regex",
     regex: "[0-9]{1,2}[.]?[0-9]{0,2}"
   $('.mask-minutes').inputmask "Regex",
     regex: "^[1-9]|[1-5][0-9]|60$"
@@ -17,7 +23,22 @@ ready = ->
     regex: "^[1-9]|1[0-9]|2[0-4]$"
   $('.mask-days').inputmask "Regex",
     regex: "^[1-9]|1[0-4]$"
-  #End
+
+sos.init = ->
+  $("a[rel~=popover], .has-popover").popover()
+  $("a[rel~=tooltip], .has-tooltip").tooltip()
+
+  # Navigation Toggle
+  $(document).on "click", ".header .toggle-menu, .opened-menu .wrapper-content, .opened-menu .footer, .menu .close", (e) ->
+    e.preventDefault()
+    $("body").toggleClass "opened-menu"
+    return
+
+  sos.renderMasks()
+  sos.renderRating()
+
+ready = ->
+  sos.init()
 
 # Fix turbolinks
 $(document).ready(ready)

@@ -56,5 +56,12 @@
 }
 
 @mixin flag-icon($name, $size: 16, $path: 'flags/') {
-  background: {image: image-url( $path+$size+'/'+$name); position: center center; repeat: no-repeat;}
+  background: {image: image-url( $path+$size+'/'+$name); position: center center; repeat: no-repeat; }
+}
+
+@mixin flag-icons($name, $path: 'flags/') {
+   &.icon-xs { @include flag-icon('Mexico.png', $icon-size-xs); }
+   &.icon-sm { @include flag-icon('Mexico.png', $icon-size-sm); }
+   &.icon-md { @include flag-icon('Mexico.png', $icon-size-md); }
+   &.icon-lg { @include flag-icon('Mexico.png', $icon-size-lg); }
 }

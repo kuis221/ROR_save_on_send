@@ -1,47 +1,54 @@
-h2= t('.sign_up')
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
-  = devise_error_messages!
-  // email
-  .form-group
-    = f.label :email, class: 'col-sm-4 control-label'
-    .col-sm-8
-      = f.email_field :email, autofocus: true, class: 'form-control'
-  // password
-  .form-group
-    = f.label :password, class: 'col-sm-4 control-label'
-    .col-sm-8
-      = f.password_field :password, autocomplete: "off", class: 'form-control'
-      - if @validatable
-        em= t('.password_length', minimum_password_length: @minimum_password_length)
-  // password confirmation
-  .form-group
-    = f.label :password_confirmation, class: 'col-sm-4 control-label'
-    .col-sm-8
-      = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
-  // first name
-  .form-group
-    = f.label :first_name, class: 'col-sm-4 control-label'
-    .col-sm-8
-      = f.text_field :first_name, class: 'form-control'
-  // last name
-  .form-group
-    = f.label :last_name, class: 'col-sm-4 control-label'
-    .col-sm-8
-      = f.text_field :last_name, class: 'form-control'
-  // zipcode
-  .form-group
-    = f.label :zipcode, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.text_field :zipcode, class: 'form-control'
-  // money_transfer_destination
-  .form-group
-    = f.label :money_transfer_destination_id, class: 'col-sm-4 control-label'
-    .col-sm-8
-      = f.collection_radio_buttons(:money_transfer_destination_id, Country.all.collect {|country| [ country.id, country.name ] }, :first, :last, {prompt: true, checked: Country.all.collect.first}) do |b|
-        = b.label( class: "radio-inline", title: b.text )
-          = b.radio_button
-          i *{:class => ['icon-sm', 'icon-'+b.text.parameterize.downcase]}
-  // actions
-  .form-group
-    .col-sm-offset-4.col-sm-8
-      = f.submit t('.sign_up'), class: 'btn btn-primary btn-lg'
+.sign-up-page
+  .container
+    .row
+      .col-xs-offset-1.col-xs-10.col-sm-offset-3.col-sm-6
+
+        h2= t('.sign_up')
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal form-validate', role: 'form'}, validate: true) do |f|
+          = devise_error_messages!
+          // email
+          .form-group
+            = f.label :email, class: 'col-sm-4 control-label'
+            .col-sm-8
+              = f.email_field :email, autofocus: true, class: 'form-control'
+          // password
+          .form-group
+            = f.label :password, class: 'col-sm-4 control-label'
+            .col-sm-8
+              = f.password_field :password, autocomplete: "off", class: 'form-control'
+              - if @validatable
+                em= t('.password_length', minimum_password_length: @minimum_password_length)
+          // password confirmation
+          .form-group
+            = f.label :password_confirmation, class: 'col-sm-4 control-label'
+            .col-sm-8
+              = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
+          // first name
+          .form-group
+            = f.label :first_name, class: 'col-sm-4 control-label'
+            .col-sm-8
+              = f.text_field :first_name, class: 'form-control'
+          // last name
+          .form-group
+            = f.label :last_name, class: 'col-sm-4 control-label'
+            .col-sm-8
+              = f.text_field :last_name, class: 'form-control'
+          // zipcode
+          .form-group
+            = f.label :zipcode, class: 'col-xs-12 col-sm-4 control-label'
+            .col-xs-6.col-sm-5.col-md-4.col-lg-3
+              = f.text_field :zipcode, class: 'form-control'
+          // money_transfer_destination
+          .form-group
+            = f.label :money_transfer_destination_id, class: 'col-sm-4 control-label'
+            .col-sm-8
+              = f.collection_radio_buttons(:money_transfer_destination_id, Country.all.collect {|country| [ country.id, country.name ] }, :first, :last, {prompt: true, checked: Country.all.collect.first}) do |b|
+                = b.label( class: "radio-inline", title: b.text )
+                  = b.radio_button
+                  i *{:class => ['icon-sm', 'icon-'+b.text.parameterize.downcase]}
+          // actions
+          .form-group
+            .col-sm-offset-4.col-sm-8
+              = button_tag type:"submit", class: "btn btn-primary btn-lg" do
+                i.fa.fa-fw.fa-check-circle-o.fa-lg
+                = t('.sign_up')
