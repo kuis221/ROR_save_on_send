@@ -49,6 +49,7 @@ gem 'rails_stdout_logging'
 # User authentication
 gem 'devise'
 gem 'devise-i18n'
+gem 'omniauth-facebook'
 
 # Localization
 gem 'http_accept_language'

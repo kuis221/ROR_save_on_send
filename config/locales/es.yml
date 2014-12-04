@@ -18,6 +18,10 @@ es:
     provider_feedback_form:
       title: Valore el proveedor
       submit: Someter  
+  users:
+    edit:
+      title: Sírvanse proporcionar una información adicional, que nos ayudan a encontrar el mejor proveedor de servicios para usted
+      submit: Someter
   user_recent_transactions:
     new:
       title: Usuario reciente transacción

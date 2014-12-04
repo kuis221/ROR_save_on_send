@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
     if resource_or_scope.is_a?(Admin)
       rails_admin_path
     else
-      current_user.recent_transactions.empty? ? new_user_recent_transaction_path : welcome_path
+      if current_user.complete?
+        current_user.recent_transactions.empty? ? new_user_recent_transaction_path : welcome_path
+      else
+        edit_user_path
+      end
     end
   end
 

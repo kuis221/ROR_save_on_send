@@ -18,6 +18,10 @@ en:
     provider_feedback_form:
       title: Rate the provider
       submit: Submit
+  users:
+    edit:
+      title: Please provide an additional information, that help us to find the best service provider for you
+      submit: Submit
   user_recent_transactions:
     new:
       title: User recent transaction
