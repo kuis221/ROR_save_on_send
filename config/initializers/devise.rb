@@ -236,9 +236,7 @@ Devise.setup do |config|
   # production app
   #config.omniauth :facebook, "805358239527812", "2ff82cd28db8edcb55cd5019098748e8"           
   # test app
-  # config.omniauth :facebook, "806040552792914", "5c0e25f6b7071f0b274b24e1c9515e1b"           
-  # test app created by me
-  config.omniauth :facebook, "1552757134969623", "051128656a41835a1ed46ad74bfcab2e"           
+  config.omniauth :facebook, "806040552792914", "5c0e25f6b7071f0b274b24e1c9515e1b"           
   
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
