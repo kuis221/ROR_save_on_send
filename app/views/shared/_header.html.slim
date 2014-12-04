@@ -1,0 +1,18 @@
+.navbar.navbar-default.navbar-static-top
+  .container
+    button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    = link_to t('.title'), root_path, class: 'navbar-brand'
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      ul.nav.navbar-nav
+        - if current_user && current_user.recent_transactions.present?
+          li= link_to t('.add_recent_transaction'), new_user_recent_transaction_path
+          li= link_to t('.next_transfer'), new_user_next_transfer_path
+          li= link_to t('.help_others'), "#", "data-toggle"=>"modal", "data-target"=>"#referral_dialog"
+      ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          li.navbar-text= current_user.full_name
+          li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
+

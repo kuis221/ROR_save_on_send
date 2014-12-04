@@ -5,12 +5,15 @@ es:
     save_on_transaction_html: "<h4 class='no-marg-btm'>Otros envían <strong>%{saving} %{currency}</strong> más el uso del conocimiento SaveOnSend</h4>"
     thanks_for_feedback: Gracias por su colaboración
   layouts:
-    application:
+    application: &application
       title: Save on Send
       add_recent_transaction: Añadir reciente transacción
       next_transfer: Transferencia siguiente
       help_others: Ayudar a los demás
       sign_out: Desconectar
+    landing: *application
+  shared:
+    header: *application
   service_providers:
     show:
       go_to_provider: Listo para enviar dinero
