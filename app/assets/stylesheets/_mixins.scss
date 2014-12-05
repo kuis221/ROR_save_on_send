@@ -60,8 +60,9 @@
 }
 
 @mixin flag-icons($name, $path: 'flags/') {
-   &.icon-xs { @include flag-icon('Mexico.png', $icon-size-xs); }
-   &.icon-sm { @include flag-icon('Mexico.png', $icon-size-sm); }
-   &.icon-md { @include flag-icon('Mexico.png', $icon-size-md); }
-   &.icon-lg { @include flag-icon('Mexico.png', $icon-size-lg); }
+   &.icon-xs { @include flag-icon($name, $icon-size-xs); }
+   &.icon-sm { @include flag-icon($name, $icon-size-sm); }
+   &.icon-md { @include flag-icon($name, $icon-size-md); }
+   &.icon-lg { @include flag-icon($name, $icon-size-lg); }
+   &.icon-xlg { @include flag-icon($name, $icon-size-xlg); }
 }

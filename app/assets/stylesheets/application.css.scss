@@ -93,30 +93,19 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
 .icon-sm { height: #{$icon-size-sm}px; width: #{$icon-size-sm}px; }
 .icon-md { height: #{$icon-size-md}px; width: #{$icon-size-md}px; }
 .icon-lg { height: #{$icon-size-lg}px; width: #{$icon-size-lg}px; }
+.icon-xlg { height: #{$icon-size-lg}px; width: #{$icon-size-xlg}px; }
 
 .icon-china {
-   &.icon-xs { @include flag-icon('China.png', $icon-size-xs); }
-   &.icon-sm { @include flag-icon('China.png', $icon-size-sm); }
-   &.icon-md { @include flag-icon('China.png', $icon-size-md); }
-   &.icon-lg { @include flag-icon('China.png', $icon-size-lg); }
+  @include flag-icons('China.png');
 }
 .icon-india {
-   &.icon-xs { @include flag-icon('India.png', $icon-size-xs); }
-   &.icon-sm { @include flag-icon('India.png', $icon-size-sm); }
-   &.icon-md { @include flag-icon('India.png', $icon-size-md); }
-   &.icon-lg { @include flag-icon('India.png', $icon-size-lg); }
+  @include flag-icons('India.png');
 }
 .icon-mexico {
-   &.icon-xs { @include flag-icon('Mexico.png', $icon-size-xs); }
-   &.icon-sm { @include flag-icon('Mexico.png', $icon-size-sm); }
-   &.icon-md { @include flag-icon('Mexico.png', $icon-size-md); }
-   &.icon-lg { @include flag-icon('Mexico.png', $icon-size-lg); }
+  @include flag-icons('Mexico.png');
 }
 .icon-philippines {
-   &.icon-xs { @include flag-icon('Philippines.png', $icon-size-xs); }
-   &.icon-sm { @include flag-icon('Philippines.png', $icon-size-sm); }
-   &.icon-md { @include flag-icon('Philippines.png', $icon-size-md); }
-   &.icon-lg { @include flag-icon('Philippines.png', $icon-size-lg); }
+  @include flag-icons('Philippines.png');
 }
 
 /* Close Circle */
@@ -166,20 +155,27 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
     > img { height: #{$navbar-height - 44}; @include transition(#{all .1s}); }
     @media #{$small} { padding: $navbar-padding-vertical ($grid-gutter-width / 2); }
   }
-  .navbar-nav { margin: 0;
-    >li {
-      > a { padding: 10px 15px;
+  .navbar-nav { margin: 0 (-$grid-gutter-width / 2);
+    >li { border-bottom: 1px solid $gray-dark;
+      > a { color: $gray-lighter; padding: 10px $grid-gutter-width;
         &.btn-primary { @extend .btn-primary;}
+        &:hover, &:focus { background-color: darken($blue-dark, 1%); color: #fff; }
+        @media #{$small} { color: $navbar-default-link-color; margin: 0; padding: 10px ($grid-gutter-width / 2);
+          &:hover, &:focus { background-color: $navbar-default-link-hover-bg; color: $navbar-default-link-hover-color; }
+        }
       }
+      @media #{$small} { border: 0 none; }
     }
-    .navbar-text { margin: 0; padding: 10px 15px; }
+    .navbar-text { color: lighten($blue, 30%); margin: 0 (-$grid-gutter-width / 2); padding: 10px ($grid-gutter-width / 2 * 3);
+      @media #{$small} { color: $navbar-default-color; margin: 0; padding: 10px ($grid-gutter-width / 2); }
+    }
     @media #{$small} {  }
   }
   .wrapper-navigation {
     @media #{$small} { padding: 20px 0 12px; }
   }
 
-  @media #{$small} { background-color: $navbar-default-bg; float: none; margin-left: 0; position: relative; width: auto; z-index: $zindex-navbar; }
+  @media #{$small} { background-color: $navbar-default-bg; border-bottom: 2px solid $blue-dark; float: none; margin-left: 0; position: relative; width: auto; z-index: $zindex-navbar; }
 }
 /* ==========================================================================
    Main
@@ -191,7 +187,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
 
 .top-content { background-color: $blue-dark; margin-top: (-$line-height-computed); overflow: hidden;
   .outer-top-content { margin: 0 (-$grid-gutter-width / 2); }
-  .inner-top-content { background-color: $blue-dark; background: {image: image-url('map-xs.jpg'); position: center center; repeat: no-repeat; } height: 380px; padding-top: 30px;
+  .inner-top-content { background-color: $blue-dark; background: {image: image-url('map-xs.jpg'); position: center center; repeat: no-repeat; } height: 380px; padding-top: 31px;
     .h1 { font-size: #{$font-size-h1 - 7}; }
     .right-sm {
       @media #{$small} { text-align: right; }
@@ -204,15 +200,21 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
     }
 
     p { color: #fff; }
-    ul.lead { font-size: $font-size-large; margin-bottom: 25px; }
+    ul.lead { font-size: $font-size-large; margin-bottom: 25px;
+      @media #{$xsmall} { font-size: $font-size-base; }
+      @media #{$small} { margin-bottom: 35px; }
+    }
     .lead { color: #f9f9f9;
       a { color: #f9f9f9; }
     }
-    .wrapper-flags {
-      i { width: 80px; }
+    .wrapper-flags { margin-bottom: 23px;
+      i { width: 88px;
+        @media #{$xsmall} { width: 78px; }
+      }
+      @media #{$small} { margin-bottom: 43px; }
     }
-
-    @media #{$small} { background: {image: image-url('map.jpg'); position: center center; repeat: no-repeat; } height: 400px; }
+    @media #{$xsmall} { padding-top: 35px; }
+    @media #{$small} { background: {image: image-url('map.jpg'); position: center center; repeat: no-repeat; } height: 400px; padding-top: 43px; }
   }
 }
 

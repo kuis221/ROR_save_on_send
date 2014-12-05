@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  layout :layout_by_resource
+
   before_filter :set_locale
 
   protected
@@ -13,7 +15,19 @@ class ApplicationController < ActionController::Base
     if resource_or_scope.is_a?(Admin)
       rails_admin_path
     else
-      current_user.recent_transactions.empty? ? new_user_recent_transaction_path : welcome_path
+      if current_user.complete?
+        current_user.recent_transactions.empty? ? new_user_recent_transaction_path : welcome_path
+      else
+        edit_user_path
+      end
+    end
+  end
+
+  def layout_by_resource
+    if devise_controller? && controller_name == 'registrations' && action_name == 'new'
+      'landing'
+    else
+      'application'
     end
   end
 

@@ -35,6 +35,7 @@ gem 'font-awesome-sass' # The iconic font designed for Bootstrap
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-star-rating-rails'
 gem 'jquery-inputmask-rails'
+gem 'jquery-turbolinks'
 
 gem 'bootstrap_flash_messages', '~> 1.0.0'
 
@@ -49,6 +50,7 @@ gem 'rails_stdout_logging'
 # User authentication
 gem 'devise'
 gem 'devise-i18n'
+gem 'omniauth-facebook'
 
 # Localization
 gem 'http_accept_language'

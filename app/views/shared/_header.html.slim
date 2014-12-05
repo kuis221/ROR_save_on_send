@@ -1,0 +1,41 @@
+header.header.visible-xs
+  .container
+    = link_to "#toggle-menu", class: 'toggle-menu pull-right' do
+      i.fa.fa-bars
+    - if !user_signed_in?
+      = link_to t('.log_in'), '/users/sign_in', class: 'btn btn-primary pull-right visible-xs'
+    = link_to root_path, class: 'navbar-brand pull-left' do
+      = image_tag "logotype.jpg", { alt: t('.title'), title: t('.title'), class: 'img-responsive' }
+
+- content_for :menu do
+  #menu.menu.navbar.navbar-default.navbar-static-top role="navigation"
+    .container
+      .menu-header.visible-xs
+        = link_to "#close-menu", class: 'close close-circle pull-right' do
+          | &times;
+        span
+          i.fa.fa-fw.fa-ellipsis-v
+          | menu
+      .clearfix
+        .navbar-header.hidden-xs
+          a.navbar-brand href=root_path
+            = image_tag "logotype.jpg", { alt: t('.title'), title: t('.title') }
+        .wrapper-navigation.clearfix
+            ul.nav.navbar-nav.pull-right-sm
+              / li.hidden-sm= link_to "How it works", '/'
+              / li= link_to "Share transfer", '/'
+              / li= link_to "Forum", '/'
+              / li= link_to "Help", '/'
+              / li= link_to "Contact us", '/'
+
+              - if current_user && current_user.recent_transactions.present?
+                li= link_to t('.add_recent_transaction'), new_user_recent_transaction_path
+                li= link_to t('.next_transfer'), new_user_next_transfer_path
+                li= link_to t('.help_others'), "#", "data-toggle"=>"modal", "data-target"=>"#referral_dialog"
+              - if user_signed_in?
+                li.navbar-text= current_user.full_name
+                li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
+              - else
+                li= link_to "Register", '/'
+                li= link_to t('.log_in'), '/users/sign_in', class: 'btn btn-primary hidden-xs'
+

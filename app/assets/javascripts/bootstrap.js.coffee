@@ -24,15 +24,16 @@ sos.renderMasks = ->
   $('.mask-days').inputmask "Regex",
     regex: "^[1-9]|1[0-4]$"
 
+# Navigation Toggle
+$(document).on "click", ".header .toggle-menu, .opened-menu .wrapper-content, .opened-menu .footer, .menu .close", (e) ->
+  e.preventDefault()
+  console.log(111)
+  $("body").toggleClass "opened-menu"
+  return
+
 sos.init = ->
   $("a[rel~=popover], .has-popover").popover()
   $("a[rel~=tooltip], .has-tooltip").tooltip()
-
-  # Navigation Toggle
-  $(document).on "click", ".header .toggle-menu, .opened-menu .wrapper-content, .opened-menu .footer, .menu .close", (e) ->
-    e.preventDefault()
-    $("body").toggleClass "opened-menu"
-    return
 
   sos.renderMasks()
   sos.renderRating()

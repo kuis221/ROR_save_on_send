@@ -2,9 +2,8 @@
   .container
     .row
       .col-xs-offset-1.col-xs-10.col-sm-offset-3.col-sm-6
-
         h2= t('.sign_up')
-        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal form-validate', role: 'form'}, validate: true) do |f|
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f|
           = devise_error_messages!
           // email
           .form-group
@@ -52,3 +51,9 @@
               = button_tag type:"submit", class: "btn btn-primary btn-lg" do
                 i.fa.fa-fw.fa-check-circle-o.fa-lg
                 = t('.sign_up')
+
+          // sign up with facebook
+          .form-group
+            .col-sm-offset-4.col-sm-8
+              = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: 'btn btn-lg btn-success'
+
