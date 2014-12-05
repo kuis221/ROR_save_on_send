@@ -10,6 +10,7 @@ es:
       add_recent_transaction: Añadir reciente transacción
       next_transfer: Transferencia siguiente
       help_others: Ayudar a los demás
+      how_to: Cómo hacer/Preguntas
       sign_out: Desconectar
     landing: *application
   shared:

@@ -11,6 +11,7 @@
           li= link_to t('.add_recent_transaction'), new_user_recent_transaction_path
           li= link_to t('.next_transfer'), new_user_next_transfer_path
           li= link_to t('.help_others'), "#", "data-toggle"=>"modal", "data-target"=>"#referral_dialog"
+          li= link_to t('.how_to'), how_to_path
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           li.navbar-text= current_user.full_name
