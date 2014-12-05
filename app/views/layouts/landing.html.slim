@@ -34,30 +34,27 @@ html lang="en"
                   i.icon-mexico.icon-xlg
                   i.icon-philippines.icon-xlg
                   i.icon-china.icon-xlg
-                p.h1
-                  ' Immigrants of
-                  br.visible-xs
-                  | The World Unite!
+                p.h1= t('.title_html')
                 ul.list-inline.lead
                   li= link_to "Share Information", "#"
                   li -
                   li= link_to "Learn", "#"
                   li -
-                  li= link_to "Help Others", '#'
-                p.lead.hidden-xs Send money with Transparency, help yourself and others to learn Total Cost!
+                  li= link_to "Help Others", "#"
+                p.lead.hidden-xs= t('.send_money')
                 .row
                   .col-sm-6
                     p.right-sm
                       = link_to '#sign_up', class: 'btn btn-primary btn-lg-long' do
                         i.fa.fa-fw.fa-share.fa-lg
-                        | Share transfer
+                        = t('.share_transfer')
                   .col-sm-6
                     p.left-sm
                       = link_to how_to_path, class: 'btn btn-info' do
                         i.fa.fa-fw.fa-question-circle.fa-lg
-                        | How it works?
+                        = t('.how_it')
         .container.pad-top
-          p.text-center.lead.visible-xs Send money with Transparency, help yourself and others to learn Total Cost!
+          p.text-center.lead.marg-btm-sm.visible-xs= t('.send_money')
           .row
             .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
               = flash_messages(:html, :close)

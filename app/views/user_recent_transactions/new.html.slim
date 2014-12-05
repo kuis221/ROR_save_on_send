@@ -1,8 +1,8 @@
 .recent-tr-page
 
   .header-blue
-    i.fa.fa-chevron-circle-down
-    i.fa.fa-circle
+    i.fa.fa-chevron-circle-down.hidden-xs
+    i.fa.fa-circle.hidden-xs
     .container
       .text-center
         h2.marg-btm.text-capitalize= t('.title')
@@ -11,7 +11,7 @@
             p= t('.why_it_html')
 
   .container
-    .marg-btm-lg
+    .marg-btm
       p.h3.hidden-xs.text-center= t('.see_how_much')
       p.lead.text-center= t('.enter_info')
 
@@ -34,7 +34,7 @@
               .form-group
                 = f.label :date, class: 'col-sm-5 control-label'
                 .col-sm-7
-                  .input-group.date *{:data => { provide: 'datepicker' }}
+                  .input-group.date
                     = f.text_field :date, value: @user_recent_transaction.date.present? ? @user_recent_transaction.date.strftime('%m/%d/%Y'): '', class: 'form-control mask-date'
                     .input-group-addon
                       i.fa.fa-calendar
@@ -66,6 +66,7 @@
                     .input-group-addon#amount_received_currency
                       i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || current_user.prefered_currency.first).downcase]}
                     = money_field f, @user_recent_transaction, :amount_received, 'form-control mask-money-received'
+                  em.help-block= t('.amount_received_help')
               // originating source of funds
               .form-group
                 = f.label :originating_source_of_funds_id, class: 'col-sm-5 control-label'
@@ -137,20 +138,21 @@
                 .form-group
                   = f.label :promotion, class: 'col-sm-5 control-label'
                   .col-sm-7
-                    = f.text_field :promotion, class: 'form-control'
+                    = f.text_field :promotion, class: 'form-control', placeholder: t('.placeholder_promotion')
               // service quality
               .form-group
                 = f.label :service_quality, class: 'col-sm-5 control-label'
-                .col-sm-7
+                .col-sm-7.user-rating
                   = f.collection_radio_buttons(:service_quality, (1..5).collect{|rate| [rate, rate]}, :first, :last, {prompt: true}) do |b|
-                    = b.label( class: "radio-inline", title: b.text )
-                      = b.radio_button
-                      = b.text
+                    = b.radio_button( class: "star")
+                    /= b.label( class: "radio-inline star", title: b.text )
+                    /  = b.radio_button
+                    /  = b.text
               // comments
               .form-group
                 = f.label :comments, class: 'col-sm-5 control-label'
                 .col-sm-7
-                  = f.text_area :comments, class: 'form-control'
+                  = f.text_area :comments, class: 'form-control', placeholder: t('.placeholder_comment')
               // actions
               .form-group
                 .col-sm-offset-5.col-sm-7
@@ -189,11 +191,9 @@
   .footer-blue-dark
     .container
       .text-center
-        h2.marg-btm.text-capitalize Thank you!
+        h2.marg-btm.text-capitalize= t('.footer')
         .row.hidden-xs
           .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
-            p
-              span.lead' for sharing your experience.
-              | You information might have helped someone else make a smarter and more informed choice.
+            p= t('.footer_add_html')
 
 

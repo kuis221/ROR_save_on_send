@@ -66,16 +66,16 @@ $font-family-pt-sans:  "PT Sans", Helvetica, Arial, sans-serif !default;
 
 $font-family-base:        $font-family-pt-sans;
 
-$font-size-base:          15px;
-$font-size-large:         ceil(($font-size-base * 1.2));  // ~18px
-$font-size-small:         ceil(($font-size-base * 0.85)); // ~13px
+$font-size-base:          15.6px;
+$font-size-large:         ceil(($font-size-base * 1.15)); // ~18px
+$font-size-small:         ceil(($font-size-base * 0.72));  // ~14px
 
-$font-size-h1:            floor(($font-size-base * 2.9)); // ~44px
-$font-size-h2:            floor(($font-size-base * 2.5)); // ~38px
-$font-size-h3:            ceil(($font-size-base * 1.7));  // ~26px
-$font-size-h4:            ceil(($font-size-base * 1.2));  // ~18px
+$font-size-h1:            floor(($font-size-base * 2.8)); // ~44px
+$font-size-h2:            floor(($font-size-base * 2.1)); // ~32px
+$font-size-h3:            ceil(($font-size-base * 1.6));  // ~25px
+$font-size-h4:            ceil(($font-size-base * 1.15)); // ~18px
 $font-size-h5:            $font-size-base;
-$font-size-h6:            ceil(($font-size-base * 0.85)); // ~13px
+$font-size-h6:            ceil(($font-size-base * 0.72));  // ~14px
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429 !default; // 20/14
@@ -370,7 +370,7 @@ $container-lg:                 $container-large-desktop !default;
 
 // Basics of a navbar
 $navbar-height:                    68px;
-$navbar-height-tiny:               ($navbar-height - 8);
+$navbar-height-tiny:               ($navbar-height - 9);
 $navbar-margin-bottom:             0;
 $navbar-border-radius:             $border-radius-base !default;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;

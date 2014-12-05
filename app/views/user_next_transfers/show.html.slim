@@ -7,21 +7,22 @@
         h2.no-marg-btm.text-lowercase.text-capitalize-first= t('.title_table')
 
   .container
-    table.table
-      thead
-        tr
-          th= t('.provider_name')
-          - if @from_to_show
-            th= t('.to_from_transfer_media')
-          th= t('.gross_paid_amount')
-          th= t('.real_cost')
-          th= t('.net_received_amount')
-          th= t('.duration')
-          //th= t('.documentation_requirements')
-          //th= t('.promotions')
-          th= t('.service_quality')
-      tbody
-        = render @least_expensive_remittance_terms
+    .table-responsive
+      table.table
+        thead
+          tr
+            th= t('.provider_name')
+            - if @from_to_show
+              th= t('.to_from_transfer_media')
+            th= t('.gross_paid_amount')
+            th= t('.real_cost')
+            th= t('.net_received_amount')
+            th= t('.duration')
+            //th= t('.documentation_requirements')
+            //th= t('.promotions')
+            th= t('.service_quality')
+        tbody
+          = render @least_expensive_remittance_terms
 
     hr
 

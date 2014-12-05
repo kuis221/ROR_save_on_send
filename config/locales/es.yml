@@ -1,8 +1,8 @@
 es:
   notice:
     verification_email_was_sent: Verificación de correo electrónico fue enviado a su dirección de correo electrónico - por favor haga clic en enlace de ese correo electrónico para confirmar
-    best_rate_html: ¡Enhorabuena! Su transferencia reciente utilizó el mejor enfoque!
-    save_on_transaction_html: "<h4 class='no-marg-btm'>Otros envían <strong>%{saving} %{currency}</strong> más el uso del conocimiento SaveOnSend</h4>"
+    best_rate: ¡Enhorabuena! Su transferencia reciente utilizó el mejor enfoque!
+    save_on_transaction: "<h4 class='no-marg-btm'>Otros envían <strong>%{saving} %{currency}</strong> más el uso del conocimiento SaveOnSend</h4>"
     thanks_for_feedback: Gracias por su colaboración
   layouts:
     application: &application
@@ -12,7 +12,17 @@ es:
       help_others: Ayudar a los demás
       how_to: Cómo hacer/Preguntas
       sign_out: Desconectar
-    landing: *application
+    landing: &application
+      title: Save on Enviar
+      title_html: "Los inmigrantes de <br class='visible-xs'> El mundo, uníos!"
+      send_money: "Enviar dinero con Transparencia, ayudarse a sí mismo ya otros a aprender Coste total!"
+      share_transfer: Transferencia de acciones
+      how_it: ¿Cómo funciona?
+      add_recent_transaction: Añadir reciente transacción
+      next_transfer: transferencia Siguiente
+      help_others: Ayudar a los demás
+      how_to: Cómo hacer / Preguntas
+      sign_out: Salir
   shared:
     header: *application
   service_providers:
@@ -21,22 +31,30 @@ es:
       provider_feedbacks_title: Lo que otros dicen
     provider_feedback_form:
       title: Valore el proveedor
-      submit: Someter  
+      submit: Someter
   users:
     edit:
       title: Sírvanse proporcionar una información adicional, que nos ayudan a encontrar el mejor proveedor de servicios para usted
       submit: Someter
   user_recent_transactions:
     new:
-      title: Usuario reciente transacción
+      title: Háblenos de su último traslado
+      why_it_html: "<span class='lead no-marg-btm visible-xs-block'>y ver cuánto se podría haber salvado.</span><span class='lead hidden-xs'>Por qué es importante?</span> <span class='hidden-xs'>ComparisonPricing se trata de compartir con la comunidad. Toda nuestra información de precios se basa en las aportaciones de que un resto de usuarios. Compartir su información es cómo ayudar y te ayudó. Responder una pregunta unos simples con respecto a su reciente traslado: toma sólo un minuto, pero podría hacer una gran diferencia para alguien más.</span>"
+      see_how_much: Vea todo lo que podría haber salvado en su última transferencia!
+      enter_info: Introduzca la información precisa para ayudarse a sí mismo ya los demás.
       photo_id: Identificación con foto
       tax_returns: Las declaraciones de impuestos
-      job_verification: Verificación de empleo
-      submit: Someter
-      other_provider: Otro proveedor
+      job_verification: verificación de empleo
+      submit: "He terminado y envíela!"
+      other_provider: otro Proveedor
       other_provider_modal_label: Por favor proporcione tanto como la información posible acerca de su proveedor preferido
-      close: Cerca
-      ok: Okay
+      close: cerca
+      ok: OK
+      amount_received_help: "Por favor, sea precisa, no se aproximan, por lo que podríamos identificar correctamente sus ahorros y otros podrían beneficiarse de su información. Si no está seguro, consulte a su destinatario."
+      placeholder_comment: Ayuda a los demás con comentarios detallados
+      placeholder_promotion: Dejar en blanco si ninguno
+      footer: Gracias!
+      footer_add_html: "<span class='lead'>por compartir su experiencia.</span> Usted información podría haber ayudado a alguien a hacer una elección más inteligente y más informada."
   user_next_transfers:
     new:
       title: Vamos a encontrar el mejor proveedor para su próxima transferencia
@@ -60,8 +78,14 @@ es:
   devise:
     registrations:
       new:
+        title_html: Únete <span class='hidden-xs'>SaveOnSenders</span><span class='visible-xs-inline'>a la</span> Comunidad
+        log_in_link: Inicio de sesión aquí si ya tiene una cuenta
+        join_our_html: "Únete a nuestra comunidad y empezar a compartir y obtener información sobre las mejores ofertas y formas más fáciles de enviar y recibir dinero Crear una cuenta es gratis y fácil y le dará acceso a nuestros foros de discusión y un montón de otra información usesful proporcionados desde <a href='/'>usuarios como tú!</a>"
+        title_create_new: "Crear una cuenta gratuita:"
         password_length: "(%{minimum_password_length} caracteres como mínimo)"
-        sign_up: Contratar
+        sign_up: Crear mi cuenta!
+        sign_up_fb: Entra con Facebook
+        or: o
     sessions:
       new:
         remember_me: Acuérdate de mí
@@ -74,7 +98,7 @@ es:
   activerecord:
     attributes:
       user:
-        email: Email
+        email: E-mail
         password: Contraseña
         password_confirmation: Confirmación de la contraseña
         first_name: Nombre de pila
@@ -83,18 +107,18 @@ es:
         money_transfer_destination_id: Destino Transferencia de dinero
       user/recent_transaction:
         date: Fecha
-        currency: A lo que la moneda?
-        amount_sent: Monto enviado
-        amount_received: Importe recibido
-        originating_source_of_funds_id: Tipo envío
-        service_provider_id: Proveedor de servicios
-        destination_preference_for_funds_id: Tipo de recepción
+        currency: moneda Recieved
+        amount_sent: Enviado monto en USD
+        amount_received: cantidad Recieved
+        originating_source_of_funds_id: Seleccione forma de pago
+        service_provider_id: Seleccionar proveedor
+        destination_preference_for_funds_id: método descargar
         fees_for_sending: Cuota para el envío
-        send_to_receive_duration: Enviar a recibir duración
+        send_to_receive_duration: ¿Cuánto tiempo antes que el dinero esté disponible?
         documentation_requirements: Los requisitos de documentación
-        promotion: Promoción
-        service_quality: La calidad del servicio
-        comments: Comentarios
+        promotion: Usado promociones
+        service_quality: Calidad de Proveedores
+        comments: Ayuda a otros con comentarios detallados sobre este proveedor
       user/next_transfer:
         amount_send: Monto de envío
         receive_currency: Recibe moneda
