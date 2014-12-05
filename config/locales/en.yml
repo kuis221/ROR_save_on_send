@@ -28,11 +28,14 @@ en:
       submit: Submit
   user_recent_transactions:
     new:
-      title: User recent transaction
+      title: Tell us about your last purchase
+      why_it_html: "<span class='lead visible-xs-block'>and see how much you could have saved.</span><span class='lead hidden-xs'>Why it matters?</span> <span class='hidden-xs'>ComparisonPricing is all about sharing with the community. All our pricing information is based on input from you an other users. Sharing your information is how you help and get helped. Answer a few simple question regarding your recent transfer: it takes just a minute but it could make a great difference for someone else.</span>"
+      see_how_much: See how much you could have saved on your last transfer!
+      enter_info: Enter information accurately to help yourself and others.
       photo_id: Photo ID
       tax_returns: Tax returns
       job_verification: Job verification
-      submit: Submit
+      submit: "I’m done, send it!"
       other_provider: Other Provider
       other_provider_modal_label: Please provide us with as much as information as possible about your favorite provider
       close: Close
@@ -60,8 +63,14 @@ en:
   devise:
     registrations:
       new:
+        title_html: Join <span class='hidden-xs'>SaveOnSenders</span><span class='visible-xs-inline'>The</span> Community
+        log_in_link: Log in here if you already have an account
+        join_our_html: "Join our community and start sharing and get information about the best deals and easier ways to send and recieve money. Creating an account is free and easy and will give you access to our discussion forums and tons of other usesful information provided from <a href='/'>users just like you!</a>"
+        title_create_new: "Create a free account:"
         password_length: "(%{minimum_password_length} characters minimum)"
-        sign_up: Sign up
+        sign_up: Create my account!
+        sign_up_fb: Sign in with Facebook
+        or: or
     sessions:
       new:
         remember_me: Remember me
@@ -90,11 +99,11 @@ en:
         service_provider_id: Service provider
         destination_preference_for_funds_id: Receiving type
         fees_for_sending: Fee for sending
-        send_to_receive_duration: Send to receive duration
+        send_to_receive_duration: How long before money become available?
         documentation_requirements: Documentation requirements
         promotion: Promotion
         service_quality: Service quality
-        comments: Comments
+        comments: Help others with detailed comment about this provider
       user/next_transfer:
         amount_send: Amount send
         receive_currency: Receive currency

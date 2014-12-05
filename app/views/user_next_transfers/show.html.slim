@@ -1,23 +1,34 @@
 - @highlight_column = false
 
-h2= t('.title_table')
+.next-tr-page
+  .header-blue
+    .container
+      .text-center
+        h2.no-marg-btm.text-lowercase.text-capitalize-first= t('.title_table')
 
-table.table
-  thead
-    tr
-      th= t('.provider_name')
-      - if @from_to_show
-        th= t('.to_from_transfer_media')
-      th= t('.gross_paid_amount')
-      th= t('.real_cost')
-      th= t('.net_received_amount')
-      th= t('.duration')
-      //th= t('.documentation_requirements')
-      //th= t('.promotions')
-      th= t('.service_quality')
-  tbody
-    = render @least_expensive_remittance_terms
+  .container
+    table.table
+      thead
+        tr
+          th= t('.provider_name')
+          - if @from_to_show
+            th= t('.to_from_transfer_media')
+          th= t('.gross_paid_amount')
+          th= t('.real_cost')
+          th= t('.net_received_amount')
+          th= t('.duration')
+          //th= t('.documentation_requirements')
+          //th= t('.promotions')
+          th= t('.service_quality')
+      tbody
+        = render @least_expensive_remittance_terms
 
-hr
-h2= t('.title')
-= render 'form'
+    hr
+
+  .header-gray-light
+    .container
+      .text-center
+        h2.no-marg-btm.text-lowercase.text-capitalize-first= t('.title')
+
+  .container
+    = render 'form'

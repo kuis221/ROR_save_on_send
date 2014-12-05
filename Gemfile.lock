@@ -99,6 +99,9 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-star-rating-rails (4.0.4)
       rails (>= 3.1.0)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     jquery-ui-rails (5.0.2)
       railties (>= 3.2.16)
     json (1.8.1)
@@ -299,6 +302,7 @@ DEPENDENCIES
   jquery-inputmask-rails
   jquery-rails
   jquery-star-rating-rails
+  jquery-turbolinks
   letter_opener
   money-rails
   omniauth-facebook

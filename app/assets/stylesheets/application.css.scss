@@ -24,12 +24,45 @@
 @import "bootstrap";
 @import "font-awesome";
 
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+
 /* ==========================================================================
    Base
    ========================================================================== */
+html, body { height: 100%;
+  @media #{$small} { background: #fff; }
+}
+
+body { font-weight: $font-weight; }
+
+.root { background-color: $blue; overflow: hidden; position: relative; width: 100%;
+  @media #{$small} { background-color: #fff; }
+}
+
 /* ==========================================================================
    Typography
    ========================================================================== */
+.color-white      { color: #fff; }
+.color-blue       { color: $blue; }
+.color-red        { color: #e7493d; }
+.color-gray       { color: $gray-dark; }
+.color-lgray      { color: $gray-light; }
+
+.color-youtube    { color: $youtube; }
+.color-twitter    { color: $twitter; }
+.color-instagram  { color: $instagram; }
+.color-facebook   { color: $facebook; }
+.color-pinterest  { color: $pinterest; }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-family-base; weight: bold; }; text-transform: uppercase;
+  a { color: $headings-color; text-decoration: none;
+    &:hover, &:focus { color: $link-color; text-decoration: underline; }
+  }
+}
+.text-capitalize-first:first-letter {
+    text-transform: uppercase !important;
+}
+
 /* ==========================================================================
    Sprites
    ========================================================================== */
@@ -44,50 +77,45 @@
 
 [class^="icon-"], [class*=" icon-"] { @include inline-block; }
 
-.icon-provider { background: { position: center center; repeat: no-repeat; } }
-.icon-western-union { height: 44px; width: 64px; background: {image: image-url("provider-icons/western-union.png"); } }
-.icon-xoom { height: 44px; width: 72px; background: {image: image-url("provider-icons/xoom.png"); } }
-.icon-moneygram { height: 44px; width: 80px; background: {image: image-url("provider-icons/moneygram.png"); } }
-.icon-transfast { height: 44px; width: 44px; background: {image: image-url("provider-icons/transfast.png"); } }
-.icon-ria { height: 44px; width: 83px; background: {image: image-url("provider-icons/ria.png"); } }
-.icon-transferwise { height: 44px; width: 92px; background: {image: image-url("provider-icons/transferwise.png"); } }
-.icon-remitly { height: 44px; width: 107px; background: {image: image-url("provider-icons/remitly.png"); } }
-.icon-wellsfargo { height: 44px; width: 85px; background: {image: image-url("provider-icons/wells-fargo.png"); } }
-.icon-viamericas { height: 44px; width: 135px; background: {image: image-url("provider-icons/viamericas.png"); } }
-.icon-pnb { height: 44px; width: 104px; background: {image: image-url("provider-icons/pnb.png"); } }
-.icon-bofa { height: 44px; width: 65px; background: {image: image-url("provider-icons/bofa.png"); } }
-.icon-paypal { height: 44px; width: 64px; background: {image: image-url("provider-icons/paypal.png"); } }
-.icon-walmart { height: 44px; width: 150px; background: {image: image-url("provider-icons/walmart.png"); } }
+.icon-provider { background: { position: center center; repeat: no-repeat; } height: 55px; width: 115px; }
+.icon-western-union { background: {image: image-url("provider-icons/western-union.png"); } }
+.icon-xoom { background: {image: image-url("provider-icons/xoom.png"); } }
+.icon-moneygram { background: {image: image-url("provider-icons/moneygram.png"); } }
+.icon-transfast { background: {image: image-url("provider-icons/transfast.png"); } }
+.icon-ria { background: {image: image-url("provider-icons/ria.png"); } }
+.icon-transferwise {  background: {image: image-url("provider-icons/transferwise.png"); } }
+.icon-remitly { background: {image: image-url("provider-icons/remitly.png"); } }
+.icon-wellsfargo { background: {image: image-url("provider-icons/wells-fargo.png"); } }
+.icon-viamericas { background: {image: image-url("provider-icons/viamericas.png"); } }
+.icon-pnb { background: {image: image-url("provider-icons/pnb.png"); } }
+.icon-bofa { background: {image: image-url("provider-icons/bofa.png"); } }
+.icon-paypal { background: {image: image-url("provider-icons/paypal.png"); } }
+.icon-walmart { background: {image: image-url("provider-icons/walmart.png"); } }
 
 .icon-xs { height: #{$icon-size-xs}px; width: #{$icon-size-xs}px; }
 .icon-sm { height: #{$icon-size-sm}px; width: #{$icon-size-sm}px; }
 .icon-md { height: #{$icon-size-md}px; width: #{$icon-size-md}px; }
 .icon-lg { height: #{$icon-size-lg}px; width: #{$icon-size-lg}px; }
+.icon-xlg { height: #{$icon-size-lg}px; width: #{$icon-size-xlg}px; }
 
 .icon-china {
-   &.icon-xs { @include flag-icon('China.png', $icon-size-xs); }
-   &.icon-sm { @include flag-icon('China.png', $icon-size-sm); }
-   &.icon-md { @include flag-icon('China.png', $icon-size-md); }
-   &.icon-lg { @include flag-icon('China.png', $icon-size-lg); }
+  @include flag-icons('China.png');
 }
 .icon-india {
-   &.icon-xs { @include flag-icon('India.png', $icon-size-xs); }
-   &.icon-sm { @include flag-icon('India.png', $icon-size-sm); }
-   &.icon-md { @include flag-icon('India.png', $icon-size-md); }
-   &.icon-lg { @include flag-icon('India.png', $icon-size-lg); }
+  @include flag-icons('India.png');
 }
 .icon-mexico {
-   &.icon-xs { @include flag-icon('Mexico.png', $icon-size-xs); }
-   &.icon-sm { @include flag-icon('Mexico.png', $icon-size-sm); }
-   &.icon-md { @include flag-icon('Mexico.png', $icon-size-md); }
-   &.icon-lg { @include flag-icon('Mexico.png', $icon-size-lg); }
+  @include flag-icons('Mexico.png');
 }
 .icon-philippines {
-   &.icon-xs { @include flag-icon('Philippines.png', $icon-size-xs); }
-   &.icon-sm { @include flag-icon('Philippines.png', $icon-size-sm); }
-   &.icon-md { @include flag-icon('Philippines.png', $icon-size-md); }
-   &.icon-lg { @include flag-icon('Philippines.png', $icon-size-lg); }
+  @include flag-icons('Philippines.png');
 }
+
+/* Close Circle */
+.close-circle { border: 2px solid #fff; border-radius: 40px; font-size: 24px; height: 24px; line-height: 19px; color: #fff; @include opacity(1); text: {align: center; shadow: none;} width: 24px;
+  &:hover, &:focus { border-color: $gray-lighter; color: $gray-lighter; @include opacity(1); }
+}
+
 /* ==========================================================================
    Forms
    ========================================================================== */
@@ -99,18 +127,175 @@
    > input { float: left; margin-right: #{$grid-gutter-width/2}; width: 43px; }
    select { width: auto; }
 }
+.btn-lg { font-weight: bold; }
+.btn-xs-long { @include button-size($padding-xs-vertical, $padding-xs-horizontal*2, $font-size-small, $line-height-small, $border-radius-small); }
+.btn-sm-long { @include button-size($padding-small-vertical, $padding-small-horizontal*2, $font-size-small, $line-height-small, $border-radius-small); }
+.btn-lg-long { @include button-size($padding-large-vertical, $padding-large-horizontal*2, $font-size-large, $line-height-large, $border-radius-large); }
+
+.btn-fb { @include button-variant(#fff, $facebook, darken($facebook, 5%));
+  .fa { margin: { left: -15px; right: 15px; } position: relative; z-index: 1;
+    &:after { border-right: 1px solid darken($facebook, 10%); content: ''; height: 30px; position: absolute; right: -5px; top: -7px; z-index: 2; }
+  }
+}
+
+.error-messages {
+  > div { @extend .alert; @extend .alert-danger; }
+  h2 { margin-top: 0; @extend .h3; }
+  ul { margin-bottom: 0; }
+}
 /* ==========================================================================
    Header
    ========================================================================== */
+.header { background: #fff; color: $blue; border-bottom: 1px solid $blue; @include box-shadow(#{0 1px 0 0 lighten($body-bg, 7%)});
+  a { color: #fff; text-decoration: none; }
+  .btn { @include button-size($navbar-padding-vertical-tiny+5, $padding-large-horizontal*2, $font-size-large, $line-height-large, 0);
+    @media #{$xsmall} { @include button-size($navbar-padding-vertical-tiny+5, $padding-large-horizontal, $font-size-large, $line-height-large, 0);  }
+  }
+  .toggle-menu { background: $gray-dark; font-size: $font-size-h2; height: $navbar-height-tiny; line-height: $navbar-height-tiny; margin-right: -($grid-gutter-width / 2); text-align: center; width: $navbar-height-tiny;
+    .fa { line-height: $navbar-height-tiny; }
+    &:hover, &:focus { background: $blue-dark !important; }
+  }
+  .navbar-brand { height: $navbar-height-tiny; padding: $navbar-padding-vertical-tiny 0;
+    > img { @include transition(#{all .3s});
+      @media #{$xsmall} { width: 120px; }
+    }
+    @media #{$xsmall} { padding: $navbar-padding-vertical-tiny+5 0; }
+  }
+}
+
+.menu { background-color: $blue; border-bottom: 0 none; float: left; left: 0; min-height: $navbar-height; margin-left: -100%; position: absolute; top: 0; width: $navbar-off-canvas-w; z-index: 2; @include transition(#{all .1s});
+  .menu-header { color: $gray-lighter; padding: ($grid-gutter-width / 2); margin: 0 (-$grid-gutter-width / 2); text-transform: uppercase;
+    .close-circle { position: relative; left: 0px; top: -3px; }
+  }
+  .navbar-brand { height: $navbar-height; padding: $navbar-padding-vertical 0; @include transition(#{all .1s});
+    > img { height: #{$navbar-height - 44}; @include transition(#{all .1s}); }
+    @media #{$small} { padding: $navbar-padding-vertical ($grid-gutter-width / 2); }
+  }
+  .navbar-nav { margin: 0 (-$grid-gutter-width / 2);
+    >li { border-bottom: 1px solid $gray-dark;
+      > a { color: $gray-lighter; padding: 10px $grid-gutter-width;
+        &.btn-primary { @extend .btn-primary;}
+        &:hover, &:focus { background-color: darken($blue-dark, 1%); color: #fff; }
+        @media #{$small} { color: $navbar-default-link-color; margin: 0; padding: 10px ($grid-gutter-width / 2);
+          &:hover, &:focus { background-color: $navbar-default-link-hover-bg; color: $navbar-default-link-hover-color; }
+        }
+      }
+      @media #{$small} { border: 0 none; }
+    }
+    .navbar-text { color: lighten($blue, 30%); margin: 0 (-$grid-gutter-width / 2); padding: 10px ($grid-gutter-width / 2 * 3);
+      @media #{$small} { color: $navbar-default-color; margin: 0; padding: 10px ($grid-gutter-width / 2); }
+    }
+    @media #{$small} {  }
+  }
+  .wrapper-navigation {
+    @media #{$small} { padding-top: 12px; }
+  }
+
+  @media #{$small} { background-color: $navbar-default-bg; border-bottom: 2px solid $blue-dark; float: none; margin-left: 0; position: relative; width: auto; z-index: $zindex-navbar; }
+}
 /* ==========================================================================
    Main
    ========================================================================== */
+.opened-menu {
+  .menu { margin-left: 0; }
+  .wrapper-content { margin-right: -$navbar-off-canvas-w; }
+}
+
+.top-content { background-color: $blue-dark; margin-top: (-$line-height-computed); overflow: hidden;
+  .outer-top-content { margin: 0 (-$grid-gutter-width / 2); }
+  .inner-top-content { background-color: $blue-dark; background: {image: image-url('map-xs.jpg'); position: center center; repeat: no-repeat; } height: 380px; padding-top: 31px;
+    .h1 { font-size: #{$font-size-h1 - 7}; }
+    .right-sm {
+      @media #{$small} { text-align: right; }
+    }
+    .left-sm {
+      @media #{$small} { text-align: left; }
+    }
+    .btn-info {
+      @media #{$small} { @include button-size($padding-large-vertical, $padding-large-horizontal*2, $font-size-large, $line-height-large, $border-radius-large); }
+    }
+
+    p { color: #fff; }
+    ul.lead { font-size: $font-size-large; margin-bottom: 25px;
+      @media #{$xsmall} { font-size: $font-size-base; }
+      @media #{$small} { margin-bottom: 35px; }
+    }
+    .lead { color: #f9f9f9;
+      a { color: #f9f9f9; }
+    }
+    .wrapper-flags { margin-bottom: 23px;
+      i { width: 88px;
+        @media #{$xsmall} { width: 78px; }
+      }
+      @media #{$small} { margin-bottom: 43px; }
+    }
+    @media #{$xsmall} { padding-top: 35px; }
+    @media #{$small} { background: {image: image-url('map.jpg'); position: center center; repeat: no-repeat; } height: 400px; padding-top: 43px; }
+  }
+}
+
+.wrapper-content { background: #fff; @include box-shadow(#{-6px 0 6px rgba(#000, .2)}); float: right; min-height: 350px; padding: $line-height-computed 0 ($line-height-computed * 2); position: relative; @include transition(#{all .3s}); width: 100%; z-index: 3;
+  @media #{$small} { float: none; margin-right: 0 !important; width: auto; z-index: auto; @include box-shadow(#{0 0 0 #fff});  }
+}
+
+.sign-up-page {
+  .col-or,.col-soc {
+    @media #{$small} {
+      ul.vm li { height: 550px; }
+    }
+  }
+  .col-or {
+    .lead {
+      @media #{$small} { background-color: #fff; margin-bottom: 0; padding: 25px 0; position: relative; z-index: 3; }
+    }
+    @media #{$small} { position: relative; z-index: 1;
+      &:before { border-right: 1px solid #959595; content: ''; height: 450px; left: 50%; position: absolute; top: 50px; z-index: 2; }
+    }
+  }
+  .col-soc {
+    .form-group {
+      @media #{$small} {
+        &:last-child { margin-bottom: 0; }
+      }
+    }
+  }
+}
+
+.header-blue { background-color: #2172c5; color: #fff; margin-bottom: $line-height-computed; padding: 21px 0 52px 0; position: relative; z-index: 1; @include box-shadow(#{0 5px 5px $gray-light});
+  > .fa { bottom: -35px; color: #2172c5; font-size: 100px; margin-left: -45px; position: absolute; left: 50%; z-index: 3; text-shadow: #{0 5px 5px $gray-light}; }
+  .fa-circle { bottom: -36px; color: #fff; font-size: 98px; margin-left: -44px; position: absolute; left: 50%; z-index: 2; }
+}
+.header-gray-light { background-color: $gray-lighter; color: #000; margin-bottom: $line-height-computed; padding: 21px 0 52px 0; position: relative; z-index: 1; @include box-shadow(#{0 5px 5px $gray-light}); }
+.footer-blue-dark { background-color: #113c5e; color: #fff; padding: 21px 0 42px 0; }
+
+.recent-tr-page { margin: { bottom: -42px; top: -22px; }
+  .providers-list {
+    input[type=radio] { margin-top: 21px; }
+  }
+  form {
+    .btn-primary { width: 100%;
+      @media #{$small} { width: auto; }
+    }
+  }
+  .header-blue { margin-bottom: ($line-height-computed * 2); }
+}
+
+.next-tr-page {  margin: { top: -22px; } }
+
 /* ==========================================================================
    Modals
    ========================================================================== */
 /* ==========================================================================
    Footer
    ========================================================================== */
+.footer { background: $gray-dark; color: $gray-light; font-size: $font-size-small; text-align: center;
+   > .container { padding: {top: 25px; bottom: 30px;} }
+}
+
+@media #{$small} {
+  @include sticky-footer(90px, ".root", ".root-footer", ".footer");
+}
+
 /* ==========================================================================
    Special Classes
    ========================================================================== */
@@ -120,3 +305,33 @@
 .no-pad { padding: 0 !important; }
 .no-pad-top { padding-top: 0 !important; }
 .no-pad-btm { padding-bottom: 0 !important; }
+
+.marg-top { margin-top: $line-height-computed; }
+.marg-btm { margin-bottom: $line-height-computed; }
+.marg-top-md { margin-top: ($line-height-computed / 2 * 3); }
+.marg-btm-md { margin-bottom: ($line-height-computed / 2 * 3); }
+.marg-top-lg { margin-top: ($line-height-computed * 2); }
+.marg-btm-lg { margin-bottom: ($line-height-computed * 2); }
+.pad-top { padding-top: $line-height-computed; }
+.pad-btm { padding-bottom: $line-height-computed; }
+
+.pull-right-sm {
+  @media #{$small} { float: right; }
+}
+.pull-left-sm {
+  @media #{$small} { float: left; }
+}
+
+.vt { display: table-cell; vertical-align: top;
+  >* { vertical-align: top; }
+}
+.vm { display: table-cell; vertical-align: top;
+  >* { vertical-align: middle; }
+}
+.vb { display: table-cell; vertical-align: top;
+  >* { vertical-align: bottom; }
+}
+
+ul.vm { display: table; height: 100%; list-style: none; margin: 0; min-height: 1px; padding: 0; table-layout: fixed; width: 100%;
+  li { display: table-cell; height: 100%; vertical-align: middle; width: 100%; }
+}

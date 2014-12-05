@@ -20,21 +20,19 @@ html lang="en"
 
   body
     = render 'shared/header'
-    .container
-      .row
-        .col-sm-8.col-sm-offset-2
-          = flash_messages(:html, :close)
-          = yield
-        //.col-sm-3
-        //  .well.sidebar-nav
-        //    h3 Sidebar
-        //    ul.nav.nav-list
-        //      li.nav-header Sidebar
-        //      li= link_to "Link 1", "/path1"
-        //      li= link_to "Link 2", "/path2"
-        //      li= link_to "Link 3", "/path3"
+    .root
+      = yield :menu
 
-      = render 'shared/footer'
+      .wrapper-content role="main"
+        .container
+          .row
+            .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
+              = flash_messages(:html, :close)
+        = yield
+
+      .root-footer
+    = render 'shared/footer'
 
 - if user_signed_in?
   = render 'referrals/dialog'
+
