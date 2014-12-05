@@ -13,7 +13,7 @@ feature 'Sign up' do
     
     choose "user_money_transfer_destination_id_#{Country.find_by(name: 'India').id}"
       
-    click_button 'Sign up'
+    click_button 'Create my account!'
 
     expect(page).to have_content('Verification email was sent to your email address - please click link in that email to confirm')
   end

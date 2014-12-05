@@ -36,21 +36,21 @@ html lang="en"
                   i.icon-china.icon-xlg
                 p.h1= t('.title_html')
                 ul.list-inline.lead
-                  li= link_to "Share Information", "/"
+                  li= link_to "Share Information", "#"
                   li -
-                  li= link_to "Learn", "/"
+                  li= link_to "Learn", "#"
                   li -
-                  li= link_to "Help Others", "/"
+                  li= link_to "Help Others", "#"
                 p.lead.hidden-xs= t('.send_money')
                 .row
                   .col-sm-6
                     p.right-sm
-                      = link_to '/users/sign_in', class: 'btn btn-primary btn-lg-long' do
+                      = link_to '#sign_up', class: 'btn btn-primary btn-lg-long' do
                         i.fa.fa-fw.fa-share.fa-lg
                         = t('.share_transfer')
                   .col-sm-6
                     p.left-sm
-                      = link_to '/users/sign_in', class: 'btn btn-info' do
+                      = link_to how_to_path, class: 'btn btn-info' do
                         i.fa.fa-fw.fa-question-circle.fa-lg
                         = t('.how_it')
         .container.pad-top

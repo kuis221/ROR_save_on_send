@@ -37,5 +37,5 @@ header.header.visible-xs
                 li.navbar-text= current_user.full_name
                 li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
               - else
-                li= link_to "Register", '/'
+                li= link_to "Register", '#sign_up'
                 li= link_to t('.log_in'), '/users/sign_in', class: 'btn btn-primary hidden-xs'
