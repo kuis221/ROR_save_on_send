@@ -1,3 +1,5 @@
+- display_amount_receive = @user_next_transfer.amount_receive > 0
+
 = form_for(@user_next_transfer, url: user_next_transfers_path, method: :post, html: {class: 'form-horizontal user_next_transfer', role: 'form'}) do |f|
   // errors
   - @user_next_transfer.errors.full_messages.each do |err_msg|
@@ -8,13 +10,13 @@
     label.col-sm-4.control-label Choose amount type
     .col-sm-8
       label.radio-inline
-        = radio_button_tag 'amount_type', 1, true, {:data => { toggle_amount: 'send'}}
+        = radio_button_tag 'amount_type', 1, !display_amount_receive, {:data => { toggle_amount: 'send'}}
         | Send
       label.radio-inline
-        = radio_button_tag 'amount_type', 2, false, {:data => { toggle_amount: 'receive'}}
+        = radio_button_tag 'amount_type', 2, display_amount_receive, {:data => { toggle_amount: 'receive'}}
         | Receive
   // amount send
-  .form-group *{:data => {target_amount: 'send'}}
+  .form-group *{:data => {target_amount: 'send'}, class: "#{'hide' if display_amount_receive}"}
     = f.label :amount_send, class: 'col-sm-4 control-label'
     .col-sm-8
       .input-group.input-money
@@ -35,7 +37,7 @@
   - else
     = f.hidden_field :receive_currency, value: prefered_currency.first
 
-  div.hide *{:data => {target_amount: 'receive'}}
+  div *{:data => {target_amount: 'receive'}, class: "#{'hide' if !display_amount_receive}"}
     // amount receive
     .form-group
       = f.label :amount_receive, class: 'col-sm-4 control-label'
