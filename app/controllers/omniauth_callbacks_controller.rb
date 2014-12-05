@@ -8,7 +8,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to(edit_user_path)
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"]
-      redirect_to new_user_registration_url
+      redirect_to(new_user_registration_url, alert: @user.errors.full_messages.join('<br>'))
     end
   end
 end
