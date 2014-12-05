@@ -19,13 +19,8 @@ class UserNextTransfersController < ApplicationController
         receive_method: @user_next_transfer.destination_preference_for_funds
     )
 
-    @from_to_show = false;
-    @least_expensive_remittance_terms.each do |t|
-      if t.highlight
-        @from_to_show = true;
-        break;
-      end
-    end
+    # display payment methods (from-to) if flag is set
+    @from_to_show = @least_expensive_remittance_terms.select(&:highlight).present?
   end
 
   def create

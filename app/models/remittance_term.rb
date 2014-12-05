@@ -84,7 +84,10 @@ class RemittanceTerm < ActiveRecord::Base
           (filtered_least_expensive_services.first.send_method != send_method ||
           filtered_least_expensive_services.first.receive_method != receive_method)
 
-        filtered_least_expensive_services.first.highlight = true
+        lowest_expese = filtered_least_expensive_services.first.expense
+        filtered_least_expensive_services.each do |service|
+          service.highlight = true if lowest_expese == service.expense
+        end
       end
 
       filtered_least_expensive_services.to_a.keep_if do |item| 
