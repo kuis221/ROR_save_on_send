@@ -39,21 +39,21 @@ html lang="en"
                   br.visible-xs
                   | The World Unite!
                 ul.list-inline.lead
-                  li= link_to "Share Information", "/"
+                  li= link_to "Share Information", "#"
                   li -
-                  li= link_to "Learn", "/"
+                  li= link_to "Learn", "#"
                   li -
-                  li= link_to "Help Others", "/"
+                  li= link_to "Help Others", '#'
                 p.lead.hidden-xs Send money with Transparency, help yourself and others to learn Total Cost!
                 .row
                   .col-sm-6
                     p.right-sm
-                      = link_to '/users/sign_in', class: 'btn btn-primary btn-lg-long' do
+                      = link_to '#sign_up', class: 'btn btn-primary btn-lg-long' do
                         i.fa.fa-fw.fa-share.fa-lg
                         | Share transfer
                   .col-sm-6
                     p.left-sm
-                      = link_to '/users/sign_in', class: 'btn btn-info' do
+                      = link_to how_to_path, class: 'btn btn-info' do
                         i.fa.fa-fw.fa-question-circle.fa-lg
                         | How it works?
         .container.pad-top
