@@ -30,16 +30,29 @@ $(document).on "click", ".header .toggle-menu, .opened-menu .wrapper-content, .o
   $("body").toggleClass "opened-menu"
   return
 
-$(document).on "keyup", ".mask-date", (e) ->
-  if e.which == 13
-    e.preventDefault()
+$(document).on 'click', '[data-toggle-amount]', (event) ->
+  $('[data-target-amount]').each ->
+    $(this).addClass('hide')
+  $('[data-target-amount="'+$(this).data('toggle-amount')+'"]').removeClass('hide')
 
 sos.init = ->
   $("a[rel~=popover], .has-popover").popover()
   $("a[rel~=tooltip], .has-tooltip").tooltip()
 
+  $(".input-group.date").datepicker
+    dateFormat: "mm/dd/yy"
+    changeMonth: true
+    changeYear: true
+    yearRange: '2013:2015'
+
   sos.renderMasks()
   sos.renderRating()
+
+  $('[data-toggle-amount]').each ->
+    if ($(this).is(':checked'))
+      $('[data-target-amount]').each ->
+        $(this).addClass('hide')
+      $('[data-target-amount="'+$(this).data('toggle-amount')+'"]').removeClass('hide')
 
 ready = ->
   sos.init()

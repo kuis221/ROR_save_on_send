@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap-datepicker3
- *= require jquery-star-rating
+ * require jquery-star-rating
  *= require_tree .
  *= require_self
  */
@@ -261,14 +261,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
   }
 }
 
-.header-blue { background-color: #2172c5; color: #fff; margin-bottom: $line-height-computed; padding: 21px 0 52px 0; position: relative; z-index: 1; @include box-shadow(#{0 5px 5px $gray-light});
+.header-blue { background-color: #2172c5; color: #fff; margin-bottom: $line-height-computed; padding: 21px 0 32px 0; position: relative; z-index: 1; @include box-shadow(#{0 5px 5px $gray-light});
   > .fa { bottom: -35px; color: #2172c5; font-size: 100px; margin-left: -45px; position: absolute; left: 50%; z-index: 3; text-shadow: #{0 5px 5px $gray-light}; }
   .fa-circle { bottom: -36px; color: #fff; font-size: 98px; margin-left: -44px; position: absolute; left: 50%; z-index: 2; }
+  @media #{$small} { padding: 21px 0 52px 0; }
 }
 .header-gray-light { background-color: $gray-lighter; color: #000; margin-bottom: $line-height-computed; padding: 21px 0 52px 0; position: relative; z-index: 1; @include box-shadow(#{0 5px 5px $gray-light}); }
-.footer-blue-dark { background-color: #113c5e; color: #fff; padding: 21px 0 42px 0; }
+.footer-blue-dark { background-color: #113c5e; color: #fff; padding: 20px 0; }
 
-.recent-tr-page { margin: { bottom: -42px; top: -22px; }
+.recent-tr-page { margin: { bottom: -44px; top: -23px; }
   .providers-list {
     input[type=radio] { margin-top: 21px; }
   }
@@ -277,10 +278,14 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
       @media #{$small} { width: auto; }
     }
   }
-  .header-blue { margin-bottom: ($line-height-computed * 2); }
+  .header-blue { margin-bottom: ($line-height-computed * 2);
+    .lead { font-size: $font-size-h3; line-height: 1; }
+  }
+  .footer-blue-dark {  }
+  textarea { min-height: 170px; }
 }
 
-.next-tr-page {  margin: { top: -22px; } }
+.next-tr-page {  margin: { top: -23px; } }
 
 /* ==========================================================================
    Modals
@@ -290,11 +295,22 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
    ========================================================================== */
 .footer { background: $gray-dark; color: $gray-light; font-size: $font-size-small; text-align: center;
    > .container { padding: {top: 25px; bottom: 30px;} }
+   p { font-size: $font-size-small; }
 }
 
 @media #{$small} {
   @include sticky-footer(90px, ".root", ".root-footer", ".footer");
 }
+
+div.user-rating div.star-rating { float: left; width: 35px; height: 30px; text-indent: 999em; cursor: pointer; display: block; overflow:hidden; }
+div.user-rating div.star-rating,
+div.user-rating div.star-rating a { position: relative; }
+div.user-rating div.star-rating a:before { @extend .fa; content: "\2605"; color: $gray-light; font-size: 30px; left: 0; position: absolute; text-indent: 0; }
+div.user-rating div.star-rating a { display: block; width: 12px; height:100%; border:0; }
+div.user-rating div.star-rating-on a:before { color: #fd883e; }
+div.user-rating div.star-rating-hover a:before { color: #000; }
+div.user-rating div.star-rating-readonly a {cursor: default !important}
+div.user-rating div.star-rating { overflow: hidden!important; }
 
 /* ==========================================================================
    Special Classes
@@ -308,6 +324,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
 
 .marg-top { margin-top: $line-height-computed; }
 .marg-btm { margin-bottom: $line-height-computed; }
+.marg-top-sm { margin-top: ($line-height-computed / 2); }
+.marg-btm-sm { margin-bottom: ($line-height-computed / 2); }
 .marg-top-md { margin-top: ($line-height-computed / 2 * 3); }
 .marg-btm-md { margin-bottom: ($line-height-computed / 2 * 3); }
 .marg-top-lg { margin-top: ($line-height-computed * 2); }
