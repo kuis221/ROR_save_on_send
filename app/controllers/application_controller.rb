@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
       rails_admin_path
     else
       if current_user.complete?
-        current_user.recent_transactions.empty? ? new_user_recent_transaction_path : welcome_path
+        new_user_recent_transaction_path
+        #current_user.recent_transactions.empty? ? new_user_recent_transaction_path : welcome_path
       else
         edit_user_path
       end
