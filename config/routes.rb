@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   resources :feedbacks, only: [:create]
   resources :referrals, only: [:create]
 
+  resources :pages, only: [:show]
+
+  get 'how-to', to: 'pages#show', defaults: {id: 'how_to'}
+
   get 'welcome' => 'welcome#index'
   get '*path' => 'welcome#index'
 end
