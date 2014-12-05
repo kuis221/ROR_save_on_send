@@ -1,13 +1,14 @@
-h2
-  .row
-    .col-sm-2
-      i *{:class => ['icon-provider', 'icon-'+@provider.name.parameterize.downcase]}
-    .col-sm-4= @provider.name
-    .col-sm-4= link_to(t('.go_to_provider'), @provider.landing_page, target: 'new', class: 'btn btn-success')
+.container
+  h2
+    .row
+      .col-sm-2
+        i *{:class => ['icon-provider', 'icon-'+@provider.name.parameterize.downcase]}
+      .col-sm-4= @provider.name
+      .col-sm-4= link_to(t('.go_to_provider'), @provider.landing_page, target: 'new', class: 'btn btn-success')
 
-- if user_signed_in?
-  = render 'provider_feedback_form'
+  - if user_signed_in?
+    = render 'provider_feedback_form'
 
-- if @provider.feedbacks.present?
-  h3= t('.provider_feedbacks_title') 
-  = render @provider.feedbacks
+  - if @provider.feedbacks.present?
+    h3= t('.provider_feedbacks_title')
+    = render @provider.feedbacks
