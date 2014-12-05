@@ -1,70 +1,84 @@
-= form_for(@user_next_transfer, url: user_next_transfers_path, method: :post, html: {class: 'form-horizontal user_next_transfer', role: 'form'}) do |f|
-  // errors
-  - @user_next_transfer.errors.full_messages.each do |err_msg|
-    .bg-warning= err_msg
+// errors
+.row
+  .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
+    .error-messages
+      - if @user_next_transfer.errors.full_messages.count > 0
+        div
+          ul
+            - @user_next_transfer.errors.full_messages.each do |err_msg|
+              li= err_msg
 
-  // Choose amount type
-  .form-group
-    label.col-sm-4.control-label Choose amount type
-    .col-sm-8
-      label.radio-inline
-        = radio_button_tag 'amount_type', 1, true, {:data => { toggle_amount: 'send'}}
-        | Send
-      label.radio-inline
-        = radio_button_tag 'amount_type', 2, false, {:data => { toggle_amount: 'receive'}}
-        | Receive
-  // amount send
-  .form-group *{:data => {target_amount: 'send'}}
-    = f.label :amount_send, class: 'col-sm-4 control-label'
-    .col-sm-8
-      .input-group.input-money
-        .input-group-addon
-          i.fa.fa-usd.fa-fw
-        = money_field f, @user_next_transfer, :amount_send, 'form-control mask-money-sent'
+.row
+  .col-xs-offset-1.col-xs-10.col-sm-offset-0.col-sm-12
+    .row
+      .col-lg-offset-2.col-lg-8
+        = form_for(@user_next_transfer, url: user_next_transfers_path, method: :post, html: {class: 'form-horizontal user_next_transfer', role: 'form'}) do |f|
+          // Choose amount type
+          .form-group
+            label.col-sm-4.control-label Choose amount type
+            .col-sm-8
+              label.radio-inline
+                = radio_button_tag 'amount_type', 1, true, {:data => { toggle_amount: 'send'}}
+                | Send
+              label.radio-inline
+                = radio_button_tag 'amount_type', 2, false, {:data => { toggle_amount: 'receive'}}
+                | Receive
+          // amount send
+          .form-group *{:data => {target_amount: 'send'}}
+            = f.label :amount_send, class: 'col-sm-4 control-label'
+            .col-sm-8
+              .input-group.input-money
+                .input-group-addon
+                  i.fa.fa-usd.fa-fw
+                = money_field f, @user_next_transfer, :amount_send, 'form-control mask-money-sent'
 
-  // receive currency
-  - prefered_currency = current_user.prefered_currency
-  - if prefered_currency.size > 1
-    .form-group
-      = f.label :receive_currency, class: 'col-sm-4 control-label'
-      .col-sm-8
-        = f.collection_radio_buttons(:receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
-          = b.label( for: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
-            = b.radio_button( id: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase )
-            i *{:class => ['fa', 'fa-fw', 'fa-'+b.text.parameterize.downcase]}
-  - else
-    = f.hidden_field :receive_currency, value: prefered_currency.first
+          // receive currency
+          - prefered_currency = current_user.prefered_currency
+          - if prefered_currency.size > 1
+            .form-group
+              = f.label :receive_currency, class: 'col-sm-4 control-label'
+              .col-sm-8
+                = f.collection_radio_buttons(:receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
+                  = b.label( for: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
+                    = b.radio_button( id: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase )
+                    i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+          - else
+            = f.hidden_field :receive_currency, value: prefered_currency.first
 
-  div.hide *{:data => {target_amount: 'receive'}}
-    // amount receive
-    .form-group
-      = f.label :amount_receive, class: 'col-sm-4 control-label'
-      .col-sm-8
-        .input-group.input-money
-          .input-group-addon#amount_receive_currency
-            i.fa.fa-fw *{:class => ["fa-"+(@user_next_transfer.receive_currency || current_user.prefered_currency.first).downcase]}
-          = money_field f, @user_next_transfer, :amount_receive, 'form-control mask-money-received'
-  // originating source of funds
-  .form-group
-    = f.label :originating_source_of_funds_id, class: 'col-sm-4 control-label'
-    .col-sm-8
-      = f.collection_radio_buttons(:originating_source_of_funds_id, PaymentMethod.all, :id, :name, {prompt: true}) do |b|
-        = b.label( class: "radio-inline", title: b.text )
-          = b.radio_button
-          i *{:class => ['fa', 'fa-fw', 'fa-'+b.text.parameterize.downcase]}
-  // destination preference for funds
-  .form-group
-    = f.label :destination_preference_for_funds_id, class: 'col-sm-4 control-label'
-    .col-sm-8
-      = f.collection_radio_buttons(:destination_preference_for_funds_id, PaymentMethod.for_receiving.all, :id, :name, {prompt: true}) do |b|
-        = b.label( class: "radio-inline", title: b.text )
-          = b.radio_button
-          i *{:class => ['fa', 'fa-fw', 'fa-'+b.text.parameterize.downcase]}
-  // actions
-  .form-group
-    .col-sm-offset-4.col-sm-8
-      - if params[:action] == 'show' && current_user.referrals.empty?
-        button.btn.btn-primary.btn-lg type="button" data-toggle="modal" data-target="#referral_dialog" Submit
-      - else
-        = f.submit t('.submit'), class: 'btn btn-primary btn-lg'
+          div.hide *{:data => {target_amount: 'receive'}}
+            // amount receive
+            .form-group
+              = f.label :amount_receive, class: 'col-sm-4 control-label'
+              .col-sm-8
+                .input-group.input-money
+                  .input-group-addon#amount_receive_currency
+                    i.fa.fa-fw *{:class => ["fa-"+(@user_next_transfer.receive_currency || current_user.prefered_currency.first).downcase]}
+                  = money_field f, @user_next_transfer, :amount_receive, 'form-control mask-money-received'
+          // originating source of funds
+          .form-group
+            = f.label :originating_source_of_funds_id, class: 'col-sm-4 control-label'
+            .col-sm-8
+              = f.collection_radio_buttons(:originating_source_of_funds_id, PaymentMethod.all, :id, :name, {prompt: true}) do |b|
+                = b.label( class: "radio-inline", title: b.text )
+                  = b.radio_button
+                  i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+          // destination preference for funds
+          .form-group
+            = f.label :destination_preference_for_funds_id, class: 'col-sm-4 control-label'
+            .col-sm-8
+              = f.collection_radio_buttons(:destination_preference_for_funds_id, PaymentMethod.for_receiving.all, :id, :name, {prompt: true}) do |b|
+                = b.label( class: "radio-inline", title: b.text )
+                  = b.radio_button
+                  i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+          // actions
+          .form-group
+            .col-sm-offset-4.col-sm-8
+              - if params[:action] == 'show' && current_user.referrals.empty?
+                = button_tag type:"button", class: "btn btn-primary btn-lg", data: { toggle: "modal", target: "#referral_dialog" } do
+                  i.fa.fa-fw.fa-check-circle-o.fa-lg
+                  = t('.submit')
+              - else
+                = button_tag type:"submit", class: "btn btn-primary btn-lg" do
+                  i.fa.fa-fw.fa-check-circle-o.fa-lg
+                  = t('.submit')
 

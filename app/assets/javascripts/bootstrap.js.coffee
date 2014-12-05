@@ -27,9 +27,12 @@ sos.renderMasks = ->
 # Navigation Toggle
 $(document).on "click", ".header .toggle-menu, .opened-menu .wrapper-content, .opened-menu .footer, .menu .close", (e) ->
   e.preventDefault()
-  console.log(111)
   $("body").toggleClass "opened-menu"
   return
+
+$(document).on "keyup", ".mask-date", (e) ->
+  if e.which == 13
+    e.preventDefault()
 
 sos.init = ->
   $("a[rel~=popover], .has-popover").popover()

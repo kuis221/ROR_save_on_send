@@ -59,6 +59,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
     &:hover, &:focus { color: $link-color; text-decoration: underline; }
   }
 }
+.text-capitalize-first:first-letter {
+    text-transform: uppercase !important;
+}
 
 /* ==========================================================================
    Sprites
@@ -74,20 +77,20 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
 
 [class^="icon-"], [class*=" icon-"] { @include inline-block; }
 
-.icon-provider { background: { position: center center; repeat: no-repeat; } }
-.icon-western-union { height: 44px; width: 64px; background: {image: image-url("provider-icons/western-union.png"); } }
-.icon-xoom { height: 44px; width: 72px; background: {image: image-url("provider-icons/xoom.png"); } }
-.icon-moneygram { height: 44px; width: 80px; background: {image: image-url("provider-icons/moneygram.png"); } }
-.icon-transfast { height: 44px; width: 44px; background: {image: image-url("provider-icons/transfast.png"); } }
-.icon-ria { height: 44px; width: 83px; background: {image: image-url("provider-icons/ria.png"); } }
-.icon-transferwise { height: 44px; width: 92px; background: {image: image-url("provider-icons/transferwise.png"); } }
-.icon-remitly { height: 44px; width: 107px; background: {image: image-url("provider-icons/remitly.png"); } }
-.icon-wellsfargo { height: 44px; width: 85px; background: {image: image-url("provider-icons/wells-fargo.png"); } }
-.icon-viamericas { height: 44px; width: 135px; background: {image: image-url("provider-icons/viamericas.png"); } }
-.icon-pnb { height: 44px; width: 104px; background: {image: image-url("provider-icons/pnb.png"); } }
-.icon-bofa { height: 44px; width: 65px; background: {image: image-url("provider-icons/bofa.png"); } }
-.icon-paypal { height: 44px; width: 64px; background: {image: image-url("provider-icons/paypal.png"); } }
-.icon-walmart { height: 44px; width: 150px; background: {image: image-url("provider-icons/walmart.png"); } }
+.icon-provider { background: { position: center center; repeat: no-repeat; } height: 55px; width: 115px; }
+.icon-western-union { background: {image: image-url("provider-icons/western-union.png"); } }
+.icon-xoom { background: {image: image-url("provider-icons/xoom.png"); } }
+.icon-moneygram { background: {image: image-url("provider-icons/moneygram.png"); } }
+.icon-transfast { background: {image: image-url("provider-icons/transfast.png"); } }
+.icon-ria { background: {image: image-url("provider-icons/ria.png"); } }
+.icon-transferwise {  background: {image: image-url("provider-icons/transferwise.png"); } }
+.icon-remitly { background: {image: image-url("provider-icons/remitly.png"); } }
+.icon-wellsfargo { background: {image: image-url("provider-icons/wells-fargo.png"); } }
+.icon-viamericas { background: {image: image-url("provider-icons/viamericas.png"); } }
+.icon-pnb { background: {image: image-url("provider-icons/pnb.png"); } }
+.icon-bofa { background: {image: image-url("provider-icons/bofa.png"); } }
+.icon-paypal { background: {image: image-url("provider-icons/paypal.png"); } }
+.icon-walmart { background: {image: image-url("provider-icons/walmart.png"); } }
 
 .icon-xs { height: #{$icon-size-xs}px; width: #{$icon-size-xs}px; }
 .icon-sm { height: #{$icon-size-sm}px; width: #{$icon-size-sm}px; }
@@ -124,9 +127,22 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
    > input { float: left; margin-right: #{$grid-gutter-width/2}; width: 43px; }
    select { width: auto; }
 }
+.btn-lg { font-weight: bold; }
 .btn-xs-long { @include button-size($padding-xs-vertical, $padding-xs-horizontal*2, $font-size-small, $line-height-small, $border-radius-small); }
 .btn-sm-long { @include button-size($padding-small-vertical, $padding-small-horizontal*2, $font-size-small, $line-height-small, $border-radius-small); }
 .btn-lg-long { @include button-size($padding-large-vertical, $padding-large-horizontal*2, $font-size-large, $line-height-large, $border-radius-large); }
+
+.btn-fb { @include button-variant(#fff, $facebook, darken($facebook, 5%));
+  .fa { margin: { left: -15px; right: 15px; } position: relative; z-index: 1;
+    &:after { border-right: 1px solid darken($facebook, 10%); content: ''; height: 30px; position: absolute; right: -5px; top: -7px; z-index: 2; }
+  }
+}
+
+.error-messages {
+  > div { @extend .alert; @extend .alert-danger; }
+  h2 { margin-top: 0; @extend .h3; }
+  ul { margin-bottom: 0; }
+}
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -172,7 +188,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
     @media #{$small} {  }
   }
   .wrapper-navigation {
-    @media #{$small} { padding: 20px 0 12px; }
+    @media #{$small} { padding-top: 12px; }
   }
 
   @media #{$small} { background-color: $navbar-default-bg; border-bottom: 2px solid $blue-dark; float: none; margin-left: 0; position: relative; width: auto; z-index: $zindex-navbar; }
@@ -218,15 +234,53 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
   }
 }
 
-.wrapper-content { background: #fff; @include box-shadow(#{-6px 0 6px rgba(#000, .2)}); float: right; min-height: 350px; padding: $line-height-computed 0; position: relative; @include transition(#{all .3s}); width: 100%; z-index: 3;
+.wrapper-content { background: #fff; @include box-shadow(#{-6px 0 6px rgba(#000, .2)}); float: right; min-height: 350px; padding: $line-height-computed 0 ($line-height-computed * 2); position: relative; @include transition(#{all .3s}); width: 100%; z-index: 3;
   @media #{$small} { float: none; margin-right: 0 !important; width: auto; z-index: auto; @include box-shadow(#{0 0 0 #fff});  }
 }
 
 .sign-up-page {
-  .btn-primary { width: 100%;
-    @media #{$small} { width: auto; }
+  .col-or,.col-soc {
+    @media #{$small} {
+      ul.vm li { height: 550px; }
+    }
+  }
+  .col-or {
+    .lead {
+      @media #{$small} { background-color: #fff; margin-bottom: 0; padding: 25px 0; position: relative; z-index: 3; }
+    }
+    @media #{$small} { position: relative; z-index: 1;
+      &:before { border-right: 1px solid #959595; content: ''; height: 450px; left: 50%; position: absolute; top: 50px; z-index: 2; }
+    }
+  }
+  .col-soc {
+    .form-group {
+      @media #{$small} {
+        &:last-child { margin-bottom: 0; }
+      }
+    }
   }
 }
+
+.header-blue { background-color: #2172c5; color: #fff; margin-bottom: $line-height-computed; padding: 21px 0 52px 0; position: relative; z-index: 1; @include box-shadow(#{0 5px 5px $gray-light});
+  > .fa { bottom: -35px; color: #2172c5; font-size: 100px; margin-left: -45px; position: absolute; left: 50%; z-index: 3; text-shadow: #{0 5px 5px $gray-light}; }
+  .fa-circle { bottom: -36px; color: #fff; font-size: 98px; margin-left: -44px; position: absolute; left: 50%; z-index: 2; }
+}
+.header-gray-light { background-color: $gray-lighter; color: #000; margin-bottom: $line-height-computed; padding: 21px 0 52px 0; position: relative; z-index: 1; @include box-shadow(#{0 5px 5px $gray-light}); }
+.footer-blue-dark { background-color: #113c5e; color: #fff; padding: 21px 0 42px 0; }
+
+.recent-tr-page { margin: { bottom: -42px; top: -22px; }
+  .providers-list {
+    input[type=radio] { margin-top: 21px; }
+  }
+  form {
+    .btn-primary { width: 100%;
+      @media #{$small} { width: auto; }
+    }
+  }
+  .header-blue { margin-bottom: ($line-height-computed * 2); }
+}
+
+.next-tr-page {  margin: { top: -22px; } }
 
 /* ==========================================================================
    Modals
@@ -254,6 +308,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
 
 .marg-top { margin-top: $line-height-computed; }
 .marg-btm { margin-bottom: $line-height-computed; }
+.marg-top-md { margin-top: ($line-height-computed / 2 * 3); }
+.marg-btm-md { margin-bottom: ($line-height-computed / 2 * 3); }
+.marg-top-lg { margin-top: ($line-height-computed * 2); }
+.marg-btm-lg { margin-bottom: ($line-height-computed * 2); }
 .pad-top { padding-top: $line-height-computed; }
 .pad-btm { padding-bottom: $line-height-computed; }
 
@@ -262,4 +320,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
 }
 .pull-left-sm {
   @media #{$small} { float: left; }
+}
+
+.vt { display: table-cell; vertical-align: top;
+  >* { vertical-align: top; }
+}
+.vm { display: table-cell; vertical-align: top;
+  >* { vertical-align: middle; }
+}
+.vb { display: table-cell; vertical-align: top;
+  >* { vertical-align: bottom; }
+}
+
+ul.vm { display: table; height: 100%; list-style: none; margin: 0; min-height: 1px; padding: 0; table-layout: fixed; width: 100%;
+  li { display: table-cell; height: 100%; vertical-align: middle; width: 100%; }
 }
