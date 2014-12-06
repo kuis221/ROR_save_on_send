@@ -81,7 +81,7 @@
                 .col-sm-7
                   .row.providers-list
                     = f.collection_radio_buttons(:service_provider_id, ServiceProvider.created_by_admin, :id, :name, {prompt: true, checked: @user_recent_transaction.service_provider.try(:id) || ServiceProvider.first.id}) do |b|
-                      .col-sm-6.col-md-4
+                      .col-sm-6
                         = b.label( class: "radio-inline", title: b.text )
                           = b.radio_button
                           i *{:class => ['icon-provider', 'icon-'+b.text.parameterize.downcase]}

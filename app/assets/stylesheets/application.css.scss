@@ -77,20 +77,20 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
 
 [class^="icon-"], [class*=" icon-"] { @include inline-block; }
 
-.icon-provider { background: { position: center center; repeat: no-repeat; } height: 55px; width: 115px; }
-.icon-western-union { background: {image: image-url("provider-icons/western-union.png"); } }
-.icon-xoom { background: {image: image-url("provider-icons/xoom.png"); } }
-.icon-moneygram { background: {image: image-url("provider-icons/moneygram.png"); } }
-.icon-transfast { background: {image: image-url("provider-icons/transfast.png"); } }
-.icon-ria { background: {image: image-url("provider-icons/ria.png"); } }
-.icon-transferwise {  background: {image: image-url("provider-icons/transferwise.png"); } }
-.icon-remitly { background: {image: image-url("provider-icons/remitly.png"); } }
-.icon-wellsfargo { background: {image: image-url("provider-icons/wells-fargo.png"); } }
-.icon-viamericas { background: {image: image-url("provider-icons/viamericas.png"); } }
-.icon-pnb { background: {image: image-url("provider-icons/pnb.png"); } }
-.icon-bofa { background: {image: image-url("provider-icons/bofa.png"); } }
-.icon-paypal { background: {image: image-url("provider-icons/paypal.png"); } }
-.icon-walmart { background: {image: image-url("provider-icons/walmart.png"); } }
+.icon-provider { background: { position: center center; repeat: no-repeat; } height: 45px; }
+.icon-western-union { background: {image: image-url("provider-icons/western-union.jpg"); } width: 68px; }
+.icon-xoom { background: {image: image-url("provider-icons/xoom.jpg"); } width: 152px; }
+.icon-moneygram { background: {image: image-url("provider-icons/moneygram.jpg"); } width: 112px; }
+.icon-transfast { background: {image: image-url("provider-icons/transfast.jpg"); } width: 181px; }
+.icon-ria { background: {image: image-url("provider-icons/ria.jpg"); } width: 144px; }
+.icon-transferwise {  background: {image: image-url("provider-icons/transferwise.jpg"); } width: 177px; }
+.icon-remitly { background: {image: image-url("provider-icons/remitly.jpg"); } width: 142px; }
+.icon-wellsfargo { background: {image: image-url("provider-icons/wells-fargo.jpg"); } width: 154px; }
+.icon-viamericas { background: {image: image-url("provider-icons/viamericas.jpg"); } width: 99px; }
+.icon-pnb { background: {image: image-url("provider-icons/pnb.jpg"); } width: 101px; }
+.icon-bofa { background: {image: image-url("provider-icons/bofa.jpg"); } width: 71px; }
+.icon-paypal { background: {image: image-url("provider-icons/paypal.jpg"); } width: 119px; }
+.icon-walmart { background: {image: image-url("provider-icons/walmart.jpg"); } width: 248px; }
 
 .icon-xs { height: #{$icon-size-xs}px; width: #{$icon-size-xs}px; }
 .icon-sm { height: #{$icon-size-sm}px; width: #{$icon-size-sm}px; }
@@ -271,7 +271,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
 
 .recent-tr-page { margin: { bottom: -44px; top: -23px; }
   .providers-list {
-    input[type=radio] { margin-top: 21px; }
+    input[type=radio] { margin-top: 16px; }
   }
   form {
     .btn-primary { width: 100%;
