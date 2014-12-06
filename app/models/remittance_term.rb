@@ -42,7 +42,7 @@ class RemittanceTerm < ActiveRecord::Base
     cost
   end
 
-  def highlight?
+  def highlighted?
     !!highlight
   end
 
@@ -91,7 +91,7 @@ class RemittanceTerm < ActiveRecord::Base
       end
 
       filtered_least_expensive_services.to_a.keep_if do |item| 
-        (item == least_expensive_services.first) ||
+        (item.highlighted?) ||
         (item.send_method == send_method && item.receive_method == receive_method)
       end
     else

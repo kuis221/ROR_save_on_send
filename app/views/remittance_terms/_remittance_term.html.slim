@@ -1,4 +1,4 @@
-tr *{class: remittance_term.highlight? ? [:success] : []}
+tr *{class: remittance_term.highlighted? ? [:success] : []}
   td= link_to(remittance_term.service_provider.name, service_provider_path(remittance_term.service_provider))
   - if @from_to_show
     td
