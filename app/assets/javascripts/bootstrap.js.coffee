@@ -9,7 +9,10 @@ sos.renderRating = ->
 
 # Render masks
 sos.renderMasks = ->
-  $('.mask-date').inputmask "m/d/y"
+  $('.mask-date').inputmask "m/d/y",
+    yearrange:
+      minyear: 2013
+      maxyear: 2015
   $('.mask-money-sent').inputmask "Regex",
     regex: "^[1-9][0-9]{0,2}|[12][0-9]{3}$"
   $('.mask-money-received').inputmask "999999"
@@ -37,11 +40,12 @@ sos.init = ->
   $("a[rel~=popover], .has-popover").popover()
   $("a[rel~=tooltip], .has-tooltip").tooltip()
 
-  $(".input-group.date").datepicker
-    dateFormat: "mm/dd/yy"
-    changeMonth: true
-    changeYear: true
-    yearRange: '2013:2015'
+  $(".input-group.date").datetimepicker
+    minDate: '1/1/2013'
+    maxDate: '12/31/2015'
+    showToday: true
+    pickTime: false
+
 
   sos.renderMasks()
   sos.renderRating()

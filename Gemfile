@@ -30,9 +30,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Twitter bootstrap
 gem "twitter-bootstrap-rails"
 
+gem 'momentjs-rails', '>= 2.8.1'
+
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'font-awesome-sass' # The iconic font designed for Bootstrap
-gem 'bootstrap-datepicker-rails'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
 gem 'jquery-star-rating-rails'
 gem 'jquery-inputmask-rails'
 gem 'jquery-turbolinks'
