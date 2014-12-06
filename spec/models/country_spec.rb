@@ -14,10 +14,10 @@ describe Country do
       expect(mexico.name).to eq('Mexico')
     end
 
-    it 'should return name of the country on Spanish' do
+    it 'should return name of the country in English' do
       I18n.locale = :es
 
-      expect(mexico.name).to eq('México')
+      expect(mexico.name).to eq('Mexico')
     end
   end
 end

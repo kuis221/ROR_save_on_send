@@ -14,10 +14,10 @@ describe PaymentMethod do
       expect(cash.name).to eq('cash')  
     end
 
-    it 'should return name of payment method on Spanish' do
+    it 'should return name of payment method on English' do
       I18n.locale = :es
       
-      expect(cash.name).to eq('efectivo')
+      expect(cash.name).to eq('cash')
     end
   end
 
