@@ -131,3 +131,6 @@ en:
       service_provider:
         name: Provider name
         landing_page: Provider website
+      feedback:
+        comments: Comments
+        service_quality: Service quality

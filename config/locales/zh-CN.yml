@@ -1,0 +1,137 @@
+zh-CN:
+  notice:
+    verification_email_was_sent: 验证邮件发送到您的电子邮件地址 - 请点击该电子邮件中的链接，确认
+    best_rate: 恭喜！您最近调任使用的最佳方法！
+    save_on_transaction: "<h4 class='no-marg-btm'>别人送的<strong>%{saving}%{currency}</strong>更多使用SaveOnSend知识 </h4>"
+    thanks_for_feedback: 感谢您的反馈！
+  layouts:
+    application: &application
+      title: Save on Send
+      add_recent_transaction: 添加最近的交易
+      next_transfer: 下一步转移
+      help_others: 帮助他人
+      how_to: 操作方法/问题
+      sign_out: 登出
+    landing: &application
+      title: Save on Send
+      title_html: "移民 <br class='visible-xs'> 世界联合起来！"
+      send_money: 寄钱与透明度，帮助自己和他人学习的总成本！
+      share_transfer: 股权转让
+      how_it: 它是如何工作的？
+      add_recent_transaction: 添加最近的交易
+      next_transfer: 下一步转移
+      help_others: 帮助他人
+      how_to: 操作方法/问题
+      sign_out: 登出
+  shared:
+    header: *application
+  service_providers:
+    show:
+      go_to_provider: 准备寄钱
+      provider_feedbacks_title: 别人怎么说
+    provider_feedback_form:
+      title: 率提供商
+      submit: 提交
+  users:
+    edit:
+      title: 请提供更多的信息，帮助我们找到最好的服务提供商为你
+      submit: 提交
+  user_recent_transactions:
+    new:
+      title: 告诉我们你最后的转移
+      why_it_html: "<span class='lead no-marg-btm visible-xs-block'>，看看有多少你可以保存。</span><span class='lead hidden-xs'>为什么重要？</span> <span class='hidden-xs'>缺乏透明度，不断变化的成本，新的供应商使它很难知道，如果我们使用寄钱的最好方法。花1分钟，分享你的经验和帮助他人或者，也许你学习，如果你可以节省了很多你最后的转移。</span>"
+      see_how_much: 看看有多少你可以保存在您的最后一个传递！
+      enter_info: 输入准确的信息，以帮助自己和他人。
+      photo_id: 照片的ID
+      tax_returns: 纳税申报
+      job_verification: 核查工作
+      submit: 我完了，把它！
+      other_provider: 其它供应商
+      other_provider_modal_label: 请向我们提供尽可能多的信息尽可能你最喜欢的供应商
+      close: 近
+      ok: 行
+      amount_received_help: 请准确，不近似，所以我们可以正确识别你的储蓄和其他可能受益于您的信息。如果不能确定，请询问您的收件人。
+      placeholder_comment: 帮助其他有详细的注释
+      placeholder_promotion: 留空如果没有
+      footer: 谢谢！
+      footer_add_html: "<span class='lead'>分享你的经验。</span> 你的信息可能帮助别人做出更聪明，更明智的选择。"
+  user_next_transfers:
+    new:
+      title: 让我们找到你的下一个转移的最佳供应商
+    show:
+      title: 让我们找到你的下一个转移的最佳供应商
+      provider_name: 提供程序名称
+      to_from_transfer_media: 对从传送介质
+      gross_paid_amount: 总支付金额
+      real_cost: 实际成本
+      net_received_amount: 净接收量
+      duration: 时间（小时）
+      documentation_requirements: 文件要求
+      promotions: 促销
+      service_quality: 服务质量
+      title_table: 你的下一个转移的最佳选择
+    form:
+      submit: 提交
+  referrals:
+    dialog:
+      title: 请帮助我们改进网站，并让别人知道如何省钱
+  devise:
+    registrations:
+      new:
+        title_html:  加入<span class='hidden-xs'>SaveOnSenders</span><span class='visible-xs-inline'></span> 社区
+        log_in_link: 您如果您已经有一个帐户
+        join_our_html: "加入我们的社区，并开始分享和获取最优惠的价格，并以发送和接收的钱更容易的方法的信息。创建一个帐户是免费的，简单，给你进入我们的论坛和吨来自<a href='/'>用户就像你所提供的其他usesful信息！</a>"
+        title_create_new: "建立免费的账号："
+        password_length: "(%{minimum_password_length} 最小字符)"
+        sign_up: 创建我的帐户！
+        sign_up_fb: 通过Facebook登录
+        or: 或
+    sessions:
+      new:
+        remember_me: 记得我
+        log_in: 登录
+    mailer:
+      confirmation_instructions:
+        title: "欢迎 %{email}!"
+        body: "您可以确认通过下面的链接您的帐户的电子邮件："
+        confirm_my_account: 确认我的帐户
+  activerecord:
+    attributes:
+      user:
+        email: 电子邮件
+        password: 密码
+        password_confirmation: 确认密码
+        first_name: 名字
+        last_name: 姓
+        zipcode: 邮政编码
+        money_transfer_destination_id: 汇款目的地
+      user/recent_transaction:
+        date: 日期
+        currency: ：收到的货币
+        amount_sent: 美元发送量
+        amount_received: ：收到金额
+        originating_source_of_funds_id: 选择付款方式
+        service_provider_id: 选择供应商
+        destination_preference_for_funds_id: 免费获赠方法
+        fees_for_sending: 费送
+        send_to_receive_duration: 多久在金钱面前变得可用？
+        documentation_requirements: 文件要求
+        promotion: 二手促销
+        service_quality: 供应商质量
+        comments: 帮助其他有关此提供详细评论
+      user/next_transfer:
+        amount_send: 发送量
+        receive_currency: 接收货币
+        amount_receive: 收量
+        originating_source_of_funds_id: 资金的原始源
+        destination_preference_for_funds_id: 资金偏好的目的地
+      referral:
+        comments: 评论
+        email: 电子邮件
+      service_provider:
+        name: 提供程序名称
+        landing_page: 供应商网站
+      feedback:
+        comments: 评论
+        service_quality: 服务质量
+

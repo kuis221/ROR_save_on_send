@@ -131,3 +131,6 @@ es:
       service_provider:
         name: Nombre del proveedor
         landing_page: Sitio web del proveedor
+      feedback:
+        comments: Comentarios
+        service_quality: La calidad del servicio
