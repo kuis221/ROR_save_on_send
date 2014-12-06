@@ -140,19 +140,20 @@
                   .col-sm-7
                     = f.text_field :promotion, class: 'form-control', placeholder: t('.placeholder_promotion')
               // service quality
-              .form-group
-                = f.label :service_quality, class: 'col-sm-5 control-label'
-                .col-sm-7.user-rating
-                  = f.collection_radio_buttons(:service_quality, (1..5).collect{|rate| [rate, rate]}, :first, :last, {prompt: true}) do |b|
-                    = b.radio_button( class: "star")
-                    /= b.label( class: "radio-inline star", title: b.text )
-                    /  = b.radio_button
-                    /  = b.text
-              // comments
-              .form-group
-                = f.label :comments, class: 'col-sm-5 control-label'
-                .col-sm-7
-                  = f.text_area :comments, class: 'form-control', placeholder: t('.placeholder_comment')
+              = f.fields_for :feedback, @user_recent_transaction.feedback || Feedback.new do |feedback|
+                .form-group
+                  = feedback.label :service_quality, class: 'col-sm-5 control-label'
+                  .col-sm-7.user-rating
+                    = feedback.collection_radio_buttons(:service_quality, (1..5).collect{|rate| [rate, rate]}, :first, :last, {prompt: true}) do |b|
+                      = b.radio_button( class: "star")
+                      /= b.label( class: "radio-inline star", title: b.text )
+                      /  = b.radio_button
+                      /  = b.text
+                // comments
+                .form-group
+                  = feedback.label :comments, class: 'col-sm-5 control-label'
+                  .col-sm-7
+                    = feedback.text_area :comments, class: 'form-control', placeholder: t('.placeholder_comment')
               // actions
               .form-group
                 .col-sm-offset-5.col-sm-7

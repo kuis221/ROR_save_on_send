@@ -15,7 +15,11 @@ describe UserRecentTransactionsController do
   end
 
   describe 'POST create' do
-    let!(:recent_transaction_attrs){FactoryGirl.attributes_for(:recent_transaction)}
+    let!(:recent_transaction_attrs) do 
+      attrs = FactoryGirl.attributes_for(:recent_transaction)
+      attrs[:feedback_attributes] = {comments: 'n/a', service_quality: 4}
+      attrs
+    end
     
     it 'should create new record with information about user recent transaction' do
       sign_in(user)
