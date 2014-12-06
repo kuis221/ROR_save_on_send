@@ -39,7 +39,7 @@ en:
   user_recent_transactions:
     new:
       title: Tell us about your last transfer
-      why_it_html: "<span class='lead no-marg-btm visible-xs-block'>and see how much you could have saved.</span><span class='lead hidden-xs'>Why it matters?</span> <span class='hidden-xs'>ComparisonPricing is all about sharing with the community. All our pricing information is based on input from you an other users. Sharing your information is how you help and get helped. Answer a few simple question regarding your recent transfer: it takes just a minute but it could make a great difference for someone else.</span>"
+      why_it_html: "<span class='lead no-marg-btm visible-xs-block'>and see how much you could have saved.</span><span class='lead hidden-xs'>Why it matters?</span> <span class='hidden-xs'>Lack of transparency, changing costs, new providers make it very hard for to know if we use the best method for sending money. Spend 1 minute to share your experience and help others in OR maybe you learn if you could have saved A LOT your last transfer.</span>"
       see_how_much: See how much you could have saved on your last transfer!
       enter_info: Enter information accurately to help yourself and others.
       photo_id: Photo ID
