@@ -121,7 +121,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
    ========================================================================== */
 .input-group {
    &.date { max-width: 145px; }
-   &.input-money { max-width: 104px; }
+   &.input-money { max-width: 104px;
+    &.input-money-lg { max-width: 145px; }
+   }
 }
 .duration-goup {
    > input { float: left; margin-right: #{$grid-gutter-width/2}; width: 43px; }

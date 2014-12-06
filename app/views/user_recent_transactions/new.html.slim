@@ -62,7 +62,7 @@
               .form-group
                 = f.label :amount_received, class: 'col-sm-5 control-label'
                 .col-sm-7
-                  .input-group.input-money
+                  .input-group.input-money.input-money-lg
                     .input-group-addon#amount_received_currency
                       i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || current_user.prefered_currency.first).downcase]}
                     = money_field f, @user_recent_transaction, :amount_received, 'form-control mask-money-received'
