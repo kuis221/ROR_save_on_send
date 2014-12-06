@@ -12,9 +12,7 @@ sos.renderMasks = ->
   $('.mask-date').inputmask "m/d/y"
   $('.mask-money-sent').inputmask "Regex",
     regex: "^[1-9][0-9]{0,2}|[12][0-9]{3}$"
-  $('.mask-money-received').inputmask "9999",
-    'showMaskOnHover': false,
-    'showMaskOnFocus': false
+  $('.mask-money-received').inputmask "999999"
   $('.mask-money-fees').inputmask "Regex",
     regex: "[0-9]{1,2}[.]?[0-9]{0,2}"
   $('.mask-minutes').inputmask "Regex",
