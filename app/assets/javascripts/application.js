@@ -20,6 +20,7 @@
 //= require jquery.inputmask.numeric.extensions
 //= require jquery.inputmask.date.extensions
 //= require jquery.inputmask.regex.extensions
-//= require bootstrap-datepicker
+//= require moment
+//= require bootstrap-datetimepicker
 //= require turbolinks
 //= require_tree .
