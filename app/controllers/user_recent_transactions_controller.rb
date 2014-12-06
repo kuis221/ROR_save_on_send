@@ -22,8 +22,9 @@ class UserRecentTransactionsController < ApplicationController
       .permit(:date, :currency, :amount_sent, :amount_received, :originating_source_of_funds_id,
               :service_provider_id, :destination_preference_for_funds_id, :fees_for_sending,
               :fees_for_receiving, :send_to_receive_duration, :send_to_receive_duration_interval,
-              :documentation_requirements, :promotion, :service_quality, :comments,
-              service_provider_attributes: [:name, :landing_page]
+              :documentation_requirements, :promotion,
+              service_provider_attributes: [:name, :landing_page], 
+              feedback_attributes: [:service_quality, :comments]
              )
 
     if recent_transaction_attrs[:service_provider_id].present? && recent_transaction_attrs[:service_provider_attributes].present?
@@ -32,6 +33,10 @@ class UserRecentTransactionsController < ApplicationController
 
     if recent_transaction_attrs[:service_provider_attributes].present?
       recent_transaction_attrs[:service_provider_attributes][:created_by] = current_user
+    end
+
+    if recent_transaction_attrs[:feedback_attributes].present?
+      recent_transaction_attrs[:feedback_attributes][:user] = current_user
     end
 
     @user_recent_transaction = current_user.recent_transactions.create(recent_transaction_attrs)

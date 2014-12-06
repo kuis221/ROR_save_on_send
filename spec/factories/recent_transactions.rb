@@ -13,8 +13,7 @@ FactoryGirl.define do
     send_to_receive_duration 86400
     documentation_requirements 'Photo ID'
     promotion 'n/a'
-    service_quality 4
-    comments 'n/a'
+    feedback {Feedback.new(service_quality: 4, comments: 'n/a', user: user)}
   end
 end
  

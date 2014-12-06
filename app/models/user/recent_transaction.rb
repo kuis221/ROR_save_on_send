@@ -2,8 +2,7 @@ class User::RecentTransaction < ActiveRecord::Base
   DURATION_INTERVALS = %w{minutes hours days}
 
   REQUIRED_FIELDS = %i{date currency amount_sent_cents amount_received_cents originating_source_of_funds service_provider
-    destination_preference_for_funds fees_for_sending send_to_receive_duration
-    service_quality comments}
+    destination_preference_for_funds fees_for_sending send_to_receive_duration feedback}
 
   validates_presence_of REQUIRED_FIELDS
   validates_numericality_of :amount_sent, :amount_received, greater_than: 0
@@ -15,6 +14,8 @@ class User::RecentTransaction < ActiveRecord::Base
   belongs_to :destination_preference_for_funds, class_name: PaymentMethod
 
   belongs_to :service_provider, inverse_of: :recent_transactions
+
+  has_one :feedback, as: :commendable
   
   monetize :amount_sent_cents
   monetize :amount_received_cents, with_model_currency: :currency
@@ -24,6 +25,7 @@ class User::RecentTransaction < ActiveRecord::Base
   register_currency :usd
 
   accepts_nested_attributes_for :service_provider, reject_if: proc { |attrs| attrs[:name].blank? }
+  accepts_nested_attributes_for :feedback
 
   attr_accessor :send_to_receive_duration_interval
 
