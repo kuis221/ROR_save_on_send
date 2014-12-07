@@ -32,12 +32,12 @@
                 .input-group-addon
                   i.fa.fa-usd.fa-fw
                 = money_field f, @user_next_transfer, :amount_send, 'form-control mask-money-sent'
- 
+
           // amount receive
           .form-group *{:data => {target_amount: 'receive'}, class: "#{'hide' if !display_amount_receive}"}
             = f.label :amount_receive, class: 'col-sm-4 control-label'
             .col-sm-8
-              .input-group.input-money
+              .input-group.input-money.input-money-lg
                 .input-group-addon#amount_receive_currency
                   i.fa.fa-fw *{:class => ["fa-"+(@user_next_transfer.receive_currency || current_user.prefered_currency.first).downcase]}
                 = money_field f, @user_next_transfer, :amount_receive, 'form-control mask-money-received'

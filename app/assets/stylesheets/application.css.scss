@@ -120,8 +120,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
    ========================================================================== */
 .input-group {
    &.date { max-width: 145px; }
-   &.input-money { max-width: 104px;
-    &.input-money-lg { max-width: 145px; }
+   &.input-money { max-width: 114px;
+    &.input-money-lg { max-width: 128px; }
    }
 }
 .duration-goup {
@@ -269,6 +269,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { font: { family: $font-fam
 }
 .header-gray-light { background-color: $gray-lighter; color: #000; margin-bottom: $line-height-computed; padding: 21px 0 52px 0; position: relative; z-index: 1; @include box-shadow(#{0 5px 5px $gray-light}); }
 .footer-blue-dark { background-color: #113c5e; color: #fff; padding: 20px 0; }
+
+.bootstrap-datetimepicker-widget {
+  @media #{$xsmall} { right: 20px !important;
+    &:before, &:after { left: 7px !important; right: auto !important; }
+  }
+}
 
 .recent-tr-page { margin: { bottom: -44px; top: -23px; }
   .providers-list {
