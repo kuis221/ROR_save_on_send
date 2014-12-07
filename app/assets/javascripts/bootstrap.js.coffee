@@ -14,10 +14,11 @@ sos.renderMasks = ->
       minyear: 2013
       maxyear: 2015
   $('.mask-money-sent').inputmask "Regex",
-    regex: "^[1-9][0-9]{0,2}|[12][0-9]{3}$"
-  $('.mask-money-received').inputmask "999999"
+    regex: "^[1-9]\,?[0-9]{0,2}|[1-2]\,?[0-9]{3}$"
+  $('.mask-money-received').inputmask "Regex",
+    regex: "^[1-9][0-9]{0,2}\,?[0-9]{3}$"
   $('.mask-money-fees').inputmask "Regex",
-    regex: "[0-9]{1,2}[.]?[0-9]{0,2}"
+    regex: "^([1-9]([0-9])?[.])?[0-9]{1,2}$"
   $('.mask-minutes').inputmask "Regex",
     regex: "^[1-9]|[1-5][0-9]|60$"
   $('.mask-hours').inputmask "Regex",
