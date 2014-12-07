@@ -1,5 +1,6 @@
 sos = sos or {}
-sos.e = $.support.touch ? "tap" : "click";
+#sos.e = $.support.touch ? "tap" : "click";
+sos.e = ('ontouchstart' in document.documentElement) ? 'tap' : 'click'
 
 # Render rating
 sos.renderRating = ->
