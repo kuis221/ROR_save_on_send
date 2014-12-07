@@ -14,11 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require jquery.inputmask
-//= require jquery.inputmask.extensions
-//= require jquery.inputmask.numeric.extensions
-//= require jquery.inputmask.date.extensions
-//= require jquery.inputmask.regex.extensions
 //= require moment
 //= require bootstrap-datetimepicker
 //= require turbolinks

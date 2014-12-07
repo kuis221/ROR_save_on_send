@@ -35,7 +35,6 @@ gem 'momentjs-rails', '>= 2.8.1'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'font-awesome-sass' # The iconic font designed for Bootstrap
 gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
-gem 'jquery-inputmask-rails'
 gem 'jquery-turbolinks'
 
 gem 'bootstrap_flash_messages', github: 'useruby/bootstrap_flash_messages'
