@@ -50,7 +50,7 @@
               .form-group
                 = f.label :money_transfer_destination_id
                 .radio
-                  = f.collection_radio_buttons(:money_transfer_destination_id, Country.all.collect {|country| [ country.id, country.name ] }, :first, :last, {prompt: true, checked: Country.all.collect.first}) do |b|
+                  = f.collection_radio_buttons(:money_transfer_destination_id, Country.all.collect {|country| [ country.id, country.name ] }, :first, :last, {prompt: true, checked: resource.money_transfer_destination.try(:id)}) do |b|
                     = b.label( class: "radio-inline", title: b.text )
                       = b.radio_button
                       i *{:class => ['icon-sm', 'icon-'+b.text.parameterize.downcase]}
