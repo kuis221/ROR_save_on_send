@@ -13,7 +13,7 @@ class ServiceProvider < ActiveRecord::Base
     @display_feedbacks ||= (
       recent_transactions.joins(:feedback).where('feedbacks.approved is TRUE').map(&:feedback) + 
       feedbacks
-    ).select{|user| user.present?}
+    ).select{|feedback| feedback.user.present?}
      .sort{|feedback_a, feedback_b| feedback_b.created_at <=> feedback_a.created_at}
   end
 end
