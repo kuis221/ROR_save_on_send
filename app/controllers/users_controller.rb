@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :redirect_to_welcome_if_complete
+  before_filter :redirect_to_recent_transaction
 
   def edit
     @user = current_user
@@ -18,9 +18,7 @@ class UsersController < ApplicationController
   end
 
   private
-  def redirect_to_welcome_if_complete
-    if current_user.complete?
-      redirect_to(current_user.recent_transactions.empty? ? new_user_recent_transaction_path : welcome_path)
-    end
+  def redirect_to_recent_transaction
+    redirect_to(new_user_recent_transaction_path) if current_user.complete?
   end
 end
