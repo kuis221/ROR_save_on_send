@@ -1,6 +1,5 @@
 sos = sos or {}
-#sos.e = $.support.touch ? "tap" : "click";
-sos.e = ('ontouchstart' in document.documentElement) ? 'tap' : 'click'
+sos.e = (if ('ontouchstart' in document.documentElement) then 'tap' else 'click')
 
 # Render rating
 sos.renderRating = ->
@@ -28,12 +27,12 @@ sos.renderMasks = ->
     regex: "^[1-9]|1[0-4]$"
 
 # Navigation Toggle
-$(document).on "click", ".header .toggle-menu, .opened-menu .wrapper-content, .opened-menu .footer, .menu .close", (e) ->
+$(document).on sos.e, ".header .toggle-menu, .opened-menu .wrapper-content, .opened-menu .footer, .menu .close", (e) ->
   e.preventDefault()
   $("body").toggleClass "opened-menu"
   return
 
-$(document).on 'click', '[data-toggle-amount]', (event) ->
+$(document).on sos.e, '[data-toggle-amount]', (event) ->
   $('[data-target-amount]').each ->
     $(this).addClass('hide')
   $('[data-target-amount="'+$(this).data('toggle-amount')+'"]').removeClass('hide')
