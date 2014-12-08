@@ -55,7 +55,7 @@ html lang="en"
                         = t('.how_it')
         .container.pad-top
           p.text-center.lead.marg-btm-sm.visible-xs= t('.send_money')
-          .row
+          .row.top-alert
             .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
               = flash_messages(:html, :close)
         = yield
