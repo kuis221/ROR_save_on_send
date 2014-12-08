@@ -145,10 +145,7 @@
                   = feedback.label :service_quality, class: 'col-sm-5 control-label'
                   .col-sm-7.user-rating
                     = feedback.collection_radio_buttons(:service_quality, (1..5).collect{|rate| [rate, rate]}, :first, :last, {prompt: true}) do |b|
-                      = b.radio_button( class: "star")
-                      /= b.label( class: "radio-inline star", title: b.text )
-                      /  = b.radio_button
-                      /  = b.text
+                      = b.radio_button( class: "star "+( b.value == 1 ? "required" : ""))
                 // comments
                 .form-group
                   = feedback.label :comments, class: 'col-sm-5 control-label'
