@@ -14,6 +14,13 @@ describe User::RecentTransaction do
         expect(recent_transaction).to be_invalid
       end
     end
+
+    it 'should be invalid if service_quality and comments is not set for feedback' do
+      recent_transaction.feedback.service_quality = nil
+      recent_transaction.feedback.comments = ''
+
+      expect(recent_transaction).to be_invalid
+    end
   end
 
   describe '#send_to_receive_duration=' do
