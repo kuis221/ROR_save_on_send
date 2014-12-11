@@ -134,3 +134,10 @@ es:
       feedback:
         comments: Comentarios
         service_quality: La calidad del servicio
+    errors:
+      models:
+        feedback:
+          attributes:
+            comments: &feedback_comments
+              blank: Por favor ingrese su comentario detallado para su "estrellas" de calificación de la transacción - esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
+            service_quality: *feedback_comments

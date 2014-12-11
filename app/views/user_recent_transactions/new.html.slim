@@ -22,8 +22,14 @@
           - if @user_recent_transaction.errors.full_messages.count > 0
             div
               ul
-                - @user_recent_transaction.errors.full_messages.each do |err_msg|
-                  li= err_msg
+                - @user_recent_transaction.errors.each do |attribute, err_msg|
+                  - if attribute == :'feedback.comments' 
+                    li= err_msg
+                  - elsif attribute == :'feedback.service_quality'
+                    - unless @user_recent_transaction.errors.has_key?(:'feedback.comments')
+                      li= err_msg
+                  - else
+                    li= @user_recent_transaction.errors.full_message(attribute, err_msg)
 
     .row
       .col-xs-offset-1.col-xs-10.col-sm-offset-0.col-sm-12
