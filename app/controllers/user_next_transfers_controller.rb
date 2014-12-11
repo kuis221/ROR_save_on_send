@@ -26,11 +26,11 @@ class UserNextTransfersController < ApplicationController
   def create
     # remove decimal part from amount send and receive
     if params[:amount_type] == '1'
-      params[:user_next_transfer][:amount_send] = params[:user_next_transfer][:amount_send].to_i
+      params[:user_next_transfer][:amount_send] = params[:user_next_transfer][:amount_send].gsub(',', '_').to_i
       params[:user_next_transfer][:amount_receive] = 0
     elsif params[:amount_type] == '2'
       params[:user_next_transfer][:amount_send] = 0
-      params[:user_next_transfer][:amount_receive] = params[:user_next_transfer][:amount_receive].to_i
+      params[:user_next_transfer][:amount_receive] = params[:user_next_transfer][:amount_receive].gsub(',', '_').to_i
     end
 
     next_transfer_attrs = params.require(:user_next_transfer)

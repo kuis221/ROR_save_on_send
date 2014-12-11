@@ -9,8 +9,8 @@ class UserRecentTransactionsController < ApplicationController
     #params[:user_recent_transaction][:documentation_requirements] = params[:user_recent_transaction][:documentation_requirements].join(',')
 
     # remove decimal part from amount send and receive
-    params[:user_recent_transaction][:amount_sent] = params[:user_recent_transaction][:amount_sent].to_i
-    params[:user_recent_transaction][:amount_received] = params[:user_recent_transaction][:amount_received].to_i
+    params[:user_recent_transaction][:amount_sent] = params[:user_recent_transaction][:amount_sent].gsub(',', '_').to_i
+    params[:user_recent_transaction][:amount_received] = params[:user_recent_transaction][:amount_received].gsub(',', '_').to_i
 
     # convert date from string
     begin
