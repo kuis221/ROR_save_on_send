@@ -1,28 +1,34 @@
-== README
+== SAVE ON SEND TECHNICAL INFORMATION
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+=== TOOLS
 
-Things you may want to cover:
+We are using following tools:
 
-* Ruby version
+* web framework: ruby on rails 4.1.x http://rubyonrails.org
+  * more info about third part gems that we're using with rails you can find in
+    Gemfile
+* html/css framework: twitter bootstrap 3.3.x http://getbootstrap.com
+* db server: postgresql http://www.postgresql.org
+  * db schema is in db/schema.rb 
 
-* System dependencies
+we also using http://mandrill.com for the email delivery and http://www.heroku.com 
+as our webhosting provider
 
-* Configuration
+=== DEVELOPMENT PROCESS
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Choose story assign to you from the top of *Current* on pivotal tracker
+* Mark this story as *Started*
+* Create new branch in the our repo if you're start work on new feature. Name of the 
+  branch should start from story number from pivotal tracker and after number please 
+  add a story name (words should be delimited by underscore)
+* Create pull request when you have finished with functionality for story that
+  you are worked on
+* Mark story as *Finished* on pivotal tracker
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+=== TESTING PROCESS
+
+We're follow to TDD principles http://en.wikipedia.org/wiki/Test-driven_development and using 
+rspec framework http://rspec.info/ as our testing tool. We're doing functional testing and 
+integration testing as well. We also test our web site manually in the different desktop and mobile 
+browsers.
