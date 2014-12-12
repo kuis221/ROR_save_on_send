@@ -1,20 +1,18 @@
-== SAVE ON SEND TECHNICAL INFORMATION
+# SAVE ON SEND TECHNICAL INFORMATION
 
-=== TOOLS
+## TOOLS
 
-We are using following tools:
+### We are using following tools:
 
 * web framework: ruby on rails 4.1.x http://rubyonrails.org
-  * more info about third part gems that we're using with rails you can find in
-    Gemfile
+  (more info about third part gems that we're using with rails you can find in Gemfile)
 * html/css framework: twitter bootstrap 3.3.x http://getbootstrap.com
-* db server: postgresql http://www.postgresql.org
-  * db schema is in db/schema.rb 
+* db server: postgresql http://www.postgresql.org (db schema is in db/schema.rb)
 
 we also using http://mandrill.com for the email delivery and http://www.heroku.com 
 as our webhosting provider
 
-=== DEVELOPMENT PROCESS
+## DEVELOPMENT PROCESS
 
 * Choose story assign to you from the top of *Current* on pivotal tracker
 * Mark this story as *Started*
@@ -26,7 +24,7 @@ as our webhosting provider
 * Mark story as *Finished* on pivotal tracker
 
 
-=== TESTING PROCESS
+## TESTING PROCESS
 
 We're follow to TDD principles http://en.wikipedia.org/wiki/Test-driven_development and using 
 rspec framework http://rspec.info/ as our testing tool. We're doing functional testing and 
