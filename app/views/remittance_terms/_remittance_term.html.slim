@@ -2,10 +2,15 @@ tr *{class: remittance_term.highlighted? ? [:success] : []}
   td= link_to(remittance_term.service_provider.name, service_provider_path(remittance_term.service_provider))
   - if @from_to_show
     td
-      | #{remittance_term.send_method.slug}
-        - #{remittance_term.receive_method.slug}
-      .hidden.send_method_id= remittance_term.send_method.id
-      .hidden.receive_method_id= remittance_term.receive_method.id
+      - if remittance_term.highlighted?
+        =link_to '#apply_payment_methods' do
+          | #{remittance_term.send_method.slug}
+            - #{remittance_term.receive_method.slug}
+        .hidden.send_method_id= remittance_term.send_method.id
+        .hidden.receive_method_id= remittance_term.receive_method.id
+      - else
+        | #{remittance_term.send_method.slug}
+          - #{remittance_term.receive_method.slug}
   - if @user_next_transfer.amount_send > 0
     td= humanized_money_with_symbol(remittance_term.send_amount_with_fee(@user_next_transfer.amount_send))
   - else
