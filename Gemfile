@@ -70,6 +70,9 @@ group :development do
   # better error in browser
   gem 'better_errors'
   gem 'binding_of_caller'
+  
+  # generate uml diagram
+  gem 'railroady'
 end
 
 # Test
