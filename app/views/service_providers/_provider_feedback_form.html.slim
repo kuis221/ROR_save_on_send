@@ -14,9 +14,7 @@
       = f.label :service_quality, class: 'col-sm-4 control-label'
       .col-sm-8
         = f.collection_radio_buttons(:service_quality, (1..5).collect{|rate| [rate, rate]}, :first, :last, {prompt: true}) do |b|
-          = b.label( class: "radio-inline", title: b.text )
-            = b.radio_button
-            = b.text
+          = b.radio_button( class: "star "+( b.value == 1 ? "required" : ""))
 
     // comments
     .form-group

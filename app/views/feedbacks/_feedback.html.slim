@@ -5,7 +5,6 @@
         em= feedback.user.full_name
       div= l(feedback.created_at.to_date, format: :long)
     .col-sm-4
-      // FIXME add start instead of digit
-      = "Rate: #{feedback.service_quality}"
+      = display_service_quality_for_feedback(feedback)
     .col-sm-4
       = feedback.comments

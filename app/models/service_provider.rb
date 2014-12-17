@@ -10,10 +10,22 @@ class ServiceProvider < ActiveRecord::Base
   scope :created_by_admin, ->{where(created_by: Admin.all)}
 
   def display_feedbacks
-    @display_feedbacks ||= (
-      recent_transactions.joins(:feedback).where('feedbacks.approved is TRUE').map(&:feedback) + 
-      feedbacks
-    ).select{|feedback| feedback.user.present?}
+    @display_feedbacks ||= all_feedbacks.select{|feedback| feedback.user.present?}
      .sort{|feedback_a, feedback_b| feedback_b.created_at <=> feedback_a.created_at}
+  end
+
+  def average_rating
+    all_feedbacks_size = all_feedbacks.size
+    
+    @average_rating ||= if all_feedbacks_size > 0
+      all_feedbacks.inject(0){|sum, feedback| sum += feedback.service_quality}
+      .fdiv(all_feedbacks.size)
+      .round
+    end
+  end
+
+  def all_feedbacks
+    recent_transactions.joins(:feedback).where('feedbacks.approved is TRUE').map(&:feedback) + 
+    feedbacks
   end
 end
