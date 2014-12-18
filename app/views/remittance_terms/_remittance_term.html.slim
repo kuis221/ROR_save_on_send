@@ -30,4 +30,4 @@ tr *{class: remittance_term.highlighted? ? [:success] : []}
   td= remittance_term.duration
   //td= remittance_term.documentation
   //td= remittance_term.promotions
-  td= display_average_rating_for_provider(remittance_term.service_provider)
+  td= display_average_rating_for_remittance_term(remittance_term)

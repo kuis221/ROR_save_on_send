@@ -16,8 +16,8 @@ module ApplicationHelper
     display_rating(feedback.service_quality, feedback.id) 
   end
 
-  def display_average_rating_for_provider(service_provider)
-    display_rating(service_provider.average_rating, service_provider.id)
+  def display_average_rating_for_remittance_term(remittance_term)
+    display_rating(remittance_term.service_provider.average_rating, remittance_term.id)
   end
 
   private
