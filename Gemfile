@@ -55,8 +55,9 @@ gem 'omniauth-facebook'
 # Localization
 gem 'http_accept_language'
 
-# admin part
+# admin dashboard
 gem 'rails_admin'
+gem 'rails_admin_toggleable'
 
 # monetize
 gem 'money-rails'

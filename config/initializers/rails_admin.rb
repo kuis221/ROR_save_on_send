@@ -25,6 +25,7 @@ RailsAdmin.config do |config|
     show
     edit
     delete
+    toggle
     #show_in_app
 
     ## With an audit adapter, you can add:
