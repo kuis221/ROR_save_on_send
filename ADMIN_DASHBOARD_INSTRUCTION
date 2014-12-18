@@ -1,0 +1,23 @@
+# ADMIN DASHBOARD INSTRUCTION
+
+## How to open Admin Dashboard?
+
+You need to go to http://prototype-v1.herokuapp.com/admin
+
+Note: You will be redirect to sign in page if you've not already 
+signed in.
+
+## How to approve user feedback?
+
+You need to go to the page with list of the feedbacks:
+http://prototype-v1.herokuapp.com/admin/feedback
+
+You will see that each feedback have red icon with cross 
+inside or green icon with check inside.
+
+red icon - not approved feedback
+green icon - approved feedback
+
+You need to click on red icon if you need to approve feedback, 
+icon will changed to approved after it.
+
