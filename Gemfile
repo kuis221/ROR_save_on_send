@@ -61,6 +61,7 @@ gem 'rails_admin_toggleable'
 
 # monetize
 gem 'money-rails'
+gem 'money-open-exchange-rates'
 
 gem 'friendly_id', '~> 5.0.0'
 
@@ -84,6 +85,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'pry-rails'
+  gem 'webmock'
 end
 
 # Use ActiveModel has_secure_password

@@ -44,7 +44,7 @@ describe RemittanceTerm do
     it 'should return amount that user will receive in indian rupee' do
       expect(
         remittance_term.estimated_receive_amount(Money.new(10000, 'USD'), 'INR')
-      ).to eq(Money.new(599080, 'INR'))
+      ).to eq(Money.new(617489, 'INR'))
     end
 
     it 'should return amount that user will receive in usd' do
@@ -84,7 +84,7 @@ describe RemittanceTerm do
 
       amount_save = RemittanceTerm.save_on_transaction(transaction)
 
-      expect(amount_save).to eq(Money.new(533, 'MXN'))
+      expect(amount_save).to eq(Money.new(5092, 'MXN'))
     end
 
     it 'should return $1 for USD - USD transaction to China' do

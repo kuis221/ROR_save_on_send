@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206205719) do
+ActiveRecord::Schema.define(version: 20141219151801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,12 @@ ActiveRecord::Schema.define(version: 20141206205719) do
     t.integer  "commendable_id"
     t.string   "commendable_type"
     t.boolean  "approved",                     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fx_rates", force: true do |t|
+    t.string   "text",       limit: 16384
     t.datetime "created_at"
     t.datetime "updated_at"
   end
