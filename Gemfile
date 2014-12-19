@@ -77,7 +77,7 @@ group :development do
   gem 'railroady'
 end
 
-# Test
+# Development, Test
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
@@ -85,6 +85,10 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'pry-rails'
+end
+
+# Test
+group :test do
   gem 'webmock'
 end
 
