@@ -1,5 +1,4 @@
 require 'money/bank/open_exchange_rates_bank'
-require 'fx_rate'
 
 if Rails.env.test?
   include WebMock::API
