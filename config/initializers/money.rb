@@ -36,7 +36,7 @@ if ActiveRecord::Base.connection.table_exists?('fx_rates')
       FXRate.last.try(:text)
     else
       last_fx_rate = FXRate.last
-      FXRate.create(text: text) if last_fx_rate && !last_fx_rate.created_at.today?
+      FXRate.create(text: text) if !last_fx_rate || (last_fx_rate && !last_fx_rate.created_at.today?)
     end
   end
 
