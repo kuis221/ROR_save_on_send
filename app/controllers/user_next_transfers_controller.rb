@@ -1,5 +1,7 @@
 class UserNextTransfersController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
+
+  layout 'landing', only: [:new]
 
   def new
     @user_next_transfer = User::NextTransfer.new(params[:user_next_transfer])
@@ -8,7 +10,11 @@ class UserNextTransfersController < ApplicationController
   def show
     @user_next_transfer = User::NextTransfer.find(params[:id])
 
-    destination_country = current_user.money_transfer_destination
+    destination_country = if current_user 
+                            current_user.money_transfer_destination
+                          else
+                            @user_next_transfer.money_transfer_destination
+                          end
 
     @least_expensive_remittance_terms = RemittanceTerm.least_expensive(
         amount_send: @user_next_transfer.amount_send,
@@ -33,11 +39,21 @@ class UserNextTransfersController < ApplicationController
       params[:user_next_transfer][:amount_receive] = params[:user_next_transfer][:amount_receive].gsub(',', '_').to_i
     end
 
+    if params[:user_next_transfer][:money_transfer_destination_id]
+      selected_country = Country.find(params[:user_next_transfer][:money_transfer_destination_id])
+      params[:user_next_transfer][:receive_currency] = selected_country.receive_currency.first if selected_country.receive_currency.size == 1
+    end
+
     next_transfer_attrs = params.require(:user_next_transfer)
       .permit(:amount_send, :amount_receive, :receive_currency,
-              :originating_source_of_funds_id, :destination_preference_for_funds_id)
+              :originating_source_of_funds_id, :destination_preference_for_funds_id,
+              :money_transfer_destination_id)
 
-    @user_next_transfer = current_user.next_transfers.create(next_transfer_attrs)
+    if current_user
+      @user_next_transfer = current_user.next_transfers.create(next_transfer_attrs)
+    else
+      @user_next_transfer = User::NextTransfer.create(next_transfer_attrs)
+    end
 
     if @user_next_transfer.persisted?
       redirect_to(user_next_transfer_path(@user_next_transfer))

@@ -14,6 +14,17 @@
       .col-lg-offset-2.col-lg-8
         - display_amount_receive = @user_next_transfer.amount_receive > 0
         = form_for(@user_next_transfer, url: user_next_transfers_path, method: :post, html: {class: 'form-horizontal user_next_transfer', role: 'form'}) do |f|
+          - if current_user.nil?
+            // money_transfer_destination
+            .form-group
+              = f.label :money_transfer_destination_id, class: 'col-sm-4 control-label'
+              .col-sm-8
+                .radio
+                  = f.collection_radio_buttons(:money_transfer_destination_id, Country.all.collect {|country| [ country.id, country.name ] }, :first, :last, {prompt: true, checked: @user_next_transfer.money_transfer_destination.try(:id)}) do |b|
+                    = b.label( class: "radio-inline", title: b.text )
+                      = b.radio_button(id: b.text.parameterize.downcase)
+                      i *{:class => ['icon-sm', 'icon-'+b.text.parameterize.downcase]}
+
           // Choose amount type
           .form-group
             label.col-sm-4.control-label Choose amount type
@@ -26,17 +37,29 @@
                 | Receive
           
           // receive currency
-          - prefered_currency = current_user.prefered_currency
-          - if prefered_currency.size > 1
-            .form-group
-              = f.label :receive_currency, class: 'col-sm-4 control-label'
-              .col-sm-8
-                = f.collection_radio_buttons(:receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
-                  = b.label( for: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
-                    = b.radio_button( id: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase )
-                    i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+          - if current_user.present?
+            - prefered_currency = current_user.prefered_currency
+            - if prefered_currency.size > 1
+              .form-group
+                = f.label :receive_currency, class: 'col-sm-4 control-label'
+                .col-sm-8
+                  = f.collection_radio_buttons(:receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
+                    = b.label( for: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
+                      = b.radio_button( id: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase )
+                      i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+            - else
+              = f.hidden_field :receive_currency, value: prefered_currency.first
           - else
-            = f.hidden_field :receive_currency, value: prefered_currency.first
+            - Country.all.each do |country|
+              - if country.receive_currency.size > 1
+                .form-group.hidden.receive_currency *{id: "receive_currency_#{country.name.parameterize.downcase}"}
+                  = f.label :receive_currency, class: 'col-sm-4 control-label'
+                  .col-sm-8
+                    = f.collection_radio_buttons(:receive_currency, country.receive_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
+                      = b.label( for: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
+                        = b.radio_button( id: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase )
+                        i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+
 
           // amount send
           .form-group *{:data => {target_amount: 'send'}, class: "#{'hide' if display_amount_receive}"}
@@ -53,7 +76,8 @@
             .col-sm-8
               .input-group.input-money.input-money-lg
                 .input-group-addon#amount_receive_currency
-                  i.fa.fa-fw *{:class => ["fa-"+(@user_next_transfer.receive_currency || current_user.prefered_currency.first).downcase]}
+                  - if current_user.present? || @user_next_transfer.receive_currency.present?
+                    i.fa.fa-fw *{:class => ["fa-"+(@user_next_transfer.receive_currency || current_user.prefered_currency.first).downcase]}
                 = money_field f, @user_next_transfer, :amount_receive, 'form-control mask-money-received'
 
           // originating source of funds

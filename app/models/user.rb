@@ -21,13 +21,7 @@ class User < ActiveRecord::Base
   validates_presence_of :money_transfer_destination, unless: :skip_additional_info?
 
   def prefered_currency
-    destination_currency = money_transfer_destination.try(:currency_code)
-    
-    if ['INR', 'MXN'].include?(destination_currency)
-      [destination_currency]
-    else
-      [Money.default_currency.iso_code, destination_currency]
-    end
+    money_transfer_destination.try(:receive_currency)
   end
 
   def full_name
