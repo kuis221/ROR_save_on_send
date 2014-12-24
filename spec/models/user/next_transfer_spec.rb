@@ -29,6 +29,12 @@ describe User::NextTransfer do
       expect(next_transfer).to be_invalid
     end
 
+    it 'should be invalid if user is not nest and money transfer destination is not set' do
+      next_transfer.user = nil
+
+      expect(next_transfer).to be_invalid
+    end
+
     it 'should be valid if only amount send is specified' do
       next_transfer.amount_receive = 0
 

@@ -1,5 +1,4 @@
 require 'money/bank/open_exchange_rates_bank'
-require 'fx_rate'
 
 if Rails.env.test?
   include WebMock::API
@@ -31,7 +30,14 @@ end
 if ActiveRecord::Base.connection.table_exists?('fx_rates')
   moe = Money::Bank::OpenExchangeRatesBank.new
 
-  moe.cache = Proc.new{|text| text.nil? ? FXRate.last.try(:text) : FXRate.create(text: text)}
+  moe.cache = Proc.new do |text| 
+    if text.nil?
+      FXRate.last.try(:text)
+    else
+      last_fx_rate = FXRate.last
+      FXRate.create(text: text) if !last_fx_rate || (last_fx_rate && !last_fx_rate.created_at.today?)
+    end
+  end
 
   moe.app_id = 'fc400af738024664b81700ce0d846a06'
   moe.update_rates

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Sign up' do
   scenario 'visitor can sign up when provide all the information' do
-    visit root_url
+    visit new_user_registration_url
 
     fill_in 'user_email', with: Faker::Internet.email
     fill_in 'Password', with: 'password123'

@@ -36,6 +36,9 @@
         .row
           .col-lg-offset-2.col-lg-8
             = form_for(@user_recent_transaction, url: user_recent_transaction_path, html: {class: 'form-horizontal marg-btm-lg', role: 'form'}) do |f|
+
+              = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: @user_recent_transaction, label_class: 'col-sm-5', control_class: 'col-sm-7'}
+
               // date
               .form-group
                 = f.label :date, class: 'col-sm-5 control-label'
@@ -45,17 +48,29 @@
                     .input-group-addon
                       i.fa.fa-calendar
               // currency
-              - prefered_currency = current_user.prefered_currency
-              - if prefered_currency.size > 1
-                .form-group
-                  = f.label :currency, class: 'col-sm-5 control-label'
-                  .col-sm-7
-                    = f.collection_radio_buttons(:currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: @user_recent_transaction.currency || current_user.prefered_currency.collect.first}) do |b|
-                      = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
-                        = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
-                        i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+              - if current_user.present?
+                - prefered_currency = current_user.prefered_currency
+                - if prefered_currency.size > 1
+                  .form-group
+                    = f.label :currency, class: 'col-sm-5 control-label'
+                    .col-sm-7
+                      = f.collection_radio_buttons(:currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: @user_recent_transaction.currency || current_user.prefered_currency.collect.first}) do |b|
+                        = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
+                          = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
+                          i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+                - else
+                  = f.hidden_field :currency, value: prefered_currency.first
               - else
-                = f.hidden_field :currency, value: prefered_currency.first
+                - Country.all.each do |country|
+                  - if country.receive_currency.size > 1
+                    .form-group.hidden.receive_currency *{id: "receive_currency_#{country.name.parameterize.downcase}"}
+                      = f.label :currency, class: 'col-sm-5 control-label'
+                      .col-sm-7
+                        = f.collection_radio_buttons(:currency, country.receive_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
+                          = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
+                            = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
+                            i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+
               // amount sent
               .form-group
                 = f.label :amount_sent, class: 'col-sm-5 control-label'
@@ -70,7 +85,10 @@
                 .col-sm-7
                   .input-group.input-money.input-money-lg
                     .input-group-addon#amount_received_currency
-                      i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || current_user.prefered_currency.first).downcase]}
+                      - if current_user.present?
+                        i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || current_user.prefered_currency.first).downcase]}
+                      - elsif @user_recent_transaction.currency
+                        i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency).downcase]}
                     = money_field f, @user_recent_transaction, :amount_received, 'form-control mask-money-received'
                   em.help-block= t('.amount_received_help')
               // originating source of funds

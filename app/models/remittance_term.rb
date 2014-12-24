@@ -104,7 +104,7 @@ class RemittanceTerm < ActiveRecord::Base
 
     amount_send = transaction.amount_sent
     receive_currency = transaction.currency
-    receive_country = transaction.user.money_transfer_destination 
+    receive_country = transaction.money_transfer_destination || transaction.user.money_transfer_destination 
 
     least_expensive_service = least_expensive(amount_send: amount_send, 
                                       receive_country: receive_country, 

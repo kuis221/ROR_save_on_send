@@ -2,7 +2,7 @@ class Feedback < ActiveRecord::Base
   belongs_to :commendable, polymorphic: true
   belongs_to :user
 
-  validates_presence_of :user, :service_quality, :comments
+  validates_presence_of :service_quality, :comments
 
   # rails admin configuration
   rails_admin do

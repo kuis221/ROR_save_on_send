@@ -7,10 +7,6 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'omniauth_callbacks'
   }
   
-  devise_scope :user do 
-    root to: 'devise/registrations#new'
-  end
-
   resource :user, only: [:edit, :update]
 
   resource :user_recent_transaction, only: [:new, :create]
@@ -22,6 +18,8 @@ Rails.application.routes.draw do
   resources :referrals, only: [:create]
 
   resources :pages, only: [:show]
+
+  root to: 'user_next_transfers#new'
 
   get 'how-to', to: 'pages#show', defaults: {id: 'how_to'}
 

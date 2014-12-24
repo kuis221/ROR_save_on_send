@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141219151801) do
+ActiveRecord::Schema.define(version: 20141224142619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20141219151801) do
     t.integer  "destination_preference_for_funds_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "money_transfer_destination_id"
   end
 
   create_table "user_recent_transactions", force: true do |t|
@@ -123,6 +124,7 @@ ActiveRecord::Schema.define(version: 20141219151801) do
     t.datetime "updated_at"
     t.string   "currency",                            limit: 3
     t.integer  "fees_for_sending_cents",                        default: 0, null: false
+    t.integer  "money_transfer_destination_id"
   end
 
   create_table "users", force: true do |t|

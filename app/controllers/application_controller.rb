@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  layout :layout_by_resource
-
   before_filter :set_locale
 
   protected
@@ -21,14 +19,6 @@ class ApplicationController < ActionController::Base
       else
         edit_user_path
       end
-    end
-  end
-
-  def layout_by_resource
-    if devise_controller? && controller_name == 'registrations' && action_name == 'new'
-      'landing'
-    else
-      'application'
     end
   end
 
