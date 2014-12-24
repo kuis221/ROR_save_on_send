@@ -14,17 +14,9 @@
       .col-lg-offset-2.col-lg-8
         - display_amount_receive = @user_next_transfer.amount_receive > 0
         = form_for(@user_next_transfer, url: user_next_transfers_path, method: :post, html: {class: 'form-horizontal user_next_transfer', role: 'form'}) do |f|
-          - if current_user.nil?
-            // money_transfer_destination
-            .form-group
-              = f.label :money_transfer_destination_id, class: 'col-sm-4 control-label'
-              .col-sm-8
-                .radio
-                  = f.collection_radio_buttons(:money_transfer_destination_id, Country.all.collect {|country| [ country.id, country.name ] }, :first, :last, {prompt: true, checked: @user_next_transfer.money_transfer_destination.try(:id)}) do |b|
-                    = b.label( class: "radio-inline", title: b.text )
-                      = b.radio_button(id: b.text.parameterize.downcase)
-                      i *{:class => ['icon-sm', 'icon-'+b.text.parameterize.downcase]}
-
+          
+          = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: @user_next_transfer, label_class: 'col-sm-4', control_class: 'col-sm-8'}
+          
           // Choose amount type
           .form-group
             label.col-sm-4.control-label Choose amount type

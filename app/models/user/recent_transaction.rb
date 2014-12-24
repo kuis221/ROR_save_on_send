@@ -15,6 +15,8 @@ class User::RecentTransaction < ActiveRecord::Base
 
   belongs_to :service_provider, inverse_of: :recent_transactions
 
+  belongs_to :money_transfer_destination, class_name: Country
+
   has_one :feedback, as: :commendable
   
   monetize :amount_sent_cents
