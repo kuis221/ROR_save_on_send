@@ -1,4 +1,4 @@
-- if current_user.nil?
+- if current_user.nil? && cookies[:money_transfer_destination_id].nil?
   // money_transfer_destination
   .form-group
     = f.label :money_transfer_destination_id, class: [label_class, 'control-label']

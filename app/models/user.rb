@@ -6,8 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable,
-         :omniauthable, omniauth_providers: [:facebook],
-         authentication_keys: [:login]
+         :omniauthable, omniauth_providers: [:facebook]
 
   belongs_to :money_transfer_destination, class_name: Country
 

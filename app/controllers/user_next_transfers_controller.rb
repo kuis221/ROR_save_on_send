@@ -40,8 +40,14 @@ class UserNextTransfersController < ApplicationController
     end
 
     if params[:user_next_transfer][:money_transfer_destination_id]
+      cookies[:money_transfer_destination_id] = params[:user_next_transfer][:money_transfer_destination_id]
+
       selected_country = Country.find(params[:user_next_transfer][:money_transfer_destination_id])
       params[:user_next_transfer][:receive_currency] = selected_country.receive_currency.first if selected_country.receive_currency.size == 1
+    end
+
+    if current_user.nil? && cookies[:money_transfer_destination_id]
+      params[:user_next_transfer][:money_transfer_destination_id] = cookies[:money_transfer_destination_id]
     end
 
     next_transfer_attrs = params.require(:user_next_transfer)

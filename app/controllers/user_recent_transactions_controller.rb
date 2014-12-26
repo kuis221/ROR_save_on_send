@@ -13,8 +13,14 @@ class UserRecentTransactionsController < ApplicationController
     params[:user_recent_transaction][:amount_received] = params[:user_recent_transaction][:amount_received].gsub(',', '_').to_i
 
     if params[:user_recent_transaction][:money_transfer_destination_id]
+      cookies[:money_transfer_destination_id] = params[:user_next_transfer][:money_transfer_destination_id]
+
       selected_country = Country.find(params[:user_recent_transaction][:money_transfer_destination_id])
       params[:user_recent_transaction][:currency] = selected_country.receive_currency.first if selected_country.receive_currency.size == 1
+    end
+
+    if current_user.nil? && cookies[:money_transfer_destination_id]
+      params[:user_recent_transaction][:money_transfer_destination_id] = cookies[:money_transfer_destination_id]
     end
 
     # convert date from string
