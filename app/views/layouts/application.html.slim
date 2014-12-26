@@ -10,7 +10,7 @@ html lang="en"
     /! Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
-    = stylesheet_link_tag "application", :media => "all"
+    = stylesheet_link_tag "app", :media => "all"
     = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
     = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
     = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
@@ -20,18 +20,16 @@ html lang="en"
 
   body
     = render 'shared/header'
-    .root
-      = yield :menu
+    
+    - if flash[:notice].present?
+      .container
+        .row
+          .col-xs-12.col-sm-12
+            = flash_messages(:html, :close)
 
-      .wrapper-content role="main"
-        .container
-          .row.top-alert
-            .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
-              = flash_messages(:html, :close)
-        = yield
+    = yield
 
-      .root-footer
-    = render 'shared/footer'
+    = render 'shared/footer' 
 
 - if user_signed_in?
   = render 'referrals/dialog'
