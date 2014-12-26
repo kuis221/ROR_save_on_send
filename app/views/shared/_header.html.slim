@@ -3,8 +3,7 @@
     .row
       .col-xs-12.text-left
         p
-          | This is a test version - we need your feedback to get it right! Write to 
-          = mail_to 'admin@saveonsend.com'
+          | #{t('.notice_test_version')} #{mail_to 'admin@saveonsend.com'}
 
 header
   .container
@@ -25,6 +24,6 @@ header
             li.navbar-text= current_user.full_name
             li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
           - else
-            li= link_to "Join now", '#sign_up'
-            li= link_to "How it works", '#sign_up'
-            li= link_to t('.log_in'), '/users/sign_in', class: 'btn btn-primary hidden-xs'
+            li= link_to t('.sign_up'), new_user_registration_path
+            li= link_to t('.how_to'), how_to_path
+            li= link_to t('.sign_in'), new_user_session_path, class: 'btn btn-primary hidden-xs'

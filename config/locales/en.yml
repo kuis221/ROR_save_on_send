@@ -5,7 +5,7 @@ en:
     save_on_transaction: "<h4 class='no-marg-btm'>Others sent <strong>%{saving} %{currency}</strong> more using SaveOnSend knowledge</h4>"
     thanks_for_feedback: Thank you for your feedback!
   layouts:
-    application: &application
+    application:
       title: Save on Send
       add_recent_transaction: Add recent transaction
       next_transfer: Next transfer
@@ -21,8 +21,11 @@ en:
       add_recent_transaction: Add recent transaction
       next_transfer: Next transfer
       help_others: Help others
-      how_to: How-to/Questions
+      how_to: How it works
+      sign_up: Join now
+      sign_in: Log in
       sign_out: Sign out
+      notice_test_version: This is a test version - we need your feedback to get it right! Write to
   shared:
     header: *application
   service_providers:
@@ -57,7 +60,20 @@ en:
       footer_add_html: "<span class='lead'>for sharing your experience.</span> You information might have helped someone else make a smarter and more informed choice."
   user_next_transfers:
     new:
-      title: Let’s find the best provider for your next transfer
+      benefits_title: Confused by fees and exchange rates when sending money?
+      benefits:
+        one: Learn transparent costs and pick the best provider
+        two: Check savings on your last transfer
+        three: Get notified of price changes and new low-cost providers
+        four: Earn valuable points and status for participation
+      form_title: Let's find the best provider for your next transfer
+      recent_transaction: Check Last Transfer
+      next_transfer: Find Best Transfer
+      registration: Register to save
+      feedback_cta: 
+        <h3>Help others too!</h3>
+        <p>Share your experience. Help us improve the site and help others.</p>
+        <p><a href="mailto:admin@saveonsend.com">Tell us how we can get better</a></p>
     show:
       title: Let’s find the best provider for your next transfer
       provider_name: Provider
@@ -71,6 +87,9 @@ en:
       service_quality: Service quality
       title_table: Best options for your next transfers
     form:
+      send: Send
+      receive: Recieve
+      amount_type_label: I want to
       submit: Submit
   referrals:
     dialog:
@@ -123,8 +142,9 @@ en:
         amount_send: Amount send
         receive_currency: Receive currency
         amount_receive: Amount receive
-        originating_source_of_funds_id: Originating source of funds
-        destination_preference_for_funds_id: Destination preference for funds
+        originating_source_of_funds_id: Sending method
+        destination_preference_for_funds_id: Receiving method
+        money_transfer_destination_id: Where
       referral:
         comments: Comments
         email: Email
