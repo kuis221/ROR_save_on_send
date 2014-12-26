@@ -5,7 +5,7 @@ es:
     save_on_transaction: "<h4 class='no-marg-btm'>Otros envían <strong>%{saving} %{currency}</strong> más el uso del conocimiento SaveOnSend</h4>"
     thanks_for_feedback: Gracias por su colaboración
   layouts:
-    application: &application
+    application:
       title: Save on Send
       add_recent_transaction: Añadir reciente transacción
       next_transfer: Transferencia siguiente
@@ -21,8 +21,11 @@ es:
       add_recent_transaction: Añadir reciente transacción
       next_transfer: transferencia Siguiente
       help_others: Ayudar a los demás
-      how_to: Cómo hacer / Preguntas
+      how_to: ¿Cómo funciona?
+      sign_up: Suscríbete ahora
+      sign_in: iniciar sesión
       sign_out: Salir
+      notice_test_version: Esta es una versión de prueba - necesitamos su colaboración para hacerlo bien! Escriba a
   shared:
     header: *application
   service_providers:
@@ -84,6 +87,9 @@ es:
       service_quality: La calidad del servicio
       title_table: Las mejores opciones para su próximo traslado
     form:
+      send: Enviar
+      receive: Para descargar
+      amount_type_label: Quiero
       submit: Someter
   referrals:
     dialog:
@@ -136,8 +142,9 @@ es:
         amount_send: Monto de envío
         receive_currency: Recibe moneda
         amount_receive: Monto recibir
-        originating_source_of_funds_id: Fuente de origen de fondos
-        destination_preference_for_funds_id: Preferencia de destino para los fondos
+        originating_source_of_funds_id: Método de envío
+        destination_preference_for_funds_id: Método de recepción
+        money_transfer_destination_id: Donde
       referral:
         comments: Comentarios
         email: Email

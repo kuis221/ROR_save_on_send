@@ -5,7 +5,7 @@ zh-CN:
     save_on_transaction: "<h4 class='no-marg-btm'>别人送的<strong>%{saving}%{currency}</strong>更多使用SaveOnSend知识 </h4>"
     thanks_for_feedback: 感谢您的反馈！
   layouts:
-    application: &application
+    application:
       title: Save on Send
       add_recent_transaction: 添加最近的交易
       next_transfer: 下一步转移
@@ -21,8 +21,11 @@ zh-CN:
       add_recent_transaction: 添加最近的交易
       next_transfer: 下一步转移
       help_others: 帮助他人
-      how_to: 操作方法/问题
+      how_to: 它是如何工作的
+      sign_up: 现在加入
+      sign_in: 登录
       sign_out: 登出
+      notice_test_version: 这是一个测试版本 - 我们需要您的意见得到它的权利！写
   shared:
     header: *application
   service_providers:
@@ -84,6 +87,9 @@ zh-CN:
       service_quality: 服务质量
       title_table: 你的下一个转移的最佳选择
     form:
+      send: 发送
+      receive: 免费获赠
+      amount_type_label: 我想要
       submit: 提交
   referrals:
     dialog:
@@ -136,8 +142,9 @@ zh-CN:
         amount_send: 发送量
         receive_currency: 接收货币
         amount_receive: 收量
-        originating_source_of_funds_id: 资金的原始源
-        destination_preference_for_funds_id: 资金偏好的目的地
+        originating_source_of_funds_id: 发送方法
+        destination_preference_for_funds_id: 接收方法
+        money_transfer_destination_id: 哪里
       referral:
         comments: 评论
         email: 电子邮件

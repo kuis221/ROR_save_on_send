@@ -13,14 +13,14 @@
       = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: @user_next_transfer, label_class: 'col-xs-12 col-sm-4', control_class: 'col-xs-12 col-sm-8'}
 
       .form-group
-        label.col-xs-12.col-sm-4.control-label.text-right I want to
+        label.col-xs-12.col-sm-4.control-label.text-right= t('.amount_type_label')
         .col-xs-12.col-sm-8.text-left
           label.radio-inline
             = radio_button_tag 'amount_type', 1, !display_amount_receive, {:data => { toggle_amount: 'send'}}
-            | Send
+            | #{t('.send')}
           label.radio-inline
             = radio_button_tag 'amount_type', 2, display_amount_receive, {:data => { toggle_amount: 'receive'}}
-            | Receive
+            | #{t('.receive')}
 
       // receive currency
       - if current_user.present?
@@ -63,7 +63,7 @@
             = money_field f, @user_next_transfer, :amount_receive, 'form-control mask-money-received'
 
       .form-group
-        = f.label :originating_source_of_funds_id, 'Sending method', class: 'col-xs-12 col-sm-4 control-label'
+        = f.label :originating_source_of_funds_id, class: 'col-xs-12 col-sm-4 control-label'
         .col-xs-12.col-sm-8.text-left
           = f.collection_radio_buttons(:originating_source_of_funds_id, PaymentMethod.all, :id, :name, {prompt: true}) do |b|
             = b.label( class: "radio-inline", title: b.text )
@@ -71,7 +71,7 @@
               i *{:class => ['fa fa-lg', 'fa-'+b.text.parameterize.downcase]}
 
       .form-group
-        = f.label :destination_preference_for_funds_id, 'Receiving method', class: 'col-xs-12 col-sm-4 control-label'
+        = f.label :destination_preference_for_funds_id, class: 'col-xs-12 col-sm-4 control-label'
         .col-xs-12.col-sm-8.text-left
           = f.collection_radio_buttons(:destination_preference_for_funds_id, PaymentMethod.for_receiving.all, :id, :name, {prompt: true}) do |b|
             = b.label( class: "radio-inline", title: b.text )
