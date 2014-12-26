@@ -57,7 +57,20 @@ en:
       footer_add_html: "<span class='lead'>for sharing your experience.</span> You information might have helped someone else make a smarter and more informed choice."
   user_next_transfers:
     new:
-      title: Let’s find the best provider for your next transfer
+      benefits_title: Confused by fees and exchange rates when sending money?
+      benefits:
+        one: Learn transparent costs and pick the best provider
+        two: Check savings on your last transfer
+        three: Get notified of price changes and new low-cost providers
+        four: Earn valuable points and status for participation
+      form_title: Let's find the best provider for your next transfer
+      recent_transaction: Check Last Transfer
+      next_transfer: Find Best Transfer
+      registration: Register to save
+      feedback_cta: 
+        <h3>Help others too!</h3>
+        <p>Share your experience. Help us improve the site and help others.</p>
+        <p><a href="mailto:admin@saveonsend.com">Tell us how we can get better</a></p>
     show:
       title: Let’s find the best provider for your next transfer
       provider_name: Provider name

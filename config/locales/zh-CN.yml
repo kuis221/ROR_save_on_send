@@ -57,7 +57,20 @@ zh-CN:
       footer_add_html: "<span class='lead'>分享你的经验。</span> 你的信息可能帮助别人做出更聪明，更明智的选择。"
   user_next_transfers:
     new:
-      title: 让我们找到你的下一个转移的最佳供应商
+      benefits_title: 受汇率及手续费汇款时，迷糊？
+      benefits:
+        one: 学习透明的成本和挑选最佳供应商
+        two: 检查节省您的最后一个传递
+        three: 价格变化和新的低成本供应商得到通知
+        four: 赢取宝贵的积分和状态参加
+      form_title: 让我们找到你的下一个转移的最佳供应商
+      recent_transaction: 检查最后转移
+      next_transfer: 查找最佳传输
+      registration: 注册以保存
+      feedback_cta: 
+        <h3>帮助别人呢！</h3>
+        <p>分享你的经历。帮助我们改善网站和帮助别人。</p>
+        <p><a href="mailto:admin@saveonsend.com">告诉我们，我们怎样才能得到更好的</a></p>
     show:
       title: 让我们找到你的下一个转移的最佳供应商
       provider_name: 提供程序名称

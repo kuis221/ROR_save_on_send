@@ -12,36 +12,28 @@ section.splash
               = image_tag "flags/70/Philippines.png", { alt: '', title: '', class: 'img-responsive' }
             li
               = image_tag "flags/70/China.png", { alt: '', title: '', class: 'img-responsive' }
-        h1 Confused by fees and exchange rates when sending money?
+        h1= t('.benefits_title')
         .row
           .col-xs-12.col-sm-6.col-sm-offset-4.text-left
             ul
-              li 
-                i.fa.fa-check 
-                | Learn transparent costs and pick the best provider
-              li 
-                i.fa.fa-check 
-                | Check savings on your last transfer
-              li 
-                i.fa.fa-check 
-                | Get notified of price changes and new low-cost providers
-              li 
-                i.fa.fa-check 
-                | Earn valuable points and status for participation
+              - t('.benefits').each do |line, text|
+                li 
+                  i.fa.fa-check 
+                  | #{text}
         .buttons
           ul
             li
-              a.btn.btn-primary href="#"  Check Last Transfer
+              = link_to t('.recent_transaction'), new_user_recent_transaction_path, class: %w{btn btn-primary}
             li
-              a.btn.btn-orange href="#"  Find Best Transfer
+              = link_to t('.next_transfer'), '#new_user_next_transfer', class: %w{btn btn-orange} 
             li
-              a.btn.btn-turquoise href="#"  Register to save
+              = link_to t('.registration'), new_user_registration_path, class: %w{btn btn-turquoise}
 
 section.content.next-tr-page
   .container
     .row
       .col-xs-12
-        h2 Let's find the best provider for your next transfer
+        h2= t('.form_title') 
 
         = render 'form'
 
@@ -50,7 +42,4 @@ section.feedback
     .row
       .col-xs-12
         /! feedback CTA
-        h3 Help others too!
-        p Share your experience. Help us improve the site and help others.
-        p
-          a href="mailto:admin@saveonsend.com"  Tell us how we can get better
+        = t('.feedback_cta').html_safe 

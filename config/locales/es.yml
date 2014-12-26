@@ -57,7 +57,20 @@ es:
       footer_add_html: "<span class='lead'>por compartir su experiencia.</span> Usted información podría haber ayudado a alguien a hacer una elección más inteligente y más informada."
   user_next_transfers:
     new:
-      title: Vamos a encontrar el mejor proveedor para su próxima transferencia
+      benefits_title: Confundido por honorarios y los tipos de cambio al enviar dinero? 
+      benefits:
+        one: Aprenda costes transparentes y elegir el mejor proveedor
+        two: Compruebe ahorros en su última transferencia
+        three: ¡Entérate de los cambios de precios y los nuevos proveedores de bajo costo
+        four: Gana puntos valiosos y el estado de participación
+      form_title: Vamos a encontrar el mejor proveedor para su próxima transferencia
+      recent_transaction: Compruebe Última Transferencia
+      next_transfer: Encontrar el mejor de Transferencia
+      registration: Registro para guardarlo
+      feedback_cta: 
+        <h3>Ayuda a los demás también!</h3>
+        <p>Comparte tu experiencia. Ayúdanos a mejorar el sitio y ayudar a los demás.</p>
+        <p><a href="mailto:admin@saveonsend.com">Díganos cómo podemos mejorar</a></p>
     show:
       title: Vamos a encontrar el mejor proveedor para su próxima transferencia
       provider_name: Nombre del proveedor
