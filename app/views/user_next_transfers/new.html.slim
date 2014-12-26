@@ -1,7 +1,56 @@
-.next-tr-page
-  .header-blue
-    .container
-      .text-center
-        h2.no-marg-btm.text-lowercase.text-capitalize-first= t('.title')
+section.splash
   .container
-    = render 'form'
+    .row
+      .col-xs-12
+        .flags
+          ul
+            li
+              = image_tag "flags/70/India.png", { alt: '', title: '', class: 'img-responsive' }
+            li
+              = image_tag "flags/70/Mexico.png", { alt: '', title: '', class: 'img-responsive' }
+            li
+              = image_tag "flags/70/Philippines.png", { alt: '', title: '', class: 'img-responsive' }
+            li
+              = image_tag "flags/70/China.png", { alt: '', title: '', class: 'img-responsive' }
+        h1 Confused by fees and exchange rates when sending money?
+        .row
+          .col-xs-12.col-sm-6.col-sm-offset-4.text-left
+            ul
+              li 
+                i.fa.fa-check 
+                | Learn transparent costs and pick the best provider
+              li 
+                i.fa.fa-check 
+                | Check savings on your last transfer
+              li 
+                i.fa.fa-check 
+                | Get notified of price changes and new low-cost providers
+              li 
+                i.fa.fa-check 
+                | Earn valuable points and status for participation
+        .buttons
+          ul
+            li
+              a.btn.btn-primary href="#"  Check Last Transfer
+            li
+              a.btn.btn-orange href="#"  Find Best Transfer
+            li
+              a.btn.btn-turquoise href="#"  Register to save
+
+section.content.next-tr-page
+  .container
+    .row
+      .col-xs-12
+        h2 Let's find the best provider for your next transfer
+
+        = render 'form'
+
+section.feedback
+  .container
+    .row
+      .col-xs-12
+        /! feedback CTA
+        h3 Help others too!
+        p Share your experience. Help us improve the site and help others.
+        p
+          a href="#"  Tell us how we can get better

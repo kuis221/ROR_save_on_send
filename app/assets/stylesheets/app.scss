@@ -1,0 +1,278 @@
+@import 'common/variables';
+@import 'bootstrap';
+
+@import 'font-awesome';
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+
+
+* {
+  //margin: 0;
+  @include box-sizing(border-box);
+}
+
+html, body {
+  background: #282828;
+  height: 100%;
+}
+
+body {
+  color: #333;
+  font: 10px $font-family-base;
+  text-align: center;
+  position: relative;
+}
+
+
+.notification {
+  background: #dcdcdc;
+  font-size: 12px;
+  color: #6b6b6b;
+
+  a {
+    color: #303b9b;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    margin: 1em 0;
+  }
+}
+
+
+header {
+  background: #fff;
+  height: 64px;
+  padding: 15px 0;
+
+  .brand {}
+
+  .nav {
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        font-size: 1.6em;
+        margin-left: 35px;
+
+        a {
+          color: #191a1b;
+
+          &.btn {
+            color: #fff;
+            padding: 6px 25px;
+            @include border-top-radius(10px);
+            @include border-right-radius(10px);
+            @include border-bottom-radius(10px);
+            @include border-left-radius(10px);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+section {
+  padding: 50px 0;
+
+  &.splash {
+    background: #0b2840 image-url('map.png') no-repeat 50% 0;
+
+    .flags {
+      ul {
+        li {
+          display: inline-block;
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .buttons {
+      ul {
+        li {
+          display: inline-block;
+          margin: 40px 15px 0;
+
+          a {
+            padding: 16px 26px;
+
+            &.btn {
+              color: #fff;
+              font-weight: bold;
+            }
+
+            &.btn-orange {
+              background: #ed8a42;
+
+              &:hover,
+              &:focus,
+              &.focus,
+              &:active,
+              &.active {
+                color: #fff;
+                background-color: darken(#ed8a42, 10%);
+                    border-color: darken(#ed8a42, 12%);
+              }
+            }
+
+            &.btn-turquoise {
+              background: #1abc9c;
+
+              &:hover,
+              &:focus,
+              &.focus,
+              &:active,
+              &.active {
+                color: #fff;
+                background-color: darken(#1abc9c, 10%);
+                    border-color: darken(#1abc9c, 12%);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    h1 {
+      color: #fff;
+      display: inline-block;
+      font-size: 4.2em;
+      font-weight: bold;
+      line-height: 140%;
+      margin-bottom: 22px;
+      width: 60%;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      
+      li {
+        color: #fff;
+        list-style: none;
+        font-size: 1.9em;
+
+        i {
+          margin-right: 15px;
+
+          &.fa-check {
+            color: #1abc9c;
+          }
+        }
+      }
+    }
+  }
+
+  &.content {
+    background: #fff image-url('content-pattern.png') repeat 0 0;
+    font-size: 1.5em;
+
+    h2 {
+      font-weight: bold;
+      margin-bottom: 50px;
+    }
+
+    form {
+      &.user_next_transfer {
+        .form-group {
+          margin-bottom: 30px;
+        }
+
+        .control-label {
+          padding-top: 0;
+        }
+
+        .valabel {
+          line-height: 48px;
+          // padding-top: 0;
+        }
+
+        .radio-inline input[type="radio"] {
+          line-height: 48px;
+          margin-right: 5px;
+          position: relative;
+        }
+
+        .radio {
+          padding-top: 0;
+        }
+
+        .radio-inline {
+          margin-right: 10px;
+          padding-top: 0;
+        }
+      }
+
+      .fa-cash          {
+        &:before {
+          content: "\f0d6";
+        }
+      }
+      .fa-bank-account  {
+        &:before {
+          content: "\f19c";
+        }
+      }
+      .fa-plastic-card  {
+        &:before {
+          content: "\f09d";
+        }
+      }
+    }
+  }
+
+  &.feedback {
+    background: #113c5e;
+    color: #fff;
+    padding: 40px 0;
+
+    h3 {
+      font-size: 3.2em;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.7em;
+
+      a {
+        color: #fff;
+        text-decoration: underline;
+
+        &:hover {
+
+        }
+      }
+    }
+  }
+}
+
+
+footer {
+  line-height: 50px;
+
+  p {
+    // text-align: center;
+    color: #919191;
+    font-size: 1.2em;
+    margin: 0 0 1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: #919191;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
