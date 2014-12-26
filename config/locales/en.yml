@@ -60,16 +60,16 @@ en:
       title: Let’s find the best provider for your next transfer
     show:
       title: Let’s find the best provider for your next transfer
-      provider_name: Provider name
-      to_from_transfer_media: To-From transfer medium
-      gross_paid_amount: Gross paid amount
-      real_cost: Real cost
-      net_received_amount: Net received amount
-      duration: Duration (hours)
+      provider_name: Provider
+      to_from_transfer_media: To-From method
+      gross_paid_amount: Total cost
+      real_cost: Margin
+      net_received_amount: Recieved
+      duration_html: Duration<br><small>(hours)</small>
       documentation_requirements: Documentation requirements
       promotions: Promotions
       service_quality: Service quality
-      title_table: Best options for your next transfer
+      title_table: Best options for your next transfers
     form:
       submit: Submit
   referrals:
