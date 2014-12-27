@@ -76,16 +76,19 @@ zh-CN:
         <p><a href="mailto:admin@saveonsend.com">告诉我们，我们怎样才能得到更好的</a></p>
     show:
       title: 让我们找到你的下一个转移的最佳供应商
-      provider_name: 提供程序名称
-      to_from_transfer_media: 对从传送介质
-      gross_paid_amount: 总支付金额
-      real_cost: 实际成本
-      net_received_amount: 净接收量
-      duration: 时间（小时）
+      provider_name: 提供商
+      to_from_transfer_media: 对从法
+      gross_paid_amount: 总费用
+      real_cost: 余量
+      net_received_amount: ：收到
+      duration_html: 长短<br><small>(小时)</small>
       documentation_requirements: 文件要求
       promotions: 促销
       service_quality: 服务质量
       title_table: 你的下一个转移的最佳选择
+      feedback_cta:
+        <h3>感谢您提交！</h3>
+        <p>与我们核对经常费用每天都在变化和新的供应商也加入竞争！</p>
     form:
       send: 发送
       receive: 免费获赠

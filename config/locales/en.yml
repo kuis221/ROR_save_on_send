@@ -86,6 +86,9 @@ en:
       promotions: Promotions
       service_quality: Service quality
       title_table: Best options for your next transfers
+      feedback_cta:
+        <h3>Thank you for submitting!</h3>
+        <p>Check back with us often as costs change daily and new providers are joining competition!</p>
     form:
       send: Send
       receive: Recieve

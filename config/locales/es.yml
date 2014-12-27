@@ -76,16 +76,19 @@ es:
         <p><a href="mailto:admin@saveonsend.com">Díganos cómo podemos mejorar</a></p>
     show:
       title: Vamos a encontrar el mejor proveedor para su próxima transferencia
-      provider_name: Nombre del proveedor
-      to_from_transfer_media: To-De medio de transferencia
-      gross_paid_amount: Importe bruto pagado
-      real_cost: Coste real
-      net_received_amount: Importe recibido neto
-      duration: Duración (horas)
+      provider_name: Proveedor
+      to_from_transfer_media: To-De método
+      gross_paid_amount: Costo total
+      real_cost: Margen
+      net_received_amount: Recibido
+      duration_html: Duración<br><small>(horas)</small>
       documentation_requirements: Los requisitos de documentación
       promotions: Promociones
       service_quality: La calidad del servicio
       title_table: Las mejores opciones para su próximo traslado
+      feedback_cta:
+        <h3>Gracias por enviar usted!</h3>
+        <p>Vuelve con nosotros a menudo como los costos cambian a diario y los nuevos proveedores se están uniendo a la competencia!</p>
     form:
       send: Enviar
       receive: Para descargar
