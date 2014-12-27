@@ -10,16 +10,7 @@ section.content.next-tr-page
     .container
       .row
         .col-xs-12
-          p
-            | Best providers selected for lowest 
-            strong Margin 
-            | - if your 
-            a href="#" Last Transfer 
-            | showed a lower 
-            strong Margin 
-            | please 
-            a href="#" submit 
-            | it for our analysis to help other users.
+          p= t('.output_table_intro_html', last_transfer_link: '#', submit_link: '#')
 
           .table-responsive
             table.table
