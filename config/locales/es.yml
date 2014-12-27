@@ -86,6 +86,8 @@ es:
       promotions: Promociones
       service_quality: La calidad del servicio
       title_table: Las mejores opciones para su próximo traslado
+      title_savings_html: Otros usuarios guardan <span>%{saving} %{currency}</span> en dicha transacción
+      output_table_intro_html: Las mejores proveedores seleccionados por menor <strong>Margen</strong> - si su <a href="%{last_transfer_link}">última Transferencia</a> mostró una menor <strong>Margen</strong> por favor <a href="%{submit_link}">presentar</a> para nuestro análisis para ayudar a otros usuarios. 
       feedback_cta:
         <h3>Gracias por enviar usted!</h3>
         <p>Vuelve con nosotros a menudo como los costos cambian a diario y los nuevos proveedores se están uniendo a la competencia!</p>

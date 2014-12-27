@@ -86,6 +86,8 @@ en:
       promotions: Promotions
       service_quality: Service quality
       title_table: Best options for your next transfers
+      title_savings_html: Other users saved <span>%{saving} %{currency}</span> on such transaction
+      output_table_intro_html: Best providers selected for lowest <strong>Margin</strong> - if your <a href="%{last_transfer_link}">Last Transfer</a> showed a lower <strong>Margin</strong> please <a href="%{submit_link}">submit</a> it for our analysis to help other users. 
       feedback_cta:
         <h3>Thank you for submitting!</h3>
         <p>Check back with us often as costs change daily and new providers are joining competition!</p>
