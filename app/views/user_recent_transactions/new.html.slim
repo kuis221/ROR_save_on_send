@@ -48,13 +48,14 @@
                     .input-group-addon
                       i.fa.fa-calendar
               // currency
-              - if current_user.present?
-                - prefered_currency = current_user.prefered_currency
+              - if current_user.present? || cookies[:money_transfer_destination_id].present?
+                - prefered_currency = current_user.present? ? current_user.prefered_currency : Country.find(cookies[:money_transfer_destination_id].to_i).receive_currency
+
                 - if prefered_currency.size > 1
                   .form-group
                     = f.label :currency, class: 'col-sm-5 control-label'
                     .col-sm-7
-                      = f.collection_radio_buttons(:currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: @user_recent_transaction.currency || current_user.prefered_currency.collect.first}) do |b|
+                      = f.collection_radio_buttons(:currency, prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: @user_recent_transaction.currency || current_user.prefered_currency.collect.first}) do |b|
                         = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
                           = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
                           i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}

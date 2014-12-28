@@ -12,7 +12,9 @@ feature 'Sign up' do
     #fill_in 'Zipcode', with: Faker::Address.zip_code
     
     #choose "user_money_transfer_destination_id_#{Country.find_by(name: 'India').id}"
-      
+    check 'Email me updates from SaveOnSend'
+    check "I accept SaveOnSend's Terms of Service and Privacy Policy"
+
     click_button 'Create my account!'
 
     expect(page).to have_content('Verification email was sent to your email address - please click link in that email to confirm')

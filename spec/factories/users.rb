@@ -10,5 +10,8 @@ FactoryGirl.define do
     
     password "password123"
     password_confirmation {|user| user.password}
+
+    accept_terms true
+    accept_emails true
   end
 end

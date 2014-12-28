@@ -23,13 +23,13 @@
             | #{t('.receive')}
 
       // receive currency
-      - if current_user.present?
-        - prefered_currency = current_user.prefered_currency
+      - if current_user.present? || cookies[:money_transfer_destination_id].present?
+        - prefered_currency = current_user.present? ? current_user.prefered_currency : Country.find(cookies[:money_transfer_destination_id].to_i).receive_currency
         - if prefered_currency.size > 1
           .form-group
-            = f.label :receive_currency, class: 'col-xs-12 col-sm-4 control-label'
-            .col-xs-12.col-sm-8
-              = f.collection_radio_buttons(:receive_currency, current_user.prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
+            = f.label :receive_currency, class: 'col-xs-12 col-sm-4 control-label text-right'
+            .col-xs-12.col-sm-8.text-left
+              = f.collection_radio_buttons(:receive_currency, prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
                 = b.label( for: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
                   = b.radio_button( id: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase )
                   i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}

@@ -1,14 +1,12 @@
 class User < ActiveRecord::Base
   PHONE_REGEX = /\A(\d{10}|\(?\d{3}\)?[-. ]\d{3}[-.]\d{4})\z/
-  EMAIL_REGEX = /\A([-a-z0-9!\#$%&'*+\/=?^_`{|}~]+\.)*[-a-z0-9!\#$%&'*+\/=?^_`{|}~]+@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable,
-         :omniauthable, omniauth_providers: [:facebook],
-         authentication_keys: [:login]
+         :omniauthable, omniauth_providers: [:facebook]
 
   belongs_to :money_transfer_destination, class_name: Country
 
@@ -26,6 +24,9 @@ class User < ActiveRecord::Base
 
   validates :phone, uniqueness: {case_sensitive: false}, format: {with: PHONE_REGEX}, 
     presence: true, if: :email_blank?
+
+  validates_acceptance_of :accept_terms, :accept_emails, allow_nil: false, 
+    accept: true, on: :create
 
   before_validation :fill_phone, on: :create
 
