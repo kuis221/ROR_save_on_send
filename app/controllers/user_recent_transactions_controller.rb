@@ -3,6 +3,19 @@ class UserRecentTransactionsController < ApplicationController
 
   def new
     @user_recent_transaction = User::RecentTransaction.new(params[:user_recent_transaction])
+    
+    if current_user.present? || cookies[:money_transfer_destination_id].present?
+      if current_user.present?
+        @prefered_currency = current_user.prefered_currency 
+        @service_providers = ServiceProvider.for_country(current_user.money_transfer_destination)
+      else
+        money_transfer_destination = Country.find(cookies[:money_transfer_destination_id].to_i)
+        @prefered_currency = money_transfer_destination.receive_currency
+        @service_providers = ServiceProvider.for_country(money_transfer_destination)
+      end
+    end
+
+    @service_providers ||= ServiceProvider.created_by_admin
   end
 
   def create
