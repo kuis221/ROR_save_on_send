@@ -54,6 +54,18 @@
                       = b.label( class: "radio-inline", title: b.text )
                         = b.radio_button
                         i *{:class => ['icon-sm', 'icon-'+b.text.parameterize.downcase]}
+              // accept emails
+              .checkbox
+                label
+                  = f.check_box :accept_emails
+                  | #{User.human_attribute_name(:accept_emails)}
+
+              // accept TOS
+              .checkbox
+                label
+                  = f.check_box :accept_terms
+                  | #{User.human_attribute_name(:accept_terms)}
+
               // actions
               .form-group
                   = button_tag type:"submit", class: "btn btn-primary btn-lg btn-block" do

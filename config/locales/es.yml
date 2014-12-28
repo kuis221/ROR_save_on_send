@@ -105,6 +105,8 @@ es:
         last_name: Nombre de familia
         zipcode: Código postal
         money_transfer_destination_id: Destino Transferencia de dinero
+        accept_emails: Envíame una carta electrónica actualizaciones de SaveOnSend
+        accept_terms: Acepto de SaveOnSend Términos de Servicio y Política de Privacidad
       user/recent_transaction:
         date: Fecha
         currency: moneda Recieved

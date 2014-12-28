@@ -105,6 +105,8 @@ zh-CN:
         last_name: 姓
         zipcode: 邮政编码
         money_transfer_destination_id: 汇款目的地
+        accept_emails: 给我发电子邮件从SaveOnSend更新
+        accept_terms: 我接受SaveOnSend的服务条款和隐私权政策
       user/recent_transaction:
         date: 日期
         currency: ：收到的货币

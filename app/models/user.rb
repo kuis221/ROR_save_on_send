@@ -25,6 +25,9 @@ class User < ActiveRecord::Base
   validates :phone, uniqueness: {case_sensitive: false}, format: {with: PHONE_REGEX}, 
     presence: true, if: :email_blank?
 
+  validates_acceptance_of :accept_terms, :accept_emails, allow_nil: false, 
+    accept: true, on: :create
+
   before_validation :fill_phone, on: :create
 
   def password_required?

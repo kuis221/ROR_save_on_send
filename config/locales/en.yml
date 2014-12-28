@@ -105,6 +105,8 @@ en:
         last_name: Last name
         zipcode: Zipcode
         money_transfer_destination_id: Money transfer destination
+        accept_emails: Email me updates from SaveOnSend
+        accept_terms: I accept SaveOnSend's Terms of Service and Privacy Policy
       user/recent_transaction:
         date: Date
         currency: Recieved currency
