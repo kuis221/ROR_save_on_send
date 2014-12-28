@@ -38,4 +38,25 @@ describe ServiceProvider do
       expect(western_union.average_rating).to be_nil
     end
   end
+
+  describe '.for_country' do
+    before do
+      @western_union_mexico = FactoryGirl.create(:remittance_term, :western_union_mexico)
+      @ria_china = FactoryGirl.create(:remittance_term, :ria_china)
+    end
+
+    it 'should return only western union for mexico' do
+      service_providers = ServiceProvider.for_country(@western_union_mexico.receive_country)
+  
+      expect(service_providers.size).to eq(1)
+      expect(service_providers.first.name).to eq('Western Union')
+    end
+
+    it 'should return only ria for china' do
+      service_providers = ServiceProvider.for_country(@ria_china.receive_country)
+
+      expect(service_providers.size).to eq(1)
+      expect(service_providers.first.name).to eq('Ria')
+    end
+  end
 end

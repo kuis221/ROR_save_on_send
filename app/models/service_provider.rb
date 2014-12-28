@@ -28,4 +28,8 @@ class ServiceProvider < ActiveRecord::Base
     recent_transactions.joins(:feedback).where('feedbacks.approved is TRUE').map(&:feedback) + 
     feedbacks
   end
+
+  def self.for_country(country)
+    ServiceProvider.created_by_admin.where(id: RemittanceTerm.where(receive_country: country).group(:service_provider_id).pluck(:service_provider_id))
+  end
 end
