@@ -1,19 +1,213 @@
+section.content.recent-tr-page
+  .header
+    .container
+      .row
+        .col-xs-12
+          h2= t('.title')
+          .row
+            .col-xs-12.col-sm-6.col-sm-offset-3.benefits.text-left
+              ul
+                - t('.benefits').each do |line, text|
+                  li 
+                    i.fa.fa-check 
+                    | #{text}
+  
+  .container
+    .row
+      .col-xs-12.intro.text-center
+        h3= t('.see_how_much')
+        p= t('.enter_info')
+    
+    - if @user_recent_transaction.errors.full_messages.count > 0
+      .row
+        .col-xs-12.col-sm-6.col-sm-offset-3.error-messages
+          .alert.alert-danger
+            ul
+              - @user_recent_transaction.errors.each do |attribute, err_msg|
+                - if attribute == :'feedback.comments' 
+                  li= err_msg
+                - elsif attribute == :'feedback.service_quality'
+                  - unless @user_recent_transaction.errors.has_key?(:'feedback.comments')
+                    li= err_msg
+                - else
+                  li= @user_recent_transaction.errors.full_message(attribute, err_msg)
+    
+    .row
+      .col-xs-12.col-sm-12
+        = form_for(@user_recent_transaction, url: user_recent_transaction_path, html: {class: 'form-horizontal user_recent_transaction', role: 'form'}) do |f|
+          = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: @user_recent_transaction, label_class: 'col-xs-12 col-sm-5', control_class: 'col-xs-12 col-sm-7'}
+          
+          // date
+          .form-group
+            = f.label :date, class: 'col-xs-12 col-sm-5 control-label'
+            .col-xs-12.col-sm-2.text-left
+              .input-group.date
+                = f.text_field :date, value: @user_recent_transaction.date.present? ? @user_recent_transaction.date.strftime('%m/%d/%Y'): '', class: 'form-control mask-date'
+                span.input-group-addon
+                  i.fa.fa-calendar
+
+          // amount sent
+          .form-group
+            = f.label :amount_sent, class: 'col-xs-12 col-sm-5 control-label'
+            .col-xs-12.col-sm-2.text-left
+              .input-group.input-money
+                .input-group-addon
+                  i.fa.fa-usd.fa-fw
+                = money_field f, @user_recent_transaction, :amount_sent, 'form-control mask-money-sent'
+          
+          // currency
+          - if @prefered_currency
+            - if @prefered_currency.size > 1
+              .form-group
+                = f.label :currency, class: 'col-xs-12 col-sm-5 control-label'
+                .col-xs-12.col-sm-2.text-left
+                  - checked_currency = @user_recent_transaction.currency || (current_user.present? ? current_user.prefered_currency.collect.first : nil)
+                  = f.collection_radio_buttons(:currency, @prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: checked_currency}) do |b|
+                    = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
+                      = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
+                      i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+            - else
+              = f.hidden_field :currency, value: @prefered_currency.first
+          - else
+            - Country.all.each do |country|
+              - if country.receive_currency.size > 1
+                .form-group.hidden.receive_currency *{id: "receive_currency_#{country.name.parameterize.downcase}"}
+                  = f.label :currency, class: 'col-xs-12 col-sm-5 control-label'
+                  .col-xs-12.col-sm-2.text-left
+                    = f.collection_radio_buttons(:currency, country.receive_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
+                      = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
+                        = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
+                        i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+          
+          // amount received
+          .form-group
+            = f.label :amount_received, class: 'col-xs-12 col-sm-5 control-label'
+            .col-xs-12.col-sm-2.text-left
+              .input-group.input-money.input-money-lg
+                .input-group-addon#amount_received_currency
+                  - if current_user.present?
+                    i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || current_user.prefered_currency.first).downcase]}
+                  - elsif @user_recent_transaction.currency
+                    i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency).downcase]}
+                = money_field f, @user_recent_transaction, :amount_received, 'form-control mask-money-received'
+            .col-xs-12.col-sm-5.col-sm-offset-5.text-left
+              em.help-block= t('.amount_received_help')
+          
+          // originating source of funds
+          .form-group
+            = f.label :originating_source_of_funds_id, class: 'col-xs-12 col-sm-5 control-label valabel lh-normal'
+            .col-xs-12.col-sm-7.text-left
+              = f.collection_radio_buttons(:originating_source_of_funds_id, PaymentMethod.all, :id, :name, {prompt: true, checked: PaymentMethod.first.id}) do |b|
+                = b.label( class: "radio-inline", title: b.text )
+                  = b.radio_button
+                  i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+          
+          // name of service provider
+          .form-group
+            = f.label :service_provider_id, class: 'col-xs-12 col-sm-5 control-label'
+            .col-xs-12.col-sm-5.text-left
+              .row.providers
+                = f.collection_radio_buttons(:service_provider_id, @service_providers, :id, :name, {prompt: true, checked: @user_recent_transaction.service_provider.try(:id) || ServiceProvider.first.id}) do |b|
+                  .col-xs-12.col-sm-4
+                    = b.label( class: "radio-inline", title: b.text )
+                      = b.radio_button
+                      =image_tag('provider-icons/'+ b.text.parameterize.downcase + '.jpg')
+              // other provider
+              .radio
+                label
+                  = radio_button_tag 'user_recent_transaction[service_provider_id]', '', false, "data-toggle" => "modal", "data-target" => "#other_provider_modal"
+                  | #{t('.other_provider')}
+
+          // destination preference for funds
+          .form-group
+            = f.label :destination_preference_for_funds_id, class: 'col-xs-12 col-sm-5 control-label valabel lh-normal'
+            .col-xs-12.col-sm-7.text-left
+              = f.collection_radio_buttons(:destination_preference_for_funds_id, PaymentMethod.for_receiving.all, :id, :name, {prompt: true, checked: PaymentMethod.for_receiving.first.id}) do |b|
+                = b.label( class: "radio-inline", title: b.text )
+                  = b.radio_button
+                  i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
+
+          // fees for sending
+          .form-group
+            = f.label :fees_for_sending, class: 'col-xs-12 col-sm-5 control-label'
+            .col-xs-12.col-sm-2.text-left
+              .input-group.input-money
+                .input-group-addon
+                  i.fa.fa-usd.fa-fw
+                = money_field f, @user_recent_transaction, :fees_for_sending, 'form-control mask-money-fees'
+          
+          // fees for receiving
+          .form-group
+            = f.label :fees_for_receiving, class: 'col-xs-12 col-sm-5 control-label'
+            .col-xs-12.col-sm-2.text-left
+              = f.text_field :fees_for_receiving, class: 'form-control'
+
+          // send to receive duration
+          .form-group
+            = f.label :send_to_receive_duration, class: 'col-xs-12 col-sm-5 control-label'
+            .col-xs-12.col-sm-5.duration.text-left
+              .row
+                .col-xs-12.col-sm-2
+                  = f.text_field :send_to_receive_duration, class: 'form-control mask-minutes', placeholder: '0'
+                .col-xs-12.col-sm-10
+                  = f.collection_radio_buttons(:send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, :first, :last, {}, {class: ''}) do |b|
+                    = b.label( class: "radio-inline", title: b.text, for: b.text.parameterize.downcase )
+                      = b.radio_button(id: b.text.parameterize.downcase)
+                      = b.text
+
+          
+          // documentation requirements
+          .form-group
+            = f.label :documentation_requirements, class: 'col-sm-5 control-label'
+            .col-xs-12.col-sm-7.text-left
+              label.checkbox-inline
+                = f.check_box :documentation_requirements, {multiple: true}, 'Photo ID', ''
+                = t('.photo_id')
+              label.checkbox-inline
+                = f.check_box :documentation_requirements, {multiple: true}, 'Tax returns', ''
+                = t('.tax_returns')
+              label.checkbox-inline
+                = f.check_box :documentation_requirements, {multiple: true}, 'Job verification', ''
+                = t('.job_verification')
+          
+          // promotion
+          .form-group
+            = f.label :promotion, class: 'col-sm-5 control-label'
+            .col-xs-12.col-sm-5.text-left
+              = f.text_field :promotion, class: 'form-control', placeholder: t('.placeholder_promotion')
+
+          // service quality
+          = f.fields_for :feedback, @user_recent_transaction.feedback || Feedback.new do |feedback|
+            .form-group
+              = feedback.label :service_quality, class: 'col-sm-5 control-label valabel lh-normal'
+              .col-xs-12.col-sm-7.user-rating.text-left
+                = feedback.collection_radio_buttons(:service_quality, (1..5).collect{|rate| [rate, rate]}, :first, :last, {prompt: true}) do |b|
+                  = b.radio_button( class: "star "+( b.value == 1 ? "required" : ""))
+            // comments
+            .form-group
+              = feedback.label :comments, class: 'col-sm-5 control-label'
+              .col-xs-12.col-sm-5.text-left
+                = feedback.text_area :comments, class: 'form-control', placeholder: t('.placeholder_comment')
+
+          // actions
+          .form-group
+            .col-xs-12.col-sm-5.control-label
+              =link_to t('.clear_form'), '#'
+            .col-xs-12.col-sm-7.text-left
+              = button_tag type:"submit", class: "btn btn-primary btn-lg" do
+                i.fa.fa-fw.fa-check-circle-o.fa-lg
+                = t('.submit')
+
+section.feedback
+  .container
+    .row
+      .col-xs-12
+        /! feedback CTA
+        = t('.feedback_cta').html_safe 
+
 .recent-tr-page
 
-  .header-blue
-    i.fa.fa-chevron-circle-down.hidden-xs
-    i.fa.fa-circle.hidden-xs
-    .container
-      .text-center
-        h2.marg-btm.text-capitalize= t('.title')
-        .row
-          .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
-            p= t('.why_it_html')
-
   .container
-    .marg-btm
-      p.h3.hidden-xs.text-center= t('.see_how_much')
-      p.lead.text-center= t('.enter_info')
 
     // errors
     .row
@@ -35,152 +229,7 @@
       .col-xs-offset-1.col-xs-10.col-sm-offset-0.col-sm-12
         .row
           .col-lg-offset-2.col-lg-8
-            = form_for(@user_recent_transaction, url: user_recent_transaction_path, html: {class: 'form-horizontal marg-btm-lg', role: 'form'}) do |f|
-
-              = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: @user_recent_transaction, label_class: 'col-sm-5', control_class: 'col-sm-7'}
-
-              // date
-              .form-group
-                = f.label :date, class: 'col-sm-5 control-label'
-                .col-sm-7
-                  .input-group.date
-                    = f.text_field :date, value: @user_recent_transaction.date.present? ? @user_recent_transaction.date.strftime('%m/%d/%Y'): '', class: 'form-control mask-date'
-                    .input-group-addon
-                      i.fa.fa-calendar
-              // currency
-              - if @prefered_currency
-                - if @prefered_currency.size > 1
-                  .form-group
-                    = f.label :currency, class: 'col-sm-5 control-label'
-                    .col-sm-7
-                      - checked_currency = @user_recent_transaction.currency || (current_user.present? ? current_user.prefered_currency.collect.first : nil)
-                      = f.collection_radio_buttons(:currency, @prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: checked_currency}) do |b|
-                        = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
-                          = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
-                          i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
-                - else
-                  = f.hidden_field :currency, value: @prefered_currency.first
-              - else
-                - Country.all.each do |country|
-                  - if country.receive_currency.size > 1
-                    .form-group.hidden.receive_currency *{id: "receive_currency_#{country.name.parameterize.downcase}"}
-                      = f.label :currency, class: 'col-sm-5 control-label'
-                      .col-sm-7
-                        = f.collection_radio_buttons(:currency, country.receive_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
-                          = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
-                            = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
-                            i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
-
-              // amount sent
-              .form-group
-                = f.label :amount_sent, class: 'col-sm-5 control-label'
-                .col-sm-7
-                  .input-group.input-money
-                    .input-group-addon
-                      i.fa.fa-usd.fa-fw
-                    = money_field f, @user_recent_transaction, :amount_sent, 'form-control mask-money-sent'
-              // amount received
-              .form-group
-                = f.label :amount_received, class: 'col-sm-5 control-label'
-                .col-sm-7
-                  .input-group.input-money.input-money-lg
-                    .input-group-addon#amount_received_currency
-                      - if current_user.present?
-                        i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || current_user.prefered_currency.first).downcase]}
-                      - elsif @user_recent_transaction.currency
-                        i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency).downcase]}
-                    = money_field f, @user_recent_transaction, :amount_received, 'form-control mask-money-received'
-                  em.help-block= t('.amount_received_help')
-              // originating source of funds
-              .form-group
-                = f.label :originating_source_of_funds_id, class: 'col-sm-5 control-label'
-                .col-sm-7
-                  = f.collection_radio_buttons(:originating_source_of_funds_id, PaymentMethod.all, :id, :name, {prompt: true, checked: PaymentMethod.first.id}) do |b|
-                    = b.label( class: "radio-inline", title: b.text )
-                      = b.radio_button
-                      i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
-              // name of service provider
-              .form-group
-                = f.label :service_provider_id, class: 'col-sm-5 control-label'
-                .col-sm-7
-                  .row.providers-list
-                    = f.collection_radio_buttons(:service_provider_id, @service_providers, :id, :name, {prompt: true, checked: @user_recent_transaction.service_provider.try(:id) || ServiceProvider.first.id}) do |b|
-                      .col-sm-6
-                        = b.label( class: "radio-inline", title: b.text )
-                          = b.radio_button
-                          i *{:class => ['icon-provider', 'icon-'+b.text.parameterize.downcase]}
-                  // other provider
-                  .radio
-                    label
-                      = radio_button_tag 'user_recent_transaction[service_provider_id]', '', false, "data-toggle" => "modal", "data-target" => "#other_provider_modal"
-                      | #{t('.other_provider')}
-
-              // destination preference for funds
-              .form-group
-                = f.label :destination_preference_for_funds_id, class: 'col-sm-5 control-label'
-                .col-sm-7
-                  = f.collection_radio_buttons(:destination_preference_for_funds_id, PaymentMethod.for_receiving.all, :id, :name, {prompt: true, checked: PaymentMethod.for_receiving.first.id}) do |b|
-                    = b.label( class: "radio-inline", title: b.text )
-                      = b.radio_button
-                      i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
-              // fees for sending
-              .form-group
-                = f.label :fees_for_sending, class: 'col-sm-5 control-label'
-                .col-sm-7
-                  .input-group.input-money
-                    .input-group-addon
-                      i.fa.fa-usd.fa-fw
-                    = money_field f, @user_recent_transaction, :fees_for_sending, 'form-control mask-money-fees'
-              // fees for receiving
-                .form-group
-                  = f.label :fees_for_receiving, class: 'col-sm-5 control-label'
-                  .col-sm-7
-                    = f.text_field :fees_for_receiving, class: 'form-control'
-              // send to receive duration
-              .form-group
-                = f.label :send_to_receive_duration, class: 'col-sm-5 control-label'
-                .col-sm-7.duration-goup
-                  = f.text_field :send_to_receive_duration, class: 'form-control mask-minutes', placeholder: '0'
-                  = f.select :send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, {}, {class: 'form-control'}
-              // documentation requirements
-                .form-group
-                  = f.label :documentation_requirements, class: 'col-sm-5 control-label'
-                  .col-sm-4
-                    .checkbox
-                      label
-                        = f.check_box :documentation_requirements, {multiple: true}, 'Photo ID', ''
-                        = t('.photo_id')
-                    .checkbox
-                      label.checkbox-inline
-                        = f.check_box :documentation_requirements, {multiple: true}, 'Tax returns', ''
-                        = t('.tax_returns')
-                    .checkbox
-                      label.checkbox-inline
-                        = f.check_box :documentation_requirements, {multiple: true}, 'Job verification', ''
-                        = t('.job_verification')
-              // promotion
-                .form-group
-                  = f.label :promotion, class: 'col-sm-5 control-label'
-                  .col-sm-7
-                    = f.text_field :promotion, class: 'form-control', placeholder: t('.placeholder_promotion')
-              // service quality
-              = f.fields_for :feedback, @user_recent_transaction.feedback || Feedback.new do |feedback|
-                .form-group
-                  = feedback.label :service_quality, class: 'col-sm-5 control-label'
-                  .col-sm-7.user-rating
-                    = feedback.collection_radio_buttons(:service_quality, (1..5).collect{|rate| [rate, rate]}, :first, :last, {prompt: true}) do |b|
-                      = b.radio_button( class: "star "+( b.value == 1 ? "required" : ""))
-                // comments
-                .form-group
-                  = feedback.label :comments, class: 'col-sm-5 control-label'
-                  .col-sm-7
-                    = feedback.text_area :comments, class: 'form-control', placeholder: t('.placeholder_comment')
-              // actions
-              .form-group
-                .col-sm-offset-5.col-sm-7
-                  = button_tag type:"submit", class: "btn btn-primary btn-lg" do
-                    i.fa.fa-fw.fa-check-circle-o.fa-lg
-                    = t('.submit')
+            = form_for(@user_recent_transaction, url: user_recent_transaction_path, html: {class: 'form-horizontal user_recent_transaction', role: 'form'}) do |f|
 
 
               .modal.fade#other_provider_modal tabindex="-1" role="dialog" aria-labelledby="other_provider_modal_label" aria-hidden="true"
@@ -209,13 +258,3 @@
                         | #{t('.close')}
                       a.btn.btn-primary href="javascript:$('#other_provider_modal').modal('hide')"
                         | #{t('.ok')}
-
-  .footer-blue-dark
-    .container
-      .text-center
-        h2.marg-btm.text-capitalize= t('.footer')
-        .row.hidden-xs
-          .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
-            p= t('.footer_add_html')
-
-

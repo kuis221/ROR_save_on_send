@@ -41,14 +41,18 @@ en:
       submit: Submit
   user_recent_transactions:
     new:
-      title: Tell us about your last transfer
-      why_it_html: "<span class='lead no-marg-btm visible-xs-block'>and see how much you could have saved.</span><span class='lead hidden-xs'>Why it matters?</span> <span class='hidden-xs'>Lack of transparency, changing costs, new providers make it very hard for to know if we use the best method for sending money. Spend 1 minute to share your experience and help others in OR maybe you learn if you could have saved A LOT your last transfer.</span>"
+      title: Why spend 1 min on checking your last transfer?
+      benefits:
+        one: Fees and rates change frequently - check if you got the best deal
+        two: Help others with your insights
+        three: Earn valuable points and status
       see_how_much: See how much you could have saved on your last transfer!
-      enter_info: Enter information accurately to help yourself and others.
+      enter_info: Please be accurate, do not approximate, so we could correctly identify your savings and others could benefit from your information. If not sure, please ask your recipient.
       photo_id: Photo ID
       tax_returns: Tax returns
       job_verification: Job verification
-      submit: "I’m done, send it!"
+      clear_form: Clear the form and start over
+      submit: Submit for Analysis
       other_provider: Other Provider
       other_provider_modal_label: Please provide us with as much as information as possible about your favorite provider
       close: Close
@@ -56,8 +60,9 @@ en:
       amount_received_help: "Please be accurate, do not approximate, so we could correctly identify your savings and others could benefit from your information. If not sure, please ask your recipient."
       placeholder_comment: Help others with detailed comment
       placeholder_promotion: Leave empty if none
-      footer: Thank you!
-      footer_add_html: "<span class='lead'>for sharing your experience.</span> You information might have helped someone else make a smarter and more informed choice."
+      feedback_cta: 
+        <h3>Thank you!</h3>
+        <p>for sharing your experience. You information might have helped someone else to make a smarter and more informed choice.</p>
   user_next_transfers:
     new:
       benefits_title: Confused by fees and exchange rates when sending money?
@@ -133,18 +138,19 @@ en:
         accept_terms: I accept SaveOnSend's Terms of Service and Privacy Policy
       user/recent_transaction:
         date: Date
-        currency: Recieved currency
-        amount_sent: Sent amount in USD
-        amount_received: Recieved amount
-        originating_source_of_funds_id: Select payment method
+        currency: Receiving currency
+        amount_sent: Sent
+        amount_received: Received amount
+        originating_source_of_funds_id: Payment method
         service_provider_id: Select Provider
-        destination_preference_for_funds_id: Recieve method
+        destination_preference_for_funds_id: Receive method
         fees_for_sending: Fee for sending
         send_to_receive_duration: How long before money become available?
         documentation_requirements: Documentation requirements
         promotion: Used promotions
         service_quality: Provider quality
         comments: Help others with detailed comment about this provider
+        money_transfer_destination_id: Where
       user/next_transfer:
         amount_send: Amount send
         receive_currency: Receive currency

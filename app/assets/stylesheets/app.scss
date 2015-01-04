@@ -1,3 +1,7 @@
+/*
+*= require bootstrap-datetimepicker
+*/
+
 @import 'common/variables';
 @import 'bootstrap';
 
@@ -95,6 +99,21 @@ section {
       span {
         color: #f8c400;
         font-size: 1.1em;
+      }
+    }
+
+    .benefits {
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style-type: none;
+
+          .fa {
+            margin-right: 5px;
+          }
+        }
       }
     }
   }
@@ -213,7 +232,8 @@ section {
     }
 
     form {
-      &.user_next_transfer {
+      &.user_next_transfer,
+      &.user_recent_transaction {
         .form-group {
           margin-bottom: 30px;
         }
@@ -240,6 +260,117 @@ section {
         .radio-inline {
           margin-right: 10px;
           padding-top: 0;
+        }
+      }
+
+      &.user_recent_transaction {
+        .control-label {
+          padding-top: 7px;
+        }
+
+        .valabel {
+          padding-top: 0;
+        }
+
+        .lh-normal {
+          line-height: normal;
+        }
+
+        .providers {
+          div {
+            height: 50px;
+            
+            margin-bottom: 5px;
+
+            img {
+              min-height: 50px;
+              max-height: 50px;
+            }
+
+            &:nth-child(3n+3) {
+
+              &:before {
+                clear: both;
+              }
+            }
+          }
+
+          img {
+            max-width: 100%;
+          }
+        }
+
+        .duration {
+          line-height: 36px;
+        }
+      }
+    }
+
+    /*
+    div.user-rating div.star-rating { float: left; width: 35px; height: 30px; text-indent: 999em; cursor: pointer; display: block; overflow:hidden; }
+    div.user-rating div.star-rating,
+    div.user-rating div.star-rating a { position: relative; }
+    div.user-rating div.star-rating a:before { @extend .fa; content: "\2605"; color: $gray-light; font-size: 30px; left: 0; position: absolute; text-indent: 0; }
+    div.user-rating div.star-rating a { display: block; width: 12px; height:100%; border:0; }
+    div.user-rating div.star-rating-on a:before { color: #fd883e; }
+    div.user-rating div.star-rating-hover a:before { color: #000; }
+    div.user-rating div.star-rating-readonly a {cursor: default !important}
+    div.user-rating div.star-rating { overflow: hidden!important; }
+    */
+
+    /* 
+    jQuery.Rating Plugin CSS
+    http://www.fyneworks.com/jquery/star-rating/ 
+    */
+    .user-rating {
+      .star-rating-control {
+        .rating-cancel,
+        .star-rating {
+          background: transparent;
+          cursor: pointer;
+          display: block;
+          float: left;
+          height: 15px;
+          overflow: hidden;
+          text-indent: -999em;
+          width: 17px;
+
+          a {
+            background-position:0 0px;
+            border:0;
+            display:block;
+            height:100%;
+            width:16px;
+          }
+        }
+
+        .rating-cancel {
+          a {
+            background: image-url('delete.gif') no-repeat 0 -16px;
+            display: block;
+          }
+        }
+
+        .star-rating, .star-rating a {
+          background: image-url('star.gif') no-repeat 0 0px;
+          display: block;
+        }
+
+        .star-rating {
+          background: transparent !important;
+          overflow: hidden !important;
+        }
+
+        .star-rating-on, .star-rating-on a {
+          background-position: 0 -16px !important;
+        }
+
+        .star-rating-hover, .star-rating-hover a {
+          background-position: 0 -32px;
+        }
+
+        .star-rating-readonly, .star-rating-readonly a {
+          cursor: default !important;
         }
       }
     }
@@ -318,6 +449,35 @@ section {
             }
           }
         }
+      }
+    }
+  }
+
+  &.recent-tr-page {
+    padding: 0;
+
+    .header {
+      .benefits {
+        margin-top: 25px;
+
+        li {
+          font-size: 1.2667em;
+        }
+      }
+    }
+
+    .intro {
+      h3 {
+        color: #191a1b;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      p {
+        color: #191a1b;
+        font-size: 1.2em;
+        margin: 0 auto 45px;
+        width: 50%;
       }
     }
   }
