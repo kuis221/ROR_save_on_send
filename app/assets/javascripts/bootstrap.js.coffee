@@ -24,7 +24,7 @@ sos.renderMasks = ->
   #  regex: "^[1-9]|1[0-4]$"
 
   $(".mask-date").mask "00/00/0000",
-    placeholder: "__/__/____"
+    placeholder: "DD/MM/YYYY"
   $(".mask-money-sent").mask "0,000",
     reverse: true
   $(".mask-money-received").mask "000,000",
