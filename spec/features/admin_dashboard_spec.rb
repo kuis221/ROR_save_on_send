@@ -27,6 +27,6 @@ feature 'Admin dashboard' do
       click_on 'Log in'
     end
 
-    expect(page).to have_content('Invalid email or password')
+    expect(page).to_not have_content('Site Administration')
   end
 end

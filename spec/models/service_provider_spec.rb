@@ -47,7 +47,7 @@ describe ServiceProvider do
 
     it 'should return only western union for mexico' do
       service_providers = ServiceProvider.for_country(@western_union_mexico.receive_country)
-  
+ 
       expect(service_providers.size).to eq(1)
       expect(service_providers.first.name).to eq('Western Union')
     end
