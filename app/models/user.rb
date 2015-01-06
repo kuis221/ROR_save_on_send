@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   # validations
   #validates_presence_of :first_name
   #validates_presence_of :zipcode, unless: :skip_additional_info?
-  #validates_presence_of :money_transfer_destination, unless: :skip_additional_info?
+  validates_presence_of :money_transfer_destination, unless: :skip_additional_info?
 
   validates :phone, uniqueness: {case_sensitive: false}, format: {with: PHONE_REGEX}, 
     presence: true, if: :email_blank?
