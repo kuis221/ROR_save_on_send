@@ -17,3 +17,9 @@
 config/database.yml
 
 .ruby-version
+
+# Ignore Mac specific files
+.DS_Store
+
+# Ignore RubyMine specific folder
+.idea/
