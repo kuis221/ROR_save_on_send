@@ -114,7 +114,8 @@ en:
         lock_free: "Lock-in FREE access to the information on the website"
         title_create_new: "Create a free account:"
         password_length: "(%{minimum_password_length} characters minimum)"
-        email_or_phone: "Email or phone number"
+        email_or_phone: "Email or mobile phone number"
+        email_number: "Email / number"
         sign_up: Send for verification
         sign_up_fb: Sign in with Facebook
         or: or

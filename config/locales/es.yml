@@ -110,7 +110,8 @@ es:
         lock_free: "Lock-in FREE access to the information on the website"
         title_create_new: "Crear una cuenta gratuita:"
         password_length: "(%{minimum_password_length} caracteres como mínimo)"
-        email_or_phone: "Email or phone number"
+        email_or_phone: "E-mail o número de teléfono móvil"
+        email_number: "Email / número"
         sign_up: Crear mi cuenta!
         sign_up_fb: Entra con Facebook
         or: o

@@ -103,13 +103,14 @@ zh-CN:
   devise:
     registrations:
       new:
-        title_html: "Register for FREE, so you can:"
-        get_notified: "Get notified of price changes and new low-cost providers"
-        earn_points: "Earn valuable points and status for participation"
-        lock_free: "Lock-in FREE access to the information on the website"
+        title_html: "免費註冊，因此您可以："
+        get_notified: "價格變化和新的低成本供應商得到通知"
+        earn_points: "贏取寶貴的積分和狀態參加"
+        lock_free: "鎖定在網站上免費獲取信息"
         title_create_new: "建立免费的账号："
         password_length: "(%{minimum_password_length} 最小字符)"
-        email_or_phone: "Email or phone number"
+        email_or_phone: "電子郵件或手機號碼"
+        email_number: "電子郵件/數"
         sign_up: 创建我的帐户！
         sign_up_fb: 通过Facebook登录
         or: 或
