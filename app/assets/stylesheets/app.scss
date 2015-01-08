@@ -1,28 +1,29 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
-/*
-*= require bootstrap-datetimepicker
-*/
 
 @import 'common/variables';
 @import 'bootstrap';
 @import 'font-awesome';
 @import 'pages/signup';
+/*
+*= require bootstrap-datetimepicker
+*/
+$footerHeight: 50px;
 
 * {
-  //margin: 0;
   @include box-sizing(border-box);
 }
 
-html, body {
-  background: #f9f9f9;
-  height: 100%;
+html {
+  position: relative;
+  min-height: 100%;
 }
 
 body {
   color: #333;
   font: 10px $font-family-base;
   text-align: center;
-  position: relative;
+  background: #f9f9f9;
+  margin-bottom: $footerHeight;
 }
 
 
@@ -485,9 +486,13 @@ section {
 
 
 footer {
-  line-height: 50px;
+  line-height: $footerHeight;
   background-color: #282828;
   font-size: 10px;
+  bottom: 0;
+  min-height: $footerHeight;
+  position: absolute;
+  width: 100%;
   p {
     // text-align: center;
     color: #6a6a6a;
