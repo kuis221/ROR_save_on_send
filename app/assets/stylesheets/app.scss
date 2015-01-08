@@ -7,11 +7,8 @@
 /*
 *= require bootstrap-datetimepicker
 */
-$footerHeight: 50px;
 
-* {
-  @include box-sizing(border-box);
-}
+$footerHeight: 50px;
 
 html {
   position: relative;

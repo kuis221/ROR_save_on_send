@@ -28,6 +28,11 @@ es:
       notice_test_version: Esta es una versión de prueba - necesitamos su colaboración para hacerlo bien! Escriba a
   shared:
     header: *application
+    feedback:
+      feedback_cta:
+        <h3>Ayuda a los demás también!</h3>
+        <p>Comparte tu experiencia. Ayúdanos a mejorar el sitio y ayudar a los demás.</p>
+        <p><a href="mailto:admin@saveonsend.com">Díganos cómo podemos mejorar</a></p>
   service_providers:
     show:
       go_to_provider: Listo para enviar dinero
@@ -70,10 +75,6 @@ es:
       recent_transaction: Compruebe Última Transferencia
       next_transfer: Encontrar el mejor de Transferencia
       registration: Registro para guardarlo
-      feedback_cta: 
-        <h3>Ayuda a los demás también!</h3>
-        <p>Comparte tu experiencia. Ayúdanos a mejorar el sitio y ayudar a los demás.</p>
-        <p><a href="mailto:admin@saveonsend.com">Díganos cómo podemos mejorar</a></p>
     show:
       title: Vamos a encontrar el mejor proveedor para su próxima transferencia
       provider_name: Proveedor

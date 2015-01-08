@@ -198,12 +198,7 @@ section.content.recent-tr-page
                 i.fa.fa-fw.fa-check-circle-o.fa-lg
                 = t('.submit')
 
-section.feedback
-  .container
-    .row
-      .col-xs-12
-        /! feedback CTA
-        = t('.feedback_cta').html_safe 
+= render partial: 'shared/feedback'
 
 .recent-tr-page
 

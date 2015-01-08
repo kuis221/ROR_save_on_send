@@ -28,6 +28,11 @@ en:
       notice_test_version: This is a test version - we need your feedback to get it right! Write to
   shared:
     header: *application
+    feedback:
+      feedback_cta:
+        <h3>Help others too!</h3>
+        <p>Share your experience. Help us improve the site and help others.</p>
+        <p><a href="mailto:admin@saveonsend.com">Tell us how we can get better</a></p>
   service_providers:
     show:
       go_to_provider: Ready to send money
@@ -60,7 +65,7 @@ en:
       amount_received_help: "Please be accurate, do not approximate, so we could correctly identify your savings and others could benefit from your information. If not sure, please ask your recipient."
       placeholder_comment: Help others with detailed comment
       placeholder_promotion: Leave empty if none
-      feedback_cta: 
+      feedback_cta:
         <h3>Thank you!</h3>
         <p>for sharing your experience. You information might have helped someone else to make a smarter and more informed choice.</p>
   user_next_transfers:
@@ -75,10 +80,6 @@ en:
       recent_transaction: Check Last Transfer
       next_transfer: Find Best Transfer
       registration: Register to save
-      feedback_cta: 
-        <h3>Help others too!</h3>
-        <p>Share your experience. Help us improve the site and help others.</p>
-        <p><a href="mailto:admin@saveonsend.com">Tell us how we can get better</a></p>
     show:
       title: Let’s find the best provider for your next transfer
       provider_name: Provider

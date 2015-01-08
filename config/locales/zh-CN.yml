@@ -28,6 +28,11 @@ zh-CN:
       notice_test_version: 这是一个测试版本 - 我们需要您的意见得到它的权利！写
   shared:
     header: *application
+    feedback:
+      feedback_cta:
+        <h3>帮助别人呢！</h3>
+        <p>分享你的经历。帮助我们改善网站和帮助别人。</p>
+        <p><a href="mailto:admin@saveonsend.com">告诉我们，我们怎样才能得到更好的</a></p>
   service_providers:
     show:
       go_to_provider: 准备寄钱
@@ -70,10 +75,6 @@ zh-CN:
       recent_transaction: 检查最后转移
       next_transfer: 查找最佳传输
       registration: 注册以保存
-      feedback_cta: 
-        <h3>帮助别人呢！</h3>
-        <p>分享你的经历。帮助我们改善网站和帮助别人。</p>
-        <p><a href="mailto:admin@saveonsend.com">告诉我们，我们怎样才能得到更好的</a></p>
     show:
       title: 让我们找到你的下一个转移的最佳供应商
       provider_name: 提供商
