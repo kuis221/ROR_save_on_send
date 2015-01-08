@@ -107,12 +107,14 @@ en:
   devise:
     registrations:
       new:
-        title_html: Join <span class='hidden-xs'>SaveOnSenders</span><span class='visible-xs-inline'>The</span> Community
-        log_in_link: Log in here if you already have an account
-        join_our_html: "Join our community and start sharing and get information about the best deals and easier ways to send and recieve money. Creating an account is free and easy and will give you access to our discussion forums and tons of other usesful information provided from <a href='/'>users just like you!</a>"
+        title_html: "Register for FREE, so you can:"
+        get_notified: "Get notified of price changes and new low-cost providers"
+        earn_points: "Earn valuable points and status for participation"
+        lock_free: "Lock-in FREE access to the information on the website"
         title_create_new: "Create a free account:"
         password_length: "(%{minimum_password_length} characters minimum)"
-        sign_up: Create my account!
+        email_or_phone: "Email or phone number"
+        sign_up: Send for verification
         sign_up_fb: Sign in with Facebook
         or: or
     sessions:
@@ -133,7 +135,7 @@ en:
         first_name: First name
         last_name: Last name
         zipcode: Zipcode
-        money_transfer_destination_id: Money transfer destination
+        money_transfer_destination_id: Sending money to
         accept_emails: Email me updates from SaveOnSend
         accept_terms: I accept SaveOnSend's Terms of Service and Privacy Policy
       user/recent_transaction:

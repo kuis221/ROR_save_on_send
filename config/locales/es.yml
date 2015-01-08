@@ -102,11 +102,14 @@ es:
   devise:
     registrations:
       new:
-        title_html: Únete <span class='hidden-xs'>SaveOnSenders</span><span class='visible-xs-inline'>a la</span> Comunidad
         log_in_link: Inicio de sesión aquí si ya tiene una cuenta
-        join_our_html: "Únete a nuestra comunidad y empezar a compartir y obtener información sobre las mejores ofertas y formas más fáciles de enviar y recibir dinero Crear una cuenta es gratis y fácil y le dará acceso a nuestros foros de discusión y un montón de otra información usesful proporcionados desde <a href='/'>usuarios como tú!</a>"
+        title_html: "Register for FREE, so you can:"
+        get_notified: "Get notified of price changes and new low-cost providers"
+        earn_points: "Earn valuable points and status for participation"
+        lock_free: "Lock-in FREE access to the information on the website"
         title_create_new: "Crear una cuenta gratuita:"
         password_length: "(%{minimum_password_length} caracteres como mínimo)"
+        email_or_phone: "Email or phone number"
         sign_up: Crear mi cuenta!
         sign_up_fb: Entra con Facebook
         or: o
@@ -151,7 +154,7 @@ es:
         amount_receive: Monto recibir
         originating_source_of_funds_id: Método de envío
         destination_preference_for_funds_id: Método de recepción
-        money_transfer_destination_id: Donde
+        money_transfer_destination_id: Enviar dinero a
       referral:
         comments: Comentarios
         email: Email

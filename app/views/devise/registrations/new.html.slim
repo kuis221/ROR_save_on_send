@@ -1,88 +1,53 @@
 .sign-up-page#sign_up
-  .container
-    .text-center
+  #signup-header
+    .container
       h2.text-capitalize= t('.title_html')
-      p.hidden-xs= link_to t('.log_in_link'), '/users/sign_in'
       .row.marg-btm.hidden-xs
+        .col-sm-offset-3.col-sm-9
+          ul.list-unstyled.text-left
+            li
+              i.fa.fa-check
+              = t('.get_notified')
+            li
+              i.fa.fa-check
+              = t('.earn_points')
+            li
+              i.fa.fa-check
+              = t('.lock_free')
+
+  #signup-form
+    .container
+      .row
         .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
-          p= t('.join_our_html')
+          .error-messages
+            = devise_error_messages!
 
-      p.lead.marg-btm= t('.title_create_new')
+      .row
+        .col-sm-4.col-sm-offset-4
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {role: 'form'}) do |f|
+            // country
+            = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: resource, label_class: '', control_class: ''}
 
-    .row
-      .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
-        .error-messages
-          = devise_error_messages!
-    .row
-      .col-xs-offset-1.col-xs-10.col-sm-offset-0.col-sm-12
-        .row
-          .col-sm-5.col-md-offset-1.col-md-4.col-lg-offset-2.col-lg-3
-            = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {role: 'form'}) do |f|
-              // country
-              = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: resource, label_class: '', control_class: ''}
-              // email
-              .form-group
-                = f.label :email
-                = f.text_field :email, autofocus: true, class: 'form-control'
-              // password
-                .form-group
-                  = f.label :password
-                  = f.password_field :password, autocomplete: "off", class: 'form-control'
-                  - if @validatable
-                    em= t('.password_length', minimum_password_length: @minimum_password_length)
-              // password confirmation
-                .form-group
-                  = f.label :password_confirmation
-                  = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
-              // first name
-                .form-group
-                  = f.label :first_name
-                  = f.text_field :first_name, class: 'form-control'
-              // last name
-                .form-group
-                  = f.label :last_name
-                  = f.text_field :last_name, class: 'form-control'
-              // zipcode
-                .form-group
-                  = f.label :zipcode
-                  .row
-                    .col-xs-5
-                      = f.text_field :zipcode, class: 'form-control'
-              // money_transfer_destination
-                .form-group
-                  = f.label :money_transfer_destination_id
-                  .radio
-                    = f.collection_radio_buttons(:money_transfer_destination_id, Country.all.collect {|country| [ country.id, country.name ] }, :first, :last, {prompt: true, checked: resource.money_transfer_destination.try(:id)}) do |b|
-                      = b.label( class: "radio-inline", title: b.text )
-                        = b.radio_button
-                        i *{:class => ['icon-sm', 'icon-'+b.text.parameterize.downcase]}
-              // accept emails
-              .checkbox
-                label
-                  = f.check_box :accept_emails
-                  | #{User.human_attribute_name(:accept_emails)}
+            // email
+            .form-group.text-left
+              = f.label :email
+                = t('.email_or_phone')
+              = f.text_field :email, autofocus: true, class: 'form-control'
 
-              // accept TOS
-              .checkbox
-                label
-                  = f.check_box :accept_terms
-                  | #{User.human_attribute_name(:accept_terms)}
+            // accept emails
+            .checkbox
+              label
+                = f.check_box :accept_emails
+                | #{User.human_attribute_name(:accept_emails)}
 
-              // actions
-              .form-group
-                  = button_tag type:"submit", class: "btn btn-primary btn-lg btn-block" do
-                    i.fa.fa-fw.fa-check-circle-o.fa-lg
-                    = t('.sign_up')
-          .col-sm-2.col-or
-            ul.vm
-              li
-                p.lead.text-uppercase.text-center= t('.or')
-          .col-sm-5.col-md-4.col-lg-3.col-soc
-            ul.vm
-              li
-                // sign up with facebook
-                  .form-group
-                    = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-fb btn-lg btn-block' do
-                      i.fa.fa-fw.fa-facebook.fa-lg
-                      = t('.sign_up_fb')
+            // accept TOS
+            .checkbox
+              label
+                = f.check_box :accept_terms
+                | #{User.human_attribute_name(:accept_terms)}
 
+            // actions
+            .form-group.text-left
+              = button_tag type:"submit", class: "btn btn-primary btn-lg" do
+                i.fa.fa-fw.fa-check-square-o.fa-lg
+                = t('.sign_up')

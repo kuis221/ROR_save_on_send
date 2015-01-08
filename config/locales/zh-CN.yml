@@ -102,11 +102,13 @@ zh-CN:
   devise:
     registrations:
       new:
-        title_html:  加入<span class='hidden-xs'>SaveOnSenders</span><span class='visible-xs-inline'></span> 社区
-        log_in_link: 您如果您已经有一个帐户
-        join_our_html: "加入我们的社区，并开始分享和获取最优惠的价格，并以发送和接收的钱更容易的方法的信息。创建一个帐户是免费的，简单，给你进入我们的论坛和吨来自<a href='/'>用户就像你所提供的其他usesful信息！</a>"
+        title_html: "Register for FREE, so you can:"
+        get_notified: "Get notified of price changes and new low-cost providers"
+        earn_points: "Earn valuable points and status for participation"
+        lock_free: "Lock-in FREE access to the information on the website"
         title_create_new: "建立免费的账号："
         password_length: "(%{minimum_password_length} 最小字符)"
+        email_or_phone: "Email or phone number"
         sign_up: 创建我的帐户！
         sign_up_fb: 通过Facebook登录
         or: 或
