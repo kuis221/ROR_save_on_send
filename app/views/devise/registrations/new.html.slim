@@ -2,8 +2,8 @@
   #signup-header
     .container
       h2.text-capitalize= t('.title_html')
-      .row.marg-btm.hidden-xs
-        .col-sm-offset-3.col-sm-9
+      .row.marg-btm
+        .col-md-offset-3.col-md-9.col-sm-offset-1
           ul.list-unstyled.text-left
             li
               i.fa.fa-check
@@ -29,9 +29,9 @@
             = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: resource, label_class: '', control_class: ''}
 
         .row
-          .col-sm-4.col-sm-offset-4
+          .col-md-4.col-md-offset-4.col-sm-7.col-sm-offset-2.col-xs-10.col-xs-offset-1
             .row
-              .col-sm-9.col-sm-offset-2
+              .col-sm-9.col-sm-offset-2.col-md-11.col-md-offset-1
                 // email
                 .form-group
                   = f.label :email, class: 'valabel'
@@ -39,7 +39,7 @@
                   = f.text_field :email, autofocus: true, class: 'form-control', placeholder: "#{t('.email_number')}"
 
             .row
-              .col-sm-12.col-sm-offset-2
+              .col-sm-12.col-sm-offset-2.col-md-12.col-md-offset-1
                 // accept emails
                 .checkbox
                   label

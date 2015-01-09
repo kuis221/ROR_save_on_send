@@ -44,42 +44,31 @@ body {
   }
 }
 
-
-header {
-  background: #fff;
-  height: 64px;
-  padding: 15px 0;
-
-  .brand {}
-
-  .nav {
-    ul {
-      margin: 0;
-      padding: 0;
-
-      li {
-        display: inline-block;
-        font-size: 1.6em;
-        margin-left: 35px;
-
-        a {
-          color: #191a1b;
-
-          &.btn {
-            color: #fff;
-            padding: 6px 25px;
-            border-color: transparent;
-            @include border-top-radius(10px);
-            @include border-right-radius(10px);
-            @include border-bottom-radius(10px);
-            @include border-left-radius(10px);
-          }
-        }
+#header{
+  .navbar-brand{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .nav-pills{
+    margin-top: 16px;
+    > li {
+      margin-left: 5px;
+      &:first-child{
+        margin-left: 0;
+      }
+      > a {
+        border-radius: 13px;
+        border-color: transparent;
+        color: #191a1b;
+        padding: 7px 19px;
+        font-size: 15px;
+      }
+      &.active > a{
+        color: #fff;
       }
     }
   }
 }
-
 
 section {
   padding: 50px 0;
@@ -509,3 +498,5 @@ footer {
     }
   }
 }
+
+@import 'common/responsive';
