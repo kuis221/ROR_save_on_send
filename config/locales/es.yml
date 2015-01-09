@@ -1,6 +1,5 @@
 es:
   notice:
-    verification_email_was_sent: Verificación de correo electrónico fue enviado a su dirección de correo electrónico - por favor haga clic en enlace de ese correo electrónico para confirmar
     best_rate: ¡Enhorabuena! Su transferencia reciente utilizó el mejor enfoque!
     save_on_transaction: "<h4 class='no-marg-btm'>Otros envían <strong>%{saving} %{currency}</strong> más el uso del conocimiento SaveOnSend</h4>"
     thanks_for_feedback: Gracias por su colaboración
@@ -33,6 +32,11 @@ es:
         <h3>Ayuda a los demás también!</h3>
         <p>Comparte tu experiencia. Ayúdanos a mejorar el sitio y ayudar a los demás.</p>
         <p><a href="mailto:admin@saveonsend.com">Díganos cómo podemos mejorar</a></p>
+    signup_header:
+      title_html: "Register for FREE, so you can:"
+      get_notified: "Get notified of price changes and new low-cost providers"
+      earn_points: "Earn valuable points and status for participation"
+      lock_free: "Lock-in FREE access to the information on the website"
   service_providers:
     show:
       go_to_provider: Listo para enviar dinero
@@ -104,10 +108,6 @@ es:
     registrations:
       new:
         log_in_link: Inicio de sesión aquí si ya tiene una cuenta
-        title_html: "Register for FREE, so you can:"
-        get_notified: "Get notified of price changes and new low-cost providers"
-        earn_points: "Earn valuable points and status for participation"
-        lock_free: "Lock-in FREE access to the information on the website"
         title_create_new: "Crear una cuenta gratuita:"
         password_length: "(%{minimum_password_length} caracteres como mínimo)"
         email_or_phone: "E-mail o número de teléfono móvil"
@@ -124,6 +124,9 @@ es:
         title: "¡Bienvenido %{email}!"
         body: "Puede confirmar su cuenta de correo electrónico a través del siguiente enlace:"
         confirm_my_account: Confirmar mi cuenta
+  welcome:
+    index:
+      verification_email_was_sent: Verificación de correo electrónico fue enviado a su dirección de correo electrónico - por favor haga clic en enlace de ese correo electrónico para confirmar
   activerecord:
     attributes:
       user:

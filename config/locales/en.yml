@@ -1,6 +1,5 @@
 en:
   notice:
-    verification_email_was_sent: Verification email was sent to your email address - please click link in that email to confirm
     best_rate: Congratulations! Your recent transfer used the best approach!
     save_on_transaction: "<h4 class='no-marg-btm'>Others sent <strong>%{saving} %{currency}</strong> more using SaveOnSend knowledge</h4>"
     thanks_for_feedback: Thank you for your feedback!
@@ -33,6 +32,11 @@ en:
         <h3>Help others too!</h3>
         <p>Share your experience. Help us improve the site and help others.</p>
         <p><a href="mailto:admin@saveonsend.com">Tell us how we can get better</a></p>
+    signup_header:
+      title_html: "Register for FREE, so you can:"
+      get_notified: "Get notified of price changes and new low-cost providers"
+      earn_points: "Earn valuable points and status for participation"
+      lock_free: "Lock-in FREE access to the information on the website"
   service_providers:
     show:
       go_to_provider: Ready to send money
@@ -108,10 +112,6 @@ en:
   devise:
     registrations:
       new:
-        title_html: "Register for FREE, so you can:"
-        get_notified: "Get notified of price changes and new low-cost providers"
-        earn_points: "Earn valuable points and status for participation"
-        lock_free: "Lock-in FREE access to the information on the website"
         title_create_new: "Create a free account:"
         password_length: "(%{minimum_password_length} characters minimum)"
         email_or_phone: "Email or mobile phone number"
@@ -128,6 +128,9 @@ en:
         title: "Welcome %{email}!"
         body: "You can confirm your account email through the link below:"
         confirm_my_account: Confirm my account
+  welcome:
+    index:
+      verification_email_was_sent: "Please check your email to complete verification!"
   activerecord:
     attributes:
       user:

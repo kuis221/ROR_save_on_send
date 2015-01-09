@@ -62,9 +62,13 @@ body {
         color: #191a1b;
         padding: 7px 19px;
         font-size: 15px;
+        outline: 0 none;
       }
       &.active > a{
         color: #fff;
+        &:hover{
+          background-color: darken($btn-primary-bg, 5%);
+        }
       }
     }
   }
