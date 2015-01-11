@@ -33,10 +33,10 @@ es:
         <p>Comparte tu experiencia. Ayúdanos a mejorar el sitio y ayudar a los demás.</p>
         <p><a href="mailto:admin@saveonsend.com">Díganos cómo podemos mejorar</a></p>
     signup_header:
-      title_html: "Register for FREE, so you can:"
-      get_notified: "Get notified of price changes and new low-cost providers"
-      earn_points: "Earn valuable points and status for participation"
-      lock_free: "Lock-in FREE access to the information on the website"
+      title_html: "Regístrese de forma gratuita, para que pueda:"
+      get_notified: ¡Entérate de los cambios de precios y los nuevos proveedores de bajo costo
+      earn_points: Gana puntos valiosos y el estado de participación
+      lock_free: Bloqueo de acceso gratuito a la información en el sitio web
   service_providers:
     show:
       go_to_provider: Listo para enviar dinero
