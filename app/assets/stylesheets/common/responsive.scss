@@ -38,7 +38,7 @@
   }
 }
 
-@media (max-width: $screen-xs-max) {
+@media (max-width: 767px) {
   #header .nav-pills{
     margin-top: 0;
     border-top: 1px dotted #ddd;
@@ -49,13 +49,13 @@
 
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+@media (min-width: 768px) and (max-width: 991px) {
 
 }
 
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+@media (min-width: 992px) and (max-width: 1199px) {
   #signup-header ul{
     padding-left: 0;
   }
@@ -63,6 +63,6 @@
 
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: $screen-lg-min) {
+@media (min-width: 1200px) {
 
 }
