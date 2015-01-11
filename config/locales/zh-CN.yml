@@ -1,6 +1,5 @@
 zh-CN:
   notice:
-    verification_email_was_sent: 验证邮件发送到您的电子邮件地址 - 请点击该电子邮件中的链接，确认
     best_rate: 恭喜！您最近调任使用的最佳方法！
     save_on_transaction: "<h4 class='no-marg-btm'>别人送的<strong>%{saving}%{currency}</strong>更多使用SaveOnSend知识 </h4>"
     thanks_for_feedback: 感谢您的反馈！
@@ -28,6 +27,16 @@ zh-CN:
       notice_test_version: 这是一个测试版本 - 我们需要您的意见得到它的权利！写
   shared:
     header: *application
+    feedback:
+      feedback_cta:
+        <h3>帮助别人呢！</h3>
+        <p>分享你的经历。帮助我们改善网站和帮助别人。</p>
+        <p><a href="mailto:admin@saveonsend.com">告诉我们，我们怎样才能得到更好的</a></p>
+    signup_header:
+      title_html: "免费注册，因此您可以："
+      get_notified: 价格变化和新的低成本供应商得到通知
+      earn_points: 赢取宝贵的积分和状态参加
+      lock_free: 锁定在网站上免费获取信息
   service_providers:
     show:
       go_to_provider: 准备寄钱
@@ -70,10 +79,6 @@ zh-CN:
       recent_transaction: 检查最后转移
       next_transfer: 查找最佳传输
       registration: 注册以保存
-      feedback_cta: 
-        <h3>帮助别人呢！</h3>
-        <p>分享你的经历。帮助我们改善网站和帮助别人。</p>
-        <p><a href="mailto:admin@saveonsend.com">告诉我们，我们怎样才能得到更好的</a></p>
     show:
       title: 让我们找到你的下一个转移的最佳供应商
       provider_name: 提供商
@@ -102,11 +107,10 @@ zh-CN:
   devise:
     registrations:
       new:
-        title_html:  加入<span class='hidden-xs'>SaveOnSenders</span><span class='visible-xs-inline'></span> 社区
-        log_in_link: 您如果您已经有一个帐户
-        join_our_html: "加入我们的社区，并开始分享和获取最优惠的价格，并以发送和接收的钱更容易的方法的信息。创建一个帐户是免费的，简单，给你进入我们的论坛和吨来自<a href='/'>用户就像你所提供的其他usesful信息！</a>"
         title_create_new: "建立免费的账号："
         password_length: "(%{minimum_password_length} 最小字符)"
+        email_or_phone: "電子郵件或手機號碼"
+        email_number: "電子郵件/數"
         sign_up: 创建我的帐户！
         sign_up_fb: 通过Facebook登录
         or: 或
@@ -119,6 +123,9 @@ zh-CN:
         title: "欢迎 %{email}!"
         body: "您可以确认通过下面的链接您的帐户的电子邮件："
         confirm_my_account: 确认我的帐户
+  welcome:
+    index:
+      verification_email_was_sent: 验证邮件发送到您的电子邮件地址 - 请点击该电子邮件中的链接，确认
   activerecord:
     attributes:
       user:

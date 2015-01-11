@@ -1,6 +1,5 @@
 en:
   notice:
-    verification_email_was_sent: Verification email was sent to your email address - please click link in that email to confirm
     best_rate: Congratulations! Your recent transfer used the best approach!
     save_on_transaction: "<h4 class='no-marg-btm'>Others sent <strong>%{saving} %{currency}</strong> more using SaveOnSend knowledge</h4>"
     thanks_for_feedback: Thank you for your feedback!
@@ -28,6 +27,16 @@ en:
       notice_test_version: This is a test version - we need your feedback to get it right! Write to
   shared:
     header: *application
+    feedback:
+      feedback_cta:
+        <h3>Help others too!</h3>
+        <p>Share your experience. Help us improve the site and help others.</p>
+        <p><a href="mailto:admin@saveonsend.com">Tell us how we can get better</a></p>
+    signup_header:
+      title_html: "Register for FREE, so you can:"
+      get_notified: "Get notified of price changes and new low-cost providers"
+      earn_points: "Earn valuable points and status for participation"
+      lock_free: "Lock-in FREE access to the information on the website"
   service_providers:
     show:
       go_to_provider: Ready to send money
@@ -60,7 +69,7 @@ en:
       amount_received_help: "Please be accurate, do not approximate, so we could correctly identify your savings and others could benefit from your information. If not sure, please ask your recipient."
       placeholder_comment: Help others with detailed comment
       placeholder_promotion: Leave empty if none
-      feedback_cta: 
+      feedback_cta:
         <h3>Thank you!</h3>
         <p>for sharing your experience. You information might have helped someone else to make a smarter and more informed choice.</p>
   user_next_transfers:
@@ -75,10 +84,6 @@ en:
       recent_transaction: Check Last Transfer
       next_transfer: Find Best Transfer
       registration: Register to save
-      feedback_cta: 
-        <h3>Help others too!</h3>
-        <p>Share your experience. Help us improve the site and help others.</p>
-        <p><a href="mailto:admin@saveonsend.com">Tell us how we can get better</a></p>
     show:
       title: Let’s find the best provider for your next transfer
       provider_name: Provider
@@ -107,12 +112,11 @@ en:
   devise:
     registrations:
       new:
-        title_html: Join <span class='hidden-xs'>SaveOnSenders</span><span class='visible-xs-inline'>The</span> Community
-        log_in_link: Log in here if you already have an account
-        join_our_html: "Join our community and start sharing and get information about the best deals and easier ways to send and recieve money. Creating an account is free and easy and will give you access to our discussion forums and tons of other usesful information provided from <a href='/'>users just like you!</a>"
         title_create_new: "Create a free account:"
         password_length: "(%{minimum_password_length} characters minimum)"
-        sign_up: Create my account!
+        email_or_phone: "Email or mobile phone number"
+        email_number: "Email / number"
+        sign_up: Send for verification
         sign_up_fb: Sign in with Facebook
         or: or
     sessions:
@@ -124,6 +128,9 @@ en:
         title: "Welcome %{email}!"
         body: "You can confirm your account email through the link below:"
         confirm_my_account: Confirm my account
+  welcome:
+    index:
+      verification_email_was_sent: "Please check your email to complete verification!"
   activerecord:
     attributes:
       user:
@@ -133,7 +140,7 @@ en:
         first_name: First name
         last_name: Last name
         zipcode: Zipcode
-        money_transfer_destination_id: Money transfer destination
+        money_transfer_destination_id: Sending money to
         accept_emails: Email me updates from SaveOnSend
         accept_terms: I accept SaveOnSend's Terms of Service and Privacy Policy
       user/recent_transaction:

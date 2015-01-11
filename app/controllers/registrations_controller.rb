@@ -16,7 +16,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_inactive_sign_up_path_for(resource)
-    flash[:notice] = I18n.t('notice.verification_email_was_sent')
     welcome_path
   end
 end

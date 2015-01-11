@@ -1,30 +1,26 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+
+@import 'common/variables';
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'pages/signup';
 /*
 *= require bootstrap-datetimepicker
 */
 
-@import 'common/variables';
-@import 'bootstrap';
+$footerHeight: 50px;
 
-@import 'font-awesome';
-
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
-
-
-* {
-  //margin: 0;
-  @include box-sizing(border-box);
-}
-
-html, body {
-  background: #282828;
-  height: 100%;
+html {
+  position: relative;
+  min-height: 100%;
 }
 
 body {
   color: #333;
   font: 10px $font-family-base;
   text-align: center;
-  position: relative;
+  background: #f9f9f9;
+  margin-bottom: $footerHeight;
 }
 
 
@@ -44,44 +40,39 @@ body {
 
   p {
     margin: 1em 0;
+    font-style: italic;
   }
 }
 
-
-header {
-  background: #fff;
-  height: 64px;
-  padding: 15px 0;
-
-  .brand {}
-
-  .nav {
-    ul {
-      margin: 0;
-      padding: 0;
-
-      li {
-        display: inline-block;
-        font-size: 1.6em;
-        margin-left: 35px;
-
-        a {
-          color: #191a1b;
-
-          &.btn {
-            color: #fff;
-            padding: 6px 25px;
-            @include border-top-radius(10px);
-            @include border-right-radius(10px);
-            @include border-bottom-radius(10px);
-            @include border-left-radius(10px);
-          }
+#header{
+  .navbar-brand{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .nav-pills{
+    margin-top: 16px;
+    > li {
+      margin-left: 5px;
+      &:first-child{
+        margin-left: 0;
+      }
+      > a {
+        border-radius: 13px;
+        border-color: transparent;
+        color: #191a1b;
+        padding: 7px 19px;
+        font-size: 15px;
+        outline: 0 none;
+      }
+      &.active > a{
+        color: #fff;
+        &:hover{
+          background-color: darken($btn-primary-bg, 5%);
         }
       }
     }
   }
 }
-
 
 section {
   padding: 50px 0;
@@ -485,11 +476,16 @@ section {
 
 
 footer {
-  line-height: 50px;
-
+  line-height: $footerHeight;
+  background-color: #282828;
+  font-size: 10px;
+  bottom: 0;
+  min-height: $footerHeight;
+  position: absolute;
+  width: 100%;
   p {
     // text-align: center;
-    color: #919191;
+    color: #6a6a6a;
     font-size: 1.2em;
     margin: 0 0 1em;
 
@@ -498,7 +494,7 @@ footer {
     }
 
     a {
-      color: #919191;
+      color: #6a6a6a;
 
       &:hover {
         color: #fff;
@@ -506,3 +502,5 @@ footer {
     }
   }
 }
+
+@import 'common/responsive';
