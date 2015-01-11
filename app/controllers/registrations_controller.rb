@@ -1,7 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
   before_filter :configure_permitted_parameters
+  before_filter :set_money_destination, only: [:create]
 
   protected
+
+  def set_money_destination
+    if current_user.nil? && cookies[:money_transfer_destination_id]
+      params[:user][:money_transfer_destination_id] = cookies[:money_transfer_destination_id]
+    end
+  end
 
   # my custom fields are :name, :heard_how
   def configure_permitted_parameters
@@ -16,6 +23,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_inactive_sign_up_path_for(resource)
+    cookies[:money_transfer_destination_id] = resource.money_transfer_destination.id
+    
     welcome_path
   end
 end

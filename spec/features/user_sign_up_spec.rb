@@ -15,8 +15,8 @@ feature 'Sign up' do
     check 'Email me updates from SaveOnSend'
     check "I accept SaveOnSend's Terms of Service and Privacy Policy"
 
-    click_button 'Create my account!'
+    click_button 'Send for verification'
 
-    expect(page).to have_content('Verification email was sent to your email address - please click link in that email to confirm')
+    expect(page).to have_content('Please check your email to complete verificatio')
   end
 end

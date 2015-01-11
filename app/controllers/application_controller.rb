@@ -29,4 +29,10 @@ class ApplicationController < ActionController::Base
       I18n.locale = :en
     end
   end
+
+  def set_prefered_currency
+    if current_user.present? || cookies[:money_transfer_destination_id].present?
+      @prefered_currency = current_user.present? ? current_user.prefered_currency : Country.find(cookies[:money_transfer_destination_id].to_i).receive_currency
+    end
+  end
 end

@@ -1,7 +1,7 @@
 en:
   notice:
     best_rate: Congratulations! Your recent transfer used the best approach!
-    save_on_transaction: "<h4 class='no-marg-btm'>Others sent <strong>%{saving} %{currency}</strong> more using SaveOnSend knowledge</h4>"
+    save_on_transaction: Other users saved <span>%{saving} %{currency}</span> on such transaction
     thanks_for_feedback: Thank you for your feedback!
   layouts:
     application:
@@ -96,7 +96,6 @@ en:
       promotions: Promotions
       service_quality: Service quality
       title_table: Best options for your next transfers
-      title_savings_html: Other users saved <span>%{saving} %{currency}</span> on such transaction
       output_table_intro_html: Best providers selected for lowest <strong>Margin</strong> - if your <a href="%{last_transfer_link}">Last Transfer</a> showed a lower <strong>Margin</strong> please <a href="%{submit_link}">submit</a> it for our analysis to help other users. 
       feedback_cta:
         <h3>Thank you for submitting!</h3>

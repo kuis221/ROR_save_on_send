@@ -85,8 +85,8 @@ section.content.recent-tr-page
             .col-xs-12.col-sm-2.text-left
               .input-group.input-money.input-money-lg
                 .input-group-addon#amount_received_currency
-                  - if current_user.present?
-                    i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || current_user.prefered_currency.first).downcase]}
+                  - if @prefered_currency && @prefered_currency.size == 1
+                    i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || @prefered_currency.first).downcase]}
                   - elsif @user_recent_transaction.currency
                     i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency).downcase]}
                 = money_field f, @user_recent_transaction, :amount_received, 'form-control mask-money-received'
@@ -117,6 +117,33 @@ section.content.recent-tr-page
                 label
                   = radio_button_tag 'user_recent_transaction[service_provider_id]', '', false, "data-toggle" => "modal", "data-target" => "#other_provider_modal"
                   | #{t('.other_provider')}
+
+              .modal.fade#other_provider_modal tabindex="-1" role="dialog" aria-labelledby="other_provider_modal_label" aria-hidden="true"
+                .modal-dialog
+                  .modal-content
+                    .modal-header
+                      button.close type="button" data-dismiss="modal"
+                        span aria-hidden="true"
+                          | &times;
+                        span.sr-only
+                          | #{t('.close')}
+                      h4.modal-title#other_provider_modal_label
+                        | #{t('.other_provider_modal_label')}
+                    .modal-body
+                      = f.fields_for :service_provider_attributes, ServiceProvider.new do |sp|
+                        .form-group
+                          = sp.label :name, class: 'col-sm-4 control-label'
+                          .col-sm-8
+                            = sp.text_field :name, class: 'form-control'
+                        .form-group
+                          = sp.label :landing_page, class: 'col-sm-4 control-label'
+                          .col-sm-8
+                            = sp.text_field :landing_page, class: 'form-control'
+                    .modal-footer
+                      button.btn.btn-default type="button" data-dismiss= "modal"
+                        | #{t('.close')}
+                      a.btn.btn-primary href="javascript:$('#other_provider_modal').modal('hide')"
+                        | #{t('.ok')}
 
           // destination preference for funds
           .form-group
@@ -220,36 +247,3 @@ section.content.recent-tr-page
                   - else
                     li= @user_recent_transaction.errors.full_message(attribute, err_msg)
 
-    .row
-      .col-xs-offset-1.col-xs-10.col-sm-offset-0.col-sm-12
-        .row
-          .col-lg-offset-2.col-lg-8
-            = form_for(@user_recent_transaction, url: user_recent_transaction_path, html: {class: 'form-horizontal user_recent_transaction', role: 'form'}) do |f|
-
-
-              .modal.fade#other_provider_modal tabindex="-1" role="dialog" aria-labelledby="other_provider_modal_label" aria-hidden="true"
-                .modal-dialog
-                  .modal-content
-                    .modal-header
-                      button.close type="button" data-dismiss="modal"
-                        span aria-hidden="true"
-                          | &times;
-                        span.sr-only
-                          | #{t('.close')}
-                      h4.modal-title#other_provider_modal_label
-                        | #{t('.other_provider_modal_label')}
-                    .modal-body
-                      = f.fields_for :service_provider_attributes, ServiceProvider.new do |sp|
-                        .form-group
-                          = sp.label :name, class: 'col-sm-4 control-label'
-                          .col-sm-8
-                            = sp.text_field :name, class: 'form-control'
-                        .form-group
-                          = sp.label :landing_page, class: 'col-sm-4 control-label'
-                          .col-sm-8
-                            = sp.text_field :landing_page, class: 'form-control'
-                    .modal-footer
-                      button.btn.btn-default type="button" data-dismiss= "modal"
-                        | #{t('.close')}
-                      a.btn.btn-primary href="javascript:$('#other_provider_modal').modal('hide')"
-                        | #{t('.ok')}

@@ -1,5 +1,6 @@
 class UserNextTransfersController < ApplicationController
   #before_filter :authenticate_user!
+  before_filter :set_prefered_currency, only: [:new, :show]
 
   layout 'landing', only: [:new]
 

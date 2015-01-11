@@ -1,7 +1,7 @@
 zh-CN:
   notice:
     best_rate: 恭喜！您最近调任使用的最佳方法！
-    save_on_transaction: "<h4 class='no-marg-btm'>别人送的<strong>%{saving}%{currency}</strong>更多使用SaveOnSend知识 </h4>"
+    save_on_transaction:  其他用户保存 <span>%{saving} %{currency}</span> 在这样的交易
     thanks_for_feedback: 感谢您的反馈！
   layouts:
     application:
@@ -91,7 +91,6 @@ zh-CN:
       promotions: 促销
       service_quality: 服务质量
       title_table: 你的下一个转移的最佳选择
-      title_savings_html: 其他用户保存 <span>%{saving} %{currency}</span> 在这样的交易
       output_table_intro_html: 选择最低的最佳供应商 <strong>余量</strong> - 如果您 <a href="%{last_transfer_link}">最后转移</a> 表现出较低的 <strong>余量</strong> 请 <a href="%{submit_link}">提交</a> 它为我们的分析，以帮助其他用户. 
       feedback_cta:
         <h3>感谢您提交！</h3>

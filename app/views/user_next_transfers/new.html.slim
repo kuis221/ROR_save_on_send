@@ -1,33 +1,42 @@
-section.splash
-  .container
-    .row
-      .col-xs-12
-        .flags
-          ul
-            li
-              = image_tag "flags/70/India.png", { alt: '', title: '', class: 'img-responsive' }
-            li
-              = image_tag "flags/70/Mexico.png", { alt: '', title: '', class: 'img-responsive' }
-            li
-              = image_tag "flags/70/Philippines.png", { alt: '', title: '', class: 'img-responsive' }
-            li
-              = image_tag "flags/70/China.png", { alt: '', title: '', class: 'img-responsive' }
-        h1= t('.benefits_title')
-        .row
-          .col-xs-12.col-sm-6.col-sm-offset-4.text-left
+- if flash[:notice].nil?
+  section.splash
+    .container
+      .row
+        .col-xs-12
+          .flags
             ul
-              - t('.benefits').each do |line, text|
-                li 
-                  i.fa.fa-check 
-                  | #{text}
-        .buttons
-          ul
-            li
-              = link_to t('.recent_transaction'), new_user_recent_transaction_path, class: %w{btn btn-primary}
-            li
-              = link_to t('.next_transfer'), '#new_user_next_transfer', class: %w{btn btn-orange} 
-            li
-              = link_to t('.registration'), new_user_registration_path, class: %w{btn btn-turquoise}
+              li
+                = image_tag "flags/70/India.png", { alt: '', title: '', class: 'img-responsive' }
+              li
+                = image_tag "flags/70/Mexico.png", { alt: '', title: '', class: 'img-responsive' }
+              li
+                = image_tag "flags/70/Philippines.png", { alt: '', title: '', class: 'img-responsive' }
+              li
+                = image_tag "flags/70/China.png", { alt: '', title: '', class: 'img-responsive' }
+          h1= t('.benefits_title')
+          .row
+            .col-xs-12.col-sm-6.col-sm-offset-4.text-left
+              ul
+                - t('.benefits').each do |line, text|
+                  li 
+                    i.fa.fa-check 
+                    | #{text}
+          .buttons
+            ul
+              li
+                = link_to t('.recent_transaction'), new_user_recent_transaction_path, class: %w{btn btn-primary}
+              li
+                = link_to t('.next_transfer'), '#new_user_next_transfer', class: %w{btn btn-orange} 
+              li
+                = link_to t('.registration'), new_user_registration_path, class: %w{btn btn-turquoise}
+- else
+  section.content.next-tr-page
+    .header
+      .container
+        .row
+          .col-xs-12
+            h2= flash[:notice].html_safe
+
 
 section.content.next-tr-page
   .container
