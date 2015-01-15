@@ -23,3 +23,7 @@ config/database.yml
 
 # Ignore RubyMine specific folder
 .idea/
+
+# Ignore other files
+.project
+.DS_Store 
