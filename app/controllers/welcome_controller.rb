@@ -4,6 +4,9 @@ class WelcomeController < ApplicationController
   def index
     # we don't need to display devise message on this page
     flash[:notice] = nil
+
+    verification_type = params[:verification_type] || :email
+    @welcome_message = I18n.t("welcome.index.verification_#{verification_type}_was_sent")
   end
 
   private

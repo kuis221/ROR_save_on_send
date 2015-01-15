@@ -130,6 +130,7 @@ en:
   welcome:
     index:
       verification_email_was_sent: "Please check your email to complete verification!"
+      verification_sms_was_sent: "Please check your phone to complete verification!"
   activerecord:
     attributes:
       user:

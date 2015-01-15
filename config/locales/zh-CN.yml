@@ -124,7 +124,8 @@ zh-CN:
         confirm_my_account: 确认我的帐户
   welcome:
     index:
-      verification_email_was_sent: 验证邮件发送到您的电子邮件地址 - 请点击该电子邮件中的链接，确认
+      verification_email_was_sent: 请检查您的电子邮件，以完成验证！
+      verification_sms_was_sent: 请检查您的手机即可完成验证！
   activerecord:
     attributes:
       user:
