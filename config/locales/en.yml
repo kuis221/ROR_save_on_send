@@ -90,7 +90,7 @@ en:
       to_from_transfer_media: To-From method
       gross_paid_amount: Total cost
       real_cost: Margin
-      net_received_amount: Recieved
+      net_received_amount: Received
       duration_html: Duration<br><small>(hours)</small>
       documentation_requirements: Documentation requirements
       promotions: Promotions
@@ -102,7 +102,7 @@ en:
         <p>Check back with us often as costs change daily and new providers are joining competition!</p>
     form:
       send: Send
-      receive: Recieve
+      receive: Receive
       amount_type_label: I want to
       submit: Submit
   referrals:
