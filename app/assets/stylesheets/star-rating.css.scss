@@ -1,5 +1,7 @@
 @import 'common/variables';
 
+
+/* user-rating */
 .user-rating {
   display: inline-block;
   
@@ -48,7 +50,20 @@
     }
     .star-rating-readonly,
     .star-rating-readonly a {
-      cursor: default !important;
+      cursor: default;
+    }
+  }
+}
+
+
+/* link to feedback page */
+a {
+  .user-rating {
+    .star-rating-control {
+      .star-rating-readonly,
+      .star-rating-readonly a {
+        cursor: pointer;
+      }
     }
   }
 }

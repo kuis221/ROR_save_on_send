@@ -33,4 +33,5 @@ tr *{class: remittance_term.highlighted? ? [:best] : []}
   //td= remittance_term.documentation
   //td= remittance_term.promotions
   td.text-center
-    .user-rating= display_average_rating_for_remittance_term(remittance_term)
+    =link_to(service_provider_path(remittance_term.service_provider)) do
+      .user-rating= display_average_rating_for_remittance_term(remittance_term)
