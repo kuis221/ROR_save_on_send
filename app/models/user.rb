@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  PHONE_REGEX = /\A(\d{10}|\(?\d{3}\)?[-. ]\d{3}[-.]\d{4})\z/
+  US_PHONE_REGEX = /\A(?:\([2-9]\d{2}\)\ ?|[2-9]\d{2}(?:\-?|\ ?))[2-9]\d{2}[- ]?\d{4}\z/
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   #validates_presence_of :zipcode, unless: :skip_additional_info?
   validates_presence_of :money_transfer_destination, unless: :skip_additional_info?
 
-  validates :phone, uniqueness: {case_sensitive: false}, format: {with: PHONE_REGEX}, 
+  validates :phone, uniqueness: {case_sensitive: false}, format: {with: US_PHONE_REGEX}, 
     presence: true, if: :email_blank?
 
   validates_acceptance_of :accept_terms, :accept_emails, allow_nil: false, 
@@ -84,7 +84,7 @@ class User < ActiveRecord::Base
 
   private
   def fill_phone
-    if email.match(PHONE_REGEX)
+    if email.match(US_PHONE_REGEX)
       self.phone = email
       self.email = ''
     end

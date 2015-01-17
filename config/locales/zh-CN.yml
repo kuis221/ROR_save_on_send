@@ -129,7 +129,7 @@ zh-CN:
   activerecord:
     attributes:
       user:
-        email: 电子邮件
+        email: 电子邮件或者手机
         password: 密码
         password_confirmation: 确认密码
         first_name: 名字

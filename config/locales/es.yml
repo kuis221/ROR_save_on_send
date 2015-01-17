@@ -130,7 +130,7 @@ es:
   activerecord:
     attributes:
       user:
-        email: E-mail
+        email: E-mail o teléfono móvil
         password: Contraseña
         password_confirmation: Confirmación de la contraseña
         first_name: Nombre de pila
