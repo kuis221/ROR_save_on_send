@@ -11,7 +11,7 @@ describe User do
     end
 
     it 'should be valid if phone is set in the email field' do
-      expect(FactoryGirl.build(:user, email: '100-200-3000')).to be_valid
+      expect(FactoryGirl.build(:user, email: '222-200-3000')).to be_valid
     end
 
     it 'should be invalid if first name is not set' do
