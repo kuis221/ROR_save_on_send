@@ -32,4 +32,5 @@ tr *{class: remittance_term.highlighted? ? [:best] : []}
   td.text-center= remittance_term.duration
   //td= remittance_term.documentation
   //td= remittance_term.promotions
-  td.text-center= display_average_rating_for_remittance_term(remittance_term)
+  td.text-center
+    .user-rating= display_average_rating_for_remittance_term(remittance_term)
