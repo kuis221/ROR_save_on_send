@@ -1,0 +1,69 @@
+@import 'common/variables';
+
+
+/* user-rating */
+.user-rating {
+  display: inline-block;
+  
+  .star-rating-control {
+    .rating-cancel,
+    .star-rating {
+      background: transparent;
+      cursor: pointer;
+      display: block;
+      float: left;
+      height: 15px;
+      overflow: hidden;
+      text-indent: -999em;
+      width: 17px;
+
+      a {
+        background-position:0 0px;
+        border:0;
+        display:block;
+        height:100%;
+        width:16px;
+      }
+    }
+    .rating-cancel {
+      a {
+        background: image-url('delete.gif') no-repeat 0 -16px;
+        display: block;
+      }
+    }
+    .star-rating,
+    .star-rating a {
+      background: image-url('star.gif') no-repeat 0 0px;
+      display: block;
+    }
+    .star-rating {
+      background: transparent !important;
+      overflow: hidden !important;
+    }
+    .star-rating-on,
+    .star-rating-on a {
+      background-position: 0 -16px !important;
+    }
+    .star-rating-hover,
+    .star-rating-hover a {
+      background-position: 0 -32px;
+    }
+    .star-rating-readonly,
+    .star-rating-readonly a {
+      cursor: default;
+    }
+  }
+}
+
+
+/* link to feedback page */
+a {
+  .user-rating {
+    .star-rating-control {
+      .star-rating-readonly,
+      .star-rating-readonly a {
+        cursor: pointer;
+      }
+    }
+  }
+}

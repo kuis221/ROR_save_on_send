@@ -4,7 +4,6 @@ sos.e = (if ('ontouchstart' in document.documentElement) then 'tap' else 'click'
 # Render rating
 sos.renderRating = ->
   $(".star").rating()
-  $(".user-rating").addClass "show"
   return
 
 # Render masks
