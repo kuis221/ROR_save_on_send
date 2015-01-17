@@ -1,5 +1,5 @@
 tr *{class: remittance_term.highlighted? ? [:best] : []}
-  td.text-center= link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.jpg'), service_provider_path(remittance_term.service_provider))
+  td.text-center= link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.png'), service_provider_path(remittance_term.service_provider))
   - if @user_next_transfer.amount_send > 0
     td.text-center= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_send), precision: 2)
   - else

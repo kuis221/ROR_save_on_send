@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require star-rating
+ *= require pages/signup
  */
 
 
@@ -20,7 +21,6 @@
 @import 'common/icon';
 @import 'bootstrap';
 @import 'font-awesome';
-@import 'pages/signup';
 /*
 *= require bootstrap-datetimepicker
 */
@@ -287,10 +287,10 @@ section {
         .providers {
           div {
             height: 50px;
-            
             margin-bottom: 5px;
 
             img {
+              margin-left: 5px;
               min-height: 50px;
               max-height: 50px;
             }
