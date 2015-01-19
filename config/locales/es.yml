@@ -103,6 +103,9 @@ es:
   referrals:
     dialog:
       title: Por favor, ayúdenos a mejorar el sitio y dejar que los demás sepan cómo ahorrar dinero
+  feedbacks:
+    feedback:
+      anonymous: Anónimo
   devise:
     registrations:
       new:

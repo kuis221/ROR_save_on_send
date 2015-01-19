@@ -24,6 +24,14 @@ describe ServiceProvider do
       expect(xoom.average_rating).to eq(4)
     end
 
+    it 'should use approved anonymous rating when calculating average rating for provider' do
+      FactoryGirl.create(:recent_transaction,
+                        service_provider: xoom,
+                        feedback: FactoryGirl.create(:feedback, service_quality: 2, commendable: xoom, approved: true, user: nil))
+
+      expect(xoom.average_rating).to eq(3)
+    end
+
     it 'should ignore not approved feedback' do
       FactoryGirl.create(:feedback, service_quality: 1, commendable: xoom, approved: false)
       FactoryGirl.create(:recent_transaction, 

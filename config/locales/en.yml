@@ -108,6 +108,9 @@ en:
   referrals:
     dialog:
       title: Please help us to improve the site and let others know how to save money
+  feedbacks:
+    feedback:
+      anonymous: Anonymous
   devise:
     registrations:
       new:

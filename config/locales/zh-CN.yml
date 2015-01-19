@@ -103,6 +103,9 @@ zh-CN:
   referrals:
     dialog:
       title: 请帮助我们改进网站，并让别人知道如何省钱
+  feedbacks:
+    feedback:
+      anonymous: 匿名
   devise:
     registrations:
       new:

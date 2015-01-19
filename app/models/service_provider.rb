@@ -10,8 +10,7 @@ class ServiceProvider < ActiveRecord::Base
   scope :created_by_admin, ->{where(created_by: Admin.all)}
 
   def display_feedbacks
-    @display_feedbacks ||= all_feedbacks.select{|feedback| feedback.user.present?}
-     .sort{|feedback_a, feedback_b| feedback_b.created_at <=> feedback_a.created_at}
+    @display_feedbacks ||= all_feedbacks.sort{|feedback_a, feedback_b| feedback_b.created_at <=> feedback_a.created_at}
   end
 
   def average_rating
