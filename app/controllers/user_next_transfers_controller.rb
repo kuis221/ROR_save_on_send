@@ -65,6 +65,7 @@ class UserNextTransfersController < ApplicationController
     if @user_next_transfer.persisted?
       redirect_to(user_next_transfer_path(@user_next_transfer))
     else
+      set_prefered_currency
       render :new
     end
   end
