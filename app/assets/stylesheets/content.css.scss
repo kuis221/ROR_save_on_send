@@ -1,0 +1,104 @@
+@import 'common/variables';
+
+
+/* content */
+.content {
+  background: #fff image-url('content-pattern.png') repeat 0 0;
+  font-size: 1.5em;
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+
+  .fa-cash          {
+    &:before {
+      content: "\f0d6";
+    }
+  }
+  .fa-bank-account  {
+    &:before {
+      content: "\f19c";
+    }
+  }
+  .fa-plastic-card  {
+    &:before {
+      content: "\f09d";
+    }
+  }
+
+  form {
+    &.user_next_transfer,
+    &.user_recent_transaction {
+      .form-group {
+        margin-bottom: 30px;
+      }
+
+      .control-label {
+        padding-top: 0;
+      }
+
+      .valabel {
+        line-height: 48px;
+        // padding-top: 0;
+      }
+
+      .radio-inline input[type="radio"] {
+        line-height: 48px;
+        margin-right: 5px;
+        position: relative;
+      }
+
+      .radio {
+        padding-top: 0;
+      }
+
+      .radio-inline {
+        margin-right: 10px;
+        padding-top: 0;
+      }
+    }
+
+    &.user_recent_transaction {
+      .control-label {
+        padding-top: 7px;
+      }
+
+      .valabel {
+        padding-top: 0;
+      }
+
+      .lh-normal {
+        line-height: normal;
+      }
+
+      .providers {
+        div {
+          height: 50px;
+          margin-bottom: 5px;
+
+          img {
+            margin-left: 5px;
+            min-height: 50px;
+            max-height: 50px;
+          }
+
+          &:nth-child(3n+3) {
+
+            &:before {
+              clear: both;
+            }
+          }
+        }
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .duration {
+        line-height: 36px;
+      }
+    }
+  }
+}

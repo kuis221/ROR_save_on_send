@@ -1,0 +1,72 @@
+@import 'common/variables';
+
+
+/* header */
+#header {
+  .navbar-brand {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .nav-pills {
+    margin-top: 16px;
+
+    > li {
+      margin-left: 5px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      > a {
+        border-radius: 13px;
+        border-color: transparent;
+        color: #191a1b;
+        padding: 7px 19px;
+        font-size: 15px;
+        outline: 0 none;
+      }
+      &.active > a {
+        color: #fff;
+
+        &:hover {
+          background-color: darken($btn-primary-bg, 5%);
+        }
+      }
+    }
+  }
+}
+
+
+/* header of content */
+section {
+  .header {
+    background: #3780ca;
+    color: #fff;
+    line-height: 30px;
+    margin-bottom: 40px;
+    padding: 35px 0;
+
+    h2 {
+      margin: 0 !important;
+
+      span {
+        color: #f8c400;
+        font-size: 1.1em;
+      }
+    }
+
+    .benefits {
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          list-style-type: none;
+
+          .fa {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

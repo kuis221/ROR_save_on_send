@@ -1,0 +1,91 @@
+@import 'common/variables';
+
+
+/* splash */
+.splash {
+  background: #0b2840 image-url('map.png') no-repeat 50% 0;
+
+  .flags {
+    ul {
+      li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .buttons {
+    ul {
+      li {
+        display: inline-block;
+        margin: 40px 15px 0;
+
+        a {
+          padding: 16px 26px;
+
+          &.btn {
+            color: #fff;
+            font-weight: bold;
+          }
+
+          &.btn-orange {
+            background: #ed8a42;
+
+            &:hover,
+            &:focus,
+            &.focus,
+            &:active,
+            &.active {
+              color: #fff;
+              background-color: darken(#ed8a42, 10%);
+                  border-color: darken(#ed8a42, 12%);
+            }
+          }
+
+          &.btn-turquoise {
+            background: #1abc9c;
+
+            &:hover,
+            &:focus,
+            &.focus,
+            &:active,
+            &.active {
+              color: #fff;
+              background-color: darken(#1abc9c, 10%);
+                  border-color: darken(#1abc9c, 12%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  h1 {
+    color: #fff;
+    display: inline-block;
+    font-size: 4.2em;
+    font-weight: bold;
+    line-height: 140%;
+    margin-bottom: 22px;
+    width: 60%;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    
+    li {
+      color: #fff;
+      list-style: none;
+      font-size: 1.9em;
+
+      i {
+        margin-right: 15px;
+
+        &.fa-check {
+          color: #1abc9c;
+        }
+      }
+    }
+  }
+}

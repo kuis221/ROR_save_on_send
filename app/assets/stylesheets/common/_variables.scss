@@ -43,13 +43,17 @@ $brand-danger:          #d9534f !default;
 
 //** Background color for `<body>`.
 $body-bg:               #fff !default;
+
 //** Global text color on `<body>`.
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
+
 $link-color:            #1485e5;
+
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%) !default;
+
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
 
@@ -76,6 +80,7 @@ $font-size-h3:            ceil(($font-size-base * 1.6));  // ~25px
 $font-size-h4:            ceil(($font-size-base * 1.15)); // ~18px
 $font-size-h5:            $font-size-base;
 $font-size-h6:            ceil(($font-size-base * 0.72));  // ~14px
+
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429 !default; // 20/14
@@ -890,4 +895,7 @@ $icon-size-md: 32;
 $icon-size-lg: 48;
 $icon-size-xlg: 70;
 
-$navbar-off-canvas-w:         250px;
+$navbar-off-canvas-w: 250px;
+
+//** Footer
+$footerHeight: 42px;

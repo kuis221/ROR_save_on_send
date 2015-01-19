@@ -1,0 +1,32 @@
+@import 'common/variables';
+
+
+/* recent transfer */
+.recent-tr-page {
+  padding: 0;
+
+  .header {
+    .benefits {
+      margin-top: 25px;
+
+      li {
+        font-size: 1.2667em;
+      }
+    }
+  }
+
+  .intro {
+    h3 {
+      color: #191a1b;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    p {
+      color: #191a1b;
+      font-size: 1.2em;
+      margin: 0 auto 45px;
+      width: 50%;
+    }
+  }
+}

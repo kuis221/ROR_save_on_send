@@ -226,24 +226,3 @@ section.content.recent-tr-page
                 = t('.submit')
 
 = render partial: 'shared/feedback'
-
-.recent-tr-page
-
-  .container
-
-    // errors
-    .row
-      .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
-        .error-messages
-          - if @user_recent_transaction.errors.full_messages.count > 0
-            div
-              ul
-                - @user_recent_transaction.errors.each do |attribute, err_msg|
-                  - if attribute == :'feedback.comments' 
-                    li= err_msg
-                  - elsif attribute == :'feedback.service_quality'
-                    - unless @user_recent_transaction.errors.has_key?(:'feedback.comments')
-                      li= err_msg
-                  - else
-                    li= @user_recent_transaction.errors.full_message(attribute, err_msg)
-
