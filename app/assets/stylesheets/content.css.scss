@@ -10,18 +10,17 @@
     font-weight: bold;
     margin-bottom: 50px;
   }
-
-  .fa-cash          {
+  .fa-cash {
     &:before {
       content: "\f0d6";
     }
   }
-  .fa-bank-account  {
+  .fa-bank-account {
     &:before {
       content: "\f19c";
     }
   }
-  .fa-plastic-card  {
+  .fa-plastic-card {
     &:before {
       content: "\f09d";
     }
@@ -33,26 +32,21 @@
       .form-group {
         margin-bottom: 30px;
       }
-
       .control-label {
         padding-top: 0;
       }
-
       .valabel {
         line-height: 48px;
         // padding-top: 0;
       }
-
       .radio-inline input[type="radio"] {
         line-height: 48px;
         margin-right: 5px;
         position: relative;
       }
-
       .radio {
         padding-top: 0;
       }
-
       .radio-inline {
         margin-right: 10px;
         padding-top: 0;
@@ -63,15 +57,12 @@
       .control-label {
         padding-top: 7px;
       }
-
       .valabel {
         padding-top: 0;
       }
-
       .lh-normal {
         line-height: normal;
       }
-
       .providers {
         div {
           height: 50px;
@@ -82,20 +73,16 @@
             min-height: 50px;
             max-height: 50px;
           }
-
           &:nth-child(3n+3) {
-
             &:before {
               clear: both;
             }
           }
         }
-
         img {
           max-width: 100%;
         }
       }
-
       .duration {
         line-height: 36px;
       }

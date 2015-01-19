@@ -13,7 +13,6 @@
       }
     }
   }
-
   .buttons {
     ul {
       li {
@@ -27,7 +26,6 @@
             color: #fff;
             font-weight: bold;
           }
-
           &.btn-orange {
             background: #ed8a42;
 
@@ -38,10 +36,9 @@
             &.active {
               color: #fff;
               background-color: darken(#ed8a42, 10%);
-                  border-color: darken(#ed8a42, 12%);
+              border-color: darken(#ed8a42, 12%);
             }
           }
-
           &.btn-turquoise {
             background: #1abc9c;
 
@@ -52,14 +49,13 @@
             &.active {
               color: #fff;
               background-color: darken(#1abc9c, 10%);
-                  border-color: darken(#1abc9c, 12%);
+              border-color: darken(#1abc9c, 12%);
             }
           }
         }
       }
     }
   }
-
   h1 {
     color: #fff;
     display: inline-block;
@@ -69,7 +65,6 @@
     margin-bottom: 22px;
     width: 60%;
   }
-
   ul {
     margin: 0;
     padding: 0;

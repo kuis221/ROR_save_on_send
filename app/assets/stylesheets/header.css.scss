@@ -70,3 +70,28 @@ section {
     }
   }
 }
+
+
+@media (max-width: 468px) {
+  #header{
+    .navbar-brand{
+      max-width: 228px;
+      padding-top: 19px;
+    }
+    .nav-pills > li > a{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+
+// @media only screen and (min-width: 768px) {
+@media (max-width: 767px) {
+  #header .nav-pills{
+    margin-top: 0;
+    border-top: 1px dotted #ddd;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+}

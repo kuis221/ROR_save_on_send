@@ -15,7 +15,6 @@
       margin: 0 auto 35px;
       width: 60%;
     }
-
     table {
       border-collapse: collapse;
 
@@ -27,7 +26,6 @@
         padding: 10px 15px;
         vertical-align: middle;
       }
-
       td {
         border: 1px solid #cbcbcb;
         border-width: 0 0 1px 1px;
@@ -38,12 +36,10 @@
         &:first-child {
           border-left: 0;
         }
-
         a {
           color: #191a1b;
         }
       }
-
       tr {
         &.best {
           td {
