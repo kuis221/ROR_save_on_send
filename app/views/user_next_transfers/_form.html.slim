@@ -34,6 +34,7 @@
                   i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
         - else
           = f.hidden_field :receive_currency, value: @prefered_currency.first
+
       - else
         - Country.all.each do |country|
           - if country.receive_currency.size > 1
@@ -81,9 +82,10 @@
         .col-xs-12.col-sm-3.col-sm-offset-4.text-left
           // - if params[:action] == 'show' && current_user.referrals.empty?
             = button_tag type:"button", class: "btn btn-primary btn-lg", data: { toggle: "modal", target: "#referral_dialog" } do
-              i.fa.fa-fw.fa-check-circle-o.fa-lg
+              i.fa.fa-fw.fa-check-circle-o
               = t('.submit')
+
             - else
           = button_tag type:"submit", class: "btn btn-primary btn-lg" do
-            i.fa.fa-fw.fa-check-circle-o.fa-lg
+            i.fa.fa-fw.fa-check-circle-o
             = t('.submit')

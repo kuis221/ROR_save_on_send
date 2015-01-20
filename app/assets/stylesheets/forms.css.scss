@@ -1,0 +1,14 @@
+@import 'common/variables';
+
+
+/* form element */
+.btn-lg,
+.btn-group-lg > .btn {
+  padding: 6px 15px;
+  line-height: 2.1em;
+
+  .fa {
+    font-size: $font-size-h1;
+    vertical-align: top;
+  }
+}

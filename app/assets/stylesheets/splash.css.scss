@@ -5,26 +5,33 @@
 .splash {
   background: #0b2840 image-url('map.png') no-repeat 50% 0;
 
+  /* flags */
   .flags {
     ul {
       li {
         display: inline-block;
         margin: 0 10px;
       }
+      img {
+        width: 50px;
+      }
     }
   }
+
+
+  /* buttons */
   .buttons {
+    padding-top: 20px;
+
     ul {
       li {
-        display: inline-block;
-        margin: 40px 15px 0;
+        display: block;
+        margin: 20px 15px 0;
 
         a {
-          padding: 16px 26px;
-
           &.btn {
+            width: 198px;
             color: #fff;
-            font-weight: bold;
           }
           &.btn-orange {
             background: #ed8a42;
@@ -59,20 +66,17 @@
   h1 {
     color: #fff;
     display: inline-block;
-    font-size: 4.2em;
-    font-weight: bold;
     line-height: 140%;
     margin-bottom: 22px;
-    width: 60%;
   }
   ul {
+    font-size: $font-size-h4;
     margin: 0;
     padding: 0;
     
     li {
       color: #fff;
       list-style: none;
-      font-size: 1.9em;
 
       i {
         margin-right: 15px;
@@ -83,4 +87,30 @@
       }
     }
   }
+}
+
+
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 768px) {  
+  .splash {
+    .flags {
+      ul {
+        img {
+          width: 70px;
+        }
+      }
+    }
+
+    .buttons {
+      ul {
+        li {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
 }

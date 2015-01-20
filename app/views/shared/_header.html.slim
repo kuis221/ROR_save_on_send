@@ -14,8 +14,10 @@ header#header
           span.icon-bar
           span.icon-bar
           span.icon-bar
+
         = link_to root_path, class: 'navbar-brand' do
           = image_tag "logo.png", {alt: t('.title'), title: t('.title'), class: 'img-responsive', width: '272'}
+
       #navbar.collapse.navbar-collapse
         ul.nav.nav-pills.navbar-right
           - if current_user && current_user.recent_transactions.present?
@@ -23,9 +25,11 @@ header#header
             li= link_to t('.next_transfer'), new_user_next_transfer_path
             li= link_to t('.help_others'), "#", "data-toggle" => "modal", "data-target" => "#referral_dialog"
             li= link_to t('.how_to'), how_to_path
+
           - if user_signed_in?
             li.navbar-text= current_user.full_name
             li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
+
           - else
             li= link_to t('.sign_up'), new_user_registration_path
             li= link_to t('.how_to'), how_to_path

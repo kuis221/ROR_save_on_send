@@ -46,25 +46,23 @@ section {
     padding: 35px 0;
 
     h2 {
-      margin: 0 !important;
+      margin: 0 0 25px 0;
 
       span {
         color: #f8c400;
         font-size: 1.1em;
       }
     }
+    ul {
+      font-size: $font-size-h4;
+      margin: 0;
+      padding: 0;
 
-    .benefits {
-      ul {
-        margin: 0;
-        padding: 0;
+      li {
+        list-style-type: none;
 
-        li {
-          list-style-type: none;
-
-          .fa {
-            margin-right: 5px;
-          }
+        .fa {
+          margin-right: 5px;
         }
       }
     }
