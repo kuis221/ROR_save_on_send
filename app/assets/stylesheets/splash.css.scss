@@ -1,0 +1,116 @@
+@import 'common/variables';
+
+
+/* splash */
+.splash {
+  background: #0b2840 image-url('map.png') no-repeat 50% 0;
+
+  /* flags */
+  .flags {
+    ul {
+      li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+      img {
+        width: 50px;
+      }
+    }
+  }
+
+
+  /* buttons */
+  .buttons {
+    padding-top: 20px;
+
+    ul {
+      li {
+        display: block;
+        margin: 20px 15px 0;
+
+        a {
+          &.btn {
+            width: 198px;
+            color: #fff;
+          }
+          &.btn-orange {
+            background: #ed8a42;
+
+            &:hover,
+            &:focus,
+            &.focus,
+            &:active,
+            &.active {
+              color: #fff;
+              background-color: darken(#ed8a42, 10%);
+              border-color: darken(#ed8a42, 12%);
+            }
+          }
+          &.btn-turquoise {
+            background: #1abc9c;
+
+            &:hover,
+            &:focus,
+            &.focus,
+            &:active,
+            &.active {
+              color: #fff;
+              background-color: darken(#1abc9c, 10%);
+              border-color: darken(#1abc9c, 12%);
+            }
+          }
+        }
+      }
+    }
+  }
+  h1 {
+    color: #fff;
+    display: inline-block;
+    line-height: 140%;
+    margin-bottom: 22px;
+  }
+  ul {
+    font-size: $font-size-h4;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      color: #fff;
+      list-style: none;
+
+      i {
+        margin-right: 15px;
+
+        &.fa-check {
+          color: #1abc9c;
+        }
+      }
+    }
+  }
+}
+
+
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 768px) {  
+  .splash {
+    .flags {
+      ul {
+        img {
+          width: 70px;
+        }
+      }
+    }
+
+    .buttons {
+      ul {
+        li {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+}

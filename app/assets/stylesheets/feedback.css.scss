@@ -1,0 +1,18 @@
+@import 'common/variables';
+
+
+/* feedback */
+.feedback {
+  background: #113c5e;
+  color: #fff;
+  padding: 40px 0;
+
+  p {
+    font-size: $font-size-large;
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}

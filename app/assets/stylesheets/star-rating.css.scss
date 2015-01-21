@@ -12,17 +12,17 @@
       cursor: pointer;
       display: block;
       float: left;
-      height: 15px;
+      height: 22px; //15
       overflow: hidden;
       text-indent: -999em;
-      width: 17px;
+      width: 30px; //17
 
       a {
-        background-position:0 0px;
-        border:0;
-        display:block;
-        height:100%;
-        width:16px;
+        background-position: 0 0px;
+        border: 0;
+        display: block;
+        height: 100%;
+        width: 22px;
       }
     }
     .rating-cancel {
@@ -33,7 +33,7 @@
     }
     .star-rating,
     .star-rating a {
-      background: image-url('star.gif') no-repeat 0 0px;
+      background: image-url('star.png') no-repeat 0 0px;
       display: block;
     }
     .star-rating {
@@ -42,11 +42,11 @@
     }
     .star-rating-on,
     .star-rating-on a {
-      background-position: 0 -16px !important;
+      background-position: 0 -22px !important;
     }
     .star-rating-hover,
     .star-rating-hover a {
-      background-position: 0 -32px;
+      background-position: 0 -44px;
     }
     .star-rating-readonly,
     .star-rating-readonly a {

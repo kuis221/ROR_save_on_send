@@ -3,9 +3,8 @@
   .form-group
     = f.label :money_transfer_destination_id, class: [label_class, 'control-label valabel']
     div.text-left *{class: control_class}
-      .radio
+      .country
         = f.collection_radio_buttons(:money_transfer_destination_id, Country.all.collect {|country| [ country.id, country.name ] }, :first, :last, {prompt: true, checked: resource.money_transfer_destination.try(:id)}) do |b|
           = b.label( class: "radio-inline", title: b.text )
             = b.radio_button(id: b.text.parameterize.downcase)
             = image_tag 'flags/48/' + b.text + '.png', alt: b.text
-

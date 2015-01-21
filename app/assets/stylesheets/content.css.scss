@@ -1,0 +1,53 @@
+@import 'common/variables';
+
+
+/* content */
+.content {
+  background: #fff image-url('content-pattern.png') repeat 0 0;
+  font-size: $font-size-large;
+
+  h2 {
+    margin-bottom: 50px;
+  }
+  .fa-cash {
+    &:before {
+      content: "\f0d6";
+    }
+  }
+  .fa-bank-account {
+    &:before {
+      content: "\f19c";
+    }
+  }
+  .fa-plastic-card {
+    &:before {
+      content: "\f09d";
+    }
+  }
+
+  form {
+    &.user_next_transfer {
+      .form-group {
+        margin-bottom: 30px;
+      }
+      .control-label {
+        padding-top: 0;
+      }
+      .valabel {
+        line-height: 48px;
+      }
+      .radio-inline input[type="radio"] {
+        line-height: 48px;
+        margin-right: 5px;
+        position: relative;
+      }
+      .radio {
+        padding-top: 0;
+      }
+      .radio-inline {
+        margin-right: 10px;
+        padding-top: 0;
+      }
+    }
+  }
+}
