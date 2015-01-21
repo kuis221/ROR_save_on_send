@@ -5,7 +5,7 @@
 footer {
   line-height: $footerHeight;
   background-color: #282828;
-  font-size: 10px;
+  font-size: 12px;
   bottom: 0;
   min-height: $footerHeight;
   position: absolute;
@@ -13,7 +13,6 @@ footer {
 
   p {
     color: #6a6a6a;
-    font-size: 1.2em;
     margin: 0 0 1em;
 
     &:last-child {

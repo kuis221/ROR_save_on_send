@@ -4,7 +4,7 @@
 /* content */
 .content {
   background: #fff image-url('content-pattern.png') repeat 0 0;
-  font-size: $font-size-large;
+  font-size: $font-size-base;
 
   h2 {
     margin-bottom: 50px;
@@ -50,4 +50,16 @@
       }
     }
   }
+}
+
+
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 768px) {  
+  .content {
+    font-size: $font-size-large;
+  }
+}
+@media only screen and (min-width: 992px) {
 }

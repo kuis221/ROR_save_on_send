@@ -5,14 +5,27 @@
 .feedback {
   background: #113c5e;
   color: #fff;
-  padding: 40px 0;
 
   p {
-    font-size: $font-size-large;
+    font-size: $font-size-base;
 
     a {
       color: #fff;
       text-decoration: underline;
     }
   }
+}
+
+
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 768px) {  
+  .feedback {
+    p {
+      font-size: $font-size-large;
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
 }

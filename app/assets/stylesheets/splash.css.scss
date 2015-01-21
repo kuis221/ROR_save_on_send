@@ -4,9 +4,12 @@
 /* splash */
 .splash {
   background: #0b2840 image-url('map.png') no-repeat 50% 0;
+  color: #fff;
 
   /* flags */
   .flags {
+    margin-bottom: 24px;
+    
     ul {
       li {
         display: inline-block;
@@ -63,19 +66,16 @@
       }
     }
   }
+
   h1 {
-    color: #fff;
-    display: inline-block;
-    line-height: 140%;
-    margin-bottom: 22px;
+    margin-bottom: 19px;
   }
   ul {
-    font-size: $font-size-h4;
+    font-size: $font-size-h5;
     margin: 0;
     padding: 0;
     
     li {
-      color: #fff;
       list-style: none;
 
       i {
@@ -109,6 +109,10 @@
           display: inline-block;
         }
       }
+    }
+
+    ul {
+      font-size: $font-size-h4;
     }
   }
 }
