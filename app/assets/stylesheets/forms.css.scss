@@ -1,14 +1,54 @@
 @import 'common/variables';
 
 
-/* form element */
+/* buttons */
+.btn {
+  color: #fff;
+  border: 0;
+
+  &.btn-primary {
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: #31de56;
+    }
+  }
+  &.btn-orange {
+    background: #ed8a42;
+
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: #fff;
+      background-color: #faa76b;
+    }
+  }
+  &.btn-turquoise {
+    background: #1abc9c;
+    border-color: #1abc9c;
+
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: #fff;
+      background-color: #5edbc2;
+    }
+  }
+}
+
 .btn-lg,
 .btn-group-lg > .btn {
-  padding: 6px 15px;
-  line-height: 2.1em;
+  padding: 6px 20px;
+  line-height: 1.7em;
 
   .fa {
-    font-size: $font-size-h1;
+    font-size: 30px;
     vertical-align: top;
   }
 }
@@ -20,15 +60,17 @@
   margin: 0 auto;
 
   .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     
     > div {
       text-align: center;
     }
+    .help-block {
+      margin-bottom: 0;
+    }
   }
-  .control-label,
   .user-rating {
-    padding-top: 5px;
+    padding-top: 7px;
   }
   .radio-inline {
     margin: 0 20px 0 0;
@@ -37,10 +79,16 @@
       margin-right: 5px;
       position: relative;
     }
+    img {
+      height: 40px;
+    }
   }
   .valabel {
-    line-height: 48px;
+    line-height: 40px;
     padding-top: 0;
+  }
+  .btn {
+    margin: 3px 0;
   }
 }
 
@@ -54,6 +102,7 @@
   .radio {
     display: inline-block;
   }
+
 }
 
 
@@ -62,21 +111,20 @@
   .radio-inline {
     margin: 0 10px 0 0;
     padding-top: 0;
-    
-    img {
-      width: 40px;
-    }
   }
 }
 
 
 /* Different resolutions */
 @media only screen and (min-width: 480px) {
-  .country {
+  .form-horizontal {
     .radio-inline {
       img {
-        width: auto;
+        height: auto;
       }
+    }
+    .valabel {
+      line-height: 48px;
     }
   }
 }
@@ -86,7 +134,7 @@
     margin: 0;
 
     .form-group {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
 
       > div {
         text-align: left;

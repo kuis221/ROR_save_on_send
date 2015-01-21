@@ -21,6 +21,9 @@ footer {
     a {
       color: #6a6a6a;
 
+      &:focus {
+        color: #6a6a6a;        
+      }
       &:hover {
         color: #fff;
       }
