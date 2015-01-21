@@ -12,3 +12,90 @@
     vertical-align: top;
   }
 }
+
+
+/* form */
+.form-horizontal {
+  max-width: 320px;
+  margin: 0 auto;
+
+  .form-group {
+    margin-bottom: 20px;
+    
+    > div {
+      text-align: center;
+    }
+  }
+  .control-label,
+  .user-rating {
+    padding-top: 5px;
+  }
+  .radio-inline {
+    margin: 0 20px 0 0;
+
+    input[type="radio"] {
+      margin-right: 5px;
+      position: relative;
+    }
+  }
+  .valabel {
+    line-height: 48px;
+    padding-top: 0;
+  }
+}
+
+
+/* providers */
+.providers {
+  .radio-inline {
+    margin: 0 20px 10px 0;
+    padding-top: 0;
+  }
+  .radio {
+    display: inline-block;
+  }
+}
+
+
+/* country */
+.country {
+  .radio-inline {
+    margin: 0 10px 0 0;
+    padding-top: 0;
+    
+    img {
+      width: 40px;
+    }
+  }
+}
+
+
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+  .country {
+    .radio-inline {
+      img {
+        width: auto;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .form-horizontal {
+    max-width: 100%;
+    margin: 0;
+
+    .form-group {
+      margin-bottom: 30px;
+
+      > div {
+        text-align: left;
+      }
+      > .valabel {
+        text-align: right;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+}

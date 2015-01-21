@@ -33,7 +33,7 @@ section.content.recent-tr-page
                   li= @user_recent_transaction.errors.full_message(attribute, err_msg)
     
     .row
-      .col-xs-12.col-sm-12
+      .col-xs-12
         = form_for(@user_recent_transaction, url: user_recent_transaction_path, html: {class: 'form-horizontal user_recent_transaction', role: 'form'}) do |f|
           = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: @user_recent_transaction, label_class: 'col-xs-12 col-sm-5', control_class: 'col-xs-12 col-sm-7'}
           
