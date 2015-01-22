@@ -4,9 +4,12 @@
 /* splash */
 .splash {
   background: #0b2840 image-url('map.png') no-repeat 50% 0;
+  color: #fff;
 
   /* flags */
   .flags {
+    margin-bottom: 24px;
+    
     ul {
       li {
         display: inline-block;
@@ -21,62 +24,31 @@
 
   /* buttons */
   .buttons {
-    padding-top: 20px;
+    padding-top: 15px;
 
     ul {
       li {
         display: block;
         margin: 20px 15px 0;
 
-        a {
-          &.btn {
-            width: 198px;
-            color: #fff;
-          }
-          &.btn-orange {
-            background: #ed8a42;
-
-            &:hover,
-            &:focus,
-            &.focus,
-            &:active,
-            &.active {
-              color: #fff;
-              background-color: darken(#ed8a42, 10%);
-              border-color: darken(#ed8a42, 12%);
-            }
-          }
-          &.btn-turquoise {
-            background: #1abc9c;
-
-            &:hover,
-            &:focus,
-            &.focus,
-            &:active,
-            &.active {
-              color: #fff;
-              background-color: darken(#1abc9c, 10%);
-              border-color: darken(#1abc9c, 12%);
-            }
-          }
+        .btn {
+          width: 198px;
+          padding: 10px 20px;
         }
       }
     }
   }
   h1 {
-    color: #fff;
-    display: inline-block;
-    line-height: 140%;
-    margin-bottom: 22px;
+    margin-bottom: 19px;
   }
   ul {
-    font-size: $font-size-h4;
+    font-size: $font-size-h5;
     margin: 0;
     padding: 0;
     
     li {
-      color: #fff;
       list-style: none;
+      margin-bottom: 5px;
 
       i {
         margin-right: 15px;
@@ -107,8 +79,17 @@
       ul {
         li {
           display: inline-block;
+
+          .btn {
+            font-size: $font-size-h4;
+            width: 198px;
+          }
         }
       }
+    }
+
+    ul {
+      font-size: $font-size-h4;
     }
   }
 }

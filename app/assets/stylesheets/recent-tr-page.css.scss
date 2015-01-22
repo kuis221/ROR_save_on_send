@@ -3,93 +3,16 @@
 
 /* recent transfer */
 .recent-tr-page {
-  padding: 0;
-
   .intro {
-    margin-bottom: 45px;
-    
-    h3 {
-      color: #191a1b;
-    }
-    p {
-      color: #191a1b;
-    }
-  }
-}
-
-
-/* form */
-.user_recent_transaction {
-  .form-group {
-    margin-bottom: 30px;
-    
-    > div {
-      text-align: center;
-    }
-  }
-  .control-label,
-  .user-rating {
-    padding-top: 5px;
-  }
-  .radio-inline {
-    input[type="radio"] {
-      margin-right: 5px;
-      position: relative;
-    }
-  }
-  .valabel {
-    line-height: 48px;
-    padding-top: 0;
-  }
-}
-
-
-/* providers */
-.providers {
-  .radio-inline {
-    margin: 0 20px 10px 0;
-    padding-top: 0;
-  }
-  .radio {
-    display: inline-block;
-  }
-}
-
-
-/* country */
-.country {
-  .radio-inline {
-    margin: 0 10px 10px 0;
-    padding-top: 0;
-    
-    img {
-      width: 40px;
-    }
+    margin-bottom: 40px;
   }
 }
 
 
 /* Different resolutions */
 @media only screen and (min-width: 480px) {
-  .country {
-    .radio-inline {
-      img {
-        width: auto;
-      }
-    }
-  }
 }
 @media only screen and (min-width: 768px) {
-  .user_recent_transaction {
-    .form-group {      
-      > div {
-        text-align: left;
-      }
-      > .valabel {
-        text-align: right;
-      }
-    }
-  }
 }
 @media only screen and (min-width: 992px) {
 }

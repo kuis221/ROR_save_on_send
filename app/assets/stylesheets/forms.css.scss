@@ -1,14 +1,157 @@
 @import 'common/variables';
 
 
-/* form element */
+/* alert */
+.alert {
+  &.align-center {
+    margin-bottom: 15px;  
+  }
+}
+
+
+/* buttons */
+.btn {
+  color: #fff;
+  border: 0;
+
+  &.btn-primary {
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: #31de56;
+    }
+  }
+  &.btn-orange {
+    background: #ed8a42;
+
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: #fff;
+      background-color: #faa76b;
+    }
+  }
+  &.btn-turquoise {
+    background: #1abc9c;
+    border-color: #1abc9c;
+
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      color: #fff;
+      background-color: #5edbc2;
+    }
+  }
+}
+
 .btn-lg,
 .btn-group-lg > .btn {
-  padding: 6px 15px;
-  line-height: 2.1em;
+  padding: 6px 20px;
+  line-height: 1.7em;
 
   .fa {
-    font-size: $font-size-h1;
+    font-size: 30px;
     vertical-align: top;
   }
+}
+
+
+/* form */
+.form-horizontal {
+  max-width: 320px;
+  margin: 0 auto;
+
+  .form-group {
+    margin-bottom: 15px;
+    
+    > div {
+      text-align: center;
+    }
+    .help-block {
+      margin-bottom: 0;
+    }
+  }
+  .user-rating {
+    padding-top: 7px;
+  }
+  .radio-inline {
+    margin: 0 20px 0 0;
+
+    input[type="radio"] {
+      margin-right: 5px;
+      position: relative;
+    }
+    img {
+      height: 40px;
+    }
+  }
+  .valabel {
+    line-height: 40px;
+    padding-top: 0;
+  }
+  .btn {
+    margin: 3px 0;
+  }
+}
+
+
+/* providers */
+.providers {
+  .radio-inline {
+    margin: 0 20px 10px 0;
+    padding-top: 0;
+  }
+  .radio {
+    display: inline-block;
+  }
+
+}
+
+
+/* country */
+.country {
+  .radio-inline {
+    margin: 0 10px 0 0;
+    padding-top: 0;
+  }
+}
+
+
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+  .form-horizontal {
+    .radio-inline {
+      img {
+        height: auto;
+      }
+    }
+    .valabel {
+      line-height: 48px;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .form-horizontal {
+    max-width: 100%;
+    margin: 0;
+
+    .form-group {
+      margin-bottom: 20px;
+
+      > div {
+        text-align: left;
+      }
+      > .valabel {
+        text-align: right;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
 }

@@ -4,10 +4,10 @@
 /* content */
 .content {
   background: #fff image-url('content-pattern.png') repeat 0 0;
-  font-size: $font-size-large;
+  font-size: $font-size-base;
 
   h2 {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
   .fa-cash {
     &:before {
@@ -24,30 +24,20 @@
       content: "\f09d";
     }
   }
+}
 
-  form {
-    &.user_next_transfer {
-      .form-group {
-        margin-bottom: 30px;
-      }
-      .control-label {
-        padding-top: 0;
-      }
-      .valabel {
-        line-height: 48px;
-      }
-      .radio-inline input[type="radio"] {
-        line-height: 48px;
-        margin-right: 5px;
-        position: relative;
-      }
-      .radio {
-        padding-top: 0;
-      }
-      .radio-inline {
-        margin-right: 10px;
-        padding-top: 0;
-      }
+
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 768px) {  
+  .content {
+    font-size: $font-size-large;
+
+    h2 {
+      margin-bottom: 40px;
     }
   }
+}
+@media only screen and (min-width: 992px) {
 }
