@@ -5,6 +5,21 @@ describe UserNextTransfersController do
 
   let(:user){FactoryGirl.create(:user)}
 
+  describe 'GET show' do
+    it 'should display info about best options for next transfer' do
+      get :show, user_next_transfer: FactoryGirl.attributes_for(:next_transfer).merge(money_transfer_destination_id: FactoryGirl.create(:india).id)
+
+      expect(response).to be_ok
+      expect(response.body).to have_content('Best options for your next transfers')
+    end
+
+    it 'show not be possible to get next transfer by id' do
+      get :show, id: 1
+
+      expect(response).to redirect_to(new_user_next_transfers_path)
+    end
+  end
+
   describe 'GET new' do
     it 'should be possible to select destination country if user is not sign in' do
       get :new

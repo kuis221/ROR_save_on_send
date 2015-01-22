@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resource :user, only: [:edit, :update]
 
   resource :user_recent_transaction, only: [:new, :create]
-  resources :user_next_transfers, only: [:new, :show, :create]
+  resource :user_next_transfers, only: [:new, :show, :create]
 
   resources :service_providers, only: [:show], path: 'providers'
 

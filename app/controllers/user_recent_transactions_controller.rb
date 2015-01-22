@@ -78,7 +78,7 @@ class UserRecentTransactionsController < ApplicationController
                         currency: more_money.currency.iso_code)
       end
 
-      redirect_to(new_user_next_transfer_path, notice: notice)
+      redirect_to(new_user_next_transfers_path, notice: notice)
     else
       set_prefered_currency
       set_service_providers
