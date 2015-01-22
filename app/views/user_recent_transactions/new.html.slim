@@ -1,17 +1,17 @@
+section.content-header
+  .container
+    .row
+      .col-xs-12
+        h2= t('.title')
+        .row
+          .col-xs-12.col-sm-6.benefits.align-center.text-left
+            ul
+              - t('.benefits').each do |line, text|
+                li 
+                  i.fa.fa-check 
+                  | #{text}
+
 section.content.recent-tr-page
-  .header
-    .container
-      .row
-        .col-xs-12
-          h2= t('.title')
-          .row
-            .col-xs-12.col-sm-6.benefits.align-center.text-left
-              ul
-                - t('.benefits').each do |line, text|
-                  li 
-                    i.fa.fa-check 
-                    | #{text}
-  
   .container
     .row
       .col-xs-12.intro.text-center
@@ -20,17 +20,16 @@ section.content.recent-tr-page
     
     - if @user_recent_transaction.errors.full_messages.count > 0
       .row
-        .col-xs-12.col-sm-6.col-sm-offset-3.error-messages
-          .alert.alert-danger
-            ul
-              - @user_recent_transaction.errors.each do |attribute, err_msg|
-                - if attribute == :'feedback.comments' 
+        .col-xs-12.align-center.alert.alert-danger
+          ul
+            - @user_recent_transaction.errors.each do |attribute, err_msg|
+              - if attribute == :'feedback.comments' 
+                li= err_msg
+              - elsif attribute == :'feedback.service_quality'
+                - unless @user_recent_transaction.errors.has_key?(:'feedback.comments')
                   li= err_msg
-                - elsif attribute == :'feedback.service_quality'
-                  - unless @user_recent_transaction.errors.has_key?(:'feedback.comments')
-                    li= err_msg
-                - else
-                  li= @user_recent_transaction.errors.full_message(attribute, err_msg)
+              - else
+                li= @user_recent_transaction.errors.full_message(attribute, err_msg)
     
     .row
       .col-xs-12
@@ -93,9 +92,6 @@ section.content.recent-tr-page
                     i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency).downcase]}
                 = money_field f, @user_recent_transaction, :amount_received, 'form-control mask-money-received'
 
-            .col-xs-12.col-sm-5.col-sm-offset-5
-              em.help-block= t('.amount_received_help')
-          
           // originating source of funds
           .form-group
             = f.label :originating_source_of_funds_id, class: 'col-xs-12 col-sm-5 control-label'
@@ -218,7 +214,7 @@ section.content.recent-tr-page
             .form-group
               = feedback.label :comments, class: 'col-sm-5 control-label'
               .col-xs-12.col-sm-5
-                = feedback.text_area :comments, class: 'form-control', placeholder: t('.placeholder_comment')
+                = feedback.text_area :comments, class: 'form-control', cols: '1', rows: '4'
 
           // actions
           .form-group

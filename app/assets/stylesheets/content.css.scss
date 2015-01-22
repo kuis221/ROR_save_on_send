@@ -7,7 +7,7 @@
   font-size: $font-size-base;
 
   h2 {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   .fa-cash {
     &:before {
@@ -33,6 +33,10 @@
 @media only screen and (min-width: 768px) {  
   .content {
     font-size: $font-size-large;
+
+    h2 {
+      margin-bottom: 40px;
+    }
   }
 }
 @media only screen and (min-width: 992px) {

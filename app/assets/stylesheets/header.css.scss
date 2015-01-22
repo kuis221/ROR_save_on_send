@@ -33,15 +33,13 @@
 
 
 /* header of content */
-.header {
+.content-header {
   background: #3780ca;
   color: #fff;
-  line-height: 30px;
-  margin-bottom: 40px;
-  padding: 35px 0;
+  padding: 32px 0 22px 0;
 
   h2 {
-    margin: 0 0 25px 0;
+    margin: 0 0 14px 0;
 
     span {
       color: #f8c400;
@@ -55,6 +53,7 @@
 
     li {
       list-style-type: none;
+      margin-bottom: 5px;
 
       .fa {
         margin-right: 5px;
@@ -88,7 +87,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .header {  
+  .content-header {  
     ul {
       font-size: $font-size-h4;
     }

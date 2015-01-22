@@ -155,7 +155,7 @@ en:
         service_provider_id: Select Provider
         destination_preference_for_funds_id: Receive method
         fees_for_sending: Fee for sending
-        send_to_receive_duration: How long before money become available?
+        send_to_receive_duration: How long before money became available?
         documentation_requirements: Documentation requirements
         promotion: Used promotions
         service_quality: Provider quality
@@ -175,8 +175,8 @@ en:
         name: Provider name
         landing_page: Provider website
       feedback:
-        comments: Comments
-        service_quality: Service quality
+        comments: Help others with detailed comment
+        service_quality: Provider quality
     errors:
       models:
         feedback:

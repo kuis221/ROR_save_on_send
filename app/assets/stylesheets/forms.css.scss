@@ -1,6 +1,14 @@
 @import 'common/variables';
 
 
+/* alert */
+.alert {
+  &.align-center {
+    margin-bottom: 15px;  
+  }
+}
+
+
 /* buttons */
 .btn {
   color: #fff;

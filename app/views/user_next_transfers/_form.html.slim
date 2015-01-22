@@ -1,6 +1,6 @@
 - if @user_next_transfer.errors.full_messages.count > 0
   .row
-    .col-xs-12.col-sm-6.col-sm-offset-3.error-messages
+    .col-xs-12.align-center.alert.alert-danger
       ul
         - @user_next_transfer.errors.full_messages.each do |msg|
           li= msg
