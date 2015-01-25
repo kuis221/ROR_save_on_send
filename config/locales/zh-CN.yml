@@ -106,6 +106,7 @@ zh-CN:
   feedbacks:
     feedback:
       anonymous: 匿名
+      points: 点
   devise:
     registrations:
       new:

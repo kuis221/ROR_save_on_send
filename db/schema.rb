@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111124507) do
+ActiveRecord::Schema.define(version: 20150125181739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,11 @@ ActiveRecord::Schema.define(version: 20150111124507) do
   add_index "service_providers", ["name"], name: "index_service_providers_on_name", using: :btree
   add_index "service_providers", ["slug"], name: "index_service_providers_on_slug", using: :btree
 
+  create_table "user_levels", force: true do |t|
+    t.string "name"
+    t.string "slug"
+  end
+
   create_table "user_next_transfers", force: true do |t|
     t.integer  "user_id"
     t.integer  "amount_send_cents",                             default: 0, null: false
@@ -156,6 +161,8 @@ ActiveRecord::Schema.define(version: 20150111124507) do
     t.string   "phone"
     t.boolean  "accept_terms"
     t.boolean  "accept_emails"
+    t.integer  "level_id"
+    t.integer  "points",                        default: 0
   end
 
   add_index "users", ["email", "phone"], name: "index_users_on_email_and_phone", unique: true, using: :btree

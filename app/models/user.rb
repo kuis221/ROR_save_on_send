@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
 
   has_many :referrals
 
+  belongs_to :level, class_name: User::Level
+
   # validations
   #validates_presence_of :first_name
   #validates_presence_of :zipcode, unless: :skip_additional_info?

@@ -106,6 +106,7 @@ es:
   feedbacks:
     feedback:
       anonymous: Anónimo
+      points: Puntos
   devise:
     registrations:
       new:
