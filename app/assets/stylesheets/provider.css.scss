@@ -1,0 +1,70 @@
+@import 'common/variables';
+
+
+
+/* provider-review */
+.provider-review {
+  font-size: $font-size-base;
+  margin: 30px 0 50px;
+
+  .provider-review-user {
+    margin-bottom: 15px;
+    
+    > div {
+      display: inline-block;
+    }
+  }
+  .provider-review-user-status {
+    color: #fff;
+    font-size: $font-size-small;
+    font-weight: bold;
+    padding: 2px 9px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+  .provider-review-user-name {
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  .provider-review-user-points {
+    margin-right: 17px;    
+  }
+  .provider-review-user-date {
+    color: #8d959c;
+  }
+  
+  .provider-review-rating {
+    float: right;
+    
+    > em {
+      margin-right: 15px;
+      color: #8d959c;
+      vertical-align: top;
+    }
+    .user-rating {
+      .star-rating-control {
+        font-size: 19px;
+
+        .rating-cancel,
+        .star-rating {
+          height: 18px;
+          width: 26px;
+        }
+      }
+    }
+  }
+  .provider-review-text {
+    background: #fff;
+    border: solid 1px #e1e1e1;
+    padding: 20px;
+  }
+}
+
+
+/* statuses */
+.gold-status {
+  background: #e5b810;
+}
+.silver-status {
+  background: #919191;
+}

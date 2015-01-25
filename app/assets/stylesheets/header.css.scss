@@ -63,6 +63,35 @@
 }
 
 
+/* header of provider */
+.provider-header {
+  background: #113c5e;
+  padding: 32px 0 22px 0;
+  text-align: left;
+  
+  .provider-logo {
+    margin-right: 20px;
+  }
+  .user-rating {
+    vertical-align: middle;
+
+    .star-rating-control {
+      font-size: 31px;
+
+      .rating-cancel,
+      .star-rating {
+        height: 30px;
+        width: 38px;
+      }
+    }
+  }
+  .btn {
+    float: right;
+    margin-top: 22px;
+  }
+}
+
+
 @media (max-width: 468px) {
   #header{
     .navbar-brand{

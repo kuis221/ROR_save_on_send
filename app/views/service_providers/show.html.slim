@@ -1,14 +1,35 @@
-.container
-  h2
+section.provider-header
+  .container
     .row
-      .col-sm-2
-        i *{:class => ['icon-provider', 'icon-'+@provider.name.parameterize.downcase]}
-      .col-sm-4= @provider.name
-      .col-sm-4= link_to(t('.go_to_provider'), @provider.landing_page, target: 'new', class: 'btn btn-success')
+      .col-xs-12.col-sm-10.col-sm-offset-1
+        = image_tag('provider-icons/' + @provider.name.parameterize.downcase + '_b.png', class: 'provider-logo')
+  
+        .user-rating
+          span.star-rating-control
+            .fa.star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-on aria-label='' role='text'
+              a title="on" on
+            .fa.star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-on aria-label='' role='text'
+              a title="on" on
+            .fa.star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-on aria-label='' role='text'
+              a title="on" on
+            .fa.star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-on aria-label='' role='text'
+              a title="on" on
+            .fa.star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-off aria-label='' role='text'
+              a title="off" off
+  
+        = link_to(@provider.landing_page, target: 'new', class: 'btn btn-primary btn-lg') do
+          i.fa.fa-fw.fa-check-circle-o
+          = t('.go_to_provider')
 
-  - if @provider.display_feedbacks.present?
-    h3= t('.provider_feedbacks_title')
-    = render @provider.display_feedbacks
 
-  - if user_signed_in?
-    = render 'provider_feedback_form'
+section.content
+  .container
+    .row
+      - if @provider.display_feedbacks.present?
+        .col-xs-12.col-sm-5.col-sm-offset-1.text-left
+          h4= t('.provider_feedbacks_title')
+
+        .col-xs-12.col-sm-5.text-right 12 reviews
+
+        .col-xs-12.col-sm-10.col-sm-offset-1.text-left
+          = render @provider.display_feedbacks
