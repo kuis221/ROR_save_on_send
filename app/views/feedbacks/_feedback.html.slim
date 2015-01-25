@@ -3,6 +3,8 @@
     .col-sm-4
       div
         - if feedback.user.present?
+          - if feedback.user.level.present?
+            = feedback.user.level.name
           em= feedback.user.full_name
         - else
           em= t('.anonymous')
