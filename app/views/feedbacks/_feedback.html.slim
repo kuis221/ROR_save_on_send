@@ -6,6 +6,8 @@
           - if feedback.user.level.present?
             = feedback.user.level.name
           em= feedback.user.full_name
+          - if feedback.user.points > 0
+            = "#{feedback.user.points} #{t('.points')}"
         - else
           em= t('.anonymous')
       div= l(feedback.created_at.to_date, format: :long)
