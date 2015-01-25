@@ -2,8 +2,10 @@ tr *{class: remittance_term.highlighted? ? [:best] : []}
   td.text-center= link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.png'), service_provider_path(remittance_term.service_provider))
   - if @user_next_transfer.amount_send > 0
     td.text-center= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_send), precision: 2)
+
   - else
     td.text-center= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_receive.exchange_to('USD')), precision: 2)
+
   - if @from_to_show
     td.text-center
       - if remittance_term.highlighted?
@@ -13,22 +15,28 @@ tr *{class: remittance_term.highlighted? ? [:best] : []}
           i.fa *{class: "fa-#{remittance_term.receive_method.slug}"}
         .hidden.send_method_id= remittance_term.send_method.id
         .hidden.receive_method_id= remittance_term.receive_method.id
+
       - else
         i.fa *{class: "fa-#{remittance_term.receive_method.slug}"} &nbsp;
         i.fa.fa-long-arrow-right&nbsp;
         i.fa *{class: "fa-#{remittance_term.receive_method.slug}"}
+
   - if @user_next_transfer.amount_send > 0
     td.text-center= humanized_money_with_symbol(remittance_term.send_amount_with_fee(@user_next_transfer.amount_send))
+
   - else
     td.text-center= humanized_money_with_symbol(remittance_term.estimated_send_amount(@user_next_transfer.amount_receive, @user_next_transfer.receive_currency))
+
   - if @user_next_transfer.amount_send > 0
     td.text-center
       | #{@user_next_transfer.receive_currency}&nbsp;
         #{money_without_cents(remittance_term.estimated_receive_amount(@user_next_transfer.amount_send, @user_next_transfer.receive_currency))}
+
   - else
     td.text-center
       | #{@user_next_transfer.receive_currency}&nbsp;
         #{money_without_cents(@user_next_transfer.amount_receive)}
+
   td.text-center= remittance_term.duration
   //td= remittance_term.documentation
   //td= remittance_term.promotions

@@ -201,14 +201,14 @@ section.content.recent-tr-page
               .col-xs-12.col-sm-5
                 = f.text_field :promotion, class: 'form-control', placeholder: t('.placeholder_promotion')
 
-          // service quality
+          // provider quality
           = f.fields_for :feedback, @user_recent_transaction.feedback || Feedback.new do |feedback|
             .form-group
               = feedback.label :service_quality, class: 'col-sm-5 control-label'
               .col-xs-12.col-sm-7
                 .user-rating
                   = feedback.collection_radio_buttons(:service_quality, (1..5).collect{|rate| [rate, rate]}, :first, :last, {prompt: true}) do |b|
-                    = b.radio_button( class: "star "+( b.value == 1 ? "required" : ""))
+                    = b.radio_button( class: "fa star "+( b.value == 1 ? "required" : ""))
 
             // comments
             .form-group
