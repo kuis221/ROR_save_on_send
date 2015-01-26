@@ -1,35 +1,34 @@
 - @highlight_column = false
 
+section.content-header
+  .container
+    .row
+      .col-xs-12
+        h2= t('.title_table')
+
 section.content.next-tr-page
-  .header
-    .container
-      .row
-        .col-xs-12
-          h2= t('.title_table')
   .output-table
     .container
       .row
         .col-xs-12
-          p= t('.output_table_intro_html', last_transfer_link: new_user_recent_transaction_path, submit_link: new_user_recent_transaction_path)
+          p.align-center= t('.output_table_intro_html', last_transfer_link: new_user_recent_transaction_path, submit_link: new_user_recent_transaction_path)
 
           .table-responsive
             table.table
               thead
                 tr
-                  th.text-center= t('.provider_name')
-                  th.text-center= t('.real_cost')
+                  th= t('.provider_name')
                   - if @from_to_show
-                    th.text-center= t('.to_from_transfer_media')
-                  th.text-center= t('.gross_paid_amount')
-                  th.text-center= t('.net_received_amount')
-                  th.text-center= t('.duration_html')
-                  //th= t('.documentation_requirements')
-                  //th= t('.promotions')
-                  th.text-center= t('.service_quality')
+                    th= t('.to_from_transfer_media')
+                  th= t('.gross_paid_amount')
+                  th.option-margin= t('.real_cost')
+                  th= t('.net_received_amount')
+                  th= t('.duration_html')
+                  th= t('.service_quality')
+
               tbody
                 = render @least_expensive_remittance_terms
 
-section.content.next-tr-page
   .container
     .row
       .col-xs-12

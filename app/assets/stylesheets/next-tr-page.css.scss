@@ -5,43 +5,82 @@
 .next-tr-page {
 
   .output-table {
-    //border-bottom: 1px solid #eee;
-    //padding-bottom: 75px;
+    margin-bottom: 35px;
 
     p {
       color: #393939;
-      font-size: 1.2em;
-      margin: 0 auto 35px;
-      width: 60%;
+      margin-bottom: 35px;
     }
     table {
-      border-collapse: collapse;
+      font-size: $font-size-base;
 
+      a {
+        color: #191a1b;
+        
+        &:focus,
+        &:hover {
+          text-decoration: none;
+        }
+      }
       th {
         background: #113c5e;
         border: 0;
         color: #fff;
-        line-height: 100%;
+        letter-spacing: 0.5px;
+        line-height: 1em;
         padding: 10px 15px;
         vertical-align: middle;
+        text-align: center;
+        
+        &.option-margin {
+          background: #2c2c2c;
+          border: 1px solid #2c2c2c;
+          border-width: 0 1px;
+        }
       }
       td {
-        border: 1px solid #cbcbcb;
+        border: 1px solid #c3c3c3;
         border-width: 0 0 1px 1px;
-        line-height: 100%;
         vertical-align: middle;
+        line-height: 1em;
 
         &:first-child {
           border-left: 0;
         }
-        a {
-          color: #191a1b;
+        &.option-margin {
+          background: image-url('layer.png') repeat 0 0;
         }
       }
       tr {
-        &.best {
+        &.option-best {
           td {
             background: #fbf6a5;
+
+            &.option-margin {
+              background: #fbf6a5 image-url('layer.png') repeat 0 0;
+            }
+          }
+          .option-method-label {
+            padding: 0;
+            border: none;
+
+            .option-method-wrap {
+              position: relative;
+              
+              span {
+                font-size: $font-size-small;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                padding: 1px 7px;
+                background: #00a651;
+                color: #fff;              
+              } 
+            }
+          }
+          .option-method-ico {
+            border: 1px solid #c3c3c3;
+            border-width: 0 0 1px 1px;            
           }
         }
       }

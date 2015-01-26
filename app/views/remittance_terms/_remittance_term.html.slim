@@ -1,45 +1,62 @@
-tr *{class: remittance_term.highlighted? ? [:best] : []}
-  td.text-center= link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.png'), service_provider_path(remittance_term.service_provider))
-  - if @user_next_transfer.amount_send > 0
-    td.text-center= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_send), precision: 2)
+- if remittance_term.highlighted?
+  - rowspan = '2'
+- else
+  - rowspan = '1'
 
-  - else
-    td.text-center= number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_receive.exchange_to('USD')), precision: 2)
+tr *{class: remittance_term.highlighted? ? 'option-best' : ''}
+  td rowspan=rowspan
+    = link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.png'), service_provider_path(remittance_term.service_provider))
 
   - if @from_to_show
-    td.text-center
-      - if remittance_term.highlighted?
-        =link_to '#apply_payment_methods' do
-          i.fa *{class: "fa-#{remittance_term.receive_method.slug}"} &nbsp;
-          i.fa.fa-long-arrow-right&nbsp;
-          i.fa *{class: "fa-#{remittance_term.receive_method.slug}"}
-        .hidden.send_method_id= remittance_term.send_method.id
-        .hidden.receive_method_id= remittance_term.receive_method.id
+    - if remittance_term.highlighted?
+      td.option-method-label
+        .option-method-wrap
+          span Best Method
 
-      - else
+    - else
+      td
         i.fa *{class: "fa-#{remittance_term.receive_method.slug}"} &nbsp;
-        i.fa.fa-long-arrow-right&nbsp;
+        | &mdash;&nbsp;
         i.fa *{class: "fa-#{remittance_term.receive_method.slug}"}
 
-  - if @user_next_transfer.amount_send > 0
-    td.text-center= humanized_money_with_symbol(remittance_term.send_amount_with_fee(@user_next_transfer.amount_send))
+  td rowspan=rowspan
+    - if @user_next_transfer.amount_send > 0
+      = humanized_money_with_symbol(remittance_term.send_amount_with_fee(@user_next_transfer.amount_send))
 
-  - else
-    td.text-center= humanized_money_with_symbol(remittance_term.estimated_send_amount(@user_next_transfer.amount_receive, @user_next_transfer.receive_currency))
+    - else
+      = humanized_money_with_symbol(remittance_term.estimated_send_amount(@user_next_transfer.amount_receive, @user_next_transfer.receive_currency))
 
-  - if @user_next_transfer.amount_send > 0
-    td.text-center
+  td.option-margin rowspan=rowspan
+    - if @user_next_transfer.amount_send > 0
+      = number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_send), precision: 2)
+
+    - else
+      = number_to_percentage(remittance_term.all_fees(@user_next_transfer.amount_receive.exchange_to('USD')), precision: 2)
+
+  td rowspan=rowspan
+    - if @user_next_transfer.amount_send > 0
       | #{@user_next_transfer.receive_currency}&nbsp;
         #{money_without_cents(remittance_term.estimated_receive_amount(@user_next_transfer.amount_send, @user_next_transfer.receive_currency))}
 
-  - else
-    td.text-center
+    - else
       | #{@user_next_transfer.receive_currency}&nbsp;
         #{money_without_cents(@user_next_transfer.amount_receive)}
 
-  td.text-center= remittance_term.duration
-  //td= remittance_term.documentation
-  //td= remittance_term.promotions
-  td.text-center
+  td rowspan=rowspan
+    = remittance_term.duration
+
+  td rowspan=rowspan
     =link_to(service_provider_path(remittance_term.service_provider)) do
       .user-rating= display_average_rating_for_remittance_term(remittance_term)
+      
+- if @from_to_show
+  - if remittance_term.highlighted?
+    tr *{class: remittance_term.highlighted? ? 'option-best' : ''}
+        td.option-method-ico
+            div
+              =link_to '#apply_payment_methods' do
+                i.fa *{class: "fa-#{remittance_term.receive_method.slug}"} &nbsp;
+                | &mdash;&nbsp;
+                i.fa *{class: "fa-#{remittance_term.receive_method.slug}"}
+              .hidden.send_method_id= remittance_term.send_method.id
+              .hidden.receive_method_id= remittance_term.receive_method.id

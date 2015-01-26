@@ -24,7 +24,7 @@ en:
       sign_up: Join now
       sign_in: Log in
       sign_out: Sign out
-      notice_test_version: This is a test version - we need your feedback to get it right! Write to
+      notice_test_version: This is a test version — we need your feedback to get it right! Write to
   shared:
     header: *application
     feedback:
@@ -97,7 +97,7 @@ en:
       promotions: Promotions
       service_quality: Service quality
       title_table: Best options for your next transfers
-      output_table_intro_html: Best providers selected for lowest <strong>Margin</strong> - if your <a href="%{last_transfer_link}">Last Transfer</a> showed a lower <strong>Margin</strong> please <a href="%{submit_link}">submit</a> it for our analysis to help other users. 
+      output_table_intro_html: Best providers selected for lowest <strong>Margin</strong> — if your <a href="%{last_transfer_link}">Last Transfer</a> showed a lower <strong>Margin</strong>, please <a href="%{submit_link}">submit</a> it for our analysis to help other users. 
       feedback_cta:
         <h3>Thank you for submitting!</h3>
         <p>Check back with us often as costs change daily and new providers are joining competition!</p>
@@ -186,5 +186,5 @@ en:
         feedback:
           attributes:
             comments: &feedback_comments
-              blank: Please provide a detailed comment for your "stars" rating of the transaction - this will help others in our SaveOnSend community to make better choices and they will do the same for you
+              blank: Please provide a detailed comment for your "stars" rating of the transaction — this will help others in our SaveOnSend community to make better choices and they will do the same for you
             service_quality: *feedback_comments
