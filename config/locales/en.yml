@@ -39,8 +39,9 @@ en:
       lock_free: "Lock-in FREE access to the information on the website"
   service_providers:
     show:
-      go_to_provider: Ready to send money
-      provider_feedbacks_title: What others say
+      go_to_provider: I am ready to send money
+      provider_feedbacks_title: 'User reviews:'
+      provider_feedbacks_count: 12 reviews
     provider_feedback_form:
       title: Rate the provider
       submit: Submit
@@ -110,8 +111,10 @@ en:
       title: Please help us to improve the site and let others know how to save money
   feedbacks:
     feedback:
+      raiting: 'Raiting:'
       anonymous: Anonymous
       points: Points
+      date: 'Review added: '
   devise:
     registrations:
       new:

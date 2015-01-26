@@ -1,19 +1,29 @@
-.container
-  .raw
-    .col-sm-4
-      div
-        - if feedback.user.present?
-          - if feedback.user.level.present?
-            = feedback.user.level.name
-          em= feedback.user.full_name
-          - if feedback.user.points > 0
-            = "#{feedback.user.points} #{t('.points')}"
-        - else
-          em= t('.anonymous')
-      div= l(feedback.created_at.to_date, format: :long)
-
-    .col-sm-4.text-center
+.provider-review
+  .clearfix
+    .provider-review-rating
+      em= t('.raiting')
       .user-rating= display_service_quality_for_feedback(feedback)
+  
+    .provider-review-user
+      - if feedback.user.present?
+        - if feedback.user.level.present?
+          .provider-review-user-status class='#{feedback.user.level.name}-status'
+            = feedback.user.level.name
 
-    .col-sm-4
-      = feedback.comments
+        .provider-review-user-name
+          = feedback.user.first_name
+
+        - if feedback.user.points > 0
+          .provider-review-user-points
+            = "#{feedback.user.points} #{t('.points')}"
+
+      - else
+        .provider-review-user-name
+          = t('.anonymous')
+  
+      .provider-review-user-date
+        = t('.date')
+        = l(feedback.created_at.to_date, format: :long)
+
+  .provider-review-text
+    = feedback.comments
