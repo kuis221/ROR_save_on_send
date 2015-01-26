@@ -2,8 +2,9 @@ section.provider-header
   .container
     .row
       .col-xs-12.col-sm-10.col-sm-offset-1
-        = image_tag('provider-icons/' + @provider.name.parameterize.downcase + '_b.png', class: 'provider-logo')
-  
+        .provider-logo
+          = image_tag('provider-icons/' + @provider.name.parameterize.downcase + '_b.png')
+
         .user-rating
           span.star-rating-control
             .fa.star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-on aria-label='' role='text'
@@ -16,20 +17,23 @@ section.provider-header
               a title="on" on
             .fa.star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-off aria-label='' role='text'
               a title="off" off
-  
-        = link_to(@provider.landing_page, target: 'new', class: 'btn btn-primary btn-lg') do
-          i.fa.fa-fw.fa-check-circle-o
-          = t('.go_to_provider')
+
+        .provider-link
+          = link_to(@provider.landing_page, target: 'new', class: 'btn btn-primary btn-lg') do
+            i.fa.fa-fw.fa-check-circle-o
+            = t('.go_to_provider')
 
 
 section.content
   .container
     .row
       - if @provider.display_feedbacks.present?
-        .col-xs-12.col-sm-5.col-sm-offset-1.text-left
-          h4= t('.provider_feedbacks_title')
+        h4
+          .col-xs-6.col-sm-5.col-sm-offset-1.text-left
+            = t('.provider_feedbacks_title')
+  
+          .col-xs-6.col-sm-5.text-right
+            small 12 reviews
 
-        .col-xs-12.col-sm-5.text-right 12 reviews
-
-        .col-xs-12.col-sm-10.col-sm-offset-1.text-left
+        .col-xs-12.col-sm-10.col-sm-offset-1
           = render @provider.display_feedbacks

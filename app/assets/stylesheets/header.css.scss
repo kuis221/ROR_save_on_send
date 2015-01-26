@@ -4,20 +4,20 @@
 /* header */
 #header {
   .navbar-brand {
-    padding-top: 11px;
-    padding-bottom: 14px;
+    width: 228px;
+    padding: 19px 15px 14px;
   }
   .nav-pills {
-    margin-top: 14px;
+    display: inline-block;
+    border-top: 1px dotted #ddd;
+    padding: 7px 0 0;
 
     > li {
-      margin-left: 5px;
-
       > a {
         border-radius: 12px;
         border-color: transparent;
         color: #191a1b;
-        padding: 6px 23px;
+        padding: 6px 15px;
         font-size: 16px;
       }
       &.active > a {
@@ -66,15 +66,12 @@
 /* header of provider */
 .provider-header {
   background: #113c5e;
-  padding: 32px 0 22px 0;
-  text-align: left;
+  padding: 29px 0 25px 0;
   
   .provider-logo {
-    margin-right: 20px;
+    margin-bottom: 20px;
   }
   .user-rating {
-    vertical-align: middle;
-
     .star-rating-control {
       font-size: 31px;
 
@@ -85,40 +82,65 @@
       }
     }
   }
-  .btn {
-    float: right;
+  .provider-link {
     margin-top: 22px;
   }
 }
 
 
-@media (max-width: 468px) {
-  #header{
-    .navbar-brand{
-      max-width: 228px;
-      padding-top: 19px;
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+  #header {
+    .navbar-brand {
+      padding-top: 11px;
+      width: auto;
     }
-    .nav-pills > li > a{
-      padding-left: 15px;
-      padding-right: 15px;
+    .nav-pills {
+      > li {
+        margin-left: 5px;
+
+        > a {
+          padding: 6px 23px;
+        }
+      }
     }
   }
 }
-
-
-@media (max-width: 767px) {
-  #header .nav-pills{
-    margin-top: 0;
-    border-top: 1px dotted #ddd;
-    padding-top: 7px;
-    padding-bottom: 7px;
-  }
-}
-
 @media only screen and (min-width: 768px) {
+  #header {
+    .nav-pills {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 0;
+      border: none;
+    }
+  }
+
   .content-header {  
     ul {
       font-size: $font-size-h4;
+    }
+  }
+
+  .provider-header {
+    .provider-logo {
+      margin: 0 50px 0 0;
+      display: inline-block;
+    }
+    .user-rating {
+      vertical-align: middle;
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  .provider-header {
+    text-align: left;
+    
+    .provider-logo {
+      margin: 0 20px 0 0;
+    }
+    .provider-link {
+      float: right;
     }
   }
 }

@@ -1,45 +1,16 @@
 @import 'common/variables';
 
 
-
 /* provider-review */
 .provider-review {
   font-size: $font-size-base;
-  margin: 30px 0 50px;
+  margin: 35px 0;
 
-  .provider-review-user {
-    margin-bottom: 15px;
-    
-    > div {
-      display: inline-block;
-    }
-  }
-  .provider-review-user-status {
-    color: #fff;
-    font-size: $font-size-small;
-    font-weight: bold;
-    padding: 2px 9px;
-    margin-right: 10px;
-    vertical-align: top;
-  }
-  .provider-review-user-name {
-    font-weight: bold;
-    margin-right: 15px;
-  }
-  .provider-review-user-points {
-    margin-right: 17px;    
-  }
-  .provider-review-user-date {
-    color: #8d959c;
-  }
-  
   .provider-review-rating {
-    float: right;
-    
-    > em {
-      margin-right: 15px;
-      color: #8d959c;
-      vertical-align: top;
+    margin-bottom: 5px;
+
+    em {
+      display: none;
     }
     .user-rating {
       .star-rating-control {
@@ -52,6 +23,31 @@
         }
       }
     }
+  }
+  .provider-review-user {
+    margin-bottom: 15px;
+  }
+  .provider-review-user-status {
+    color: #fff;
+    font-size: $font-size-small;
+    font-weight: bold;
+    padding: 2px 9px;
+    margin-right: 10px;
+    vertical-align: top;
+    display: inline-block;
+  }
+  .provider-review-user-name {
+    font-weight: bold;
+    margin-right: 15px;
+    display: inline-block;
+  }
+  .provider-review-user-points {
+    margin-right: 17px;
+    display: inline-block;
+  }
+  .provider-review-user-date {
+    color: #8d959c;
+    margin-top: 5px;
   }
   .provider-review-text {
     background: #fff;
@@ -67,4 +63,44 @@
 }
 .silver-status {
   background: #919191;
+}
+
+
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+  .provider-review {
+    .provider-review-user-date {
+      display: inline-block;
+      margin: 0;
+    }
+    .provider-review-user-points {
+      margin-right: 40px;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .provider-review {
+    text-align: left;
+    margin: 50px 0;
+  
+    .provider-review-rating {
+      float: right;
+      margin-bottom: 0;
+    }
+    .provider-review-user-points {
+      margin-right: 17px;    
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  .provider-review {
+    .provider-review-rating {
+      > em {
+        display: inline;
+        margin-right: 15px;
+        color: #8d959c;
+        vertical-align: top;
+      }
+    }
+  }
 }
