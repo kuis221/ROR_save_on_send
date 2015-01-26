@@ -1,7 +1,7 @@
 .provider-review
   .clearfix
     .provider-review-rating
-      em Raiting:
+      em= t('.raiting')
       .user-rating= display_service_quality_for_feedback(feedback)
   
     .provider-review-user
@@ -22,7 +22,7 @@
           = t('.anonymous')
   
       .provider-review-user-date
-        | Review added: 
+        = t('.date')
         = l(feedback.created_at.to_date, format: :long)
 
   .provider-review-text
