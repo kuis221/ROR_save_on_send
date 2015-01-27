@@ -17,4 +17,11 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require turbolinks
-//= require_tree .
+
+//= require vendors/jquery.mask.min
+//= require vendors/jquery.rating.pack
+//= require vendors/jquery.tablesaw
+
+//= require bootstrap
+//= require user_next_transfer
+//= require user_rencent_transaction
