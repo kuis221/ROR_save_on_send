@@ -12,7 +12,6 @@
  *
  *= require project
  *= require bootstrap-datetimepicker
-
  *= require content
  *= require feedback
  *= require footer
@@ -26,5 +25,5 @@
  *= require recent-tr-page
  *= require signup
  *= require splash
- *= require star-rating
+ *= require_tree .
  */
