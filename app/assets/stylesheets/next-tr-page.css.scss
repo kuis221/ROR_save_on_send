@@ -28,14 +28,18 @@
         color: #fff;
         letter-spacing: 0.5px;
         line-height: 1em;
-        padding: 10px 15px;
+        padding: 10px 17px;
         vertical-align: middle;
         text-align: center;
+        white-space: normal!important;
         
         &.option-margin {
           background: #2c2c2c;
           border: 1px solid #2c2c2c;
           border-width: 0 1px;
+        }
+        &.option-quality {
+          min-width: 170px;
         }
       }
       td {
@@ -43,6 +47,7 @@
         border-width: 0 0 1px 1px;
         vertical-align: middle;
         line-height: 1em;
+        white-space: nowrap;
 
         &:first-child {
           border-left: 0;

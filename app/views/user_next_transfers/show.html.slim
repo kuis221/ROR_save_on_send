@@ -24,7 +24,7 @@ section.content.next-tr-page
                   th.option-margin= t('.real_cost')
                   th= t('.net_received_amount')
                   th= t('.duration_html')
-                  th= t('.service_quality')
+                  th.option-quality= t('.service_quality')
 
               tbody
                 = render @least_expensive_remittance_terms
