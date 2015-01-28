@@ -6,17 +6,7 @@ section.provider-header
           = image_tag('provider-icons/' + @provider.name.parameterize.downcase + '_b.png')
 
         .user-rating
-          span.star-rating-control
-            .star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-on aria-label='' role='text'
-              a title="on" on
-            .star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-on aria-label='' role='text'
-              a title="on" on
-            .star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-on aria-label='' role='text'
-              a title="on" on
-            .star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-on aria-label='' role='text'
-              a title="on" on
-            .star-rating.rater-0.star.star-rating-applied.star-rating-readonly.star-rating-off aria-label='' role='text'
-              a title="off" off
+          = display_average_rating_for_provider(@provider)
 
         .provider-link
           = link_to(@provider.landing_page, target: 'new', class: 'btn btn-primary btn-lg') do
@@ -32,7 +22,7 @@ section.content
             = t('.provider_feedbacks_title')
   
           .col-xs-6.col-sm-5.text-right
-            small= t('.provider_feedbacks_count')
+            small= t('.provider_feedbacks_count', count: @provider.display_feedbacks.size)
 
         .col-xs-12.col-sm-10.col-sm-offset-1
           = render @provider.display_feedbacks

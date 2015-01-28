@@ -41,6 +41,7 @@ zh-CN:
     show:
       go_to_provider: 准备寄钱
       provider_feedbacks_title: 别人怎么说
+      provider_feedbacks_count: "%{count} 条评论"
     provider_feedback_form:
       title: 率提供商
       submit: 提交

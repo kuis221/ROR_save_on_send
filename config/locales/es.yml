@@ -41,6 +41,7 @@ es:
     show:
       go_to_provider: Listo para enviar dinero
       provider_feedbacks_title: Lo que otros dicen
+      provider_feedbacks_count: "%{count} comentarios"
     provider_feedback_form:
       title: Valore el proveedor
       submit: Someter

@@ -41,7 +41,7 @@ en:
     show:
       go_to_provider: I am ready to send money
       provider_feedbacks_title: 'User reviews:'
-      provider_feedbacks_count: 12 reviews
+      provider_feedbacks_count: "%{count} reviews"
     provider_feedback_form:
       title: Rate the provider
       submit: Submit
