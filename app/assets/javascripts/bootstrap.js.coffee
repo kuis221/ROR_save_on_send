@@ -46,8 +46,8 @@ $(document).on sos.e, '[data-toggle-amount]', (event) ->
   $('[data-target-amount="'+$(this).data('toggle-amount')+'"]').removeClass('hide')
 
 sos.init = ->
-  $("a[rel~=popover], .has-popover").popover()
-  $("a[rel~=tooltip], .has-tooltip").tooltip()
+  #$("a[rel~=popover], .has-popover").popover()
+  #$("a[rel~=tooltip], .has-tooltip").tooltip()
 
   $(".input-group.date").datetimepicker
     minDate: '1/1/2013'

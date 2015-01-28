@@ -7,27 +7,26 @@ section.content-header
         h2= t('.title_table')
 
 section.content.next-tr-page
-  .output-table
-    .container
-      .row
-        .col-xs-12
-          p.align-center= t('.output_table_intro_html', last_transfer_link: new_user_recent_transaction_path, submit_link: new_user_recent_transaction_path)
+  .container
+    .row
+      .col-xs-12
+        p.align-center= t('.output_table_intro_html', last_transfer_link: new_user_recent_transaction_path, submit_link: new_user_recent_transaction_path)
 
-          .table-responsive
-            table.table
-              thead
-                tr
-                  th= t('.provider_name')
-                  - if @from_to_show
-                    th= t('.to_from_transfer_media')
-                  th= t('.gross_paid_amount')
-                  th.option-margin= t('.real_cost')
-                  th= t('.net_received_amount')
-                  th= t('.duration_html')
-                  th.option-quality= t('.service_quality')
+        table.table data-tablesaw-mode='swipe' data-tablesaw-minimap=''
+          thead
+            tr
+              th data-tablesaw-priority='persist'
+                = t('.provider_name')
+              - if @from_to_show
+                th= t('.to_from_transfer_media')
+              th= t('.gross_paid_amount')
+              th.option-margin= t('.real_cost')
+              th= t('.net_received_amount')
+              th= t('.duration_html')
+              th.option-quality= t('.service_quality')
 
-              tbody
-                = render @least_expensive_remittance_terms
+          tbody
+            = render @least_expensive_remittance_terms
 
   .container
     .row

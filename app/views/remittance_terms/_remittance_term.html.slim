@@ -4,8 +4,12 @@
   - rowspan = '1'
 
 tr *{class: remittance_term.highlighted? ? 'option-best' : ''}
-  td rowspan=rowspan
-    = link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.png'), service_provider_path(remittance_term.service_provider))
+  - if remittance_term.highlighted?
+    td.option-method-label
+
+  - else
+    td
+      = link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.png'), service_provider_path(remittance_term.service_provider))
 
   - if @from_to_show
     - if remittance_term.highlighted?
@@ -52,6 +56,9 @@ tr *{class: remittance_term.highlighted? ? 'option-best' : ''}
 - if @from_to_show
   - if remittance_term.highlighted?
     tr *{class: remittance_term.highlighted? ? 'option-best' : ''}
+        td
+          = link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.png'), service_provider_path(remittance_term.service_provider))
+
         td.option-method-ico
             div
               =link_to '#apply_payment_methods' do

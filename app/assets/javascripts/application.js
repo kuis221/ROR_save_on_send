@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery.turbolinks
-//= require jquery_ujs
-//= require twitter/bootstrap
+// require twitter/bootstrap
 //= require moment
 //= require bootstrap-datetimepicker
 //= require turbolinks
