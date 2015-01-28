@@ -208,7 +208,7 @@ section.content.recent-tr-page
               .col-xs-12.col-sm-7
                 .user-rating
                   = feedback.collection_radio_buttons(:service_quality, (1..5).collect{|rate| [rate, rate]}, :first, :last, {prompt: true}) do |b|
-                    = b.radio_button( class: "fa star "+( b.value == 1 ? "required" : ""))
+                    = b.radio_button( class: "star "+( b.value == 1 ? "required" : ""))
 
             // comments
             .form-group

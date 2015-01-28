@@ -72,13 +72,27 @@
     margin-bottom: 20px;
   }
   .user-rating {
-    .star-rating-control {
-      font-size: 31px;
-
+    .star-rating-control {    
       .rating-cancel,
       .star-rating {
         height: 30px;
         width: 38px;
+  
+        a {
+          width: 32px;
+        }
+      }
+      .star-rating,
+      .star-rating a {
+        background: image-url('star_b.png') no-repeat 0 0;
+      }
+      .star-rating-on,
+      .star-rating-on a {
+        background-position: 0 -30px;
+      }
+      .star-rating-hover,
+      .star-rating-hover a {
+        background-position: 0 -60px;
       }
     }
   }
