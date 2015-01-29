@@ -24,3 +24,4 @@
 //= require bootstrap
 //= require user_next_transfer
 //= require user_rencent_transaction
+//= require form_controller
