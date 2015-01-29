@@ -1,59 +1,67 @@
-.container
-  h2 How to use our website
+section.content-header
+  .container
+    .row
+      .col-xs-12
+        h2 How to use our website
 
-  p
-    | please note that our website is in Beta version and we need your feedback to improve it;
-      please email us if something is not working properly, if you think any information on this
-      website is inaccurate or any suggestions for improvement at #{link_to 'admin@saveonsend.com', 'mailto: admin@saveonsend.com'}
-
-  .panel.panel-default
-    .panel-heading Step 1: Registration
-    .panel-body
-      | we need a way to confirm that all users are real people who are genuinely looking for
-        help or are looking to help others identify yourself via email registration, facebook,
-        or google+ identify the country where you send money most frequently so we could
-        customize the display of information for that specific country after you click "submit",
-        wait for an email from us in your email inbox - when received, click on the link in that
-        email to complete registration
-
-  .panel.panel-default#step_2
-    .panel-heading Step 2: Recent transaction
-    .panel-body
-      | this step will tell you if you could have saved money on your last transaction with a
-        different provider or a different payment method complete each field as accurately as
-        possible; if you are unsure, please check your records and ask your money recipient for
-        details after you click "submit", look for the savings number or confirmation that you
-        already used the best approach for sending money
-
-  .panel.panel-default
-    .panel-heading Step 3: Next transaction
-    .panel-body
-      | this step will show you the best providers for your next transaction using your preferred
-        method of payment; it will also show you if an alternative method of payment if it would
-        save you even more on your next money transfer you can select whether you want to send a
-        certain amount or if you want your recipient to receive a certain amount if your recipient
-        lives in a country which allows to receive money in more than one currency, you can specify
-        which currency you want the recipient to receive funds in after you click "submit", look for
-        the output table with best providers available for your next transfer - if you used a
-        provider which sends money at a lower cost and it is not in the output table, please submit
-        that information under #{link_to 'Step 2: "Recent transaction"', '#step_2'} - this will help
-        other users to save money on their next transaction, and they will do the same for you in
-        the output table, you will see for each provider in the order from less to more expensive
-      ol
-        li
-          | how much money you will need to have upfront (the sending amount plus any applicable
-            fees by a provider),
-        li
-          | "Real Cost" that shows in percentages how much money in total you will spend on this
-            transaction,
-        li how much your recipient will receive,
-        li expected time, in hours, before your funds will become available to the recipient,
-        li
-          | aggregated feedback on this provider by users like you By comparing "Real Cost" of
-            various providers, you can decide if it is worth for you to switch providers if
-            there is a less expensive way to send money using a different payment or receiving
-            method, you will see a "highlighted" row with that information; by comparing "Real Cost"
-            of that method vs. what you entered, you can decide if it is worth for you to switch
-            the method of sending and/or receiving money as wellBy clicking on "stars" in Service
-            Quality column or on Provider logo, you will be taken to the page where you can read
-            feedback on this provider by other users
+section.content.text-left
+  .container
+    .row
+      p
+        | Please note that our website is in Beta version and we need your feedback to improve it;
+          please email us if something is not working properly, if you think any information on this
+          website is inaccurate or any suggestions for improvement at #{link_to 'admin@saveonsend.com', 'mailto: admin@saveonsend.com'}
+      br
+    
+      .panel.panel-primary
+        .panel-heading Step 1: Registration
+        .panel-body
+          | We need a way to confirm that all users are real people who are genuinely looking for
+            help or are looking to help others identify yourself via email registration, facebook,
+            or google+ identify the country where you send money most frequently so we could
+            customize the display of information for that specific country after you click "submit",
+            wait for an email from us in your email inbox - when received, click on the link in that
+            email to complete registration
+    
+      .panel.panel-primary#step_2
+        .panel-heading Step 2: Recent transaction
+        .panel-body
+          | This step will tell you if you could have saved money on your last transaction with a
+            different provider or a different payment method complete each field as accurately as
+            possible; if you are unsure, please check your records and ask your money recipient for
+            details after you click "submit", look for the savings number or confirmation that you
+            already used the best approach for sending money
+    
+      .panel.panel-primary
+        .panel-heading Step 3: Next transaction
+        .panel-body
+          p
+            | This step will show you the best providers for your next transaction using your preferred
+              method of payment; it will also show you if an alternative method of payment if it would
+              save you even more on your next money transfer you can select whether you want to send a
+              certain amount or if you want your recipient to receive a certain amount if your recipient
+              lives in a country which allows to receive money in more than one currency, you can specify
+              which currency you want the recipient to receive funds in after you click "submit", look for
+              the output table with best providers available for your next transfer - if you used a
+              provider which sends money at a lower cost and it is not in the output table, please submit
+              that information under #{link_to 'Step 2: "Recent transaction"', '#step_2'} - this will help
+              other users to save money on their next transaction, and they will do the same for you in
+              the output table, you will see for each provider in the order from less to more expensive.
+          ol
+            li
+              | how much money you will need to have upfront (the sending amount plus any applicable
+                fees by a provider),
+            li
+              | "Real Cost" that shows in percentages how much money in total you will spend on this
+                transaction,
+            li how much your recipient will receive,
+            li expected time, in hours, before your funds will become available to the recipient,
+            li
+              | aggregated feedback on this provider by users like you By comparing "Real Cost" of
+                various providers, you can decide if it is worth for you to switch providers if
+                there is a less expensive way to send money using a different payment or receiving
+                method, you will see a "highlighted" row with that information; by comparing "Real Cost"
+                of that method vs. what you entered, you can decide if it is worth for you to switch
+                the method of sending and/or receiving money as wellBy clicking on "stars" in Service
+                Quality column or on Provider logo, you will be taken to the page where you can read
+                feedback on this provider by other users
