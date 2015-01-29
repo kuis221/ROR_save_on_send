@@ -1,47 +1,42 @@
-.sign-up-page#sign_up
-  = render partial: 'shared/signup_header'
+= render partial: 'shared/signup_header'
 
+section.content.sign-up-page#sign_up
   #signup-form
     .container
       .row
-        .col-md-offset-1.col-md-10.col-lg-offset-2.col-lg-8
-          .error-messages
-            = devise_error_messages!
+        //.col-xs-12.align-center.alert.alert-danger
+          = devise_error_messages!
 
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: {role: 'form'}) do |f|
         .row
-          .col-sm-6.col-sm-offset-3
+          .col-xs-12.col-sm-6.col-sm-offset-3
             // country
             = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: resource, label_class: '', control_class: ''}
 
         .row
-          .col-md-4.col-md-offset-4.col-sm-7.col-sm-offset-2.col-xs-10.col-xs-offset-1
-            .row
-              .col-sm-9.col-sm-offset-2.col-md-11.col-md-offset-1
-                // email
-                .form-group
-                  = f.label :email, class: 'valabel'
-                    = t('.email_or_phone')
-                  = f.text_field :email, autofocus: true, class: 'form-control', placeholder: "#{t('.email_number')}"
+          .col-xs-12.col-sm-6.col-sm-offset-3.col-lg-4.col-lg-offset-4
+            // email
+            .form-group
+              = f.label :email, class: 'valabel'
+                = t('.email_or_phone')
+              = f.text_field :email, autofocus: true, class: 'form-control', placeholder: "#{t('.email_number')}"
 
-            .row
-              .col-sm-12.col-sm-offset-2.col-md-12.col-md-offset-1
-                // accept emails
-                .checkbox
-                  label
-                    = f.check_box :accept_emails
-                    | #{User.human_attribute_name(:accept_emails)}
+            // accept emails
+            .checkbox
+              label
+                = f.check_box :accept_emails
+                | #{User.human_attribute_name(:accept_emails)}
 
-                // accept TOS
-                .checkbox
-                  label
-                    = f.check_box :accept_terms
-                    | #{User.human_attribute_name(:accept_terms)}
+            // accept TOS
+            .checkbox
+              label
+                = f.check_box :accept_terms
+                | #{User.human_attribute_name(:accept_terms)}
 
-                // actions
-                .form-group.text-left
-                  = button_tag type:"submit", class: "btn btn-primary btn-lg" do
-                    i.fa.fa-fw.fa-check-circle-o
-                    = t('.sign_up')
+            // actions
+            .form-group
+              = button_tag type:"submit", class: "btn btn-primary btn-lg" do
+                i.fa.fa-fw.fa-check-circle-o
+                = t('.sign_up')
 
 = render partial: 'shared/feedback'

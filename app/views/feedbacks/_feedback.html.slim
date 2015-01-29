@@ -7,7 +7,7 @@
     .provider-review-user
       - if feedback.user.present?
         - if feedback.user.level.present?
-          .provider-review-user-status class='#{feedback.user.level.name}-status'
+          .provider-review-user-status class='#{feedback.user.level.slug}-status'
             = feedback.user.level.name
 
         .provider-review-user-name

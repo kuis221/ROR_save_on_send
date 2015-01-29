@@ -55,7 +55,7 @@
       
       // amount receive
       .form-group *{:data => {target_amount: 'receive'}, class: "#{'hide' if !display_amount_receive}"}
-        .col-xs-12.col-sm-7
+        .col-xs-12.col-sm-3.col-sm-offset-5
           .input-group.input-money
             .input-group-addon#amount_receive_currency
               - if @prefered_currency || @user_next_transfer.receive_currency.present?

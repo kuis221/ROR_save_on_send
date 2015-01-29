@@ -1,54 +1,24 @@
-#signup-header {
-  background-color: #2172c5;
-  color: #fff;
-  padding-top: 16px;
-  padding-bottom: 27px;
+@import 'common/variables';
 
-  h2 {
-    font-size: 29px;
-    margin-bottom: 22px;
-  }
-  ul{
-    padding-left: 20px;
-  }
-  li {
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 1.4;
 
-    i {
-      margin-right: 16px;
-      font-size: 14px;
-    }
-  }
-}
-
-#signup-form{
-  background-image: image-url('signup-bg.jpg');
-  padding-top: 35px;
-  padding-bottom: 60px;
-  font-size: 15.6px;
-
-  .form-group .text-left{
+/* signup-form */
+#signup-form {
+  .form-group .text-left {
     text-align: center;
   }
-  label{
+  label {
     margin-right: 10px;
-    font-size: 13px;
 
-    input{
+    input {
       margin-top: 18px;
     }
   }
-  .valabel{
-    font-size: 18px;
-  }
-  input[type="text"]{
+  input[type="text"] {
     margin-top: 5px;
   }
-  .checkbox{
+  .checkbox {
     text-align: left;
-    font-size: 12px;
+    font-size: $font-size-small;
 
     input{
       margin-top: 2px;
@@ -60,7 +30,7 @@
     padding-right: 20px;
     margin-top: 5px;
 
-    i{
+    i {
       margin-right: 4px;
     }
   }
@@ -68,15 +38,6 @@
 
 
 @media (max-width: 468px) {
-  #signup-header{
-    padding-top: 0;
-    padding-bottom: 11px;
-  }
-
-  #signup-header li {
-    font-size: 14px;
-  }
-
   #signup-form {
     .radio-inline {
       img {
@@ -90,9 +51,10 @@
 }
 
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199px) {
-  #signup-header ul{
-    padding-left: 0;
-  }
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 992px) {
 }

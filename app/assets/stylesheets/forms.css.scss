@@ -63,10 +63,11 @@
 
 
 /* form */
-.form-horizontal {
+form {
   max-width: 320px;
   margin: 0 auto;
-
+}
+.form-horizontal {
   .form-group {
     margin-bottom: 15px;
     
@@ -137,8 +138,10 @@
   }
 }
 @media only screen and (min-width: 768px) {
-  .form-horizontal {
+  form {
     max-width: 100%;
+  }
+  .form-horizontal {
     margin: 0;
 
     .form-group {
