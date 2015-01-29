@@ -43,7 +43,7 @@
 
     span {
       color: #f8c400;
-      font-size: 1.1em;
+      font-size: $font-size-h1;
     }
   }
   ul {
@@ -131,10 +131,16 @@
   }
 
   .content-header {  
+    h2 {
+      span {
+        font-size: 42px;;
+      }
+    }
     ul {
       font-size: $font-size-h4;
     }
   }
+
 
   .provider-header {
     .provider-logo {

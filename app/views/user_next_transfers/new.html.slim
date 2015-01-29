@@ -25,13 +25,11 @@
               li= link_to t('.registration'), new_user_registration_path, class: %w{btn btn-lg btn-turquoise}
 
 - else
-  section.content.next-tr-page
-    .header
-      .container
-        .row
-          .col-xs-12
-            h2= flash[:notice].html_safe
-
+  section.content-header
+    .container
+      .row
+        .col-xs-12
+          h2= flash[:notice].html_safe
 
 section.content.next-tr-page
   .container
