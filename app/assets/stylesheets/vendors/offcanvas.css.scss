@@ -1,0 +1,45 @@
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+
+.sidebar-offcanvas {
+	padding-left: 20px;
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .sidebar-offcanvas {
+    display: block;
+  }
+
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -240px; /* 9 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 240px; /* 9 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 240px; /* 9 columns */
+  }
+}

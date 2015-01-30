@@ -9,7 +9,7 @@ header#header
   .navbar.navbar-default
     .container
       .navbar-header
-        button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
+        button.navbar-toggle.collapsed data-toggle="offcanvas" type="button"
           span.sr-only Toggle navigation
           span.icon-bar
           span.icon-bar
@@ -33,4 +33,6 @@ header#header
           - else
             li= link_to t('.sign_up'), new_user_registration_path
             li= link_to t('.how_to'), how_to_path
+            li= link_to t('.next_transfer'), '/#new_user_next_transfer'
+            li= link_to t('.recent_transaction'), new_user_recent_transaction_path
             li.active= link_to t('.sign_in'), new_user_session_path

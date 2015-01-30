@@ -27,6 +27,10 @@
 				}, 1000);
 			}
 			
+			$('[data-toggle="offcanvas"]').click(function () {
+				$('.row-offcanvas').toggleClass('active')
+			});
+			
 
 			// Set initial values
 			self.data.country = $('[name="user_next_transfer[money_transfer_destination_id]"]:checked').val();
