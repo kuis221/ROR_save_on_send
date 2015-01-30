@@ -29,8 +29,8 @@
             = f.label :receive_currency, class: 'col-sm-5 control-label'
             .col-sm-7
               = f.collection_radio_buttons(:receive_currency, @prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
-                = b.label( for: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
-                  = b.radio_button( id: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase )
+                = b.label( class: "radio-inline", title: b.text )
+                  = b.radio_button
                   i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
         - else
           = f.hidden_field :receive_currency, value: @prefered_currency.first
@@ -38,12 +38,12 @@
       - else
         - Country.all.each do |country|
           - if country.receive_currency.size > 1
-            .form-group.hidden.receive_currency *{id: "receive_currency_#{country.name.parameterize.downcase}"}
+            .form-group.hidden.receive_currency *{id: "receive_currency_#{country.id}"}
               = f.label :receive_currency, class: 'col-sm-5 control-label'
               .col-sm-7
                 = f.collection_radio_buttons(:receive_currency, country.receive_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
-                  = b.label( for: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
-                    = b.radio_button( id: 'user_next_transfer_receive_currency_'+b.text.parameterize.downcase )
+                  = b.label( class: "radio-inline", title: b.text )
+                    = b.radio_button
                     i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
 
       .form-group *{:data => {target_amount: 'send'}, class: "#{'hide' if display_amount_receive}"}
@@ -80,12 +80,6 @@
 
       .form-group
         .col-sm-7.col-sm-offset-5 
-          // - if params[:action] == 'show' && current_user.referrals.empty?
-            = button_tag type:"button", class: "btn btn-primary btn-lg", data: { toggle: "modal", target: "#referral_dialog" } do
-              i.fa.fa-fw.fa-check-circle-o
-              = t('.submit')
-
-            - else
           = button_tag type:"submit", class: "btn btn-primary btn-lg" do
             i.fa.fa-fw.fa-check-circle-o
             = t('.submit')

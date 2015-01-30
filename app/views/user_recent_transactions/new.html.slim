@@ -61,8 +61,8 @@ section.content.recent-tr-page
                 .col-sm-3
                   - checked_currency = @user_recent_transaction.currency || (current_user.present? ? current_user.prefered_currency.collect.first : nil)
                   = f.collection_radio_buttons(:currency, @prefered_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true, checked: checked_currency}) do |b|
-                    = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
-                      = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
+                    = b.label( class: "radio-inline", title: b.text )
+                      = b.radio_button
                       i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
 
             - else
@@ -75,8 +75,8 @@ section.content.recent-tr-page
                   = f.label :currency, class: 'col-sm-5 control-label'
                   .col-sm-3
                     = f.collection_radio_buttons(:currency, country.receive_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
-                      = b.label( for: 'user_recent_transaction_currency_'+b.text.parameterize.downcase, class: "radio-inline", title: b.text )
-                        = b.radio_button( id: 'user_recent_transaction_currency_'+b.text.parameterize.downcase )
+                      = b.label( class: "radio-inline", title: b.text )
+                        = b.radio_button
                         i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
           
           // amount received
@@ -176,8 +176,8 @@ section.content.recent-tr-page
                   = f.text_field :send_to_receive_duration, class: 'form-control mask-minutes', placeholder: '0'
                 .col-sm-10
                   = f.collection_radio_buttons(:send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, :first, :last, {}, {class: ''}) do |b|
-                    = b.label( class: "radio-inline", title: b.text, for: b.text.parameterize.downcase )
-                      = b.radio_button(id: b.text.parameterize.downcase)
+                    = b.label( class: "radio-inline", title: b.text )
+                      = b.radio_button
                       = b.text
           
           // documentation requirements
