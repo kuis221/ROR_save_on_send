@@ -11,13 +11,13 @@
               li= image_tag "flags/70/China.png", { alt: '', title: '', class: 'img-responsive' }
 
           h1.align-center= t('.benefits_title')
-          .row
-            .col-xs-12.col-sm-6.align-center.text-left
-              ul
-                - t('.benefits').each do |line, text|
-                  li 
-                    i.fa.fa-check 
-                    | #{text}
+          .align-center.text-left
+            ul
+              - t('.benefits').each do |line, text|
+                li 
+                  i.fa.fa-check 
+                  | #{text}
+
           .buttons
             ul
               li= link_to t('.recent_transaction'), new_user_recent_transaction_path, class: %w{btn btn-lg btn-primary}
