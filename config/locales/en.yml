@@ -185,6 +185,9 @@ en:
       models:
         feedback:
           attributes:
-            comments: &feedback_comments
+            service_quality_and_comments:
+              blank: Please provide a detailed comment and "stars" rating of the transaction — this will help others in our SaveOnSend community to make better choices and they will do the same for you
+            comments:
               blank: Please provide a detailed comment for your "stars" rating of the transaction — this will help others in our SaveOnSend community to make better choices and they will do the same for you
-            service_quality: *feedback_comments
+            service_quality:
+              blank: Please provide a "stars" rating of the transaction — this will help others in our SaveOnSend community to make better choices and they will do the same for you

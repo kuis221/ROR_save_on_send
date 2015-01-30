@@ -177,6 +177,9 @@ zh-CN:
       models:
         feedback:
           attributes:
-            comments: &feedback_comments
+            service_quality_and_comments:
+              blank: 请提供详细的注释和“星”评级的交易 - 这将他人帮助SaveOnSend社会做出更好的选择，他们会为你做同样的
+            comments:
               blank: 请提供详细的注释你的“星”评级的交易 - 这将他人帮助SaveOnSend社会做出更好的选择，他们会为你做同样的
-            service_quality: *feedback_comments
+            service_quality:
+              blank: 请提供一个“星”评级的交易 - 这将他人帮助SaveOnSend社会做出更好的选择，他们会为你做同样的

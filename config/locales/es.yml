@@ -178,6 +178,9 @@ es:
       models:
         feedback:
           attributes:
-            comments: &feedback_comments
+            service_quality_and_comments:
+              blank: Por favor ingrese su comentario detallado y "estrellas" de calificación de la transacción - esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
+            comments:
               blank: Por favor ingrese su comentario detallado para su "estrellas" de calificación de la transacción - esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
-            service_quality: *feedback_comments
+            service_quality:
+              blank: Sírvanse proporcionar una calificación "estrellas" de la transacción - esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
