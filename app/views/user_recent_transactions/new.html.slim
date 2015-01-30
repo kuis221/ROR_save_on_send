@@ -39,7 +39,7 @@ section.content.recent-tr-page
           .form-group
             = f.label :date, class: 'col-sm-5 control-label'
             .col-sm-3
-              .input-group.date
+              .input-group.input-group-fix.date
                 = f.text_field :date, value: @user_recent_transaction.date.present? ? @user_recent_transaction.date.strftime('%m/%d/%Y'): '', class: 'form-control mask-date'
                 span.input-group-addon
                   i.fa.fa-calendar
