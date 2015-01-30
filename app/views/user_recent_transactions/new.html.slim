@@ -20,7 +20,7 @@ section.content.recent-tr-page
     // errors
     - if @user_recent_transaction.errors.full_messages.count > 0
       .row
-        .col-xs-12.align-center.alert.alert-danger
+        .col-xs-12.align-center.alert.alert-danger data-error='1'
           ul
             - @user_recent_transaction.errors.each do |attribute, err_msg|
               - if attribute == :'feedback.service_quality_and_comments'
