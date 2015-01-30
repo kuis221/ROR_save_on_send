@@ -17,6 +17,7 @@ section.content.recent-tr-page
         h3= t('.see_how_much')
         p.align-center= t('.enter_info')
     
+    // errors
     - if @user_recent_transaction.errors.full_messages.count > 0
       .row
         .col-xs-12.align-center.alert.alert-danger
@@ -33,6 +34,8 @@ section.content.recent-tr-page
     .row
       .col-xs-12
         = form_for(@user_recent_transaction, url: user_recent_transaction_path, html: {class: 'form-horizontal user_recent_transaction', role: 'form'}) do |f|
+
+          // select country
           = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: @user_recent_transaction, label_class: 'col-sm-5', control_class: 'col-sm-7'}
           
           // date
@@ -48,7 +51,7 @@ section.content.recent-tr-page
           .form-group
             = f.label :amount_sent, class: 'col-sm-5 control-label'
             .col-sm-3
-              .input-group
+              .input-group.input-group-fix
                 .input-group-addon
                   i.fa.fa-usd.fa-fw
                 = money_field f, @user_recent_transaction, :amount_sent, 'form-control mask-money-sent'
@@ -83,7 +86,7 @@ section.content.recent-tr-page
           .form-group
             = f.label :amount_received, class: 'col-sm-5 control-label'
             .col-sm-3
-              .input-group
+              .input-group.input-group-fix
                 .input-group-addon#amount_receive_currency
                   - if @prefered_currency && @prefered_currency.size == 1
                     i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || @prefered_currency.first).downcase]}
@@ -156,16 +159,10 @@ section.content.recent-tr-page
           .form-group
             = f.label :fees_for_sending, class: 'col-sm-5 control-label'
             .col-sm-3
-              .input-group
+              .input-group.input-group-fix
                 .input-group-addon
                   i.fa.fa-usd.fa-fw
                 = money_field f, @user_recent_transaction, :fees_for_sending, 'form-control mask-money-fees'
-          
-          // fees for receiving
-            .form-group
-              = f.label :fees_for_receiving, class: 'col-sm-5 control-label'
-              .col-sm-3
-                = f.text_field :fees_for_receiving, class: 'form-control'
 
           // send to receive duration
           .form-group
@@ -173,8 +170,8 @@ section.content.recent-tr-page
             .col-sm-5
               .row
                 .col-sm-3
-                  = f.text_field :send_to_receive_duration, class: 'form-control mask-minutes', placeholder: '0'
-                .col-sm-10
+                  = f.text_field :send_to_receive_duration, class: 'form-control mask-minutes input-group-fix', placeholder: '0'
+                .col-sm-12
                   = f.collection_radio_buttons(:send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, :first, :last, {}, {class: ''}) do |b|
                     = b.label( class: "radio-inline", title: b.text )
                       = b.radio_button

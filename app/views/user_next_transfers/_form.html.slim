@@ -46,9 +46,10 @@
                     = b.radio_button
                     i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
 
+      // amount send
       .form-group *{:data => {target_amount: 'send'}, class: "#{'hide' if display_amount_receive}"}
         .col-sm-3.col-sm-offset-5 
-          .input-group.input-money
+          .input-group.input-group-fix
             .input-group-addon
               i.fa.fa-usd.fa-fw
             = money_field f, @user_next_transfer, :amount_send, 'form-control mask-money-sent'
@@ -56,7 +57,7 @@
       // amount receive
       .form-group *{:data => {target_amount: 'receive'}, class: "#{'hide' if !display_amount_receive}"}
         .col-sm-3.col-sm-offset-5
-          .input-group.input-money
+          .input-group.input-group-fix
             .input-group-addon#amount_receive_currency
               - if @prefered_currency || @user_next_transfer.receive_currency.present?
                 i.fa.fa-fw *{:class => ["fa-"+(@user_next_transfer.receive_currency || @prefered_currency.first).downcase]}

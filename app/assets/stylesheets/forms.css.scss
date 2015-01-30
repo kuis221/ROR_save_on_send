@@ -68,8 +68,12 @@ form {
   margin: 0 auto;
 }
 .form-horizontal {
+  .input-group-fix {
+    width: 150px;
+    margin: 0 auto;
+  }
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     
     > div {
       text-align: center;
@@ -144,9 +148,10 @@ form {
   .form-horizontal {
     margin: 0;
 
+    .input-group-fix {
+      margin: 0;
+    }
     .form-group {
-      margin-bottom: 20px;
-
       > div {
         text-align: left;
       }
