@@ -1,7 +1,7 @@
 zh-CN:
   notice:
     best_rate: 恭喜！您最近调任使用的最佳方法！
-    save_on_transaction:  其他用户保存 <span>%{saving} %{currency}</span> 在这样的交易
+    save_on_transaction:  其他用户保存 <span>%{saving}&nbsp;%{currency}</span> 在这样的交易
     thanks_for_feedback: 感谢您的反馈！
   layouts:
     application:

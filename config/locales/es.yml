@@ -1,7 +1,7 @@
 es:
   notice:
     best_rate: ¡Enhorabuena! Su transferencia reciente utilizó el mejor enfoque!
-    save_on_transaction: Otros usuarios guardan <span>%{saving} %{currency}</span> en dicha transacción
+    save_on_transaction: Otros usuarios guardan <span>%{saving}&nbsp;%{currency}</span> en dicha transacción
     thanks_for_feedback: Gracias por su colaboración
   layouts:
     application:
