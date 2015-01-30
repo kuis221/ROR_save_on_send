@@ -21,11 +21,15 @@
 
 
 			// Set initial values
-			self.data.country = ($.cookie("money_transfer_destination_id")) ? $.cookie("money_transfer_destination_id") : $('[name="user_next_transfer[money_transfer_destination_id]"]:checked').val();
+			self.data.country = $('[name="user_next_transfer[money_transfer_destination_id]"]:checked').val();
 	    	self.show_hide_receive_currency();
 			
 
 		    $('[name="user_next_transfer[receive_currency]"]').click(function() {
+		    	$('#amount_receive_currency').html($('<i class="fa fa-fw fa-'+$(this).val().toLowerCase()+'">'));
+		    });
+
+		    $('[name="user_recent_transaction[currency]"]').click(function() {
 		    	$('#amount_receive_currency').html($('<i class="fa fa-fw fa-'+$(this).val().toLowerCase()+'">'));
 		    });
 		
@@ -38,6 +42,11 @@
 		
 
 		    $('[name="user_next_transfer[money_transfer_destination_id]"]').change(function() {
+		    	self.distination_change(this);
+		    	self.show_hide_receive_currency();
+		    });
+
+		    $('[name="user_recent_transaction[money_transfer_destination_id]"]').change(function() {
 		    	self.distination_change(this);
 		    	self.show_hide_receive_currency();
 		    });

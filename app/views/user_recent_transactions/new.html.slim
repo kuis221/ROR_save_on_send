@@ -48,7 +48,7 @@ section.content.recent-tr-page
           .form-group
             = f.label :amount_sent, class: 'col-sm-5 control-label'
             .col-sm-3
-              .input-group.input-money
+              .input-group
                 .input-group-addon
                   i.fa.fa-usd.fa-fw
                 = money_field f, @user_recent_transaction, :amount_sent, 'form-control mask-money-sent'
@@ -71,7 +71,7 @@ section.content.recent-tr-page
           - else
             - Country.all.each do |country|
               - if country.receive_currency.size > 1
-                .form-group.hidden.receive_currency *{id: "receive_currency_#{country.name.parameterize.downcase}"}
+                .form-group.hidden.receive_currency *{id: "receive_currency_#{country.id}"}
                   = f.label :currency, class: 'col-sm-5 control-label'
                   .col-sm-3
                     = f.collection_radio_buttons(:currency, country.receive_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
@@ -83,8 +83,8 @@ section.content.recent-tr-page
           .form-group
             = f.label :amount_received, class: 'col-sm-5 control-label'
             .col-sm-3
-              .input-group.input-money.input-money-lg
-                .input-group-addon#amount_received_currency
+              .input-group
+                .input-group-addon#amount_receive_currency
                   - if @prefered_currency && @prefered_currency.size == 1
                     i.fa.fa-fw *{:class => ["fa-"+(@user_recent_transaction.currency || @prefered_currency.first).downcase]}
                   - elsif @user_recent_transaction.currency
@@ -156,7 +156,7 @@ section.content.recent-tr-page
           .form-group
             = f.label :fees_for_sending, class: 'col-sm-5 control-label'
             .col-sm-3
-              .input-group.input-money
+              .input-group
                 .input-group-addon
                   i.fa.fa-usd.fa-fw
                 = money_field f, @user_recent_transaction, :fees_for_sending, 'form-control mask-money-fees'

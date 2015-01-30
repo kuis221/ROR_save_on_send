@@ -17,7 +17,6 @@
 //= require bootstrap-datetimepicker
 //= require turbolinks
 
-//= require vendors/jquery.cookie
 //= require vendors/jquery.mask.min
 //= require vendors/jquery.rating.pack
 //= require vendors/jquery.tablesaw
