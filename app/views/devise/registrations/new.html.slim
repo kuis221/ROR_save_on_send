@@ -31,7 +31,7 @@ section.content.sign-up-page#sign_up
             .checkbox
               label
                 = f.check_box :accept_terms
-                | #{User.human_attribute_name(:accept_terms)}
+                | #{User.human_attribute_name(:accept_terms).html_safe}
 
             // actions
             .form-group

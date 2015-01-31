@@ -7,65 +7,66 @@ section.content-header
 section.content.text-left
   .container
     .row
-      p
-        | tenga en cuenta que nuestro sitio web está en versión beta y necesitamos su colaboración
-          para mejorarlo; por favor envíenos un correo electrónico si algo no está funcionando
-          adecuadamente, si piensa que alguna información en este sitio web es inexacta o alguna
-          sugerencia de mejora en #{link_to 'admin@saveonsend.com', 'mailto: admin@saveonsend.com'}
-      br
-    
-      .panel.panel-primary
-        .panel-heading Paso 1: Inscripción
-        .panel-body
-          | necesitamos una manera de confirmar que todos los usuarios son personas reales que
-            realmente están buscando ayuda o está buscando para ayudar a otros a identificar a
-            sí mismo a través del registro de correo electrónico, facebook, o google + identificar
-            el país donde enviar dinero con mayor frecuencia por lo que podría personalizar la
-            visualización de información de ese país específico después de hacer clic en "enviar",
-            esperar a que un correo electrónico de nosotros en su bandeja de entrada de correo
-            electrónico - cuando está recibido, haga clic en el enlace de ese correo electrónico
-            para completar el registro
-    
-      .panel.panel-primary#step_2
-        .panel-heading Paso 2: Transacción reciente
-        .panel-body
-          | este paso le dirá si usted podría haber ahorrado dinero en su última transacción con un
-            diferente proveedor o otro método de pago completan cada campo la mayor precisión
-            posible; si no está seguro, por favor verifica los registros y pregúntele a su destinatario
-            dinero para detalles después de hacer clic en "enviar", busque el número de confirmación
-            o de ahorros que usted que ya se utiliza el mejor enfoque para el envío de dinero
-    
-      .panel.panel-primary
-        .panel-heading Paso 3: A continuación transacción
-        .panel-body
-          p
-            | este paso le mostrará los mejores proveedores para su próxima transacción con su preferido
-              forma de pago; sino que también le mostrará si un método alternativo de pago si lo haría
-              ahorrar aún más en su próxima transferencia de dinero se puede seleccionar si desea enviar
-              una cierta cantidad o si desea que su receptor para recibir una cierta cantidad si el
-              destinatario vive en un país que permite recibir dinero en más de una moneda, puede
-              especificar qué moneda desea que el destinatario para recibir fondos en después de hacer
-              clic en "enviar", busca la tabla de salida con los mejores proveedores disponibles para su
-              próximo traslado - si se ha utilizado un proveedor que envía dinero a un costo menor y no
-              está en la tabla de salida, por favor, envíe dicha información de conformidad
-              #{link_to 'Paso 2: transacción reciente','#step_2'} - esto ayudará otros usuarios ahorrar
-              dinero en su próxima transacción, y que van a hacer lo mismo para usted en la tabla de
-              salida, verá para cada proveedor en el orden de menos a más caro
-          ol
-            li
-              | la cantidad de dinero que tendrá que tener por adelantado (la cantidad de enviar,
-                además de cualquier los honorarios por un proveedor),
-            li
-              | "Costo real" que muestra en porcentajes la cantidad de dinero en total va a gastar
-                en este transacción,
-            li cuánto recibirá el destinatario,
-            li tiempo de espera, en horas, antes de que sus fondos se convertirá a disposición del destinatario,
-            li
-              | realimentación agregado en este proveedor por los usuarios como usted Comparando "costo real"
-                de diversos proveedores, puede decidir si vale la pena para usted para cambiar de proveedor
-                si hay una manera menos costosa de enviar dinero a través de un pago diferente o recibir método,
-                verá un "destacado" fila con esa información; mediante la comparación de "costo real" de este
-                método frente a lo que ha introducido, puede decidir si vale la pena para usted para cambiar el
-                método de envío y / o recepción de dinero como Wellby click en "estrellas" en el Servicio
-                Columna de Calidad o en el logo de Proveedores, serán llevados a la página donde se puede leer
-                comentarios sobre este proveedor por otros usuarios
+      .col-xs-12
+        p
+          | tenga en cuenta que nuestro sitio web está en versión beta y necesitamos su colaboración
+            para mejorarlo; por favor envíenos un correo electrónico si algo no está funcionando
+            adecuadamente, si piensa que alguna información en este sitio web es inexacta o alguna
+            sugerencia de mejora en #{link_to 'admin@saveonsend.com', 'mailto: admin@saveonsend.com'}
+        br
+      
+        .panel.panel-primary
+          .panel-heading Paso 1: Inscripción
+          .panel-body
+            | necesitamos una manera de confirmar que todos los usuarios son personas reales que
+              realmente están buscando ayuda o está buscando para ayudar a otros a identificar a
+              sí mismo a través del registro de correo electrónico, facebook, o google + identificar
+              el país donde enviar dinero con mayor frecuencia por lo que podría personalizar la
+              visualización de información de ese país específico después de hacer clic en "enviar",
+              esperar a que un correo electrónico de nosotros en su bandeja de entrada de correo
+              electrónico - cuando está recibido, haga clic en el enlace de ese correo electrónico
+              para completar el registro
+      
+        .panel.panel-primary#step_2
+          .panel-heading Paso 2: Transacción reciente
+          .panel-body
+            | este paso le dirá si usted podría haber ahorrado dinero en su última transacción con un
+              diferente proveedor o otro método de pago completan cada campo la mayor precisión
+              posible; si no está seguro, por favor verifica los registros y pregúntele a su destinatario
+              dinero para detalles después de hacer clic en "enviar", busque el número de confirmación
+              o de ahorros que usted que ya se utiliza el mejor enfoque para el envío de dinero
+      
+        .panel.panel-primary
+          .panel-heading Paso 3: A continuación transacción
+          .panel-body
+            p
+              | este paso le mostrará los mejores proveedores para su próxima transacción con su preferido
+                forma de pago; sino que también le mostrará si un método alternativo de pago si lo haría
+                ahorrar aún más en su próxima transferencia de dinero se puede seleccionar si desea enviar
+                una cierta cantidad o si desea que su receptor para recibir una cierta cantidad si el
+                destinatario vive en un país que permite recibir dinero en más de una moneda, puede
+                especificar qué moneda desea que el destinatario para recibir fondos en después de hacer
+                clic en "enviar", busca la tabla de salida con los mejores proveedores disponibles para su
+                próximo traslado - si se ha utilizado un proveedor que envía dinero a un costo menor y no
+                está en la tabla de salida, por favor, envíe dicha información de conformidad
+                #{link_to 'Paso 2: transacción reciente','#step_2'} - esto ayudará otros usuarios ahorrar
+                dinero en su próxima transacción, y que van a hacer lo mismo para usted en la tabla de
+                salida, verá para cada proveedor en el orden de menos a más caro
+            ol
+              li
+                | la cantidad de dinero que tendrá que tener por adelantado (la cantidad de enviar,
+                  además de cualquier los honorarios por un proveedor),
+              li
+                | "Costo real" que muestra en porcentajes la cantidad de dinero en total va a gastar
+                  en este transacción,
+              li cuánto recibirá el destinatario,
+              li tiempo de espera, en horas, antes de que sus fondos se convertirá a disposición del destinatario,
+              li
+                | realimentación agregado en este proveedor por los usuarios como usted Comparando "costo real"
+                  de diversos proveedores, puede decidir si vale la pena para usted para cambiar de proveedor
+                  si hay una manera menos costosa de enviar dinero a través de un pago diferente o recibir método,
+                  verá un "destacado" fila con esa información; mediante la comparación de "costo real" de este
+                  método frente a lo que ha introducido, puede decidir si vale la pena para usted para cambiar el
+                  método de envío y / o recepción de dinero como Wellby click en "estrellas" en el Servicio
+                  Columna de Calidad o en el logo de Proveedores, serán llevados a la página donde se puede leer
+                  comentarios sobre este proveedor por otros usuarios
