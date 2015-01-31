@@ -143,7 +143,9 @@ es:
         zipcode: Código postal
         money_transfer_destination_id: Destino Transferencia de dinero
         accept_emails: Envíame una carta electrónica actualizaciones de SaveOnSend
-        accept_terms: Acepto de SaveOnSend Términos de Servicio y Política de Privacidad
+        accept_terms: Acepto de SaveOnSend 
+          <a href="/terms" target="_blank">Términos de Servicio</a> y 
+          <a href="/privacy" target="_blank">Política de Privacidad</a>
       user/recent_transaction:
         date: Fecha
         currency: moneda Recieved

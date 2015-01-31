@@ -32,6 +32,9 @@ en:
         <h3>Help others too!</h3>
         <p>Share your experience. Help us improve the site and help others.</p>
         <p><a href="mailto:admin@saveonsend.com">Tell us how we can get better</a></p>
+    footer:
+      terms: Terms   
+      privacy: Privacy
     signup_header:
       title_html: "Register for FREE, so you can:"
       get_notified: "Get notified of price changes and new low-cost providers"
@@ -149,7 +152,9 @@ en:
         zipcode: Zipcode
         money_transfer_destination_id: Sending money to
         accept_emails: Email me updates from SaveOnSend
-        accept_terms: I accept SaveOnSend's Terms of Service and Privacy Policy
+        accept_terms: I accept SaveOnSend's 
+          <a href="/terms" target="_blank">Terms of Service</a> and 
+          <a href="/privacy" target="_blank">Privacy Policy</a>
       user/recent_transaction:
         date: Date
         currency: Receiving currency
