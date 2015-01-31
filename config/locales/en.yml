@@ -32,6 +32,9 @@ en:
         <h3>Help others too!</h3>
         <p>Share your experience. Help us improve the site and help others.</p>
         <p><a href="mailto:admin@saveonsend.com">Tell us how we can get better</a></p>
+    footer:
+      terms: Terms   
+      privacy: Privacy
     signup_header:
       title_html: "Register for FREE, so you can:"
       get_notified: "Get notified of price changes and new low-cost providers"

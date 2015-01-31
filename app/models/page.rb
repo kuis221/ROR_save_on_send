@@ -1,13 +1,15 @@
 class Page
   PAGES = {
     'en' => {
-      how_to: 'how_to_en.html.slim'
+      how_to:   'how_to_en.html.slim',
+      privacy:  'privacy.html.slim',
+      terms:    'terms.html.slim'
     },
     'es' => {
-      how_to: 'how_to_es.html.slim'
+      how_to:   'how_to_es.html.slim'
     },
     'zh-CN' => {
-      how_to: 'how_to_zh_cn.html.slim'
+      how_to:   'how_to_zh_cn.html.slim'
     }
   }
 
