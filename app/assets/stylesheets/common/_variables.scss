@@ -17,7 +17,7 @@ $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              #191a1b !default;                    //
 $gray:                   #232323 !default;
 $gray-light:             lighten($gray-base, 46.7%) !default; // #777
-$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+$gray-lighter:           #eeeeee !default;
 
 $blue:                  #113c5e;
 $blue-dark:             #0b2840;
@@ -403,9 +403,9 @@ $navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 1
 $navbar-default-brand-hover-bg:            transparent !default;
 
 // Navbar toggle
-$navbar-default-toggle-hover-bg:           #ddd !default;
-$navbar-default-toggle-icon-bar-bg:        #888 !default;
-$navbar-default-toggle-border-color:       #ddd !default;
+$navbar-default-toggle-hover-bg:           #eee !default;
+$navbar-default-toggle-icon-bar-bg:        #191a1b !default;
+$navbar-default-toggle-border-color:       #191a1b !default;
 
 
 // Inverted navbar

@@ -24,7 +24,6 @@ en:
       sign_up: Join now
       sign_in: Log in
       sign_out: Sign out
-      notice_test_version: This is a test version — we need your feedback to get it right! Write to
   shared:
     header: *application
     feedback:
@@ -35,6 +34,8 @@ en:
     footer:
       terms: Terms   
       privacy: Privacy
+    notification:
+      notice_test_version: This is a test version — we need your feedback to get it right! Write to      
     signup_header:
       title_html: "Register for FREE, so you can:"
       get_notified: "Get notified of price changes and new low-cost providers"

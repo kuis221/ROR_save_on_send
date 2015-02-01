@@ -20,13 +20,16 @@ html lang="en"
     = javascript_include_tag "application"
 
   body
+    = render 'shared/notification'
     .container-fluid
       .row.row-offcanvas.row-offcanvas-right
         = render 'shared/header'
     
         = yield
         
-        = render 'shared/sidebar'
+        .sidebar-offcanvas#sidebar
+          ul.nav.nav-pills.nav-stacked
+            = render 'shared/sidebar'
 
     = render 'shared/footer'
 

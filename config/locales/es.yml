@@ -24,7 +24,6 @@ es:
       sign_up: Suscríbete ahora
       sign_in: iniciar sesión
       sign_out: Salir
-      notice_test_version: Esta es una versión de prueba - necesitamos su colaboración para hacerlo bien! Escriba a
   shared:
     header: *application
     feedback:
@@ -32,6 +31,11 @@ es:
         <h3>Ayuda a los demás también!</h3>
         <p>Comparte tu experiencia. Ayúdanos a mejorar el sitio y ayudar a los demás.</p>
         <p><a href="mailto:admin@saveonsend.com">Díganos cómo podemos mejorar</a></p>
+    footer:
+      terms: Terms   
+      privacy: Privacy
+    notification:
+      notice_test_version: Esta es una versión de prueba - necesitamos su colaboración para hacerlo bien! Escriba a      
     signup_header:
       title_html: "Regístrese de forma gratuita, para que pueda:"
       get_notified: ¡Entérate de los cambios de precios y los nuevos proveedores de bajo costo

@@ -26,9 +26,12 @@
 					scrollTop: $(".alert.alert-danger").offset().top
 				}, 1000);
 			}
+
 			
+			// Expand menu on mobile
 			$('[data-toggle="offcanvas"]').click(function () {
-				$('.row-offcanvas').toggleClass('active')
+				$('.row-offcanvas').toggleClass('active');
+				$('body, html').toggleClass('fix');
 			});
 			
 

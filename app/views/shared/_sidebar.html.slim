@@ -1,18 +1,16 @@
-.sidebar-offcanvas#sidebar
-  .list-group
-    - if current_user && current_user.recent_transactions.present?
-      = link_to t('.add_recent_transaction'), new_user_recent_transaction_path, class: 'list-group-item'
-      = link_to t('.next_transfer'), new_user_next_transfer_path, class: 'list-group-item'
-      = link_to t('.help_others'), "#", "data-toggle" => "modal", "data-target" => "#referral_dialog", class: 'list-group-item'
-      = link_to t('.how_to'), how_to_path, class: 'list-group-item'
-    
-    - if user_signed_in?
-      = link_to t('.sign_out'), destroy_user_session_path, method: :delete, class: 'list-group-item'
-      span.list-group-item.navbar-text= current_user.full_name
-    
-    - else
-      = link_to t('.sign_in'), new_user_session_path, class: 'list-group-item active'
-      = link_to t('.sign_up'), new_user_registration_path, class: 'list-group-item'
-      = link_to t('.how_to'), how_to_path, class: 'list-group-item'
-      = link_to t('.next_transfer'), '/#new_user_next_transfer', class: 'list-group-item'
-      = link_to t('.recent_transaction'), new_user_recent_transaction_path, class: 'list-group-item'
+- if current_user && current_user.recent_transactions.present?
+  li= link_to t('.add_recent_transaction'), new_user_recent_transaction_path
+  li= link_to t('.next_transfer'), new_user_next_transfer_path
+  li= link_to t('.help_others'), "#", "data-toggle" => "modal", "data-target" => "#referral_dialog"
+  li= link_to t('.how_to'), how_to_path
+
+- if user_signed_in?
+  li.navbar-text= current_user.full_name
+  li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
+
+- else
+  li= link_to t('.sign_up'), new_user_registration_path
+  li= link_to t('.how_to'), how_to_path
+  li= link_to t('.next_transfer'), '/#new_user_next_transfer'
+  li= link_to t('.recent_transaction'), new_user_recent_transaction_path
+  li.active= link_to t('.sign_in'), new_user_session_path

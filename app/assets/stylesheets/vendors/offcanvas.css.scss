@@ -3,11 +3,6 @@ body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
-.sidebar-offcanvas {
-	padding-left: 20px;
-  display: none;
-}
-
 @media screen and (max-width: 991px) {
   .sidebar-offcanvas {
     display: block;
