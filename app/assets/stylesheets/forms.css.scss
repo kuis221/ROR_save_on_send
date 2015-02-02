@@ -6,6 +6,9 @@
   &.align-center {
     margin-bottom: 15px;  
   }
+  ul {
+    padding-left: 20px;
+  }
 }
 
 
@@ -69,7 +72,7 @@ form {
 }
 .form-horizontal {
   .input-group-fix {
-    width: 150px;
+    width: 155px;
     margin: 0 auto;
   }
   .form-group {

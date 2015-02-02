@@ -6,9 +6,8 @@ footer {
   line-height: $footerHeight;
   background-color: #282828;
   font-size: 12px;
-  bottom: 0;
+  margin-top: -$footerHeight;
   min-height: $footerHeight;
-  position: absolute;
   width: 100%;
 
   p {

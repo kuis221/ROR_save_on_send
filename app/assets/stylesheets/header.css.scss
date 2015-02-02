@@ -9,23 +9,34 @@
   }
   .nav-pills {
     display: inline-block;
-    border-top: 1px dotted #ddd;
-    padding: 7px 0 0;
-
+    margin-top: 14px;
+  
     > li {
+      margin-left: 5px;
+
       > a {
         border-radius: 12px;
-        border-color: transparent;
-        color: #191a1b;
         padding: 6px 15px;
-        font-size: 16px;
       }
-      &.active > a {
-        color: #fff;
+    }
+  }
+}
 
-        &:hover {
-          background-color: #31de56;
-        }
+
+/* sidebar */
+.sidebar-offcanvas {
+  border-left: solid 1px #ddd;
+  background: #fff;
+  display: none;
+  height: 100%;
+
+  .nav-pills {  
+    > li {
+      border-bottom: solid 1px #ddd;
+      margin: 0;
+
+      > a {
+        border-radius: 0;
       }
     }
   }
@@ -109,27 +120,9 @@
       padding-top: 11px;
       width: auto;
     }
-    .nav-pills {
-      > li {
-        margin-left: 5px;
-
-        > a {
-          padding: 6px 23px;
-        }
-      }
-    }
   }
 }
 @media only screen and (min-width: 768px) {
-  #header {
-    .nav-pills {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 0;
-      border: none;
-    }
-  }
-
   .content-header {  
     h2 {
       span {

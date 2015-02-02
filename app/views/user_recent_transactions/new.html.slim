@@ -20,7 +20,7 @@ section.content.recent-tr-page
     // errors
     - if @user_recent_transaction.errors.full_messages.count > 0
       .row
-        .col-xs-12.align-center.alert.alert-danger
+        .col-xs-12.align-center.alert.alert-danger data-error='1'
           ul
             - @user_recent_transaction.errors.each do |attribute, err_msg|
               - if attribute == :'feedback.service_quality_and_comments'
@@ -39,7 +39,7 @@ section.content.recent-tr-page
           .form-group
             = f.label :date, class: 'col-sm-5 control-label'
             .col-sm-3
-              .input-group.date
+              .input-group.input-group-fix.date
                 = f.text_field :date, value: @user_recent_transaction.date.present? ? @user_recent_transaction.date.strftime('%m/%d/%Y'): '', class: 'form-control mask-date'
                 span.input-group-addon
                   i.fa.fa-calendar

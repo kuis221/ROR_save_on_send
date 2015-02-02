@@ -24,7 +24,6 @@ en:
       sign_up: Join now
       sign_in: Log in
       sign_out: Sign out
-      notice_test_version: This is a test version — we need your feedback to get it right! Write to
   shared:
     header: *application
     feedback:
@@ -35,11 +34,19 @@ en:
     footer:
       terms: Terms   
       privacy: Privacy
+    notification:
+      notice_test_version: This is a test version — we need your feedback to get it right! Write to      
     signup_header:
       title_html: "Register for FREE, so you can:"
       get_notified: "Get notified of price changes and new low-cost providers"
       earn_points: "Earn valuable points and status for participation"
       lock_free: "Lock-in FREE access to the information on the website"
+    sidebar:
+      sign_in: Log in
+      sign_up: Join now
+      how_to: How it works
+      next_transfer: Find Best Transfer
+      recent_transaction: Check Last Transfer
   service_providers:
     show:
       go_to_provider: I am ready to send money
