@@ -28,4 +28,11 @@
       margin: 0;
     } 
   }
+  &.panel-turquoise {
+    .panel-heading {
+      background-color: #1abc9c;
+      border-color: #1abc9c;
+      color: #fff;
+    }
+  }
 }
