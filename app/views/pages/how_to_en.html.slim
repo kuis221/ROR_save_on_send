@@ -8,18 +8,15 @@ section.content.text-left
   .container
     .row
       .col-xs-12.col-md-10.col-md-offset-1
-        p.well.text-center
-          | Please note that our website is in Beta version and we need your feedback to improve it; please email us at #{link_to 'admin@saveonsend.com', 'mailto: admin@saveonsend.com'} if something is not working properly, if you think any information on this website is inaccurate or if you have any suggestions for improvement.
-        br
-      
+        p.well.text-center Please note that our website is in Beta version and we need your feedback to improve it; please email us at #{link_to 'admin@saveonsend.com', 'mailto: admin@saveonsend.com'} if something is not working properly, if you think any information on this website is inaccurate or if you have any suggestions for improvement.
         .panel.panel-primary
           .panel-heading
-            h4.text-center Find Best Trasnfer
+            h4.text-center Find Best Transfer
           .panel-body
             p This function will show you the best providers for your next transaction using your preferred method of payment; it will also show you if an alternative method of payment if it would save you even more on your next money transfer.
             p You can select whether you want to send a certain amount or if you want your recipient to receive a certain amount. If your recipient lives in a country which allows to receive money in more than one currency, you can specify which currency you want the recipient to receive funds in. 
             p After you click "Submit", look for the output table with best providers available for your next transfer ranked from less to more expensive. By comparing "Margin" of various providers, you can decide if it is worth for you to switch providers. If there is a less expensive way to send money using a different sending or receiving method, you will see a "highlighted" row with that information &mdash; by comparing "Margin" of that method vs. what you entered, you can decide if it is worth for you to switch the method of sending and/or receiving money as well.
-            p If you personally used a provider which sends money at a lower cost and it is not in the output table, please submit that information under "Check Last Transfer" &mdash; this will help other users to save money on their next transaction, and they will do the same for you.
+            p If you personally used a provider which sends money at a lower cost and it is not in the output table, please submit that information under #{link_to '"Check Last Transfer"', new_user_recent_transaction_path} &mdash; this will help other users to save money on their next transaction, and they will do the same for you.
             p The output table has the following fields:
             ul
               li Provider: company name; clicking on logo takes you to another page where you could read reviews on this provider by other users.
@@ -30,7 +27,7 @@ section.content.text-left
               li Duration (hours): expected time, in hours, before funds will become available to your recipient.
               li Service quality: aggregated feedback on this provider by users like you by clicking on "stars" takes you to another page where you could read reviews on this provider by other users.
       
-        .panel.panel-primary#step_2
+        .panel.panel-primary
           .panel-heading
             h4.text-center Check Last Transfer
           .panel-body
@@ -38,6 +35,6 @@ section.content.text-left
       
         .panel.panel-primary
           .panel-heading
-            h4.text-center Registrater to save
+            h4.text-center Register to save
           .panel-body
             | We need a way to confirm that all users who leave comments and ask questions are real people who are genuinely looking for help or are looking to help others. Identify yourself via email or mobile number registration. After you click “Send for verification", wait for an email or sms from us in your email or phone inbox &mdash; when received, click on the link in that email or sms to complete registration.

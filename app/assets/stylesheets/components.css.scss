@@ -4,6 +4,8 @@
 /* nav-pills */
 .nav-pills {
   > li {
+    margin-bottom: 0;
+    
     > a {
       color: #191a1b;
       font-size: 16px;
@@ -15,5 +17,15 @@
         background-color: #31de56;
       }
     }
+  }
+}
+
+
+/* panel */
+.panel {
+  .panel-heading {
+    h4 {
+      margin: 0;
+    } 
   }
 }
