@@ -21,8 +21,8 @@ es:
       next_transfer: transferencia Siguiente
       help_others: Ayudar a los demás
       how_to: ¿Cómo funciona?
-      sign_up: Suscríbete ahora
-      sign_in: iniciar sesión
+      sign_up: Unirse
+      sign_in: Iniciar
       sign_out: Salir
   shared:
     header: *application
@@ -42,11 +42,11 @@ es:
       earn_points: Gana puntos valiosos y el estado de participación
       lock_free: Bloqueo de acceso gratuito a la información en el sitio web
     sidebar:
-      sign_in: Iniciar sesión
-      sign_up: Suscríbete ahora
+      sign_in: Iniciar
+      sign_up: Unirse
       how_to: ¿Cómo funciona?
-      next_transfer: Encontrar el mejor de Transferencia
-      recent_transaction: Compruebe Última Transferencia
+      next_transfer: Encontrar Mejor Transfer
+      recent_transaction: Compruebe Última Transfer
   service_providers:
     show:
       go_to_provider: Listo para enviar dinero
@@ -92,9 +92,9 @@ es:
         three: ¡Entérate de los cambios de precios y los nuevos proveedores de bajo costo
         four: Gana puntos valiosos y el estado de participación
       form_title: Vamos a encontrar el mejor proveedor para su próxima transferencia
-      recent_transaction: Compruebe Última Transferencia
-      next_transfer: Encontrar el mejor de Transferencia
-      registration: Registro para guardarlo
+      recent_transaction: Última Transfer
+      next_transfer: Mejor Transfer
+      registration: Registrarse
     show:
       title: Vamos a encontrar el mejor proveedor para su próxima transferencia
       provider_name: Proveedor
