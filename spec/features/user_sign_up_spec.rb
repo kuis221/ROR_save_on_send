@@ -11,7 +11,7 @@ feature 'Sign up' do
     #fill_in 'Last name', with: Faker::Name.last_name
     #fill_in 'Zipcode', with: Faker::Address.zip_code
     
-    choose 'india'
+    choose "user_money_transfer_destination_id_#{Country.find_by(name: 'India').id}"
     check 'Email me updates from SaveOnSend'
     check "I accept SaveOnSend's Terms of Service and Privacy Policy"
 
