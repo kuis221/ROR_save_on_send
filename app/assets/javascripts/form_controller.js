@@ -18,13 +18,29 @@
 			    showToday: true,
 			    pickTime: false
 			});
+			
+			
+			// If error message exists
+			if ($('.alert.alert-danger').data('error') == 1) {
+				$('html, body').animate({
+					scrollTop: $(".alert.alert-danger").offset().top
+				}, 1000);
+			}
 
+			
+			// Expand menu on mobile
+			$('[data-toggle="offcanvas"]').click(function () {
+				$('.row-offcanvas').toggleClass('active');
+				$('body, html').toggleClass('fix');
+			});
+			
 
 			// Set initial values
 			self.data.country = $('[name="user_next_transfer[money_transfer_destination_id]"]:checked').val();
 	    	self.show_hide_receive_currency();
 			
 
+			// Choose received currency
 		    $('[name="user_next_transfer[receive_currency]"]').click(function() {
 		    	$('#amount_receive_currency').html($('<i class="fa fa-fw fa-'+$(this).val().toLowerCase()+'">'));
 		    });
@@ -33,7 +49,8 @@
 		    	$('#amount_receive_currency').html($('<i class="fa fa-fw fa-'+$(this).val().toLowerCase()+'">'));
 		    });
 		
-		
+
+			// Link from output table		
 		    $('[href="#apply_payment_methods"]').click(function() {
 				$('#user_next_transfer_originating_source_of_funds_id_' + $('.send_method_id', $(this).parent()).text()).attr('checked', true);
 				$('#user_next_transfer_destination_preference_for_funds_id_' + $('.receive_method_id', $(this).parent()).text()).attr('checked', true);
@@ -41,6 +58,7 @@
 		    });
 		
 
+			// Change destination
 		    $('[name="user_next_transfer[money_transfer_destination_id]"]').change(function() {
 		    	self.distination_change(this);
 		    	self.show_hide_receive_currency();

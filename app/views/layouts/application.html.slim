@@ -20,15 +20,22 @@ html lang="en"
     = javascript_include_tag "application"
 
   body
-    = render 'shared/header'
+    = render 'shared/notification'
+    .container-fluid
+      .row.row-offcanvas.row-offcanvas-right
+        = render 'shared/header'
     
-    - if flash[:notice].present?
-      .container
-        .row
-          .col-xs-12.col-sm-12
-            = flash_messages(:html, :close)
+        - if flash[:notice].present?
+          .container
+            .row
+              .col-xs-12.col-sm-12
+                = flash_messages(:html, :close)
+    
+        = yield
 
-    = yield
+        .sidebar-offcanvas#sidebar
+          ul.nav.nav-pills.nav-stacked
+            = render 'shared/sidebar'
 
     = render 'shared/footer' 
 

@@ -4,12 +4,23 @@
 html {
   position: relative;
   min-height: 100%;
+  
+  &.fix {
+    height: 100%;
+  }
 }
 body {
   text-align: center;
   background: #f9f9f9;
-  margin-bottom: $footerHeight;
   min-width: 320px;
+  
+  .container-fluid {
+    margin-bottom: $footerHeight;
+  }
+  &.fix {
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 p,

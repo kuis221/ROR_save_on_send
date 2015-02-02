@@ -24,7 +24,6 @@ zh-CN:
       sign_up: 现在加入
       sign_in: 登录
       sign_out: 登出
-      notice_test_version: 这是一个测试版本 - 我们需要您的意见得到它的权利！写
   shared:
     header: *application
     feedback:
@@ -32,6 +31,11 @@ zh-CN:
         <h3>帮助别人呢！</h3>
         <p>分享你的经历。帮助我们改善网站和帮助别人。</p>
         <p><a href="mailto:admin@saveonsend.com">告诉我们，我们怎样才能得到更好的</a></p>
+    footer:
+      terms: Terms   
+      privacy: Privacy
+    notification:
+      notice_test_version: 这是一个测试版本 - 我们需要您的意见得到它的权利！写      
     signup_header:
       title_html: "免费注册，因此您可以："
       get_notified: 价格变化和新的低成本供应商得到通知
@@ -143,6 +147,7 @@ zh-CN:
         money_transfer_destination_id: 汇款目的地
         accept_emails: 给我发电子邮件从SaveOnSend更新
         accept_terms: 我接受SaveOnSend的<a href="/terms" target="_blank">服务条款</a>和<a href="/privacy" target="_blank">隐私权政策</a>
+        about_me: 关于我的（为什么我寄钱？）
       user/recent_transaction:
         date: 日期
         currency: ：收到的货币

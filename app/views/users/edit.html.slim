@@ -4,19 +4,34 @@ h2= t('.title')
   - @user.errors.full_messages.each do |err_msg|
     .bg-warning= err_msg
 
+  // avatar
+  = f.hidden_field(:avatar_cache)
+  .form-group
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
+      = image_tag(@user.avatar_url) if @user.avatar?
+      = f.file_field(:avatar)
+  
+  // first name
+  .form-group
+    = f.label :first_name, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
+      = f.text_field :first_name, class: 'form-control'
+  // last name
+  .form-group
+    = f.label :last_name, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
+      = f.text_field :last_name, class: 'form-control'
   // zipcode
   .form-group
     = f.label :zipcode, class: 'col-xs-12 col-sm-4 control-label'
     .col-xs-6.col-sm-5.col-md-4.col-lg-3
       = f.text_field :zipcode, class: 'form-control'
-  // money_transfer_destination
+  // about_me
   .form-group
-    = f.label :money_transfer_destination_id, class: 'col-sm-4 control-label'
-    .col-sm-8
-      = f.collection_radio_buttons(:money_transfer_destination_id, Country.all.collect {|country| [ country.id, country.name ] }, :first, :last, {prompt: true, checked: Country.all.collect.first}) do |b|
-        = b.label( class: "radio-inline", title: b.text )
-          = b.radio_button
-          i *{:class => ['icon-sm', 'icon-'+b.text.parameterize.downcase]}
+    = f.label :about_me, class: 'col-xs-12 col-sm-4 control-label'
+    .col-xs-6.col-sm-5.col-md-4.col-lg-3
+      = f.text_area :about_me, class: 'form-control'
+
   // actions
   .form-group
     .col-sm-offset-4.col-sm-8
