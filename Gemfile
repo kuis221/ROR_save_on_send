@@ -65,6 +65,10 @@ gem 'money-open-exchange-rates'
 
 gem 'friendly_id', '~> 5.0.0'
 
+# image upload
+gem 'carrierwave'
+gem 'cloudinary'
+
 group :development do
   # open letter in browser
   gem 'letter_opener'

@@ -1,0 +1,15 @@
+= form_for resource, as: resource_name, url: update_user_confirmation_path, html: {method: 'patch'} do |f|
+  = devise_error_messages!
+  = hidden_field_tag :confirmation_token, @confirmation_token
+  
+  .field
+    = f.label :password
+    br
+    = f.password_field :password, autocomplete: 'off'
+  .field
+    = f.label :password_confirmation
+    br
+    = f.password_field :password_confirmation, autocomplete: 'off'
+  .actions
+    = f.submit "Confirm email"
+

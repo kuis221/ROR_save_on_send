@@ -147,6 +147,7 @@ zh-CN:
         money_transfer_destination_id: 汇款目的地
         accept_emails: 给我发电子邮件从SaveOnSend更新
         accept_terms: 我接受SaveOnSend的<a href="/terms" target="_blank">服务条款</a>和<a href="/privacy" target="_blank">隐私权政策</a>
+        about_me: 关于我的（为什么我寄钱？）
       user/recent_transaction:
         date: 日期
         currency: ：收到的货币
