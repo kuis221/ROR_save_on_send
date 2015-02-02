@@ -41,6 +41,12 @@ zh-CN:
       get_notified: 价格变化和新的低成本供应商得到通知
       earn_points: 赢取宝贵的积分和状态参加
       lock_free: 锁定在网站上免费获取信息
+    sidebar:
+      sign_in: 登录
+      sign_up: 现在加入
+      how_to: 它是如何工作的
+      next_transfer: 查找最佳传输
+      recent_transaction: 检查最后转移
   service_providers:
     show:
       go_to_provider: 准备寄钱
