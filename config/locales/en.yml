@@ -155,6 +155,7 @@ en:
         accept_terms: I accept SaveOnSend's 
           <a href="/terms" target="_blank">Terms of Service</a> and 
           <a href="/privacy" target="_blank">Privacy Policy</a>
+        about_me: About me (Why am I sending money?)
       user/recent_transaction:
         date: Date
         currency: Receiving currency

@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  
+ 
+  as :user do
+    patch '/user/confirmation' => 'confirmations#update', via: :patch, as: :update_user_confirmation
+  end
+
   devise_for :users, controllers: { 
     registrations: 'registrations',
+    confirmations: 'confirmations',
     omniauth_callbacks: 'omniauth_callbacks'
   }
   

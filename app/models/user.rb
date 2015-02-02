@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
 
   belongs_to :level, class_name: User::Level
 
+  mount_uploader :avatar, AvatarUploader  
+
   # validations
   #validates_presence_of :first_name
   #validates_presence_of :zipcode, unless: :skip_additional_info?
@@ -33,7 +35,12 @@ class User < ActiveRecord::Base
   before_validation :fill_phone, on: :create
 
   def password_required?
-    super if confirmed?
+    # Password is required if it is being set, but not for new records
+    if !persisted? 
+      false
+    else
+      !password.nil? || !password_confirmation.nil?
+    end
   end
 
   def email_required?
@@ -68,9 +75,25 @@ class User < ActiveRecord::Base
     email.blank?
   end
 
-  # FIXME we not send confirmation instruction while we don't have custom confirmation
-  # page
-  def send_confirmation_instructions
+  # new function to set the password without knowing the current password used in our confirmation controller. 
+  def attempt_set_password(params)
+    p = {}
+    p[:password] = params[:password]
+    p[:password_confirmation] = params[:password_confirmation]
+    update_attributes(p)
+  end
+  # new function to return whether a password has been set
+  def has_no_password?
+    self.encrypted_password.blank?
+  end
+
+  def password_match?
+    password == password_confirmation
+  end
+
+  # new function to provide access to protected method unless_confirmed
+  def only_if_unconfirmed
+    pending_any_confirmation {yield}    
   end
 
   def self.from_omniauth(auth)
@@ -79,7 +102,6 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20]
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
-      user.skip_confirmation!
       user.skip_additional_info!
     end
   end

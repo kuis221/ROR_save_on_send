@@ -1,0 +1,5 @@
+class AddAboutMeFieldToUsers < ActiveRecord::Migration
+  def change
+    add_column :users, :about_me, :string, limit: 1024
+  end
+end

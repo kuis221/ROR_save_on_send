@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125181739) do
+ActiveRecord::Schema.define(version: 20150202114858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,12 +133,12 @@ ActiveRecord::Schema.define(version: 20150125181739) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                         default: "", null: false
-    t.string   "encrypted_password",            default: "", null: false
+    t.string   "email",                                      default: "", null: false
+    t.string   "encrypted_password",                         default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                 default: 0,  null: false
+    t.integer  "sign_in_count",                              default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(version: 20150125181739) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",               default: 0,  null: false
+    t.integer  "failed_attempts",                            default: 0,  null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.string   "first_name"
@@ -162,7 +162,9 @@ ActiveRecord::Schema.define(version: 20150125181739) do
     t.boolean  "accept_terms"
     t.boolean  "accept_emails"
     t.integer  "level_id"
-    t.integer  "points",                        default: 0
+    t.integer  "points",                                     default: 0
+    t.string   "about_me",                      limit: 1024
+    t.string   "avatar"
   end
 
   add_index "users", ["email", "phone"], name: "index_users_on_email_and_phone", unique: true, using: :btree
