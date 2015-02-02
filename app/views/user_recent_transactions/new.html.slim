@@ -173,26 +173,6 @@ section.content.recent-tr-page
                     = b.label( class: "radio-inline", title: b.text )
                       = b.radio_button
                       = b.text
-          
-          // documentation requirements
-            .form-group
-              = f.label :documentation_requirements, class: 'col-sm-5 control-label'
-              .col-sm-7
-                label.checkbox-inline
-                  = f.check_box :documentation_requirements, {multiple: true}, 'Photo ID', ''
-                  = t('.photo_id')
-                label.checkbox-inline
-                  = f.check_box :documentation_requirements, {multiple: true}, 'Tax returns', ''
-                  = t('.tax_returns')
-                label.checkbox-inline
-                  = f.check_box :documentation_requirements, {multiple: true}, 'Job verification', ''
-                  = t('.job_verification')
-          
-          // promotion
-            .form-group
-              = f.label :promotion, class: 'col-sm-5 control-label'
-              .col-sm-5
-                = f.text_field :promotion, class: 'form-control', placeholder: t('.placeholder_promotion')
 
           // provider quality
           = f.fields_for :feedback, @user_recent_transaction.feedback || Feedback.new do |feedback|

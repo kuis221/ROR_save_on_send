@@ -32,8 +32,8 @@ zh-CN:
         <p>分享你的经历。帮助我们改善网站和帮助别人。</p>
         <p><a href="mailto:admin@saveonsend.com">告诉我们，我们怎样才能得到更好的</a></p>
     footer:
-      terms: Terms   
-      privacy: Privacy
+      terms: 条款   
+      privacy: 隐私
     notification:
       notice_test_version: 这是一个测试版本 - 我们需要您的意见得到它的权利！写      
     signup_header:
@@ -62,12 +62,16 @@ zh-CN:
   user_recent_transactions:
     new:
       title: 告诉我们你最后的转移
-      why_it_html: "<span class='lead no-marg-btm visible-xs-block'>，看看有多少你可以保存。</span><span class='lead hidden-xs'>为什么重要？</span> <span class='hidden-xs'>缺乏透明度，不断变化的成本，新的供应商使它很难知道，如果我们使用寄钱的最好方法。花1分钟，分享你的经验和帮助他人或者，也许你学习，如果你可以节省了很多你最后的转移。</span>"
+      benefits:
+        one: 费用和价格变化频繁 - 检查你是否得到了最好的交易
+        two: 帮助他人与您的见解
+        three: 赢取宝贵的积分和状态
       see_how_much: 看看有多少你可以保存在您的最后一个传递！
       enter_info: 输入准确的信息，以帮助自己和他人。
       photo_id: 照片的ID
       tax_returns: 纳税申报
       job_verification: 核查工作
+      clear_form: 清除表单并重新开始
       submit: 我完了，把它！
       other_provider: 其它供应商
       other_provider_modal_label: 请向我们提供尽可能多的信息尽可能你最喜欢的供应商
@@ -76,8 +80,9 @@ zh-CN:
       amount_received_help: 请准确，不近似，所以我们可以正确识别你的储蓄和其他可能受益于您的信息。如果不能确定，请询问您的收件人。
       placeholder_comment: 帮助其他有详细的注释
       placeholder_promotion: 留空如果没有
-      footer: 谢谢！
-      footer_add_html: "<span class='lead'>分享你的经验。</span> 你的信息可能帮助别人做出更聪明，更明智的选择。"
+      feedback_cta:
+        <h3>谢谢！</h3>
+        <p>分享你的经验。你的信息可能帮助别人做出更聪明，更明智的选择。</p>
   user_next_transfers:
     new:
       benefits_title: 受汇率及手续费汇款时，迷糊？
@@ -116,8 +121,13 @@ zh-CN:
       title: 请帮助我们改进网站，并让别人知道如何省钱
   feedbacks:
     feedback:
+      raiting: 'Raiting:'
       anonymous: 匿名
       points: 点
+      date: '添加评论: '
+  remittance_terms:
+    remittance_term:
+      best_method: 最好的方法
   devise:
     registrations:
       new:
@@ -152,7 +162,7 @@ zh-CN:
         zipcode: 邮政编码
         money_transfer_destination_id: 汇款目的地
         accept_emails: 给我发电子邮件从SaveOnSend更新
-        accept_terms: 我接受SaveOnSend的<a href="/terms" target="_blank">服务条款</a>和<a href="/privacy" target="_blank">隐私权政策</a>
+        accept_terms: 我接受SaveOnSend的 <a href="/terms" target="_blank">服务条款</a> 和 <a href="/privacy" target="_blank">隐私权政策</a>
         about_me: 关于我的（为什么我寄钱？）
       user/recent_transaction:
         date: 日期
@@ -168,6 +178,7 @@ zh-CN:
         promotion: 二手促销
         service_quality: 供应商质量
         comments: 帮助其他有关此提供详细评论
+        money_transfer_destination_id: 哪里
       user/next_transfer:
         amount_send: 发送量
         receive_currency: 接收货币

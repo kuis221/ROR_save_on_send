@@ -15,7 +15,7 @@ tr *{class: remittance_term.highlighted? ? 'option-best' : ''}
     - if remittance_term.highlighted?
       td.option-method-label
         .option-method-wrap
-          span Best Method
+          span= t('.best_method')
 
     - else
       td
