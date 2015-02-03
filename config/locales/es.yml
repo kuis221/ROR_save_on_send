@@ -16,14 +16,6 @@ es:
       title_html: "Los inmigrantes de <br class='visible-xs'> El mundo, uníos!"
       send_money: "Enviar dinero con Transparencia, ayudarse a sí mismo ya otros a aprender Coste total!"
       share_transfer: Transferencia de acciones
-      how_it: ¿Cómo funciona?
-      add_recent_transaction: Añadir reciente transacción
-      next_transfer: transferencia Siguiente
-      help_others: Ayudar a los demás
-      how_to: ¿Cómo funciona?
-      sign_up: Unirse
-      sign_in: Iniciar
-      sign_out: Salir
   shared:
     header: *application
     feedback:
@@ -42,11 +34,14 @@ es:
       earn_points: Gana puntos valiosos y el estado de participación
       lock_free: Bloqueo de acceso gratuito a la información en el sitio web
     sidebar:
+      hi: ''
       sign_in: Iniciar
       sign_up: Unirse
+      sign_out: Salir
       how_to: ¿Cómo funciona?
       next_transfer: Encontrar Mejor Transfer
       recent_transaction: Compruebe Última Transfer
+      help_others: Ayudar a los demás
   service_providers:
     show:
       go_to_provider: Listo para enviar dinero

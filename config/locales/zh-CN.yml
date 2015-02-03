@@ -16,14 +16,6 @@ zh-CN:
       title_html: "移民 <br class='visible-xs'> 世界联合起来！"
       send_money: 寄钱与透明度，帮助自己和他人学习的总成本！
       share_transfer: 股权转让
-      how_it: 它是如何工作的？
-      add_recent_transaction: 添加最近的交易
-      next_transfer: 下一步转移
-      help_others: 帮助他人
-      how_to: 它是如何工作的
-      sign_up: 现在加入
-      sign_in: 登录
-      sign_out: 登出
   shared:
     header: *application
     feedback:
@@ -42,11 +34,14 @@ zh-CN:
       earn_points: 赢取宝贵的积分和状态参加
       lock_free: 锁定在网站上免费获取信息
     sidebar:
+      hi: '你好, '
       sign_in: 登录
       sign_up: 现在加入
+      sign_out: 登出
       how_to: 它是如何工作的
       next_transfer: 查找最佳传输
       recent_transaction: 检查最后转移
+      help_others: 帮助他人
   service_providers:
     show:
       go_to_provider: 准备寄钱
