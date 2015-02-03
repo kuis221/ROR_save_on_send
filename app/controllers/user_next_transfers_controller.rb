@@ -60,6 +60,10 @@ class UserNextTransfersController < ApplicationController
       params[:user_next_transfer][:money_transfer_destination_id] = cookies[:money_transfer_destination_id]
     end
 
+    if current_user
+      params[:user_next_transfer][:money_transfer_destination_id] = current_user.money_transfer_destination.id
+    end
+
     next_transfer_attrs = permited_params
 
     if current_user
