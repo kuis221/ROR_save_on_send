@@ -34,6 +34,9 @@ class User < ActiveRecord::Base
 
   before_validation :fill_phone, on: :create
 
+  validates_presence_of :first_name, :zipcode, on: :update
+  validates_format_of :zipcode, with: /\A[0-9]{5}(?:-[0-9]{4})?\Z/, on: :update
+
   def password_required?
     # Password is required if it is being set, but not for new records
     if !persisted? 
@@ -76,10 +79,10 @@ class User < ActiveRecord::Base
   end
 
   # new function to set the password without knowing the current password used in our confirmation controller. 
-  def attempt_set_password(params)
+  def attempt_set_password_and_required_parameters(params)
+    required_params = %i{password password_confirmation first_name zipcode}
     p = {}
-    p[:password] = params[:password]
-    p[:password_confirmation] = params[:password_confirmation]
+    required_params.each {|attr_name| p[attr_name] = params[attr_name]}
     update_attributes(p)
   end
   # new function to return whether a password has been set

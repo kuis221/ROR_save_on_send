@@ -14,4 +14,8 @@ FactoryGirl.define do
     accept_terms true
     accept_emails true
   end
+
+  factory :confirmed_user, parent: :user do
+    after(:create) {|user| user.confirm!}
+  end
 end

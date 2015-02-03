@@ -142,6 +142,10 @@ es:
       new:
         remember_me: Acuérdate de mí
         log_in: Iniciar sesión
+    confirmations:
+      show:
+        title: Confirmación por correo electrónico
+        confirm_email: Confirmar correo electrónico
     mailer:
       confirmation_instructions:
         title: "¡Bienvenido %{email}!"

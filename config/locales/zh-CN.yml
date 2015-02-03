@@ -142,6 +142,10 @@ zh-CN:
       new:
         remember_me: 记得我
         log_in: 登录
+    confirmations:
+      show:
+        title: 电子邮件确认
+        confirm_email: 确认电子邮件
     mailer:
       confirmation_instructions:
         title: "欢迎 %{email}!"

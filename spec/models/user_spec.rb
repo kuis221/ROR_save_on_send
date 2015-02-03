@@ -14,23 +14,34 @@ describe User do
       expect(FactoryGirl.build(:user, email: '222-200-3000')).to be_valid
     end
 
-    it 'should be invalid if first name is not set' do
-      skip('we allow to create user with only email or phone')
-      expect(FactoryGirl.build(:user, first_name: '')).to be_invalid
-    end
+    context 'confirmed user' do
+      let(:confirmed_user){FactoryGirl.create(:confirmed_user)}
+      it 'should be invalid if first name is not set when user is already confirmed' do
+        confirmed_user.update_attribute(:first_name, '')
+        expect(confirmed_user).to be_invalid
+      end
 
-    it 'should be invalid if zipcode is not set' do
-      skip('we allow to create user with only email or phone')
-      expect(FactoryGirl.build(:user, zipcode: '')).to be_invalid
+      it 'should be invalid if zipcode is not set when user is already confirmed' do
+        confirmed_user.update_attribute(:zipcode, '')
+        expect(confirmed_user).to be_invalid
+      end
+
+      it 'should be invalid if zipcode is not a 5 digit when user is already confirmed' do
+        confirmed_user.update_attribute(:zipcode, 'aaaa')
+        expect(confirmed_user).to be_invalid
+      end
+
+      it 'should be valid if zipcode is a 5 digit when user is already confirmed' do
+        confirmed_user.update_attribute(:zipcode, '90536')
+        expect(confirmed_user).to be_valid
+      end
     end
 
     it 'should be invalid if money transfer destination is not set' do
-      skip('we allow to create user with only email or phone')
       expect(FactoryGirl.build(:user, money_transfer_destination: nil)).to be_invalid
     end
 
     it 'should be invalid if money transfer destination is not in the list' do
-      skip('we allow to create user with only email or phone')
       expect(FactoryGirl.build(:user, money_transfer_destination_id: Country.last.id + 1)).to be_invalid
     end
   end
