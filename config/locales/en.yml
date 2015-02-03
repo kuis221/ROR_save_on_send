@@ -16,14 +16,6 @@ en:
       title_html: "Immigrants of <br class='visible-xs'> The World Unite!"
       send_money: "Send money with Transparency, help yourself and others to learn Total Cost!"
       share_transfer: Share transfer
-      how_it: How it works?
-      add_recent_transaction: Add recent transaction
-      next_transfer: Next transfer
-      help_others: Help others
-      how_to: How it works
-      sign_up: Join now
-      sign_in: Log in
-      sign_out: Sign out
   shared:
     header: *application
     feedback:
@@ -42,11 +34,14 @@ en:
       earn_points: "Earn valuable points and status for participation"
       lock_free: "Lock-in FREE access to the information on the website"
     sidebar:
+      hi: 'Hi, '
       sign_in: Log in
       sign_up: Join now
+      sign_out: Sign out
       how_to: How it works
       next_transfer: Find Best Transfer
       recent_transaction: Check Last Transfer
+      help_others: Help others
   service_providers:
     show:
       go_to_provider: I am ready to send money
