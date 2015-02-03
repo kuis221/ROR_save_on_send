@@ -6,6 +6,6 @@ class ReferralsController < ApplicationController
   
     current_user.referrals.create(referral_attrs)
 
-    redirect_to(user_next_transfer_path(current_user.next_transfers.last), notice: 'Thanks you for help! Your referral is successfully added to the our system.')
+    redirect_to(root_path, notice: 'Thanks you for help! Your referral is successfully added to the our system.')
   end
 end
