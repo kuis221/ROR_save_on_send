@@ -555,7 +555,8 @@ if( !Tablesaw.config ) {
 			$head = $( document.head || 'head' ),
 			tableId = $table.attr( 'id' ),
 			// TODO switch this to an nth-child feature test
-			isIE8 = $( 'html' ).is( '.ie-lte8' );
+			isIE8 = $( 'html' ).is( '.ie-lte8' ),
+			width = $(window).width();
 
 		if( !$headerCells.length ) {
 			throw new Error( "tablesaw swipe: no header cells found. Are you using <th> inside of <thead>?" );
@@ -776,7 +777,12 @@ if( !Tablesaw.config ) {
 						}
 
 						window.setTimeout(function() {
-							$( win ).on( "resize", fakeBreakpoints );
+							$( win ).on( "resize", function() {
+								if ($(window).width() != width) {
+									width = $(window).width();
+									fakeBreakpoints();									
+								}
+							});
 						}, 300);
 						$( this ).unbind( "touchmove touchend" );
 					});
@@ -803,7 +809,12 @@ if( !Tablesaw.config ) {
 			});
 
 		fakeBreakpoints();
-		$( win ).on( "resize", fakeBreakpoints );
+		$( win ).on( "resize", function() {
+			if ($(window).width() != width) {
+				width = $(window).width();
+				fakeBreakpoints();									
+			}
+		});
 	}
 
 
