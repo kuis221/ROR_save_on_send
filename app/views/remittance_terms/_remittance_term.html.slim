@@ -19,9 +19,9 @@ tr *{class: remittance_term.highlighted? ? 'option-best' : ''}
 
     - else
       td
-        i.fa *{class: "fa-#{remittance_term.receive_method.slug}"} &nbsp;
+        i.fa *{class: "fa-#{remittance_term.send_method.name.parameterize.downcase}"} &nbsp;
         | &mdash;&nbsp;
-        i.fa *{class: "fa-#{remittance_term.receive_method.slug}"}
+        i.fa *{class: "fa-#{remittance_term.receive_method.name.parameterize.downcase}"}
 
   td rowspan=rowspan
     - if @user_next_transfer.amount_send > 0
