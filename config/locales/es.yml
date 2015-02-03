@@ -21,8 +21,8 @@ es:
       next_transfer: transferencia Siguiente
       help_others: Ayudar a los demás
       how_to: ¿Cómo funciona?
-      sign_up: Suscríbete ahora
-      sign_in: iniciar sesión
+      sign_up: Unirse
+      sign_in: Iniciar
       sign_out: Salir
   shared:
     header: *application
@@ -32,15 +32,21 @@ es:
         <p>Comparte tu experiencia. Ayúdanos a mejorar el sitio y ayudar a los demás.</p>
         <p><a href="mailto:admin@saveonsend.com">Díganos cómo podemos mejorar</a></p>
     footer:
-      terms: Terms   
-      privacy: Privacy
+      terms: Condiciones
+      privacy: Intimidad
     notification:
-      notice_test_version: Esta es una versión de prueba - necesitamos su colaboración para hacerlo bien! Escriba a      
+      notice_test_version: Esta es una versión de prueba — necesitamos su colaboración para hacerlo bien! Escriba a      
     signup_header:
       title_html: "Regístrese de forma gratuita, para que pueda:"
       get_notified: ¡Entérate de los cambios de precios y los nuevos proveedores de bajo costo
       earn_points: Gana puntos valiosos y el estado de participación
       lock_free: Bloqueo de acceso gratuito a la información en el sitio web
+    sidebar:
+      sign_in: Iniciar
+      sign_up: Unirse
+      how_to: ¿Cómo funciona?
+      next_transfer: Encontrar Mejor Transfer
+      recent_transaction: Compruebe Última Transfer
   service_providers:
     show:
       go_to_provider: Listo para enviar dinero
@@ -56,22 +62,27 @@ es:
   user_recent_transactions:
     new:
       title: Háblenos de su último traslado
-      why_it_html: "<span class='lead no-marg-btm visible-xs-block'>y ver cuánto se podría haber salvado.</span><span class='lead hidden-xs'>Por qué es importante?</span> <span class='hidden-xs'>La falta de transparencia, los costos cambiantes, nuevos proveedores hacen que sea muy difícil para saber si usamos el mejor método para enviar dinero. Pasa 1 minuto para compartir su experiencia y ayudar a los demás en O tal vez usted a saber si se podría haber ahorrado mucho su última transferencia,</span>"
+      benefits:
+        one: Las tasas y tarifas cambian con frecuencia — comprobar si tienes la mejor oferta
+        two: Ayuda a los demás con sus ideas
+        three: Gana puntos valiosos y estado
       see_how_much: Vea todo lo que podría haber salvado en su última transferencia!
       enter_info: Introduzca la información precisa para ayudarse a sí mismo ya los demás.
       photo_id: Identificación con foto
       tax_returns: Las declaraciones de impuestos
       job_verification: verificación de empleo
+      clear_form: Clear the form and start over
       submit: "He terminado y envíela!"
       other_provider: otro Proveedor
       other_provider_modal_label: Por favor proporcione tanto como la información posible acerca de su proveedor preferido
-      close: cerca
+      close: Cerca
       ok: OK
       amount_received_help: "Por favor, sea precisa, no se aproximan, por lo que podríamos identificar correctamente sus ahorros y otros podrían beneficiarse de su información. Si no está seguro, consulte a su destinatario."
       placeholder_comment: Ayuda a los demás con comentarios detallados
       placeholder_promotion: Dejar en blanco si ninguno
-      footer: Gracias!
-      footer_add_html: "<span class='lead'>por compartir su experiencia.</span> Usted información podría haber ayudado a alguien a hacer una elección más inteligente y más informada."
+      feedback_cta:
+        <h3>Gracias!</h3>
+        <p>por compartir su experiencia. Usted información podría haber ayudado a alguien más para hacer una elección más inteligente y más informada.</p>
   user_next_transfers:
     new:
       benefits_title: Confundido por honorarios y los tipos de cambio al enviar dinero? 
@@ -81,9 +92,9 @@ es:
         three: ¡Entérate de los cambios de precios y los nuevos proveedores de bajo costo
         four: Gana puntos valiosos y el estado de participación
       form_title: Vamos a encontrar el mejor proveedor para su próxima transferencia
-      recent_transaction: Compruebe Última Transferencia
-      next_transfer: Encontrar el mejor de Transferencia
-      registration: Registro para guardarlo
+      recent_transaction: Última Transfer
+      next_transfer: Mejor Transfer
+      registration: Registrarse
     show:
       title: Vamos a encontrar el mejor proveedor para su próxima transferencia
       provider_name: Proveedor
@@ -96,7 +107,7 @@ es:
       promotions: Promociones
       service_quality: La calidad del servicio
       title_table: Las mejores opciones para su próximo traslado
-      output_table_intro_html: Las mejores proveedores seleccionados por menor <strong>Margen</strong> - si su <a href="%{last_transfer_link}">última Transferencia</a> mostró una menor <strong>Margen</strong> por favor <a href="%{submit_link}">presentar</a> para nuestro análisis para ayudar a otros usuarios. 
+      output_table_intro_html: Las mejores proveedores seleccionados por menor <strong>Margen</strong> — si su <a href="%{last_transfer_link}">última Transferencia</a> mostró una menor <strong>Margen</strong> por favor <a href="%{submit_link}">presentar</a> para nuestro análisis para ayudar a otros usuarios. 
       feedback_cta:
         <h3>Gracias por enviar usted!</h3>
         <p>Vuelve con nosotros a menudo como los costos cambian a diario y los nuevos proveedores se están uniendo a la competencia!</p>
@@ -110,12 +121,16 @@ es:
       title: Por favor, ayúdenos a mejorar el sitio y dejar que los demás sepan cómo ahorrar dinero
   feedbacks:
     feedback:
+      raiting: 'Raiting:'
       anonymous: Anónimo
       points: Puntos
+      date: 'Opinión anadido: '
+  remittance_terms:
+    remittance_term:
+      best_method: Mejor Método
   devise:
     registrations:
       new:
-        log_in_link: Inicio de sesión aquí si ya tiene una cuenta
         title_create_new: "Crear una cuenta gratuita:"
         password_length: "(%{minimum_password_length} caracteres como mínimo)"
         email_or_phone: "E-mail o número de teléfono móvil"
@@ -134,8 +149,8 @@ es:
         confirm_my_account: Confirmar mi cuenta
   welcome:
     index:
-      verification_email_was_sent: Verificación de correo electrónico fue enviado a su dirección de correo electrónico - por favor haga clic en enlace de ese correo electrónico para confirmar
-      verification_sms_was_sent: Verificación de correo teléfono fue enviado a su dirección de correo electrónico - por favor haga clic en enlace de ese correo electrónico para confirmar
+      verification_email_was_sent: Verificación de correo electrónico fue enviado a su dirección de correo electrónico — por favor haga clic en enlace de ese correo electrónico para confirmar
+      verification_sms_was_sent: Verificación de correo teléfono fue enviado a su dirección de correo electrónico — por favor haga clic en enlace de ese correo electrónico para confirmar
   activerecord:
     attributes:
       user:
@@ -165,6 +180,7 @@ es:
         promotion: Usado promociones
         service_quality: Calidad de Proveedores
         comments: Ayuda a otros con comentarios detallados sobre este proveedor
+        money_transfer_destination_id: Donde
       user/next_transfer:
         amount_send: Monto de envío
         receive_currency: Recibe moneda
@@ -186,8 +202,8 @@ es:
         feedback:
           attributes:
             service_quality_and_comments:
-              blank: Por favor ingrese su comentario detallado y "estrellas" de calificación de la transacción - esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
+              blank: Por favor ingrese su comentario detallado y "estrellas" de calificación de la transacción — esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
             comments:
-              blank: Por favor ingrese su comentario detallado para su "estrellas" de calificación de la transacción - esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
+              blank: Por favor ingrese su comentario detallado para su "estrellas" de calificación de la transacción — esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
             service_quality:
-              blank: Sírvanse proporcionar una calificación "estrellas" de la transacción - esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
+              blank: Sírvanse proporcionar una calificación "estrellas" de la transacción — esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted

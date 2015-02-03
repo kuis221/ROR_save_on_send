@@ -23,6 +23,19 @@ body {
   }
 }
 
+p {
+  margin: 0 0 15px;
+}
+ul,
+ol {
+  padding: 0 0 0 20px;
+  margin: 0 0 15px;
+  
+  li {
+    margin-bottom: 10px;
+  }
+}
+
 
 /* headers */
 h1, .h1, h2, .h2, h3, .h3,

@@ -125,6 +125,9 @@ en:
       anonymous: Anonymous
       points: Points
       date: 'Review added: '
+  remittance_terms:
+    remittance_term:
+      best_method: Best Method
   devise:
     registrations:
       new:
