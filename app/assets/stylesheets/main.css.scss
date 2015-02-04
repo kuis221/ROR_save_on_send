@@ -4,18 +4,14 @@
 html {
   position: relative;
   min-height: 100%;
-  
-  &.fix {
-    height: 100%;
-  }
 }
 body {
   text-align: center;
   background: #f9f9f9;
   min-width: 320px;
   
-  .container-fluid {
-    margin-bottom: $footerHeight;
+  > .container-fluid {
+    padding-bottom: 242px;
   }
   &.fix {
     height: 100%;
