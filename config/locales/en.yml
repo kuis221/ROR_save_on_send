@@ -18,14 +18,13 @@ en:
       share_transfer: Share transfer
   shared:
     header: *application
-    feedback:
+    footer:
+      terms: Terms   
+      privacy: Privacy
       feedback_cta:
         <h3>Help others too!</h3>
         <p>Share your experience. Help us improve the site and help others.</p>
         <p><a href="mailto:admin@saveonsend.com">Tell us how we can get better</a></p>
-    footer:
-      terms: Terms   
-      privacy: Privacy
     notification:
       notice_test_version: This is a test version — we need your feedback to get it right! Write to      
     signup_header:

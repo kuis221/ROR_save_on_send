@@ -1,8 +1,11 @@
 footer
-  .container
-    .row
+  .container-fluid
+    .row.feedback
       .col-xs-12
-        /! footer
+        = t('.feedback_cta').html_safe
+
+    .row.footer
+      .col-xs-12
         p
           | &copy;2015 SaveOnSend Inc.&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
           = link_to t('.terms'), terms_path

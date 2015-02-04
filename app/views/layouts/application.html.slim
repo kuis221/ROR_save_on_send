@@ -20,8 +20,9 @@ html lang="en"
     = javascript_include_tag "application"
 
   body
-    = render 'shared/notification'
     .container-fluid
+      = render 'shared/notification'
+
       .row.row-offcanvas.row-offcanvas-right
         = render 'shared/header'
     
