@@ -35,6 +35,24 @@ describe User do
         confirmed_user.update_attribute(:zipcode, '90536')
         expect(confirmed_user).to be_valid
       end
+
+      context 'confirmation code' do
+        let(:confirmed_user){FactoryGirl.create(:confirmed_user, email: '877-766-9622')}
+        
+        before do
+          allow_any_instance_of(Twilio::REST::Messages).to receive(:create).and_return(true)
+        end
+
+        it 'should be invalid if confirmed code is not the same as confirmation token' do
+          confirmed_user.update_attribute(:confirmation_code, (confirmed_user.confirmation_token.to_i + 1).to_s)
+          expect(confirmed_user).to be_invalid
+        end
+
+        it 'should be invalid if confirmed code is not the same as confirmation token' do
+          confirmed_user.update_attribute(:confirmation_code, confirmed_user.confirmation_token)
+          expect(confirmed_user).to be_valid
+        end
+      end
     end
 
     it 'should be invalid if money transfer destination is not set' do
@@ -79,6 +97,18 @@ describe User do
       user = FactoryGirl.build(:user, first_name: 'Foo', last_name: nil)
       
       expect(user.full_name).to eq('Foo')
+    end
+  end
+
+  describe '#phone_with_international_code' do
+    it 'should return user phone number with international code' do
+      user = FactoryGirl.build(:user, phone: '610-555-7069')
+      expect(user.phone_with_international_code).to eq('+16105557069')
+    end
+
+    it 'should return user phone number with international code' do
+      user = FactoryGirl.build(:user, phone: '(610) 555-7069')
+      expect(user.phone_with_international_code).to eq('+16105557069')
     end
   end
 end

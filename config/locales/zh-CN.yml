@@ -139,8 +139,10 @@ zh-CN:
         log_in: 登录
     confirmations:
       show:
-        title: 电子邮件确认
-        confirm_email: 确认电子邮件
+        title_email: 确认您的电子邮件地址
+        title_sms: 确认您的手机号码
+        confirm: 确认您的帐户
+        confirmation_code_hint: 输入您在您的确认短信收到的代码
     mailer:
       confirmation_instructions:
         title: "欢迎 %{email}!"
@@ -154,6 +156,7 @@ zh-CN:
     attributes:
       user:
         email: 电子邮件或者手机
+        login: 电子邮件或者手机
         password: 密码
         password_confirmation: 确认密码
         first_name: 名字
@@ -163,6 +166,7 @@ zh-CN:
         accept_emails: 给我发电子邮件从SaveOnSend更新
         accept_terms: 我接受SaveOnSend的 <a href="/terms" target="_blank">服务条款</a> 和 <a href="/privacy" target="_blank">隐私权政策</a>
         about_me: 关于我的（为什么我寄钱？）
+        confirmation_code: 代码
       user/recent_transaction:
         date: 日期
         currency: ：收到的货币
@@ -204,3 +208,5 @@ zh-CN:
               blank: 请提供详细的注释你的“星”评级的交易 - 这将他人帮助SaveOnSend社会做出更好的选择，他们会为你做同样的
             service_quality:
               blank: 请提供一个“星”评级的交易 - 这将他人帮助SaveOnSend社会做出更好的选择，他们会为你做同样的
+  sms:
+    confirmation_code: 您的确认码%{code}的saveonsend.com

@@ -8,7 +8,10 @@ section.content.user-page
   .container
     .row
       .user-page-title
-        h3= t('.title')
+        - if resource.phone.present?
+          h3= t('.title_sms')
+        - else
+          h3= t('.title_email')
  
     /.row
       .col-xs-12.align-center.alert.alert-danger
@@ -17,41 +20,56 @@ section.content.user-page
     .row
       .user-page-wrap
         = form_for resource, as: resource_name, url: update_user_confirmation_path, html: {method: 'patch', class: 'form-horizontal', role: 'form'} do |f|
-          = hidden_field_tag :confirmation_token, @confirmation_token
+          - unless resource.phone.present?
+            = hidden_field_tag :confirmation_token, @confirmation_token
 
           .col-xs-12
+            - if resource.phone.present?
+              //  phone
+              .form-group
+                = f.label :phone, class: 'col-sm-5 control-label'
+                .col-sm-6.col-lg-4
+                  .form-control= resource.phone
+  
+              // confirmation code
+              .form-group
+                = f.label :confirmation_code, class: 'col-sm-5 control-label'
+                .col-sm-6.col-lg-4
+                  = f.text_field :confirmation_code, class: 'form-control'
+                  = t('.confirmation_code_hint')
+
             // first name
             .form-group
               = f.label :first_name, class: 'col-sm-5 control-label'
-              .col-sm-5.col-lg-4
+              .col-sm-6.col-lg-4
                 = f.text_field :first_name, class: 'form-control'
   
             // last name
             .form-group
               = f.label :last_name, class: 'col-sm-5 control-label'
-              .col-sm-5.col-lg-4
+              .col-sm-6.col-lg-4
                 = f.text_field :last_name, class: 'form-control'
   
             // zipcode
             .form-group
               = f.label :zipcode, class: 'col-sm-5 control-label'
-              .col-sm-5.col-lg-4
+              .col-sm-6.col-lg-4
                 = f.text_field :zipcode, class: 'form-control'
   
             // password
             .form-group
               = f.label :password, class: 'col-sm-5 control-label'
-              .col-sm-5.col-lg-4
+              .col-sm-6.col-lg-4
                 = f.password_field :password, class: 'form-control'
   
             // password confirmation
             .form-group
               = f.label :password_confirmation, class: 'col-sm-5 control-label'
-              .col-sm-5.col-lg-4
+              .col-sm-6.col-lg-4
                 = f.password_field :password_confirmation, class: 'form-control'
           
             .form-group
               .col-sm-7.col-sm-offset-5
                 = button_tag type:"submit", class: "btn btn-primary btn-lg" do
                   i.fa.fa-fw.fa-check-circle-o
-                  = t('.confirm_email')
+                  = t('.confirm')

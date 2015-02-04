@@ -24,7 +24,13 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_inactive_sign_up_path_for(resource)
     cookies[:money_transfer_destination_id] = resource.money_transfer_destination.id
-    
-    welcome_path(verification_type: (resource.email.present? ? :email : :sms))
+  
+    if resource.email.present?
+      welcome_path(verification_type: :email)
+    else
+      flash[:notice] = nil
+      session[:phone] = resource.phone
+      user_confirmation_path
+    end
   end
 end

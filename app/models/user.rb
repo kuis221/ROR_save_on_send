@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable,
-         :omniauthable, omniauth_providers: [:facebook]
+         :omniauthable, omniauth_providers: [:facebook],
+         authentication_keys: [:login]
 
   belongs_to :money_transfer_destination, class_name: Country
 
@@ -36,6 +37,28 @@ class User < ActiveRecord::Base
 
   validates_presence_of :first_name, :zipcode, on: :update
   validates_format_of :zipcode, with: /\A[0-9]{5}(?:-[0-9]{4})?\Z/, on: :update
+  validate :validity_of_confirmation_code, on: :update, if: :email_blank?
+
+  attr_accessor :confirmation_code
+
+  # login by email or phone : begin
+  def login=(login)
+    @login = login
+  end
+
+  def login
+    @login || self.email || self.phone
+  end
+
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions.to_h).where(["lower(phone) = :value OR lower(email) = :value", {value: login}]).first
+    else
+      where(conditions.to_h).first
+    end
+  end
+  # login by email or phone : end
 
   def password_required?
     # Password is required if it is being set, but not for new records
@@ -78,11 +101,17 @@ class User < ActiveRecord::Base
     email.blank?
   end
 
+  def phone_with_international_code
+    if phone.present?
+      "+1#{phone.gsub(/[^\d]/, '')}"
+    end
+  end
+
   # new function to set the password without knowing the current password used in our confirmation controller. 
   def attempt_set_password_and_required_parameters(params)
-    required_params = %i{password password_confirmation first_name zipcode}
+    confirmation_form_params = %i{password password_confirmation first_name last_name zipcode confirmation_code}
     p = {}
-    required_params.each {|attr_name| p[attr_name] = params[attr_name]}
+    confirmation_form_params.each {|attr_name| p[attr_name] = params[attr_name]}
     update_attributes(p)
   end
   # new function to return whether a password has been set
@@ -109,11 +138,50 @@ class User < ActiveRecord::Base
     end
   end
 
+  def send_confirmation_instructions_by_sms
+    # send confirmation instruction by phone
+
+    Twilio::REST::Client.new.messages.create(
+      from: Rails.application.secrets.twilio_phone_number,
+      to: phone_with_international_code,
+      body: I18n.t('sms.confirmation_code', code: self.confirmation_token)
+    )
+
+    self
+  end
+
+  protected
+  def generate_confirmation_token
+    if email.present?
+      super
+    else
+      token = rand(10000..99999)
+      self.confirmation_token = token
+      self.confirmation_sent_at = Time.now.utc
+    end
+  end
+
+  def send_on_create_confirmation_instructions
+    if email.present?
+      send_confirmation_instructions
+    elsif phone.present?
+      send_confirmation_instructions_by_sms
+    end
+  end
+
+  def send_confirmation_notification?
+    confirmation_required? && !@skip_confirmation_notification && (self.email.present? || self.phone.present?)
+  end
+
   private
   def fill_phone
     if email.match(US_PHONE_REGEX)
       self.phone = email
       self.email = ''
     end
+  end
+
+  def validity_of_confirmation_code
+    errors.add :confirmation_code unless confirmation_token == confirmation_code
   end
 end

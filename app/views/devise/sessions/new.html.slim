@@ -21,14 +21,20 @@ section.content.user-page
           .col-xs-12
             // email
             .form-group
-              = f.label :email, class: 'col-sm-5 control-label'
-              .col-sm-5.col-lg-4
-                = f.email_field :email, class: 'form-control'
+              - if resource.is_a?(User)
+                = f.label :login, class: 'col-sm-5 control-label'
+                .col-sm-6.col-lg-4
+                  = f.text_field :login, class: 'form-control'
+
+              - elsif resource.is_a?(Admin)
+                = f.label :email, class: 'col-sm-5 control-label'
+                .col-sm-6.col-lg-4
+                  = f.text_field :email, class: 'form-control'
   
             // password
             .form-group
               = f.label :password, class: 'col-sm-5 control-label'
-              .col-sm-5.col-lg-4
+              .col-sm-6.col-lg-4
                 = f.password_field :password, autocomplete: "off", class: 'form-control'
   
             // remember me

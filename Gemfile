@@ -50,6 +50,7 @@ gem 'rails_stdout_logging'
 
 # User authentication
 gem 'devise'
+gem 'omniauth', '~> 1.0.0'
 gem 'omniauth-facebook'
 
 # Localization
@@ -68,6 +69,9 @@ gem 'friendly_id', '~> 5.0.0'
 # image upload
 gem 'carrierwave'
 gem 'cloudinary'
+
+# send sms
+gem 'twilio-ruby', '~> 3.12'
 
 group :development do
   # open letter in browser
