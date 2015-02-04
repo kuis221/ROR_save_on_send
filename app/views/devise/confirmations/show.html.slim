@@ -1,9 +1,25 @@
-h2= t('.title')
+- if resource.phone.present?
+  h2= t('.title_sms')
+- else
+  h2= t('.title_email')
 
 = form_for resource, as: resource_name, url: update_user_confirmation_path, html: {method: 'patch', class: 'form-horizontal', role: 'form'} do |f|
   = devise_error_messages!
-  = hidden_field_tag :confirmation_token, @confirmation_token
-  
+  - unless resource.phone.present?
+    = hidden_field_tag :confirmation_token, @confirmation_token
+
+  - if resource.phone.present?
+    //  phone
+    .form-group
+      = f.label :phone, class: 'col-xs-12 col-sm-4 control-label'
+      .col-xs-6.col-sm-5.col-md-4.col-lg-3
+        .form-control= resource.phone
+    // confirmation code
+    .form-group
+      = f.label :confirmation_code, class: 'col-xs-12 col-sm-4 control-label'
+      .col-xs-6.col-sm-5.col-md-4.col-lg-3
+        = f.text_field :confirmation_code, class: 'form-control'
+        = t('.confirmation_code_hint')
   // first name
   .form-group
     = f.label :first_name, class: 'col-xs-12 col-sm-4 control-label'
@@ -33,5 +49,5 @@ h2= t('.title')
   // actions
   .form-group
     .col-sm-offset-4.col-sm-8
-      = f.submit t('.confirm_email'), class: 'btn btn-primary btn-lg'
+      = f.submit t('.confirm'), class: 'btn btn-primary btn-lg'
 

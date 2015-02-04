@@ -139,8 +139,10 @@ es:
         log_in: Iniciar sesión
     confirmations:
       show:
-        title: Confirmación por correo electrónico
-        confirm_email: Confirmar correo electrónico
+        title_email: Confirme su dirección de correo electrónico
+        title_sms: Confirme su número de teléfono móvil
+        confirm: Confirma tu cuenta
+        confirmation_code_hint: Introduce el código recibido en su mensaje sms de confirmación
     mailer:
       confirmation_instructions:
         title: "¡Bienvenido %{email}!"
@@ -154,6 +156,7 @@ es:
     attributes:
       user:
         email: E-mail o teléfono móvil
+        login: E-mail o teléfono móvil
         password: Contraseña
         password_confirmation: Confirmación de la contraseña
         first_name: Nombre de pila
@@ -165,6 +168,7 @@ es:
           <a href="/terms" target="_blank">Términos de Servicio</a> y 
           <a href="/privacy" target="_blank">Política de Privacidad</a>
         about_me: Acerca de mí (¿Por qué estoy enviando dinero?)
+        confirmation_code: Código
       user/recent_transaction:
         date: Fecha
         currency: moneda Recieved
