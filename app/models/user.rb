@@ -144,7 +144,7 @@ class User < ActiveRecord::Base
     Twilio::REST::Client.new.messages.create(
       from: Rails.application.secrets.twilio_phone_number,
       to: phone_with_international_code,
-      body: "Your confirmation code: #{self.confirmation_token} for saveonsend.com"
+      body: I18n.t('sms.confirmation_code', code: self.confirmation_token)
     )
 
     self
