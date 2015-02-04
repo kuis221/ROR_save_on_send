@@ -139,8 +139,10 @@ en:
         log_in: Log in
     confirmations:
       show:
-        title: Email confirmation
-        confirm_email: Confirm email
+        title_email: Confirm your email address
+        title_sms: Confirm your mobile phone number
+        confirm: Confirm your account
+        confirmation_code_hint: Enter the code you received in your confirmation sms message
     mailer:
       confirmation_instructions:
         title: "Welcome %{email}!"
@@ -154,6 +156,7 @@ en:
     attributes:
       user:
         email: Email or mobile phone
+        login: Email or mobile phone
         password: Password
         password_confirmation: Password confirmation
         first_name: First name
@@ -165,6 +168,7 @@ en:
           <a href="/terms" target="_blank">Terms of Service</a> and 
           <a href="/privacy" target="_blank">Privacy Policy</a>
         about_me: About me (Why am I sending money?)
+        confirmation_code: Code
       user/recent_transaction:
         date: Date
         currency: Receiving currency
