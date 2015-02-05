@@ -19,6 +19,7 @@ sos.renderMasks = ->
   $('.mask-minutes').mask "00"
   $('.mask-hours').mask "00"
   $('.mask-days').mask "00"
+  $('.mask-zipcode').mask "00000"
 
 # Navigation Toggle
 $(document).on sos.e, ".header .toggle-menu, .opened-menu .wrapper-content, .opened-menu .footer, .menu .close", (e) ->

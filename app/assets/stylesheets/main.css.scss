@@ -56,6 +56,11 @@ section {
 
 
 /* Different resolutions */
+@media only screen and (min-width: 480px) {
+  .align-center {
+    width: 85%;
+  }  
+}
 @media only screen and (min-width: 768px) {
   h1, .h1 {
     font-size: 42px;
