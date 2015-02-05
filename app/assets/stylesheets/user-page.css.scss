@@ -1,6 +1,27 @@
 @import 'common/variables';
 
 
+/* user-page */
+.user-page {
+  .user-page-avatar {
+    display: inline-block;
+    text-align: center!important;
+
+    img {
+      border: solid 1px #ddd;
+      margin-bottom: 15px;
+      width: 164px;
+    }
+  }
+  .user-page-about {
+    .control-label {
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+
 /* user-page-wrap */
 .user-page-wrap {
   background: #fff;

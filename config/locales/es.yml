@@ -18,21 +18,15 @@ es:
       share_transfer: Transferencia de acciones
   shared:
     header: *application
-    feedback:
+    footer:
+      terms: Condiciones
+      privacy: Intimidad
       feedback_cta:
         <h3>Ayuda a los demás también!</h3>
         <p>Comparte tu experiencia. Ayúdanos a mejorar el sitio y ayudar a los demás.</p>
         <p><a href="mailto:admin@saveonsend.com">Díganos cómo podemos mejorar</a></p>
-    footer:
-      terms: Condiciones
-      privacy: Intimidad
     notification:
       notice_test_version: Esta es una versión de prueba — necesitamos su colaboración para hacerlo bien! Escriba a      
-    signup_header:
-      title_html: "Regístrese de forma gratuita, para que pueda:"
-      get_notified: ¡Entérate de los cambios de precios y los nuevos proveedores de bajo costo
-      earn_points: Gana puntos valiosos y el estado de participación
-      lock_free: Bloqueo de acceso gratuito a la información en el sitio web
     sidebar:
       hi: ''
       sign_in: Iniciar
@@ -52,8 +46,9 @@ es:
       submit: Someter
   users:
     edit:
-      title: Sírvanse proporcionar una información adicional, que nos ayudan a encontrar el mejor proveedor de servicios para usted
-      submit: Someter
+      title: Su cuenta
+      submit: Guardar cambios
+      about_me: Escriba sus razones aquí
   user_recent_transactions:
     new:
       title: Háblenos de su último traslado
@@ -126,13 +121,14 @@ es:
   devise:
     registrations:
       new:
-        title_create_new: "Crear una cuenta gratuita:"
+        title: Registro
+        title_html: "Regístrese de forma gratuita, para que pueda:"
+        get_notified: ¡Entérate de los cambios de precios y los nuevos proveedores de bajo costo
+        earn_points: Gana puntos valiosos y el estado de participación
+        lock_free: Bloqueo de acceso gratuito a la información en el sitio web
         password_length: "(%{minimum_password_length} caracteres como mínimo)"
         email_or_phone: "E-mail o número de teléfono móvil"
-        email_number: "Email / número"
         sign_up: Crear mi cuenta!
-        sign_up_fb: Entra con Facebook
-        or: o
     sessions:
       new:
         remember_me: Acuérdate de mí

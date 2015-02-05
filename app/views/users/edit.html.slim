@@ -1,16 +1,10 @@
-/section.content-header
-  .container
-    .row
-      .col-xs-12
-        h2= t('.title')
-
 section.content.user-page
   .container
     .row
       .user-page-title
         h3= t('.title')
 
-    /.row
+    .row
       .col-xs-12.align-center.alert.alert-danger
         - @user.errors.full_messages.each do |err_msg|
           = err_msg
@@ -19,37 +13,43 @@ section.content.user-page
       .user-page-wrap
         = form_for(@user, html: {class: 'form-horizontal', role: 'form'}) do |f|
 
-          .col-xs-12
+          .col-xs-12.col-sm-4
             // avatar
             = f.hidden_field(:avatar_cache)
             .form-group
-              .col-sm-7.col-sm-offset-5
-                = image_tag(@user.avatar_url) if @user.avatar?
+              .user-page-avatar
+                - if @user.avatar?
+                  = image_tag(@user.avatar_url)
+                - else                  
+                  = image_tag('default-image.png')
                 = f.file_field(:avatar)
-            
+
+          .col-xs-12.col-sm-8
             // first name
             .form-group
-              = f.label :first_name, class: 'col-sm-5 control-label'
-              .col-sm-5.col-lg-4
+              = f.label :first_name, class: 'col-sm-4 control-label'
+              .col-sm-8.col-lg-6
                 = f.text_field :first_name, class: 'form-control'
   
             // last name
             .form-group
-              = f.label :last_name, class: 'col-sm-5 control-label'
-              .col-sm-5.col-lg-4
+              = f.label :last_name, class: 'col-sm-4 control-label'
+              .col-sm-8.col-lg-6
                 = f.text_field :last_name, class: 'form-control'
   
             // zipcode
             .form-group
-              = f.label :zipcode, class: 'col-sm-5 control-label'
-              .col-sm-5.col-lg-4
+              = f.label :zipcode, class: 'col-sm-4 control-label'
+              .col-sm-8.col-lg-6
                 = f.text_field :zipcode, class: 'form-control'
-  
+
+          .col-xs-12  
             // about_me
             .form-group
-              = f.label :about_me, class: 'col-xs-12 control-label'
-              .col-xs-12
-                = f.text_area :about_me, class: 'form-control'
+              .user-page-about
+                = f.label :about_me, class: 'col-xs-12 control-label'
+                .col-xs-12
+                  = f.text_area :about_me, rows: '4', cols: '1', class: 'form-control', placeholder: t('.about_me')
   
             .form-group
               .col-sm-7.col-sm-offset-5

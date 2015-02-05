@@ -1,28 +1,10 @@
-/section.content-header
-  .container
-    .row
-      .col-xs-12
-        h2= t('.title_html')
-        .row
-          .col-xs-12.align-center.text-left
-            ul
-              li
-                i.fa.fa-check
-                = t('.get_notified')
-              li
-                i.fa.fa-check
-                = t('.earn_points')
-              li
-                i.fa.fa-check
-                = t('.lock_free')
-
 section.content.user-page
   .container
     .row
       .user-page-title
         h3= t('.title')
 
-    /.row
+    .row
       .col-xs-12.align-center.alert.alert-danger
         = devise_error_messages!
 
