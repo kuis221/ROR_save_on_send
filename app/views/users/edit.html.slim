@@ -4,10 +4,11 @@ section.content.user-page
       .user-page-title
         h3= t('.title')
 
-    .row
-      .col-xs-12.align-center.alert.alert-danger
-        - @user.errors.full_messages.each do |err_msg|
-          = err_msg
+    - unless @user.errors.empty?
+      .row
+        .col-xs-12.align-center.alert.alert-danger
+          - @user.errors.full_messages.each do |err_msg|
+            = err_msg
 
     .row
       .user-page-wrap
