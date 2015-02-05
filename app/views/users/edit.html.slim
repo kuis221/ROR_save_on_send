@@ -6,9 +6,10 @@ section.content.user-page
 
     - unless @user.errors.empty?
       .row
-        .col-xs-12.align-center.alert.alert-danger
-          - @user.errors.full_messages.each do |err_msg|
-            = err_msg
+        .col-xs-12.align-center.alert.alert-danger data-error='1'
+          ul
+            - @user.errors.full_messages.each do |err_msg|
+              li= err_msg
 
     .row
       .user-page-wrap

@@ -6,7 +6,7 @@ section.content.user-page
 
     - unless resource.errors.empty?
       .row
-        .col-xs-12.align-center.alert.alert-danger
+        .col-xs-12.align-center.alert.alert-danger data-error='1'
           = devise_error_messages!
 
     .row

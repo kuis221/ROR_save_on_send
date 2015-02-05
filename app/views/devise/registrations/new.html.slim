@@ -19,7 +19,7 @@ section.content
   .container
     - unless resource.try(:errors).try(:empty?)
       .row
-        .col-xs-12.align-center.alert.alert-danger
+        .col-xs-12.align-center.alert.alert-danger data-error='1'
           = devise_error_messages!
 
     .row
