@@ -6,10 +6,11 @@ section.content.user-page
           h3= t('.title_sms')
         - else
           h3= t('.title_email')
- 
-    .row
-      .col-xs-12.align-center.alert.alert-danger
-        = devise_error_messages!
+
+    - unless resource.errors.empty?
+      .row
+        .col-xs-12.align-center.alert.alert-danger
+          = devise_error_messages!
 
     .row
       .user-page-wrap
