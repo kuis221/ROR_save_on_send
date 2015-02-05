@@ -4,18 +4,14 @@
 html {
   position: relative;
   min-height: 100%;
-  
-  &.fix {
-    height: 100%;
-  }
 }
 body {
   text-align: center;
-  background: #f9f9f9;
+  background: #f9f9f9 image-url('content-pattern.png') repeat 0 0;
   min-width: 320px;
   
-  .container-fluid {
-    margin-bottom: $footerHeight;
+  > .container-fluid {
+    padding-bottom: 242px;
   }
   &.fix {
     height: 100%;
@@ -41,6 +37,7 @@ ol {
 h1, .h1, h2, .h2, h3, .h3,
 h4, .h4, h5, .h5, h6, .h6 {
   margin-top: 0;
+  letter-spacing: 0.5px;
 }
 
 

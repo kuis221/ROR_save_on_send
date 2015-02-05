@@ -1,53 +1,69 @@
-- if resource.phone.present?
-  h2= t('.title_sms')
-- else
-  h2= t('.title_email')
+section.content.user-page
+  .container
+    .row
+      .user-page-title
+        - if resource.phone.present?
+          h3= t('.title_sms')
+        - else
+          h3= t('.title_email')
+ 
+    .row
+      .col-xs-12.align-center.alert.alert-danger
+        = devise_error_messages!
 
-= form_for resource, as: resource_name, url: update_user_confirmation_path, html: {method: 'patch', class: 'form-horizontal', role: 'form'} do |f|
-  = devise_error_messages!
-  - unless resource.phone.present?
-    = hidden_field_tag :confirmation_token, @confirmation_token
+    .row
+      .user-page-wrap
+        = form_for resource, as: resource_name, url: update_user_confirmation_path, html: {method: 'patch', class: 'form-horizontal', role: 'form'} do |f|
+          - unless resource.phone.present?
+            = hidden_field_tag :confirmation_token, @confirmation_token
 
-  - if resource.phone.present?
-    //  phone
-    .form-group
-      = f.label :phone, class: 'col-xs-12 col-sm-4 control-label'
-      .col-xs-6.col-sm-5.col-md-4.col-lg-3
-        .form-control= resource.phone
-    // confirmation code
-    .form-group
-      = f.label :confirmation_code, class: 'col-xs-12 col-sm-4 control-label'
-      .col-xs-6.col-sm-5.col-md-4.col-lg-3
-        = f.text_field :confirmation_code, class: 'form-control'
-        = t('.confirmation_code_hint')
-  // first name
-  .form-group
-    = f.label :first_name, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.text_field :first_name, class: 'form-control'
-  // last name
-  .form-group
-    = f.label :last_name, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.text_field :last_name, class: 'form-control'
-  // zipcode
-  .form-group
-    = f.label :zipcode, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.text_field :zipcode, class: 'form-control'
-  // password
-  .form-group
-    = f.label :password, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.password_field :password, class: 'form-control'
-  // password confirmation
-  .form-group
-    = f.label :password_confirmation, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.password_field :password_confirmation, class: 'form-control'
+          .col-xs-12
+            - if resource.phone.present?
+              //  phone
+              .form-group
+                = f.label :phone, class: 'col-sm-5 control-label'
+                .col-sm-6.col-lg-4
+                  .form-control= resource.phone
+  
+              // confirmation code
+              .form-group
+                = f.label :confirmation_code, class: 'col-sm-5 control-label'
+                .col-sm-6.col-lg-4
+                  = f.text_field :confirmation_code, class: 'form-control'
+                  = t('.confirmation_code_hint')
 
-  // actions
-  .form-group
-    .col-sm-offset-4.col-sm-8
-      = f.submit t('.confirm'), class: 'btn btn-primary btn-lg'
-
+            // first name
+            .form-group
+              = f.label :first_name, class: 'col-sm-5 control-label'
+              .col-sm-6.col-lg-4
+                = f.text_field :first_name, class: 'form-control'
+  
+            // last name
+            .form-group
+              = f.label :last_name, class: 'col-sm-5 control-label'
+              .col-sm-6.col-lg-4
+                = f.text_field :last_name, class: 'form-control'
+  
+            // zipcode
+            .form-group
+              = f.label :zipcode, class: 'col-sm-5 control-label'
+              .col-sm-6.col-lg-4
+                = f.text_field :zipcode, class: 'form-control'
+  
+            // password
+            .form-group
+              = f.label :password, class: 'col-sm-5 control-label'
+              .col-sm-6.col-lg-4
+                = f.password_field :password, class: 'form-control'
+  
+            // password confirmation
+            .form-group
+              = f.label :password_confirmation, class: 'col-sm-5 control-label'
+              .col-sm-6.col-lg-4
+                = f.password_field :password_confirmation, class: 'form-control'
+          
+            .form-group
+              .col-sm-7.col-sm-offset-5
+                = button_tag type:"submit", class: "btn btn-primary btn-lg" do
+                  i.fa.fa-fw.fa-check-circle-o
+                  = t('.confirm')

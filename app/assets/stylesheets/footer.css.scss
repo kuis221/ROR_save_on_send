@@ -3,29 +3,32 @@
 
 /* footer */
 footer {
-  line-height: $footerHeight;
-  background-color: #282828;
-  font-size: 12px;
-  margin-top: -$footerHeight;
-  min-height: $footerHeight;
+  position: absolute;
+  bottom: 0;
   width: 100%;
-
-  p {
-    color: #6a6a6a;
-    margin: 0 0 1em;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-    a {
+  
+  .footer {
+    background-color: #282828;
+    font-size: 12px;
+    line-height: 42px;
+  
+    p {
       color: #6a6a6a;
-
-      &:focus {
-        color: #6a6a6a;        
+      margin: 0 0 1em;
+  
+      &:last-child {
+        margin-bottom: 0;
       }
-      &:hover {
-        color: #fff;
+      a {
+        color: #6a6a6a;
+  
+        &:focus {
+          color: #6a6a6a;        
+        }
+        &:hover {
+          color: #fff;
+        }
       }
     }
-  }
+  } 
 }

@@ -1,38 +1,58 @@
-h2= t('.title')
-= form_for(@user, html: {class: 'form-horizontal', role: 'form'}) do |f|
-  // errors
-  - @user.errors.full_messages.each do |err_msg|
-    .bg-warning= err_msg
+section.content.user-page
+  .container
+    .row
+      .user-page-title
+        h3= t('.title')
 
-  // avatar
-  = f.hidden_field(:avatar_cache)
-  .form-group
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = image_tag(@user.avatar_url) if @user.avatar?
-      = f.file_field(:avatar)
+    .row
+      .col-xs-12.align-center.alert.alert-danger
+        - @user.errors.full_messages.each do |err_msg|
+          = err_msg
+
+    .row
+      .user-page-wrap
+        = form_for(@user, html: {class: 'form-horizontal', role: 'form'}) do |f|
+
+          .col-xs-12.col-sm-4
+            // avatar
+            = f.hidden_field(:avatar_cache)
+            .form-group
+              .user-page-avatar
+                - if @user.avatar?
+                  = image_tag(@user.avatar_url)
+                - else                  
+                  = image_tag('default-image.png')
+                = f.file_field(:avatar)
+
+          .col-xs-12.col-sm-8
+            // first name
+            .form-group
+              = f.label :first_name, class: 'col-sm-4 control-label'
+              .col-sm-8.col-lg-6
+                = f.text_field :first_name, class: 'form-control'
   
-  // first name
-  .form-group
-    = f.label :first_name, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.text_field :first_name, class: 'form-control'
-  // last name
-  .form-group
-    = f.label :last_name, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.text_field :last_name, class: 'form-control'
-  // zipcode
-  .form-group
-    = f.label :zipcode, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.text_field :zipcode, class: 'form-control'
-  // about_me
-  .form-group
-    = f.label :about_me, class: 'col-xs-12 col-sm-4 control-label'
-    .col-xs-6.col-sm-5.col-md-4.col-lg-3
-      = f.text_area :about_me, class: 'form-control'
+            // last name
+            .form-group
+              = f.label :last_name, class: 'col-sm-4 control-label'
+              .col-sm-8.col-lg-6
+                = f.text_field :last_name, class: 'form-control'
+  
+            // zipcode
+            .form-group
+              = f.label :zipcode, class: 'col-sm-4 control-label'
+              .col-sm-8.col-lg-6
+                = f.text_field :zipcode, class: 'form-control'
 
-  // actions
-  .form-group
-    .col-sm-offset-4.col-sm-8
-      = f.submit t('.submit'), class: 'btn btn-primary btn-lg'
+          .col-xs-12  
+            // about_me
+            .form-group
+              .user-page-about
+                = f.label :about_me, class: 'col-xs-12 control-label'
+                .col-xs-12
+                  = f.text_area :about_me, rows: '4', cols: '1', class: 'form-control', placeholder: t('.about_me')
+  
+            .form-group
+              .col-sm-7.col-sm-offset-5
+                = button_tag type:"submit", class: "btn btn-primary btn-lg" do
+                  i.fa.fa-fw.fa-check-circle-o
+                  = t('.submit')

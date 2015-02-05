@@ -18,21 +18,15 @@ en:
       share_transfer: Share transfer
   shared:
     header: *application
-    feedback:
+    footer:
+      terms: Terms   
+      privacy: Privacy
       feedback_cta:
         <h3>Help others too!</h3>
         <p>Share your experience. Help us improve the site and help others.</p>
         <p><a href="mailto:admin@saveonsend.com">Tell us how we can get better</a></p>
-    footer:
-      terms: Terms   
-      privacy: Privacy
     notification:
-      notice_test_version: This is a test version — we need your feedback to get it right! Write to      
-    signup_header:
-      title_html: "Register for FREE, so you can:"
-      get_notified: "Get notified of price changes and new low-cost providers"
-      earn_points: "Earn valuable points and status for participation"
-      lock_free: "Lock-in FREE access to the information on the website"
+      notice_test_version: This is a test version — we need your feedback to get it right! Write to
     sidebar:
       hi: 'Hi, '
       sign_in: Log in
@@ -52,8 +46,9 @@ en:
       submit: Submit
   users:
     edit:
-      title: Please provide an additional information, that help us to find the best service provider for you
-      submit: Submit
+      title: Your account
+      submit: Save changes
+      about_me: Type your reasons here
   user_recent_transactions:
     new:
       title: Why spend 1 min on checking your last transfer?
@@ -126,13 +121,14 @@ en:
   devise:
     registrations:
       new:
-        title_create_new: "Create a free account:"
+        title: Registration
+        title_html: "Register for FREE, so you can:"
+        get_notified: "Get notified of price changes and new low-cost providers"
+        earn_points: "Earn valuable points and status for participation"
+        lock_free: "Lock-in FREE access to the information on the website"
         password_length: "(%{minimum_password_length} characters minimum)"
         email_or_phone: "Email or mobile phone number"
-        email_number: "Email / number"
         sign_up: Send for verification
-        sign_up_fb: Sign in with Facebook
-        or: or
     sessions:
       new:
         remember_me: Remember me

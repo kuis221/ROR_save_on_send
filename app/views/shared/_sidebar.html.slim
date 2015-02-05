@@ -1,5 +1,5 @@
 - if current_user
-  li.active= link_to t('.hi') + current_user.full_name, edit_user_path
+  li.active= link_to t('.hi') + current_user.first_name, edit_user_path
   li= link_to t('.how_to'), how_to_path
   li= link_to t('.next_transfer'), new_user_next_transfers_path(anchor: 'new_user_next_transfer')
   li= link_to t('.recent_transaction'), new_user_recent_transaction_path

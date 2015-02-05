@@ -18,21 +18,15 @@ zh-CN:
       share_transfer: 股权转让
   shared:
     header: *application
-    feedback:
+    footer:
+      terms: 条款   
+      privacy: 隐私
       feedback_cta:
         <h3>帮助别人呢！</h3>
         <p>分享你的经历。帮助我们改善网站和帮助别人。</p>
         <p><a href="mailto:admin@saveonsend.com">告诉我们，我们怎样才能得到更好的</a></p>
-    footer:
-      terms: 条款   
-      privacy: 隐私
     notification:
-      notice_test_version: 这是一个测试版本 - 我们需要您的意见得到它的权利！写      
-    signup_header:
-      title_html: "免费注册，因此您可以："
-      get_notified: 价格变化和新的低成本供应商得到通知
-      earn_points: 赢取宝贵的积分和状态参加
-      lock_free: 锁定在网站上免费获取信息
+      notice_test_version: 这是一个测试版本 - 我们需要您的意见得到它的权利！写
     sidebar:
       hi: '你好, '
       sign_in: 登录
@@ -52,8 +46,9 @@ zh-CN:
       submit: 提交
   users:
     edit:
-      title: 请提供更多的信息，帮助我们找到最好的服务提供商为你
-      submit: 提交
+      title: 您的帐户
+      submit: 保存更改
+      about_me: 在这里输入你的理由
   user_recent_transactions:
     new:
       title: 告诉我们你最后的转移
@@ -126,13 +121,14 @@ zh-CN:
   devise:
     registrations:
       new:
-        title_create_new: "建立免费的账号："
+        title: 注册
+        title_html: "免费注册，因此您可以："
+        get_notified: 价格变化和新的低成本供应商得到通知
+        earn_points: 赢取宝贵的积分和状态参加
+        lock_free: 锁定在网站上免费获取信息
         password_length: "(%{minimum_password_length} 最小字符)"
         email_or_phone: "電子郵件或手機號碼"
-        email_number: "電子郵件/數"
         sign_up: 创建我的帐户！
-        sign_up_fb: 通过Facebook登录
-        or: 或
     sessions:
       new:
         remember_me: 记得我
