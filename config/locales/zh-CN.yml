@@ -135,8 +135,7 @@ zh-CN:
         log_in: 登录
     confirmations:
       show:
-        title_email: 确认您的电子邮件地址
-        title_sms: 确认您的手机号码
+        title: 完成注册
         confirm: 确认您的帐户
         confirmation_code_hint: 输入您在您的确认短信收到的代码
     mailer:

@@ -135,8 +135,7 @@ es:
         log_in: Iniciar sesión
     confirmations:
       show:
-        title_email: Confirme su dirección de correo electrónico
-        title_sms: Confirme su número de teléfono móvil
+        title: Complete su registro
         confirm: Confirma tu cuenta
         confirmation_code_hint: Introduce el código recibido en su mensaje sms de confirmación
     mailer:

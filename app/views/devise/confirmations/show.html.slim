@@ -2,10 +2,7 @@ section.content.user-page
   .container
     .row
       .user-page-title
-        - if resource.phone.present?
-          h3= t('.title_sms')
-        - else
-          h3= t('.title_email')
+        h3= t('.title')
 
     - unless resource.errors.empty?
       .row

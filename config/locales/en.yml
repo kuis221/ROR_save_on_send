@@ -135,8 +135,7 @@ en:
         log_in: Log in
     confirmations:
       show:
-        title_email: Confirm your email address
-        title_sms: Confirm your mobile phone number
+        title: Complete your registration
         confirm: Confirm your account
         confirmation_code_hint: Enter the code you received in your confirmation sms message
     mailer:
