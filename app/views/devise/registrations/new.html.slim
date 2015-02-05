@@ -4,9 +4,10 @@ section.content.user-page
       .user-page-title
         h3= t('.title')
 
-    .row
-      .col-xs-12.align-center.alert.alert-danger
-        = devise_error_messages!
+    - unless resource.errors.empty?
+      .row
+        .col-xs-12.align-center.alert.alert-danger
+          = devise_error_messages!
 
     .row
       .user-page-wrap
@@ -31,7 +32,7 @@ section.content.user-page
             .checkbox
               label
                 = f.check_box :accept_terms
-                | #{User.human_attribute_name(:accept_terms).html_safe}
+                | #{User.human_attribute_name(:accept_terms_html).html_safe}
   
             // actions
             .form-group

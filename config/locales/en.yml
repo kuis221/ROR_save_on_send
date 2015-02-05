@@ -160,7 +160,8 @@ en:
         zipcode: Zipcode
         money_transfer_destination_id: Sending money to
         accept_emails: Email me updates from SaveOnSend
-        accept_terms: I accept SaveOnSend's 
+        accept_terms: I accept SaveOnSend's Terms of Service and Privacy Policy
+        accept_terms_html: I accept SaveOnSend's 
           <a href="/terms" target="_blank">Terms of Service</a> and 
           <a href="/privacy" target="_blank">Privacy Policy</a>
         about_me: About me (Why am I sending money?)
