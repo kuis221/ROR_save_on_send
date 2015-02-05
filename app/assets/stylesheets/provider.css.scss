@@ -14,16 +14,29 @@
     }
   }
   .provider-review-user {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    
+    > div {
+      vertical-align: middle;
+    }
   }
   .provider-review-user-status {
     color: #fff;
     font-size: $font-size-small;
     font-weight: bold;
     padding: 2px 9px;
-    margin-right: 10px;
-    vertical-align: top;
+    margin-right: 15px;
     display: inline-block;
+  }
+  .provider-review-user-avatar {
+    border: solid 1px #ddd;
+    display: inline-block;
+    margin-right: 5px; 
+    line-height: 10px;
+
+    img {
+      width: 21px;
+    }
   }
   .provider-review-user-name {
     font-weight: bold;
