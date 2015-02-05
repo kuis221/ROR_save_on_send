@@ -4,7 +4,7 @@ section.content.user-page
       .user-page-title
         h3= t('.log_in')
 
-    - unless resource.errors.empty? 
+    - unless resource.try(:errors).try(:empty?) 
       .row
         .col-xs-12.align-center.alert.alert-danger
           = devise_error_messages!

@@ -17,7 +17,7 @@ section.content-header
 
 section.content
   .container
-    - unless resource.errors.empty?
+    - unless resource.try(:errors).try(:empty?)
       .row
         .col-xs-12.align-center.alert.alert-danger
           = devise_error_messages!
@@ -27,27 +27,27 @@ section.content
         // select country
         = render partial: 'shared/select_country_ctrl', locals: {f: f, resource: resource, label_class: '', control_class: ''}
 
-          .col-xs-12.col-sm-6.col-sm-offset-3.col-lg-4.col-lg-offset-4  
-            // email
-            .form-group
-              = f.label :email
-                = t('.email_or_phone')
-              = f.text_field :email, class: 'form-control'
-  
-            // accept emails
-            .checkbox
-              label
-                = f.check_box :accept_emails
-                | #{User.human_attribute_name(:accept_emails)}
-  
-            // accept TOS
-            .checkbox
-              label
-                = f.check_box :accept_terms
-                | #{User.human_attribute_name(:accept_terms_html).html_safe}
-  
-            // actions
-            .form-group
-              = button_tag type:"submit", class: "btn btn-primary btn-lg" do
-                i.fa.fa-fw.fa-check-circle-o
-                = t('.sign_up')
+        .col-xs-12.col-sm-6.col-sm-offset-3.col-lg-4.col-lg-offset-4  
+          // email
+          .form-group
+            = f.label :email
+              = t('.email_or_phone')
+            = f.text_field :email, class: 'form-control'
+
+          // accept emails
+          .checkbox
+            label
+              = f.check_box :accept_emails
+              | #{User.human_attribute_name(:accept_emails)}
+
+          // accept TOS
+          .checkbox
+            label
+              = f.check_box :accept_terms
+              | #{User.human_attribute_name(:accept_terms_html).html_safe}
+
+          // actions
+          .form-group
+            = button_tag type:"submit", class: "btn btn-primary btn-lg" do
+              i.fa.fa-fw.fa-check-circle-o
+              = t('.sign_up')
