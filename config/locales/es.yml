@@ -48,6 +48,8 @@ es:
   users:
     edit:
       title: Su cuenta
+      status: Estado
+      points: Puntos
       submit: Guardar cambios
       about_me: Escriba sus razones aquí
   user_recent_transactions:

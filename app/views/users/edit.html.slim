@@ -27,6 +27,18 @@ section.content.user-page
                 = f.file_field(:avatar)
 
           .col-xs-12.col-sm-8
+            // status & point
+            .form-group
+              = f.label t('.status'), class: 'col-sm-4 control-label'
+              .col-sm-8.col-lg-6
+                - if @user.level.present?
+                  .user-page-status class='#{@user.level.slug}-status'
+                    = @user.level.name
+        
+                - if @user.points > 0
+                  .user-page-points
+                    = "#{@user.points} #{t('.points')}"
+
             // first name
             .form-group
               = f.label :first_name, class: 'col-sm-4 control-label'

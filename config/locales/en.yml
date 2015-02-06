@@ -48,6 +48,8 @@ en:
   users:
     edit:
       title: Your account
+      status: Status
+      points: Points
       submit: Save changes
       about_me: Type your reasons here
   user_recent_transactions:

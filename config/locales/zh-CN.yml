@@ -48,6 +48,8 @@ zh-CN:
   users:
     edit:
       title: 您的帐户
+      status: 状态
+      points: 点
       submit: 保存更改
       about_me: 在这里输入你的理由
   user_recent_transactions:
