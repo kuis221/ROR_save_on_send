@@ -10,7 +10,7 @@ footer {
   
   .footer {
     background-color: #282828;
-    font-size: 12px;
+    font-size: $font-size-small;
     line-height: 42px;
   
     p {
@@ -31,5 +31,31 @@ footer {
         }
       }
     }
-  } 
+  }
+  .disclosure {
+    background-color: #282828;
+    font-size: $font-size-small;
+    text-align: justify;
+  
+    p {
+      color: #6a6a6a;
+      margin: 0 0 1em;
+    }
+  }
+}
+
+
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+
+}
+@media only screen and (min-width: 768px) {
+  footer {
+    .disclosure {
+      text-align: center;
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+
 }
