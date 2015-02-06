@@ -2,17 +2,19 @@
 
 
 html {
-  position: relative;
   min-height: 100%;
+  position: relative;
+
+  &.fix {
+    overflow: hidden;
+  }
 }
 body {
   text-align: center;
   background: #f9f9f9 image-url('content-pattern.png') repeat 0 0;
   min-width: 320px;
+  margin-bottom: 242px;
   
-  > .container-fluid {
-    padding-bottom: 242px;
-  }
   &.fix {
     height: 100%;
     overflow: hidden;

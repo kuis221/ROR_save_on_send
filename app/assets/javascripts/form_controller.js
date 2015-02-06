@@ -31,7 +31,7 @@
 			// Expand menu on mobile
 			$('[data-toggle="offcanvas"]').click(function () {
 				$('.row-offcanvas').toggleClass('active');
-				$('body').toggleClass('fix');
+				/*$('html, body').toggleClass('fix');*/
 			});
 			
 
