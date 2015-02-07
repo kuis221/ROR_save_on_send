@@ -1,4 +1,5 @@
 [
+  ['Bronze user', 'bronze'],
   ['Silver user', 'silver'], 
   ['Gold user', 'gold']
 ].each do |name, slug|
