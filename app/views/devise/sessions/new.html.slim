@@ -4,10 +4,11 @@ section.content.user-page
       .user-page-title
         h3= t('.log_in')
 
-    - unless resource.try(:errors).try(:empty?) 
+    - if flash[:alert]
       .row
         .col-xs-12.align-center.alert.alert-danger data-error='1'
-          = devise_error_messages!
+          //= devise_error_messages!
+          = flash[:alert]
 
     .row
       .user-page-wrap
