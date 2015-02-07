@@ -5,23 +5,24 @@
       .user-rating= display_service_quality_for_feedback(feedback)
   
     .provider-review-user
-      - if feedback.user.present?
+      - feedback_user = feedback.user
+      - unless feedback_user.nil?
         .provider-review-user-avatar
-          - if feedback.user.avatar?
-            = image_tag(@user.avatar_url)
+          - if feedback_user.avatar?
+            = image_tag(feedback_user.avatar_url)
           - else
             = image_tag('default-image.png')
 
         .provider-review-user-name
-          = feedback.user.first_name
+          = feedback_user.first_name
 
-        - if feedback.user.level.present?
-          .provider-review-user-status class='#{feedback.user.level.slug}-status'
-            = feedback.user.level.name
+        - if feedback_user.level.present?
+          .provider-review-user-status class='#{feedback_user.level.slug}-status'
+            = feedback_user.level.name
 
-        - if feedback.user.points > 0
+        - if feedback_user.points > 0
           .provider-review-user-points
-            = "#{feedback.user.points} #{t('.points')}"
+            = "#{feedback_user.points} #{t('.points')}"
 
       - else
         .provider-review-user-name
