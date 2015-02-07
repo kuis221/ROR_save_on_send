@@ -6,12 +6,18 @@
   
     .provider-review-user
       - if feedback.user.present?
-        - if feedback.user.level.present?
-          .provider-review-user-status class='#{feedback.user.level.slug}-status'
-            = feedback.user.level.name
+        .provider-review-user-avatar
+          - if feedback.user.avatar?
+            = image_tag(@user.avatar_url)
+          - else
+            = image_tag('default-image.png')
 
         .provider-review-user-name
           = feedback.user.first_name
+
+        - if feedback.user.level.present?
+          .provider-review-user-status class='#{feedback.user.level.slug}-status'
+            = feedback.user.level.name
 
         - if feedback.user.points > 0
           .provider-review-user-points

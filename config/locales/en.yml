@@ -21,6 +21,7 @@ en:
     footer:
       terms: Terms   
       privacy: Privacy
+      disclosure: 'Advertising Disclosure: SaveOnSend.com is an independent, advertising-supported comparison service. SaveOnSend may be compensated in exchange for featured placement of certain sponsored products and services, or your clicking on links posted on this website.'
       feedback_cta:
         <h3>Help others too!</h3>
         <p>Share your experience. Help us improve the site and help others.</p>
@@ -47,6 +48,8 @@ en:
   users:
     edit:
       title: Your account
+      status: Status
+      points: Points
       submit: Save changes
       about_me: Type your reasons here
   user_recent_transactions:
@@ -89,14 +92,15 @@ en:
       title: Let’s find the best provider for your next transfer
       provider_name: Provider
       to_from_transfer_media: To-From method
-      gross_paid_amount: Total cost
-      real_cost: Margin
-      net_received_amount: Received
-      duration_html: Duration<br><small>(hours)</small>
+      gross_paid_amount_html: Total cost<em>*</em>
+      real_cost_html: Margin<em>*</em>
+      net_received_amount_html: Received<em>*</em>
+      duration_html: Duration<em>*</em><br><small>(hours)</small>
       documentation_requirements: Documentation requirements
       promotions: Promotions
       service_quality: Service quality
       title_table: Best options for your next transfers
+      table_footnote: Details provided here are general purpose and high-level and provided for your information only. Check with a particular provider for details about terms and conditions. If you notice a mistake, please contact us at
       output_table_intro_html: Best providers selected for lowest <strong>Margin</strong> — if your <a href="%{last_transfer_link}">Last Transfer</a> showed a lower <strong>Margin</strong>, please <a href="%{submit_link}">submit</a> it for our analysis to help other users. 
       feedback_cta:
         <h3>Thank you for submitting!</h3>
@@ -135,8 +139,7 @@ en:
         log_in: Log in
     confirmations:
       show:
-        title_email: Confirm your email address
-        title_sms: Confirm your mobile phone number
+        title: Complete your registration
         confirm: Confirm your account
         confirmation_code_hint: Enter the code you received in your confirmation sms message
     mailer:

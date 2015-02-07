@@ -21,6 +21,7 @@ zh-CN:
     footer:
       terms: 条款   
       privacy: 隐私
+      disclosure: '广告披露：SaveOnSend.com是一个独立的，广告支持的比较服务。 SaveOnSend可以换取一定的赞助产品和服务，或点击张贴本网站链接功能布局进行补偿。'
       feedback_cta:
         <h3>帮助别人呢！</h3>
         <p>分享你的经历。帮助我们改善网站和帮助别人。</p>
@@ -47,6 +48,8 @@ zh-CN:
   users:
     edit:
       title: 您的帐户
+      status: 状态
+      points: 点
       submit: 保存更改
       about_me: 在这里输入你的理由
   user_recent_transactions:
@@ -89,14 +92,15 @@ zh-CN:
       title: 让我们找到你的下一个转移的最佳供应商
       provider_name: 提供商
       to_from_transfer_media: 对从法
-      gross_paid_amount: 总费用
-      real_cost: 余量
-      net_received_amount: ：收到
-      duration_html: 长短<br><small>(小时)</small>
+      gross_paid_amount_html: 总费用<em>*</em>
+      real_cost_html: 余量<em>*</em>
+      net_received_amount_html: ：收到<em>*</em>
+      duration_html: 长短<em>*</em><br><small>(小时)</small>
       documentation_requirements: 文件要求
       promotions: 促销
       service_quality: 服务质量
       title_table: 你的下一个转移的最佳选择
+      table_footnote: 这里提供的细节是通用的，高层次，仅供您参考。检查与特定供应商有关的条款和条件的详细信息。如果您发现有错误，请与我们联系：
       output_table_intro_html: 选择最低的最佳供应商 <strong>余量</strong> - 如果您 <a href="%{last_transfer_link}">最后转移</a> 表现出较低的 <strong>余量</strong> 请 <a href="%{submit_link}">提交</a> 它为我们的分析，以帮助其他用户. 
       feedback_cta:
         <h3>感谢您提交！</h3>
@@ -135,8 +139,7 @@ zh-CN:
         log_in: 登录
     confirmations:
       show:
-        title_email: 确认您的电子邮件地址
-        title_sms: 确认您的手机号码
+        title: 完成注册
         confirm: 确认您的帐户
         confirmation_code_hint: 输入您在您的确认短信收到的代码
     mailer:

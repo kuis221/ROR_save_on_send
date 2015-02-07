@@ -19,14 +19,18 @@ section.content.next-tr-page
                 = t('.provider_name')
               - if @from_to_show
                 th= t('.to_from_transfer_media')
-              th= t('.gross_paid_amount')
-              th.option-margin= t('.real_cost')
-              th= t('.net_received_amount')
+              th= t('.gross_paid_amount_html')
+              th.option-margin= t('.real_cost_html')
+              th= t('.net_received_amount_html')
               th= t('.duration_html')
               th.option-quality= t('.service_quality')
 
           tbody
             = render @least_expensive_remittance_terms
+
+    .row
+      .col-xs-12.col-sm-10.col-sm-offset-1
+        p.table-footnote * #{t('.table_footnote')} #{mail_to 'admin@saveonsend.com'}
 
   .container
     .row

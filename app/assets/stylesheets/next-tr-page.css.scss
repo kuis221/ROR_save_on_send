@@ -4,12 +4,15 @@
 /* next transfer */
 .next-tr-page {
   p {
-    color: #393939;
     margin-bottom: 35px;
+  }
+  .table-footnote {
+    font-size: $font-size-small;
+    color: #6b6b6b;
   }
   .table {
     font-size: $font-size-base;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 
     a {
       color: #191a1b;
@@ -38,6 +41,9 @@
         background: #2c2c2c;
         border: 1px solid #2c2c2c;
         border-width: 0 1px;
+      }
+      em {
+        font: normal 15px Helvetica, Arial, "Lucida Grande", sans-serif;
       }
     }
     td {

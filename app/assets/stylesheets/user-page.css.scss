@@ -13,6 +13,21 @@
       width: 164px;
     }
   }
+  .user-page-status {
+    color: #fff;
+    font-size: $font-size-small;
+    font-weight: bold;
+    padding: 2px 9px;
+    margin: 7px 15px 0 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .user-page-points {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 21px;
+    margin-top: 7px;
+  }
   .user-page-about {
     .control-label {
       text-align: left;

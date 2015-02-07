@@ -21,6 +21,7 @@ es:
     footer:
       terms: Condiciones
       privacy: Intimidad
+      disclosure: 'Publicidad Divulgación: SaveOnSend.com es un servicio de comparación con publicidad independiente. SaveOnSend puede compensarse a cambio de la colocación de las funciones de determinados productos y servicios patrocinados, o su clic en los enlaces que aparecen en este sitio web.'
       feedback_cta:
         <h3>Ayuda a los demás también!</h3>
         <p>Comparte tu experiencia. Ayúdanos a mejorar el sitio y ayudar a los demás.</p>
@@ -47,6 +48,8 @@ es:
   users:
     edit:
       title: Su cuenta
+      status: Estado
+      points: Puntos
       submit: Guardar cambios
       about_me: Escriba sus razones aquí
   user_recent_transactions:
@@ -89,14 +92,15 @@ es:
       title: Vamos a encontrar el mejor proveedor para su próxima transferencia
       provider_name: Proveedor
       to_from_transfer_media: To-De método
-      gross_paid_amount: Costo total
-      real_cost: Margen
-      net_received_amount: Recibido
-      duration_html: Duración<br><small>(horas)</small>
+      gross_paid_amount_html: Costo total<em>*</em>
+      real_cost_html: Margen<em>*</em>
+      net_received_amount_html: Recibido<em>*</em>
+      duration_html: Duración<em>*</em><br><small>(horas)</small>
       documentation_requirements: Los requisitos de documentación
       promotions: Promociones
       service_quality: La calidad del servicio
       title_table: Las mejores opciones para su próximo traslado
+      table_footnote: Detalles proporcionados aquí son de uso general y de alto nivel y aportan solo su información. Consulte con un proveedor en particular para obtener más información acerca de los términos y condiciones. Si observa algún error, por favor contacte con nosotros en
       output_table_intro_html: Las mejores proveedores seleccionados por menor <strong>Margen</strong> — si su <a href="%{last_transfer_link}">última Transferencia</a> mostró una menor <strong>Margen</strong> por favor <a href="%{submit_link}">presentar</a> para nuestro análisis para ayudar a otros usuarios. 
       feedback_cta:
         <h3>Gracias por enviar usted!</h3>
@@ -135,8 +139,7 @@ es:
         log_in: Iniciar sesión
     confirmations:
       show:
-        title_email: Confirme su dirección de correo electrónico
-        title_sms: Confirme su número de teléfono móvil
+        title: Complete su registro
         confirm: Confirma tu cuenta
         confirmation_code_hint: Introduce el código recibido en su mensaje sms de confirmación
     mailer:
