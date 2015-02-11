@@ -1,4 +1,7 @@
 zh-CN:
+  date:
+    formats:
+      for_feedback: '%b %d, %Y'
   notice:
     best_rate: 恭喜！您最近调任使用的最佳方法！
     save_on_transaction:  其他用户保存 <span>%{saving}&nbsp;%{currency}</span> 在这样的交易
