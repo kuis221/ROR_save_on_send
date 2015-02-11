@@ -2,6 +2,8 @@ class UserRecentTransactionsController < ApplicationController
   #before_filter :authenticate_user!
   before_filter :set_prefered_currency, only: [:new]
 
+  include ActionView::Helpers::NumberHelper
+
   def new
     @user_recent_transaction = User::RecentTransaction.new(params[:user_recent_transaction])
   
@@ -74,7 +76,7 @@ class UserRecentTransactionsController < ApplicationController
 
         notice = I18n.t('notice.save_on_transaction',
                         destination_country: destination_country,
-                        saving: more_money.to_i,
+                        saving: number_with_delimiter(more_money.to_i),
                         currency: more_money.currency.iso_code)
       end
 
