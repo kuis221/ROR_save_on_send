@@ -25,6 +25,18 @@ module ApplicationHelper
     display_rating(provider.average_rating, "#{provider.class.model_name}_#{provider.id}")
   end
 
+  def link_to_with_active(label, url, options = {})
+    if current_page?(url)
+      if options[:class]
+        options[:class] += (options[:class].is_a?(Array) ? ['active'] : ' active')
+      else
+        options[:class] = 'active'
+      end
+    end
+  
+    link_to(label, url, options)
+  end
+
   private
   def display_rating(rate, control_id)
     display_rating_html = ''
