@@ -32,7 +32,7 @@ section.content
           .form-group
             = f.label :email
               = t('.email_or_phone')
-            = f.text_field :email, class: 'form-control'
+            = f.text_field :email, class: 'form-control', value: resource.try(:email).try(:blank?) ? resource.try(:phone) : resource.try(:email)
 
           // accept emails
           .checkbox

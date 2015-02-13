@@ -213,3 +213,4 @@ zh-CN:
               blank: 请提供一个“星”评级的交易 - 这将他人帮助SaveOnSend社会做出更好的选择，他们会为你做同样的
   sms:
     confirmation_code: 您的确认码%{code}的saveonsend.com
+    sending_failed: 我们不能发送确认码到指定的电话号码

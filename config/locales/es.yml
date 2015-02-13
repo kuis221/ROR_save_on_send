@@ -215,3 +215,4 @@ es:
               blank: Sírvanse proporcionar una calificación "estrellas" de la transacción — esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
   sms:
     confirmation_code: Su código de confirmación% {code} para saveonsend.com
+    sending_failed: No podemos enviar un código de confirmación con el número de teléfono especificado

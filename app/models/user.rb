@@ -98,7 +98,7 @@ class User < ActiveRecord::Base
   end
 
   def email_blank?
-    email.blank?
+    email.blank? && phone.present?
   end
 
   def phone_with_international_code
@@ -141,11 +141,16 @@ class User < ActiveRecord::Base
   def send_confirmation_instructions_by_sms
     # send confirmation instruction by phone
 
-    Twilio::REST::Client.new.messages.create(
-      from: Rails.application.secrets.twilio_phone_number,
-      to: phone_with_international_code,
-      body: I18n.t('sms.confirmation_code', code: self.confirmation_token)
-    )
+    begin
+      Twilio::REST::Client.new.messages.create(
+        from: Rails.application.secrets.twilio_phone_number,
+        to: phone_with_international_code,
+        body: I18n.t('sms.confirmation_code', code: self.confirmation_token)
+      )
+    rescue Twilio::REST::RequestError => e
+      self.errors.add(:base, I18n.t('sms.sending_failed'))
+      raise ActiveRecord::Rollback
+    end
 
     self
   end
