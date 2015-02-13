@@ -35,7 +35,7 @@ if ActiveRecord::Base.connection.table_exists?('fx_rates')
       FXRate.last.try(:text)
     else
       last_fx_rate = FXRate.last
-      FXRate.create(text: text) if !last_fx_rate || (last_fx_rate && !last_fx_rate.created_at.today?)
+      FXRate.create(text: text) if !last_fx_rate || (last_fx_rate && !((last_fx_rate.created_at + 1.hour) < Time.current))
     end
   end
 
@@ -44,7 +44,7 @@ if ActiveRecord::Base.connection.table_exists?('fx_rates')
 
   # set the seconds after than the current rates are automatically expired
   # by default, they never expire
-  moe.ttl_in_seconds = 86400
+  moe.ttl_in_seconds = 3600
   # Store in cache
   moe.save_rates
 
