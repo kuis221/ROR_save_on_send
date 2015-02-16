@@ -130,6 +130,12 @@ form {
   .radio-inline {
     margin: 0 10px 0 0;
     padding-top: 0;
+    
+    img {
+      width: 40px;
+      height: auto;
+      margin: 6px 0;
+    }
   }
 }
 
@@ -140,6 +146,15 @@ form {
     .radio-inline {
       img {
         height: auto;
+      }
+    }
+  }
+  
+  .country {
+    .radio-inline {
+      img {
+        width: 48px;
+        margin: 8px 0;
       }
     }
   }
