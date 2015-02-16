@@ -26,7 +26,8 @@ module ApplicationHelper
   end
 
   def link_to_with_active(label, url, options = {})
-    if current_page?(url)
+    url_withour_anchor = url.gsub(/#.*$/, '')
+    if current_page?(url_withour_anchor)
       if options[:class]
         options[:class] += (options[:class].is_a?(Array) ? ['active'] : ' active')
       else
