@@ -17,6 +17,11 @@
       > a {
         border-radius: 12px;
         padding: 6px 10px;
+        
+        &.active {
+          color: #fff;
+          background: #04b92b;
+        }
       }
     }
   }
@@ -36,6 +41,27 @@
 
       > a {
         border-radius: 0;
+
+        &.active {
+          color: #fff;
+          background: #04b92b;
+        }
+      }
+    }
+  }
+}
+
+
+/* header on landing page */
+.landing {
+  #header,
+  .sidebar-offcanvas {
+    .nav-pills {
+      .promo {
+        a {
+          color: #fff;
+          background: #3780ca;
+        }
       }
     }
   }
