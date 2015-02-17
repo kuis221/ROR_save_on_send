@@ -72,8 +72,8 @@ class RemittanceTerm < ActiveRecord::Base
 
     least_expensive_services = RemittanceTerm.where(receive_country: receive_country, 
                          receive_currency: receive_currency)
-                  .where("#{amount.to_i} >= send_amount_range_from AND " +
-                         "#{amount.to_i} <= send_amount_range_to")
+                  .where("#{amount} >= send_amount_range_from AND " +
+                         "#{amount} <= send_amount_range_to")
                   .select(select_query)
                   .order(order_by)
 
