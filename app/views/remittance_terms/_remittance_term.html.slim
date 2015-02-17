@@ -25,10 +25,12 @@ tr *{class: remittance_term.highlighted? ? 'option-best' : ''}
 
   td rowspan=rowspan
     - if @user_next_transfer.amount_send > 0
-      = humanized_money_with_symbol(remittance_term.send_amount_with_fee(@user_next_transfer.amount_send).to_i)
+      - total_amount = remittance_term.send_amount_with_fee(@user_next_transfer.amount_send)
+      = humanized_money_with_symbol(total_amount.to_f.round)
 
     - else
-      = humanized_money_with_symbol(remittance_term.estimated_send_amount(@user_next_transfer.amount_receive, @user_next_transfer.receive_currency).to_i)
+      - total_amount = remittance_term.estimated_send_amount(@user_next_transfer.amount_receive, @user_next_transfer.receive_currency)
+      = humanized_money_with_symbol(total_amount.to_f.round)
 
   td.option-margin rowspan=rowspan
     - if @user_next_transfer.amount_send > 0
