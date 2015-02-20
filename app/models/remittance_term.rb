@@ -72,8 +72,8 @@ class RemittanceTerm < ActiveRecord::Base
 
     least_expensive_services = RemittanceTerm.where(receive_country: receive_country, 
                          receive_currency: receive_currency)
-                  .where("#{amount.to_i} >= send_amount_range_from AND " +
-                         "#{amount.to_i} <= send_amount_range_to")
+                  .where("#{amount} >= send_amount_range_from AND " +
+                         "#{amount} <= send_amount_range_to")
                   .select(select_query)
                   .order(order_by)
 
@@ -122,9 +122,9 @@ class RemittanceTerm < ActiveRecord::Base
   def self.import_from_csv(csv_path = nil)
     csv_file = csv_path.nil? ? Rails.root.join('db/seeds', 'remittance_terms.csv') : open(csv_path)
 
-    events = CSV.read(csv_file, headers: :first_row)
+    remittance_terms = CSV.read(csv_file, headers: :first_row)
 
-    events.each do |data|
+    remittance_terms.each do |data|
       # Receive country
       receive_country = Country.find_by(name: data['Receive country'])
       next if receive_country.nil?
