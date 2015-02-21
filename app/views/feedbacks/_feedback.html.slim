@@ -25,6 +25,9 @@
             = "#{feedback_user.points} #{t('.points')}"
 
       - else
+        .provider-review-user-avatar
+          = image_tag('default-image.png')
+
         .provider-review-user-name
           = t('.anonymous')
   

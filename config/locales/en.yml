@@ -121,7 +121,7 @@ en:
       raiting: 'Raiting:'
       anonymous: Anonymous
       points: Points
-      date: 'Review added: '
+      date: 'Money sent: '
   remittance_terms:
     remittance_term:
       best_method: Best Method
