@@ -58,6 +58,10 @@
       }
       &.tablesaw-cell-persist {
         border-right: solid 1px #113c5e;
+        
+        img {
+          width: 100px;
+        }
       }
       &.option-margin {
         background: image-url('layer.png') repeat 0 0;

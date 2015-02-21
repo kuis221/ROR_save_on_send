@@ -36,12 +36,12 @@ table.tablesaw {
 
 
 .tablesaw-enhanced .tablesaw-bar .btn {
-  border: 1px solid #ccc;
+  border: 1px solid #113c5e;
   background: none;
-  background-color: #fafafa;
+  background-color: #113c5e;
   -webkit-box-shadow: 0 1px 0 rgba(255,255,255,1);
   box-shadow: 0 1px 0 rgba(255,255,255,1);
-  color: #4a4a4a;
+  color: #fff;
   clear: both;
   cursor: pointer;
   display: block;
@@ -64,7 +64,7 @@ table.tablesaw {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  border-radius: .25em;
+  border-radius: 100%;
 }
 
 .tablesaw-enhanced .tablesaw-bar a.btn {
@@ -87,7 +87,7 @@ table.tablesaw {
 .tablesaw-enhanced .tablesaw-bar .btn:hover,
 .tablesaw-enhanced .tablesaw-bar .btn:focus {
   color: #208de3;
-  background-color: #fff;
+  background-color: #081c2b;
   outline: none;
 }
 
@@ -268,19 +268,19 @@ table.tablesaw {
 
 .tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.left:before,
 .tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.right:before {
-  top: .45em;
+  top: .4em;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
 }
 
 .tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.left:before {
   left: .6em;
-  border-right: 5px solid #808080;
+  border-right: 5px solid #fff;
 }
 
 .tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.right:before {
-  left: .7em;
-  border-left: 5px solid #808080;
+  left: .65em;
+  border-left: 5px solid #fff;
 }
 
 .tablesaw-advance a.tablesaw-nav-btn.disabled {
@@ -845,9 +845,9 @@ table.tablesaw thead td {
 }
 
 .tablesaw-advance-dots li i {
-  width: .25em;
-  height: .25em;
-  background: #555;
+  width: .6em;
+  height: .6em;
+  background: #113c5e;
   border-radius: 100%;
   display: inline-block;
 }
