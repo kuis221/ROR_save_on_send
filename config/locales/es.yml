@@ -43,6 +43,7 @@ es:
   service_providers:
     show:
       go_to_provider: Listo para enviar dinero
+      provider_intro_html: 'Votación es proporcionada <strong>por los usuarios como usted</strong> — si usted envió recientemente dinero con esta empresa, por favor <a href="%{submit_link}">presente</a> que la experiencia para ayudar a otros usuarios: <a href="%{submit_link}">haz clic aquí</a>.'
       provider_feedbacks_title: Lo que otros dicen
       provider_feedbacks_count: "%{count} comentarios"
     provider_feedback_form:
