@@ -33,7 +33,7 @@
   
       .provider-review-user-date
         = t('.date')
-        = l(feedback.created_at.to_date, format: :for_feedback)
+        = l(feedback.commendable.date, format: :for_feedback)
 
   .provider-review-text
     = feedback.comments
