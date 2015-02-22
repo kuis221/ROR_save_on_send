@@ -155,6 +155,7 @@ zh-CN:
     index:
       verification_email_was_sent: 请检查您的电子邮件，以完成验证！
       verification_sms_was_sent: 请检查您的手机即可完成验证！
+      check_spam: 如果不签约的一分钟之内收到确认消息，请检查您的垃圾，大量垃圾邮件的电子邮件文件夹。
   activerecord:
     attributes:
       user:

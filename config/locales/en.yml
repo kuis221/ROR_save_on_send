@@ -155,6 +155,7 @@ en:
     index:
       verification_email_was_sent: "Please check your email to complete verification!"
       verification_sms_was_sent: "Please check your phone to complete verification!"
+      check_spam: If you do not receive the confirmation message within a minute of signing up, please check your Junk-Bulk-Spam e-mail folder.
   activerecord:
     attributes:
       user:
