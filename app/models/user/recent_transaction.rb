@@ -6,6 +6,7 @@ class User::RecentTransaction < ActiveRecord::Base
 
   validates_presence_of REQUIRED_FIELDS
   validates_numericality_of :amount_sent, :amount_received, greater_than: 0
+  validates_presence_of :money_transfer_destination, if: :anonymous?
 
   belongs_to :user
   belongs_to :service_provider
@@ -58,6 +59,11 @@ class User::RecentTransaction < ActiveRecord::Base
     end
   end
 
+  protected
+  def anonymous?
+    user.nil?
+  end
+
   rails_admin do
     list do
       field :user
@@ -99,7 +105,9 @@ class User::RecentTransaction < ActiveRecord::Base
       field :originating_source_of_funds
       field :destination_preference_for_funds
       field :money_transfer_destination
-      field :service_provider
+      field :service_provider do
+        nested_form false
+      end
       field :send_to_receive_duration
       field :send_to_receive_duration_interval
       field :created_at
