@@ -42,8 +42,8 @@
               = f.label :receive_currency, class: 'col-sm-5 control-label'
               .col-sm-7
                 = f.collection_radio_buttons(:receive_currency, country.receive_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
-                  = b.label( class: "radio-inline", title: b.text )
-                    = b.radio_button
+                  = b.label( class: "radio-inline", title: b.text, for: "user_next_transfer_receive_currency_" + b.text + "_#{country.id}" )
+                    = b.radio_button( id: "user_next_transfer_receive_currency_" + b.text + "_#{country.id}" )
                     i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
 
       // amount send
