@@ -137,6 +137,7 @@ en:
         password_length: "(%{minimum_password_length} characters minimum)"
         email_or_phone: "Email or mobile phone number"
         sign_up: Send for verification
+        check_spam: If you are registering with email and do not receive a confirmation from SaveOnSend shortly, check the "Junk-Spam" email folder.
     sessions:
       new:
         remember_me: Remember me
@@ -155,7 +156,6 @@ en:
     index:
       verification_email_was_sent: "Please check your email to complete verification!"
       verification_sms_was_sent: "Please check your phone to complete verification!"
-      check_spam: If you do not receive the confirmation message within a minute of signing up, please check your Junk-Bulk-Spam e-mail folder.
   activerecord:
     attributes:
       user:
