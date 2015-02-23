@@ -189,4 +189,61 @@ class User < ActiveRecord::Base
   def validity_of_confirmation_code
     errors.add :confirmation_code unless confirmation_token == confirmation_code
   end
+
+  # Rails Admin Settings
+  rails_admin do
+    list do
+      field :email do
+        label 'Email'
+      end
+      field :phone
+      field :first_name
+      field :last_name
+      field :zipcode
+      field :money_transfer_destination
+      field :created_at
+    end
+
+    show do
+      field :email do
+        label 'Email'
+      end
+
+      field :phone
+      field :first_name
+      field :last_name
+      field :avatar
+      field :zipcode
+      field :money_transfer_destination
+      field :level
+      field :points
+      field :about_me
+      field :accept_terms
+      field :accept_emails
+
+      field :feedbacks
+      field :created_at
+    end
+
+    edit do
+      field :email do
+        label 'Email'
+      end
+      field :phone
+      field :first_name
+      field :last_name
+      field :avatar
+      field :zipcode
+      field :money_transfer_destination
+      field :level
+      field :points
+      field :about_me
+      field :accept_terms
+      field :accept_emails
+      field :feedbacks
+      
+      field :password
+      field :password_confirmation
+    end
+  end
 end
