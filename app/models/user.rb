@@ -221,6 +221,8 @@ class User < ActiveRecord::Base
       field :accept_terms
       field :accept_emails
 
+      field :recent_transactions
+      field :next_transfers
       field :feedbacks
       field :created_at
     end

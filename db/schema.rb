@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217143313) do
+ActiveRecord::Schema.define(version: 20150223112610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(version: 20150217143313) do
     t.string   "currency",                            limit: 3
     t.integer  "fees_for_sending_cents",                        default: 0, null: false
     t.integer  "money_transfer_destination_id"
+    t.string   "send_to_receive_duration_interval"
   end
 
   create_table "users", force: true do |t|
