@@ -137,6 +137,7 @@ es:
         password_length: "(%{minimum_password_length} caracteres como mínimo)"
         email_or_phone: "E-mail o número de teléfono móvil"
         sign_up: Crear mi cuenta!
+        check_spam: Si usted no recibe el mensaje de confirmación a un minuto de la firma, por favor revise su carpeta de correo electrónico no deseado-Bulk-Spam.
     sessions:
       new:
         remember_me: Acuérdate de mí
@@ -155,7 +156,6 @@ es:
     index:
       verification_email_was_sent: Verificación de correo electrónico fue enviado a su dirección de correo electrónico — por favor haga clic en enlace de ese correo electrónico para confirmar
       verification_sms_was_sent: Verificación de correo teléfono fue enviado a su dirección de correo electrónico — por favor haga clic en enlace de ese correo electrónico para confirmar
-      check_spam: Si usted no recibe el mensaje de confirmación a un minuto de la firma, por favor revise su carpeta de correo electrónico no deseado-Bulk-Spam.
   activerecord:
     attributes:
       user:
