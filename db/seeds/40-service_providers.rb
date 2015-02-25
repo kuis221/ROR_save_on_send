@@ -12,7 +12,7 @@
   ['BofA', 'bofa', 'https://www.bankofamerica.com/foreign-exchange/wire-transfer.go'],
   ['PayPal', 'paypal', 'https://www.paypal.com/us/cgi-bin/webscr?cmd=xpt/Marketing_CommandDriven/general/International_Money_Transfer-outside'],
   ['WalMart', 'walmart', 'https://walmart.moneygram.com/MGOWap/flows/home?execution=e1s1#costEstimator'],
-  ['IciciMoney2India', 'icici', 'http://www.icicibank.com/nri-banking/money_transfer/money-transfer-rates.page?'],
+  ['ICICI', 'icici', 'http://www.icicibank.com/nri-banking/money_transfer/money-transfer-rates.page?'],
   ['IndusInd', 'indusind', 'https://www.indusfastremit.com/']
 ].each do |provider_attrs|
   service_provider = ServiceProvider.find_or_create_by(name: provider_attrs[0])
