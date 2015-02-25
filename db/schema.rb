@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223112610) do
+ActiveRecord::Schema.define(version: 20150225130306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20150223112610) do
     t.integer "fees_for_sending_cents",             default: 0,   null: false
     t.float   "fees_for_sending_percent",           default: 0.0
     t.float   "fx_markup"
-    t.integer "duration"
+    t.string  "duration"
     t.text    "documentation"
     t.string  "promotions"
     t.integer "service_quality"
