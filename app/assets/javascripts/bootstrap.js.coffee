@@ -9,7 +9,7 @@ sos.renderRating = ->
 # Render masks
 sos.renderMasks = ->
   $(".mask-date").mask "00/00/0000",
-    placeholder: "DD/MM/YYYY"
+    placeholder: "MM/DD/YYYY"
   $(".mask-money-sent").mask "0,000",
     reverse: true
   $(".mask-money-received").mask "000,000",
