@@ -41,7 +41,7 @@ class User::RecentTransaction < ActiveRecord::Base
       fees_for_sending + amount_sent - amount_received
     else
       fx_markup_rate = fx_markup != 0 ? 1 - fx_markup.fdiv(100) : 1
-      (fees_for_sending + amount_sent).exchange_to(currency)*fx_markup_rate - amount_received
+      FXRate.convert(date: date, to_currency: currency, amount: (fees_for_sending + amount_sent))*fx_markup_rate - amount_received
     end
   end
 

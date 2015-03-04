@@ -51,6 +51,12 @@ describe User::RecentTransaction do
     
       expect(recent_transaction.total_cost).to eq(Money.new(99511, 'INR'))
     end
+
+    it 'should calculate total cost for usd to destination currency transaction for 23 september 2014' do
+      recent_transaction = FactoryGirl.build(:recent_transaction, currency: 'INR', amount_sent: 100, amount_received: 5650, date: '23/09/2014', fees_for_sending: 5)
+
+      expect(recent_transaction.total_cost).to eq(Money.new(75340, 'INR'))
+    end
   end
 
   describe '.duration_intervals_for_select' do
