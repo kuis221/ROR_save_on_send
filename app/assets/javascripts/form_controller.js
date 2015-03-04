@@ -68,6 +68,10 @@
 		    	self.distination_change(this);
 		    	self.show_hide_receive_currency();
 		    });
+		    
+		    
+		    // Capitalize first letter
+		    $('textarea.text-capitalize').capitalize();
 		},
 		
 		// Show or hide receive currency
