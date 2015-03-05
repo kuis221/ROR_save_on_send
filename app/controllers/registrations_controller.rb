@@ -1,9 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
   before_filter :configure_permitted_parameters
   before_filter :set_money_destination, only: [:create]
+  after_filter :track_input_error, only: [:create]
 
-  protected
-
+  protected 
   def set_money_destination
     if current_user.nil? && cookies[:money_transfer_destination_id]
       params[:user][:money_transfer_destination_id] = cookies[:money_transfer_destination_id]

@@ -82,6 +82,7 @@ class UserRecentTransactionsController < ApplicationController
 
       redirect_to(new_user_next_transfers_path, notice: notice)
     else
+      track_input_error(@user_recent_transaction)
       set_prefered_currency
       set_service_providers
 

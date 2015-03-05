@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304170003) do
+ActiveRecord::Schema.define(version: 20150305104606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,12 @@ ActiveRecord::Schema.define(version: 20150304170003) do
 
   add_index "service_providers", ["name"], name: "index_service_providers_on_name", using: :btree
   add_index "service_providers", ["slug"], name: "index_service_providers_on_slug", using: :btree
+
+  create_table "user_input_errors", force: true do |t|
+    t.integer "user_id"
+    t.string  "location"
+    t.string  "messages", limit: 2048
+  end
 
   create_table "user_levels", force: true do |t|
     t.string "name"

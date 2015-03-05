@@ -35,4 +35,13 @@ class ApplicationController < ActionController::Base
       @prefered_currency = current_user.present? ? current_user.prefered_currency : Country.find(cookies[:money_transfer_destination_id].to_i).receive_currency
     end
   end
+
+  def track_input_error(object = nil)
+    object ||= resource
+    if object.errors.present?
+      User::InputError.create(user: current_user, 
+                          location: params[:controller], 
+                          messages: object.errors.full_messages.join(','))
+    end
+  end
 end
