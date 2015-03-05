@@ -140,6 +140,12 @@ form {
 }
 
 
+/* capitalize */
+textarea.text-capitalize {
+  text-transform: none;
+}
+
+
 /* Different resolutions */
 @media only screen and (min-width: 480px) {
   form {

@@ -10,13 +10,16 @@
 			// Date picker
 			var d = new Date(),
 				minDate = (d.getMonth() + 1) + "/" + (d.getDate() + 1) + "/" + (d.getFullYear() - 1),
-				maxDate = (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
-		
+				maxDate = (d.getMonth() + 1) + "/" + (d.getDate() + 1) + "/" + d.getFullYear();
+				
 			$('.input-group.date').datetimepicker({
 			    minDate: minDate,
 			    maxDate: maxDate,
-			    showToday: true,
-			    pickTime: false
+				format: 'MM/DD/YYYY',
+                icons: {
+                    previous: "fa fa-chevron-left",
+                    next: "fa fa-chevron-right"
+                }
 			});
 			
 			
@@ -31,7 +34,6 @@
 			// Expand menu on mobile
 			$('[data-toggle="offcanvas"]').click(function () {
 				$('.row-offcanvas').toggleClass('active');
-				/*$('html, body').toggleClass('fix');*/
 			});
 			
 
@@ -68,6 +70,10 @@
 		    	self.distination_change(this);
 		    	self.show_hide_receive_currency();
 		    });
+		    
+		    
+		    // Capitalize first letter
+		    $('textarea.text-capitalize').capitalize();
 		},
 		
 		// Show or hide receive currency
