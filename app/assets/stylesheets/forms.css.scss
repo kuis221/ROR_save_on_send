@@ -146,6 +146,25 @@ textarea.text-capitalize {
 }
 
 
+/* datetimepicker */
+.bootstrap-datetimepicker-widget {
+  right: -65px!important;
+  
+  &.dropdown-menu {
+    &.pull-right {
+      &:before {
+        left: auto;
+        right: 76px;
+      }
+      &:after {
+        left: auto;
+        right: 77px;
+      }
+    }
+  }
+}
+
+
 /* Different resolutions */
 @media only screen and (min-width: 480px) {
   form {
