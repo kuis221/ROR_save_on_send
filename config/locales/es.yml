@@ -176,7 +176,7 @@ es:
         confirmation_code: Código
       user/recent_transaction:
         date: Fecha
-        currency: moneda Recieved
+        currency: Moneda recieved
         amount_sent: Enviado monto en USD
         amount_received: Cantidad recieved
         originating_source_of_funds_id: Seleccione forma de pago
