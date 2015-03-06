@@ -46,13 +46,16 @@ class User::RecentTransaction < ActiveRecord::Base
   end
 
   def self.duration_intervals_for_select
+    locale = I18n.locale
     User::RecentTransaction::DURATION_INTERVALS.collect do |interval| 
       interval_id = interval
-      
-      interval_text = if I18n == :en
+
+      interval_text = if locale == :en
                         interval
-                      else
+                      elsif locale == :es
                         I18n.t("datetime.prompts.#{interval.singularize}").pluralize.downcase
+                      elsif locale == :'zh-CN'
+                        I18n.t("datetime.prompts.#{interval.singularize}")
                       end
 
       [interval_text, interval_id]

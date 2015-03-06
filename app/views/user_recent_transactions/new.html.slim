@@ -169,7 +169,7 @@ section.content.recent-tr-page
                 .col-sm-3
                   = f.text_field :send_to_receive_duration, class: 'form-control mask-minutes input-group-fix', placeholder: '0'
                 .col-sm-12
-                  = f.collection_radio_buttons(:send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, :first, :last, {}, {class: ''}) do |b|
+                  = f.collection_radio_buttons(:send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, :last, :first, {}, {class: ''}) do |b|
                     = b.label( class: "radio-inline", title: b.text )
                       = b.radio_button
                       = b.text

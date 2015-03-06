@@ -68,9 +68,9 @@ es:
       photo_id: Identificación con foto
       tax_returns: Las declaraciones de impuestos
       job_verification: verificación de empleo
-      clear_form: Clear the form and start over
+      clear_form: Desactive la forma y empezar de nuevo
       submit: "He terminado y envíela!"
-      other_provider: otro Proveedor
+      other_provider: Otro proveedor
       other_provider_modal_label: Por favor proporcione tanto como la información posible acerca de su proveedor preferido
       close: Cerca
       ok: OK
@@ -178,10 +178,10 @@ es:
         date: Fecha
         currency: moneda Recieved
         amount_sent: Enviado monto en USD
-        amount_received: cantidad Recieved
+        amount_received: Cantidad recieved
         originating_source_of_funds_id: Seleccione forma de pago
         service_provider_id: Seleccionar proveedor
-        destination_preference_for_funds_id: método descargar
+        destination_preference_for_funds_id: Método descargar
         fees_for_sending: Cuota para el envío
         send_to_receive_duration: ¿Cuánto tiempo antes que el dinero esté disponible?
         documentation_requirements: Los requisitos de documentación

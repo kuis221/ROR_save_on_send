@@ -16,6 +16,8 @@
 //= require twitter/bootstrap
 //= require moment
 //= require bootstrap-datetimepicker
+//= require moment/es
+//= require moment/zh-cn
 //= require turbolinks
 
 //= require vendors/capitalize

@@ -15,11 +15,13 @@
 			$('.input-group.date').datetimepicker({
 			    minDate: minDate,
 			    maxDate: maxDate,
-				format: 'MM/DD/YYYY',
-                icons: {
+				  format: 'MM/DD/YYYY',
+          icons: {
                     previous: "fa fa-chevron-left",
                     next: "fa fa-chevron-right"
-                }
+          },
+          locale: locale
+
 			});
 			
 			
