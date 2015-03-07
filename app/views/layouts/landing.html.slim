@@ -14,6 +14,10 @@ html lang="en"
     = stylesheet_link_tag "application", :media => "all"
     = favicon_link_tag 'apple-touch-icon.png', :rel => 'apple-touch-icon', :type => 'image/png', :sizes => '180x180'
     = favicon_link_tag 'favicon.png', :rel => 'shortcut icon', type: "image/x-icon"
+    
+    javascript:
+      var locale = "#{I18n.locale}"
+
     = javascript_include_tag "application"
     = render 'shared/ga' if Rails.env.production?
 
