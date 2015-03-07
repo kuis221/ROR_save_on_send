@@ -19,8 +19,8 @@ $(function () {
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
 
-        url: '{#user_path}',
-        method: 'patch',
+        url: '/users.json',
+        method: 'post',
         disableImageResize: /Android(?!.*Chrome)|Opera/
             .test(window.navigator.userAgent),
         maxFileSize: 5000000,
