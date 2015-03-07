@@ -17,14 +17,16 @@ section.content.user-page
 
           .col-xs-12.col-sm-4
             // avatar
-            = f.hidden_field(:avatar_cache)
+            //= f.hidden_field(:avatar_cache)
             .form-group
               .user-page-avatar
                 - if @user.avatar?
-                  = image_tag(@user.avatar_url)
+                  = cl_image_tag(@user.avatar, crop: :fill, width: 162, height: 162)
+                  = link_to :remove, user_avatar_path, method: :delete, remote: true, class: :remove_avatar 
                 - else                  
                   = image_tag('default-image.png')
-                = f.file_field(:avatar)
+                  = cl_image_upload_tag(:avatar)
+                  //= f.file_field(:avatar)
 
           .col-xs-12.col-sm-8
             // status & point

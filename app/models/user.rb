@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
   belongs_to :level, class_name: User::Level
 
-  mount_uploader :avatar, AvatarUploader  
+  #mount_uploader :avatar, AvatarUploader  
 
   # validations
   #validates_presence_of :first_name
@@ -153,6 +153,19 @@ class User < ActiveRecord::Base
     end
 
     self
+  end
+
+  def remove_avatar!
+    result = false
+
+    if avatar.present?
+      Cloudinary::Uploader.destroy(avatar, invalidate: true)
+      update_attribute(:avatar, nil)
+    
+      result = true
+    end
+
+    result
   end
 
   protected

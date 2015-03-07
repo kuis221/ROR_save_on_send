@@ -1,0 +1,17 @@
+$(document).ready(function(){
+  $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {  
+    $('.user-page-avatar').html(
+      $.cloudinary.image(data.result.public_id, 
+        { format: data.result.format, version: data.result.version, 
+          crop: 'fill', width: 162, height: 162 })
+    );
+    return true;
+  });
+
+  $('.remove_avatar').bind('ajax:success', function(){
+    $('.user-page-avatar').html(
+      <%= "'#{image_tag('default-image.png')}'" %>
+    );
+    return true;
+  });
+})

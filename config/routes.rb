@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'omniauth_callbacks'
   }
   
-  resource :user, only: [:edit, :update]
+  resource :user, only: [:edit, :update] do
+    resource :avatar, only: [:destroy]
+  end
 
   resource :user_recent_transaction, only: [:new, :create]
   resource :user_next_transfers, only: [:new, :show, :create]

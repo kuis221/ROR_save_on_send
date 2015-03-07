@@ -27,3 +27,6 @@
 
 //= require bootstrap
 //= require form_controller
+
+//= require cloudinary
+//= require cloudinary_custom
