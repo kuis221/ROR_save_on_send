@@ -39,6 +39,7 @@ gem 'jquery-turbolinks'
 # gem 'maskedinput-rails'
 
 gem 'bootstrap_flash_messages', github: 'useruby/bootstrap_flash_messages'
+gem 'jquery-fileupload-rails'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development

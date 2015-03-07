@@ -24,3 +24,6 @@
 
 //= require bootstrap
 //= require form_controller
+
+//= require jquery-fileupload/basic-plus
+//= require main

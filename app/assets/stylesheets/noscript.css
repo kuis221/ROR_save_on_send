@@ -10,26 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require project
- *= require bootstrap-datetimepicker
- *= require content
- *= require components
- *= require feedback
- *= require footer
- *= require forms
- *= require header
- *= require icon
- *= require main
- *= require notification
- *= require next-tr-page
- *= require provider
- *= require recent-tr-page
- *= require splash
- *= require user-page
- *= require vendors/offcanvas
- *= require vendors/star-rating
- *= require vendors/tablesaw
- * 
- *= require jquery.fileupload
- *= require jquery.fileupload-ui
+ *= require jquery.fileupload-noscript
+ *= require jquery.fileupload-ui-noscript
  */
