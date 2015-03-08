@@ -1,10 +1,16 @@
 @import 'common/variables';
 
 
+/* provider-intro */
+.provider-intro {
+  margin-bottom: 35px;  
+}
+
+
 /* provider-review */
 .provider-review {
   font-size: $font-size-base;
-  margin: 35px 0;
+  margin: 30px 0 35px;
 
   .provider-review-rating {
     margin-bottom: 5px;
@@ -86,7 +92,7 @@
 @media only screen and (min-width: 768px) {
   .provider-review {
     text-align: left;
-    margin: 50px 0;
+    margin: 45px 0 50px;
   
     .provider-review-rating {
       float: right;

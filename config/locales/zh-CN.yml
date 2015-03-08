@@ -43,6 +43,7 @@ zh-CN:
   service_providers:
     show:
       go_to_provider: 准备寄钱
+      provider_intro_html: '反馈是由用户提供像你一样 - 如果你最近发的钱在这家公司，请提交的经验，帮助其他用户：<a href="%{submit_link}">请点击这里</a>。'
       provider_feedbacks_title: 别人怎么说
       provider_feedbacks_count: "%{count} 条评论"
     provider_feedback_form:
@@ -136,6 +137,7 @@ zh-CN:
         password_length: "(%{minimum_password_length} 最小字符)"
         email_or_phone: "電子郵件或手機號碼"
         sign_up: 创建我的帐户！
+        check_spam: 如果不签约的一分钟之内收到确认消息，请检查您的垃圾，大量垃圾邮件的电子邮件文件夹。
     sessions:
       new:
         remember_me: 记得我

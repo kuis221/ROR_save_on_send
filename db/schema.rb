@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150202114858) do
+ActiveRecord::Schema.define(version: 20150305104606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150202114858) do
     t.string   "text",       limit: 16384
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date"
   end
 
   create_table "payment_methods", force: true do |t|
@@ -72,12 +73,12 @@ ActiveRecord::Schema.define(version: 20150202114858) do
     t.integer "send_method_id"
     t.integer "receive_method_id"
     t.string  "receive_currency",         limit: 3
-    t.integer "send_amount_range_from"
-    t.integer "send_amount_range_to"
+    t.float   "send_amount_range_from"
+    t.float   "send_amount_range_to"
     t.integer "fees_for_sending_cents",             default: 0,   null: false
     t.float   "fees_for_sending_percent",           default: 0.0
     t.float   "fx_markup"
-    t.integer "duration"
+    t.string  "duration"
     t.text    "documentation"
     t.string  "promotions"
     t.integer "service_quality"
@@ -93,6 +94,12 @@ ActiveRecord::Schema.define(version: 20150202114858) do
 
   add_index "service_providers", ["name"], name: "index_service_providers_on_name", using: :btree
   add_index "service_providers", ["slug"], name: "index_service_providers_on_slug", using: :btree
+
+  create_table "user_input_errors", force: true do |t|
+    t.integer "user_id"
+    t.string  "location"
+    t.string  "messages", limit: 2048
+  end
 
   create_table "user_levels", force: true do |t|
     t.string "name"
@@ -130,6 +137,7 @@ ActiveRecord::Schema.define(version: 20150202114858) do
     t.string   "currency",                            limit: 3
     t.integer  "fees_for_sending_cents",                        default: 0, null: false
     t.integer  "money_transfer_destination_id"
+    t.string   "send_to_receive_duration_interval"
   end
 
   create_table "users", force: true do |t|

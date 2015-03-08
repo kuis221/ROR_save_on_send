@@ -6,16 +6,13 @@ class UsersController < ApplicationController
   def update
     @user = current_user
 
-    @user.update_attributes(params.require(:user).permit(:first_name, :last_name, :zipcode, :about_me, :avatar))
-    
-    respond_to do |format|
-      format.html do
-        if @user.valid?
-          redirect_to(root_path)
-        else
-          render(:edit)
-        end
-      end
+    if params[:avatar].present?
+      preloaded = Cloudinary::PreloadedFile.new(params[:avatar])         
+      raise "Invalid upload signature" if !preloaded.valid?
+      @user.avatar = preloaded.identifier
+    end
+
+    @user.update_attributes(params.require(:user).permit(:first_name, :last_name, :zipcode, :about_me))
 
       format.json do
         if @user.avatar

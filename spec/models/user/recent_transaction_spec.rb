@@ -23,26 +23,6 @@ describe User::RecentTransaction do
     end
   end
 
-  describe '#send_to_receive_duration=' do
-    it 'should convert send_to_receive_duration to second base on send_to_receive_duration_interval' do
-      recent_transaction.send_to_receive_duration_interval = 'minutes'
-      recent_transaction.send_to_receive_duration = '10'
-
-      expect(recent_transaction[:send_to_receive_duration]).to eq(600)
-    end
-  end
-
-  describe '#send_to_receive_duration' do
-    it 'should set send_to_receive_duration_interval base on value of send_to_receive_duration' do
-      recent_transaction.send_to_receive_duration_interval = nil
-      recent_transaction.send_to_receive_duration = 600
-
-      expect(recent_transaction.send_to_receive_duration).to eq(10)
-      expect(recent_transaction[:send_to_receive_duration]).to eq(600)
-      expect(recent_transaction.send_to_receive_duration_interval).to eq('minutes')
-    end
-  end
-
   describe '#currency=' do
     it 'should set currency for amount sent' do
       recent_transaction = FactoryGirl.build(:recent_transaction, currency: 'INR', amount_sent: 100)
@@ -70,6 +50,12 @@ describe User::RecentTransaction do
       recent_transaction = FactoryGirl.build(:recent_transaction, currency: 'INR', amount_sent: 100, amount_received: 5650, fees_for_sending: 5)
     
       expect(recent_transaction.total_cost).to eq(Money.new(99511, 'INR'))
+    end
+
+    it 'should calculate total cost for usd to destination currency transaction for 23 september 2014' do
+      recent_transaction = FactoryGirl.build(:recent_transaction, currency: 'INR', amount_sent: 100, amount_received: 5650, date: '23/09/2014', fees_for_sending: 5)
+
+      expect(recent_transaction.total_cost).to eq(Money.new(75340, 'INR'))
     end
   end
 

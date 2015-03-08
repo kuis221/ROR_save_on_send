@@ -75,8 +75,8 @@ section.content.recent-tr-page
                   = f.label :currency, class: 'col-sm-5 control-label'
                   .col-sm-3
                     = f.collection_radio_buttons(:currency, country.receive_currency.collect {|currency| [ currency, currency ] }, :first, :last, {prompt: true}) do |b|
-                      = b.label( class: "radio-inline", title: b.text )
-                        = b.radio_button
+                      = b.label( class: "radio-inline", title: b.text, for: "user_next_transfer_receive_currency_" + b.text + "_#{country.id}" )
+                        = b.radio_button( id: "user_next_transfer_receive_currency_" + b.text + "_#{country.id}" )
                         i *{:class => ['fa fa-fw fa-lg', 'fa-'+b.text.parameterize.downcase]}
           
           // amount received
@@ -169,7 +169,7 @@ section.content.recent-tr-page
                 .col-sm-3
                   = f.text_field :send_to_receive_duration, class: 'form-control mask-minutes input-group-fix', placeholder: '0'
                 .col-sm-12
-                  = f.collection_radio_buttons(:send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, :first, :last, {}, {class: ''}) do |b|
+                  = f.collection_radio_buttons(:send_to_receive_duration_interval, User::RecentTransaction.duration_intervals_for_select, :last, :first, {}, {class: ''}) do |b|
                     = b.label( class: "radio-inline", title: b.text )
                       = b.radio_button
                       = b.text

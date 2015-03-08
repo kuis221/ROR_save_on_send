@@ -16,8 +16,11 @@
 //= require twitter/bootstrap
 //= require moment
 //= require bootstrap-datetimepicker
+//= require moment/es
+//= require moment/zh-cn
 //= require turbolinks
 
+//= require vendors/capitalize
 //= require vendors/jquery.mask.min
 //= require vendors/jquery.rating.pack
 //= require vendors/jquery.tablesaw
@@ -25,5 +28,5 @@
 //= require bootstrap
 //= require form_controller
 
-//= require jquery-fileupload/basic-plus
-//= require main
+//= require cloudinary
+//= require cloudinary_custom

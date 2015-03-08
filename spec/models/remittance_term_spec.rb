@@ -130,7 +130,7 @@ describe RemittanceTerm do
       expect(remittance_term.fees_for_sending.to_i).to eq(4)
       expect(remittance_term.fees_for_sending_percent).to eq(0)
       expect(remittance_term.fx_markup).to eq(2.49)
-      expect(remittance_term.duration).to eq(120)
+      expect(remittance_term.duration).to eq('120')
       expect(remittance_term.documentation).to be_nil
       expect(remittance_term.promotions).to be_nil
       expect(remittance_term.service_quality).to be_nil

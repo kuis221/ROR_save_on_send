@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
   belongs_to :level, class_name: User::Level
 
-  mount_uploader :avatar, AvatarUploader  
+  #mount_uploader :avatar, AvatarUploader  
 
   # validations
   #validates_presence_of :first_name
@@ -155,6 +155,19 @@ class User < ActiveRecord::Base
     self
   end
 
+  def remove_avatar!
+    result = false
+
+    if avatar.present?
+      Cloudinary::Uploader.destroy(avatar, invalidate: true)
+      update_attribute(:avatar, nil)
+    
+      result = true
+    end
+
+    result
+  end
+
   protected
   def generate_confirmation_token
     if email.present?
@@ -188,5 +201,64 @@ class User < ActiveRecord::Base
 
   def validity_of_confirmation_code
     errors.add :confirmation_code unless confirmation_token == confirmation_code
+  end
+
+  # Rails Admin Settings
+  rails_admin do
+    list do
+      field :email do
+        label 'Email'
+      end
+      field :phone
+      field :first_name
+      field :last_name
+      field :zipcode
+      field :money_transfer_destination
+      field :created_at
+    end
+
+    show do
+      field :email do
+        label 'Email'
+      end
+
+      field :phone
+      field :first_name
+      field :last_name
+      field :avatar
+      field :zipcode
+      field :money_transfer_destination
+      field :level
+      field :points
+      field :about_me
+      field :accept_terms
+      field :accept_emails
+
+      field :recent_transactions
+      field :next_transfers
+      field :feedbacks
+      field :created_at
+    end
+
+    edit do
+      field :email do
+        label 'Email'
+      end
+      field :phone
+      field :first_name
+      field :last_name
+      field :avatar
+      field :zipcode
+      field :money_transfer_destination
+      field :level
+      field :points
+      field :about_me
+      field :accept_terms
+      field :accept_emails
+      field :feedbacks
+      
+      field :password
+      field :password_confirmation
+    end
   end
 end

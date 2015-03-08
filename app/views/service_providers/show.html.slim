@@ -17,12 +17,17 @@ section.content
   .container
     .row
       - if @provider.display_feedbacks.present?
-        h4
-          .col-xs-6.col-sm-5.col-sm-offset-1.text-left
-            = t('.provider_feedbacks_title')
+        .col-xs-12
+          p.align-center.provider-intro= t('.provider_intro_html', submit_link: new_user_recent_transaction_path)
+
+        .col-xs-12
+          h4
+            .row
+              .col-xs-6.col-sm-5.col-sm-offset-1.text-left
+                = t('.provider_feedbacks_title')
   
-          .col-xs-6.col-sm-5.text-right
-            small= t('.provider_feedbacks_count', count: @provider.display_feedbacks.size)
+              .col-xs-6.col-sm-5.text-right
+                small= t('.provider_feedbacks_count', count: @provider.display_feedbacks.size)
 
         .col-xs-12.col-sm-10.col-sm-offset-1
           = render @provider.display_feedbacks

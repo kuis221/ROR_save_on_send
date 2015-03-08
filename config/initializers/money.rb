@@ -35,11 +35,11 @@ if ActiveRecord::Base.connection.table_exists?('fx_rates')
       FXRate.last.try(:text)
     else
       last_fx_rate = FXRate.last
-      FXRate.create(text: text) if !last_fx_rate || (last_fx_rate && !((last_fx_rate.created_at + 1.hour) < Time.current))
+      FXRate.create(text: text, date: Date.today) if !last_fx_rate || (last_fx_rate && !((last_fx_rate.created_at + 1.hour) < Time.current))
     end
   end
 
-  moe.app_id = 'fc400af738024664b81700ce0d846a06'
+  moe.app_id = Rails.application.secrets.open_exchange_rate_app_id 
   moe.update_rates
 
   # set the seconds after than the current rates are automatically expired

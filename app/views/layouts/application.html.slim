@@ -12,16 +12,15 @@ html lang="en"
       = javascript_include_tag "/vendors/respond.js"
 
     = stylesheet_link_tag "application", :media => "all"
-    noscript
-      = stylesheet_link_tag "noscript", :media => "all"
-
-    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
-    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
-    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
-    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
-    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+    = favicon_link_tag 'apple-touch-icon.png', :rel => 'apple-touch-icon', :type => 'image/png', :sizes => '180x180'
+    = favicon_link_tag 'favicon.png', :rel => 'shortcut icon', type: "image/x-icon"
+    
+    javascript:
+      var locale = "#{I18n.locale}"
 
     = javascript_include_tag "application"
+    = cloudinary_js_config
+
     = render 'shared/ga' if Rails.env.production?
 
   body

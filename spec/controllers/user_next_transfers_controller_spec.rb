@@ -3,7 +3,7 @@ require 'spec_helper'
 describe UserNextTransfersController do
   render_views
 
-  let(:user){FactoryGirl.create(:user)}
+  let(:user){FactoryGirl.create(:confirmed_user)}
 
   describe 'GET show' do
     it 'should display info about best options for next transfer' do
@@ -44,10 +44,43 @@ describe UserNextTransfersController do
       next_transfer_attrs
     }
 
+    let(:not_valid_attrs){
+      next_transfer_attrs[:amount_send] = 0
+      next_transfer_attrs[:amount_receive] = 0
+      next_transfer_attrs
+    }
+
     it 'should be possible to create next transfer if user is not sign in' do
       expect{
         post :create, user_next_transfer:  next_transfer_attrs
       }.to change(User::NextTransfer, :count).by(1)
     end
+
+    it 'should track validation error' do
+      sign_in(user)
+
+      expect{
+        post :create, user_next_transfer:  not_valid_attrs
+      }.to change(User::InputError, :count).by(1)
+    end
+
+    it 'should track valid error event if user is not present' do
+      expect{
+        post :create, user_next_transfer:  not_valid_attrs
+      }.to change(User::InputError, :count).by(1)
+    end
+
+    it 'should track validation error' do
+      sign_in(user)
+      
+      post :create, user_next_transfer:  not_valid_attrs
+      
+      last_input_error = User::InputError.last
+
+      expect(last_input_error.location).to eq('user_next_transfers')
+      expect(last_input_error.messages).to eq('Amount send must be greater than 0,Amount receive must be greater than 0')
+      expect(last_input_error.user).to eq(user)
+    end
+
   end
 end

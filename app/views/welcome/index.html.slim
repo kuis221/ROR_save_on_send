@@ -1,7 +1,23 @@
-= render partial: 'shared/signup_header'
+section.content-header
+  .container
+    .row
+      .col-xs-12
+        h2= t('devise.registrations.new.title_html')
+        .align-center.text-left
+          ul
+            li
+              i.fa.fa-check
+              = t('devise.registrations.new.get_notified')
+            li
+              i.fa.fa-check
+              = t('devise.registrations.new.earn_points')
+            li
+              i.fa.fa-check
+              = t('devise.registrations.new.lock_free')
 
-section.next-tr-page
-  .container style=("padding-top: 50px; padding-bottom: 150px;")
-    h5.text-center
-      strong
-        = @welcome_message
+section.content
+  .container
+    .row
+      .col-xs-12
+        h5= @welcome_message
+        p.align-center.red= t('devise.registrations.new.check_spam')

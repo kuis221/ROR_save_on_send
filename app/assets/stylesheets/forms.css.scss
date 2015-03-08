@@ -130,6 +130,37 @@ form {
   .radio-inline {
     margin: 0 10px 0 0;
     padding-top: 0;
+    
+    img {
+      width: 40px;
+      height: auto;
+      margin: 6px 0;
+    }
+  }
+}
+
+
+/* capitalize */
+textarea.text-capitalize {
+  text-transform: none;
+}
+
+
+/* datetimepicker */
+.bootstrap-datetimepicker-widget {
+  right: -65px!important;
+  
+  &.dropdown-menu {
+    &.pull-right {
+      &:before {
+        left: auto;
+        right: 76px;
+      }
+      &:after {
+        left: auto;
+        right: 77px;
+      }
+    }
   }
 }
 
@@ -139,7 +170,16 @@ form {
   form {
     .radio-inline {
       img {
-        height: auto;
+        height: 48px;
+      }
+    }
+  }
+  
+  .country {
+    .radio-inline {
+      img {
+        width: 48px;
+        margin: 8px 0;
       }
     }
   }
