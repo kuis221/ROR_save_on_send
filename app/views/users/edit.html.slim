@@ -30,140 +30,55 @@ section.content.user-page
               .user-page-avatar
                 - if @user.avatar?
                   = cl_image_tag(@user.avatar, crop: :fill, width: 162, height: 162)
-                  = link_to :remove, user_avatar_path, method: :delete, remote: true, class: :remove_avatar 
+                  = link_to :remove, user_avatar_path, method: :delete, remote: true, class: :remove_avatar
+
                 - else                  
                   = image_tag('default-image.png')
                   = cl_image_upload_tag(:avatar)
                   //= f.file_field(:avatar)
 
-            table.table.table-striped role='presentation'
-              tbody.files
-
-          .blueimp-gallery.blueimp-gallery-controls#blueimp-gallery data-filter=':even'
-            .slides
-            h3.title
-            a.prev ‹
-            a.next ›
-            a.close ×
-            a.play-pause
-            ol.indicator
-
-          script#template-upload(type='text/x-tmpl')
-            |{% for (var i=0, file; file=o.files[i]; i++) { %}
-            |    <tr class='template-upload fade'>
-            |        <td>
-            |            <span class='preview'></span>
-            |        </td>
-            |        <td>
-            |            <p class='name'>{%=file.name%}</p>
-            |            <strong class='error text-danger'></strong>
-            |        </td>
-            |        <td>
-            |            <p class='size'>Processing...</p>
-            |            <div class='progress progress-striped active' role='progressbar' aria-valuemin='0' aria-valuemax='100' aria-valuenow='0'><div class='progress-bar progress-bar-success' style='width: 0%;'></div></div>
-            |        </td>
-            |        <td>
-            |            {% if (!i && !o.options.autoUpload) { %}
-            |                <button class='btn btn-primary start' disabled>
-            |                  <i class='fa fa-upload'></i>
-            |                  <span>Start</span>
-            |                </button>
-            |            {% } %}
-            |            {% if (!i) { %}
-            |                <button class='btn btn-warning cancel'>
-            |                  <i class='fa fa-ban'></i>
-            |                  <span>Cancel</span>
-            |                </button>
-            |            {% } %}
-            |        </td>
-            |    </tr>
-            |{% } %}
-
-          script#template-download(type='text/x-tmpl')
-            |{% for (var i=0, file; file=o.files[i]; i++) { %}
-            |    <tr class='template-download fade'>
-            |        <td>
-            |            <span class='preview'>
-            |                {% if (file.thumbnailUrl) { %}
-            |                    <a href='{%=file.url%}' title='{%=file.name%}' download='{%=file.name%}' data-gallery><img src='{%=file.thumbnailUrl%}'></a>
-            |                {% } %}
-            |            </span>
-            |        </td>
-            |        <td>
-            |            <p class='name'>
-            |                {% if (file.url) { %}
-            |                    <a href='{%=file.url%}' title='{%=file.name%}' download='{%=file.name%}' {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
-            |                {% } else { %}
-            |                    <span>{%=file.name%}</span>
-            |                {% } %}
-            |            </p>
-            |            {% if (file.error) { %}
-            |                <div><span class='label label-danger'>Error</span> {%=file.error%}</div>
-            |            {% } %}
-            |        </td>
-            |        <td>
-            |            <span class='size'>{%=o.formatFileSize(file.size)%}</span>
-            |        </td>
-            |        <td>
-            |            {% if (file.deleteUrl) { %}
-            |                <button class='btn btn-danger delete' data-type='{%=file.deleteType%}' data-url='{%=file.deleteUrl%}'{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
-            |                    <i class='fa fa-trash'></i>
-            |                    <span>Delete</span>
-            |                </button>
-            |                <input type='checkbox' name='delete' value='1' class='toggle'>
-            |            {% } else { %}
-            |                <button class='btn btn-warning cancel'>
-            |                    <i class='fa fa-ban'></i>
-            |                    <span>Cancel</span>
-            |                </button>
-            |            {% } %}
-            |        </td>
-            |    </tr>
-            |{% } %}
-
-
-        = form_for(@user, html: {class: 'form-horizontal', role: 'form'}) do |f|
-          .col-xs-12.col-sm-8
-            // status & point
-            .form-group
-              = f.label t('.status'), class: 'col-sm-4 control-label'
-              .col-sm-8.col-lg-6
-                - if @user.level.present?
-                  .user-page-status class='#{@user.level.slug}-status'
-                    = @user.level.name
-        
-                - if @user.points > 0
-                  .user-page-points
-                    = "#{@user.points} #{t('.points')}"
-
-            // first name
-            .form-group
-              = f.label :first_name, class: 'col-sm-4 control-label'
-              .col-sm-8.col-lg-6
-                = f.text_field :first_name, class: 'form-control'
+          = form_for(@user, html: {class: 'form-horizontal', role: 'form'}) do |f|
+            .col-xs-12.col-sm-8
+              // status & point
+              .form-group
+                = f.label t('.status'), class: 'col-sm-4 control-label'
+                .col-sm-8.col-lg-6
+                  - if @user.level.present?
+                    .user-page-status class='#{@user.level.slug}-status'
+                      = @user.level.name
+          
+                  - if @user.points > 0
+                    .user-page-points
+                      = "#{@user.points} #{t('.points')}"
   
-            // last name
-            .form-group
-              = f.label :last_name, class: 'col-sm-4 control-label'
-              .col-sm-8.col-lg-6
-                = f.text_field :last_name, class: 'form-control'
+              // first name
+              .form-group
+                = f.label :first_name, class: 'col-sm-4 control-label'
+                .col-sm-8.col-lg-6
+                  = f.text_field :first_name, class: 'form-control'
+    
+              // last name
+              .form-group
+                = f.label :last_name, class: 'col-sm-4 control-label'
+                .col-sm-8.col-lg-6
+                  = f.text_field :last_name, class: 'form-control'
+    
+              // zipcode
+              .form-group
+                = f.label :zipcode, class: 'col-sm-4 control-label'
+                .col-sm-8.col-lg-6
+                  = f.text_field :zipcode, class: 'form-control mask-zipcode'
   
-            // zipcode
-            .form-group
-              = f.label :zipcode, class: 'col-sm-4 control-label'
-              .col-sm-8.col-lg-6
-                = f.text_field :zipcode, class: 'form-control mask-zipcode'
-
-          .col-xs-12  
-            // about_me
-            .form-group
-              .user-page-about
-                = f.label :about_me, class: 'col-xs-12 control-label'
-                .col-xs-12
-                  = f.text_area :about_me, rows: '4', cols: '1', class: 'form-control', placeholder: t('.about_me')
-  
-            .form-group
-              .col-sm-7.col-sm-offset-5
-                = button_tag type:"submit", class: "btn btn-primary btn-lg" do
-                  i.fa.fa-fw.fa-check-circle-o
-                  = t('.submit')
+            .col-xs-12  
+              // about_me
+              .form-group
+                .user-page-about
+                  = f.label :about_me, class: 'col-xs-12 control-label'
+                  .col-xs-12
+                    = f.text_area :about_me, rows: '4', cols: '1', class: 'form-control', placeholder: t('.about_me')
+    
+              .form-group
+                .col-sm-7.col-sm-offset-5
+                  = button_tag type:"submit", class: "btn btn-primary btn-lg" do
+                    i.fa.fa-fw.fa-check-circle-o
+                    = t('.submit')
