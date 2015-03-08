@@ -168,7 +168,7 @@ zh-CN:
         zipcode: 邮政编码
         money_transfer_destination_id: 汇款目的地
         accept_emails: 给我发电子邮件从SaveOnSend更新
-        accept_terms: 我接受SaveOnSend的 服务条款 和 隐私权政策
+        accept_terms: SaveOnSend的服务条款和隐私权政策
         accept_terms_html: 我接受SaveOnSend的 <a href="/terms" target="_blank">服务条款</a> 和 <a href="/privacy" target="_blank">隐私权政策</a>
         about_me: 关于我的（为什么我寄钱？）
         confirmation_code: 代码
@@ -188,12 +188,15 @@ zh-CN:
         comments: 帮助其他有关此提供详细评论
         money_transfer_destination_id: 哪里
       user/next_transfer:
-        amount_send: 发送量
+        amount_send: ''
         receive_currency: 接收货币
-        amount_receive: 收量
+        amount_receive: ''
         originating_source_of_funds_id: 发送方法
+        originating_source_of_funds: ''
         destination_preference_for_funds_id: 接收方法
+        destination_preference_for_funds: ''
         money_transfer_destination_id: 哪里
+        money_transfer_destination: ''
       referral:
         comments: 评论
         email: 电子邮件
@@ -213,6 +216,18 @@ zh-CN:
               blank: 请提供详细的注释你的“星”评级的交易 - 这将他人帮助SaveOnSend社会做出更好的选择，他们会为你做同样的
             service_quality:
               blank: 请提供一个“星”评级的交易 - 这将他人帮助SaveOnSend社会做出更好的选择，他们会为你做同样的
+        user/next_transfer:
+          attributes:
+            amount_send:
+              greater_than: 补量
+            amount_receive: 
+              greater_than: 补量
+            originating_source_of_funds:
+              blank: 选择发送方法
+            destination_preference_for_funds:
+              blank: 选择接收方法
+            money_transfer_destination:
+              blank: 选择目的地
   sms:
     confirmation_code: 您的确认码%{code}的saveonsend.com
     sending_failed: 我们不能发送确认码到指定的电话号码

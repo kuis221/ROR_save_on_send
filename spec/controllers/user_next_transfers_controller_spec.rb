@@ -78,7 +78,7 @@ describe UserNextTransfersController do
       last_input_error = User::InputError.last
 
       expect(last_input_error.location).to eq('user_next_transfers')
-      expect(last_input_error.messages).to eq('Amount send must be greater than 0,Amount receive must be greater than 0')
+      expect(last_input_error.messages).to eq(' Fill amount')
       expect(last_input_error.user).to eq(user)
     end
 

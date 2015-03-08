@@ -27,7 +27,7 @@ class User::NextTransfer < ActiveRecord::Base
 
   private
   def amount_send_present?
-    amount_send_cents > 0
+    amount_send_cents >= 0
   end
 
   def amount_receive_present?
