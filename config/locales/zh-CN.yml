@@ -219,13 +219,13 @@ zh-CN:
         user/next_transfer:
           attributes:
             amount_send:
-              greater_than: 补量
+              greater_than: 填入总额
             amount_receive: 
-              greater_than: 补量
+              greater_than: 填入总额
             originating_source_of_funds:
-              blank: 选择发送方法
+              blank: 选择汇款方式
             destination_preference_for_funds:
-              blank: 选择接收方法
+              blank: 选择收款方式
             money_transfer_destination:
               blank: 选择目的地
   sms:
