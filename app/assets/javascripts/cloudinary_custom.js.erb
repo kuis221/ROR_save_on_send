@@ -1,17 +1,37 @@
-$(document).ready(function(){
-  $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {  
-    $('.user-page-avatar').html(
-      $.cloudinary.image(data.result.public_id, 
-        { format: data.result.format, version: data.result.version, 
-          crop: 'fill', width: 162, height: 162 })
+$(document).ready(function() {
+    $('.cloudinary-fileupload').bind(
+        'fileuploadprogress',
+        function(e, data) {
+            $('.progress').show();
+            $('.progress-bar').css('width', Math.round((data.loaded * 100.0) / data.total) + '%');
+        }
     );
-    return true;
-  });
 
-  $('.remove_avatar').bind('ajax:success', function(){
-    $('.user-page-avatar').html(
-      <%= "'#{image_tag('default-image.png')}'" %>
+    $('.cloudinary-fileupload').bind(
+        'cloudinarydone',
+        function(e, data) {
+            $('.progress').hide();
+            $('.user-page-avatar').html(
+                $.cloudinary.image(
+                    data.result.public_id, {
+                        format: data.result.format,
+                        version: data.result.version, 
+                        crop: 'fill',
+                        width: 162,
+                        height: 162
+                    }
+                )
+            );
+            $('.user-page-avatar-btn').html('<a rel="nofollow" href="/user/avatar" data-remote="true" data-method="delete" class="btn btn-danger user-page-avatar-remove"><i class="fa fa-trash"></i><span>Delete avatar</span></a>');
+            return true;
+        }
     );
-    return true;
-  });
+
+    $('.user-page-avatar-remove').bind('ajax:success', function() {
+        $('.user-page-avatar').html(
+            <%= "'#{image_tag('default-image.png')}'" %>
+        );
+        $('.user-page-avatar-btn').html('<span class="btn btn-info user-page-avatar-add"><i class="fa fa-plus"></i><span>Add avatar</span><input type="file" name="file" data-url="https://api.cloudinary.com/v1_1/ht6yfglrl/auto/upload" data-form-data="{&quot;timestamp&quot;:1426109021,&quot;callback&quot;:&quot;http://localhost:8080/cloudinary_cors.html&quot;,&quot;signature&quot;:&quot;3049df0d1e7b916dd4df9222a504b841c46ae86a&quot;,&quot;api_key&quot;:&quot;626298754516726&quot;}" data-cloudinary-field="avatar" class="cloudinary-fileupload"></span>');
+        return true;
+    });
 })

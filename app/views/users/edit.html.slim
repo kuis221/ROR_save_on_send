@@ -13,72 +13,73 @@ section.content.user-page
 
     .row
       .user-page-wrap
-        .col-xs-12
-          // avatar
-          /= f.hidden_field(:avatar_cache)
-            /.user-page-avatar
-              /- if @user.avatar?
-                = image_tag(@user.avatar_url)
-              /- else                  
-                = image_tag('default-image.png')
-              /= f.file_field(:avatar)
-
+        = form_for(@user, html: {class: 'form-horizontal', role: 'form'}) do |f|
           .col-xs-12.col-sm-4
-            // avatar
-            //= f.hidden_field(:avatar_cache)
             .form-group
-              .user-page-avatar
-                - if @user.avatar?
+              - if @user.avatar?
+                .user-page-avatar
                   = cl_image_tag(@user.avatar, crop: :fill, width: 162, height: 162)
-                  = link_to :remove, user_avatar_path, method: :delete, remote: true, class: :remove_avatar
 
-                - else                  
+                .user-page-avatar-btn
+                  = link_to user_avatar_path, method: :delete, remote: true, class: 'btn btn-danger user-page-avatar-remove' do
+                    i.fa.fa-trash
+                    span Delete avatar
+
+              - else
+                .user-page-avatar
                   = image_tag('default-image.png')
-                  = cl_image_upload_tag(:avatar)
-                  //= f.file_field(:avatar)
+                  .progress
+                    .progress-bar.progress-bar-info.progress-bar-striped role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"
+                      span.sr-only 0% Complete
 
-          = form_for(@user, html: {class: 'form-horizontal', role: 'form'}) do |f|
-            .col-xs-12.col-sm-8
-              // status & point
-              .form-group
-                = f.label t('.status'), class: 'col-sm-4 control-label'
-                .col-sm-8.col-lg-6
-                  - if @user.level.present?
-                    .user-page-status class='#{@user.level.slug}-status'
-                      = @user.level.name
-          
-                  - if @user.points > 0
-                    .user-page-points
-                      = "#{@user.points} #{t('.points')}"
+                .user-page-avatar-btn
+                  span.btn.btn-info.user-page-avatar-add
+                    i.fa.fa-plus
+                    span Add avatar
+                    = cl_image_upload_tag(:avatar)
+
+
+          .col-xs-12.col-sm-8
+            // status & point
+            .form-group
+              = f.label t('.status'), class: 'col-sm-4 control-label'
+              .col-sm-8.col-lg-6
+                - if @user.level.present?
+                  .user-page-status class='#{@user.level.slug}-status'
+                    = @user.level.name
+        
+                - if @user.points > 0
+                  .user-page-points
+                    = "#{@user.points} #{t('.points')}"
+
+            // first name
+            .form-group
+              = f.label :first_name, class: 'col-sm-4 control-label'
+              .col-sm-8.col-lg-6
+                = f.text_field :first_name, class: 'form-control'
   
-              // first name
-              .form-group
-                = f.label :first_name, class: 'col-sm-4 control-label'
-                .col-sm-8.col-lg-6
-                  = f.text_field :first_name, class: 'form-control'
-    
-              // last name
-              .form-group
-                = f.label :last_name, class: 'col-sm-4 control-label'
-                .col-sm-8.col-lg-6
-                  = f.text_field :last_name, class: 'form-control'
-    
-              // zipcode
-              .form-group
-                = f.label :zipcode, class: 'col-sm-4 control-label'
-                .col-sm-8.col-lg-6
-                  = f.text_field :zipcode, class: 'form-control mask-zipcode'
+            // last name
+            .form-group
+              = f.label :last_name, class: 'col-sm-4 control-label'
+              .col-sm-8.col-lg-6
+                = f.text_field :last_name, class: 'form-control'
   
-            .col-xs-12  
-              // about_me
-              .form-group
-                .user-page-about
-                  = f.label :about_me, class: 'col-xs-12 control-label'
-                  .col-xs-12
-                    = f.text_area :about_me, rows: '4', cols: '1', class: 'form-control', placeholder: t('.about_me')
-    
-              .form-group
-                .col-sm-7.col-sm-offset-5
-                  = button_tag type:"submit", class: "btn btn-primary btn-lg" do
-                    i.fa.fa-fw.fa-check-circle-o
-                    = t('.submit')
+            // zipcode
+            .form-group
+              = f.label :zipcode, class: 'col-sm-4 control-label'
+              .col-sm-8.col-lg-6
+                = f.text_field :zipcode, class: 'form-control mask-zipcode'
+
+          .col-xs-12  
+            // about_me
+            .form-group
+              .user-page-about
+                = f.label :about_me, class: 'col-xs-12 control-label'
+                .col-xs-12
+                  = f.text_area :about_me, rows: '4', cols: '1', class: 'form-control', placeholder: t('.about_me')
+  
+            .form-group
+              .col-sm-7.col-sm-offset-5
+                = button_tag type:"submit", class: "btn btn-primary btn-lg" do
+                  i.fa.fa-fw.fa-check-circle-o
+                  = t('.submit')
