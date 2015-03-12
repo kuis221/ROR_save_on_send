@@ -60,6 +60,7 @@ es:
       change: Cambio
       delete: Borrar
       add: Añadir avatar
+      image_format_unsupported: Formato de imagen no está soportado
   user_recent_transactions:
     new:
       title: Háblenos de su último traslado

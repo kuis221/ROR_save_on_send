@@ -1,3 +1,19 @@
+<% url_helpers =  Rails.application.routes.url_helpers %>
+
+function preloaded_image(result){
+  return result.resource_type + '/' + result.type + '/' + 'v' + result.version + '/' + result.public_id + '.' + result.format + '#' + result.signature
+}
+
+function empty_avatar_actions(){
+  $('.user-page-avatar-remove').addClass('hidden');
+  $('.user-page-avatar-add').removeClass('hidden');
+}
+
+function present_avatar_actions(){
+  $('.user-page-avatar-remove').removeClass('hidden');
+  $('.user-page-avatar-add').addClass('hidden');
+}
+
 $(document).ready(function() {
     $('.cloudinary-fileupload').bind(
         'fileuploadprogress',
@@ -10,19 +26,36 @@ $(document).ready(function() {
     $('.cloudinary-fileupload').bind(
         'cloudinarydone',
         function(e, data) {
+            $('.upload_error').addClass('hidden'); 
             $('.progress').hide();
-            $('.user-page-avatar').html(
-                $.cloudinary.image(
-                    data.result.public_id, {
-                        format: data.result.format,
-                        version: data.result.version, 
-                        crop: 'fill',
-                        width: 162,
-                        height: 162
-                    }
-                )
-            );
-            $('.user-page-avatar-btn').html('<a rel="nofollow" href="/user/avatar" data-remote="true" data-method="delete" class="btn btn-danger user-page-avatar-remove"><i class="fa fa-trash"></i><span>Delete avatar</span></a>');
+
+            if(data.format != undefined) {
+              $.ajax({
+                type: "PATCH",
+                url: "<%= url_helpers.user_path(format: :json) %>", 
+                data: {avatar: preloaded_image(data.result)},
+                success: function(){
+                  $('.user-page-avatar').html(
+                    $.cloudinary.image(
+                        data.result.public_id, {
+                            format: data.result.format,
+                            version: data.result.version, 
+                            crop: 'fill',
+                            width: 162,
+                            height: 162
+                        }
+                    )
+                  );
+                }
+              })
+
+              present_avatar_actions();
+
+            }else{
+              $('.upload_error').removeClass('hidden'); 
+            }
+
+            
             return true;
         }
     );
@@ -31,7 +64,9 @@ $(document).ready(function() {
         $('.user-page-avatar').html(
             <%= "'#{image_tag('default-image.png')}'" %>
         );
-        $('.user-page-avatar-btn').html('<span class="btn btn-info user-page-avatar-add"><i class="fa fa-plus"></i><span>Add avatar</span><input type="file" name="file" data-url="https://api.cloudinary.com/v1_1/ht6yfglrl/auto/upload" data-form-data="{&quot;timestamp&quot;:1426109021,&quot;callback&quot;:&quot;http://localhost:8080/cloudinary_cors.html&quot;,&quot;signature&quot;:&quot;3049df0d1e7b916dd4df9222a504b841c46ae86a&quot;,&quot;api_key&quot;:&quot;626298754516726&quot;}" data-cloudinary-field="avatar" class="cloudinary-fileupload"></span>');
+
+        empty_avatar_actions();
+
         return true;
     });
 })

@@ -60,6 +60,7 @@ zh-CN:
       change: 变化
       delete: 删除
       add: 添加头像
+      image_format_unsupported: 不支持映像格式
   user_recent_transactions:
     new:
       title: 告诉我们你最后的转移

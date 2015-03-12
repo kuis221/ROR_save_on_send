@@ -60,6 +60,7 @@ en:
       change: Change
       delete: Delete
       add: Add avatar
+      image_format_unsupported: Image format is unsupported
   user_recent_transactions:
     new:
       title: Why spend 1 min on checking your last transfer?

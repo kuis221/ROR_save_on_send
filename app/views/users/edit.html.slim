@@ -17,6 +17,8 @@ section.content.user-page
           .col-xs-12.col-sm-4
             // avatar
             .form-group
+              .upload_error.hidden
+                =t('.image_format_unsupported')
               - if @user.avatar?
                 .user-page-avatar
                   = cl_image_tag(@user.avatar, crop: :fill, width: 162, height: 162)
@@ -46,6 +48,10 @@ section.content.user-page
                     i.fa.fa-plus
                     span= t('.add')
                     = cl_image_upload_tag(:avatar)
+
+                  = link_to user_avatar_path, method: :delete, remote: true, class: 'hidden btn btn-danger user-page-avatar-remove' do
+                    i.fa.fa-trash
+                    span= t('.delete')
 
           .col-xs-12.col-sm-8
             // status & point
