@@ -22,6 +22,9 @@
       display: none;
     }
   }
+  .upload_error {
+    text-align: center!important;
+  }
   .user-page-avatar-btn {
     text-align: center!important;
     
@@ -32,7 +35,8 @@
         margin-right: 5px;
       }
     }
-    .user-page-avatar-add {
+    .user-page-avatar-add,
+    .user-page-avatar-change {
       overflow: hidden;
       position: relative;
       

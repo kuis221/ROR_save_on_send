@@ -17,28 +17,35 @@ section.content.user-page
           .col-xs-12.col-sm-4
             // avatar
             .form-group
-              .upload_error.hidden
-                =t('.image_format_unsupported')
+              .upload_error.alert.alert-danger.hidden
+                = t('.image_format_unsupported')
               - if @user.avatar?
                 .user-page-avatar
-                  = cl_image_tag(@user.avatar, crop: :fill, width: 162, height: 162)
+                  .user-page-avatar-img
+                    = cl_image_tag(@user.avatar, crop: :fill, width: 162, height: 162)
                   .progress
                     .progress-bar.progress-bar-info.progress-bar-striped role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"
                       span.sr-only= t('.complete')
 
                 .user-page-avatar-btn
-                  span.btn.btn-info.user-page-avatar-add
+                  span.hidden.btn.btn-info.user-page-avatar-add
                     i.fa.fa-plus
+                    span= t('.add')
+                    = cl_image_upload_tag(:avatar)
+
+                  a.btn.btn-info.user-page-avatar-change
+                    i.fa.fa-refresh
                     span= t('.change')
                     = cl_image_upload_tag(:avatar)
-                    
+
                   = link_to user_avatar_path, method: :delete, remote: true, class: 'btn btn-danger user-page-avatar-remove' do
                     i.fa.fa-trash
                     span= t('.delete')
 
               - else
                 .user-page-avatar
-                  = image_tag('default-image.png')
+                  .user-page-avatar-img
+                    = image_tag('default-image.png')
                   .progress
                     .progress-bar.progress-bar-info.progress-bar-striped role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"
                       span.sr-only= t('.complete')
@@ -47,6 +54,11 @@ section.content.user-page
                   span.btn.btn-info.user-page-avatar-add
                     i.fa.fa-plus
                     span= t('.add')
+                    = cl_image_upload_tag(:avatar)
+
+                  a.hidden.btn.btn-info.user-page-avatar-change
+                    i.fa.fa-refresh
+                    span= t('.change')
                     = cl_image_upload_tag(:avatar)
 
                   = link_to user_avatar_path, method: :delete, remote: true, class: 'hidden btn btn-danger user-page-avatar-remove' do

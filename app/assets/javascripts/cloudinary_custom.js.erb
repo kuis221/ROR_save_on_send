@@ -4,12 +4,14 @@ function preloaded_image(result){
   return result.resource_type + '/' + result.type + '/' + 'v' + result.version + '/' + result.public_id + '.' + result.format + '#' + result.signature
 }
 
-function empty_avatar_actions(){
+function empty_avatar_actions() {
+  $('.user-page-avatar-change').addClass('hidden');
   $('.user-page-avatar-remove').addClass('hidden');
   $('.user-page-avatar-add').removeClass('hidden');
 }
 
-function present_avatar_actions(){
+function present_avatar_actions() {
+  $('.user-page-avatar-change').removeClass('hidden');
   $('.user-page-avatar-remove').removeClass('hidden');
   $('.user-page-avatar-add').addClass('hidden');
 }
@@ -28,14 +30,17 @@ $(document).ready(function() {
         function(e, data) {
             $('.upload_error').addClass('hidden'); 
             $('.progress').hide();
+            $('.progress-bar').css('width', '0%');
 
-            if(data.format != undefined) {
+            if (data.result.format != undefined) {
               $.ajax({
                 type: "PATCH",
                 url: "<%= url_helpers.user_path(format: :json) %>", 
-                data: {avatar: preloaded_image(data.result)},
-                success: function(){
-                  $('.user-page-avatar').html(
+                data: {
+                    avatar: preloaded_image(data.result)
+                },
+                success: function() {
+                  $('.user-page-avatar-img').html(
                     $.cloudinary.image(
                         data.result.public_id, {
                             format: data.result.format,
@@ -48,25 +53,21 @@ $(document).ready(function() {
                   );
                 }
               })
-
               present_avatar_actions();
-
-            }else{
+            }
+            else {
               $('.upload_error').removeClass('hidden'); 
             }
-
-            
             return true;
         }
     );
 
     $('.user-page-avatar-remove').bind('ajax:success', function() {
-        $('.user-page-avatar').html(
+        $('.user-page-avatar-img').html(
             <%= "'#{image_tag('default-image.png')}'" %>
         );
 
         empty_avatar_actions();
-
         return true;
     });
 })
