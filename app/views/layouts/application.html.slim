@@ -19,6 +19,8 @@ html lang="en"
       var locale = "#{I18n.locale}"
 
     = javascript_include_tag "application"
+    = cloudinary_js_config
+
     = render 'shared/ga' if Rails.env.production?
 
   body
@@ -44,4 +46,3 @@ html lang="en"
 
 - if user_signed_in?
   = render 'referrals/dialog'
-

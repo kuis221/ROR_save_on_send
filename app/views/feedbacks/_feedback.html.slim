@@ -8,8 +8,8 @@
       - feedback_user = feedback.user
       - unless feedback_user.nil?
         .provider-review-user-avatar
-          - if feedback_user.avatar?
-            = image_tag(feedback_user.avatar_url)
+          - if feedback_user.avatar.present?
+            = cl_image_tag(feedback_user.avatar, crop: :fill, width: 21, height: 21)
           - else
             = image_tag('default-image.png')
 
