@@ -56,6 +56,10 @@ en:
       points: Points
       submit: Save changes
       about_me: Type your reasons here
+      complete: 0% complete
+      change: Change
+      delete: Delete
+      add: Add avatar
   user_recent_transactions:
     new:
       title: Why spend 1 min on checking your last transfer?

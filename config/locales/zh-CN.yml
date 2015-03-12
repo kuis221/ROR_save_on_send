@@ -56,6 +56,10 @@ zh-CN:
       points: 点
       submit: 保存更改
       about_me: 在这里输入你的理由
+      complete: 0％ 完成
+      change: 变化
+      delete: 删除
+      add: 添加头像
   user_recent_transactions:
     new:
       title: 告诉我们你最后的转移

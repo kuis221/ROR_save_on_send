@@ -56,6 +56,10 @@ es:
       points: Puntos
       submit: Guardar cambios
       about_me: Escriba sus razones aquí
+      complete: 0% completo
+      change: Cambio
+      delete: Borrar
+      add: Añadir avatar
   user_recent_transactions:
     new:
       title: Háblenos de su último traslado
