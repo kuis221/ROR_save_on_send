@@ -173,7 +173,7 @@ es:
         zipcode: Código postal
         money_transfer_destination_id: Destino Transferencia de dinero
         accept_emails: Envíame una carta electrónica actualizaciones de SaveOnSend
-        accept_terms: Acepto de SaveOnSend Términos de Servicio y Política de Privacidad
+        accept_terms: De SaveOnSend Términos de Servicio y Política de Privacidad 
         accept_terms_html: Acepto de SaveOnSend 
           <a href="/terms" target="_blank">Términos de Servicio</a> y 
           <a href="/privacy" target="_blank">Política de Privacidad</a>
@@ -195,12 +195,15 @@ es:
         comments: Ayuda a otros con comentarios detallados sobre este proveedor
         money_transfer_destination_id: Donde
       user/next_transfer:
-        amount_send: Monto de envío
+        amount_send: ''
         receive_currency: Recibe moneda
-        amount_receive: Monto recibir
+        amount_receive: ''
         originating_source_of_funds_id: Método de envío
+        originating_source_of_funds: ''
         destination_preference_for_funds_id: Método de recepción
+        destination_preference_for_funds: ''
         money_transfer_destination_id: Enviar dinero a
+        money_transfer_destination: ''
       referral:
         comments: Comentarios
         email: Email
@@ -220,6 +223,18 @@ es:
               blank: Por favor ingrese su comentario detallado para su "estrellas" de calificación de la transacción — esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
             service_quality:
               blank: Sírvanse proporcionar una calificación "estrellas" de la transacción — esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
+        user/next_transfer:
+          attributes:
+            amount_send:
+              greater_than: 'Rellene cantidad'
+            amount_receive: 
+              greater_than: 'Rellene cantidad'
+            originating_source_of_funds:
+              blank: 'Seleccionar método de envío'
+            destination_preference_for_funds:
+              blank: 'Elija un método de recepción'
+            money_transfer_destination:
+              blank: 'Seleccione destino'
   sms:
     confirmation_code: Su código de confirmación% {code} para saveonsend.com
     sending_failed: No podemos enviar un código de confirmación con el número de teléfono especificado

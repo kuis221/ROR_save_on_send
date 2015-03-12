@@ -3,59 +3,59 @@ zh-CN:
     formats:
       for_feedback: '%b %d, %Y'
   notice:
-    best_rate: 恭喜！您最近调任使用的最佳方法！
-    save_on_transaction:  其他用户保存 <span>%{saving}&nbsp;%{currency}</span> 在这样的交易
+    best_rate: 恭喜！您最近的转账使用了最佳方案！
+    save_on_transaction: 其他用户通过此转账节省了<span>%{saving}&nbsp;%{currency}</span> 
     thanks_for_feedback: 感谢您的反馈！
   layouts:
     application:
       title: Save on Send
-      add_recent_transaction: 添加最近的交易
-      next_transfer: 下一步转移
+      add_recent_transaction: 添加最近交易
+      next_transfer: 下一笔转账 
       help_others: 帮助他人
-      how_to: 操作方法/问题
-      sign_out: 登出
+      how_to: 如何使用/问题 
+      sign_out: 注销
     landing: &application
       title: Save on Send
-      title_html: "移民 <br class='visible-xs'> 世界联合起来！"
-      send_money: 寄钱与透明度，帮助自己和他人学习的总成本！
-      share_transfer: 股权转让
+      title_html: "全世界<br class='visible-xs'>的移民！"
+      send_money: "完全透明地发送款项，帮助您自己和其他人了解总费用！"
+      share_transfer: 分享转账
   shared:
     header: *application
     footer:
-      terms: 条款   
-      privacy: 隐私
-      disclosure: '广告披露：SaveOnSend.com是一个独立的，广告支持的比较服务。 SaveOnSend可以换取一定的赞助产品和服务，或点击张贴本网站链接功能布局进行补偿。'
+      terms: 条款
+      privacy: 隐私政策
+      disclosure: '广告信息披露: SaveOnSend.com是一家独立的，由广告支持的比价服务商。 SaveOnSend可能通过布置某些赞助商的产品和服务信息在网站上或通过您在此网站点击的链接获取报酬。'
       feedback_cta:
-        <h3>帮助别人呢！</h3>
-        <p>分享你的经历。帮助我们改善网站和帮助别人。</p>
-        <p><a href="mailto:admin@saveonsend.com">告诉我们，我们怎样才能得到更好的</a></p>
+        <h3>同时帮助他人吧！</h3>
+        <p>分享您的经验。帮助我们改进站点并帮助他人。</p>
+        <p><a href="电邮至：admin@saveonsend.com">告诉我们如何改进</a></p>
     notification:
-      notice_test_version: 这是一个测试版本 - 我们需要您的意见得到它的权利！写
+      notice_test_version: 该网站当前为测试版本 — 我们急需您的帮助来改进站点！致信给
     sidebar:
-      hi: '你好, '
+      hi: '你好，'
       sign_in: 登录
-      sign_up: 现在加入
-      sign_out: 登出
-      how_to: 它是如何工作的
-      next_transfer: 查找最佳传输
-      recent_transaction: 检查最后转移
+      sign_up: 现在加入 
+      sign_out: 注销
+      how_to: 工作原理
+      next_transfer: 找到最佳转款方式
+      recent_transaction: 查看上次转款
       help_others: 帮助他人
   service_providers:
     show:
-      go_to_provider: 准备寄钱
-      provider_intro_html: '反馈是由用户提供像你一样 - 如果你最近发的钱在这家公司，请提交的经验，帮助其他用户：<a href="%{submit_link}">请点击这里</a>。'
-      provider_feedbacks_title: 别人怎么说
-      provider_feedbacks_count: "%{count} 条评论"
+      go_to_provider: 我已做好准备汇款
+      provider_intro_html: '反馈由<strong>像您一样的用户提供</strong> — 如果您最近通过该公司汇款，请<a href="%{submit_link}">提交</a> 经验以帮助其他用户：<a href="%{submit_link}">点击此处</a>.'
+      provider_feedbacks_title: '用户评论：'
+      provider_feedbacks_count: "%{count} 评论"
     provider_feedback_form:
-      title: 率提供商
+      title: 点评供应商
       submit: 提交
   users:
     edit:
-      title: 您的帐户
+      title: 您的账户
       status: 状态
-      points: 点
+      points: 积分
       submit: 保存更改
-      about_me: 在这里输入你的理由
+      about_me: 在此处写下您的理由
       complete: 0％ 完成
       change: 变化
       delete: 删除
@@ -63,161 +63,176 @@ zh-CN:
       image_format_unsupported: 不支持映像格式
   user_recent_transactions:
     new:
-      title: 告诉我们你最后的转移
+      title: 为何花费1分钟检查您上次的转账？
       benefits:
-        one: 费用和价格变化频繁 - 检查你是否得到了最好的交易
-        two: 帮助他人与您的见解
-        three: 赢取宝贵的积分和状态
-      see_how_much: 看看有多少你可以保存在您的最后一个传递！
-      enter_info: 输入准确的信息，以帮助自己和他人。
-      photo_id: 照片的ID
-      tax_returns: 纳税申报
-      job_verification: 核查工作
-      clear_form: 清除表单并重新开始
-      submit: 我完了，把它！
-      other_provider: 其它供应商
-      other_provider_modal_label: 请向我们提供尽可能多的信息尽可能你最喜欢的供应商
-      close: 近
-      ok: 行
-      amount_received_help: 请准确，不近似，所以我们可以正确识别你的储蓄和其他可能受益于您的信息。如果不能确定，请询问您的收件人。
-      placeholder_comment: 帮助其他有详细的注释
-      placeholder_promotion: 留空如果没有
+        one: 费用和利率经常改变 — 查看了解您是否达成了最佳交易
+        two: 分享您的观点以帮助他人
+        three: 获得有价值的积分和身份
+      see_how_much: 查看您的上次转款省了多少钱！
+      enter_info: 请使用精确而非大概数字，因此我们能够正确地识别您节省的金额，同时其他人也可因此信息而受益。如果不确定，请询问您的收款人。
+      photo_id: 照片编号
+      tax_returns: 报税
+      job_verification: 工作验证
+      clear_form: 清空表格重新开始
+      submit: 提交分析
+      other_provider: 其他供应商
+      other_provider_modal_label: 请尽可能向我们提供您喜爱的供应商的信息
+      close: 关闭
+      ok: 好  
+      amount_received_help: "请使用精确而非大概数字，因此我们能够正确地识别您节省的金额，同时其他人也可因此信息而受益。如果不确定，请询问您的收款人。"
+      placeholder_comment: 通过详尽的评论以帮助他人
+      placeholder_promotion: 如果没有请留空
       feedback_cta:
         <h3>谢谢！</h3>
-        <p>分享你的经验。你的信息可能帮助别人做出更聪明，更明智的选择。</p>
+        <p>通过分享您的体验，您的信息有可能帮助到他人做出更明确更合适的选择。</p>
   user_next_transfers:
     new:
-      benefits_title: 受汇率及手续费汇款时，迷糊？
+      benefits_title: 在发送款项时对您的费用和汇率感到困惑？
       benefits:
-        one: 学习透明的成本和挑选最佳供应商
-        two: 检查节省您的最后一个传递
-        three: 价格变化和新的低成本供应商得到通知
-        four: 赢取宝贵的积分和状态参加
-      form_title: 让我们找到你的下一个转移的最佳供应商
-      recent_transaction: 检查最后转移
-      next_transfer: 查找最佳传输
+        one: 了解透明的费用情况并选择最佳供应商
+        two: 查看您上次转款节省的金额
+        three: 在价格变动和新的低费用供应商时收到提醒
+        four: 获得有价值的积分以及参与者身份
+      form_title: 让我们来寻找您下次转款时的最佳供应商
+      recent_transaction: 查看上次转款
+      next_transfer: 找到最佳转款
       registration: 注册以保存
     show:
-      title: 让我们找到你的下一个转移的最佳供应商
-      provider_name: 提供商
-      to_from_transfer_media: 对从法
+      title: 让我们来找到您下次转款时的最佳供应商吧
+      provider_name: 供应商
+      to_from_transfer_media: 来去方法
       gross_paid_amount_html: 总费用<em>*</em>
-      real_cost_html: 余量<em>*</em>
-      net_received_amount_html: ：收到<em>*</em>
-      duration_html: 长短<em>*</em><br><small>(小时)</small>
+      real_cost_html: 保证金<em>*</em>
+      net_received_amount_html: 已收到<em>*</em>
+      duration_html: 持续时间<em>*</em><br><small>(hours)</small>
       documentation_requirements: 文件要求
       promotions: 促销
       service_quality: 服务质量
-      title_table: 你的下一个转移的最佳选择
-      table_footnote: 这里提供的细节是通用的，高层次，仅供您参考。检查与特定供应商有关的条款和条件的详细信息。如果您发现有错误，请与我们联系：
-      output_table_intro_html: 选择最低的最佳供应商 <strong>余量</strong> - 如果您 <a href="%{last_transfer_link}">最后转移</a> 表现出较低的 <strong>余量</strong> 请 <a href="%{submit_link}">提交</a> 它为我们的分析，以帮助其他用户. 
+      title_table: 您下次转款的最佳选项
+      table_footnote: 此处提供的详情为通用且高级别的，仅供您的参照。查看某个指定供应商，了解其条款声明详情。如果您发现到了某处错误，敬请联系我们
+      output_table_intro_html:  最佳供应商，选择最低的<strong>保证金</strong> — 如果您<a href="%{last_transfer_link}">上次转款</a> 显示更低的 <strong>保证金</strong>，请<a href="%{submit_link}">提交</a> 此信息供我们分析之用以帮助其他用户。
       feedback_cta:
-        <h3>感谢您提交！</h3>
-        <p>与我们核对经常费用每天都在变化和新的供应商也加入竞争！</p>
+        <h3>感谢您提交的信息！</h3>
+        <p>时常回访我们，因为费用每日都会有所改变且新的供应商也会加入到竞赛之中！</p>
     form:
       send: 发送
-      receive: 免费获赠
-      amount_type_label: 我想要
+      receive: 接收
+      amount_type_label: 我想
       submit: 提交
   referrals:
     dialog:
-      title: 请帮助我们改进网站，并让别人知道如何省钱
+      title: 请帮助我们改进站点同时让其他人知道该如何省钱
   feedbacks:
     feedback:
-      raiting: 'Raiting:'
+      raiting: '评级：'
       anonymous: 匿名
-      points: 点
-      date: '添加评论: '
+      points: 积分
+      date: '汇款至： '
   remittance_terms:
     remittance_term:
-      best_method: 最好的方法
+      best_method: 最佳方法
   devise:
     registrations:
       new:
         title: 注册
-        title_html: "免费注册，因此您可以："
-        get_notified: 价格变化和新的低成本供应商得到通知
-        earn_points: 赢取宝贵的积分和状态参加
-        lock_free: 锁定在网站上免费获取信息
-        password_length: "(%{minimum_password_length} 最小字符)"
-        email_or_phone: "電子郵件或手機號碼"
-        sign_up: 创建我的帐户！
-        check_spam: 如果不签约的一分钟之内收到确认消息，请检查您的垃圾，大量垃圾邮件的电子邮件文件夹。
+        title_html: "免费注册，您能获得："
+        get_notified: "价格改变以及新的供应商加入通知"
+        earn_points: "赚取有价值的积分以及参与者身份"
+        lock_free: "锁定免费访问站点信息"
+        password_length: "(最少%{minimum_password_length} 个字符)"
+        email_or_phone: "邮箱或电话号码"
+        sign_up: 发送以验证
+        check_spam: 如果您通过邮箱注册且在短时间内未从SaveOnSend收到确认信息，查看“垃圾邮件”文件夹。
     sessions:
       new:
-        remember_me: 记得我
+        remember_me: 记住我
         log_in: 登录
     confirmations:
       show:
-        title: 完成注册
-        confirm: 确认您的帐户
-        confirmation_code_hint: 输入您在您的确认短信收到的代码
+        title: 完成您的注册
+        confirm: 确认您的账户
+        confirmation_code_hint: 输入您手机消息接收到的代码
     mailer:
       confirmation_instructions:
-        title: "欢迎 %{email}!"
-        body: "您可以确认通过下面的链接您的帐户的电子邮件："
-        confirm_my_account: 确认我的帐户
+        title: "欢迎%{email}!"
+        body: "您可以通过以下链接确认您的账户："
+        confirm_my_account: 确认您的账户
   welcome:
     index:
-      verification_email_was_sent: 请检查您的电子邮件，以完成验证！
-      verification_sms_was_sent: 请检查您的手机即可完成验证！
+      verification_email_was_sent: "请查看您的邮箱并完成确认！"
+      verification_sms_was_sent: "请查看您的手机并完成确认！"
   activerecord:
     attributes:
       user:
-        email: 电子邮件或者手机
-        login: 电子邮件或者手机
+        email: 邮箱或电话号码
+        login: 邮箱或电话号码
         password: 密码
-        password_confirmation: 确认密码
-        first_name: 名字
+        password_confirmation: 密码确认
+        first_name: 名
         last_name: 姓
-        zipcode: 邮政编码
-        money_transfer_destination_id: 汇款目的地
-        accept_emails: 给我发电子邮件从SaveOnSend更新
-        accept_terms: 我接受SaveOnSend的 服务条款 和 隐私权政策
-        accept_terms_html: 我接受SaveOnSend的 <a href="/terms" target="_blank">服务条款</a> 和 <a href="/privacy" target="_blank">隐私权政策</a>
-        about_me: 关于我的（为什么我寄钱？）
-        confirmation_code: 代码
+        zipcode: 邮编
+        money_transfer_destination_id: 发送金额到
+        accept_emails: 向我发送SaveOnSend的更新消息
+        accept_terms: 我接受SaveOnSend's服务条款和隐私政策
+        accept_terms_html: 我接受SaveOnSend的 <a href="/terms" target="_blank">服务条款</a> and <a href="/privacy" target="_blank">隐私政策</a>
+        about_me: 关于我 (为何我要转款？)
+        confirmation_code: 编码
       user/recent_transaction:
         date: 日期
-        currency: ：收到的货币
-        amount_sent: 美元发送量
-        amount_received: ：收到金额
-        originating_source_of_funds_id: 选择付款方式
+        currency: 结算货币
+        amount_sent: 汇款总额
+        amount_received: 已接收总额
+        originating_source_of_funds_id: 支付方法
         service_provider_id: 选择供应商
-        destination_preference_for_funds_id: 免费获赠方法
-        fees_for_sending: 费送
-        send_to_receive_duration: 多久在金钱面前变得可用？
-        documentation_requirements: 文件要求
-        promotion: 二手促销
-        service_quality: 供应商质量
-        comments: 帮助其他有关此提供详细评论
-        money_transfer_destination_id: 哪里
-      user/next_transfer:
-        amount_send: 发送量
-        receive_currency: 接收货币
-        amount_receive: 收量
-        originating_source_of_funds_id: 发送方法
         destination_preference_for_funds_id: 接收方法
-        money_transfer_destination_id: 哪里
+        fees_for_sending: 汇款费用
+        send_to_receive_duration: 款项要等待过久才可使用？
+        documentation_requirements: 文件要求
+        promotion: 已使用促销
+        service_quality: 供应商质量
+        comments: 通过对此供应商的详尽评论来帮助他人
+        money_transfer_destination_id: 位置
+      user/next_transfer:
+        amount_send: ''
+        receive_currency: 接收货币
+        amount_receive: ''
+        originating_source_of_funds_id: 汇款方法
+        originating_source_of_funds: ''
+        destination_preference_for_funds_id: 接收方法
+        destination_preference_for_funds: ''
+        money_transfer_destination_id: 位置
+        money_transfer_destination: ''
       referral:
         comments: 评论
-        email: 电子邮件
+        email: 邮箱
       service_provider:
-        name: 提供程序名称
-        landing_page: 供应商网站
+        name: 供应商名称
+        landing_page: 供应商站点
       feedback:
-        comments: 评论
-        service_quality: 服务质量
+        comments: 通过详尽的评论来帮助他人
+        service_quality: 供应商质量
     errors:
       models:
         feedback:
           attributes:
             service_quality_and_comments:
-              blank: 请提供详细的注释和“星”评级的交易 - 这将他人帮助SaveOnSend社会做出更好的选择，他们会为你做同样的
+              blank: 请提供详尽的评论以及交易“星级” — 这将会帮助我们SaveOnSend社区的其他用户做出更好的选择，同时他们也会通过此方式帮助您
             comments:
-              blank: 请提供详细的注释你的“星”评级的交易 - 这将他人帮助SaveOnSend社会做出更好的选择，他们会为你做同样的
+              blank: 请提供详尽的评论以及交易“星级” — 这将会帮助我们SaveOnSend社区的其他用户做出更好的选择，同时他们也会通过此方式帮助您
             service_quality:
-              blank: 请提供一个“星”评级的交易 - 这将他人帮助SaveOnSend社会做出更好的选择，他们会为你做同样的
+              blank: 请提供详尽的评论以及交易“星级” — 这将会帮助我们SaveOnSend社区的其他用户做出更好的选择，同时他们也会通过此方式帮助您
+        user/next_transfer:
+          attributes:
+            amount_send:
+              greater_than: 填入总额
+            amount_receive: 
+              greater_than: 填入总额
+            originating_source_of_funds:
+              blank: 选择汇款方式
+            destination_preference_for_funds:
+              blank: 选择收款方式
+            money_transfer_destination:
+              blank: 选择目的地
   sms:
-    confirmation_code: 您的确认码%{code}的saveonsend.com
-    sending_failed: 我们不能发送确认码到指定的电话号码
+    confirmation_code: 您saveonsend.com的确认码%{code}
+    sending_failed: 我们无法将确认码发送到指定的电话号码

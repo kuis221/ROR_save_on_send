@@ -173,7 +173,7 @@ en:
         zipcode: Zipcode
         money_transfer_destination_id: Sending money to
         accept_emails: Email me updates from SaveOnSend
-        accept_terms: I accept SaveOnSend's Terms of Service and Privacy Policy
+        accept_terms: SaveOnSend's Terms of Service and Privacy Policy
         accept_terms_html: I accept SaveOnSend's 
           <a href="/terms" target="_blank">Terms of Service</a> and 
           <a href="/privacy" target="_blank">Privacy Policy</a>
@@ -195,12 +195,15 @@ en:
         comments: Help others with detailed comment about this provider
         money_transfer_destination_id: Where
       user/next_transfer:
-        amount_send: Amount send
+        amount_send: ''
         receive_currency: Receive currency
-        amount_receive: Amount receive
+        amount_receive: '' 
         originating_source_of_funds_id: Sending method
+        originating_source_of_funds: ''
         destination_preference_for_funds_id: Receiving method
+        destination_preference_for_funds: ''
         money_transfer_destination_id: Where
+        money_transfer_destination: ''
       referral:
         comments: Comments
         email: Email
@@ -220,6 +223,18 @@ en:
               blank: Please provide a detailed comment for your "stars" rating of the transaction — this will help others in our SaveOnSend community to make better choices and they will do the same for you
             service_quality:
               blank: Please provide a "stars" rating of the transaction — this will help others in our SaveOnSend community to make better choices and they will do the same for you
+        user/next_transfer:
+          attributes:
+            amount_send:
+              greater_than: 'Fill amount'
+            amount_receive: 
+              greater_than: 'Fill amount'
+            originating_source_of_funds:
+              blank: 'Select sending method'
+            destination_preference_for_funds:
+              blank: 'Select receiving method'
+            money_transfer_destination:
+              blank: 'Select destination'
   sms:
     confirmation_code: Your confirmation code %{code} for saveonsend.com
     sending_failed: We can't send a confirmation code to the specified phone number
