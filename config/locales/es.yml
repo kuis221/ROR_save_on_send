@@ -1,240 +1,240 @@
-es:
+﻿es:
   date:
     formats:
       for_feedback: '%b %d, %Y'
   notice:
-    best_rate: ¡Enhorabuena! Su transferencia reciente utilizó el mejor enfoque!
-    save_on_transaction: Otros usuarios guardan <span>%{saving}&nbsp;%{currency}</span> en dicha transacción
-    thanks_for_feedback: Gracias por su colaboración
+    best_rate: ¡Felicidades! ¡Tu transferencia de fondos fue todo un exitoso!
+    save_on_transaction: Nuestros clientes siempre ahorran <span>%{ahorrad}&nbsp;%{dinero}</span> con nuestros servicios
+    thanks_for_feedback: Gracias por su opinion!
   layouts:
     application:
       title: Save on Send
-      add_recent_transaction: Añadir reciente transacción
-      next_transfer: Transferencia siguiente
-      help_others: Ayudar a los demás
-      how_to: Cómo hacer/Preguntas
-      sign_out: Desconectar
+      add_recent_transaction: Agregue la transaccion más reciente
+      next_transfer: Siguiente transferencia
+      help_others: Ayudanos a dar un mejor servicio
+      how_to: Tutoriales/Preguntas
+      sign_out: Salir de su cuenta
     landing: &application
-      title: Save on Enviar
-      title_html: "Los inmigrantes de <br class='visible-xs'> El mundo, uníos!"
-      send_money: "Enviar dinero con Transparencia, ayudarse a sí mismo ya otros a aprender Coste total!"
-      share_transfer: Transferencia de acciones
+      title: Save on Send
+      title_html: "¡Unidos haremos <br class='visible-xs'> la diferencia!"
+      send_money: "Envie dinero facilmente y de manera facíl y transparente. Define y ve el costo total de su transferencia monetaria!"
+      share_transfer: Comparte una transferencia
   shared:
     header: *application
     footer:
-      terms: Condiciones
-      privacy: Intimidad
-      disclosure: 'Publicidad Divulgación: SaveOnSend.com es un servicio de comparación con publicidad independiente. SaveOnSend puede compensarse a cambio de la colocación de las funciones de determinados productos y servicios patrocinados, o su clic en los enlaces que aparecen en este sitio web.'
+      terms: Termino   
+      privacy: Privacidad
+      disclosure: 'Terminos de nuestros servicios: SaveOnSend.com es una companía independiente, la cual apoya a anuncios y servicios comparables. SaveOnSend recibe compensación a cambio de anuncios destacados de los patrocinadores en la página de los servicios; los cuales se pueden cliquer y se redireccionan a la pagina del patrocinador.'
       feedback_cta:
-        <h3>Ayuda a los demás también!</h3>
-        <p>Comparte tu experiencia. Ayúdanos a mejorar el sitio y ayudar a los demás.</p>
-        <p><a href="mailto:admin@saveonsend.com">Díganos cómo podemos mejorar</a></p>
+        <h3>¡Ayudanos a dar un mejor servicio!</h3>
+        <p>Comparte tu experiencia. Ayudanos a mejorar nuestro sitio y a compartir con otros.</p>
+        <p><a href="mailto:admin@saveonsend.com">Dinos como podemos mejorar nuestros servicios</a></p>
     notification:
-      notice_test_version: Esta es una versión de prueba — necesitamos su colaboración para hacerlo bien! Escriba a      
+      notice_test_version: Esta es una version de prueba — necesitamos su opinion! Escribenos
     sidebar:
-      hi: ''
-      sign_in: Iniciar
-      sign_up: Unirse
-      sign_out: Salir
-      how_to: ¿Cómo funciona?
-      next_transfer: Encontrar Mejor Transfer
-      recent_transaction: Compruebe Última Transfer
-      help_others: Ayudar a los demás
+      hi: 'Hola,'
+      sign_in: Log in
+      sign_up: Unete
+      sign_out: Salir de perfil
+      how_to: ¡Cómo funciona?
+      next_transfer: Encuentra la mejor transferencía
+      recent_transaction: Revisa tu ultima transferencia
+      help_others: /ayuda a otros
   service_providers:
     show:
       go_to_provider: Listo para enviar dinero
-      provider_intro_html: 'Votación es proporcionada <strong>por los usuarios como usted</strong> — si usted envió recientemente dinero con esta empresa, por favor <a href="%{submit_link}">presente</a> que la experiencia para ayudar a otros usuarios: <a href="%{submit_link}">haz clic aquí</a>.'
-      provider_feedbacks_title: Lo que otros dicen
-      provider_feedbacks_count: "%{count} comentarios"
+      provider_intro_html: '<strong>Clientes como usted</strong> nos dejan su opinion. — Si ha enviado dinero ultimamente atravez de nuestros servicios, por favor <a href="%{submit_link}">escriba</a> sobre su experiencia y asi ayudar a otros: <a href="%{submit_link}">cliquea aqui</a>.'
+      provider_feedbacks_title: 'Opiniones:'
+      provider_feedbacks_count: "%{count} reviews"
     provider_feedback_form:
-      title: Valore el proveedor
-      submit: Someter
+      title: Califica al proveedor
+      submit: Califica
   users:
     edit:
-      title: Su cuenta
-      status: Estado
+      title: Tu cuenta
+      status: Status
       points: Puntos
-      submit: Guardar cambios
-      about_me: Escriba sus razones aquí
-      complete: 0% completo
+      submit: Presentar
+      about_me: ¿Cuales son sus razones?
       change: Cambio
       delete: Borrar
       add: Añadir avatar
       image_format_unsupported: Formato de imagen no está soportado
   user_recent_transactions:
     new:
-      title: Háblenos de su último traslado
+      title: ¿Por qué pasar un minuto revisando su ultima transferencia?
       benefits:
-        one: Las tasas y tarifas cambian con frecuencia — comprobar si tienes la mejor oferta
-        two: Ayuda a los demás con sus ideas
-        three: Gana puntos valiosos y estado
-      see_how_much: Vea todo lo que podría haber salvado en su última transferencia!
-      enter_info: Introduzca la información precisa para ayudarse a sí mismo ya los demás.
-      photo_id: Identificación con foto
-      tax_returns: Las declaraciones de impuestos
-      job_verification: verificación de empleo
-      clear_form: Desactive la forma y empezar de nuevo
-      submit: "He terminado y envíela!"
+        one: Los costos de envio cambian con frequencia — Así puedes verificar el costo del servicio que escoges
+        two: Ayudas a otros  a que también participen en el servicio y encuentre la forma más economica de enviar dinero.
+        three: Ganas puntos y compensanciones al participar
+      see_how_much: Ve cuanto podias haber ahorrado en tu ultima transferencia!
+      enter_info: Favor de usar cantidades reales del envio; no haga una aproximación, ya que así no podremos identificar correctamente sus ahorros y beneficios; así mismo, otras personas podran beneficiar de sus recomendaciones. Si no esta seguro de la cantidad de su ultima transaccion, solicitalo al beneficiario.
+      photo_id: Identificación de foto
+      tax_returns: Regreso de impuestos
+      job_verification: verificacion de empleo
+      clear_form: Empezar de nuevo
+      submit: Entregar para verificación
       other_provider: Otro proveedor
-      other_provider_modal_label: Por favor proporcione tanto como la información posible acerca de su proveedor preferido
-      close: Cerca
+      other_provider_modal_label: Favor de llenar el formato tanto como sea posible con toda la información acerca de su provedor preferido
+      close: Cerrar
       ok: OK
-      amount_received_help: "Por favor, sea precisa, no se aproximan, por lo que podríamos identificar correctamente sus ahorros y otros podrían beneficiarse de su información. Si no está seguro, consulte a su destinatario."
-      placeholder_comment: Ayuda a los demás con comentarios detallados
-      placeholder_promotion: Dejar en blanco si ninguno
+      amount_received_help: "Favor de usar cantidades reales; evite una aproximación, ya que asi no podremos identificar correctamente sus ahorros y beneficios; asi mismo otras personas podran tambien beneficiar de su informacion veridica. Si no esta seguro de la cantidad de la ultima transaccion, favor de solicitarlo a quien envio la transacción."
+      placeholder_comment: Recomienda el servicio a otros
+      placeholder_promotion: Dejar en blanco sin recomendación
       feedback_cta:
-        <h3>Gracias!</h3>
-        <p>por compartir su experiencia. Usted información podría haber ayudado a alguien más para hacer una elección más inteligente y más informada.</p>
+        <h3>¡De ante mano, te agradecemos su visita!</h3>
+        <p>Le agredecemos el compartir tu experiencia con nosotros. Tu información puede ayudar a otro usuario a enviar dinero de forma seguro, rapido y efectivo.</p>
   user_next_transfers:
     new:
-      benefits_title: Confundido por honorarios y los tipos de cambio al enviar dinero? 
+      benefits_title: ¿Te confunden las cuotas y el tipo de cambio de divisas al enviar dinero?
       benefits:
-        one: Aprenda costes transparentes y elegir el mejor proveedor
-        two: Compruebe ahorros en su última transferencia
-        three: ¡Entérate de los cambios de precios y los nuevos proveedores de bajo costo
-        four: Gana puntos valiosos y el estado de participación
-      form_title: Vamos a encontrar el mejor proveedor para su próxima transferencia
-      recent_transaction: Última Transfer
-      next_transfer: Mejor Transfer
-      registration: Registrarse
+        one: Aquí vera costos transparentes y puedes escoger el mejor proveedor
+        two: Revise sus ahorros de su ultima transferencia
+        three: Recibe notificaciones de cambios en precios y de ofertas de nuevos proveedores que se unen al servicio
+        four: Gana puntos y compensaciones al participar
+      form_title: Listo para encontrar el mejor proveedor para su transaccion
+      recent_transaction: Revise su ultima transaccion
+      next_transfer: Encuentre la mejor transferencia
+      registration: Registrese para ahorrar aun mas
     show:
-      title: Vamos a encontrar el mejor proveedor para su próxima transferencia
-      provider_name: Proveedor
-      to_from_transfer_media: To-De método
+      title: Encontremos el mejor proveedor para su transferencia
+      provider_name: Provider
+      to_from_transfer_media: Remitente
       gross_paid_amount_html: Costo total<em>*</em>
-      real_cost_html: Margen<em>*</em>
+      real_cost_html: Margin<em>*</em>
       net_received_amount_html: Recibido<em>*</em>
-      duration_html: Duración<em>*</em><br><small>(horas)</small>
-      documentation_requirements: Los requisitos de documentación
+      duration_html: Duracion<em>*</em><br><small>(horas)</small>
+      documentation_requirements: Documentacion requerida
       promotions: Promociones
-      service_quality: La calidad del servicio
-      title_table: Las mejores opciones para su próximo traslado
-      table_footnote: Detalles proporcionados aquí son de uso general y de alto nivel y aportan solo su información. Consulte con un proveedor en particular para obtener más información acerca de los términos y condiciones. Si observa algún error, por favor contacte con nosotros en
-      output_table_intro_html: Las mejores proveedores seleccionados por menor <strong>Margen</strong> — si su <a href="%{last_transfer_link}">última Transferencia</a> mostró una menor <strong>Margen</strong> por favor <a href="%{submit_link}">presentar</a> para nuestro análisis para ayudar a otros usuarios. 
+      service_quality: Calidad de servicio
+      title_table: La mejor opcion para tu proxima transferencia
+      table_footnote: La siguiente información es de proposito general y disponible unicamente como información general. Verifique con el provedor directamente para recibir mas información acerca de los terminos y condiciones de servicio. En caso de alguna equivocacion, favor de contactarnos
+      output_table_intro_html: Los proveedores se escogen en base al menor<strong>costo de servicio</strong> — Si acaso <a href="%{last_transfer_link}"> su ultima transaccion</a> fue de menor <strong>costo</strong>, favor de <a href="%{submit_link}">presentar</a> para revisión, asi podremos ayudarte y ayudar a otros de la mejor manera posible. 
       feedback_cta:
-        <h3>Gracias por enviar usted!</h3>
-        <p>Vuelve con nosotros a menudo como los costos cambian a diario y los nuevos proveedores se están uniendo a la competencia!</p>
+        <h3>¡De ante mano, te agradecemos por presentar!</h3>
+        <p>Regrese pronto ya que nuestros precios cambian con frequencia y seguimos asociandonos con nuevos proveedores a diario!</p>
     form:
       send: Enviar
-      receive: Para descargar
+      receive: Recibír
       amount_type_label: Quiero
-      submit: Someter
+      submit: Presentar
   referrals:
     dialog:
-      title: Por favor, ayúdenos a mejorar el sitio y dejar que los demás sepan cómo ahorrar dinero
+      title: Ayudanos a mejorar nuestro sitío para que otros también conoscan la manera más eficáz de enviar dinero y ahorrar sobre los costos de envío.
   feedbacks:
     feedback:
-      raiting: 'Raiting:'
-      anonymous: Anónimo
+      raiting: 'Calificacion:'
+      anonymous: Anonimo
       points: Puntos
-      date: 'Opinión anadido: '
+      date: 'Cantidad Enviado: '
   remittance_terms:
     remittance_term:
-      best_method: Mejor Método
+      best_method: Metodo más viable
   devise:
     registrations:
       new:
-        title: Registro
-        title_html: "Regístrese de forma gratuita, para que pueda:"
-        get_notified: ¡Entérate de los cambios de precios y los nuevos proveedores de bajo costo
-        earn_points: Gana puntos valiosos y el estado de participación
-        lock_free: Bloqueo de acceso gratuito a la información en el sitio web
-        password_length: "(%{minimum_password_length} caracteres como mínimo)"
-        email_or_phone: "E-mail o número de teléfono móvil"
-        sign_up: Crear mi cuenta!
-        check_spam: Si usted no recibe el mensaje de confirmación a un minuto de la firma, por favor revise su carpeta de correo electrónico no deseado-Bulk-Spam.
+        title: Registrate
+        title_html: "Registrate gratuitament para así poder:"
+        get_notified: "Recibir notificaciones de ofertas y nuevos proveedores"
+        earn_points: "Gana puntos y compensaciones adicionales por participar"
+        lock_free: "Ten accesso a la información que contiene nuestro sitío web"
+        password_length: "(%{minimum_password_length} characters minimum)"
+        email_or_phone: "Email o telefono celular"
+        sign_up: Envia para recibír verificación
+        check_spam: Si tu registro es por email y no recibes una confirmación de nuestra parte, verifique sus archivos "basura-Spam".
     sessions:
       new:
-        remember_me: Acuérdate de mí
-        log_in: Iniciar sesión
+        remember_me: Recuerdame
+        log_in: Usuario
     confirmations:
       show:
-        title: Complete su registro
-        confirm: Confirma tu cuenta
-        confirmation_code_hint: Introduce el código recibido en su mensaje sms de confirmación
+        title: Registrate
+        confirm: Confirmacion de cuenta
+        confirmation_code_hint: registre el codigo que recibio por mensaje SMS si registro su telefono celular
     mailer:
       confirmation_instructions:
-        title: "¡Bienvenido %{email}!"
-        body: "Puede confirmar su cuenta de correo electrónico a través del siguiente enlace:"
+        title: "Bienvenido/a %{email}!"
+        body: "Puedes confirmar tu cuenta de email con el link inferior:"
         confirm_my_account: Confirmar mi cuenta
   welcome:
     index:
-      verification_email_was_sent: Verificación de correo electrónico fue enviado a su dirección de correo electrónico — por favor haga clic en enlace de ese correo electrónico para confirmar
-      verification_sms_was_sent: Verificación de correo teléfono fue enviado a su dirección de correo electrónico — por favor haga clic en enlace de ese correo electrónico para confirmar
+      verification_email_was_sent: "Por favor, revise su email para completar su verificacion!"
+      verification_sms_was_sent: "Por favor revise sus mensajes SMS para completar su verificacion!"
   activerecord:
     attributes:
       user:
-        email: E-mail o teléfono móvil
-        login: E-mail o teléfono móvil
+        email: Email o celular
+        login: Email o celular
         password: Contraseña
-        password_confirmation: Confirmación de la contraseña
-        first_name: Nombre de pila
-        last_name: Nombre de familia
-        zipcode: Código postal
-        money_transfer_destination_id: Destino Transferencia de dinero
-        accept_emails: Envíame una carta electrónica actualizaciones de SaveOnSend
-        accept_terms: De SaveOnSend Términos de Servicio y Política de Privacidad 
-        accept_terms_html: Acepto de SaveOnSend 
-          <a href="/terms" target="_blank">Términos de Servicio</a> y 
-          <a href="/privacy" target="_blank">Política de Privacidad</a>
-        about_me: Acerca de mí (¿Por qué estoy enviando dinero?)
-        confirmation_code: Código
+        password_confirmation: Confirmación de contraseña
+        first_name: Nombre
+        last_name: Apellido
+        zipcode: Codigo Postal
+        money_transfer_destination_id: Enviando dinero a
+        accept_emails: Mandame información y ofertas de SaveOnSend
+        accept_terms: Acepto los terminos de servicio y privacidad de SaveOnSend 
+        accept_terms_html: Acepto 
+          <a href="/terms" target="_blank">los terminos de servicio</a> de SaveOnSend y su
+          <a href="/privacy" target="_blank">Poliza de privacidad</a>
+        about_me: Acerca de mi (por que envio dinero?)
+        confirmation_code: Codigo
       user/recent_transaction:
         date: Fecha
-        currency: Moneda recieved
-        amount_sent: Enviado monto en USD
-        amount_received: Cantidad recieved
-        originating_source_of_funds_id: Seleccione forma de pago
-        service_provider_id: Seleccionar proveedor
-        destination_preference_for_funds_id: Método descargar
-        fees_for_sending: Cuota para el envío
-        send_to_receive_duration: ¿Cuánto tiempo antes que el dinero esté disponible?
-        documentation_requirements: Los requisitos de documentación
-        promotion: Usado promociones
-        service_quality: Calidad de Proveedores
-        comments: Ayuda a otros con comentarios detallados sobre este proveedor
-        money_transfer_destination_id: Donde
+        currency: Destinatario recibe
+        amount_sent: Cantidad a enviar
+        amount_received: Cantidad a recibir
+        originating_source_of_funds_id: Metodo de pago
+        service_provider_id: Seleccione proveedor
+        destination_preference_for_funds_id: Forma de recibir
+        fees_for_sending: Cuota al remitir
+        send_to_receive_duration: Cuanto tiempo pasara antes de que los fondos se hagan disponibles?
+        documentation_requirements: Requerimientos de documentacion
+        promotion: Promociones remitidos
+        service_quality: Calidad de servicio de provedor
+        comments: Comentarios del provedor
+        money_transfer_destination_id: Ciudad destinatario
       user/next_transfer:
         amount_send: ''
-        receive_currency: Recibe moneda
+        receive_currency: Tipo de moneda recibido
         amount_receive: ''
-        originating_source_of_funds_id: Método de envío
+        originating_source_of_funds_id: Metodo de envio
         originating_source_of_funds: ''
-        destination_preference_for_funds_id: Método de recepción
+        destination_preference_for_funds_id: Metodo de recibo
         destination_preference_for_funds: ''
-        money_transfer_destination_id: Enviar dinero a
+        money_transfer_destination_id: Ubicacion
         money_transfer_destination: ''
       referral:
-        comments: Comentarios
-        email: Email
+        comments: Commentarios
+        email: Correo de email
       service_provider:
-        name: Nombre del proveedor
-        landing_page: Sitio web del proveedor
+        name: Nombre del provedor
+        landing_page: Sitío web del provedor
       feedback:
         comments: Comentarios
-        service_quality: La calidad del servicio
+        service_quality: Calidad del provedor
     errors:
       models:
         feedback:
           attributes:
             service_quality_and_comments:
-              blank: Por favor ingrese su comentario detallado y "estrellas" de calificación de la transacción — esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
+              blank: Favor de dejar un comentario detallado y un rating de "estrellas" para el provedor — esto ayudara a otros en el sitio de SaveOnSend. Hara que nuestra comunidad sea mejor y mas productivo para todos
             comments:
-              blank: Por favor ingrese su comentario detallado para su "estrellas" de calificación de la transacción — esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
+              blank: Favor de dejar un comentario detallado y un rating de "estrellas" de la transaccion — esto ayudara a otros en el sitio de SaveOnSend. Hara que nuestra comunidad sea mejor y mas productivo para todos
             service_quality:
-              blank: Sírvanse proporcionar una calificación "estrellas" de la transacción — esto ayudará a otros en nuestra comunidad SaveOnSend a tomar mejores decisiones y que van a hacer lo mismo para usted
+              blank: Favor de dejar un comentario detallado y un rating de "estrellas" de la transaccion — esto ayudara a otros en el sitío de SaveOnSend. Esto Hara que nuestra comunidad sea mejor y mas productivo para todos
         user/next_transfer:
           attributes:
             amount_send:
-              greater_than: 'Rellene cantidad'
+              greater_than: 'Fill amount'
             amount_receive: 
-              greater_than: 'Rellene cantidad'
+              greater_than: 'Fill amount'
             originating_source_of_funds:
-              blank: 'Seleccionar método de envío'
+              blank: 'Select sending method'
             destination_preference_for_funds:
-              blank: 'Elija un método de recepción'
+              blank: 'Select receiving method'
             money_transfer_destination:
-              blank: 'Seleccione destino'
+              blank: 'Select destination'
+
   sms:
-    confirmation_code: Su código de confirmación% {code} para saveonsend.com
-    sending_failed: No podemos enviar un código de confirmación con el número de teléfono especificado
+    confirmation_code: Tu codigo de confirmación de saveonsend.com es %{code} 
+    sending_failed: Perdone nuestra falla, no hemos podido enviar el codigo de confirmación al numero de telefono especificado
