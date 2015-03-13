@@ -32,7 +32,7 @@
     notification:
       notice_test_version: Esta es una version de prueba — necesitamos su opinion! Escribenos
     sidebar:
-      hi: 'Hola,'
+      hi: 'Hola, '
       sign_in: Log in
       sign_up: Unete
       sign_out: Salir de perfil
