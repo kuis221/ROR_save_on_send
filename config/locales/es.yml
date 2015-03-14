@@ -56,10 +56,11 @@
       points: Puntos
       submit: Presentar
       about_me: ¿Cuales son sus razones?
+      complete: 0% completo
       change: Cambio
       delete: Borrar
-      add: Añadir avatar
-      image_format_unsupported: Formato de imagen no está soportado
+      add: Añadir cambió
+      image_format_unsupported: Formato de imagen no es compatible
   user_recent_transactions:
     new:
       title: ¿Por qué pasar un minuto revisando su ultima transferencia?
