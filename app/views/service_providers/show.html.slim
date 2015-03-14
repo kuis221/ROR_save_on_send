@@ -3,31 +3,32 @@ section.provider-header
     .row
       .col-xs-12.col-sm-10.col-sm-offset-1
         .provider-logo
-          = image_tag('provider-icons/' + @provider.name.parameterize.downcase + '_b.png')
+          = link_to( @provider.landing_page, target: 'new', title: @provider.name ) do
+            = image_tag( 'provider-icons/' + @provider.name.parameterize.downcase + '_b.png' )
 
         .user-rating
-          = display_average_rating_for_provider(@provider)
+          = display_average_rating_for_provider( @provider )
 
         .provider-link
-          = link_to(@provider.landing_page, target: 'new', class: 'btn btn-primary btn-lg') do
+          = link_to( @provider.landing_page, target: 'new', class: 'btn btn-primary btn-lg', title: t( '.go_to_provider' ) ) do
             i.fa.fa-fw.fa-check-circle-o
-            = t('.go_to_provider')
+            = t( '.go_to_provider' )
 
 section.content
   .container
     .row
       - if @provider.display_feedbacks.present?
         .col-xs-12
-          p.align-center.provider-intro= t('.provider_intro_html', submit_link: new_user_recent_transaction_path)
+          p.align-center.provider-intro= t( '.provider_intro_html', submit_link: new_user_recent_transaction_path )
 
         .col-xs-12
           h4
             .row
               .col-xs-6.col-sm-5.col-sm-offset-1.text-left
-                = t('.provider_feedbacks_title')
+                = t( '.provider_feedbacks_title' )
   
               .col-xs-6.col-sm-5.text-right
-                small= t('.provider_feedbacks_count', count: @provider.display_feedbacks.size)
+                small= t( '.provider_feedbacks_count', count: @provider.display_feedbacks.size )
 
         .col-xs-12.col-sm-10.col-sm-offset-1
           = render @provider.display_feedbacks
