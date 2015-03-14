@@ -226,15 +226,15 @@
         user/next_transfer:
           attributes:
             amount_send:
-              greater_than: 'Fill amount'
+              greater_than: 'Llene cantidad'
             amount_receive: 
-              greater_than: 'Fill amount'
+              greater_than: 'Llene cantidad'
             originating_source_of_funds:
-              blank: 'Select sending method'
+              blank: 'Seleccione el metodo de envío'
             destination_preference_for_funds:
-              blank: 'Select receiving method'
+              blank: 'Seleccione el método de recibir'
             money_transfer_destination:
-              blank: 'Select destination'
+              blank: 'Seleccione el destino'
 
   sms:
     confirmation_code: Tu codigo de confirmación de saveonsend.com es %{code} 
