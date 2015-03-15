@@ -1,0 +1,90 @@
+@import 'common/variables';
+
+
+body {
+  margin-bottom: 420px;
+}
+
+
+/* header */
+#header {
+  .nav-pills {
+    margin-top: 20px;
+  
+    > li {
+      margin-left: 1px;
+
+      > a {
+        padding: 6px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+
+/* splash */
+.splash {
+  .buttons {
+    ul {
+      li {
+        margin: 20px 5px 0;
+
+        .btn {
+          font-size: $font-size-base;
+          width: 230px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+  body {
+    margin-bottom: 320px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body {
+    margin-bottom: 280px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  body {
+    margin-bottom: 280px;
+  }
+  
+  .splash {
+    .buttons {
+      ul {
+        li {
+          margin: 20px 10px 0;
+          
+          .btn {
+            font-size: 18px;
+            width: 290px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #header {
+    .nav-pills {
+      margin-top: 16px; 
+        
+      > li {
+        margin-left: 5px;
+  
+        > a {
+          padding: 6px 10px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

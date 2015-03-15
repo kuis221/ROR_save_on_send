@@ -32,7 +32,7 @@
     notification:
       notice_test_version: Esta es una version de prueba — necesitamos su opinion! Escribenos
     sidebar:
-      hi: 'Hola,'
+      hi: 'Hola, '
       sign_in: Log in
       sign_up: Unete
       sign_out: Salir de perfil
@@ -56,10 +56,11 @@
       points: Puntos
       submit: Presentar
       about_me: ¿Cuales son sus razones?
+      complete: 0% completo
       change: Cambio
       delete: Borrar
-      add: Añadir avatar
-      image_format_unsupported: Formato de imagen no está soportado
+      add: Añadir cambió
+      image_format_unsupported: Formato de imagen no es compatible
   user_recent_transactions:
     new:
       title: ¿Por qué pasar un minuto revisando su ultima transferencia?
@@ -225,15 +226,15 @@
         user/next_transfer:
           attributes:
             amount_send:
-              greater_than: 'Fill amount'
+              greater_than: 'Llene cantidad'
             amount_receive: 
-              greater_than: 'Fill amount'
+              greater_than: 'Llene cantidad'
             originating_source_of_funds:
-              blank: 'Select sending method'
+              blank: 'Seleccione el metodo de envío'
             destination_preference_for_funds:
-              blank: 'Select receiving method'
+              blank: 'Seleccione el método de recibir'
             money_transfer_destination:
-              blank: 'Select destination'
+              blank: 'Seleccione el destino'
 
   sms:
     confirmation_code: Tu codigo de confirmación de saveonsend.com es %{code} 
