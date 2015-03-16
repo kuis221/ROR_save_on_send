@@ -19,6 +19,7 @@ as our webhosting provider
 * Create new branch in the our repo if you're start work on new feature. Name of the 
   branch should start from story number from pivotal tracker and after number please 
   add a story name (words should be delimited by underscore)
+* Run all the specs locally and make sure that you don't have failed specs
 * Create pull request when you have finished with functionality for story that
   you are worked on
 * Mark story as *Finished* on pivotal tracker
@@ -30,3 +31,22 @@ We're follow to TDD principles http://en.wikipedia.org/wiki/Test-driven_developm
 rspec framework http://rspec.info/ as our testing tool. We're doing functional testing and 
 integration testing as well. We also test our web site manually in the different desktop and mobile 
 browsers.
+
+You need to run ```rake spec``` from command line for running all the specs locally
+
+## APP ARCHITECTURE
+
+Models diagram is located in: doc/models.svg
+Controllers diagram is located in: doc/controllers.svg
+
+Web framework that we're using(Ruby on Rails) relies on the MVC pattern. 
+Model-View-Controller has some benefits over traditional concepts:
+
+* it keeps your business logic separated from your (HTML-based) views
+* keeps your code clean and neat in one place
+
+another approach that is the key feature of Rails is a Representational state transfer (REST)
+
+## ADMIN DASHBOARD
+
+Open https://www.saveonsend.com/admin for getting an access to admin dashboard
