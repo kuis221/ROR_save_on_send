@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: countries
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  currency_code :string(3)
+#
+
 class Country < ActiveRecord::Base
   def receive_currency
     if receive_only_local_currency?

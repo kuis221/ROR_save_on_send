@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: service_providers
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  landing_page    :string(512)
+#  slug            :string(255)
+#  created_by_id   :integer
+#  created_by_type :string(255)
+#
+
 class ServiceProvider < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged

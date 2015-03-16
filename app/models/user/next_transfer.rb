@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: user_next_transfers
+#
+#  id                                  :integer          not null, primary key
+#  user_id                             :integer
+#  amount_send_cents                   :integer          default(0), not null
+#  amount_receive_cents                :integer          default(0), not null
+#  receive_currency                    :string(3)
+#  originating_source_of_funds_id      :integer
+#  destination_preference_for_funds_id :integer
+#  created_at                          :datetime
+#  updated_at                          :datetime
+#  money_transfer_destination_id       :integer
+#
+
 class User::NextTransfer < ActiveRecord::Base
   belongs_to :user
 

@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: remittance_terms
+#
+#  id                       :integer          not null, primary key
+#  receive_country_id       :integer
+#  service_provider_id      :integer
+#  send_method_id           :integer
+#  receive_method_id        :integer
+#  receive_currency         :string(3)
+#  send_amount_range_from   :float
+#  send_amount_range_to     :float
+#  fees_for_sending_cents   :integer          default(0), not null
+#  fees_for_sending_percent :float            default(0.0)
+#  fx_markup                :float
+#  duration                 :string(255)
+#  documentation            :text
+#  promotions               :string(255)
+#  service_quality          :integer
+#
+
 class RemittanceTerm < ActiveRecord::Base
   belongs_to :receive_country, class_name: Country
   belongs_to :service_provider

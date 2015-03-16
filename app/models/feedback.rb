@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: feedbacks
+#
+#  id               :integer          not null, primary key
+#  comments         :string(512)
+#  service_quality  :integer
+#  user_id          :integer
+#  commendable_id   :integer
+#  commendable_type :string(255)
+#  approved         :boolean          default(FALSE)
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 class Feedback < ActiveRecord::Base
   belongs_to :commendable, polymorphic: true
   belongs_to :user

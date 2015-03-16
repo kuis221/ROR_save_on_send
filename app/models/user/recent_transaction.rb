@@ -1,3 +1,29 @@
+# == Schema Information
+#
+# Table name: user_recent_transactions
+#
+#  id                                  :integer          not null, primary key
+#  user_id                             :integer
+#  date                                :date
+#  amount_sent_cents                   :integer          default(0), not null
+#  amount_received_cents               :integer          default(0), not null
+#  originating_source_of_funds_id      :integer
+#  service_provider_id                 :integer
+#  destination_preference_for_funds_id :integer
+#  fees_for_receiving                  :string(255)
+#  send_to_receive_duration            :integer
+#  documentation_requirements          :string(255)
+#  promotion                           :string(255)
+#  service_quality                     :integer
+#  comments                            :text
+#  created_at                          :datetime
+#  updated_at                          :datetime
+#  currency                            :string(3)
+#  fees_for_sending_cents              :integer          default(0), not null
+#  money_transfer_destination_id       :integer
+#  send_to_receive_duration_interval   :string(255)
+#
+
 class User::RecentTransaction < ActiveRecord::Base
   DURATION_INTERVALS = %w{minutes hours days}
 

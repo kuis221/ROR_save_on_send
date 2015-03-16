@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: referrals
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  email      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  comments   :string(255)
+#
+
 class Referral < ActiveRecord::Base
   # validation
   validates_presence_of :email

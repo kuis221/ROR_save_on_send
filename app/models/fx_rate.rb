@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: fx_rates
+#
+#  id         :integer          not null, primary key
+#  text       :string(16384)
+#  created_at :datetime
+#  updated_at :datetime
+#  date       :date
+#
+
 require "open-uri"
 
 class FXRate < ActiveRecord::Base
