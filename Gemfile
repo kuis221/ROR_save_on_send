@@ -87,6 +87,9 @@ group :development do
   
   # generate uml diagram
   gem 'railroady'
+
+  # annotate model
+  gem 'annotate', '~> 2.6.6'
 end
 
 # Development, Test
