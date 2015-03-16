@@ -74,6 +74,9 @@ gem 'cloudinary'
 # send sms
 gem 'twilio-ruby', '~> 3.12'
 
+# error tracking
+gem 'raygun4ruby'
+
 group :development do
   # open letter in browser
   gem 'letter_opener'
