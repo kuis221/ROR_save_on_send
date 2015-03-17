@@ -29,7 +29,7 @@
 			if ($('.alert.alert-danger').data('error') == 1) {
 				$('html, body').animate({
 					scrollTop: $(".alert.alert-danger").offset().top
-				}, 1000);
+				}, 100);
 			}
 
 			
