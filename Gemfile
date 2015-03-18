@@ -77,8 +77,9 @@ gem 'twilio-ruby', '~> 3.12'
 # error tracking
 gem 'raygun4ruby'
 
-# seo plugin
+# seo plugins
 gem 'meta-tags'
+gem 'sitemap_generator'
 
 group :development do
   # open letter in browser
