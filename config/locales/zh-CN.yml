@@ -8,15 +8,14 @@ zh-CN:
     thanks_for_feedback: 感谢您的反馈！
   layouts:
     application:
-      title: Save on Send
+      site: Save on Send
       add_recent_transaction: 添加最近交易
       next_transfer: 下一笔转账 
       help_others: 帮助他人
       how_to: 如何使用/问题 
       sign_out: 注销
     landing: &application
-      title: Save on Send
-      title_html: "全世界<br class='visible-xs'>的移民！"
+      site: Save on Send
       send_money: "完全透明地发送款项，帮助您自己和其他人了解总费用！"
       share_transfer: 分享转账
   shared:

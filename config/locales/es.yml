@@ -8,15 +8,14 @@
     thanks_for_feedback: Gracias por su opinion!
   layouts:
     application:
-      title: Save on Send
+      site: Save on Send
       add_recent_transaction: Agregue la transaccion más reciente
       next_transfer: Siguiente transferencia
       help_others: Ayudanos a dar un mejor servicio
       how_to: Tutoriales/Preguntas
       sign_out: Salir de su cuenta
     landing: &application
-      title: Save on Send
-      title_html: "¡Unidos haremos <br class='visible-xs'> la diferencia!"
+      site: Save on Send
       send_money: "Envie dinero facilmente y de manera facíl y transparente. Define y ve el costo total de su transferencia monetaria!"
       share_transfer: Comparte una transferencia
   shared:

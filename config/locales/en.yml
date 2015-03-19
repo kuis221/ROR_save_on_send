@@ -8,15 +8,14 @@ en:
     thanks_for_feedback: Thank you for your feedback!
   layouts:
     application:
-      title: Save on Send
+      site: Save on Send
       add_recent_transaction: Add recent transaction
       next_transfer: Next transfer
       help_others: Help others
       how_to: How-to/Questions
       sign_out: Sign out
     landing: &application
-      title: Save on Send
-      title_html: "Immigrants of <br class='visible-xs'> The World Unite!"
+      site: Save on Send
       send_money: "Send money with Transparency, help yourself and others to learn Total Cost!"
       share_transfer: Share transfer
   shared:
