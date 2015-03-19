@@ -1,5 +1,6 @@
+- set_meta_tags :title => t('.title'),
+                :description => t('.description')
 - @highlight_column = false
-- title t('.title_table')
 
 section.content-header
   .container
@@ -36,6 +37,6 @@ section.content.next-tr-page
   .container
     .row
       .col-xs-12
-        h2= t('.title')
+        h2= t('.form_title')
 
         = render 'form'

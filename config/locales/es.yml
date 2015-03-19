@@ -9,6 +9,7 @@
   layouts:
     application:
       site: Save on Send
+      keywords: send, transfer, money, internationally, china, india, mexico, philippines, best, save, free fees, exchange rates, instant, fast, easy, online
       add_recent_transaction: Agregue la transaccion más reciente
       next_transfer: Siguiente transferencia
       help_others: Ayudanos a dar un mejor servicio
@@ -16,6 +17,7 @@
       sign_out: Salir de su cuenta
     landing: &application
       site: Save on Send
+      keywords: send, transfer, money, internationally, china, india, mexico, philippines, best, save, free fees, exchange rates, instant, fast, easy, online
       send_money: "Envie dinero facilmente y de manera facíl y transparente. Define y ve el costo total de su transferencia monetaria!"
       share_transfer: Comparte una transferencia
   shared:
@@ -41,6 +43,8 @@
       help_others: /ayuda a otros
   service_providers:
     show:
+      title: Send Money with %{provider}
+      description: Read reviews of %{provider} by users like you
       go_to_provider: Listo para enviar dinero
       provider_intro_html: '<strong>Clientes como usted</strong> nos dejan su opinion. — Si ha enviado dinero ultimamente atravez de nuestros servicios, por favor <a href="%{submit_link}">escriba</a> sobre su experiencia y asi ayudar a otros: <a href="%{submit_link}">cliquea aqui</a>.'
       provider_feedbacks_title: 'Opiniones:'
@@ -50,7 +54,9 @@
       submit: Califica
   users:
     edit:
-      title: Tu cuenta
+      title: Account
+      description: View and modify your SaveOnSend acccount
+      page_title: Tu cuenta
       status: Status
       points: Puntos
       submit: Presentar
@@ -62,7 +68,9 @@
       image_format_unsupported: Formato de imagen no es compatible
   user_recent_transactions:
     new:
-      title: ¿Por qué pasar un minuto revisando su ultima transferencia?
+      title: Free Savings Analysis of Your Last Transfer to China, India, Mexico and Philippines
+      description: Find out savings on your last transfer to China, India, Mexico and Philippines
+      benefits_title: ¿Por qué pasar un minuto revisando su ultima transferencia?
       benefits:
         one: Los costos de envio cambian con frequencia — Así puedes verificar el costo del servicio que escoges
         two: Ayudas a otros  a que también participen en el servicio y encuentre la forma más economica de enviar dinero.
@@ -86,6 +94,8 @@
         <p>Le agredecemos el compartir tu experiencia con nosotros. Tu información puede ayudar a otro usuario a enviar dinero de forma seguro, rapido y efectivo.</p>
   user_next_transfers:
     new:
+      title: Save on Sending Money to China, India, Mexico and Philippines, Free Comparison of Transfer Options
+      description: Compare and save by finding best transfer options for sending money to China, India, Mexico, and Philippines
       benefits_title: ¿Te confunden las cuotas y el tipo de cambio de divisas al enviar dinero?
       benefits:
         one: Aquí vera costos transparentes y puedes escoger el mejor proveedor
@@ -97,7 +107,9 @@
       next_transfer: Encuentre la mejor transferencia
       registration: Registrese para ahorrar aun mas
     show:
-      title: Encontremos el mejor proveedor para su transferencia
+      title: Free Comparison for Your Next Transfer to China, India, Mexico and Philippines
+      description: Find best and cheap way to send money to China, India, Mexico and Philippines
+      form_title: Encontremos el mejor proveedor para su transferencia
       provider_name: Provider
       to_from_transfer_media: Remitente
       gross_paid_amount_html: Costo total<em>*</em>
@@ -133,7 +145,8 @@
   devise:
     registrations:
       new:
-        title: Registrate
+        title: Registration
+        description: "SaveOnSend account benefits: rates and providers alerts, earn points and status, participate in blog and forum discussions"
         title_html: "Registrate gratuitament para así poder:"
         get_notified: "Recibir notificaciones de ofertas y nuevos proveedores"
         earn_points: "Gana puntos y compensaciones adicionales por participar"
@@ -144,11 +157,15 @@
         check_spam: Si tu registro es por email y no recibes una confirmación de nuestra parte, verifique sus archivos "basura-Spam".
     sessions:
       new:
+        title: Log in
+        description: "SaveOnSend account benefits: rates and providers alerts, earn points and status, participate in blog and forum discussions"
         remember_me: Recuerdame
         log_in: Usuario
     confirmations:
       show:
-        title: Registrate
+        title: Complete your registration
+        description: "SaveOnSend account benefits: rates and providers alerts, earn points and status, participate in blog and forum discussions"
+        page_title: Registrate
         confirm: Confirmacion de cuenta
         confirmation_code_hint: registre el codigo que recibio por mensaje SMS si registro su telefono celular
     mailer:
@@ -234,7 +251,6 @@
               blank: 'Seleccione el método de recibir'
             money_transfer_destination:
               blank: 'Seleccione el destino'
-
   sms:
     confirmation_code: Tu codigo de confirmación de saveonsend.com es %{code} 
     sending_failed: Perdone nuestra falla, no hemos podido enviar el codigo de confirmación al numero de telefono especificado

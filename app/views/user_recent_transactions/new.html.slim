@@ -1,10 +1,11 @@
-- title t('.see_how_much')
+- set_meta_tags :title => t('.title'),
+                :description => t('.description')
 
 section.content-header
   .container
     .row
       .col-xs-12
-        h2= t('.title')
+        h2= t('.benefits_title')
         .align-center.text-left
           ul
             - t('.benefits').each do |line, text|

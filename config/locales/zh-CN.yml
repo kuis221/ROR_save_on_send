@@ -9,6 +9,7 @@ zh-CN:
   layouts:
     application:
       site: Save on Send
+      keywords: send, transfer, money, internationally, china, india, mexico, philippines, best, save, free fees, exchange rates, instant, fast, easy, online
       add_recent_transaction: 添加最近交易
       next_transfer: 下一笔转账 
       help_others: 帮助他人
@@ -16,6 +17,7 @@ zh-CN:
       sign_out: 注销
     landing: &application
       site: Save on Send
+      keywords: send, transfer, money, internationally, china, india, mexico, philippines, best, save, free fees, exchange rates, instant, fast, easy, online
       send_money: "完全透明地发送款项，帮助您自己和其他人了解总费用！"
       share_transfer: 分享转账
   shared:
@@ -41,6 +43,8 @@ zh-CN:
       help_others: 帮助他人
   service_providers:
     show:
+      title: Send Money with %{provider}
+      description: Read reviews of %{provider} by users like you
       go_to_provider: 我已做好准备汇款
       provider_intro_html: '反馈由<strong>像您一样的用户提供</strong> — 如果您最近通过该公司汇款，请<a href="%{submit_link}">提交</a> 经验以帮助其他用户：<a href="%{submit_link}">点击此处</a>.'
       provider_feedbacks_title: '用户评论：'
@@ -50,7 +54,9 @@ zh-CN:
       submit: 提交
   users:
     edit:
-      title: 您的账户
+      title: Account
+      description: View and modify your SaveOnSend acccount
+      page_title: 您的账户
       status: 状态
       points: 积分
       submit: 保存更改
@@ -62,7 +68,9 @@ zh-CN:
       image_format_unsupported: 图片格式不支持
   user_recent_transactions:
     new:
-      title: 为何花费1分钟检查您上次的转账？
+      title: Free Savings Analysis of Your Last Transfer to China, India, Mexico and Philippines
+      description: Find out savings on your last transfer to China, India, Mexico and Philippines
+      benefits_title: 为何花费1分钟检查您上次的转账？
       benefits:
         one: 费用和利率经常改变 — 查看了解您是否达成了最佳交易
         two: 分享您的观点以帮助他人
@@ -86,6 +94,8 @@ zh-CN:
         <p>通过分享您的体验，您的信息有可能帮助到他人做出更明确更合适的选择。</p>
   user_next_transfers:
     new:
+      title: Save on Sending Money to China, India, Mexico and Philippines, Free Comparison of Transfer Options
+      description: Compare and save by finding best transfer options for sending money to China, India, Mexico, and Philippines
       benefits_title: 在发送款项时对您的费用和汇率感到困惑？
       benefits:
         one: 了解透明的费用情况并选择最佳供应商
@@ -97,7 +107,9 @@ zh-CN:
       next_transfer: 找到最佳转款
       registration: 注册以保存
     show:
-      title: 让我们来找到您下次转款时的最佳供应商吧
+      title: Free Comparison for Your Next Transfer to China, India, Mexico and Philippines
+      description: Find best and cheap way to send money to China, India, Mexico and Philippines
+      form_title: 让我们来找到您下次转款时的最佳供应商吧
       provider_name: 供应商
       to_from_transfer_media: 来去方法
       gross_paid_amount_html: 总费用<em>*</em>
@@ -133,7 +145,8 @@ zh-CN:
   devise:
     registrations:
       new:
-        title: 注册
+        title: Registration
+        description: "SaveOnSend account benefits: rates and providers alerts, earn points and status, participate in blog and forum discussions"
         title_html: "免费注册，您能获得："
         get_notified: "价格改变以及新的供应商加入通知"
         earn_points: "赚取有价值的积分以及参与者身份"
@@ -144,11 +157,15 @@ zh-CN:
         check_spam: 如果您通过邮箱注册且在短时间内未从SaveOnSend收到确认信息，查看“垃圾邮件”文件夹。
     sessions:
       new:
+        title: Log in
+        description: "SaveOnSend account benefits: rates and providers alerts, earn points and status, participate in blog and forum discussions"
         remember_me: 记住我
         log_in: 登录
     confirmations:
       show:
-        title: 完成您的注册
+        title: Complete your registration
+        description: "SaveOnSend account benefits: rates and providers alerts, earn points and status, participate in blog and forum discussions"
+        page_title: 完成您的注册
         confirm: 确认您的账户
         confirmation_code_hint: 输入您手机消息接收到的代码
     mailer:

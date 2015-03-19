@@ -1,4 +1,5 @@
-- title @provider.name
+- set_meta_tags :title => t( '.title', provider: @provider.name ),
+                :description => t( '.description', provider: @provider.name )
 
 section.provider-header
   .container
