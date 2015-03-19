@@ -9,7 +9,7 @@ tr *{class: remittance_term.highlighted? ? 'option-best' : ''}
 
   - else
     td
-      = link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.png', width: '100', height: '48'), service_provider_path(remittance_term.service_provider))
+      = link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.png', width: '100', height: '48'), service_provider_path(remittance_term.service_provider), title: remittance_term.service_provider.name)
 
   - if @from_to_show
     - if remittance_term.highlighted?
@@ -59,7 +59,7 @@ tr *{class: remittance_term.highlighted? ? 'option-best' : ''}
   - if remittance_term.highlighted?
     tr *{class: remittance_term.highlighted? ? 'option-best' : ''}
         td
-          = link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.png', width: '100', height: '48'), service_provider_path(remittance_term.service_provider))
+          = link_to(image_tag('provider-icons/' + remittance_term.service_provider.slug + '.png', width: '100', height: '48'), service_provider_path(remittance_term.service_provider), title: remittance_term.service_provider.name)
 
         td.option-method-ico
             div
