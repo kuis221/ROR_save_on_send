@@ -6,7 +6,10 @@
   li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
 
 - else
-  li.promo= link_to_with_active t('.sign_up'), new_user_registration_path
+  - if current_page?(new_user_next_transfers_path)
+    li= link_to t('.sign_up'), new_user_registration_path
+  - else
+    li.promo= link_to_with_active t('.sign_up'), new_user_registration_path
   li= link_to_with_active t('.how_to'), how_to_path
   li= link_to_with_active t('.next_transfer'), new_user_next_transfers_path(anchor: 'new_user_next_transfer')
   li= link_to_with_active t('.recent_transaction'), new_user_recent_transaction_path
