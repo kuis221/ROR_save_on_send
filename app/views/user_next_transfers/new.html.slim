@@ -1,5 +1,9 @@
-- set_meta_tags :title => t('.title'),
-                :description => t('.description')
+- if landing_layout?
+  - set_meta_tags title: t('.title'),
+                  description: t('.description')
+- else
+  - set_meta_tags title: t('.title'),
+                  description: t('.description')
 
 - if flash[:notice].nil?
   section.splash
