@@ -96,6 +96,8 @@ zh-CN:
     new:
       title: Save on Sending Money to China, India, Mexico and Philippines, Free Comparison of Transfer Options
       description: Compare and save by finding best transfer options for sending money to China, India, Mexico, and Philippines
+      title_next: Free Comparison for Your Next Transfer to China, India, Mexico and Philippines
+      description_next: Find best and cheap way to send money to China, India, Mexico and Philippines
       benefits_title: 在发送款项时对您的费用和汇率感到困惑？
       benefits:
         one: 了解透明的费用情况并选择最佳供应商
@@ -135,7 +137,7 @@ zh-CN:
       title: 请帮助我们改进站点同时让其他人知道该如何省钱
   feedbacks:
     feedback:
-      raiting: '评级：'
+      raiting: '评级 %{raiting}/5：'
       anonymous: 匿名
       points: 积分
       date: '汇款至： '

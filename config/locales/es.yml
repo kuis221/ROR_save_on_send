@@ -96,6 +96,8 @@
     new:
       title: Save on Sending Money to China, India, Mexico and Philippines, Free Comparison of Transfer Options
       description: Compare and save by finding best transfer options for sending money to China, India, Mexico, and Philippines
+      title_next: Free Comparison for Your Next Transfer to China, India, Mexico and Philippines
+      description_next: Find best and cheap way to send money to China, India, Mexico and Philippines
       benefits_title: ¿Te confunden las cuotas y el tipo de cambio de divisas al enviar dinero?
       benefits:
         one: Aquí vera costos transparentes y puedes escoger el mejor proveedor
@@ -135,7 +137,7 @@
       title: Ayudanos a mejorar nuestro sitío para que otros también conoscan la manera más eficáz de enviar dinero y ahorrar sobre los costos de envío.
   feedbacks:
     feedback:
-      raiting: 'Calificacion:'
+      raiting: 'Calificacion %{raiting}/5:'
       anonymous: Anonimo
       points: Puntos
       date: 'Cantidad Enviado: '

@@ -137,7 +137,7 @@ en:
       title: Please help us to improve the site and let others know how to save money
   feedbacks:
     feedback:
-      raiting: 'Raiting:'
+      raiting: 'Raiting %{raiting}/5:'
       anonymous: Anonymous
       points: Points
       date: 'Money sent: '

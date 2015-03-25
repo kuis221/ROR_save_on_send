@@ -1,8 +1,9 @@
 .provider-review
   .clearfix
     .provider-review-rating
-      em= t('.raiting')
+      em= t( '.raiting', raiting: feedback.service_quality )
       .user-rating= display_service_quality_for_feedback(feedback)
+      
   
     .provider-review-user
       - feedback_user = feedback.user
