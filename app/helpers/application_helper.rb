@@ -38,6 +38,19 @@ module ApplicationHelper
     link_to(label, url, options)
   end
 
+  def current_layout
+    layout = controller.send(:_layout)
+    if layout.instance_of?(String)
+      layout
+    else
+      File.basename(layout.identifier).split('.').first
+    end
+  end
+
+  def landing_layout?
+    current_layout == 'landing'
+  end
+
   private
   def display_rating(rate, control_id)
     display_rating_html = ''

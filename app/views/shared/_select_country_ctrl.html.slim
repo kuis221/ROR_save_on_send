@@ -7,4 +7,4 @@
         = f.collection_radio_buttons(:money_transfer_destination_id, Country.all.collect {|country| [ country.id, country.name ] }, :first, :last, {prompt: true, checked: resource.money_transfer_destination.try(:id)}) do |b|
           = b.label( class: "radio-inline", title: b.text )
             = b.radio_button
-            = image_tag 'flags/' + b.text + '.png', alt: b.text
+            = image_tag 'flags/' + b.text + '.png'

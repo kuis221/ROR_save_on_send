@@ -1,3 +1,11 @@
+- if current_page?(root_path)
+  - set_meta_tags title: t('.title'),
+                  description: t('.description')
+
+- else
+  - set_meta_tags title: t('.title_next'),
+                  description: t('.description_next')
+
 - if flash[:notice].nil?
   section.splash
     .container
@@ -5,10 +13,8 @@
         .col-xs-12
           .flags
             ul
-              li= image_tag "flags/India.png", { alt: '', title: '', class: 'img-responsive' }
-              li= image_tag "flags/Mexico.png", { alt: '', title: '', class: 'img-responsive' }
-              li= image_tag "flags/Philippines.png", { alt: '', title: '', class: 'img-responsive' }
-              li= image_tag "flags/China.png", { alt: '', title: '', class: 'img-responsive' }
+              - Country.all.each do |country|
+                li= image_tag "flags/" + country.name + ".png", { alt: country.name, title: country.name, class: 'img-responsive' }
 
           h1.align-center= t('.benefits_title')
           .align-center.text-left
@@ -35,6 +41,6 @@ section.content.next-tr-page
   .container
     .row
       .col-xs-12
-        h2= t('.form_title') 
+        h2= t('.form_title')
 
     = render 'form'

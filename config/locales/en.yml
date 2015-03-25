@@ -8,15 +8,16 @@ en:
     thanks_for_feedback: Thank you for your feedback!
   layouts:
     application:
-      title: Save on Send
+      site: Save on Send
+      keywords: send, transfer, money, internationally, china, india, mexico, philippines, best, save, free fees, exchange rates, instant, fast, easy, online
       add_recent_transaction: Add recent transaction
       next_transfer: Next transfer
       help_others: Help others
       how_to: How-to/Questions
       sign_out: Sign out
     landing: &application
-      title: Save on Send
-      title_html: "Immigrants of <br class='visible-xs'> The World Unite!"
+      site: Save on Send
+      keywords: send, transfer, money, internationally, china, india, mexico, philippines, best, save, free fees, exchange rates, instant, fast, easy, online
       send_money: "Send money with Transparency, help yourself and others to learn Total Cost!"
       share_transfer: Share transfer
   shared:
@@ -42,6 +43,8 @@ en:
       help_others: Help others
   service_providers:
     show:
+      title: Send Money with %{provider}
+      description: Read reviews of %{provider} by users like you
       go_to_provider: I am ready to send money
       provider_intro_html: 'Feedback is provided <strong>by users like you</strong> — if you recently sent money with this company, please <a href="%{submit_link}">submit</a> that experience to help other users: <a href="%{submit_link}">click here</a>.'
       provider_feedbacks_title: 'User reviews:'
@@ -51,7 +54,9 @@ en:
       submit: Submit
   users:
     edit:
-      title: Your account
+      title: Account
+      description: View and modify your SaveOnSend acccount
+      page_title: Your account
       status: Status
       points: Points
       submit: Save changes
@@ -63,7 +68,9 @@ en:
       image_format_unsupported: Image format is unsupported
   user_recent_transactions:
     new:
-      title: Why spend 1 min on checking your last transfer?
+      title: Free Savings Analysis of Your Last Transfer to China, India, Mexico and Philippines
+      description: Find out savings on your last transfer to China, India, Mexico and Philippines
+      benefits_title: Why spend 1 min on checking your last transfer?
       benefits:
         one: Fees and rates change frequently — check if you got the best deal
         two: Help others with your insights
@@ -87,6 +94,10 @@ en:
         <p>for sharing your experience. You information might have helped someone else to make a smarter and more informed choice.</p>
   user_next_transfers:
     new:
+      title: Save on Sending Money to China, India, Mexico and Philippines, Free Comparison of Transfer Options
+      description: Compare and save by finding best transfer options for sending money to China, India, Mexico, and Philippines
+      title_next: Free Comparison for Your Next Transfer to China, India, Mexico and Philippines
+      description_next: Find best and cheap way to send money to China, India, Mexico and Philippines
       benefits_title: Confused by fees and exchange rates when sending money?
       benefits:
         one: Learn transparent costs and pick the best provider
@@ -98,7 +109,9 @@ en:
       next_transfer: Find Best Transfer
       registration: Register to save
     show:
-      title: Let’s find the best provider for your next transfer
+      title: Free Comparison for Your Next Transfer to China, India, Mexico and Philippines
+      description: Find best and cheap way to send money to China, India, Mexico and Philippines
+      form_title: Let’s find the best provider for your next transfer
       provider_name: Provider
       to_from_transfer_media: To-From method
       gross_paid_amount_html: Total cost<em>*</em>
@@ -124,7 +137,7 @@ en:
       title: Please help us to improve the site and let others know how to save money
   feedbacks:
     feedback:
-      raiting: 'Raiting:'
+      raiting: 'Raiting %{raiting}/5:'
       anonymous: Anonymous
       points: Points
       date: 'Money sent: '
@@ -135,6 +148,7 @@ en:
     registrations:
       new:
         title: Registration
+        description: "SaveOnSend account benefits: rates and providers alerts, earn points and status, participate in blog and forum discussions"
         title_html: "Register for FREE, so you can:"
         get_notified: "Get notified of price changes and new low-cost providers"
         earn_points: "Earn valuable points and status for participation"
@@ -145,11 +159,15 @@ en:
         check_spam: If you are registering with email and do not receive a confirmation from SaveOnSend shortly, check the "Junk-Spam" email folder.
     sessions:
       new:
+        title: Log in
+        description: "SaveOnSend account benefits: rates and providers alerts, earn points and status, participate in blog and forum discussions"
         remember_me: Remember me
         log_in: Log in
     confirmations:
       show:
         title: Complete your registration
+        description: "SaveOnSend account benefits: rates and providers alerts, earn points and status, participate in blog and forum discussions"
+        page_title: Complete your registration
         confirm: Confirm your account
         confirmation_code_hint: Enter the code you received in your confirmation sms message
     mailer:

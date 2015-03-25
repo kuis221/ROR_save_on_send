@@ -1,8 +1,11 @@
+- set_meta_tags :title => t('.title'),
+                :description => t('.description')
+
 section.content.user-page
   .container
     .row
       .user-page-title
-        h3= t('.title')
+        h3= t('.page_title')
 
     - unless @user.errors.empty?
       .row

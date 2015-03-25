@@ -1,7 +1,7 @@
 .container
   h3= t('.title')
 
-  = form_for(@provider_feedback, html: {class: 'form-horizontal', role: 'form'}) do |f|
+  = form_for(@provider_feedback, html: { class: 'form-horizontal', role: 'form' }) do |f|
     // errors
     - @provider_feedback.errors.full_messages.each do |err_msg|
       .bg-warning= err_msg
@@ -14,7 +14,7 @@
       = f.label :service_quality, class: 'col-sm-4 control-label'
       .col-sm-8
         = f.collection_radio_buttons(:service_quality, (1..5).collect{|rate| [rate, rate]}, :first, :last, {prompt: true}) do |b|
-          = b.radio_button( class: "star "+( b.value == 1 ? "required" : ""))
+          = b.radio_button( class: "star "+( b.value == 1 ? "required" : "" ) )
 
     // comments
     .form-group
