@@ -32,6 +32,6 @@ module SaveOnSend
     config.serve_static_assets = true
 
     # not use ssl for blog
-    config.middleware.use Rack::SslEnforcer, except: [ /^\/blog\/.*$/ ], strict: true
+    config.middleware.use Rack::SslEnforcer, only: [ /^\/(?!blog)/ ], strict: true
   end
 end
