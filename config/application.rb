@@ -30,5 +30,8 @@ module SaveOnSend
     # enables your Rails server to deliver your assets on Heroku
     # config for rails_serve_static_assets gem
     config.serve_static_assets = true
+
+    # not use ssl for blog
+    config.middleware.use Rack::SslEnforcer, except: [ /^\/blog\/.*$/ ], strict: true
   end
 end
