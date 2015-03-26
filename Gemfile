@@ -81,6 +81,9 @@ gem 'raygun4ruby'
 gem 'meta-tags'
 gem 'sitemap_generator'
 
+# reverse proxy for accessing to blog as /blog
+gem 'rack-reverse-proxy', require: 'rack/reverse_proxy', github: 'useruby/rack-reverse-proxy'
+
 group :development do
   # open letter in browser
   gem 'letter_opener'

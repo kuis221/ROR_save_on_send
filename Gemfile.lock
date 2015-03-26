@@ -4,6 +4,13 @@ GIT
   specs:
     bootstrap_flash_messages (1.0.0)
 
+GIT
+  remote: git://github.com/useruby/rack-reverse-proxy.git
+  revision: c1390533c9136cf0da47dce9c18d540121f04d80
+  specs:
+    rack-reverse-proxy (0.4.4)
+      rack (>= 1.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -358,6 +365,7 @@ DEPENDENCIES
   omniauth-facebook
   pg
   pry-rails
+  rack-reverse-proxy!
   railroady
   rails (= 4.1.7)
   rails-i18n (~> 4.0.0)
