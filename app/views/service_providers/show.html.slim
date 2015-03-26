@@ -24,10 +24,11 @@ section.provider-header
 section.content
   .container
     .row
-      - if @provider.display_feedbacks.present?
-        .col-xs-12
-          p.align-center.provider-intro= t( '.provider_intro_html', submit_link: new_user_recent_transaction_path )
+      .col-xs-12
+        h1= @provider.name
+        p.align-center.provider-intro= t( '.provider_intro_html', submit_link: new_user_recent_transaction_path )
 
+      - if @provider.display_feedbacks.present?
         .col-xs-12
           h4
             .row
