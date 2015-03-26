@@ -42,7 +42,6 @@ Rails.application.routes.draw do
   get 'how-to', to: 'pages#show', defaults: {id: 'how_to'}
   get 'privacy', to: 'pages#show', defaults: {id: 'privacy'}
   get 'terms', to: 'pages#show', defaults: {id: 'terms'}
-  get '/blog' => redirect('http://www.saveonsend.com/blog/')
   
   get 'welcome' => 'welcome#index'
   get '*path' => 'welcome#index'
