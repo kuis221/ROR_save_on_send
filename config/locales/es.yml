@@ -41,6 +41,7 @@
       next_transfer: Encuentra la mejor transferencía
       recent_transaction: Revisa tu ultima transferencia
       help_others: /ayuda a otros
+      blog: Blog
   service_providers:
     show:
       title: Send Money with %{provider}

@@ -41,6 +41,7 @@ en:
       next_transfer: Find Best Transfer
       recent_transaction: Check Last Transfer
       help_others: Help others
+      blog: Blog
   service_providers:
     show:
       title: Send Money with %{provider}

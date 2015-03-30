@@ -41,6 +41,7 @@ zh-CN:
       next_transfer: 找到最佳转款方式
       recent_transaction: 查看上次转款
       help_others: 帮助他人
+      blog: 博客
   service_providers:
     show:
       title: Send Money with %{provider}
