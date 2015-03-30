@@ -44,5 +44,6 @@ Rails.application.routes.draw do
   get 'terms', to: 'pages#show', defaults: {id: 'terms'}
   
   get 'welcome' => 'welcome#index'
+  get 'blog' => redirect('http://www.saveonsend.com/blog/')
   get '*path' => 'welcome#index'
 end
