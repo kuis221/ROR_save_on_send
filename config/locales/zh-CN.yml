@@ -25,6 +25,7 @@ zh-CN:
     footer:
       terms: 条款
       privacy: 隐私政策
+      how_to: 工作原理
       disclosure: '广告信息披露: SaveOnSend.com是一家独立的，由广告支持的比价服务商。 SaveOnSend可能通过布置某些赞助商的产品和服务信息在网站上或通过您在此网站点击的链接获取报酬。'
       feedback_cta:
         <h3>同时帮助他人吧！</h3>
@@ -37,7 +38,6 @@ zh-CN:
       sign_in: 登录
       sign_up: 现在加入 
       sign_out: 注销
-      how_to: 工作原理
       next_transfer: 找到最佳转款方式
       recent_transaction: 查看上次转款
       help_others: 帮助他人

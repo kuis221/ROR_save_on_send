@@ -25,6 +25,7 @@
     footer:
       terms: Termino   
       privacy: Privacidad
+      how_to: ¡Cómo funciona?
       disclosure: 'Terminos de nuestros servicios: SaveOnSend.com es una companía independiente, la cual apoya a anuncios y servicios comparables. SaveOnSend recibe compensación a cambio de anuncios destacados de los patrocinadores en la página de los servicios; los cuales se pueden cliquer y se redireccionan a la pagina del patrocinador.'
       feedback_cta:
         <h3>¡Ayudanos a dar un mejor servicio!</h3>
@@ -37,7 +38,6 @@
       sign_in: Log in
       sign_up: Unete
       sign_out: Salir de perfil
-      how_to: ¡Cómo funciona?
       next_transfer: Encuentra la mejor transferencía
       recent_transaction: Revisa tu ultima transferencia
       help_others: /ayuda a otros

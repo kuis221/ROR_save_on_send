@@ -25,6 +25,7 @@ en:
     footer:
       terms: Terms   
       privacy: Privacy
+      how_to: How it works
       disclosure: 'Advertising Disclosure: SaveOnSend.com is an independent, advertising-supported comparison service. SaveOnSend may be compensated in exchange for featured placement of certain sponsored products and services, or your clicking on links posted on this website.'
       feedback_cta:
         <h3>Help others too!</h3>
@@ -37,7 +38,6 @@ en:
       sign_in: Log in
       sign_up: Join now
       sign_out: Sign out
-      how_to: How it works
       next_transfer: Find Best Transfer
       recent_transaction: Check Last Transfer
       help_others: Help others
