@@ -77,6 +77,9 @@ gem 'twilio-ruby', '~> 3.12'
 # error tracking
 gem 'raygun4ruby'
 
+# monitoring
+gem 'newrelic_rpm'
+
 # seo plugins
 gem 'meta-tags'
 gem 'sitemap_generator'
