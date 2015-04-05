@@ -13,7 +13,7 @@ body {
   text-align: center;
   background: #f9f9f9 image-url('content-pattern.png') repeat 0 0;
   min-width: 320px;
-  margin-bottom: 360px;
+  margin-bottom: 420px;
   
   &.fix {
     height: 100%;
@@ -66,7 +66,7 @@ section {
 /* Different resolutions */
 @media only screen and (min-width: 480px) {
   body {
-    margin-bottom: 320px;
+    margin-bottom: 380px;
   }
 
   .align-center {
@@ -75,7 +75,7 @@ section {
 }
 @media only screen and (min-width: 768px) {
   body {
-    margin-bottom: 305px;
+    margin-bottom: 365px;
   }
 
   h1, .h1 {
@@ -106,7 +106,7 @@ section {
 }
 @media only screen and (min-width: 992px) {
   body {
-    margin-bottom: 280px;
+    margin-bottom: 340px;
   }
 
   .align-center {

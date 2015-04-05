@@ -1,10 +1,12 @@
 - if current_page?(root_path)
-  - set_meta_tags title: t('.title'),
-                  description: t('.description')
+  - set_meta_tags :title => t('.title'),
+                  :description => t('.description'),
+                  :og => { :title => t('.title'), :description => t('.description') }
 
 - else
-  - set_meta_tags title: t('.title_next'),
-                  description: t('.description_next')
+  - set_meta_tags :title => t('.title_next'),
+                  :description => t('.description_next'),
+                  :og => { :title => t('.title_next'), :description => t('.description_next') }
 
 - if flash[:notice].nil?
   section.splash
