@@ -2,7 +2,7 @@
   li= link_to_with_active t('.hi') + current_user.first_name, edit_user_path
   li= link_to_with_active t('.next_transfer'), new_user_next_transfers_path(anchor: 'new_user_next_transfer')
   li= link_to_with_active t('.recent_transaction'), new_user_recent_transaction_path
-  li= link_to t('.blog'), '//www.saveonsend.com/blog/'
+  li= link_to t('.blog'), 'http://www.saveonsend.com/blog/'
   li= link_to t('.sign_out'), destroy_user_session_path, method: :delete
 
 - else
@@ -12,5 +12,5 @@
     li.promo= link_to_with_active t('.sign_up'), new_user_registration_path
   li= link_to_with_active t('.next_transfer'), new_user_next_transfers_path(anchor: 'new_user_next_transfer')
   li= link_to_with_active t('.recent_transaction'), new_user_recent_transaction_path
-  li= link_to t('.blog'), '//www.saveonsend.com/blog/'
+  li= link_to t('.blog'), 'http://www.saveonsend.com/blog/'
   li= link_to_with_active t('.sign_in'), new_user_session_path
