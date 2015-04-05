@@ -21,27 +21,9 @@ sos.renderMasks = ->
   $('.mask-days').mask "00"
   $('.mask-zipcode').mask "00000"
 
-# Navigation Toggle
-$(document).on sos.e, ".header .toggle-menu, .opened-menu .wrapper-content, .opened-menu .footer, .menu .close", (e) ->
-  e.preventDefault()
-  $("body").toggleClass "opened-menu"
-  return
-
-$(document).on sos.e, '[data-toggle-amount]', (event) ->
-  $('[data-target-amount]').each ->
-    $(this).addClass('hide')
-  $('[data-target-amount="'+$(this).data('toggle-amount')+'"]').removeClass('hide')
-
 sos.init = ->
-
   sos.renderMasks()
   sos.renderRating()
-
-  $('[data-toggle-amount]').each ->
-    if ($(this).is(':checked'))
-      $('[data-target-amount]').each ->
-        $(this).addClass('hide')
-      $('[data-target-amount="'+$(this).data('toggle-amount')+'"]').removeClass('hide')
 
 ready = ->
   sos.init()

@@ -13,15 +13,14 @@
 				maxDate = (d.getMonth() + 1) + "/" + (d.getDate() + 1) + "/" + d.getFullYear();
 				
 			$('.input-group.date').datetimepicker({
-			    minDate: minDate,
-			    maxDate: maxDate,
-				  format: 'MM/DD/YYYY',
-          icons: {
-                    previous: "fa fa-chevron-left",
-                    next: "fa fa-chevron-right"
-          },
-          locale: locale
-
+				minDate: minDate,
+				maxDate: maxDate,
+				format: 'MM/DD/YYYY',
+				icons: {
+					previous: "fa fa-chevron-left",
+					next: "fa fa-chevron-right"
+				},
+				locale: locale
 			});
 			
 			

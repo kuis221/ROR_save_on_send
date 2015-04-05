@@ -1,0 +1,53 @@
+@import 'common/variables';
+
+
+/* follow-buttons */
+.follow-buttons {
+  background-color: #282828;
+  padding: 18px 0 5px;
+
+  a {
+    display: inline-block;
+    width: 36px;
+    line-height: 36px;
+    color: #fff;
+    margin: 0 6px;
+    border-radius: $border-radius-large;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+    }    
+    &.follow-button-facebook {
+      background-color: #305891;
+    }
+    &.follow-button-twitter {
+      background-color: #2ca8d2;
+    }
+    &.follow-button-linkedin {
+      background-color: #4498c8;
+    }
+    &.follow-button-google {
+      background-color: #cf4832;
+    }
+    &.follow-button-tumblr {
+      background-color: #384853;
+    }
+  }
+  .fa {
+    font-size: 24px;
+    vertical-align: middle;
+  }
+  .follow-button-label {
+    display: none;
+  }
+}
+
+
+/* Different resolutions */
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 992px) {
+}

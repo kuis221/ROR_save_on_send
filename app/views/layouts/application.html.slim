@@ -17,11 +17,10 @@ html lang="en"
     = favicon_link_tag 'favicon.png', :rel => 'shortcut icon', type: "image/x-icon"
     
     javascript:
-      var locale = "#{I18n.locale}"
+      var locale = "#{I18n.locale}";
 
     = javascript_include_tag "application"
     = cloudinary_js_config
-
     = render 'shared/ga' if Rails.env.production?
 
   body
