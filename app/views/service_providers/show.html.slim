@@ -1,5 +1,6 @@
 - set_meta_tags :title => t( '.title', provider: @provider.name ),
-                :description => t( '.description', provider: @provider.name )
+                :description => t( '.description', provider: @provider.name ),
+                :og => { :title => t( '.title', provider: @provider.name ), :description => t( '.description', provider: @provider.name ), :image => request.base_url + "/#{@provider.name.parameterize.downcase}.png" }
 
 section.provider-header
   .container
