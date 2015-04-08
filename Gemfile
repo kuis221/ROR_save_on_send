@@ -33,7 +33,7 @@ gem "twitter-bootstrap-rails"
 gem 'momentjs-rails', '~> 2.9'
 
 gem 'bootstrap-sass', '~> 3.3.1'
-gem 'font-awesome-sass' # The iconic font designed for Bootstrap
+gem 'font-awesome-sass', '~> 4.3.0' # The iconic font designed for Bootstrap
 gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 gem 'jquery-turbolinks'
 # gem 'maskedinput-rails'
