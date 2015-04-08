@@ -24,6 +24,7 @@
 //= require vendors/jquery.mask.min
 //= require vendors/jquery.rating.pack
 //= require vendors/jquery.tablesaw
+//= require vendors/rrssb
 
 //= require bootstrap
 //= require form_controller
