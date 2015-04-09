@@ -106,7 +106,7 @@ section.content.user-page
               .user-page-about
                 = f.label :about_me, class: 'col-xs-12 control-label'
                 .col-xs-12
-                  = f.text_area :about_me, rows: '4', cols: '1', class: 'form-control', placeholder: t('.about_me')
+                  = f.text_area :about_me, rows: '4', cols: '1', class: 'form-control', placeholder: t('.about_me'), maxlength: '512'
   
             .form-group
               .col-sm-7.col-sm-offset-5
