@@ -21,9 +21,22 @@ sos.renderMasks = ->
   $('.mask-days').mask "00"
   $('.mask-zipcode').mask "00000"
 
+
 sos.init = ->
   sos.renderMasks()
   sos.renderRating()
+
+  $('[data-toggle-amount]').each ->
+    if ($(this).is(':checked'))
+      $('[data-target-amount]').each ->
+        $(this).addClass('hide')
+      $('[data-target-amount="'+$(this).data('toggle-amount')+'"]').removeClass('hide')
+
+  $(document).on sos.e, '[data-toggle-amount]', (event) ->
+    $('[data-target-amount]').each ->
+      $(this).addClass('hide')
+    $('[data-target-amount="'+$(this).data('toggle-amount')+'"]').removeClass('hide')
+      
 
 ready = ->
   sos.init()
