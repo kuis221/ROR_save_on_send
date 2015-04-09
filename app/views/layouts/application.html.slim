@@ -4,7 +4,7 @@ html lang="en"
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
     meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-    = display_meta_tags site: t('.site'), keywords: t('.keywords'), reverse: true, :og => { :url => request.base_url + request.script_name + request.path_info, :image => request.base_url + '/logo.png' }, twitter: { :card => "summary", :site => "@SaveOnSend" }
+    = display_meta_tags site: t('.site'), keywords: t('.keywords'), reverse: true, :og => { :url => request.base_url + request.script_name + request.path_info, :image => request.base_url + '/image.png' }, twitter: { :card => "summary_large_image", :site => "@SaveOnSend" }
     = csrf_meta_tags
 
     /[if lt IE 9]
