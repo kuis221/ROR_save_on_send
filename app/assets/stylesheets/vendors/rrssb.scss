@@ -63,6 +63,7 @@ $social-list: (
 	}
 	&.tiny-format {
 		li {
+		  float: none;
       width: 48px!important;
       @include transition(width 0.2s ease-in-out 0s);
 
