@@ -5,11 +5,14 @@ describe User::RecentTransaction do
 
   describe 'validation' do
     let(:recent_transaction){FactoryGirl.build(:recent_transaction)}
-   
+
     %i{date currency amount_sent_cents amount_received_cents originating_source_of_funds service_provider
     destination_preference_for_funds fees_for_sending_cents send_to_receive_duration
     feedback}.each do |property|
       it "should be invalid if #{property} is not set" do
+        skip('temporarily mark field as optional') if %i{originating_source_of_funds service_provider
+    destination_preference_for_funds send_to_receive_duration}.include?(property)
+
         recent_transaction.send("#{property}=", nil)
         expect(recent_transaction).to be_invalid
       end
