@@ -18,6 +18,7 @@ class Feedback < ActiveRecord::Base
   belongs_to :user
 
   validate :service_quality_and_comments
+  validates_length_of :comments, maximum: 512
 
   protected
   def service_quality_and_comments
