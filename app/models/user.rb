@@ -65,6 +65,7 @@ class User < ActiveRecord::Base
   #validates_presence_of :first_name
   #validates_presence_of :zipcode, unless: :skip_additional_info?
   validates_presence_of :money_transfer_destination, unless: :skip_additional_info?
+  validates_length_of :about_me, maximum: 1024
 
   validates :phone, uniqueness: {case_sensitive: false}, format: {with: US_PHONE_REGEX}, 
     presence: true, if: :email_blank?

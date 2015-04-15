@@ -76,5 +76,18 @@ describe UserRecentTransactionsController do
         post :create, user_recent_transaction: recent_transaction_attrs
       }.to_not changing(ServiceProvider, :count)
     end
+
+    it 'should return page with error if comments is more than 512 characters' do
+      sign_in(user)
+      
+      long_comments = ''
+      520.times{long_comments += 'a'}
+
+      recent_transaction_attrs[:feedback_attributes][:comments] = long_comments
+
+      post :create, user_recent_transaction: recent_transaction_attrs
+
+      expect(response).to render_template(:new)
+    end
   end
 end
