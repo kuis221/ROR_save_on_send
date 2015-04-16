@@ -9,15 +9,17 @@ $rrssb-tumblr:      #32506d !default;
 $rrssb-linkedin:    #007bb6 !default;
 $rrssb-twitter:     #26c4f1 !default;
 $rrssb-googleplus:  #e93f2e !default;
+$rrssb-others:      #f8694d !default;
 
 
 // Variable list for all social button colors to be iterated over.
 $social-list: (
-	rrssb-facebook			$rrssb-facebook,
-	rrssb-tumblr			  $rrssb-tumblr,
-	rrssb-linkedin			$rrssb-linkedin,
-	rrssb-twitter			  $rrssb-twitter,
-	rrssb-googleplus		$rrssb-googleplus
+  rrssb-facebook      $rrssb-facebook,
+  rrssb-tumblr        $rrssb-tumblr,
+  rrssb-linkedin      $rrssb-linkedin,
+  rrssb-twitter       $rrssb-twitter,
+  rrssb-googleplus    $rrssb-googleplus,
+  rrssb-others        $rrssb-others
 );
 
 
