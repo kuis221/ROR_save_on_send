@@ -18,18 +18,16 @@
   font-size: $font-size-base;
   margin: 30px 0 35px;
 
+  .clearfix div {
+    display: inline-block;
+    vertical-align: top;
+  }
   .provider-review-rating {
     margin-bottom: 5px;
+    display: block!important;
 
     em {
       display: none;
-    }
-  }
-  .provider-review-user {
-    margin-bottom: 10px;
-    
-    > div {
-      vertical-align: middle;
     }
   }
   .provider-review-user-status {
@@ -38,11 +36,9 @@
     font-weight: bold;
     padding: 2px 9px;
     margin-right: 15px;
-    display: inline-block;
   }
   .provider-review-user-avatar {
     border: solid 1px #ddd;
-    display: inline-block;
     margin-right: 5px; 
     line-height: 10px;
 
@@ -51,17 +47,18 @@
     }
   }
   .provider-review-user-name {
+    line-height: 23px;
     font-weight: bold;
     margin-right: 15px;
-    display: inline-block;
   }
   .provider-review-user-points {
     margin-right: 17px;
-    display: inline-block;
   }
   .provider-review-user-date {
+    line-height: 23px;
     color: #8d959c;
-    margin-top: 5px;
+    margin: 5px 0 10px;
+    display: block!important;
   }
   .provider-review-text {
     background: #fff;
@@ -87,8 +84,8 @@
 @media only screen and (min-width: 480px) {
   .provider-review {
     .provider-review-user-date {
-      display: inline-block;
-      margin: 0;
+      margin-top: 0;
+      display: inline-block!important;
     }
     .provider-review-user-points {
       margin-right: 40px;

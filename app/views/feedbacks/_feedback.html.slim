@@ -1,20 +1,20 @@
-.provider-review
+.provider-review itemtype='http://schema.org/Review' itemscope=''
   .clearfix
-    .provider-review-rating
-      em= t( '.raiting', raiting: feedback.service_quality )
+    .provider-review-rating itemtype='http://schema.org/Rating' itemprop='reviewRating' itemscope=''
+      em= raw t( '.raiting', raiting: feedback.service_quality )
       .user-rating= display_service_quality_for_feedback(feedback)
       
   
-    .provider-review-user
+    .provider-review-user itemtype='http://schema.org/Person' itemprop='author' itemscope=''
       - feedback_user = feedback.user
       - unless feedback_user.nil?
         .provider-review-user-avatar
           - if feedback_user.avatar.present?
             = cl_image_tag(feedback_user.avatar, crop: :fill, width: 21, height: 21)
           - else
-            = image_tag('default-image.png')
+            = image_tag('default-image.png', itemprop: 'image')
 
-        .provider-review-user-name
+        .provider-review-user-name itemprop='name'
           = feedback_user.first_name
 
         - if feedback_user.level.present?
@@ -27,14 +27,15 @@
 
       - else
         .provider-review-user-avatar
-          = image_tag('default-image.png')
+          = image_tag('default-image.png', itemprop: 'image')
 
-        .provider-review-user-name
+        .provider-review-user-name itemprop='name'
           = t('.anonymous')
   
-      .provider-review-user-date
-        = t('.date')
+    .provider-review-user-date
+      = t('.date')
+      meta itemprop='datePublished' content=l(feedback.commendable.date)
         = l(feedback.commendable.date, format: :for_feedback)
 
-  .provider-review-text
+  .provider-review-text itemprop='reviewBody'
     = feedback.comments
