@@ -1,15 +1,23 @@
 @import 'common/variables';
 
 
-/* provider-rating-avg */
-.provider-rating-avg {
-  display: none;
+/* provider-rating */
+.provider-rating {
+  .provider-rating-avg,
+  .provider-rating-based {
+    display: none;
+  }  
 }
 
 
 /* provider-intro */
 .provider-intro {
   margin-bottom: 35px;  
+}
+
+/* provider-reviews-title */
+.provider-reviews-title {
+  margin-bottom: 0;
 }
 
 
@@ -93,33 +101,46 @@
   }
 }
 @media only screen and (min-width: 768px) {
-  .provider-rating-avg {
+  .provider-rating {
     display: inline-block;
-    background: #e6cd17;
-    border-color: #e6cd17;
-    border-style: solid;
-    border-width: 2px 0 2px 2px;
-    position: relative;
-    top: 2px;
-    text-align: center;
-    height: 28px;
-    line-height: 25px;
-    margin-right: 30px;
-    padding-left: 2px;
-    width: 45px;
-    
-    .provider-rating-avg-corner {
-      width: 0;
-      height: 0;
-      border-left: 14px solid #e6cd17;
-      border-top: 14px solid transparent;
-      border-bottom: 14px solid transparent;
-      position: absolute;
-      top: -2px;
-      right: -14px;
+    vertical-align: middle;
+
+    .provider-rating-avg {
+      display: inline-block;
+      background: #e6cd17;
+      border-color: #e6cd17;
+      border-style: solid;
+      border-width: 2px 0 2px 2px;
+      position: relative;
+      top: 2px;
+      text-align: center;
+      height: 28px;
+      line-height: 25px;
+      margin-right: 30px;
+      padding-left: 2px;
+      width: 45px;
+      
+      .provider-rating-avg-corner {
+        width: 0;
+        height: 0;
+        border-left: 14px solid #e6cd17;
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        position: absolute;
+        top: -2px;
+        right: -14px;
+      }
+    }
+    .provider-rating-based {
+      display: block;
+      margin: 8px 0 -18px;
+      color: #fff;
+      text-align: center;
     }
   }
-  
+  .provider-reviews-title {
+    text-align: left;
+  }
   .provider-review {
     text-align: left;
     margin: 45px 0 50px;

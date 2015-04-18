@@ -49,7 +49,7 @@
       go_to_provider: Listo para enviar dinero
       provider_intro_html: '<strong>Clientes como usted</strong> nos dejan su opinion. — Si ha enviado dinero ultimamente atravez de nuestros servicios, por favor <a href="%{submit_link}">escriba</a> sobre su experiencia y asi ayudar a otros: <a href="%{submit_link}">cliquea aqui</a>.'
       provider_feedbacks_title: 'Opiniones:'
-      provider_feedbacks_count: '<span itemprop="ratingCount">%{count}</span> reviews'
+      provider_feedbacks_count: 'Basado en <span itemprop="ratingCount">%{count}</span> reviews'
     provider_feedback_form:
       title: Califica al proveedor
       submit: Califica

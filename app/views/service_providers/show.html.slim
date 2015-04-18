@@ -9,16 +9,20 @@ div itemtype='http://schema.org/LocalBusiness' itemscope=''
         .col-xs-12.col-sm-10.col-sm-offset-1
           .provider-logo
             = link_to( @provider.landing_page, target: 'new', title: @provider.name ) do
-              = image_tag( 'provider-icons/' + @provider.name.parameterize.downcase + '_b.png', itemprop: 'name', alt: @provider.name )
+              = image_tag( 'provider-icons/' + @provider.name.parameterize.downcase + '_b.png', itemprop: 'logo', alt: @provider.name )
   
-          .provider-rating-avg itemtype='http://schema.org/AggregateRating' itemscope=''
-            span itemprop='ratingValue' #{@provider.average_rating}
-            | /
-            span itemprop='bestRating' 5
-            .provider-rating-avg-corner
-  
-          .user-rating
-            = display_average_rating_for_provider( @provider )
+          .provider-rating itemtype='http://schema.org/AggregateRating' itemprop='aggregateRating' itemscope=''
+            .provider-rating-avg
+              span itemprop='ratingValue' #{@provider.average_rating}
+              | /
+              span itemprop='bestRating' 5
+              .provider-rating-avg-corner
+    
+            .user-rating
+              = display_average_rating_for_provider( @provider )
+              
+            .provider-rating-based
+              = raw t( '.provider_feedbacks_count', count: @provider.display_feedbacks.size )
   
           .provider-link
             = link_to( @provider.landing_page, target: 'new', class: 'btn btn-primary btn-lg', title: t( '.go_to_provider' ) ) do
@@ -35,13 +39,10 @@ div itemtype='http://schema.org/LocalBusiness' itemscope=''
   
         - if @provider.display_feedbacks.present?
           .col-xs-12
-            h4
+            h4.provider-reviews-title
               .row
-                .col-xs-6.col-sm-5.col-sm-offset-1.text-left
+                .col-xs-12.col-sm-10.col-sm-offset-1
                   = t( '.provider_feedbacks_title' )
-    
-                .col-xs-6.col-sm-5.text-right itemtype='http://schema.org/AggregateRating' itemscope=''
-                  small= raw t( '.provider_feedbacks_count', count: @provider.display_feedbacks.size )
   
           .col-xs-12.col-sm-10.col-sm-offset-1
             = render @provider.display_feedbacks
