@@ -49,7 +49,7 @@ en:
       go_to_provider: I am ready to send money
       provider_intro_html: 'Feedback is provided <strong>by users like you</strong> — if you recently sent money with this company, please <a href="%{submit_link}">submit</a> that experience to help other users: <a href="%{submit_link}">click here</a>.'
       provider_feedbacks_title: 'User reviews:'
-      provider_feedbacks_count: "%{count} reviews"
+      provider_feedbacks_count: '<span itemprop="ratingCount">%{count}</span> reviews'
     provider_feedback_form:
       title: Rate the provider
       submit: Submit
@@ -138,7 +138,7 @@ en:
       title: Please help us to improve the site and let others know how to save money
   feedbacks:
     feedback:
-      raiting: 'Raiting %{raiting}/5:'
+      raiting: 'Raiting <span itemprop="ratingValue">%{raiting}</span>/<span itemprop="bestRating">5</span>:'
       anonymous: Anonymous
       points: Points
       date: 'Money sent: '
