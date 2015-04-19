@@ -40,7 +40,7 @@ class UserRecentTransactionsController < ApplicationController
               :fees_for_receiving, :send_to_receive_duration, :send_to_receive_duration_interval,
               :documentation_requirements, :promotion,
               :money_transfer_destination_id,
-              service_provider_attributes: [:name, :landing_page], 
+              service_provider_attributes: [:name, :money_transfer_page], 
               feedback_attributes: [:service_quality, :comments]
              )
 

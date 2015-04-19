@@ -226,7 +226,7 @@ zh-CN:
         email: 邮箱
       service_provider:
         name: 供应商名称
-        landing_page: 供应商站点
+        money_transfer_page: 供应商站点
       feedback:
         comments: 通过详尽的评论来帮助他人
         service_quality: 供应商质量

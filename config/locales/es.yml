@@ -228,7 +228,7 @@
         email: Correo de email
       service_provider:
         name: Nombre del provedor
-        landing_page: Sitío web del provedor
+        money_transfer_page: Sitío web del provedor
       feedback:
         comments: Comentarios
         service_quality: Calidad del provedor

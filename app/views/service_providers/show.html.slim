@@ -8,7 +8,7 @@ div itemtype='http://schema.org/LocalBusiness' itemscope=''
       .row
         .col-xs-12.col-sm-10.col-sm-offset-1
           .provider-logo
-            = link_to( @provider.landing_page, target: 'new', title: @provider.name ) do
+            = link_to( @provider.money_transfer_page, target: 'new', title: @provider.name ) do
               = image_tag( 'provider-icons/' + @provider.name.parameterize.downcase + '_b.png', itemprop: 'logo', alt: @provider.name )
   
           .provider-rating itemtype='http://schema.org/AggregateRating' itemprop='aggregateRating' itemscope=''
@@ -25,7 +25,7 @@ div itemtype='http://schema.org/LocalBusiness' itemscope=''
               = raw t( '.provider_feedbacks_count', count: @provider.display_feedbacks.size )
   
           .provider-link
-            = link_to( @provider.landing_page, target: 'new', class: 'btn btn-primary btn-lg', title: t( '.go_to_provider' ) ) do
+            = link_to( @provider.money_transfer_page, target: 'new', class: 'btn btn-primary btn-lg', title: t( '.go_to_provider' ) ) do
               i.fa.fa-fw.fa-check-circle-o
               = t( '.go_to_provider' )
   

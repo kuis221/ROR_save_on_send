@@ -228,7 +228,7 @@ en:
         email: Email
       service_provider:
         name: Provider name
-        landing_page: Provider website
+        money_transfer_page: Provider website
       feedback:
         comments: Help others with detailed comment
         service_quality: Provider quality
