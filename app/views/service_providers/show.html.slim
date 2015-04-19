@@ -25,7 +25,8 @@ div itemtype='http://schema.org/LocalBusiness' itemscope=''
               = raw t( '.provider_feedbacks_count', count: @provider.display_feedbacks.size )
   
           .provider-link
-            = link_to( @provider.money_transfer_page, target: 'new', class: 'btn btn-primary btn-lg', title: t( '.go_to_provider' ) ) do
+            meta itemprop='url' content=@provider.landing_page
+            = link_to( @provider.money_transfer_page, target: 'new', class: 'btn btn-primary btn-lg', title: t( '.go_to_provider' ),  rel: 'nofollow' ) do
               i.fa.fa-fw.fa-check-circle-o
               = t( '.go_to_provider' )
   
