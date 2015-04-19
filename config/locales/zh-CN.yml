@@ -49,7 +49,7 @@ zh-CN:
       go_to_provider: 我已做好准备汇款
       provider_intro_html: '反馈由<strong>像您一样的用户提供</strong> — 如果您最近通过该公司汇款，请<a href="%{submit_link}">提交</a> 经验以帮助其他用户：<a href="%{submit_link}">点击此处</a>.'
       provider_feedbacks_title: '用户评论：'
-      provider_feedbacks_count: '<span itemprop="ratingCount">%{count}</span> 评论'
+      provider_feedbacks_count: '基于 <span itemprop="ratingCount">%{count}</span> 评论'
     provider_feedback_form:
       title: 点评供应商
       submit: 提交
