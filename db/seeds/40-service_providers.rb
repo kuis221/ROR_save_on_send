@@ -1,7 +1,7 @@
 [
   ['Western Union', 'western-union', 'https://www.westernunion.com/us/en/home.html', 'https://www.westernunion.com/us/en/price-estimator/start.html'],
   ['Xoom', 'xoom', 'https://www.xoom.com', 'https://www.xoom.com/send/getstarted#!recipient'],
-  ['MoneyGram','moneygram', 'http://www.moneygram.com/us/en', 'https://m.moneygram.com/mgomobile/site/costEstimator.html'],
+  ['MoneyGram','moneygram', 'http://www.moneygram.com/us/en', 'https://www.moneygram.com/wps/portal/moneygramonline/home/sendmoney?CC=US&LC=en-US'],
   ['Transfast', 'transfast', 'https://www.transfast.com', 'https://www.transfast.com'],
   ['Ria', 'ria', 'https://www.riamoneytransfer.com', 'https://www.riamoneytransfer.com/price-calculator'],
   ['Transferwise', 'transferwise','https://transferwise.com', 'https://transferwise.com/request/placeOrder?execution=e1s2'],
