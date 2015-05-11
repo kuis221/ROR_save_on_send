@@ -118,7 +118,7 @@ zh-CN:
       gross_paid_amount_html: 总费用<em>*</em>
       real_cost_html: 保证金<em>*</em>
       net_received_amount_html: 已收到<em>*</em>
-      duration_html: 持续时间<em>*</em><br><small>(hours)</small>
+      duration_html: 持续时间<em>*</em><br><small>(小时)</small>
       documentation_requirements: 文件要求
       promotions: 促销
       service_quality: 服务质量
