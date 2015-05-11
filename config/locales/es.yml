@@ -113,10 +113,10 @@
       title: Free Comparison for Your Next Transfer to China, India, Mexico and Philippines
       description: Find best and cheap way to send money to China, India, Mexico and Philippines
       form_title: Encontremos el mejor proveedor para su transferencia
-      provider_name: Provider
+      provider_name: Proveedor
       to_from_transfer_media: Remitente
       gross_paid_amount_html: Costo total<em>*</em>
-      real_cost_html: Margin<em>*</em>
+      real_cost_html: Margen<em>*</em>
       net_received_amount_html: Recibido<em>*</em>
       duration_html: Duracion<em>*</em><br><small>(horas)</small>
       documentation_requirements: Documentacion requerida
