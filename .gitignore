@@ -26,4 +26,6 @@ config/database.yml
 
 # Ignore other files
 .project
-.DS_Store 
+.DS_Store
+save_on_send.sublime-project
+save_on_send.sublime-workspace
