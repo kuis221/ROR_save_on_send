@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
-//= require twitter/bootstrap
+//= require bootstrap
 //= require moment
 //= require bootstrap-datetimepicker
 //= require moment/es
@@ -26,7 +26,6 @@
 //= require vendors/jquery.tablesaw
 //= require vendors/rrssb
 
-//= require bootstrap
 //= require form_controller
 
 //= require cloudinary
