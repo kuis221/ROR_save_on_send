@@ -1,5 +1,5 @@
-@import '../variables/variables';
-//@import '../common/mixins';
+@import "../variables/variables";
+@import "bootstrap/mixins";
 
 
 // Config settings
@@ -50,7 +50,7 @@ $social-list: (
       background-color: #ccc;
       display: block;
       text-decoration: none;
-      //@include transition(background-color 0.2s ease-in-out);
+      @include transition(background-color 0.2s ease-in-out);
 
       .fa {
         font-size: 20px;
@@ -58,7 +58,7 @@ $social-list: (
         color: $rrssb-txt;
       }
       &:active {
-        box-shadow:inset 1px 3px 15px 0 rgba(022,0,0,.25);
+        @include box-shadow(inset 1px 3px 15px 0 rgba(022,0,0,.25));
       }
     }
   }
@@ -66,7 +66,7 @@ $social-list: (
     li {
       float: none;
       width: 48px!important;
-      //@include transition(width 0.2s ease-in-out 0s);
+      @include transition(width 0.2s ease-in-out 0s);
 
       a {
         .fa {

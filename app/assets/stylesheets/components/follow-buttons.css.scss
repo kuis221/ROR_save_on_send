@@ -1,5 +1,5 @@
-@import '../variables/variables';
-//@import 'common/mixins';
+@import "../variables/variables";
+@import "bootstrap/mixins";
 
 
 /* share */
@@ -21,7 +21,7 @@
     margin: 0 6px;
     border-radius: $border-radius-large;
     opacity: 0.6;
-    //@include transition(opacity 0.2s ease-in-out);
+    @include transition(opacity 0.2s ease-in-out);
 
     &:hover {
       opacity: 1;
