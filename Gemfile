@@ -27,18 +27,22 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Twitter bootstrap
-gem "twitter-bootstrap-rails"
-
-gem 'momentjs-rails', '~> 2.9'
-
-gem 'bootstrap-sass', '~> 3.3.1'
-gem 'font-awesome-sass', '~> 4.3.0' # The iconic font designed for Bootstrap
-gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
-gem 'jquery-turbolinks'
+# gem "twitter-bootstrap-rails"
 # gem 'maskedinput-rails'
 
+# Moment JS
+gem 'momentjs-rails', '~> 2.9'
+# Twitter bootstrap
+gem 'bootstrap-sass', '~> 3.3.4'
+# Font Awesome
+gem 'font-awesome-sass', '~> 4.3.2' # The iconic font designed for Bootstrap
+# Bootstrap datetimepicker
+gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
+# jQuery turbolinks
+gem 'jquery-turbolinks'
+# Bootstrap flash messages
 gem 'bootstrap_flash_messages', github: 'useruby/bootstrap_flash_messages'
+# jQuery fileuploads
 gem 'jquery-fileupload-rails'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
