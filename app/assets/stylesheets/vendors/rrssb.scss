@@ -1,5 +1,5 @@
-@import '../common/variables';
-@import '../common/mixins';
+@import '../variables/variables';
+//@import '../common/mixins';
 
 
 // Config settings
@@ -50,7 +50,7 @@ $social-list: (
       background-color: #ccc;
       display: block;
       text-decoration: none;
-      @include transition(background-color 0.2s ease-in-out);
+      //@include transition(background-color 0.2s ease-in-out);
 
       .fa {
         font-size: 20px;
@@ -66,7 +66,7 @@ $social-list: (
     li {
       float: none;
       width: 48px!important;
-      @include transition(width 0.2s ease-in-out 0s);
+      //@include transition(width 0.2s ease-in-out 0s);
 
       a {
         .fa {
