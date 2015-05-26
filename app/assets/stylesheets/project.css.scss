@@ -1,5 +1,13 @@
-@import url(//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
-@import 'common/variables';
-@import 'bootstrap';
+// Bootstrap
+@import "bootstrap-sprockets";
+@import 'variables/variables';
+@import "bootstrap";
+
+
+// Font Awesome
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+
+// PT Sans Font
+@import url(//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);

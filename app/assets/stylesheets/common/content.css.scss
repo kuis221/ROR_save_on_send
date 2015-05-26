@@ -1,13 +1,11 @@
-@import 'common/variables';
+@import "../variables/variables";
+@import "bootstrap/mixins";
 
 
 /* content */
 .content {
   font-size: $font-size-base;
 
-  h2 {
-    margin-bottom: 15px;
-  }
   h2 {
     margin-bottom: 20px;
   }

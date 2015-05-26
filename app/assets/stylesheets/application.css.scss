@@ -12,26 +12,34 @@
  *
  *= require project
  *= require bootstrap-datetimepicker
- *= require content
- *= require components
- *= require feedback
- *= require follow-buttons
- *= require footer
- *= require forms
- *= require header
- *= require icon
- *= require main
- *= require notification
- *= require next-tr-page
- *= require provider
- *= require recent-tr-page
- *= require splash
- *= require user-page
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
+
+ * Common styles
+ *= require common/components
+ *= require common/content
+ *= require common/forms
+ *= require common/icons
+ *= require common/main
+
+ * Components styles
+ *= require components/feedback
+ *= require components/follow-buttons
+ *= require components/footer
+ *= require components/header
+ *= require components/notification
+ *= require components/splash
+
+ * Pages styles
+ *= require pages/next-tr-page
+ *= require pages/provider
+ *= require pages/recent-tr-page
+ *= require pages/user-page
+
+ * Vendors styles
  *= require vendors/offcanvas
  *= require vendors/rrssb
  *= require vendors/star-rating
  *= require vendors/tablesaw
- * 
- *= require jquery.fileupload
- *= require jquery.fileupload-ui
+ *
  */

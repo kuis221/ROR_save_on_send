@@ -1,10 +1,11 @@
-@import 'common/variables';
+@import "../variables/variables";
+@import "bootstrap/mixins";
 
 
 /* notification */
 .notification {
   background: #dddddd;
-  font-size: 12px;
+  font-size: $font-size-small;
   color: #6b6b6b;
 
   a {
@@ -15,7 +16,6 @@
       text-decoration: underline;
     }
   }
-
   p {
     margin: 9px 0;
     font-style: italic;
