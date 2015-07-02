@@ -4,7 +4,7 @@
       for_feedback: '%b %d, %Y'
   notice:
     best_rate: ¡Felicidades! ¡Tu transferencia de fondos fue todo un exitoso!
-    save_on_transaction: Nuestros clientes siempre ahorran <span>%{ahorrad}&nbsp;%{dinero}</span> con nuestros servicios
+    save_on_transaction: Nuestros clientes siempre ahorran <span>%{saving}&nbsp;%{currency}</span> con nuestros servicios
     thanks_for_feedback: Gracias por su opinion!
   layouts:
     application:
