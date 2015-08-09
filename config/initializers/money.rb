@@ -31,11 +31,10 @@ if ActiveRecord::Base.connection.table_exists?('fx_rates')
   moe = Money::Bank::OpenExchangeRatesBank.new
 
   moe.cache = Proc.new do |text| 
-    if text.nil?
-      FXRate.last.try(:text)
+    if text
+      FXRate.create(text: text, date: Date.today) if FXRate.need_to_update?
     else
-      last_fx_rate = FXRate.last
-      FXRate.create(text: text, date: Date.today) if !last_fx_rate || (last_fx_rate && !((last_fx_rate.created_at + 1.hour) < Time.current))
+      FXRate.last.try(:text)
     end
   end
 
