@@ -151,7 +151,7 @@ class RemittanceTerm < ActiveRecord::Base
       next if receive_country.nil?
 
       # Remit name
-      service_provider = ServiceProvider.find_by(name: data['Remit name'])
+      service_provider = ServiceProvider.find_by('lower(name) = ?', data['Remit name'].downcase)
       next if service_provider.nil?
 
       # Send method
