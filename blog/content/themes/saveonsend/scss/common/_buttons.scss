@@ -1,0 +1,57 @@
+// buttons
+.btn {
+	color: $white;
+	border: 0;
+}
+.btn-lg,
+.btn-group-lg > .btn {
+	padding: 6px 20px;
+	line-height: 1.7em;
+
+	.fa {
+		font-size: 30px;
+		vertical-align: top;
+	}
+}
+
+
+// btn-primary
+.btn-primary {
+	&:hover,
+	&:focus,
+	&.focus,
+	&:active,
+	&.active {
+		background-color: lighten($brand-primary, 5%);
+	}
+}
+
+
+// btn-orange
+.btn-orange {
+	background-color: $orange;
+
+	&:hover,
+	&:focus,
+	&.focus,
+	&:active,
+	&.active {
+		color: $white;
+		background-color: lighten($orange, 5%);
+	}
+}
+
+
+// btn-turquoise
+.btn-turquoise {
+	background-color: $turquoise;
+
+	&:hover,
+	&:focus,
+	&.focus,
+	&:active,
+	&.active {
+		color: $white;
+		background-color: lighten($turquoise, 5%);
+	}
+}

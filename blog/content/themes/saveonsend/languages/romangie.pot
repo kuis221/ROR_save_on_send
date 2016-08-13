@@ -1,0 +1,236 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Romangie 1.0.1\n"
+"POT-Creation-Date: 2013-12-14 20:44+0100\n"
+"PO-Revision-Date: 2013-12-14 20:44+0100\n"
+"Last-Translator: Tobias Kerst <tobias.kerst@tobscore.com>\n"
+"Language-Team: Tobscore\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n:1,2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SearchPath-0: /home/tobscore/Dev/Projects/romangie\n"
+
+#: /home/tobscore/Dev/Projects/romangie/page.php:5
+msgid "Edit this page."
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/page.php:14
+#: /home/tobscore/Dev/Projects/romangie/search.php:66
+#: /home/tobscore/Dev/Projects/romangie/index.php:58
+#: /home/tobscore/Dev/Projects/romangie/single.php:58
+#: /home/tobscore/Dev/Projects/romangie/archive.php:85
+msgid "Pages:"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:6
+msgid "Header Menu"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:74
+#: /home/tobscore/Dev/Projects/romangie/index.php:57
+#: /home/tobscore/Dev/Projects/romangie/archive.php:84
+msgid "Continue Reading"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:94
+msgid "Primary Sidebar"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:95
+msgid "This is the righthanded sidebar"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:107
+msgid "Left Footer"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:108
+msgid "This is the widget area for the left part of the footer"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:120
+msgid "Middle Footer"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:121
+msgid "This is the widget area for the center part of the footer"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:133
+msgid "Right Footer"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:134
+msgid "This is the widget area for the right part of the footer"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:168
+msgid "(Edit)"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:169
+msgid "Reply"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:184
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/functions.php:212
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/comments.php:15
+#: /home/tobscore/Dev/Projects/romangie/search.php:57
+#: /home/tobscore/Dev/Projects/romangie/index.php:49
+#: /home/tobscore/Dev/Projects/romangie/single.php:49
+#: /home/tobscore/Dev/Projects/romangie/archive.php:76
+#, php-format
+msgid "%1$s Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: /home/tobscore/Dev/Projects/romangie/comments.php:22
+msgid "Comments are closed."
+msgstr ""
+
+# Is not shown (yet)
+#: /home/tobscore/Dev/Projects/romangie/comments.php:28
+msgid "Got Something To Say:"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/comments.php:31
+msgid "Name"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/comments.php:32
+msgid "Email"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/comments.php:33
+msgid "Website"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/comments.php:34
+msgid "Let us know what you have to say:"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/404.php:8
+msgid "We're sorry"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/404.php:9
+msgid "The page or article you are looking for cannot be found."
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/404.php:10
+msgid "Return to the homepage"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/search.php:20
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/search.php:28
+#: /home/tobscore/Dev/Projects/romangie/search.php:56
+#: /home/tobscore/Dev/Projects/romangie/search.php:64
+#: /home/tobscore/Dev/Projects/romangie/index.php:20
+#: /home/tobscore/Dev/Projects/romangie/index.php:48
+#: /home/tobscore/Dev/Projects/romangie/index.php:56
+#: /home/tobscore/Dev/Projects/romangie/single.php:20
+#: /home/tobscore/Dev/Projects/romangie/single.php:48
+#: /home/tobscore/Dev/Projects/romangie/archive.php:47
+#: /home/tobscore/Dev/Projects/romangie/archive.php:75
+#: /home/tobscore/Dev/Projects/romangie/archive.php:83
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/search.php:57
+#: /home/tobscore/Dev/Projects/romangie/index.php:49
+#: /home/tobscore/Dev/Projects/romangie/single.php:49
+#: /home/tobscore/Dev/Projects/romangie/archive.php:76
+msgid "Go to comment section"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/search.php:58
+#: /home/tobscore/Dev/Projects/romangie/index.php:50
+#: /home/tobscore/Dev/Projects/romangie/single.php:50
+#: /home/tobscore/Dev/Projects/romangie/archive.php:77
+msgid "Categories:"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/search.php:59
+#: /home/tobscore/Dev/Projects/romangie/index.php:51
+#: /home/tobscore/Dev/Projects/romangie/single.php:51
+#: /home/tobscore/Dev/Projects/romangie/archive.php:78
+msgid "Tags:"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/search.php:60
+#: /home/tobscore/Dev/Projects/romangie/index.php:52
+#: /home/tobscore/Dev/Projects/romangie/single.php:52
+#: /home/tobscore/Dev/Projects/romangie/archive.php:79
+msgid "Edit this entry."
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/search.php:73
+#: /home/tobscore/Dev/Projects/romangie/index.php:65
+#: /home/tobscore/Dev/Projects/romangie/archive.php:92
+msgid "Not Found"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/search.php:77
+#: /home/tobscore/Dev/Projects/romangie/index.php:69
+#: /home/tobscore/Dev/Projects/romangie/archive.php:96
+msgid "Older Entries"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/search.php:78
+#: /home/tobscore/Dev/Projects/romangie/index.php:70
+#: /home/tobscore/Dev/Projects/romangie/archive.php:97
+msgid "Newer Entries"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/footer.php:15
+#, php-format
+msgid ""
+"Copyright &copy; %1$s. Powered by <a href=\"%2$s\">WordPress</a> &amp; <a "
+"href=\"%3$s\">Romangie Theme</a>."
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/archive.php:20
+msgid "Category Archives: "
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/archive.php:23
+msgid "Tag Archives: "
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/archive.php:26
+msgid "Daily Archives:"
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/archive.php:29
+msgid "Monthly Archives: "
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/archive.php:32
+msgid "Yearly Archives: "
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/archive.php:35
+msgid "Author Archives: "
+msgstr ""
+
+#: /home/tobscore/Dev/Projects/romangie/archive.php:38
+msgid "Blog Archives:"
+msgstr ""

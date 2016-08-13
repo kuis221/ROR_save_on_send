@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: f042start\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-27 11:13+0100\n"
+"PO-Revision-Date: 2014-12-27 11:13+0100\n"
+"Last-Translator: Juergen Schulze <1manfactory@gmail.com>\n"
+"Language-Team: Juergen Schulze <1manfactory@gmail.com>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: c:\\temp\\UniServer\\www\\blog\\wp-content\\plugins"
+"\\404-to-start\n"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:91
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:108
+msgid "404 to Start Settings"
+msgstr "404 to Start Einstellungen"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:98
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Sie haben nicht ausreichend Rechte, um auf diese Seite zuzugreifen."
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:118
+msgid "404 Redirect"
+msgstr "404 Umleitung"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:122
+msgid "off"
+msgstr "aus"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:123
+#, fuzzy
+msgid "301 - Moved permanently"
+msgstr "301 - Moved Permanently"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:124
+msgid "302 - Found/ Moved temporarily (not recommended)"
+msgstr "302 - Found/ Moved temporarily (nicht empfohlen)"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:125
+msgid "Email alert to: "
+msgstr "E-Mail Alarm an:"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:127
+msgid "Exclude logged in users from triggering email alert"
+msgstr "Eingewählte Nutzer erzeugen keinen E-Mail Alarm"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:129
+msgid "Exclude search engine agents from triggering email alert"
+msgstr "Suchmaschinen erzeugen keinen E-Mail Alarm"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:135
+msgid "Target Url: (Start with http://)"
+msgstr "Ziel Url: (Beginnen mit http://)"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:144
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:158
+msgid "This is not a valid Url"
+msgstr "Das ist keine gültige Url"
+
+#: c:\temp\UniServer\www\blog\wp-content\plugins\404-to-start/404-to-start.php:194
+msgid "404 alert from "
+msgstr "404 Alarm von "
+
+#~ msgid "404 Redirect to:"
+#~ msgstr "404 Umleitung nach:"

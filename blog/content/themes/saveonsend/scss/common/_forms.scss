@@ -1,0 +1,60 @@
+// form
+form {
+	margin: 0 auto;
+
+	@media (min-width: $screen-sm) {
+		margin: 0;
+	}
+	.form-group {
+		margin-bottom: 20px;
+	}
+	input[type="file"] {
+		font-size: $font-size-small;
+	}
+	.valabel {
+		padding-top: 0!important;
+
+		@media (min-width: $screen-sm) {
+			line-height: 48px;
+		}
+	}
+	.radio-inline {
+		margin: 0 20px 0 0;
+
+		input[type="radio"] {
+			margin-right: 5px;
+			position: relative;
+		}
+	}
+	.btn {
+		margin: 3px 0;
+	}
+}
+
+
+// form-horizontal
+.form-horizontal {
+	.form-group {
+		> div {
+			text-align: center;
+
+			@media (min-width: $screen-sm) {
+				text-align: left;
+			}
+		}
+		> .valabel {
+			@media (min-width: $screen-sm) {
+				text-align: right;
+			}
+		}
+		.help-block {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+// form group large
+.form-group-lg textarea.form-control {
+	height: auto;
+}

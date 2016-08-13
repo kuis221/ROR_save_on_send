@@ -1,0 +1,67 @@
+// widget
+.widget {
+	margin-top: 1em;
+	margin-bottom: 2em;
+}
+
+
+// wp-calendar
+#wp-calendar {
+	margin: 0 auto;
+	padding: 0.5em;
+	width: 95%;
+	color: #666;
+	font-size: 0.8em;
+
+	thead th {
+		font-weight: bold;
+		padding: 0 2px 10px;
+	}
+	tbody td {
+		padding: 4px 2px;
+
+		a {
+			font-weight: bold;
+			color: #b12930;
+		}
+	}
+}
+
+
+// search
+.search-field {
+	@extend .form-control;
+}
+.search-submit {
+	display: none;
+}
+	
+
+// wysija
+.wysija-paragraph {
+	margin: 0;
+
+	.wysija-input {
+		@extend .form-control;
+	}
+}
+.wysija-submit {
+	@extend .btn;
+	@extend .btn-primary;
+	margin: 0 0 0 -1px!important;
+	border: solid 1px #04b92b;
+}
+
+
+// wpadminbar
+#wpadminbar {
+	position: fixed!important;
+}
+
+
+// text widget
+.textwidget {
+	p {
+		margin-top: 20px;
+	}
+}

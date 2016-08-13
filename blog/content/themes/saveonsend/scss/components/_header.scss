@@ -1,0 +1,70 @@
+// header
+#header {
+	.navbar-brand {
+		width: 228px;
+		padding: 19px 15px 14px;
+
+		@media (min-width: $screen-xs) {
+			padding-top: 11px;
+			width: auto;
+		}
+	}
+	.nav-pills {
+		display: inline-block;
+		margin-top: 16px;
+
+		> li {
+			margin-left: 5px;
+
+			> a {
+				border-radius: 8px;
+				padding: 6px 10px;
+
+				&.active {
+					color: $white;
+					background: $brand-primary;
+				}
+			}
+		}
+	}
+}
+		
+
+// sidebar
+.sidebar-offcanvas {
+	border-left: solid 1px #ddd;
+	background: $body-bg;
+	display: none;
+
+	.nav-pills {
+		> li {
+			border-bottom: solid 1px #ddd;
+			margin: 0;
+
+			> a {
+				border-radius: 0;
+
+				&.active {
+					color: $white;
+					background: $brand-primary;
+				}
+			}
+		}
+	}
+}
+
+
+// header of content
+.content-header {
+	background: $blue-light;
+	color: $white;
+	padding: 32px 0 22px 0;
+
+	h2 {
+		margin: 0 0 14px 0;
+
+		a {
+			color: $white;
+		}
+	}
+}

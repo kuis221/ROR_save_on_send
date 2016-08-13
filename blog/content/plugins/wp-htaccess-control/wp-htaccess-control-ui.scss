@@ -1,0 +1,127 @@
+#wphtc-sidebar {
+  width: 19%;
+  float: right;
+  ul {
+    margin: 1em 0 1em 10px;
+  }
+  a {
+    text-decoration: none;
+
+    img {
+      margin-right: 5px;
+    }
+  }
+}
+
+#wphtc-main {
+  float: left;
+  width: 80%;
+  margin-bottom: 25px;
+}
+
+div.updated p {
+  img {
+    margin: -5px 15px;
+  }
+  span {
+    float: right;
+  }
+}
+
+.wphtc-menu {
+  margin: 10px 0;
+}
+
+.wphtc-section {
+  background: #ddd;
+  border: 1px solid #ddd;
+  border-bottom: 0;
+  margin-top: 15px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+
+.wphtc-section-title {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  margin-bottom: 0;
+  width: 100%;
+  border: 0;
+
+  h3 {
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 0;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+  }
+  .handlediv {
+    float: right;
+    height: 34px;
+    width: 23px;
+    cursor: pointer;
+  }
+}
+
+.wphtc-inputs {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+
+  p, ul {
+    margin-left: 10px
+  }
+
+  th {
+    font-weight: bold;
+    padding-left:12px;
+  }
+
+  tr {
+    border-bottom: 1px solid #ddd
+  }
+
+  caption {
+    text-align: left;
+    padding: 10px;
+    background: #ddd;
+  }
+
+  pre {
+    margin: 2.5%;
+    width: 95%;
+    overflow: auto;
+  }
+}
+
+.form-table {
+  margin: 0;
+}
+
+#foot {
+  text-align: center;
+  font-size: 8px;
+  color: #aaa;
+  margin: 2em 0;
+}
+
+textarea.readonly {
+  background-color: #eee;
+}
+
+ul.description {
+  margin-top: 1em;
+  margin-left:2em;
+  font-style:italic;
+  a {
+    text-decoration: none;
+  }
+  li{
+    color:#666;
+  }
+}

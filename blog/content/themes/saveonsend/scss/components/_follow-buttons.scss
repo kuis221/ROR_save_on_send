@@ -1,0 +1,62 @@
+// share
+.share {
+	display: none;
+
+	@media (min-width: $screen-xxs) {
+		display: block;
+		position: fixed;
+		z-index: 100;
+		left: 0;
+		bottom: 0%;
+		width: 100%;
+	}
+	@media (min-width: $screen-md) {
+		top: 20%;
+		bottom: auto;
+		width: 64px;
+	}
+}
+
+
+// follow-buttons
+.follow-buttons {
+	background-color: #282828;
+	padding: 18px 0 5px;
+
+	a {
+		display: inline-block;
+		width: 36px;
+		line-height: 36px;
+		color: $white;
+		margin: 0 4px;
+		border-radius: $border-radius-large;
+		opacity: 0.6;
+		@include transition(opacity 0.2s ease-in-out);
+
+		&:hover {
+			opacity: 1;
+		}    
+		&.follow-button-facebook {
+			background-color: $facebook-bg;
+		}
+		&.follow-button-twitter {
+			background-color: $twitter-bg;
+		}
+		&.follow-button-linkedin {
+			background-color: $linkedin-bg;
+		}
+		&.follow-button-google {
+			background-color: $googleplus-bg;
+		}
+		&.follow-button-tumblr {
+			background-color: $tumblr-bg;
+		}
+	}
+	.fa {
+		font-size: 24px;
+		vertical-align: middle;
+	}
+	.follow-button-label {
+		display: none;
+	}
+}

@@ -1,0 +1,17 @@
+// nav-pills
+.nav-pills {
+	> li {
+		margin-bottom: 0;
+
+		> a {
+			color: $gray-dark;
+		}
+		&.active > a {
+			color: $white;
+
+			&:hover {
+				background-color: #31de56;
+			}
+		}
+	}
+}

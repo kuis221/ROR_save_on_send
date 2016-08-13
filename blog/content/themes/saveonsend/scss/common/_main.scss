@@ -1,0 +1,100 @@
+html {
+	min-height: 100%;
+	position: relative;
+
+	&.fix {
+		overflow: hidden;
+	}
+}
+
+body {
+	text-align: center;
+	background: #f9f9f9 url('../images/content-pattern.png') repeat 0 0;
+	min-width: 320px;
+	margin-bottom: 420px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	@media (min-width: $screen-xs) {
+		margin-bottom: 380px;
+	}
+	@media (min-width: $screen-sm) {
+		margin-bottom: 365px;
+	}
+	@media (min-width: $screen-md) {
+		margin-bottom: 340px;
+	}
+	&.fix {
+		height: 100%;
+		overflow: hidden;
+	}
+}
+
+p {
+	margin: 0 0 15px;
+}
+ul, ol {
+	padding: 0 0 0 20px;
+	margin: 0 0 15px;
+
+	li {
+		margin-bottom: 10px;
+	}
+}
+
+
+// headers
+h1, .h1, h2, .h2, h3, .h3,
+h4, .h4 {
+	margin-top: 0;
+	letter-spacing: 0.5px;
+}
+h1, .h1 {
+	@media (min-width: $screen-sm) {
+		font-size: $font-size-h0;
+	}
+}
+h2, .h2 {
+	@media (min-width: $screen-sm) {
+		font-size: $font-size-h1-l;
+	}
+}
+h3, .h3 {
+	@media (min-width: $screen-sm) {
+		font-size: $font-size-h2-l;
+	}
+}
+h4, .h4 {
+	@media (min-width: $screen-sm) {
+		font-size: $font-size-h3;
+	}
+}
+h5, .h5 {
+	@media (min-width: $screen-sm) {
+		font-size: $font-size-h4;
+	}
+}
+h6, .h6 {
+	@media (min-width: $screen-sm) {
+		font-size: $font-size-h5;
+	}
+}
+
+
+// general
+section {
+	padding: 35px 0;
+
+	@media (min-width: $screen-sm) {
+		padding: 50px 0;
+	}
+}
+#title_archives {
+	margin: 5px 0 40px;
+}
+
+
+// colors
+.red {
+	color: #ff0000;
+}

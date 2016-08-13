@@ -1,0 +1,44 @@
+// footer
+.siteinfo {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+
+	.footer {
+		background-color: #282828;
+		font-size: $font-size-small;
+		padding: 13px 0;
+
+		p {
+			color: #6a6a6a;
+			margin: 0 0 1em;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+			a {
+				color: #6a6a6a;
+
+				&:focus {
+					color: #6a6a6a;        
+				}
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+	}
+	.disclosure {
+		background-color: #282828;
+		font-size: $font-size-small;
+		text-align: justify;
+
+		@media (min-width: $screen-sm) {
+			text-align: center;
+		}
+		p {
+			color: #6a6a6a;
+			margin: 0 0 1em;
+		}
+	}
+}

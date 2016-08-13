@@ -1,0 +1,147 @@
+// entry
+.entry {
+	margin-top: 15px;
+
+	img {
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+	h1, h2 {
+		margin: 40px 0 10px;
+	}
+	h3, h4, h5, h6 {
+		margin: 20px 0 10px;
+	}
+	h4, h5, h6 {
+		letter-spacing: 0;
+		line-height: 1.42857em;
+	}
+	p {
+		margin: 0 0 22px;
+	}
+	ul {
+		list-style: square;
+	}
+	ul, ol {
+		margin: 0 0 1.7em 3em;
+
+		ul, ol {
+			margin-bottom: 0;
+		}
+	}
+	table {
+		margin: 0 0 1.5em;
+		width: 100%;
+		border-top: 1px solid #ddd;
+
+		td, th {
+			padding: 5px;
+		}
+		td {
+			border-bottom: 1px solid #ddd;
+		}
+	}
+	pre {
+		font-family: "Courier 10 Pitch", Courier, monospace;
+		margin: 2em 0;
+		padding: 1em 2em;
+	}
+	blockquote {
+		margin: 0 0 22px;
+		padding: 0.6em 2em;
+		position: relative;
+		font-size: 17px;
+		line-height: 1.42857em;
+		border-style: none;
+	
+		p {
+			font-style: italic;
+		}
+		&::before {
+			content: '{';
+			color: #ed8a42;
+			font-size: 500%;
+			position: absolute;
+			font-family: Georgia, serif;
+			top: 20%;
+			left: -0.3em;
+		}
+	}
+	.alignnone {
+		max-width: 100%;
+		height: auto;
+	}
+	img.alignleft,
+	.wp-caption.alignleft {
+		margin: 5px 20px 5px -10px;
+	}
+	img.alignright,
+	.wp-caption.alignright {
+		margin: 5px -10px 5px 20px;
+	}
+	.wp-caption-text {
+		font-size: 15px;
+		font-style: italic;
+		margin: 5px 0 22px;
+	}
+	ins {
+		background: #fff9c0;
+		text-decoration: none;
+	}
+	dd {
+		margin: 0 1.165em 1.165em;
+	}
+	embed, iframe {
+		max-width: 100%;
+	}
+}
+
+
+// entry title
+.entry-title,
+.entry-title a {
+	color: #191a1b;
+
+	&:hover {
+		color: #000;
+	}
+}
+
+
+// gallery
+.gallery {
+	.wp-caption-text {
+		margin-bottom: 0;
+	}
+	.gallery-item {
+		margin-bottom: 20px;
+	}
+}
+
+
+// format chat
+.format-chat p {
+	margin: 0 0 10px;
+	padding: 4px 2px;
+
+	&:nth-child(even) {
+		background: #fbfbfb;
+	}
+}
+
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+code {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}

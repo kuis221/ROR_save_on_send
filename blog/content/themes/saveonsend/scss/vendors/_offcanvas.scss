@@ -1,0 +1,31 @@
+html,
+body {
+	overflow-x: hidden;
+}
+
+
+.row-offcanvas {
+	@media (max-width: $screen-sm-max) {
+		position: relative;
+		@include transition(all .25s ease-out);
+	}
+}
+.row-offcanvas-right {
+	@media (max-width: $screen-sm-max) {
+		right: 0;
+	}
+	&.active {
+		@media (max-width: $screen-sm-max) {
+			right: 240px;
+		}
+	}
+	.sidebar-offcanvas {
+		@media (max-width: $screen-sm-max) {
+			display: block;
+			position: absolute;
+			top: 0;
+			width: 240px;
+			right: -240px;
+		}
+	}
+}

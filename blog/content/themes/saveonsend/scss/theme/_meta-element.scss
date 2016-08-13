@@ -1,0 +1,49 @@
+// info
+.info {
+	margin-top: 3px;
+
+	p, li, a, div {
+		line-height: 25px !important;
+		color: #191a1b;
+		text-decoration: none;
+	}
+	li {
+		list-style: none;
+	}
+}
+
+
+// additional meta
+.additional-meta {
+	font-size: 12px;
+
+	p {
+		margin-bottom: 5px;
+	}
+	a {
+		color: #191a1b;
+		text-decoration: none;
+
+		&:hover {
+			color: #000;
+			text-decoration: underline;
+		}
+	}
+	.fa {
+		margin-right: 4px;
+		line-height: 1.42857em;
+	}
+	.tags li {
+		display: inline-block;
+	}
+}
+
+
+// metaicon
+.meta {
+	text-align: right;
+}
+.metaicon {
+	font-size: 40px;
+	color: #191a1b;
+}

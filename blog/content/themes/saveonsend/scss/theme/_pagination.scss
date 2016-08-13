@@ -1,0 +1,46 @@
+// pagination
+.page-links a,
+.more-link,
+.comments .navigation a {
+	border: 1px solid #bbb;
+	border-radius: 8px;
+	background: #f9f9f9;
+	padding: 6px 12px;
+	display: inline-block;
+	text-decoration: none;
+	color: #04b92b;
+
+	&:hover {
+		color: #31de56;
+	}
+}
+.page-links a,
+.comments .navigation a {
+	text-align: center;
+	margin: 0 2px;
+}
+.more-link .fa {
+	margin-left: 8px;
+}
+
+
+// other
+.page-links-title {
+	font-weight: bold;
+	margin-right: 15px;
+}
+.comments .navigation a {
+	margin: 20px;
+}
+.page-links > span {
+	padding-right: 8px;
+}
+.pagenav .prev-posts {
+	text-align: right;
+}
+#error_message {
+	text-align: center;
+}
+.excerpt-link {
+	margin-top: 2px;
+}

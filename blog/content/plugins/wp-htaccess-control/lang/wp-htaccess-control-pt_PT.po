@@ -1,0 +1,394 @@
+# Translation of the WordPress plugin WP htaccess Control, by António Andrade.
+# Copyright (C) 2010-2012 António Andrade
+# This file is distributed under the same license as the WP htaccess Control package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010-2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WP htaccess Control\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-htaccess-control\n"
+"POT-Creation-Date: 2010-11-27 19:02+0000\n"
+"PO-Revision-Date: 2010-11-27 19:04-0000\n"
+"Last-Translator: António Andrade <dardna@dardna.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: wp-htaccess-control-ui.php:15
+msgid "Please log in as admin"
+msgstr "Por favor ligue-se como administrador"
+
+#: wp-htaccess-control-ui.php:27
+msgid "Custom Author Permalink"
+msgstr "Personalização de Permalink para Autores "
+
+#: wp-htaccess-control-ui.php:31
+msgid "Author Base"
+msgstr "Base de Permalink para Autores"
+
+#: wp-htaccess-control-ui.php:34
+#: wp-htaccess-control-ui.php:67
+msgid "(your-base)"
+msgstr "(a-sua-base)"
+
+#: wp-htaccess-control-ui.php:37
+#: wp-htaccess-control-ui.php:70
+msgid "Permalink settings must be set and not Default (/?p=123)."
+msgstr "As Definições de Permalinks devem estar configuradas e não Predefenidas (/?p=123)."
+
+#: wp-htaccess-control-ui.php:38
+msgid "If set, the author base will be used as shown next to the form field."
+msgstr "Se preenchida, esta base de autor será usada como demonstrado."
+
+#: wp-htaccess-control-ui.php:39
+msgid "If you do not want to use a custom Author Permalink base just leave the field empty."
+msgstr "Se não deseja utilizar um Base para Permalink de Autores personalizada deixe este campo em branco."
+
+#: wp-htaccess-control-ui.php:46
+msgid "Apply Custom Author Permalink on Generated Sitemap"
+msgstr "Utilizar a Base de Permalink para Autores no Sitemap gerado"
+
+#: wp-htaccess-control-ui.php:49
+msgid "Leave \"Include author pages\" unchecked on Google XML Sitemap options page if using this."
+msgstr "Não utilizar a opção \"Include author pages\" na página de opções do plugin Google XML Sitemap se utilizar este recurso."
+
+#: wp-htaccess-control-ui.php:50
+msgid "However, if you want to adjust the \"Priority\" or \"Change frequency\" you should do so on the <a href=\"options-general.php?page=google-sitemap-generator/sitemap.php\">Google XML Sitemap options page</a>."
+msgstr "No entanto, se desejar ajustar a \"Priority\" ou \"Change frequency\" deve fazê-lo na <a href=\"options-general.php?page=google-sitemap-generator/sitemap.php\">página de opções do Google XML Sitemap</a>."
+
+#: wp-htaccess-control-ui.php:60
+msgid "Custom Pagination Permalink"
+msgstr "Personalização do Permalink para Paginação"
+
+#: wp-htaccess-control-ui.php:64
+msgid "Page Base"
+msgstr "Base de Permalink de Paginação"
+
+#: wp-htaccess-control-ui.php:71
+msgid "If set, the page base will be used as shown next to the form field in every post listing (category, tag, archive, etc)."
+msgstr "Se preenchida, esta base de página será usada como demonstrado em todas as listagens de posts (categoria, tag, arquivos, etc)."
+
+#: wp-htaccess-control-ui.php:72
+msgid "If you do not want to use a custom Pagination Permalink base just leave the field empty."
+msgstr "Se não deseja utilizar um Base de Permalink para Páginas personalizada deixe este campo em branco."
+
+#: wp-htaccess-control-ui.php:81
+#: wp-htaccess-control-ui.php:85
+msgid "Remove Category Base"
+msgstr "Remover Base de Categoria"
+
+#: wp-htaccess-control-ui.php:90
+msgid "If active, the category base will be removed from permalinks:"
+msgstr "Se activo, removerá a base de categoria:"
+
+#: wp-htaccess-control-ui.php:91
+#: wp-htaccess-control-ui.php:110
+#: wp-htaccess-control-ui.php:111
+msgid "your-category"
+msgstr "a-sua-categoria"
+
+#: wp-htaccess-control-ui.php:100
+msgid "Advanced Archives"
+msgstr "Arquivos Avançados"
+
+#: wp-htaccess-control-ui.php:104
+msgid "Category Archives"
+msgstr "Arquivos de Categoria"
+
+#: wp-htaccess-control-ui.php:109
+msgid "If active, category-based archives will be accessible using the structure:"
+msgstr "Se activo, arquivos para categoria serão acessiveis utilizando a seguinte estrutura:"
+
+#: wp-htaccess-control-ui.php:110
+#: wp-htaccess-control-ui.php:111
+msgid "your-category-base"
+msgstr "a-sua-base-de-categoria"
+
+#: wp-htaccess-control-ui.php:112
+msgid "This will also work if you've removed the category base."
+msgstr "Também funcionará se a base de categoria for removida."
+
+#: wp-htaccess-control-ui.php:116
+msgid "Author Archives"
+msgstr "Arquivos de Autor"
+
+#: wp-htaccess-control-ui.php:121
+msgid "If active, author-based archives will be accessible using the structure:"
+msgstr "Se activo, arquivos para autor serão acessiveis utilizando a seguinte estrutura:"
+
+#: wp-htaccess-control-ui.php:122
+#: wp-htaccess-control-ui.php:123
+msgid "your-author-base"
+msgstr "a-sua-base-de-autor"
+
+#: wp-htaccess-control-ui.php:122
+#: wp-htaccess-control-ui.php:123
+msgid "your-author"
+msgstr "o-seu-autor"
+
+#: wp-htaccess-control-ui.php:127
+msgid "Tag Archives"
+msgstr "Arquivos de Etiqueta"
+
+#: wp-htaccess-control-ui.php:132
+msgid "If active, tag-based archives will be accessible using the structure:"
+msgstr "Se activo, arquivos para etiqueta serão acessiveis utilizando a seguinte estrutura:"
+
+#: wp-htaccess-control-ui.php:133
+#: wp-htaccess-control-ui.php:134
+msgid "your-tag-base"
+msgstr "a-sua-base-de-etiqueta"
+
+#: wp-htaccess-control-ui.php:133
+#: wp-htaccess-control-ui.php:134
+msgid "your-tag"
+msgstr "(a-sua-tag)"
+
+#: wp-htaccess-control-ui.php:143
+msgid "Custom htaccess"
+msgstr "htaccess Personalizado"
+
+#: wp-htaccess-control-ui.php:151
+msgid "This rules will be printed before any WordPress rules."
+msgstr "Estas regras serão impressas antes das regras do WordPress."
+
+#: wp-htaccess-control-ui.php:152
+#: wp-htaccess-control-ui.php:178
+msgid "Please double check them before saving as a mistake could make your site inaccessible."
+msgstr "Por favor reveja as suas regras antes de as salvar pois qualquer erro poder tornar o seu site inacessivel."
+
+#: wp-htaccess-control-ui.php:166
+msgid "Replace WordPress htaccess"
+msgstr "Substituir htaccess do WordPress"
+
+#: wp-htaccess-control-ui.php:172
+msgid "Leave empty for default."
+msgstr "Deixe em branco para manter as regras por defeito."
+
+#: wp-htaccess-control-ui.php:174
+msgid "<strong>Use <a href='http://www.webmasterworld.com/apache/4053973.htm'>Jim Morgan's wordpress htaccess</a></strong> (has been reported to \"speed up your WP mod_rewrite code by a factor of more than two\")"
+msgstr "<strong>Utilizar <a href='http://www.webmasterworld.com/apache/4053973.htm'>o htaccess para wordpress de Jim Morgan</a></strong> (pode \"acelerar o mod_rewrite do wordpress por mais de duas vezes\")"
+
+#: wp-htaccess-control-ui.php:177
+msgid "This rules will be printed instead of WordPress rules."
+msgstr "Estas regras serão impressas em vez das regras do WordPress."
+
+#: wp-htaccess-control-ui.php:179
+msgid "Original rules:"
+msgstr "Regras originais:"
+
+#: wp-htaccess-control-ui.php:191
+msgid "htaccess Suggestions"
+msgstr "Sugestões de htaccess"
+
+#: wp-htaccess-control-ui.php:195
+msgid "ServerSignature"
+msgstr "ServerSignature"
+
+#: wp-htaccess-control-ui.php:200
+msgid "Disable the ServerSignature on server generated error pages."
+msgstr "Desactivar a assinatura do servidor (ServerSignature) em páginas de erro geradas pelo mesmo."
+
+#: wp-htaccess-control-ui.php:204
+msgid "Indexes"
+msgstr "Índices"
+
+#: wp-htaccess-control-ui.php:209
+msgid "Disable directory browsing."
+msgstr "Desactivar a navegação de directórios via browser."
+
+#: wp-htaccess-control-ui.php:213
+msgid "Protect wp-config.php file"
+msgstr "Proteger ficheiro wp-config.php"
+
+#: wp-htaccess-control-ui.php:217
+msgid "Deny access to wp-config.php file."
+msgstr "Recusar acesso ao ficheiro wp-config.php."
+
+#: wp-htaccess-control-ui.php:221
+msgid "Protect htaccess file"
+msgstr "Proteger ficheiro htaccess"
+
+#: wp-htaccess-control-ui.php:225
+msgid "Deny access to .htaccess file."
+msgstr "Recusar acesso ao ficheiro htaccess."
+
+#: wp-htaccess-control-ui.php:229
+msgid "mod_gzip"
+msgstr "mod_gzip"
+
+#: wp-htaccess-control-ui.php:234
+msgid "Use mod_gzip if available."
+msgstr "Utilizar mod_gzip se disponível."
+
+#: wp-htaccess-control-ui.php:238
+msgid "mod_deflate"
+msgstr "mod_deflate"
+
+#: wp-htaccess-control-ui.php:243
+msgid "Use mod_deflate if available."
+msgstr "Utilizar mod_deflate se disponível."
+
+#: wp-htaccess-control-ui.php:247
+msgid "Limit Upload Size"
+msgstr "Limitar Tamanho de Upload"
+
+#: wp-htaccess-control-ui.php:252
+msgid "If set, this value in MB will be used as limit to file uploads."
+msgstr "Se preenchido, este valor em MB será utilizado como limite para uploads de ficheiros."
+
+#: wp-htaccess-control-ui.php:256
+msgid "Admin Email"
+msgstr "Email do Administrador"
+
+#: wp-htaccess-control-ui.php:261
+msgid "If set, this will be used as the admin email on server generated error pages."
+msgstr "Se preenchido, este valor será utilizado como email do administrador em páginas de erro geradas pelo servidor."
+
+#: wp-htaccess-control-ui.php:265
+msgid "Disable hotlinking"
+msgstr "Desactivar \"hotlinking\" (proteger imagens)"
+
+#: wp-htaccess-control-ui.php:270
+msgid "If set, this url will be used as redirection to hotlinked images (you should be using an image url here). If you prefer no output on hotlinked images use \"-\"."
+msgstr "Se preenchido, esta url será utilizada como redireccionamento para \"hotlinked\" images (deverá ser uma url de imagem). Se preferir simplesmente bloquear qualquer saída utilize \"-\"."
+
+#: wp-htaccess-control-ui.php:274
+msgid "500 error"
+msgstr "Erro 500"
+
+#: wp-htaccess-control-ui.php:279
+msgid "If set, this path will be used as page to 500 errors (example: /error.php)."
+msgstr "Se preenchido, esta localização será utilizada como página de erros 500 (exemplo: /erro.php)."
+
+#: wp-htaccess-control-ui.php:283
+msgid "403 error"
+msgstr "Erro 403"
+
+#: wp-htaccess-control-ui.php:288
+msgid "If set, this path will be used as page to 403 errors (example: /error.php)."
+msgstr "Se preenchido, esta localização será utilizada como página de erros 403 (exemplo: /erro.php)."
+
+#: wp-htaccess-control-ui.php:292
+msgid "Canonical Url"
+msgstr "Url Canónica"
+
+#: wp-htaccess-control-ui.php:296
+msgid "Force WWW"
+msgstr "Forçar WWW"
+
+#: wp-htaccess-control-ui.php:297
+msgid "Force non-WWW"
+msgstr "Forçar sem-WWW"
+
+#: wp-htaccess-control-ui.php:301
+msgid "This will force canonization. This will be done by simply modifying the wordpress \"site url\" and \"home\" options (not htaccess)."
+msgstr "Forçar canonização. Não utilizará htaccess mas sim as opções do WordPress \"site url\" e \"home\"."
+
+#: wp-htaccess-control-ui.php:312
+msgid "Rewrite Pairs"
+msgstr "Pares Rewrite"
+
+#: wp-htaccess-control-ui.php:312
+msgid "You should migrate your rewrite pairs into the \"Custom htaccess\" rules above. The \"Rewrite Pairs\" will be removed in future versions as they lack functionality."
+msgstr ""
+
+#: wp-htaccess-control-ui.php:317
+msgid "Add rule"
+msgstr "Juntar regra"
+
+#: wp-htaccess-control-ui.php:318
+msgid "These are rewrite pairs (RewriteRule) which WordPress can add inside its rules."
+msgstr "Estes pares rewrite (RewriteRule) serão adicionados às regras geradas pelo WordPress."
+
+#: wp-htaccess-control-ui.php:327
+msgid "Delete Pair"
+msgstr "Apagar Par"
+
+#: wp-htaccess-control-ui.php:337
+msgid "Maintenance Mode"
+msgstr "Modo de Manutenção"
+
+#: wp-htaccess-control-ui.php:341
+msgid "Maintenance Active"
+msgstr "Manutenção Activa"
+
+#: wp-htaccess-control-ui.php:346
+msgid "Toggles Maintenance Mode."
+msgstr "Alternar Modo de Manutenção"
+
+#: wp-htaccess-control-ui.php:350
+msgid "Allowed IPs"
+msgstr "IPs permitidos"
+
+#: wp-htaccess-control-ui.php:355
+msgid "List of allowed IPs."
+msgstr "Lista de IPs permitidos."
+
+#: wp-htaccess-control-ui.php:356
+msgid "All the IPs not listed will view the 403 error page or be redirected to a page set below."
+msgstr "Todos os IPs não listados verão a página de erro 403 ou redireccionados para a página indicada abaixo."
+
+#: wp-htaccess-control-ui.php:360
+msgid "Redirection"
+msgstr "Redireccionamento"
+
+#: wp-htaccess-control-ui.php:365
+msgid "If set, this will be used as redirection for disallowed IPs. This could be an external url or a document on your server (local paths begin with a trailing slash)"
+msgstr "Se preenchido, será utilizado como redireccionamento para IPs não permitidos. Poderá ser uma url externa ou um documento no servidor (caminhos locais começam com \"/\")"
+
+#: wp-htaccess-control-ui.php:373
+msgid "Reset all rules"
+msgstr "Reiniciar todas as Regras"
+
+#: wp-htaccess-control-ui.php:374
+msgid "Save all changes"
+msgstr "Salvar todas as modificações"
+
+#: wp-htaccess-control-ui.php:380
+msgid "Current htaccess file as it is generated by WordPress"
+msgstr "Ficheiro htaccess tal como gerado actualmente pelo WordPress"
+
+#: wp-htaccess-control-ui.php:388
+msgid "by"
+msgstr "por"
+
+#: wp-htaccess-control.php:411
+msgid "All rules reset."
+msgstr "Todas as regras foram reiniciadas."
+
+#: wp-htaccess-control.php:504
+msgid "All options updated."
+msgstr "As modificações foram salvas."
+
+#: wp-htaccess-control.php:512
+msgid "WordPress Rewrite pairs reset."
+msgstr "Pares de Rewrite do WordPress reiniciados."
+
+#: wp-htaccess-control.php:518
+msgid "WordPress Rewrite pair deleted."
+msgstr "Par de Rewrite do WordPress apagado."
+
+#. Plugin Name of the plugin/theme
+msgid "WP htaccess Control"
+msgstr "WP htaccess Control"
+
+#. Plugin URI of the plugin/theme
+msgid "http://dardna.com/wp-htaccess-control"
+msgstr "http://dardna.com/wp-htaccess-control"
+
+#. Description of the plugin/theme
+msgid "Provides an interface to add custom htaccess rules to the htaccess file generated by wordpress. Also provides customisation of the Author Permalink Base and of Paginated Permalinks."
+msgstr "Interface para juntar regras ao ficheiro htaccess gerado pelo wordpress. Também permite personalizar a Base de Permalinks para Autor e a Base de Permalinks para Paginação."
+
+#. Author of the plugin/theme
+msgid "António Andrade"
+msgstr "António Andrade"
+
+#. Author URI of the plugin/theme
+msgid "http://dardna.com"
+msgstr "http://dardna.com"
+
+#~ msgid "Activate"
+#~ msgstr "Activar"

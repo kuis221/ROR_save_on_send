@@ -1,0 +1,600 @@
+# Copyright (C) 2014 WP htaccess Control
+# This file is distributed under the same license as the WP htaccess Control package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP htaccess Control 3.3.4\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wp-htaccess-control\n"
+"POT-Creation-Date: 2014-04-19 01:13:05+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin-ui-includes/advanced-archives.php:8
+msgid "Advanced Archives"
+msgstr ""
+
+#: admin-ui-includes/advanced-archives.php:17
+msgid "Create"
+msgstr ""
+
+#: admin-ui-includes/advanced-archives.php:19
+msgid "Archives"
+msgstr ""
+
+#: admin-ui-includes/advanced-archives.php:27
+msgid "If active, taxonomy-based archives will be accessible:"
+msgstr ""
+
+#: admin-ui-includes/advanced-archives.php:35
+msgid "This will also work if you've removed the"
+msgstr ""
+
+#: admin-ui-includes/advanced-archives.php:35
+msgid "base."
+msgstr ""
+
+#: admin-ui-includes/custom-author-permalink.php:8
+msgid "Custom Author Permalink"
+msgstr ""
+
+#: admin-ui-includes/custom-author-permalink.php:12
+msgid "Author Base"
+msgstr ""
+
+#: admin-ui-includes/custom-author-permalink.php:17
+#: admin-ui-includes/custom-pagination-permalink.php:16
+#: admin-ui-includes/custom-search-permalink.php:17
+msgid "(your-base)"
+msgstr ""
+
+#: admin-ui-includes/custom-author-permalink.php:20
+#: admin-ui-includes/custom-pagination-permalink.php:20
+#: admin-ui-includes/custom-search-permalink.php:21
+msgid "Permalink settings must be set and not Default (/?p=123)."
+msgstr ""
+
+#: admin-ui-includes/custom-author-permalink.php:22
+msgid "If set, the author base will be used as shown next to the form field."
+msgstr ""
+
+#: admin-ui-includes/custom-author-permalink.php:24
+msgid ""
+"If you do not want to use a custom Author Permalink base just leave the "
+"field empty."
+msgstr ""
+
+#: admin-ui-includes/custom-author-permalink.php:34
+msgid "Apply Custom Author Permalink on Generated Sitemap"
+msgstr ""
+
+#: admin-ui-includes/custom-author-permalink.php:37
+msgid ""
+"Leave \"Include author pages\" unchecked on Google XML Sitemap options page "
+"if using this."
+msgstr ""
+
+#: admin-ui-includes/custom-author-permalink.php:39
+msgid ""
+"However, if you want to adjust the \"Priority\" or \"Change frequency\" you "
+"should do so on the <a href=\"options-general.php?page=google-sitemap-"
+"generator/sitemap.php\">Google XML Sitemap options page</a>."
+msgstr ""
+
+#: admin-ui-includes/custom-htaccess.php:8
+msgid "Custom htaccess"
+msgstr ""
+
+#: admin-ui-includes/custom-htaccess.php:17
+msgid "This rules will be printed before any WordPress rules."
+msgstr ""
+
+#: admin-ui-includes/custom-htaccess.php:19
+#: admin-ui-includes/replace-htaccess.php:23
+msgid ""
+"Please double check them before saving as a mistake could make your site "
+"inaccessible."
+msgstr ""
+
+#: admin-ui-includes/custom-pagination-permalink.php:8
+msgid "Custom Pagination Permalink"
+msgstr ""
+
+#: admin-ui-includes/custom-pagination-permalink.php:12
+msgid "Page Base"
+msgstr ""
+
+#: admin-ui-includes/custom-pagination-permalink.php:22
+msgid ""
+"If set, the page base will be used as shown next to the form field in every "
+"post listing (category, tag, archive, etc)."
+msgstr ""
+
+#: admin-ui-includes/custom-pagination-permalink.php:24
+msgid ""
+"If you do not want to use a custom Pagination Permalink base just leave the "
+"field empty."
+msgstr ""
+
+#: admin-ui-includes/custom-search-permalink.php:8
+msgid "Custom Search Permalink"
+msgstr ""
+
+#: admin-ui-includes/custom-search-permalink.php:12
+msgid "Search Base"
+msgstr ""
+
+#: admin-ui-includes/custom-search-permalink.php:23
+msgid ""
+"If set, the search base will always be used instead of \"?s=search-term\"."
+msgstr ""
+
+#: admin-ui-includes/custom-search-permalink.php:25
+msgid ""
+"If you do not want to use a custom Search Permalink base just leave the "
+"field empty."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:8
+msgid "htaccess Suggestions"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:12
+msgid "ServerSignature"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:20
+msgid "Disable the ServerSignature on server generated error pages."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:24
+msgid "Indexes"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:32
+msgid "Disable directory browsing."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:36
+msgid "Protect wp-config.php file"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:43
+msgid "Deny access to wp-config.php file."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:47
+msgid "Protect htaccess file"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:54
+msgid "Deny access to .htaccess file."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:58
+msgid "Protect comments.php"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:65
+msgid ""
+"Deny comment posting to no referrer requests. This will avoid spam bots "
+"coming from nowhere."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:69
+msgid "mod_gzip"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:76
+msgid "Use mod_gzip if available."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:80
+msgid "mod_deflate"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:87
+msgid "Use mod_deflate if available."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:91
+msgid "Limit Upload Size"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:96
+msgid "If set, this value in MB will be used as limit to file uploads."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:100
+msgid "Admin Email"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:105
+msgid ""
+"If set, this will be used as the admin email on server generated error pages."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:109
+msgid "Disable image hotlinking"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:115
+msgid ""
+"If set, this url will be used as redirection to hotlinked images (you should "
+"be using an image url here). If you prefer no output on hotlinked images use "
+"\"_\"."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:119
+msgid "Disable file hotlinking extensions"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:125
+msgid "If set, this file extensions will not be hotlinkable."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:127
+msgid "Separate different extensions with a white-space, ie: \"pdf doc zip\"."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:131
+msgid "File hotlinking redirection"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:137
+msgid "If set, this url will be used as redirection for hotlinked files."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:141
+msgid "500 error"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:146
+msgid ""
+"If set, this path will be used as page to 500 errors (example: /error.php)."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:150
+msgid "403 error"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:155
+msgid ""
+"If set, this path will be used as page to 403 errors (example: /error.php)."
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:159
+msgid "Canonical Url"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:165
+msgid "Force WWW"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:168
+msgid "Force non-WWW"
+msgstr ""
+
+#: admin-ui-includes/htaccess-suggestions.php:172
+msgid ""
+"This will force canonization. This will be done by simply modifying the "
+"wordpress \"site url\" and \"home\" options (not htaccess)."
+msgstr ""
+
+#: admin-ui-includes/login-control.php:8
+msgid "Login Control"
+msgstr ""
+
+#: admin-ui-includes/login-control.php:14
+msgid ""
+"The options below concern wp-login.php. You'll be able to redirect all "
+"traffic away from that page and set some allowed IPs."
+msgstr ""
+
+#: admin-ui-includes/login-control.php:16
+msgid ""
+"BEWARE: once disabled you won't be able to login through that form in any "
+"way, except for the listed IPs."
+msgstr ""
+
+#: admin-ui-includes/login-control.php:18
+msgid ""
+"If everything goes wrong directly edit your .htaccess file and delete the "
+"relevant part somewhere at the top."
+msgstr ""
+
+#: admin-ui-includes/login-control.php:22
+msgid "Disable wp-login.php"
+msgstr ""
+
+#: admin-ui-includes/login-control.php:30
+msgid "This is the main switch. Make sure you know what you're doing."
+msgstr ""
+
+#: admin-ui-includes/login-control.php:34
+msgid "Redirect"
+msgstr ""
+
+#: admin-ui-includes/login-control.php:40
+msgid ""
+"This will be used as redirection url. You might use something like \"member-"
+"login\" to redirect people to \"http://yoursite.com/member-login/\". If "
+"empty the home page will be served as redirection."
+msgstr ""
+
+#: admin-ui-includes/login-control.php:44
+#: admin-ui-includes/maintenance-mode.php:24
+msgid "Allowed IPs"
+msgstr ""
+
+#: admin-ui-includes/login-control.php:51
+msgid "List of IPs allowed to access wp-login.php."
+msgstr ""
+
+#: admin-ui-includes/login-control.php:53
+msgid "Make sure you are have a static IP when using this."
+msgstr ""
+
+#: admin-ui-includes/login-control.php:57
+msgid "Half-mode"
+msgstr ""
+
+#: admin-ui-includes/login-control.php:65
+msgid ""
+"(BETA) If set, this will still allow access to POST (login) requests, logout "
+"and to the password recovery form. I don't think this is very useful at the "
+"moment (login error messages will still show up on wp-login.php) but may be "
+"helpful for AJAX use."
+msgstr ""
+
+#: admin-ui-includes/maintenance-mode.php:8
+msgid "Maintenance Mode"
+msgstr ""
+
+#: admin-ui-includes/maintenance-mode.php:12
+msgid "Maintenance Active"
+msgstr ""
+
+#: admin-ui-includes/maintenance-mode.php:20
+msgid "Toggles Maintenance Mode."
+msgstr ""
+
+#: admin-ui-includes/maintenance-mode.php:31
+msgid "List of allowed IPs."
+msgstr ""
+
+#: admin-ui-includes/maintenance-mode.php:33
+msgid ""
+"All the IPs not listed will view the 403 error page or be redirected to a "
+"page set below."
+msgstr ""
+
+#: admin-ui-includes/maintenance-mode.php:37
+msgid "Redirection"
+msgstr ""
+
+#: admin-ui-includes/maintenance-mode.php:43
+msgid ""
+"If set, this will be used as redirection for disallowed IPs. This could be "
+"an external url or a document on your server (local paths begin with a "
+"trailing slash)"
+msgstr ""
+
+#: admin-ui-includes/more-rewrite.php:8
+msgid "More Rewrite Settings"
+msgstr ""
+
+#: admin-ui-includes/more-rewrite.php:12
+msgid "Remove hierarchy"
+msgstr ""
+
+#: admin-ui-includes/more-rewrite.php:20
+msgid ""
+"Remove hierarchy from taxonomy permalinks (this might be interesting when "
+"removing the category base)."
+msgstr ""
+
+#: admin-ui-includes/more-rewrite.php:24
+msgid ".html suffix"
+msgstr ""
+
+#: admin-ui-includes/more-rewrite.php:29
+msgid "Add '.html' at the end of taxonomy permalinks."
+msgstr ""
+
+#: admin-ui-includes/remove-bases.php:8
+msgid "Remove Taxonomies and Author Base"
+msgstr ""
+
+#: admin-ui-includes/remove-bases.php:13
+msgid "Remove Author Base"
+msgstr ""
+
+#: admin-ui-includes/remove-bases.php:21
+msgid "If active, the author base will be removed from permalinks:"
+msgstr ""
+
+#: admin-ui-includes/remove-bases.php:24
+msgid "the-author"
+msgstr ""
+
+#: admin-ui-includes/remove-bases.php:27 admin-ui-includes/remove-bases.php:55
+msgid "Beware:"
+msgstr ""
+
+#: admin-ui-includes/remove-bases.php:27
+msgid ""
+"This could conflict with the removal of the category base on a situation "
+"where a category slug is the same as a user nicename."
+msgstr ""
+
+#: admin-ui-includes/remove-bases.php:38
+msgid "Remove"
+msgstr ""
+
+#: admin-ui-includes/remove-bases.php:40
+msgid "Base"
+msgstr ""
+
+#: admin-ui-includes/remove-bases.php:48
+msgid "If active, the"
+msgstr ""
+
+#: admin-ui-includes/remove-bases.php:50
+msgid "base will be removed from permalinks:"
+msgstr ""
+
+#: admin-ui-includes/remove-bases.php:55
+msgid ""
+"This could conflict with the removal of the other permalink bases on a "
+"situation where a term slug is the same."
+msgstr ""
+
+#: admin-ui-includes/replace-htaccess.php:8
+msgid "Replace WordPress htaccess"
+msgstr ""
+
+#: admin-ui-includes/replace-htaccess.php:18
+msgid "Leave empty for default."
+msgstr ""
+
+#: admin-ui-includes/replace-htaccess.php:21
+msgid "This rules will be printed instead of WordPress rules."
+msgstr ""
+
+#: admin-ui-includes/replace-htaccess.php:25
+msgid "Original rules:"
+msgstr ""
+
+#: admin-ui-includes/replace-htaccess.php:34
+msgid ""
+"For instance, <strong><a href='http://www.webmasterworld.com/apache/4053973."
+"htm'>Jim Morgan's wordpress htaccess</a></strong> has been reported to "
+"\"speed up your WP mod_rewrite code by a factor of more than two\"."
+msgstr ""
+
+#: admin-ui-includes/replace-htaccess.php:53
+msgid ""
+"Please note, if your WordPress install is in a subdirectory, you'll have to "
+"adjust the first RewriteBase and the last RewriteRule accordingly <br/>(ie:  "
+"<code>RewriteBase /SUBDIRECTORY/</code> and <code>RewriteRule . /"
+"SUBDIRECTORY/index.php [L]</code>)"
+msgstr ""
+
+#: admin-ui-includes/sidebar.php:11
+msgid "About this Plugin"
+msgstr ""
+
+#: admin-ui-includes/sidebar.php:29
+msgid "Latest donations"
+msgstr ""
+
+#: admin-ui-includes/sidebar.php:35
+msgid "by"
+msgstr ""
+
+#: wp-htaccess-control-ui.php:29
+msgid "Please log in as admin"
+msgstr ""
+
+#: wp-htaccess-control-ui.php:74
+msgid "Reset all rules"
+msgstr ""
+
+#: wp-htaccess-control-ui.php:75
+msgid "Save all changes"
+msgstr ""
+
+#: wp-htaccess-control-ui.php:83
+msgid "Current htaccess file as it is generated by WordPress"
+msgstr ""
+
+#: wp-htaccess-control-ui.php:95
+msgid "Read Me"
+msgstr ""
+
+#: wp-htaccess-control-ui.php:101
+msgid ""
+"This plugin has made such a long way that it should really now be called "
+"<strong>WP htaccess and Rewrite Control</strong>."
+msgstr ""
+
+#: wp-htaccess-control-ui.php:103
+msgid ""
+"Some of the features it provides might not work as expect on all "
+"environments and setups. You are advised to test configurations on a "
+"separate staging, on the same server and with the same theme and plugins. "
+"Please report any issues you might face."
+msgstr ""
+
+#: wp-htaccess-control-ui.php:104
+msgid ""
+"If your setup seems to get out of control there are a few options to reverse "
+"all changes:"
+msgstr ""
+
+#: wp-htaccess-control-ui.php:106
+msgid "Click on \"Reset all rules\", at the bottom of this page;"
+msgstr ""
+
+#: wp-htaccess-control-ui.php:107
+msgid ""
+"rename/delete the plugin folder and re-submit your permalink settings under "
+"\"Settings > Permalinks\""
+msgstr ""
+
+#: wp-htaccess-control-ui.php:108
+msgid ""
+"if the previous did not solve your issue, remove the .htaccess file on your "
+"blog's root directory and repeat step 2;"
+msgstr ""
+
+#: wp-htaccess-control-ui.php:109
+msgid ""
+"in such cases you might want to get back back to the last version you knew "
+"working, which you'll find at"
+msgstr ""
+
+#: wp-htaccess-control-ui.php:111
+msgid "Version 3.3 was tested up to WordPress 3.5.1."
+msgstr ""
+
+#: wp-htaccess-control-ui.php:112
+msgid "Version 3.4 was tested on WordPress 3.9."
+msgstr ""
+
+#: wp-htaccess-control-ui.php:124
+msgid "Debug Data"
+msgstr ""
+
+#: wp-htaccess-control.php:606
+msgid "All rules reset."
+msgstr ""
+
+#: wp-htaccess-control.php:682
+msgid "All options updated."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP htaccess Control"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://dardna.com/wp-htaccess-control"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Interface to customize the permalinks (author, category, archives and "
+"pagination) and htaccess file generated by WordPress."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "António Andrade"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://antonioandra.de"
+msgstr ""

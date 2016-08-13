@@ -1,0 +1,94 @@
+#wphtc-sidebar {
+  width: 19%;
+  float: right; }
+  #wphtc-sidebar ul {
+    margin: 1em 0 1em 10px; }
+  #wphtc-sidebar a {
+    text-decoration: none; }
+    #wphtc-sidebar a img {
+      margin-right: 5px; }
+
+#wphtc-main {
+  float: left;
+  width: 80%;
+  margin-bottom: 25px; }
+
+div.updated p img {
+  margin: -5px 15px; }
+div.updated p span {
+  float: right; }
+
+.wphtc-menu {
+  margin: 10px 0; }
+
+.wphtc-section {
+  background: #ddd;
+  border: 1px solid #ddd;
+  border-bottom: 0;
+  margin-top: 15px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px; }
+
+.wphtc-section-title {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  margin-bottom: 0;
+  width: 100%;
+  border: 0; }
+  .wphtc-section-title h3 {
+    margin: 0;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 0;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px; }
+  .wphtc-section-title .handlediv {
+    float: right;
+    height: 34px;
+    width: 23px;
+    cursor: pointer; }
+
+.wphtc-inputs {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px; }
+  .wphtc-inputs p, .wphtc-inputs ul {
+    margin-left: 10px; }
+  .wphtc-inputs th {
+    font-weight: bold;
+    padding-left: 12px; }
+  .wphtc-inputs tr {
+    border-bottom: 1px solid #dddddd; }
+  .wphtc-inputs caption {
+    text-align: left;
+    padding: 10px;
+    background: #ddd; }
+  .wphtc-inputs pre {
+    margin: 2.5%;
+    width: 95%;
+    overflow: auto; }
+
+.form-table {
+  margin: 0; }
+
+#foot {
+  text-align: center;
+  font-size: 8px;
+  color: #aaa;
+  margin: 2em 0; }
+
+textarea.readonly {
+  background-color: #eee; }
+
+ul.description {
+  margin-top: 1em;
+  margin-left: 2em;
+  font-style: italic; }
+  ul.description a {
+    text-decoration: none; }
+  ul.description li {
+    color: #666; }

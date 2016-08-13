@@ -1,0 +1,53 @@
+// sidebar
+.sidebar {
+	h4,
+	label,
+	caption {
+		color: #444;
+		font-size: 17px;
+		font-weight: normal;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		display: block;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;	
+
+		li {
+			border-top: 1px solid #aaa;
+			padding: 4px 0 4px 10px;
+			margin: 0;
+
+			a {
+				line-height: 2em;
+				display: inline-block;
+			}
+		}
+	}
+}
+.primary-sidebar {
+	.widget {
+		margin-top: 0;
+	}
+}
+
+
+// other
+.children li {
+	a {
+		padding-left: 3px;
+	}
+	ul li a {
+		padding-left: 20px;
+	}
+}
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+.comments input,
+.wp-caption {
+	max-width: 100%;
+}
