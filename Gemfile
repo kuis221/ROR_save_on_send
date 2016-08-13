@@ -67,7 +67,7 @@ gem 'rails_admin_toggleable'
 
 # monetize
 gem 'money-rails'
-gem 'money-open-exchange-rates', '~> 0.5.0'
+gem 'money-open-exchange-rates'
 
 gem 'friendly_id', '~> 5.0.0'
 
