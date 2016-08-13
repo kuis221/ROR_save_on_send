@@ -2,8 +2,6 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 
-use Rack::ReverseProxy do  
-  reverse_proxy /^\/blog(\/.*)$/, 'http://50.87.248.156/~saveons2$1'
-end
+# use Rack::ReverseProxy do # #   reverse_proxy /^\/blog(\/.*)$/, 'http://50.87.248.156/~saveons2$1# # end
 
 run Rails.application
