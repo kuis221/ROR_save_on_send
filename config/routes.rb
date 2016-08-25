@@ -2,20 +2,20 @@ Rails.application.routes.draw do
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
  
-  devise_for :users, skip: [:sessions, :registrations], controllers: { 
+  devise_for :users, controllers: {
     registrations: 'registrations',
     confirmations: 'confirmations',
     omniauth_callbacks: 'omniauth_callbacks'
   }
 
-  as :user do
-    patch '/user/confirmation' => 'confirmations#update', via: :patch, as: :update_user_confirmation
-    get 'signin' => 'devise/sessions#new', as: :new_user_session
-    post 'signin' => 'devise/sessions#create', as: :user_session
-    get 'signup' => 'registrations#new', as: :new_user_registration
-    post 'signup' => 'registrations#create', as: :user_registration
-    delete 'signout' => 'devise/sessions#destroy', as: :destroy_user_session
-  end
+  # as :user do
+  #   patch '/user/confirmation' => 'confirmations#update', via: :patch, as: :update_user_confirmation
+  #   get 'signin' => 'devise/sessions#new', as: :new_user_session
+  #   post 'signin' => 'devise/sessions#create', as: :user_session
+  #   get 'signup' => 'registrations#new', as: :new_user_registration
+  #   post 'signup' => 'registrations#create', as: :user_registration
+  #   delete 'signout' => 'devise/sessions#destroy', as: :destroy_user_session
+  # end
   
   resource :user, only: [:edit, :update] do
     resource :avatar, only: [:destroy]
@@ -44,6 +44,6 @@ Rails.application.routes.draw do
   get 'terms', to: 'pages#show', defaults: {id: 'terms'}
   
   get 'welcome' => 'welcome#index'
-  get 'blog' => redirect('http://www.saveonsend.com/blog/')
+  get 'blog' => redirect('http://www.saveonsend.com/blog')
   get '*path' => 'welcome#index'
 end
